@@ -20,7 +20,7 @@ export const PAGES:Record<string,Page>={
   limitations:{title:'Limitations',
     description:'What the Open Text Detector cannot do reliably, mistakes made while building it, and what time and budget did not cover.'},
   manifesto:{title:'Why I built this',
-    description:'Why an open, checkable AI-text detector for public ICLR submissions, and what its scores are and are not for.'},
+    description:'A manifesto by Alice Rigg // woog'},
   about:{title:'About',
     description:'Credits and release status of the Open Text Detector: code, model weights, training data and evaluation sets.'},
 };
