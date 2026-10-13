@@ -40,10 +40,14 @@ User approval October 6, 2026: the training-storage bucket was cleaned from 1,07
 
 # Git repository and publication standard
 
-User direction October 3, 2026: This folder is a git repository pushed to the private GitHub repo `woog97/open-text-detector` (renamed from `woog97/paingram` on October 11, 2026). It stays private until the user announces the project, then becomes public with its full history. Treat every commit as eventually public.
+**The GitHub repo `woog97/open-text-detector` is PUBLIC (since October 13, 2026).** Every commit pushed to it is published to the world immediately and stays readable in the history even if a later commit deletes the file; removing it means rewriting public history, and anything already seen, cloned or cached cannot be recalled. Before every commit, check what it adds against the list below; when unsure whether something may be public, ask the user before pushing. The full pre-October-13 history is in the private repo `woog97/open-text-detector-history` and stays private.
+
+(History: user direction October 3, 2026 made this folder a git repository pushed to a private GitHub repo, renamed from `woog97/paingram` on October 11, 2026; it was rebuilt as a fresh history and made public on October 13, 2026.)
 
 - Commit code, docs, configs, prompts, reports and small records. Datasets, model weights, classification outputs, extractions and receipts larger than a few MB stay on Hugging Face/R2; extend `.gitignore` rather than committing them.
 - Never commit credentials, `docs/HANDOFF.md` or `docs/handoff/`, infrastructure addresses, LLM call records or datasets containing third-party paper text, per-paper detector scores (`app/public/catalogue/`), or Pangram brand assets.
+- Also never commit: internal work logs and session notes (`docs/PROJECT_LEDGER.md`, `CLAUDE.md`, `docs/pickup-notes.md`), feedback messages from site visitors, personal data about anyone other than the user's own public contact details, outputs of other detectors' APIs, and copies of third-party paper text, even short excerpts or few-shot examples.
+- Prefer leaving a file local and listing it in `.gitignore` over committing it "for now"; there is no private stage any more.
 - Reach the H200 node with `ssh otd-h200` (an alias in the local `~/.ssh/config`); never hardcode its address or port in repository files.
 - A local pre-commit hook rejects files over 10 MB, credential-like strings and the H200 address. Fix the cause instead of bypassing it with `--no-verify`.
 
