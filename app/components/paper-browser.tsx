@@ -148,7 +148,7 @@ export default function PaperBrowser(){
       <p className={`pb-summary${p.tldr?.trim()?" is-tldr":""}`}>{(p.tldr?.trim()||p.abstract_preview)&&<span className="pb-src">{p.tldr?.trim()?'TL;DR':'From the abstract'}</span>}{mark(p.tldr?.trim()||p.abstract_preview||'Open the PDF to read this paper.')}{!p.tldr?.trim()&&p.abstract_preview?'…':''}</p>
       <div className="pb-row-meta">{p.primary_area&&<button className="pb-area" onClick={()=>change({area:p.primary_area!,tag:''})}>{p.primary_area}</button>}{p.keywords?.slice(0,4).map(k=><button key={k} className="pb-kw" onClick={()=>change({tag:k})}>{mark(k)}</button>)}</div>
      </div>
-     <div className="pb-row-side"><FlagBadge p={p} mode={mode} sort={filters.sort}/>{saveButton(p,false)}{p.forum_id&&<a href={openreview(p)} target="_blank" rel="noreferrer" aria-label={`OpenReview forum: ${p.title}`}>OpenReview <ExternalLink size={12}/></a>}<span>{(p.bytes/1e6).toFixed(1)} MB{p.classified?' · scored':''}</span></div>
+     <div className="pb-row-side"><FlagBadge p={p} mode={mode}/>{saveButton(p,false)}{p.forum_id&&<a href={openreview(p)} target="_blank" rel="noreferrer" aria-label={`OpenReview forum: ${p.title}`}>OpenReview <ExternalLink size={12}/></a>}<span>{(p.bytes/1e6).toFixed(1)} MB{p.classified?' · scored':''}</span></div>
     </li>)}</ol>}
     {total>0&&lastPage>0&&<nav className="pb-pagination" aria-label="Pages"><button disabled={!currentPage} onClick={()=>navigate(filters,'',currentPage-1)}><ArrowLeft size={15}/> Previous</button>{BETA?<PageJump current={currentPage} last={lastPage} onGo={n=>navigate(filters,'',n)}/>:<span>Page <b>{(currentPage+1).toLocaleString()}</b> of {(lastPage+1).toLocaleString()}</span>}<button disabled={currentPage>=lastPage} onClick={()=>navigate(filters,'',currentPage+1)}>Next <ArrowRight size={15}/></button></nav>}
    </section>
@@ -165,11 +165,11 @@ function pct(r:number){return r<.1&&r>0?`${(r*100).toFixed(1)}%`:`${Math.round(r
 /** Per-row indicator: share of sentences flagged as AI, or a warning for papers too short to score. Unscored papers show nothing. */
 const avgText=(v:number)=>v>=.99?v.toFixed(5):v>=.01?v.toFixed(3):v.toPrecision(2);
 const avgHelp='Average sentence score: the mean of the detector’s raw scores over the counted sentences. It orders papers whose flagged shares are equal; it is not a probability that the paper was written by AI.';
-function FlagBadge({p,mode,sort}:{p:AtlasPaper;mode:FlagMode;sort:string}){
+function FlagBadge({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  const r=flagShare(p,mode),c=flagCounts(p,mode),m=meanScore(p,mode);
  if(r===null)return c?<span className="pb-flag is-short" title={`Too short to score reliably: ${c[1]} counted sentence${c[1]===1?'':'s'}, fewer than ${MIN_SENTENCES}`}><b>!</b> too short</span>:null;
  const tone=r<.1?'low':r<.5?'mid':'high';
- return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)+(m===null?'':`\n\nAverage sentence score ${avgText(m)}. ${avgHelp}`)} aria-label={`${pct(r)} of sentences flagged as AI`+(m===null?'':`, average sentence score ${avgText(m)}`)}><b>{pct(r)}</b><small>flagged AI</small>{m!==null&&sort.startsWith('score')&&<small className="pb-flag-avg">avg {avgText(m)}</small>}<i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
+ return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)+(m===null?'':`\n\nAverage sentence score ${avgText(m)}. ${avgHelp}`)} aria-label={`${pct(r)} of sentences flagged as AI`+(m===null?'':`, average sentence score ${avgText(m)}`)}><b>{pct(r)}</b><small>flagged AI</small>{m!==null&&<small className="pb-flag-avg">avg {avgText(m)}</small>}<i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
 }
 function FlagSummary({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  const r=flagShare(p,mode),c=flagCounts(p,mode);
