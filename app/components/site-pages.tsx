@@ -125,9 +125,9 @@ function About(){
   <Section title="Credits">
    <dl className="sp-dl sp-dl-narrow">
     <dt>woog</dt><dd>Project lead. Training data, model training, evaluation and this site.</dd>
-    <dt>sky.moo</dt><dd>Collaborator.</dd>
-    <dt>zmuwztd</dt><dd>Supported the project with a Hugging Face community grant, which grew from 1 to 8 A100s.</dd>
-    <dt>nev</dt><dd>Shared access to their 4× H200 node.</dd>
+    <dt>sky.moo</dt><dd>Collaborator. Assisted with data generation, ablations, and early training runs.</dd>
+    <dt>zmuwztd</dt><dd>Supported the project with a Hugging Face community grant, which grew from 1 to 8 A100s. HF compute support lasted from Sept 30th to Oct 8th, 2026.</dd>
+    <dt>nev</dt><dd>Shared access to their 4× H200 node. Got access from Oct 1st, 2026.</dd>
    </dl>
   </Section>
   <Section title="Releases">
