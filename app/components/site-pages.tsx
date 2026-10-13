@@ -91,7 +91,7 @@ const MANIFESTO_SIGNOFF=["With metta,", "Alice Rigg // woog"];
 const withEmphasis=(t:string)=>t.split(/\*([^*]+)\*/).map((x,i)=>i%2?<em key={i}>{x}</em>:x);
 function Manifesto(){
  return <article className="sp-col sp-essay">
-  <header><h1>Why I built this</h1><div className="sp-byline">woog</div></header>
+  <header><h1>Why I built this</h1></header>
   {MANIFESTO.map((p,i)=><p key={i}>{withEmphasis(p)}</p>)}
   <footer><div>{MANIFESTO_SIGNOFF.map((l,i)=><span key={i}>{i>0&&<br/>}{l}</span>)}</div><p className="sp-links"><a href="/?view=transparency">Transparency</a><a href="/?view=about">Releases and contact</a></p></footer>
  </article>;
