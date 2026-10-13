@@ -3,8 +3,9 @@ import type {PublishedPaper} from "../lib/atlas-archive.ts";
 import {createBrowseHandler} from "./browse-worker.ts";
 import {ORIGIN,pageMeta,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
 import {handleFeedback} from "./feedback.ts";
+import {recordUsage,type UsageSink} from "./usage.ts";
 type RateLimit={limit(o:{key:string}):Promise<{success:boolean}>};
-interface Env { ASSETS: Fetcher; BUCKET: R2Bucket; FEEDBACK_PER_SENDER?: RateLimit; FEEDBACK_SITEWIDE?: RateLimit; REQUESTS_PER_SENDER?: RateLimit }
+interface Env { ASSETS: Fetcher; BUCKET: R2Bucket; FEEDBACK_PER_SENDER?: RateLimit; FEEDBACK_SITEWIDE?: RateLimit; REQUESTS_PER_SENDER?: RateLimit; USAGE?: UsageSink; USAGE_SALT?: string }
 /** Written by scripts/publish_public_catalogue.py: the public catalogue and reader shards of one revision. */
 type Publication = {revision:string;catalogue_key:string;shards_prefix:string};
 export const PUBLICATION_KEY='atlas-public/public/current.json';
@@ -213,7 +214,10 @@ export function createAtlasWorker() {
         return request.method==='HEAD'?new Response(null,r):r;
       }
     }
-    try {const response=await serve(request,env,ctx);return request.method==='HEAD'?new Response(null,response):response;}
+    try {const response=await serve(request,env,ctx);
+      // Usage statistics after the response is ready, so they never delay it (atlas-cloud/usage.ts).
+      if(env.USAGE)ctx?.waitUntil(recordUsage(env.USAGE,env.USAGE_SALT,request,response.status));
+      return request.method==='HEAD'?new Response(null,response):response;}
     catch(error) {console.error("Catalogue failure", error instanceof Error?error.message:"Storage failure");const response=json({detail:'The collection is temporarily unavailable. Please retry.'},503);return request.method==='HEAD'?new Response(null,response):response;}
   }};
 }

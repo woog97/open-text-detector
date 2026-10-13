@@ -33,6 +33,9 @@
     {"name": "FEEDBACK_SITEWIDE", "namespace_id": "1002", "simple": {"limit": 30, "period": 60}},
     {"name": "REQUESTS_PER_SENDER", "namespace_id": "1003", "simple": {"limit": 600, "period": 60}}
   ],
+  "analytics_engine_datasets": [
+    {"binding": "USAGE", "dataset": "otd_usage"}
+  ],
   "observability": {
     "enabled": false
   }
