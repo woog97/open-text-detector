@@ -120,7 +120,7 @@ function About(){
   </section>
   <Section title="How it was built">
    <p>Commercial detectors exist, but their models, training data and evaluations are closed. You have to trust their numbers. I wanted a detector anyone could inspect, so I built one from scratch.</p>
-   <p>I curated and produced the training data, trained the classifiers, and evaluated them, on my own time and at my own expense. The model served on this site is the result. <a href="/?view=transparency">The full story is on the Transparency page</a>.</p>
+   <p>I curated and produced the training data, trained the classifiers, and evaluated them, on my own time and at my own expense. The model served on this site is the result. All code including the website have been vibed up initially with Codex, and later Claude. The only prose I can assure is in my original unedited voice on this website is <a href="/?view=manifesto">the manifesto</a>. <a href="/?view=transparency">The full story is on the Transparency page</a>.</p>
   </Section>
   <Section title="Credits">
    <dl className="sp-dl sp-dl-narrow">
