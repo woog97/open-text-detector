@@ -1,6 +1,7 @@
 import legacyAliases from "../lib/legacy-paper-aliases.json" with {type:"json"};
 import type {PublishedPaper} from "../lib/atlas-archive.ts";
 import {createBrowseHandler} from "./browse-worker.ts";
+import {ORIGIN,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
 interface Env { ASSETS: Fetcher; BUCKET: R2Bucket }
 /** Written by scripts/publish_public_catalogue.py: the public catalogue and reader shards of one revision. */
 type Publication = {revision:string;catalogue_key:string;shards_prefix:string};
@@ -166,7 +167,14 @@ export function createAtlasWorker() {
     const match=url.pathname.match(/^\/backend\/v1\/pdf-reader\/([a-f0-9]{24})(\/file|\/metadata)?$/);
     if(!list&&!match){
       if(url.pathname.startsWith('/backend/')||url.pathname==='/workbench')return json({detail:'Not found'},404);
-      return env.ASSETS.fetch(request);
+      // One public address for search engines: www and workers.dev pages move permanently to opentextdetector.com.
+      if(url.hostname==='www.opentextdetector.com'||url.hostname.endsWith('.workers.dev'))return Response.redirect(ORIGIN+url.pathname+url.search,301);
+      if(url.pathname==='/robots.txt')return new Response(robotsTxt(),{headers:headers({'Content-Type':'text/plain; charset=utf-8','Cache-Control':'public, max-age=3600'})});
+      if(url.pathname==='/sitemap.xml')return new Response(sitemapXml(),{headers:headers({'Content-Type':'application/xml; charset=utf-8','Cache-Control':'public, max-age=3600'})});
+      const asset=await env.ASSETS.fetch(request);
+      if(!asset.ok||!(asset.headers.get('Content-Type')||'').includes('text/html'))return asset;
+      const h=new Headers(asset.headers);h.delete('Content-Length');h.delete('ETag');h.set('Cache-Control','public, max-age=0, must-revalidate');
+      return new Response(withMeta(await asset.text(),url),{status:asset.status,headers:h});
     }
     if(list){
       // The whole public catalogue, prepared offline; browsers revalidate it every minute with its ETag.

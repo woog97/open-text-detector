@@ -141,3 +141,23 @@ test('the public catalogue merges archive PDFs and index metadata, excludes non-
  assert.throws(()=>buildPublicCatalogue({...source,items:[source.items[0],source.items[0]]},[],[]),/Invalid published object/);
  assert.throws(()=>buildPublicCatalogue({...source,items:[{...source.items[0],detail_key:'private/secret'}]},[],[]),/Invalid published object/);
 });
+test('pages get their own title, description and canonical address; other hosts redirect to opentextdetector.com',async()=>{
+ const shell='<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="description" content="old"/><title>Open Text Detector</title></head><body><div id="root"></div></body></html>';
+ const env={ASSETS:{fetch:async()=>new Response(shell,{headers:{'Content-Type':'text/html','ETag':'"x"'}})},BUCKET:{}};
+ const worker=createAtlasWorker(),get=url=>worker.fetch(new Request(url),env);
+ let html=await (await get('https://opentextdetector.com/?view=calibration')).text();
+ assert.match(html,/<title>Calibration · Open Text Detector<\/title>/);
+ assert.match(html,/<link rel="canonical" href="https:\/\/opentextdetector.com\/\?view=calibration"\/>/);
+ assert.doesNotMatch(html,/content="old"/);
+ html=await (await get('https://opentextdetector.com/')).text();
+ assert.match(html,/application\/ld\+json/);assert.match(html,/canonical" href="https:\/\/opentextdetector.com\/"/);
+ html=await (await get('https://opentextdetector.com/?paper=abc')).text();
+ assert.doesNotMatch(html,/canonical/);assert.match(html,/ICLR 2027 submissions/);
+ assert.equal(await (await get('https://opentextdetector.com/?view=<script>')).text(),shell,'unknown views are left alone');
+ for(const host of ['www.opentextdetector.com','open-text-detector.woog09.workers.dev']){
+  const r=await get(`https://${host}/?view=data`);assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://opentextdetector.com/?view=data');
+ }
+ const robots=await get('https://opentextdetector.com/robots.txt');assert.match(await robots.text(),/Sitemap: https:\/\/opentextdetector.com\/sitemap.xml/);
+ const sitemap=await (await get('https://opentextdetector.com/sitemap.xml')).text();
+ assert.match(sitemap,/<loc>https:\/\/opentextdetector.com\/\?view=limitations<\/loc>/);
+});
