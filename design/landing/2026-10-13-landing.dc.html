@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Landing · current, revised</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#ffffff}
+a{color:#2846b8;text-decoration:none}a:hover{color:#1b3080;text-decoration:underline}
+</style>
+</helmet>
+<div style="background: #ffffff; color: #141a26; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; font-size: 15px; line-height: 1.6; min-height: 1900px; display: flex; flex-direction: column">
+  <header style="border-bottom: 1px solid #dfe1dc; padding: 0 24px">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 56px">
+      <a href="#" style="display: flex; align-items: center; gap: 10px; color: #141a26; font-weight: 700; font-size: 17px"><span style="background: #141a26; color: #ffffff; font-size: 12px; letter-spacing: 0.06em; padding: 5px 7px">OTD</span>Open Text Detector</a>
+      <nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px">
+        <a href="#" style="color: #465063">Submissions</a>
+        <a href="#" style="color: #465063">Reading list</a>
+        <a href="#" style="color: #465063">Transparency</a>
+        <a href="#" style="color: #465063">Manifesto</a>
+        <a href="#" style="color: #465063">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 56px 24px 88px; box-sizing: border-box; display: flex; flex-direction: column; gap: 44px">
+    <section style="display: flex; flex-direction: column; gap: 14px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 600; line-height: 1.22">Check an ICLR 2027 submission for AI-written text</h1>
+      <p style="margin: 0; color: #2f3747">This site runs an open-source classifier I trained to detect LLM writing in ML papers. I ran it on all 42,000~ish ICLR 2027 submissions and host the sentence-level classification results here with an integrated pdf viewer. It is free and independent, with no company or commercial funding behind it. <a href="#">Why I built it</a>.</p>
+      <form style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px">
+        <label for="qrev" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Submission number or title</label>
+        <input id="qrev" type="search" placeholder="Submission number or title, e.g. 24819" style="flex: 1 1 320px; font: inherit; color: #141a26; border: 1px solid #8b919b; padding: 10px 12px; min-height: 46px; box-sizing: border-box">
+        <button type="submit" style="font: inherit; font-weight: 600; color: #ffffff; background: #141a26; border: 0; padding: 0 20px; min-height: 46px; cursor: pointer">Look up</button>
+      </form>
+      <div style="font-size: 13px; color: #465063">ICLR 2027 submissions · <a href="#">Browse all submissions</a></div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600; border-bottom: 1px solid #dfe1dc; padding-bottom: 8px">This is not a slop detector</h2>
+      <p style="margin: 0; color: #2f3747">The classifier measures whether writing resembles text generated or edited by a language model. It does not measure a paper’s quality, whether its ideas came from a human or model, or whether its reasoning holds up. A paper with many flagged sentences is not, on that evidence alone, a worse paper.<br><br>When making this project originally, I was hoping that the proportion of AI aided writing in a paper would be highly correlated to its likelihood of being slop. The jury is still out on whether this is true, but I don't have enough evidence to make this claim yet. What I do have evidence of, is that the classifier assigns substantially higher confidence scores on held-out eval sets I designed to imitate slop (I just don't trust the evals that much). See out the ROC curves in the calibration section for details.&nbsp;<br><br>The site offers a few heuristics along these lines, such as the share of a paper’s sentences above a threshold, and sorting submissions by that share. You can choose which human false positive rate to use and control the sensitivity of the classifier. I invite you to take a look at the ROC curves,&nbsp;<br><br>A score is a model estimate, not proof of misconduct, and the detector makes errors. Read the highlighted passages before drawing any conclusion.</p>
+      
+      
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600; border-bottom: 1px solid #dfe1dc; padding-bottom: 8px">Why this exists</h2>
+      <p style="margin: 0; color: #2f3747">ICLR runs its review in the open. Every submission, review and rebuttal is public while the process is under way. That openness makes it possible to look at how papers are written, not only what they claim.</p>
+      <p style="margin: 0; color: #2f3747">Undisclosed use of language models in writing is hard to see and slow to address. Conferences ask for disclosure but have few ways to check it while review is still happening. This site puts the same evidence in front of everyone at the same time, so that authors, reviewers and chairs can discuss it with the paper in hand.</p>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600; border-bottom: 1px solid #dfe1dc; padding-bottom: 8px">Who made this</h2>
+      <p style="margin: 0; color: #2f3747">Built by woog, self-funded and unpaid, with help from a collaborator, sky.moo, and donated compute from a Hugging Face community grant (through zmuwztd) and nev. I curated and produced the training data, trained the detectors and evaluated them. Commercial detectors keep their models and data closed. This one is meant to be fully open: the results are on this site, and the training recipe, a full dataset disclosure and the LoRA adapters will be published.</p>
+      <p style="margin: 0; font-size: 14px; display: flex; flex-wrap: wrap; gap: 4px 20px"><a href="#">Why I built this</a><a href="#">Transparency</a><a href="#">Credits</a></p>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600; border-bottom: 1px solid #dfe1dc; padding-bottom: 8px">What the detector looks for</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px 32px">
+        <div style="display: flex; flex-direction: column; gap: 2px"><b>Fully generated text</b><span style="color: #465063; font-size: 14px">Passages written by a language model from a prompt.</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><b>Partial generation</b><span style="color: #465063; font-size: 14px">Some sections generated, others written by the authors.</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><b>Light edits</b><span style="color: #465063; font-size: 14px">Human writing polished or corrected by a model.</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><b>Rewriting and paraphrasing</b><span style="color: #465063; font-size: 14px">Existing text reworded by a model.</span></div>
+      </div>
+      <p style="margin: 0; font-size: 14px"><a href="#">How well it works, and where it fails</a></p>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600; border-bottom: 1px solid #dfe1dc; padding-bottom: 8px">Build on it</h2>
+      <p style="margin: 0; color: #2f3747">This is meant to be a starting point. Once the releases are out, run the detectors yourself, check the numbers, train a better one from the released data, or fork the whole site for another venue.</p>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid #dfe1dc; padding: 20px 24px; font-size: 13px; color: #465063">
+    <div style="max-width: 1240px; margin: 0 auto">Open source. Not affiliated with any conference or company. Metadata from OpenReview.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
