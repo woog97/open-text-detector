@@ -1,6 +1,7 @@
 /* Calibration page: one reading column; charts and tables at full column width. */
 .cal{--cal-r1:#86b6ef;--cal-r2:#3987e5;--cal-r3:#1c5cab;--cal-r4:#0d366b;--cal-s1:#2a78d6;--cal-s2:#eb6834;--cal-s3:#1baf7a;--cal-s4:#eda100;--cal-s5:#e87ba4;--cal-grid:#e4e6e1;--cal-axis:#c3c6bf}
-.cal-main{max-width:920px;margin:0 auto;padding:40px max(16px,3vw) 64px;display:grid;gap:44px}
+/* Same column as the other Transparency pages (site-pages.css .sp-col.sp-col-wide): 1000px, full-width text. */
+.cal-main{max-width:1000px;margin:0 auto;padding:44px 24px 88px;display:grid;gap:44px}
 .cal-head{display:grid;gap:10px}
 .cal-head h2{margin:0;font:600 clamp(26px,4vw,34px)/1.15 var(--serif);text-wrap:balance}
 .cal-model{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:500 12px var(--mono);color:var(--graphite)}
@@ -9,7 +10,7 @@
 .cal-modes label{display:inline-flex;align-items:center;gap:5px;color:var(--ink-2);cursor:pointer}
 .cal-modes input{accent-color:var(--ink);margin:0}
 .cal-modes small{font-weight:400}
-.cal-head p,.cal-section>p{margin:0;max-width:70ch;color:var(--ink-2)}
+.cal-head p,.cal-section>p{margin:0;color:var(--ink-2)}
 .cal-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
 .cal-facts>div{background:var(--sheet);padding:14px 16px;display:grid;gap:4px;min-width:0}
 .cal-facts b{font-size:24px;font-weight:500;line-height:1.1}
@@ -45,12 +46,12 @@
 .cal-pill{display:inline-block;font:500 11px/1 var(--mono);padding:4px 7px;border-radius:10px;border:1px solid}
 .cal-pill.ok{color:#2f6b3a;border-color:#b9d8be;background:#eef7ef}
 .cal-pill.warn{color:#7d5a00;border-color:#ead9a3;background:#fbf5e3}
-.cal-limits{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink-2);max-width:70ch}
+.cal-limits{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink-2)}
 .cal-note{font-size:12px;color:var(--ink-2);margin-top:6px}
 .cal-legend i.dash{background:repeating-linear-gradient(90deg,currentColor 0 6px,transparent 6px 10px)!important}
 .cal-hero{display:flex;flex-direction:column;gap:14px}
 .cal-hero h1{margin:0;font-size:28px;font-weight:600;line-height:1.22;letter-spacing:-.01em}
-.cal-hero p{margin:0;max-width:70ch}
+.cal-hero p{margin:0}
 .cal-ops td small{display:block;color:var(--ink-2);font-size:11.5px}
 .cal-ops tr.is-default td{background:var(--paper-2,#f5f6f8)}
 .cal-ops th{vertical-align:bottom}
