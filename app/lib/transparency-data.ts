@@ -68,7 +68,7 @@ export const OVERRIDES:[string,string,string][]=[
  ['Strip omission markers from text','Mark omissions on both human and AI text','Open; deprioritised'],
  ['Score all ICLR papers straight away','Benchmark small batches first','Throughput went from 14 to 23 windows a second'],
 ];
-export const EFFORT:[string,string][]=[['90+','training runs'],['42,419','ICLR 2027 papers scored'],['~120M','tokens of AI data generated'],['41,000+','papers extracted and cleaned'],['2,400','human papers for calibration'],['~$30','paid compute; the rest donated']];
+export const EFFORT:[string,string][]=[['90+','training runs'],['42,419','ICLR 2027 papers scored'],['~120M','tokens of AI data generated'],['41,000+','papers extracted and cleaned'],['2,400','human papers for calibration'],['~$30','paid GPU rental (vast.ai); the rest of the compute donated'],['~$80','API spend on AI data generation (OpenRouter)'],['$200','Claude Code subscription: the Claude-written data and much of the code']];
 export const COMPUTE:[string,string,string][]=[
  ['Before Sep 30','Short GPU rentals, ~$30','vast.ai, paid by woog'],
  ['Sep 30','1× A100','Hugging Face community grant, through zmuwztd'],
