@@ -86,7 +86,7 @@ const MANIFESTO=[
  "In short, I believe I failed at accomplishing this original goal of AI slop detection. Nonetheless, I hope the project still provides some amount of value. I prioritized releasing a less perfect result as early into the ICLR 2027 process as possible, to allow other people involved to use it as much as possible. I hope this serves the research community diffusely. I hope it also fosters an initiative to improve open source AI writing detection, to give people an actually good alternative to for-profit products.",
  "There's a reasonable chance this project damages my academic reputation beyond any chance of recovery, as a consequence of people interpreting this project as attacking every researcher in the whole field. I can accept this risk largely because I think academia is doomed either way. Either way, I hope to avoid misinterpretations wherever possible. I hope I've done my due diligence in avoiding *unnecessarily* pissing off tens of thousands of people. All *necessary* pissing off will of course remain.",
 ];
-const MANIFESTO_SIGNOFF=["With metta,", "Alice Rigg // woog"];
+const MANIFESTO_SIGNOFF=["With metta,", "woog"];
 /** Renders *emphasis* as italics; the rest is plain text. */
 const withEmphasis=(t:string)=>t.split(/\*([^*]+)\*/).map((x,i)=>i%2?<em key={i}>{x}</em>:x);
 function Manifesto(){
