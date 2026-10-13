@@ -1,10 +1,12 @@
 // Preview this checkout's public website without deploying (`npm run preview:atlas`): builds dist-atlas, serves it on
 // http://localhost:4789 and forwards /backend/* (catalogue, browse, results, PDFs) read-only to the live site.
+// Reader feedback messages are saved to app/.sites-runtime/feedback/ (git-ignored), not sent to the live site.
 // Works in a fresh worktree: it fills the build's static-asset folder (pdf.js files + favicon, as
 // scripts/prepare_cloud_atlas.py does) when that folder is missing. Usage: node scripts/preview-atlas.mjs [port]
 import http from "node:http";
 import {readFile} from "node:fs/promises";
-import {cpSync, existsSync, mkdirSync} from "node:fs";
+import {cpSync, existsSync, mkdirSync, writeFileSync} from "node:fs";
+import {handleFeedback} from "../atlas-cloud/feedback.ts";
 import {execSync} from "node:child_process";
 
 const app = new URL("../", import.meta.url).pathname, assets = `${app}.sites-runtime/atlas/assets`;
@@ -21,9 +23,23 @@ const live = process.env.ATLAS_LIVE || "https://open-text-detector.woog09.worker
 const port = Number(process.argv[2] || 4789);
 const types = {js: "text/javascript", mjs: "text/javascript", css: "text/css", html: "text/html", svg: "image/svg+xml", json: "application/json", woff2: "font/woff2", png: "image/png", wasm: "application/wasm", bcmap: "application/octet-stream"};
 
+// Reader feedback is handled here with the Worker's own code (atlas-cloud/feedback.ts), but saved to a local folder, never to
+// the live bucket. Papers are checked against the live site; there are no rate limits.
+const feedbackDir = `${app}.sites-runtime/feedback`;
+async function feedback(req, res) {
+  const chunks = []; for await (const c of req) chunks.push(c);
+  const headers = new Headers(); for (const [k, v] of Object.entries(req.headers)) if (typeof v === "string") headers.set(k, v);
+  const request = new Request(`http://${req.headers.host}${req.url}`, {method: req.method, headers, body: req.method === "POST" ? Buffer.concat(chunks) : undefined});
+  const bucket = {put: async (key, value) => {const file = `${feedbackDir}/${key.slice("feedback/".length).replace(/\//g, "_")}`; mkdirSync(feedbackDir, {recursive: true}); writeFileSync(file, value); console.log(`Feedback saved: ${file}`);}};
+  const paperExists = async id => (await fetch(`${live}/backend/v1/pdf-reader/${id}/metadata`)).ok;
+  const response = await handleFeedback(request, {bucket, paperExists}, (value, status = 200) => Response.json(value, {status}));
+  res.writeHead(response.status, {"content-type": "application/json"}); res.end(await response.text());
+}
+
 http.createServer(async (req, res) => {
   const url = new URL(req.url, "http://localhost");
   try {
+    if (url.pathname === "/backend/v1/feedback") {await feedback(req, res); return;}
     if (url.pathname.startsWith("/backend/")) {
       if (!["GET", "HEAD"].includes(req.method)) {res.writeHead(405); res.end(); return;}
       const headers = {};
