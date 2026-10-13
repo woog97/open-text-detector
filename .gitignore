@@ -141,3 +141,10 @@ research/metadata-coverage-20261003/*-sample.json
 research/evaluation/scislopbench-20261008/result.json
 research/evaluation/scislopbench-20261008/quality.json
 research/evaluation/scislopbench-20261008/result-*.csv
+
+# Kept locally, not published (Alice, Oct 13 2026): internal work log, an old automation prompt, and few-shot files
+# holding paragraphs from third-party papers (read by luna-manuscript-sections/luna-mini-suite build.py).
+docs/PROJECT_LEDGER.md
+research/human-source-pool/AUTOMATION_INSTRUCTIONS.txt
+research/evaluation/luna-flex-hillclimb-20261003/fewshot-examples.json
+research/evaluation/luna-flex-hillclimb-20261003/fewshot-diverse-examples.json
