@@ -49,8 +49,7 @@ function Home(){
   <Section title="This is not a slop detector">
    <p>The classifier measures whether writing resembles text generated or edited by a language model. It does not measure a paper’s quality, whether its ideas came from a human or model, or whether its reasoning holds up. A paper with many flagged sentences is not, on that evidence alone, a worse paper.</p>
    <p>When making this project originally, I was hoping that the proportion of AI aided writing in a paper would be highly correlated to its likelihood of being slop. The jury is still out on whether this is true, but I don't have enough evidence to make this claim yet. What I do have evidence of, is that the classifier assigns substantially higher confidence scores on held-out eval sets I designed to imitate slop (I just don't trust the evals that much). See out the ROC curves in the <a href="/?view=calibration">calibration section</a> for details.</p>
-   <p>The site offers a few heuristics along these lines, such as the share of a paper’s sentences above a threshold, and sorting submissions by that share. You can choose which human false positive rate to use and control the sensitivity of the classifier. I invite you to take a look at the ROC curves,</p>
-   <p>A score is a model estimate, not proof of misconduct, and the detector makes errors. Read the highlighted passages before drawing any conclusion.</p>
+   <p>The site offers a few heuristics along these lines, such as the share of a paper’s sentences above a threshold, and sorting submissions by that share. You can choose which human false positive rate to use and control the sensitivity of the classifier. Mandatory reminder: a score is a model estimate, not proof of misconduct, and the detector makes errors. Read the highlighted passages before drawing any conclusion.</p>
   </Section>
 
   <Section title="Why this exists">
