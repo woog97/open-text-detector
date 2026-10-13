@@ -29,10 +29,12 @@ const BROWSE:Page={title:'ICLR 2027 submissions',
 const escape=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 /** The metadata for one page address, or null for an unknown `?view=` (left to the app). */
-export function pageMeta(url:URL):{title:string;description:string;canonical:string|null}|null {
+export function pageMeta(url:URL):{title:string;description:string;canonical:string|null;noindex?:boolean}|null {
   const view=url.searchParams.get('view');
   if(view!==null&&!(view in PAGES)&&view!=='classifications')return null;
   if(view&&view in PAGES){const p=PAGES[view];return {title:`${p.title} · ${NAME}`,description:p.description,canonical:`${ORIGIN}/?view=${view}`};}
+  // A paper in the reader: kept out of search results, so a search for a paper's title doesn't surface its flags (Alice, Oct 13).
+  if(url.searchParams.has('paper'))return {title:`${BROWSE.title} \u00b7 ${NAME}`,description:BROWSE.description,canonical:null,noindex:true};
   // Submission lists and the reader: many filter combinations, so no canonical address of their own.
   if([...url.searchParams.keys()].length)return {title:`${BROWSE.title} · ${NAME}`,description:BROWSE.description,canonical:null};
   return {title:PAGES[''].title,description:PAGES[''].description,canonical:`${ORIGIN}/`};
@@ -43,6 +45,7 @@ export function withMeta(html:string,url:URL):string {
   const m=pageMeta(url);if(!m)return html;
   const t=escape(m.title),d=escape(m.description);
   const tags=[
+    m.noindex&&`<meta name="robots" content="noindex"/>`,
     m.canonical&&`<link rel="canonical" href="${escape(m.canonical)}"/>`,
     `<meta property="og:site_name" content="${NAME}"/>`,`<meta property="og:type" content="website"/>`,
     `<meta property="og:title" content="${t}"/>`,`<meta property="og:description" content="${d}"/>`,

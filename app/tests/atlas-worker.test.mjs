@@ -151,8 +151,10 @@ test('pages get their own title, description and canonical address; other hosts 
  assert.doesNotMatch(html,/content="old"/);
  html=await (await get('https://opentextdetector.com/')).text();
  assert.match(html,/application\/ld\+json/);assert.match(html,/canonical" href="https:\/\/opentextdetector.com\/"/);
- html=await (await get('https://opentextdetector.com/?paper=abc')).text();
+ const paper=await get('https://opentextdetector.com/?paper=abc');html=await paper.text();
  assert.doesNotMatch(html,/canonical/);assert.match(html,/ICLR 2027 submissions/);
+ assert.match(html,/<meta name="robots" content="noindex"\/>/);assert.equal(paper.headers.get('X-Robots-Tag'),'noindex');
+ const list=await get('https://opentextdetector.com/?collection=iclr%2F2027');assert.doesNotMatch(await list.text(),/noindex/);assert.equal(list.headers.get('X-Robots-Tag'),null);
  assert.equal(await (await get('https://opentextdetector.com/?view=<script>')).text(),shell,'unknown views are left alone');
  for(const host of ['www.opentextdetector.com','open-text-detector.woog09.workers.dev']){
   const r=await get(`https://${host}/?view=data`);assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://opentextdetector.com/?view=data');

@@ -1,7 +1,7 @@
 import legacyAliases from "../lib/legacy-paper-aliases.json" with {type:"json"};
 import type {PublishedPaper} from "../lib/atlas-archive.ts";
 import {createBrowseHandler} from "./browse-worker.ts";
-import {ORIGIN,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
+import {ORIGIN,pageMeta,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
 interface Env { ASSETS: Fetcher; BUCKET: R2Bucket }
 /** Written by scripts/publish_public_catalogue.py: the public catalogue and reader shards of one revision. */
 type Publication = {revision:string;catalogue_key:string;shards_prefix:string};
@@ -173,7 +173,7 @@ export function createAtlasWorker() {
       if(url.pathname==='/sitemap.xml')return new Response(sitemapXml(),{headers:headers({'Content-Type':'application/xml; charset=utf-8','Cache-Control':'public, max-age=3600'})});
       const asset=await env.ASSETS.fetch(request);
       if(!asset.ok||!(asset.headers.get('Content-Type')||'').includes('text/html'))return asset;
-      const h=new Headers(asset.headers);h.delete('Content-Length');h.delete('ETag');h.set('Cache-Control','public, max-age=0, must-revalidate');
+      const h=new Headers(asset.headers);h.delete('Content-Length');h.delete('ETag');h.set('Cache-Control','public, max-age=0, must-revalidate');if(pageMeta(url)?.noindex)h.set('X-Robots-Tag','noindex');
       return new Response(withMeta(await asset.text(),url),{status:asset.status,headers:h});
     }
     if(list){
