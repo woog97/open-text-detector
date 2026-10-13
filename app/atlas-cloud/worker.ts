@@ -4,7 +4,7 @@ import {createBrowseHandler} from "./browse-worker.ts";
 import {ORIGIN,pageMeta,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
 import {handleFeedback} from "./feedback.ts";
 type RateLimit={limit(o:{key:string}):Promise<{success:boolean}>};
-interface Env { ASSETS: Fetcher; BUCKET: R2Bucket; FEEDBACK_PER_SENDER?: RateLimit; FEEDBACK_SITEWIDE?: RateLimit }
+interface Env { ASSETS: Fetcher; BUCKET: R2Bucket; FEEDBACK_PER_SENDER?: RateLimit; FEEDBACK_SITEWIDE?: RateLimit; REQUESTS_PER_SENDER?: RateLimit }
 /** Written by scripts/publish_public_catalogue.py: the public catalogue and reader shards of one revision. */
 type Publication = {revision:string;catalogue_key:string;shards_prefix:string};
 export const PUBLICATION_KEY='atlas-public/public/current.json';
@@ -203,6 +203,16 @@ export function createAtlasWorker() {
     return gzipObject(request,env,ctx,paper.detail_key,paper.detail_key.slice(21,-8),'public, max-age=60');
   }
   return {async fetch(request:Request,env:Env,ctx?:ExecutionContext):Promise<Response>{
+    // Per-visitor request limit for everything this Worker serves (pages, catalogue, search, PDFs; static assets bypass the
+    // Worker). Generous for reading (PDF.js makes many range requests per paper) but stops one address from flooding the
+    // site's request quota or bucket reads. Cloudflare's own DDoS protection sits in front of this. Added Oct 13, 2026.
+    if(env.REQUESTS_PER_SENDER){
+      const ip=request.headers.get('CF-Connecting-IP');
+      if(ip&&!(await env.REQUESTS_PER_SENDER.limit({key:ip})).success){
+        const r=json({detail:'Too many requests; please wait a minute and try again.'},429);r.headers.set('Retry-After','60');
+        return request.method==='HEAD'?new Response(null,r):r;
+      }
+    }
     try {const response=await serve(request,env,ctx);return request.method==='HEAD'?new Response(null,response):response;}
     catch(error) {console.error("Catalogue failure", error instanceof Error?error.message:"Storage failure");const response=json({detail:'The collection is temporarily unavailable. Please retry.'},503);return request.method==='HEAD'?new Response(null,response):response;}
   }};

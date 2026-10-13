@@ -163,3 +163,11 @@ test('pages get their own title, description and canonical address; other hosts 
  const sitemap=await (await get('https://opentextdetector.com/sitemap.xml')).text();
  assert.match(sitemap,/<loc>https:\/\/opentextdetector.com\/\?view=limitations<\/loc>/);
 });
+test('a sender over the request limit gets 429 with Retry-After; others and limiter-less setups are served',async()=>{
+ const seen=[],env={ASSETS:{fetch:async()=>new Response('<html><head><title>x</title></head></html>',{headers:{'Content-Type':'text/html'}})},BUCKET:{},
+  REQUESTS_PER_SENDER:{limit:async({key})=>{seen.push(key);return {success:key!=='203.0.113.9'};}}};
+ const worker=createAtlasWorker(),get=ip=>worker.fetch(new Request('https://opentextdetector.com/robots.txt',{headers:ip?{'CF-Connecting-IP':ip}:{}}),env);
+ const blocked=await get('203.0.113.9');assert.equal(blocked.status,429);assert.equal(blocked.headers.get('Retry-After'),'60');
+ assert.equal((await get('198.51.100.1')).status,200);assert.equal((await get()).status,200,'no address (local tools): not limited');
+ assert.deepEqual(seen,['203.0.113.9','198.51.100.1']);
+});
