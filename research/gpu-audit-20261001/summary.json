@@ -1,0 +1,212 @@
+{
+  "timezone": "America/Los_Angeles",
+  "host_counts": {
+    "00c559d8728f": 53,
+    "null": 12
+  },
+  "raw_gpu_samples_matched_host": 30514,
+  "tracker_files": 66,
+  "tracker_errors": [
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042856-4v8cyhq6/run-4v8cyhq6.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042856-vkhnkr0t/run-vkhnkr0t.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042849-iuwj12xj/run-iuwj12xj.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042849-59o8gre6/run-59o8gre6.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041637-0gzod8v2/run-0gzod8v2.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041637-n3mqnlwv/run-n3mqnlwv.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041630-iszl1ggw/run-iszl1ggw.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041630-fbynw9n0/run-fbynw9n0.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041623-oakod6go/run-oakod6go.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041623-x5kewrqo/run-x5kewrqo.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041616-2c46pyhp/run-2c46pyhp.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041616-x4ph571k/run-x4ph571k.wandb",
+      "samples": 0,
+      "error": "header"
+    }
+  ],
+  "first_sample": "2026-08-24T18:54:33-07:00",
+  "last_sample": "2026-09-06T03:44:50-07:00",
+  "observed_complete_minutes": 3270,
+  "observed_hours": 54.5,
+  "calendar_span_hours": 296.83805555555557,
+  "gpu": [
+    {
+      "gpu": 0,
+      "mean_util_pct": 17.778312945973497,
+      "median_util_pct": 0.0,
+      "p90_util_pct": 99.375,
+      "median_used_gib": 44.73541259765625,
+      "p90_used_gib": 78.64276123046875,
+      "max_minute_used_gib": 109.22941589355469,
+      "under_1gib_pct": 26.75840978593272
+    },
+    {
+      "gpu": 1,
+      "mean_util_pct": 46.43227573904179,
+      "median_util_pct": 47.8125,
+      "p90_util_pct": 100.0,
+      "median_used_gib": 32.40924072265625,
+      "p90_used_gib": 123.94380187988281,
+      "max_minute_used_gib": 131.12728881835938,
+      "under_1gib_pct": 35.5045871559633
+    },
+    {
+      "gpu": 2,
+      "mean_util_pct": 64.66665392456677,
+      "median_util_pct": 94.0,
+      "p90_util_pct": 100.0,
+      "median_used_gib": 43.45220947265625,
+      "p90_used_gib": 128.17095947265625,
+      "max_minute_used_gib": 139.58807373046875,
+      "under_1gib_pct": 9.44954128440367
+    },
+    {
+      "gpu": 3,
+      "mean_util_pct": 74.52519113149847,
+      "median_util_pct": 96.5,
+      "p90_util_pct": 100.0,
+      "median_used_gib": 45.1510009765625,
+      "p90_used_gib": 131.72198486328125,
+      "max_minute_used_gib": 136.59376525878906,
+      "under_1gib_pct": 13.608562691131498
+    }
+  ],
+  "daily": [
+    {
+      "date_pacific": "2026-08-24",
+      "observed_minutes": 306,
+      "mean_util_pct": 60.32250816993464,
+      "mean_cards_under_1gib": 0.07516339869281045
+    },
+    {
+      "date_pacific": "2026-08-25",
+      "observed_minutes": 120,
+      "mean_util_pct": 59.716145833333336,
+      "mean_cards_under_1gib": 0
+    },
+    {
+      "date_pacific": "2026-08-26",
+      "observed_minutes": 338,
+      "mean_util_pct": 49.515902366863905,
+      "mean_cards_under_1gib": 0.4230769230769231
+    },
+    {
+      "date_pacific": "2026-08-29",
+      "observed_minutes": 626,
+      "mean_util_pct": 52.85286874334398,
+      "mean_cards_under_1gib": 1.4185303514376997
+    },
+    {
+      "date_pacific": "2026-08-30",
+      "observed_minutes": 480,
+      "mean_util_pct": 48.44904513888889,
+      "mean_cards_under_1gib": 1.54375
+    },
+    {
+      "date_pacific": "2026-08-31",
+      "observed_minutes": 583,
+      "mean_util_pct": 50.750017867352774,
+      "mean_cards_under_1gib": 1.6226415094339623
+    },
+    {
+      "date_pacific": "2026-09-01",
+      "observed_minutes": 313,
+      "mean_util_pct": 40.451810436634716,
+      "mean_cards_under_1gib": 0
+    },
+    {
+      "date_pacific": "2026-09-05",
+      "observed_minutes": 279,
+      "mean_util_pct": 67.6975806451613,
+      "mean_cards_under_1gib": 0.02867383512544803
+    },
+    {
+      "date_pacific": "2026-09-06",
+      "observed_minutes": 225,
+      "mean_util_pct": 28.634444444444444,
+      "mean_cards_under_1gib": 0.18222222222222223
+    }
+  ],
+  "memory_capacity_scenarios_need_plus_10GiB_headroom": {
+    "20": {
+      "fraction_observed_minutes_at_least_one_card": 1,
+      "mean_qualifying_cards": 3.0428134556574924
+    },
+    "40": {
+      "fraction_observed_minutes_at_least_one_card": 0.9587155963302753,
+      "mean_qualifying_cards": 2.898165137614679
+    },
+    "80": {
+      "fraction_observed_minutes_at_least_one_card": 0.9085626911314985,
+      "mean_qualifying_cards": 2.3498470948012233
+    }
+  },
+  "all_four_under_1gib_pct": 0,
+  "mean_empty_cards": 0.8532110091743119,
+  "inventory": {
+    "files_seen": 16726,
+    "candidate_records": 1761,
+    "read_parse_errors": 70,
+    "earliest_artifact_mtime": "2026-07-02T23:32:21+00:00",
+    "gpu_evidence_logs": 188,
+    "oom_logs": 7,
+    "filtered_log_count": 1326,
+    "filtered_log_modification_days": 45,
+    "monthly_filtered_log_modifications": {
+      "2026-09": 262,
+      "2026-08": 371,
+      "2026-07": 693
+    }
+  },
+  "live": {
+    "rows": 48,
+    "first": "2026/10/02 00:37:08.392",
+    "last": "2026/10/02 00:39:53.416",
+    "max_gpu_util": 0.0,
+    "max_memory_used_mib": 1.0
+  }
+}

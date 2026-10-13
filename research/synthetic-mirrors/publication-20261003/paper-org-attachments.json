@@ -1,0 +1,35 @@
+{
+  "state": "verified",
+  "space": "open-text-detector/training",
+  "requested_volumes": [
+    {
+      "type": "bucket",
+      "source": "open-text-detector/training-storage",
+      "mountPath": "/data",
+      "readOnly": false
+    },
+    {
+      "type": "dataset",
+      "source": "open-text-detector/synthetic-mirrors-luna-28120",
+      "mountPath": "/datasets/synthetic-mirrors-luna-28120",
+      "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+      "readOnly": true
+    },
+    {
+      "type": "dataset",
+      "source": "open-text-detector/pangram-paper-text",
+      "mountPath": "/datasets/pangram-paper-text",
+      "revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+      "readOnly": true
+    }
+  ],
+  "at": "2026-10-03T09:41:51.883966+00:00",
+  "paper_mount": {
+    "state": "verified",
+    "mount_path": "/datasets/pangram-paper-text",
+    "rows": 14561,
+    "organization_dataset_card": true,
+    "readme_sha256": "79254f21438f7e0803e05c68f26cc62bd49756329145550b82bf9324cee50b43"
+  },
+  "verified_at": "2026-10-03T09:44:20.301796+00:00"
+}

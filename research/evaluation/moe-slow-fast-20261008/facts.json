@@ -1,0 +1,8 @@
+[
+ "The fast path is safe to use for comparisons from now on. For the three runs slow-scored today with the same code (mixA, mixB, final MoE), it moves sentence AI probabilities by 0.001\u20130.003 on average, 0.1\u20130.3% of held-out sentences change side of the threshold, and every headline recall moves by 0.6 points or less.",
+ "Do not mix paths inside one comparison anyway: on a 150-sentence set, one sentence is 0.7 points.",
+ "The older runs show larger slow\u2192fast gaps on cross-model text (T2 p20 0.913 \u2192 0.872, old-mix 20% 0.678 \u2192 0.535). Their slow scores date from Oct 5\u20136, before later changes to the scorer and its threshold, so these gaps are not caused by the fast path. Use the fast-path numbers for those runs.",
+ "mixA is the best MoE so far on small edits (test 0.720 vs 0.627 for the final MoE, dev 0.545 vs 0.508), on held-out writers (0.803 vs 0.762) and slightly on wide1 (0.846 vs 0.838). It is worse on cross-model text (0.931 vs 0.964) and on standalone rewrites, and flags slightly more human sentences on the held-out controls (3.5% vs 2.7% on held-out writers).",
+ "mixB, with 4\u00d7 the rows of mixA, is worse than mixA on every held-out set and collapses on cross-model text (recall 0.461 vs 0.931\u20130.964). More data from that mix did not help; its composition (AI share of clean v2 text 0.028) looks like the cause and needs a closer look before scaling it further.",
+ "The older runs (T2, old mix) trail by 15\u201350 points on small edits and held-out writers; on one scorer, the gain since Oct 5 is clearly real."
+]

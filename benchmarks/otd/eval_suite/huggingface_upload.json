@@ -1,0 +1,23 @@
+{
+  "repo_id": "woog/ai-paper-workflow-eval",
+  "url": "https://huggingface.co/datasets/woog/ai-paper-workflow-eval",
+  "commit": "57b5a4731fed995105e92e44ffbef15a5cd26058",
+  "status": "complete",
+  "configs": {
+    "reconstruction": {
+      "test": 864,
+      "validation": 432
+    },
+    "human_controls": {
+      "test": 5117,
+      "validation": 554
+    },
+    "assistance": {
+      "validation": 324,
+      "test": 648
+    },
+    "index": {
+      "test": 108879
+    }
+  }
+}

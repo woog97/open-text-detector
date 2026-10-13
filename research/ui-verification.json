@@ -1,0 +1,36 @@
+{
+  "scan_id": "ef7540d4-c1f2-46f6-9485-4c16da9ff19a",
+  "status": "completed",
+  "model": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+  "result": {
+    "score": 0.9253496527671814,
+    "score_type": "ai_intervention",
+    "label": "ai",
+    "segments": [
+      {
+        "start": 0,
+        "end": 362,
+        "score": 0.9253496527671814,
+        "label": "ai"
+      }
+    ],
+    "thresholds": {
+      "human_below": 0.2,
+      "ai_at_or_above": 0.8,
+      "calibration": "workspace_policy_not_benchmark_calibrated"
+    },
+    "notice": "A model score is not a probability of authorship or a percentage of AI-written words.",
+    "inference": {
+      "model_id": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+      "revision": "33716e3667e3514a92cd1e9a6f1511655f12ef86",
+      "device": "mps",
+      "dtype": "torch.bfloat16",
+      "buckets": 4,
+      "max_length": 1024,
+      "aggregation": "token_weighted_nonoverlapping_chunks",
+      "preprocessing": "EditLens clean_text with source offset mapping"
+    },
+    "completed_at": "2026-09-22T21:03:48.382360+00:00"
+  },
+  "purpose": "UI smoke test on assistant-authored fictional text, not benchmark evidence"
+}

@@ -1,0 +1,35 @@
+Scope: Attempt human-origin and permission-to-use checks on every one of the
+100,000 Stage 1 passages. English only. No other stages, filtering, deletion,
+generation, training or admission decisions.
+
+Completion: Both checks attempted and a result written for every record.
+Passed, failed and could_not_verify all count as a completed attempt.
+
+Human origin: Compare every passage and its hash to the saved original. Inspect
+its source identity, original archive identity, publication attribution, capture
+dates and fixed-revision evidence. Historical corpora and attributable original
+publications can support a passed result. Old claimed dates on mutable pages do
+not by themselves establish historical wording. No AI detector or style guess.
+Passed means supporting provenance evidence, not mathematical proof that no
+automation was ever involved.
+
+Permission: Check preserved source-specific licenses against published source
+terms fetched during this audit. Scope is reusable training text, including
+commercial use, under applicable conditions. A noncommercial restriction on the
+downloaded release fails this broad-use check; it need not prohibit research use.
+Preserve conflicting grants rather than selecting the most permissive one.
+Mirror-only work-license assertions without independently established original
+grants, missing license versions, third-party review rights and inconsistent
+policies receive could_not_verify. All such attempts are complete, not pending.
+No individual original-work page was fetched for every mirrored article/book.
+
+The result is evidence-based dataset annotation, not blanket legal clearance or
+an assertion that attribution/share-alike obligations have already been fulfilled.
+Evidence URLs, fetch receipts/hashes, input hashes, decision reasons and code
+version are preserved. No source passage text is copied to the local computer.
+
+Original intake flags are historical and remain unchanged. The new fields
+human_origin_check_completed/result and permission_to_use_check_completed/result
+are authoritative for completion/results of these two checks. A failed or
+unverified result does not leave the task unfinished. All other fields and
+training eligibility are outside this task and unchanged.

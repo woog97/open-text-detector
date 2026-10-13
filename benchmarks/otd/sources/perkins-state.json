@@ -1,0 +1,187 @@
+{
+  "archive": {
+    "data": {
+      "status": "PENDING"
+    },
+    "error": null,
+    "loading": false
+  },
+  "articles": {
+    "list": [],
+    "loading": true
+  },
+  "citations": {
+    "data": {},
+    "count": 0,
+    "error": false,
+    "loading": true
+  },
+  "configClient": {
+    "environment": "live",
+    "recaptchaV3SiteKey": "6LcEHc8ZAAAAAMenhT9jO_B-EJAoGq_v29B7HaCf",
+    "adobeAnalytics": {
+      "newPage": {
+        "page": {
+          "businessUnit": "els:rp:st",
+          "language": "en",
+          "productName": "md",
+          "environment": "dev",
+          "noTracking": "false",
+          "sectionName": "md:data",
+          "type": "cp-ca"
+        },
+        "content": {
+          "type": "md:datasets",
+          "format": "MIME-HTML"
+        }
+      }
+    },
+    "apiBaseUrl": "/api/datasets-v2",
+    "publicApiBaseUrl": "/public-api",
+    "baseUrl": "/datasets",
+    "baseAssetsUrl": "/datasets"
+  },
+  "customer": {
+    "customer": null,
+    "institution": null
+  },
+  "dataset": {
+    "snapshot": {
+      "id": "xv6fk2mmh9",
+      "version": 3,
+      "name": "Data files: Simple Techniques to Bypass GenAI Text Detectors: Implications for Inclusive Education",
+      "description": "This data consists of samples of human and AI generated short form content in the form of MS Word files. AI generated samples are subjected to adversarial techniques to evade content detection by GenAI text detectors. Our accompanying paper  'Simple Techniques to Bypass GenAI Text Detectors: Implications for Inclusive Education' discusses the results of the testing. This data can be used to test how effective AI text detectors are at determining whether a sample is human or machine generated. We identify how the application of adversarial techniques reduces the ability of AI text detectors to accurately determine the source of the sample.",
+      "method": "Human generated samples were written by listed authors, machine generated samples were generated and manipulated using GPT-4, Claude 2, and Bard between September and October 2023. Results will vary depending on follow on prompts and versions of Foundation Models used.",
+      "doi": "10.17632/xv6fk2mmh9.3",
+      "publish_date": "2024-08-20T06:15:21.758Z",
+      "last_modification_date": "2024-08-19T04:15:08.590Z",
+      "is_confidential": false,
+      "customer": {
+        "id": "7377952c-6404-4428-bbfc-77242cfc301e",
+        "name": "Mendeley Guests",
+        "chief_id": 810289,
+        "config": {
+          "repository_id": "MENDELEY_DATA",
+          "dataset_size_limit": 10737418240,
+          "doi_prefix": "10.17632"
+        },
+        "is_user_mendeley_admin": false,
+        "customer_roles": [],
+        "is_guest": true,
+        "is_user_customer_moderator": false
+      },
+      "owner": {
+        "id": "65e18a54-cbc2-4fae-a92b-6f123fd8760f",
+        "first_name": "Mike",
+        "last_name": "Perkins",
+        "display_name": "Mike Perkins",
+        "$ref": "/profiles/65e18a54-cbc2-4fae-a92b-6f123fd8760f"
+      },
+      "categories": [
+        {
+          "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189720738",
+          "label": "Artificial Intelligence"
+        },
+        {
+          "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189721310",
+          "label": "Education"
+        },
+        {
+          "id": "data.elsevier.com/vocabulary/OmniScience/Concept-250235148",
+          "label": "Higher Education"
+        }
+      ],
+      "licence": {
+        "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+        "short_name": "CC BY 4.0",
+        "full_name": "Creative Commons Attribution 4.0 International",
+        "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+        "url": "http://creativecommons.org/licenses/by/4.0",
+        "category": "Creative",
+        "customer_id": null
+      },
+      "institutions": [
+        {
+          "id": "861a2777-9dd4-51a1-89e7-125ea0acc26a",
+          "name": "British University Vietnam"
+        }
+      ],
+      "funders": [],
+      "organisational_unit_names": [],
+      "contributors": [
+        {
+          "id": "65e18a54-cbc2-4fae-a92b-6f123fd8760f",
+          "first_name": "Mike",
+          "last_name": "Perkins",
+          "$ref": "/profiles/65e18a54-cbc2-4fae-a92b-6f123fd8760f"
+        },
+        {
+          "first_name": "Jasper",
+          "last_name": "Roe",
+          "orcid_id": "0000-0001-7489-2847",
+          "institution": "James Cook University Australia - Singapore Campus"
+        },
+        {
+          "first_name": "Hai Binh",
+          "last_name": "Vu",
+          "institution": "British University Vietnam"
+        },
+        {
+          "first_name": "Darius",
+          "last_name": "Postma",
+          "orcid_id": "0009-0000-7317-5942",
+          "institution": "British University Vietnam"
+        },
+        {
+          "first_name": "Don ",
+          "last_name": "Hickerson",
+          "orcid_id": "0009-0009-4721-2856",
+          "institution": "British University Vietnam"
+        },
+        {
+          "first_name": "James",
+          "last_name": "McGaughran",
+          "orcid_id": "0009-0005-3324-7290",
+          "institution": "British University Vietnam"
+        },
+        {
+          "first_name": "Quang Huy",
+          "last_name": "Khuat",
+          "institution": "British University Vietnam"
+        }
+      ],
+      "related_links": [],
+      "custom_metadata": {},
+      "is_metadata_only": false
+    },
+    "contributors": [],
+    "doi": "",
+    "status": 200,
+    "loading": false
+  },
+  "environment": "live",
+  "files": {
+    "list": [],
+    "currentFile": {},
+    "folders": [],
+    "currentFolder": {},
+    "filesLoading": true,
+    "foldersLoading": true
+  },
+  "fileViewer": {
+    "navigationLoaded": false,
+    "metadataLoaded": false
+  },
+  "hostname": "data.mendeley.com",
+  "idToken": null,
+  "orcidDomain": "https://orcid.org",
+  "repository": {
+    "repository": null,
+    "loading": true
+  },
+  "s3": "https://static.data.mendeley.com",
+  "versions": {
+    "list": [],
+    "loading": true
+  }
+}

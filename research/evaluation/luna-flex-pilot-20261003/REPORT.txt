@@ -1,0 +1,19 @@
+Luna Flex classification pilot — October 3, 2026
+
+216 independent classification requests: 108 human paragraphs and 108 matched substantial rewrites from 108 test papers.
+Model: openai/gpt-6-luna. Reasoning: low. OpenRouter OpenAI Flex-only route, no fallback. All 216 responses explicitly report service_tier=flex.
+
+Balanced accuracy: 61.11%
+Paper-paired bootstrap 95% interval: 57.41%–65.28% (10,000 resamples).
+Human accuracy: 96.30% (104/108).
+Human false positives: 3.70% (4/108).
+AI rewrite recall: 25.93% (28/108).
+Missed rewrites: 80/108.
+Recorded API cost: $0.01074570. Elapsed: 158.8 seconds.
+Tokens: {'prompt_tokens': 55214, 'completion_tokens': 31940, 'total_tokens': 87154}.
+
+This is a passage-level AI-involvement test, not token localization. All substantial rewrites were retained; no >50%-change filter was applied, so this is not an exact Vals replication. Both the rewrites and classifier use Luna. No contamination exclusion, prompt search, or alternate reasoning run was performed. The prompt was fixed before inference. A small observed human false-positive count does not establish a very low population FPR. Hosted inference precision is not exposed by the provider.
+
+Original passage and rewritten passage were sent in separate stateless calls. The classifier received no paired original, source labels, generator identity, paper identifiers, or metadata. Original dataset labels and splits were not changed.
+
+The dataset and prompt are saved in manifest.json; raw requests/responses in calls/; individual results in predictions.json; metrics in results.json. Independent verification passed: input hashes, text-only payloads, raw-response confusion matrix, billing, generation IDs, and reported Flex tier.

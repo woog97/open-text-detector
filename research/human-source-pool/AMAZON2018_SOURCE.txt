@@ -1,0 +1,54 @@
+Original Amazon Review Data 2018 collection adapter
+=================================================
+Publisher: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html
+Full-category originals: https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFiles/
+Do not substitute five-core releases or Amazon Reviews 2023. Publisher links were
+verified in the official HTML saved on the training Space. The source is the
+233.1M-review 2018 release (May 1996-October 2018), regardless of host object
+modification dates. Per-review timestamps must remain at or before 2018-10-31.
+
+Run: ingest_amazon2018.py --base /tmp/pangram-amazon2018-stage-v1 --quota 5306 --workers 4
+Only the existing Space holds source datasets. Stage SQLite is isolated; do not
+merge until stage validation succeeds and global deduplication checks pass.
+Each worker makes bounded sequential reads from original gzip streams; retained
+compressed prefixes are intentionally not complete gzip archives. Manifests
+record that fact, bytes, checksum, URL, ETag, last-modified time, and rows read.
+Each accepted review preserves the exact original JSON line, SHA256, row number,
+uncompressed byte offset, full original fields, unchanged review text, source
+and category tags, reviewer/product grouping, rating and purchase verification.
+Validation decodes every selected line from its retained original compressed
+prefix and checks the original line hash and byte offset. No summaries or
+product descriptions are sampled as customer reviews.
+
+Ten product areas: books, electronics, home/kitchen, clothing/shoes/jewelry,
+beauty, sports/outdoors, toys/games, office, pets, movies/TV. Each reserves at least
+250 reviews; each may supply at most 796 (15% rounded up). Each category reserves
+20 reviews per star rating. No individual rating may exceed 478 per category.
+All 5,306 reviewers are distinct; products supply at most three reviews. These
+are within-source selection controls, not changes to the agreed source quota.
+Review length quotas follow the existing reviews mix: 1,857 short, 2,388 medium,
+955 long and 106 very long. Parallel network readers share a bounded in-memory
+quota gate and only hold SQLite transactions for individual insertions.
+
+Candidates remain quarantined. The approved research release does not establish
+commercial training rights to underlying customer reviews. Fake/incentivized
+reviews, privacy, benchmark overlap and product/reviewer grouping remain audit
+flags. Prefix sampling has ordering bias; product-area and rating coverage do
+not establish a random representative sample of all Amazon customers.
+
+Completed stage 2026-10-02T07:51:51Z in 242.28 seconds with four network workers.
+Full validation succeeded: 5,306 unchanged reviews, 5,306 reviewers, 2,226
+products (at most three per product), dates 1997-2018. All ten product areas
+have 250-796 rows and at least 20 examples for each star rating. Exact existing
+length quotas filled: 1857/2388/955/106. Sixteen original compressed prefixes,
+150,858,923 bytes total, were checked by decoding every selected JSON line and
+verifying its hash and uncompressed byte offset. Five unit tests passed locally
+and on the Space. This duration is actual parallel wall time, not a measured
+sequential-versus-parallel speedup.
+Stage validation: /tmp/pangram-amazon2018-stage-v1/stage-validation.json
+Passages: 5,097,822 bytes; SHA256
+3b41f61479866ef3cfa4b09468126090214308527df9ece9e73b4ac4987b29e6
+Documents: 5,012,374 bytes; SHA256
+5789e234167709711e4ab1c27a759fd01e652d680b03378579c5aa19a4e24d79
+Handed to publishing worker for production global dedup and durable preservation.
+No dataset or source text was downloaded to the local computer.

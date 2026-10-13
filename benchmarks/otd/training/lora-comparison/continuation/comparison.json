@@ -1,0 +1,2197 @@
+{
+  "small_gap": false,
+  "rule": "No >1 pp paper token/sentence F1 or recall loss, no >0.25 pp human FPR rise, no >2 pp F1/recall loss in groups with >=100 unique texts; both backbones must pass. One seed, descriptive decision rather than proof of equivalence.",
+  "violations": [
+    {
+      "model": "encoder",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "human_fpr",
+      "degradation_pp": 0.4629629629629629,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5301437083771467,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 0.4446240905416331,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5421760595557833,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 0.562480997263606,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "human_paper_context",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.45169930861342145,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "human_paper_context",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 0.6307253341342545,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 1.434384695738942,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "encoder",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 1.7994858611825193,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "human_fpr",
+      "degradation_pp": 0.4629629629629629,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "degradation_pp": 0.2653061224489796,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5115289030546857,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5016722408026756,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "human_paper_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "degradation_pp": 0.3209242618741977,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "human_paper_remaining",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.29750873499483566,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "f1",
+      "degradation_pp": 3.9546750984828516,
+      "limit_pp": 2.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "recall",
+      "degradation_pp": 3.7612295702998177,
+      "limit_pp": 2.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5913468411681375,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "f1",
+      "degradation_pp": 3.936177998975332,
+      "limit_pp": 2.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "recall",
+      "degradation_pp": 4.091653027823239,
+      "limit_pp": 2.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "degradation_pp": 0.5401234567901234,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "f1",
+      "degradation_pp": 4.015549973448207,
+      "limit_pp": 1.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "recall",
+      "degradation_pp": 6.19755215761717,
+      "limit_pp": 1.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "degradation_pp": 0.27440402875005837,
+      "limit_pp": 0.25
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "f1",
+      "degradation_pp": 2.3118374686852072,
+      "limit_pp": 1.0
+    },
+    {
+      "model": "causal",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "recall",
+      "degradation_pp": 3.4914950760966845,
+      "limit_pp": 1.0
+    }
+  ],
+  "qwen35_path": "full_then_lora",
+  "records": [
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "f1",
+      "full": null,
+      "lora": 0.0,
+      "delta_pp": null
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.004629629629629629,
+      "delta_pp": 0.4629629629629629
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0025849982474588154,
+      "lora": 0.007886435331230283,
+      "delta_pp": 0.5301437083771467
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.003637833468067906,
+      "lora": 0.008084074373484237,
+      "delta_pp": 0.4446240905416331
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0008163265306122449,
+      "lora": 0.003061224489795918,
+      "delta_pp": 0.22448979591836735
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0008413125153717635,
+      "lora": 0.0025833043566757976,
+      "delta_pp": 0.17419918413040342
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0007142517022998905,
+      "lora": 0.00299985714965954,
+      "delta_pp": 0.22856054473596493
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.4404332129963899,
+      "lora": 0.7830985915492957,
+      "delta_pp": 34.266537855290586
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.2824074074074074,
+      "lora": 0.6435185185185185,
+      "delta_pp": 36.11111111111111
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.5338675762041161,
+      "lora": 0.7158625537011669,
+      "delta_pp": 18.199497749705085
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.3672353704926995,
+      "lora": 0.5683925195325846,
+      "delta_pp": 20.11571490398851
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.004168013284149291,
+      "lora": 0.009589773879707124,
+      "delta_pp": 0.5421760595557833
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.39595660749506906,
+      "lora": 0.7001185302252074,
+      "delta_pp": 30.416192273013838
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.24876084262701362,
+      "lora": 0.5489467162329615,
+      "delta_pp": 30.018587360594793
+    },
+    {
+      "model": "encoder",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0038005472788081485,
+      "lora": 0.009425357251444208,
+      "delta_pp": 0.562480997263606
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0007115829744980026,
+      "lora": 0.0008251729143078219,
+      "delta_pp": 0.011358993980981936
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.00035591811988621444,
+      "lora": 0.0004127567550011232,
+      "delta_pp": 0.005683863511490877
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0002222963209958875,
+      "lora": 0.000666740748972108,
+      "delta_pp": 0.04444444279762205
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.00011116051578479324,
+      "lora": 0.0003334815473543797,
+      "delta_pp": 0.022232103156958644
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.001226993865030675,
+      "lora": 0.004898958971218616,
+      "delta_pp": 0.36719651061879416
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0006138735420503376,
+      "lora": 0.0024554941682013503,
+      "delta_pp": 0.18416206261510126
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0010328791630219375,
+      "lora": 0.005549872249156152,
+      "delta_pp": 0.45169930861342145
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0001501726986033939,
+      "lora": 0.006457426039945938,
+      "delta_pp": 0.6307253341342545
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0006418485237483953,
+      "lora": 0.0012836970474967907,
+      "delta_pp": 0.06418485237483953
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0005535046232462057,
+      "lora": 0.002530306849125512,
+      "delta_pp": 0.19768022258793064
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.00041220115416323167,
+      "lora": 0.002610607309700467,
+      "delta_pp": 0.21984061555372353
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "liang",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.015503875968992248,
+      "lora": 0.015503875968992248,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0078125,
+      "lora": 0.0078125,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.00739585138961114,
+      "lora": 0.009980961172330237,
+      "delta_pp": 0.25851097827190966
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.003711651104796149,
+      "lora": 0.005016528446326046,
+      "delta_pp": 0.13048773415298967
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0001107892945887343,
+      "delta_pp": 0.01107892945887343
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.005115089514066497,
+      "lora": 0.007150153217568948,
+      "delta_pp": 0.20350637035024519
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.002564102564102564,
+      "lora": 0.0035897435897435897,
+      "delta_pp": 0.10256410256410256
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0005151983513652757,
+      "delta_pp": 0.05151983513652757
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.004454342984409799,
+      "delta_pp": 0.4454342984409799
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.002232142857142857,
+      "delta_pp": 0.2232142857142857
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0031898277493015376,
+      "lora": 0.0078973779608312,
+      "delta_pp": 0.47075502115296625
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.0015975496893041294,
+      "lora": 0.003966330263099908,
+      "delta_pp": 0.23687805737957782
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 6.923385812597793e-05,
+      "lora": 0.0006300281089463991,
+      "delta_pp": 0.05607942508204212
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0028580501746586218,
+      "lora": 0.007913896802785692,
+      "delta_pp": 0.5055846628127071
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.0014312977099236641,
+      "lora": 0.003975826972010178,
+      "delta_pp": 0.2544529262086514
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.00018821757952192734,
+      "lora": 0.0009410878976096367,
+      "delta_pp": 0.07528703180877094
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.6338813857897827,
+      "lora": 0.786736703873933,
+      "delta_pp": 15.285531808415032
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.4673665981166793,
+      "lora": 0.6484468016019049,
+      "delta_pp": 18.10802034852256
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0017415489388248444,
+      "lora": 0.0,
+      "delta_pp": -0.17415489388248442
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.5505882352941176,
+      "lora": 0.8272552783109405,
+      "delta_pp": 27.666704301682287
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.3829787234042553,
+      "lora": 0.7054009819967266,
+      "delta_pp": 32.24222585924713
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0019290123456790122,
+      "lora": 0.0,
+      "delta_pp": -0.19290123456790123
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.7346568136272545,
+      "lora": 0.8958667898764613,
+      "delta_pp": 16.120997624920676
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.5836511990447444,
+      "lora": 0.8280208298782713,
+      "delta_pp": 24.43696308335269
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.004942390745100485,
+      "lora": 0.019286237702489904,
+      "delta_pp": 1.434384695738942
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.6075635461872287,
+      "lora": 0.8706811451135242,
+      "delta_pp": 26.31175989262955
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.4386750223813787,
+      "lora": 0.7896150402864817,
+      "delta_pp": 35.0940017905103
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.005141388174807198,
+      "lora": 0.02313624678663239,
+      "delta_pp": 1.7994858611825193
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "pelic",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "vub",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "encoder",
+      "profile": "comparison",
+      "dataset": "vub",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "ellipse",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "f1",
+      "full": null,
+      "lora": 0.0,
+      "delta_pp": null
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.004629629629629629,
+      "delta_pp": 0.4629629629629629
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.003344432760836546,
+      "lora": 0.004892510807337306,
+      "delta_pp": 0.15480780465007593
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_matched",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.00444624090541633,
+      "lora": 0.00444624090541633,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "document",
+      "metric": "f1",
+      "full": null,
+      "lora": 0.0,
+      "delta_pp": null
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.002653061224489796,
+      "delta_pp": 0.2653061224489796
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.00015265751286987642,
+      "lora": 0.002274596941761159,
+      "delta_pp": 0.21219394288912824
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "human_paper_workflow_remaining",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 4.7616780153326035e-05,
+      "lora": 0.002047521546593019,
+      "delta_pp": 0.19999047664396932
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.5974025974025974,
+      "lora": 0.8033240997229917,
+      "delta_pp": 20.59215023203943
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.42592592592592593,
+      "lora": 0.6712962962962963,
+      "delta_pp": 24.537037037037035
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.6412526782217376,
+      "lora": 0.7059862468331524,
+      "delta_pp": 6.473356861141477
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.47551308626227196,
+      "lora": 0.555408760620487,
+      "delta_pp": 7.98956743582151
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0036999476212234345,
+      "lora": 0.008815236651770291,
+      "delta_pp": 0.5115289030546857
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.6020627417275461,
+      "lora": 0.687175389532561,
+      "delta_pp": 8.511264780501481
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.4340148698884758,
+      "lora": 0.5328376703841388,
+      "delta_pp": 9.882280049566294
+    },
+    {
+      "model": "causal",
+      "profile": "workflow",
+      "dataset": "paper_workflow_reconstruction",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0038005472788081485,
+      "lora": 0.008817269686834904,
+      "delta_pp": 0.5016722408026756
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0017388317916863288,
+      "lora": 0.0005979801259546374,
+      "delta_pp": -0.11408516657316915
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.000870172437592532,
+      "lora": 0.00029907948477130567,
+      "delta_pp": -0.05710929528212263
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0008333564821245035,
+      "lora": 0.0002778626802634138,
+      "delta_pp": -0.05554938018610897
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "arena50",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.00041685193419297464,
+      "lora": 0.00013895064473099154,
+      "delta_pp": -0.02779012894619831
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.001226993865030675,
+      "lora": 0.001226993865030675,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0006138735420503376,
+      "lora": 0.0006138735420503376,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "detectrl",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "epoch",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "gede",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0038201703015117595,
+      "lora": 0.005777204505132273,
+      "delta_pp": 0.19570342036205135
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_context",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.003153626670671272,
+      "lora": 0.004655353656705211,
+      "delta_pp": 0.1501726986033939
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "document",
+      "metric": "f1",
+      "full": null,
+      "lora": 0.0,
+      "delta_pp": null
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.003209242618741977,
+      "delta_pp": 0.3209242618741977
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0001581441780703445,
+      "lora": 0.0031332315280187006,
+      "delta_pp": 0.29750873499483566
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": null,
+      "lora": 0.0,
+      "delta_pp": null
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "human_paper_remaining",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0023358065402583126,
+      "delta_pp": 0.23358065402583125
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "liang",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_binary",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_length",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "local_mixed",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.004454342984409799,
+      "delta_pp": 0.4454342984409799
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.002232142857142857,
+      "delta_pp": 0.2232142857142857
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "meld_eval",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.0029703297065974323,
+      "lora": 0.011142458024048865,
+      "delta_pp": 0.8172128317451433
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.0014873738486624653,
+      "lora": 0.005602441496628619,
+      "delta_pp": 0.4115067647966154
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.0038095238095238095,
+      "lora": 0.010756089844985764,
+      "delta_pp": 0.6946566035461954
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.0019083969465648854,
+      "lora": 0.005407124681933842,
+      "delta_pp": 0.34987277353689566
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "opai",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.7842241013418656,
+      "lora": 0.7446773503570371,
+      "delta_pp": -3.9546750984828516
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.6499621171122416,
+      "lora": 0.6123498214092434,
+      "delta_pp": -3.7612295702998177
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.0018325253759276347,
+      "lora": 0.007745993787609009,
+      "delta_pp": 0.5913468411681375
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.8239771646051379,
+      "lora": 0.7846153846153846,
+      "delta_pp": -3.936177998975332
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.7086743044189853,
+      "lora": 0.6677577741407529,
+      "delta_pp": -4.091653027823239
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_pilots_exploratory",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.002700617283950617,
+      "lora": 0.008101851851851851,
+      "delta_pp": 0.5401234567901234
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "f1",
+      "full": 0.8957397984635339,
+      "lora": 0.8555842987290518,
+      "delta_pp": -4.015549973448207
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "recall",
+      "full": 0.8189160502835915,
+      "lora": 0.7569405287074198,
+      "delta_pp": -6.19755215761717
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "tokens",
+      "metric": "human_fpr",
+      "full": 0.00898049548636555,
+      "lora": 0.011724535773866134,
+      "delta_pp": 0.27440402875005837
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "f1",
+      "full": 0.8713713713713713,
+      "lora": 0.8482529966845193,
+      "delta_pp": -2.3118374686852072
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "recall",
+      "full": 0.779319606087735,
+      "lora": 0.7444046553267681,
+      "delta_pp": -3.4914950760966845
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "paper_v3_target",
+      "unit": "sentences",
+      "metric": "human_fpr",
+      "full": 0.008997429305912597,
+      "lora": 0.010282776349614395,
+      "delta_pp": 0.12853470437017983
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "pelic",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "perkins",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "saha",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "sem_detect",
+      "unit": "document",
+      "metric": "human_fpr",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "vub",
+      "unit": "document",
+      "metric": "f1",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "model": "causal",
+      "profile": "comparison",
+      "dataset": "vub",
+      "unit": "document",
+      "metric": "recall",
+      "full": 0.0,
+      "lora": 0.0,
+      "delta_pp": 0.0
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+OANC SLATE AND ICIC — SOURCE ADAPTER EVIDENCE
+2026-10-02 UTC
+
+Publisher approval and identity:
+https://anc.org/data/oanc/ describes unrestricted use/redistribution, including commercial use.
+https://anc.org/data/oanc/contents/ identifies Slate magazine articles (1996–2000) and ICIC fundraising discourse.
+https://anc.org/data/oanc/download/ links the original archive used below.
+
+Original archive preserved only on the existing training Space:
+/data/workspace/human-source-mix-v2/source-downloads/oanc/OANC_GrAF.zip
+URL: https://github.com/nancyide/anc-website/releases/download/datasets-2026-09-25/OANC_GrAF.zip
+SHA256: 5a26559a1becba41a527cb674fff4fb9c4fb70b276f60422c4f07a0ef23fd867
+Bytes: 655230430
+Companion manifest.json retains identity, hash, and source evidence URLs.
+The release download date is not a document creation date.
+
+Inventory measured from original .txt files:
+Slate: 4,531 documents, 4,205,542 whitespace-delimited words.
+ICIC: 245 documents, 92,122 whitespace-delimited words; 76 documents >=400 words and only 5 >=1000 words.
+Counts differ slightly from publisher linguistic token counts, as expected.
+
+Ingestor: ingest_oanc.py --base BASE --source oanc_slate|oanc_icic
+Source-specific length override: --length-weights 60,40,0,0 (explicit only; shared defaults unchanged).
+An initial capacity scan confirmed Slate fills 1,321 passages with the ordinary news length proportions.
+ICIC fills 465 passages from 212 original documents using 60/40 short/medium proportions, with <=3 nonoverlapping passages per original letter.
+Final read-only scan produced Slate bins [198,529,462,132] and ICIC bins [279,186,0,0], with normalized exact duplicate rejection.
+Generic professional length proportions cannot fit this short-letter corpus; do not repeat long paragraphs or borrow other sources.
+Parent coordinates the source-specific override and launch. This evidence record does not authorize duplicate workers.
+
+Original GrAF paragraph offsets select exact contiguous text from the unchanged UTF-8 files.
+Long whitespace-only separators are allowed when joining paragraphs; intervening non-whitespace text is never silently dropped.
+The raw original text and full .anc metadata are retained in SQLite; complete original annotation files remain in the archive.
+Source tags, title, author, original member path, publication-date header, archive hash, header hash, annotation hash, parent/family ID and offsets are retained.
+ICIC header publication date may describe corpus publication rather than individual letter authorship; record the header date honestly.
+All rows remain quarantined with automated protected-overlap, extraction, and ICIC correspondence-privacy checks pending.
+
+Operational controls:
+Separate source flock; immutable plan hash check; frozen source quota/length configuration in SQLite.
+BEGIN IMMEDIATE transactions avoid WAL writer-upgrade races while independent source workers run.
+Network/archive reads occur before the write transaction.
+Source/document caps and global normalized exact dedup use the shared add() implementation.
+Per-member cursor and insertions commit together; reruns preserve originals and cannot repeat document passages.
+Seven tests cover source routing, paired header identity, dates, paragraph offsets, nonoverlap, source tags, quotas, dedup/resume and OANC whitespace separators.

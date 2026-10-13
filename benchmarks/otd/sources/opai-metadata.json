@@ -1,0 +1,403 @@
+{
+  "_id": "69f8fc85ff6dfcb6a8fb4e4e",
+  "id": "OpAI-Bench1/OpAI-Bench",
+  "author": "OpAI-Bench1",
+  "sha": "4fb59011bcab8c62863b7083fe0f0a3345555558",
+  "lastModified": "2026-07-28T12:37:04.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:text-classification",
+    "task_categories:token-classification",
+    "language:en",
+    "license:apache-2.0",
+    "size_categories:100K<n<1M",
+    "format:csv",
+    "modality:tabular",
+    "modality:text",
+    "library:datasets",
+    "library:dask",
+    "library:polars",
+    "library:mlcroissant",
+    "region:us",
+    "ai-text-detection",
+    "ai-generated-text-detection",
+    "opai-bench",
+    "human-ai-text",
+    "mixed-human-ai-text"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tOpAI-Bench\n\t\n\nOpAI-Bench is an operation-guided benchmark for studying progressive human-to-AI text transformation in AI-text detection. Starting from human-written source documents, it provides revision trajectories with increasing AI involvement across predefined edit operations and coverage levels.\nThe dataset supports multi-granularity evaluation at document, sentence, token, and span levels. The main benchmark covers four domains and four generators. The ablation subsets\u2026 See the full description on the dataset page: https://huggingface.co/datasets/OpAI-Bench1/OpAI-Bench.",
+  "downloads": 353,
+  "likes": 1,
+  "cardData": {
+    "license": "apache-2.0",
+    "pretty_name": "OpAI-Bench",
+    "language": [
+      "en"
+    ],
+    "task_categories": [
+      "text-classification",
+      "token-classification"
+    ],
+    "tags": [
+      "ai-text-detection",
+      "ai-generated-text-detection",
+      "opai-bench",
+      "human-ai-text",
+      "mixed-human-ai-text"
+    ],
+    "size_categories": [
+      "100K<n<1M"
+    ],
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "default/train/*.csv"
+          },
+          {
+            "split": "dev",
+            "path": "default/dev/*.csv"
+          },
+          {
+            "split": "test",
+            "path": "default/test/*.csv"
+          }
+        ]
+      },
+      {
+        "config_name": "ablations",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "ablations/train/*.csv"
+          },
+          {
+            "split": "dev",
+            "path": "ablations/dev/*.csv"
+          },
+          {
+            "split": "test",
+            "path": "ablations/test/*.csv"
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_abstracts_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_abstracts_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_abstracts_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_essays_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_essays_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_essays_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_news_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_news_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_news_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_reports_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_reports_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation1_reports_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation2_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation2_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation2_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation2_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation3_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation3_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation3_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/dev/ablation3_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_abstracts_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_abstracts_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_abstracts_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_essays_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_essays_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_essays_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_news_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_news_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_news_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_reports_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_reports_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation1_reports_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation2_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation2_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation2_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation2_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation3_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation3_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation3_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/test/ablation3_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_abstracts_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_abstracts_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_abstracts_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_essays_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_essays_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_essays_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_news_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_news_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_news_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_reports_compress_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_reports_expand_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation1_reports_paraphrase_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation2_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation2_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation2_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation2_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation3_abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation3_essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation3_news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "ablations/train/ablation3_reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "croissant.json"
+    },
+    {
+      "rfilename": "default/dev/abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/dev/abstracts_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/dev/abstracts_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/dev/essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/dev/essays_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/dev/essays_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/dev/news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/dev/news_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/dev/news_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/dev/reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/dev/reports_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/dev/reports_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/test/abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/test/abstracts_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/test/abstracts_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/test/abstracts_qwen3-8b.csv"
+    },
+    {
+      "rfilename": "default/test/essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/test/essays_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/test/essays_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/test/essays_qwen3-8b.csv"
+    },
+    {
+      "rfilename": "default/test/news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/test/news_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/test/news_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/test/news_qwen3-8b.csv"
+    },
+    {
+      "rfilename": "default/test/reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/test/reports_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/test/reports_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/test/reports_qwen3-8b.csv"
+    },
+    {
+      "rfilename": "default/train/abstracts_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/train/abstracts_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/train/abstracts_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/train/essays_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/train/essays_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/train/essays_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/train/news_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/train/news_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/train/news_gpt-5.4.csv"
+    },
+    {
+      "rfilename": "default/train/reports_gemini-2.5-flash.csv"
+    },
+    {
+      "rfilename": "default/train/reports_gpt-5.4-nano.csv"
+    },
+    {
+      "rfilename": "default/train/reports_gpt-5.4.csv"
+    }
+  ],
+  "createdAt": "2026-05-04T20:07:33.000Z",
+  "usedStorage": 5722192094
+}

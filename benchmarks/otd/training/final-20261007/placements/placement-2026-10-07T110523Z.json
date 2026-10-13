@@ -1,0 +1,115 @@
+{
+ "started_utc": "2026-10-07T11:05:23Z",
+ "mix": "/data/workspace/final-20261007/prepared-v2",
+ "runs": {
+  "final-moe": {
+   "model": "qwen36-35b-a3b",
+   "host": "h200",
+   "gpus": [
+    0
+   ],
+   "root": "/workspace/woog/pangram/final-20261007",
+   "args": [
+    "--fraction",
+    "1.0",
+    "--stage2-epochs",
+    "3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1",
+    "--resume-every",
+    "20",
+    "--snapshot-every",
+    "100",
+    "--snapshot-keep",
+    "3",
+    "--on-diverge",
+    "rollback",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-4",
+    "--state-dir",
+    "/dev/shm/woog-pangram/state"
+   ]
+  },
+  "final-qwen35-4b": {
+   "model": "qwen35-4b",
+   "host": "h200",
+   "gpus": [
+    1
+   ],
+   "root": "/workspace/woog/pangram/final-20261007",
+   "args": [
+    "--fraction",
+    "1.0",
+    "--stage2-epochs",
+    "3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1",
+    "--resume-every",
+    "20",
+    "--snapshot-every",
+    "100",
+    "--snapshot-keep",
+    "3",
+    "--on-diverge",
+    "rollback",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "2e-4",
+    "--state-dir",
+    "/dev/shm/woog-pangram/state"
+   ]
+  },
+  "final-eg2": {
+   "model": "embeddinggemma-2",
+   "host": "h200",
+   "gpus": [
+    2
+   ],
+   "root": "/workspace/woog/pangram/final-20261007",
+   "args": [
+    "--fraction",
+    "1.0",
+    "--stage2-epochs",
+    "3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1",
+    "--resume-every",
+    "20",
+    "--snapshot-every",
+    "100",
+    "--snapshot-keep",
+    "3",
+    "--on-diverge",
+    "rollback",
+    "--micro-batch",
+    "32",
+    "--lr",
+    "2e-4",
+    "--state-dir",
+    "/dev/shm/woog-pangram/state"
+   ]
+  }
+ },
+ "not_placed": []
+}

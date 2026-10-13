@@ -1,0 +1,17 @@
+{
+  "prediction_rows": 65348,
+  "all_unique_ids": true,
+  "suite_count_match": true,
+  "model_sha256": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14",
+  "frozen_thresholds": {
+    "frozen_at": 1790821967.5103025,
+    "target_human_fpr": 0.01,
+    "tokens": 0.8947894573211671,
+    "sentences": 0.9562724232673646
+  },
+  "new_generation_calls": 0,
+  "annotation_conflicts_excluded_from_span_metrics": 337,
+  "results_sha256": "edeae92a13afbc92d299bc3c2530ae4a35b6485c0c308c56a446e631f7094dbb",
+  "predictions_sha256": "5e1bca472b85d689034c9279b5052da4cc3bd3f13568693b71edf0d1fd5ae6bf",
+  "verified_at": 1790823127.0951571
+}

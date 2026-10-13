@@ -1,0 +1,434 @@
+{
+  "profile": "assistance",
+  "partial": false,
+  "diagnostic_only": true,
+  "rows": 648,
+  "elapsed_this_session_seconds": 95.53839445114136,
+  "datasets": {
+    "paper_workflow_assistance": {
+      "overall": {
+        "rows": 648,
+        "unique_texts": 648,
+        "duplicate_rows": 0,
+        "conflicting_native_label_texts": 0,
+        "span_annotation_conflict_rows": 0,
+        "native_labels": {
+          "mixed": 648
+        },
+        "document_native_label_metrics": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "human_fpr": null,
+          "f1": null,
+          "evaluated_documents": 0,
+          "auroc_mean_probability": null
+        },
+        "span_or_historical_human_token_metrics": {
+          "tp": 0,
+          "fp": 1721,
+          "fn": 0,
+          "tn": 93733,
+          "precision": 0.0,
+          "recall": null,
+          "human_fpr": 0.018029626835962872,
+          "f1": 0.0,
+          "units": 95454,
+          "groups": 108,
+          "cluster_bootstrap_95ci": {
+            "precision": [
+              0.0,
+              0.0
+            ],
+            "human_fpr": [
+              0.007862521547697607,
+              0.03245472810135699
+            ]
+          }
+        },
+        "span_or_historical_human_sentence_metrics": {
+          "tp": 0,
+          "fp": 75,
+          "fn": 0,
+          "tn": 3399,
+          "precision": 0.0,
+          "recall": null,
+          "human_fpr": 0.02158894645941278,
+          "f1": 0.0,
+          "units": 3474,
+          "groups": 108,
+          "cluster_bootstrap_95ci": {
+            "precision": [
+              0.0,
+              0.0
+            ],
+            "human_fpr": [
+              0.007476613874224322,
+              0.04155385313483555
+            ]
+          }
+        },
+        "by_native_label": {
+          "mixed": {
+            "documents": 648,
+            "mean_flagged_token_fraction": 0.15252646207148682,
+            "mean_flagged_sentence_fraction": 0.15231668815786814,
+            "document_flag_rate": 0.06018518518518518
+          }
+        }
+      },
+      "breakdowns": {
+        "generator": {
+          "openai/gpt-6-luna": {
+            "rows": 648,
+            "unique_texts": 648,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 648
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 1721,
+              "fn": 0,
+              "tn": 93733,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.018029626835962872,
+              "f1": 0.0,
+              "units": 95454,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 75,
+              "fn": 0,
+              "tn": 3399,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.02158894645941278,
+              "f1": 0.0,
+              "units": 3474,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 648,
+                "mean_flagged_token_fraction": 0.15252646207148682,
+                "mean_flagged_sentence_fraction": 0.15231668815786814,
+                "document_flag_rate": 0.06018518518518518
+              }
+            }
+          }
+        },
+        "condition": {
+          "light_polish": {
+            "rows": 216,
+            "unique_texts": 216,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 216
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 380,
+              "fn": 0,
+              "tn": 31438,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.011942925388145075,
+              "f1": 0.0,
+              "units": 31818,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 16,
+              "fn": 0,
+              "tn": 1142,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.013816925734024179,
+              "f1": 0.0,
+              "units": 1158,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 216,
+                "mean_flagged_token_fraction": 0.14958188824412502,
+                "mean_flagged_sentence_fraction": 0.1530896743417772,
+                "document_flag_rate": 0.037037037037037035
+              }
+            }
+          },
+          "proofread": {
+            "rows": 216,
+            "unique_texts": 216,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 216
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 380,
+              "fn": 0,
+              "tn": 31438,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.011942925388145075,
+              "f1": 0.0,
+              "units": 31818,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 17,
+              "fn": 0,
+              "tn": 1141,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.01468048359240069,
+              "f1": 0.0,
+              "units": 1158,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 216,
+                "mean_flagged_token_fraction": 0.073456104993264,
+                "mean_flagged_sentence_fraction": 0.07337678755387696,
+                "document_flag_rate": 0.013888888888888888
+              }
+            }
+          },
+          "substantial_rewrite": {
+            "rows": 216,
+            "unique_texts": 216,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 216
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 961,
+              "fn": 0,
+              "tn": 30857,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.030203029731598465,
+              "f1": 0.0,
+              "units": 31818,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 42,
+              "fn": 0,
+              "tn": 1116,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.03626943005181347,
+              "f1": 0.0,
+              "units": 1158,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 216,
+                "mean_flagged_token_fraction": 0.23454139297707144,
+                "mean_flagged_sentence_fraction": 0.2304836025779503,
+                "document_flag_rate": 0.12962962962962962
+              }
+            }
+          }
+        },
+        "view": {
+          "context": {
+            "rows": 324,
+            "unique_texts": 324,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 324
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 1721,
+              "fn": 0,
+              "tn": 93733,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.018029626835962872,
+              "f1": 0.0,
+              "units": 95454,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 75,
+              "fn": 0,
+              "tn": 3399,
+              "precision": 0.0,
+              "recall": null,
+              "human_fpr": 0.02158894645941278,
+              "f1": 0.0,
+              "units": 3474,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 324,
+                "mean_flagged_token_fraction": 0.27002452491693435,
+                "mean_flagged_sentence_fraction": 0.27225423282548167,
+                "document_flag_rate": 0.10185185185185185
+              }
+            }
+          },
+          "paragraph": {
+            "rows": 324,
+            "unique_texts": 324,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "mixed": 324
+            },
+            "document_native_label_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "evaluated_documents": 0,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "units": 0,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "span_or_historical_human_sentence_metrics": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": null,
+              "recall": null,
+              "human_fpr": null,
+              "f1": null,
+              "units": 0,
+              "groups": 108,
+              "cluster_bootstrap_95ci": {}
+            },
+            "by_native_label": {
+              "mixed": {
+                "documents": 324,
+                "mean_flagged_token_fraction": 0.03502839922603929,
+                "mean_flagged_sentence_fraction": 0.0323791434902546,
+                "document_flag_rate": 0.018518518518518517
+              }
+            }
+          }
+        }
+      },
+      "target_flagged_fraction_by_condition": {
+        "light_polish": 0.38491579228834,
+        "proofread": 0.19864974383066408,
+        "substantial_rewrite": 0.5373749415250129
+      }
+    }
+  }
+}

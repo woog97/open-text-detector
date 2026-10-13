@@ -1,0 +1,6 @@
+# Versions verified on the existing A100; install the appropriate CUDA PyTorch wheel.
+torch==2.12.0
+transformers==5.17.0
+numpy==2.4.6
+safetensors==0.8.0
+tokenizers==0.23.2

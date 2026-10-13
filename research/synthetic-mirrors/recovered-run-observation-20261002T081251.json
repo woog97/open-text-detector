@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-02T08:12:51.488066+00:00",
+  "state": "running",
+  "pid": 41670,
+  "start_ticks": "7905622",
+  "generated_documents": 1099,
+  "mechanically_passed": 1054,
+  "started_attempts": 1126,
+  "confirmed_cost_usd": 0.3469660624999995,
+  "uncertain_reserve_usd": 0.003022625,
+  "inflight_reservations_usd": 0.004906374999999999,
+  "max_documents_cumulative": 10000,
+  "budget_usd_cumulative": 20,
+  "concurrency": 8,
+  "recovery": "Four saved successful responses reconciled without paid replay; direct-bucket hook now has bounded transient network retries. Same run/model/caps/ledger; actual new generation verified.",
+  "remaining_blocker": "No live blocker observed; new source inputs may be appended only after a safe stopped-run migration.",
+  "refresh_helper": "/private/tmp/pangram-training-access/luna_recovered_status.py"
+}

@@ -1,0 +1,61 @@
+{
+  "state": "verified",
+  "repo": "open-text-detector/pangram-paper-text",
+  "revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+  "private": true,
+  "resource_group": null,
+  "rows": 14561,
+  "source": "woog/pangram-paper-text",
+  "source_revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+  "source_preserved": true,
+  "parquet_sha256": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf",
+  "viewer_url": "https://huggingface.co/datasets/open-text-detector/pangram-paper-text/viewer/default/train",
+  "viewer_checks": [
+    {
+      "offset": 0,
+      "total": 14561,
+      "columns": [
+        "paper_id",
+        "forum_id",
+        "title",
+        "conference",
+        "year",
+        "text",
+        "pdf_sha256",
+        "text_sha256",
+        "extraction_sha256",
+        "extraction_method",
+        "extraction_metadata_json",
+        "page_count"
+      ],
+      "truncated_cells": []
+    },
+    {
+      "offset": 14560,
+      "total": 14561,
+      "columns": [
+        "paper_id",
+        "forum_id",
+        "title",
+        "conference",
+        "year",
+        "text",
+        "pdf_sha256",
+        "text_sha256",
+        "extraction_sha256",
+        "extraction_method",
+        "extraction_metadata_json",
+        "page_count"
+      ],
+      "truncated_cells": []
+    }
+  ],
+  "mount": {
+    "state": "verified",
+    "mount_path": "/datasets/pangram-paper-text",
+    "rows": 14561,
+    "organization_dataset_card": true,
+    "readme_sha256": "79254f21438f7e0803e05c68f26cc62bd49756329145550b82bf9324cee50b43"
+  },
+  "at": "2026-10-03T09:44:20.301796+00:00"
+}

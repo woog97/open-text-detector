@@ -1,0 +1,117 @@
+SOURCE SIZE AND CAPACITY REPORT — October2,2026
+
+Published100,000 quarantined candidates; live aggregate checked 2026-10-02T20:32:33.245282+00:00
+
+Most ceilings are optimistic structural maxima, not achievable yields. Exclusions, dates, rights, text length and dedup lower them.
+SciDev ceiling covers currently cached families only, not full publisher.
+No defensible overall corpus exhaustion total: seven source partitions/inventories unknown; cross-source overlaps and length mixtures prevent summing raw bounds.
+Keeping every current source proportion fixed cannot grow beyond1x because PERSUADE is exhausted. Reallocation can allow growth elsewhere.
+Isolated background candidates excluded from comparable100k baseline until validation/global dedup.
+
+Percent=C/ceiling×100. Maximum multiple=ceiling/C (total size, not additional size). All ceilings are source/scope-specific.
+
+gutenberg | 71,810 book records | 12,551 | 718,100 | 1.75% | 57.21× | 705,549 | Pinned Common Pile release; up to 10 passages per input record; 10,000 to12,551 succeeded. Further supply still needs passage-length, per-book cap, protected-book and global-dedup checks.
+Evidence: https://huggingface.co/datasets/common-pile/project_gutenberg/raw/01dc90a5002f8977c7fb03a372c14bca29c65cf1/README.md
+
+writingprompts | 303,358 stories across all splits | 6,667 | 272,600 | 2.45% | 40.89× | 265,933 | 272,600 original training stories; one passage/story; Resume original train archive; finite eligible stories, one passage per story, protected prompt grouping and length-bin supply constrain expansion.
+Evidence: https://aclanthology.org/P18-1082.pdf
+
+scp | 6,755 English tale-index entries | 1,893 | 11,454 | 16.53% | 6.05× | 9,561 | 3,818 pre2022-created English tales with named creators ×3; Current creation/creator metadata is not proof of valid historical text. Archive availability, length and attribution reduce supply. Pinned indexed scope, not every present/future SCP tale.
+Evidence: https://huggingface.co/datasets/scp-data/scp-api
+
+wikisource | Unknown individual partition not counted | 1,111 | Unknown | — | — | Unknown | Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source; Resume pinned shards; verify untouched prose supply, historical-date/rights evidence and length bins.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+pmc | 4,068,867 article records | 6,306 | 12,206,601 | 0.05% | 1,935.71× | 12,200,295 | Pinned Common Pile release; up to 3 passages per input record; Resume pinned shards; eligible original article/date/license filters and protected-paper exclusions constrain yield.
+Evidence: https://huggingface.co/datasets/common-pile/pubmed/raw/648b8cfc93953ca0663a9c96a8d842a91b98fb64/README.md
+
+arxiv | 321,336 paper records | 5,405 | 964,008 | 0.56% | 178.35× | 958,603 | Pinned Common Pile release; up to 3 passages per input record; Resume pinned shards; original paper/date/rights and protected-paper exclusions constrain yield.
+Evidence: https://huggingface.co/datasets/common-pile/arxiv_papers/raw/963fe980c55b353980653f1a27c1dc0c8a2d7058/README.md
+
+pes2o | 6,294,020 paper records | 3,604 | 18,882,060 | 0.02% | 5,239.20× | 18,878,456 | Pinned Common Pile release; up to 3 passages per input record; Audit retained eligible subset and protected-paper dedup before scanning additional pinned inputs; corpus size is not eligible capacity.
+Evidence: https://huggingface.co/datasets/common-pile/peS2o/raw/2caeba1585aaafa3c965410d80af85b09ed11cd9/README.md
+
+acl | 73,285 paper records | 2,703 | 219,855 | 1.23% | 81.34× | 217,152 | Pinned ACL-OCL file73,285 rows ×3; before2016–2021/ownership/protected-family gates; Continue pinned ACL archive with article rights/date rules and mirror noncommercial restriction retained; eligible yield unmeasured.
+Evidence: https://huggingface.co/datasets/WINGNUS/ACL-OCL/resolve/300ee6c5e5629d042bfc07cbc406e2f330b53659/acl-publication-info.74k.v2.parquet
+
+wikipedia | Unknown individual partition not counted | 7,958 | Unknown | — | — | Unknown | Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source; 111 cursor entries, one currently open; resume quota stop and audit historical done flags. Eligible remaining pages/bin supply unmeasured.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+pressbooks | 106,881 chapter/page records | 3,979 | 320,643 | 1.24% | 80.58× | 316,664 | Pinned Common Pile release; up to 3 passages per input record; Quota required cached-span recovery. Need audit unused books/nonoverlapping spans and long bins; ordinary resume alone is not proven sufficient.
+Evidence: https://huggingface.co/datasets/common-pile/pressbooks/raw/29fa162fc78277b160a7010f18086b5189ffb761/README.md
+
+libretexts | 62,269 page/book records | 2,387 | 186,807 | 1.28% | 78.26× | 184,420 | Pinned Common Pile release; up to 3 passages per input record; Resume pinned reference-text shards; per-parent passage caps, rights and long-bin capacity remain unmeasured.
+Evidence: https://huggingface.co/datasets/common-pile/libretexts/raw/d4ce4b1edf95888b24992db3bbb2ae8e2bf6c22f/README.md
+
+wikibooks | 261,588 snapshot records, including other namespaces | 1,592 | 269,874 | 0.59% | 169.52× | 268,282 | 89,958 main article/chapter pages ×3; Resume pinned namespace0 source; historical cursor flags and eligible original prose/length distribution require reconciliation.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+amazon2018 | 233,100,000 reviews (publisher rounded) | 5,306 | 233,100,000 | 0.0023% | 43,931.40× | 233,094,694 | Original2018 full review corpus; one passage/review; Pinned review archives and product/author filters must continue with dedup. Eligible length distribution and covered archive range are not a capacity certificate.
+Evidence: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
+
+imdb | 100,000 reviews across train/test/unlabeled | 1,061 | 25,000 | 4.24% | 23.56× | 23,939 | Current adapter:25,000 labeled training reviews only; one passage/review; 50,000 unlabeled reviews are not enabled by the current adapter. Test25,000 excluded. Length, rights and benchmark checks reduce ceiling.
+Evidence: https://nlp.stanford.edu/~amaas/data/sentiment/
+
+opinrank | 301,230 reviews (publisher approximate) | 4,244 | 301,230 | 1.41% | 70.98× | 296,986 | Approximately259,000 hotel+42,230 car reviews; one passage/review; Finite hotel/car review archive with group quotas and length bins; use batched adapter and measure remaining eligible reviews.
+Evidence: https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset
+
+stack_nontech | Unknown approved community subset not counted | 5,726 | Unknown | — | — | Unknown | Shares33,415,400 question-thread records across all Stack Exchange; approved site partitions are smaller; Resume pinned approved nontechnical communities; preserve community/author grouping and original prose filters.
+Evidence: https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md
+
+stack_tech | Unknown approved community subset not counted | 2,082 | Unknown | — | — | Unknown | Shares33,415,400 question-thread records across all Stack Exchange; approved site partitions are smaller; Resume approved technical community subset; prose versus code filters, grouping and length bins determine actual yield.
+Evidence: https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md
+
+ubuntu_irc | 329,115 channel-log records | 1,561 | 329,115 | 0.47% | 210.84× | 327,554 | Pinned Common Pile release; up to 1 passages per input record; Session reconstruction and date/channel rules required; remaining unique eligible sessions unmeasured.
+Evidence: https://huggingface.co/datasets/common-pile/ubuntu_irc/raw/35a9ef530c682965b53d4167e37b32f6a85aa87c/README.md
+
+wiki_talk | Unknown individual partition not counted | 1,041 | Unknown | — | — | Unknown | Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source; Pinned namespace1 only; quota-stopped cursor audit plus dialogue/prose and length-bin capacity required.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+cccc | 51,054,412 raw historical web capture records | 5,017 | 12,300 | 40.79% | 2.45× | 7,283 | Current30 reviewed hosts ×410/site; not total CCCC capacity; Full raw CCCC corpus is much larger than approved blog-domain scope. Current reviewed-domain cap limits total to12,300 even before eligibility/dedup. Domain expansion work can raise this ceiling.
+Evidence: https://huggingface.co/datasets/common-pile/cccc/raw/72bd015ff2a77f8701c617096fbb5dc89dd705fe/README.md
+
+eff | Unknown None | 415 | Unknown | — | — | Unknown | No complete historical eligible publisher inventory established; current discovered URL counts are not an exhaustion bound; 406missing slots; only197indexed URLs in old collector. Wayback CDX and sample captures now respond.
+Evidence: https://www.eff.org/deeplinks
+
+foodista | 72,090 page records | 1,545 | 72,090 | 2.14% | 46.66× | 70,545 | Pinned Common Pile release; up to 1 passages per input record; 821 to1,545 succeeded after scanning more shards. 8 cursor entries/7done; further eligible long prose and historical date evidence need measurement.
+Evidence: https://huggingface.co/datasets/common-pile/foodista/raw/f84290688956bdb64c90e44636fda1c02f286849/README.md
+
+wikivoyage | 134,008 snapshot records, including other namespaces | 1,231 | 32,617 | 3.77% | 26.50× | 31,386 | 32,617 main article/chapter pages ×1; Quota needed110 official pre2022 revisions after cached-span recovery. Expansion requires more historical API fetches, dedup, long prose and rate-limit handling.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+globalvoices | 102,552 article records | 1,652 | 102,552 | 1.61% | 62.08× | 100,900 | 102,552 article records ×1; Additional pinned articles possible; claimed dates do not certify historical versions. Rights/author, dedup and length constraints remain.
+Evidence: https://huggingface.co/datasets/common-pile/news/raw/13e76bdc8d49ed14d710fac7e3b61186cf74c8d3/README.md
+
+voa | 303,851 article files in pinned eng_voanews archive | 1,717 | 911,553 | 0.19% | 530.90× | 909,836 | Pinned English main-site archive; at most3 passages/article; Full archive counted, unlike earlier7,643-article partial scan. Pre2022 capture, English, staff-byline, wire exclusions and length gates reduce capacity.
+Evidence: https://github.com/bltlab/mot/releases/tag/v1.0
+
+wikinews | 2,842,222 snapshot records, including other namespaces | 991 | 22,089 | 4.49% | 22.29× | 21,098 | 22,089 main article/chapter pages ×1; Resume approved pinned original articles; date/license, article-family and long-bin capacity remain unmeasured.
+Evidence: https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md
+
+scidev | Unknown full publisher inventory not established | 926 | 6,342 | 14.60% | 6.85× | 5,416 | Current cache:2,114 unique article families ×3; This is NOT a full-source exhaustion limit. More historical discovery can increase it. Baseline926; isolated stage3,444 at20:32UTC, pending global dedup/validation.
+Evidence: https://www.scidev.net/
+
+oanc_slate | 4,531 released articles | 1,321 | 4,531 | 29.15% | 3.43× | 3,210 | Original OANC Slate component; one passage/article; Pinned component is finite;1,570 source cursors marked done. Adapter rejects changed quota/length settings without explicit migration.
+Evidence: https://anc.org/data/oanc/contents/
+
+asap2 | 17,307 original training essays | 4,206 | 17,307 | 24.30% | 4.11× | 13,101 | Raw original train essays; one passage/essay; Stricter known-family/length/dedup capacity10,763. Of4,206 retained,877 have protected-family flags; comparable retained3,329. Clean-subset fraction30.929%, maximum3.233x, additional7,434 before remaining overlap checks.
+Evidence: https://github.com/scrosseye/ASAP_2.0
+
+ellipse | 6,482 reliable essays:3,911 train+2,571 test | 0 | 0 | — | — | 0 | All44 train prompt families protected; no eligible train rows; All44original training prompt families protected; revised target0 does not establish any usable supply.
+Evidence: https://github.com/scrosseye/ELLIPSE-Corpus
+
+persuade | 15,593 unique original training essay IDs | 699 | 699 | 100.00% | 1.00× | 0 | Verified consistent eligible prompt subset; 173,266 annotation rows describe15,593 essay IDs; one conflicts. All699 eligible essays already collected. Broader training-admission checks remain.
+Evidence: https://github.com/scrosseye/persuade_corpus_2.0
+
+govreport | 19,463 reports across all splits | 1,086 | 52,551 | 2.07% | 48.39× | 51,465 | 17,517 original train reports ×3; Pinned original training-report column only; finite shard/reports, protected groups and long-bin yield must be counted.
+Evidence: https://huggingface.co/datasets/ccdv/govreport-summarization
+
+fed | Unknown None | 776 | Unknown | — | — | Unknown | No complete historical eligible publisher inventory established; current discovered URL counts are not an exhaustion bound; Need expand historical Board-authored document discovery; original-author/date filters and network failures still apply.
+Evidence: https://www.federalreserve.gov/publications.htm
+
+worldbank | 617,575 catalog entries across all languages/types/years | 776 | 5,871 | 13.22% | 7.57× | 5,095 | Current official search:1,957 English publications,2012–2021 ×3; Catalog total is not usable corpus size. Current collector query measured1,957; per-work license, text access and prose checks reduce5,871 bound. Broadening dates/types changes scope.
+Evidence: https://search.worldbank.org/api/v3/wds?format=json&rows=0&lang_exact=English&majdocty_exact=Publications&enddate=2021-12-31&strdate=2012-01-01&fl=id
+
+oanc_icic | 245 released documents | 465 | 735 | 63.27% | 1.58× | 270 | Original OANC ICIC component; three passages/document; Loose cap only.92,122 total words; many letters cannot yield3 valid passages. Current465 came from212 documents.
+Evidence: https://anc.org/data/oanc/contents/
+

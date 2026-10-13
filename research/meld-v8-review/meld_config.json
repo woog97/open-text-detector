@@ -1,0 +1,113 @@
+{
+  "model_type": "meld",
+  "architecture": "MeldV7Detector",
+  "version": "v8",
+  "backbone": "jhu-clsp/ettin-encoder-1b",
+  "backbone_hidden_size": 1792,
+  "style_rank": 48,
+  "n_human_anchors": 8,
+  "n_families": 7,
+  "families": [
+    "openai_gpt",
+    "anthropic_claude",
+    "google_gemini_gemma",
+    "meta_llama",
+    "mistral",
+    "qwen",
+    "others"
+  ],
+  "n_ops": 6,
+  "ops": [
+    "generate",
+    "polish_formalize",
+    "paraphrase_rewrite",
+    "humanize_mimic",
+    "summarize",
+    "expand"
+  ],
+  "rho": 0.25,
+  "tau_agg": 1.0,
+  "max_length": 2048,
+  "backbone_max_length": 8192,
+  "cap_tokens": 16384,
+  "null_reduction": "max",
+  "score_offsets": {
+    "overall": {
+      "fpr_0.01": 2.008819580078125,
+      "fpr_0.05": -0.4406634569168091,
+      "fpr_0.1": -1.7987771034240723
+    },
+    "n_human": 22190,
+    "strata": {
+      "consumer_opinion": {
+        "n": 2490,
+        "fpr_0.01": 1.5814101696014404,
+        "fpr_0.05": -0.3111945688724518,
+        "fpr_0.1": -1.286853551864624
+      },
+      "creative": {
+        "n": 2500,
+        "fpr_0.01": 0.45580801367759705,
+        "fpr_0.05": -2.677462100982666,
+        "fpr_0.1": -3.904209613800049
+      },
+      "general_web": {
+        "n": 2500,
+        "fpr_0.01": 1.5588948726654053,
+        "fpr_0.05": -1.170554280281067,
+        "fpr_0.1": -2.748509168624878
+      },
+      "news": {
+        "n": 2500,
+        "fpr_0.01": 2.726632833480835,
+        "fpr_0.05": 1.2478327751159668,
+        "fpr_0.1": 0.1839705854654312
+      },
+      "peer_review": {
+        "n": 2500,
+        "fpr_0.01": -4.437159061431885,
+        "fpr_0.05": -5.963565826416016,
+        "fpr_0.1": -6.306556701660156
+      },
+      "reference_howto": {
+        "n": 2500,
+        "fpr_0.01": -1.06562077999115,
+        "fpr_0.05": -3.6017556190490723,
+        "fpr_0.1": -4.638963222503662
+      },
+      "scientific_paper": {
+        "n": 2500,
+        "fpr_0.01": 2.3307437896728516,
+        "fpr_0.05": 0.10951182246208191,
+        "fpr_0.1": -1.107822299003601
+      },
+      "social_qa_chat": {
+        "n": 2490,
+        "fpr_0.01": 2.3400607109069824,
+        "fpr_0.05": -0.013203833252191544,
+        "fpr_0.1": -0.9907770752906799
+      },
+      "student_essay": {
+        "n": 2210,
+        "fpr_0.01": 3.0058677196502686,
+        "fpr_0.05": 0.2508733570575714,
+        "fpr_0.1": -1.1999095678329468
+      }
+    }
+  },
+  "released_step": 15629,
+  "checkpoint_sha12": "2d6ec6314168",
+  "scoring_contract": {
+    "schema": "meld-canonical-scorer-v1",
+    "window_tokens": 2048,
+    "content_tokens_per_window": 2046,
+    "window_overlap": "none",
+    "fresh_special_tokens_per_window": true,
+    "special_tokens_excluded": true,
+    "precision": "fp32",
+    "autocast": "disabled",
+    "input_cap_tokens": 16384,
+    "pooling": "top_quantile_mean_over_all_windows_jointly",
+    "rho": 0.25
+  }
+}

@@ -1,0 +1,39 @@
+[project]
+name = "open-text-detector-backend"
+version = "0.1.0"
+description = "Private, model-selectable document classification backend"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "httpx>=0.28,<1",
+  "pydantic-settings>=2.8,<3", "emoji>=2.14,<3", "cryptography>=44", "python-multipart>=0.0.20",
+  "pypdf>=5,<7", "python-docx>=1.1,<2", "striprtf>=0.0.29,<1",
+  "beautifulsoup4>=4.13,<5", "pillow>=11,<13", "reportlab>=4.3,<5",
+  "pysqlite3==0.6.0+sqlite3.51.3", "numpy>=2.2,<3", "zstandard>=0.23,<1", "boto3>=1.36,<2"
+]
+[project.optional-dependencies]
+models = [
+    "torch>=2.6,<3",
+    "transformers>=5.7,<6",
+    "peft>=0.15,<1",
+    "safetensors>=0.5,<1",
+    "huggingface-hub>=1,<2",
+    "accelerate>=1.5,<2",
+]
+research = [
+    "pyarrow>=19,<25",
+]
+apple-gpu = [
+    "mlx==0.32.2; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+[tool.ruff]
+line-length = 110
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.uv.sources]
+pysqlite3 = { path = "vendor/pysqlite3-0.6.0" }

@@ -1,0 +1,11 @@
+# GRADTEX document-supervision preparation
+
+This preparation converts the audited original GRADTEX training split into whole-document donors. It does not infer token or sentence gold from document labels, and does not independently authorize a GPU training launch.
+
+`data_prepare.py` runs on the existing training Space. It consumes the completed GRADTEX source/response overlap exclusion against GRADTEX validation/test, MAGE official validation/test, frozen evaluation profiles, and paper selection/calibration. It excludes entire source groups, label-conflicting duplicates, normalized duplicate documents, empty text, and purported AI-involved rows identical to the human source. It uses the existing control tokenizer without downloading assets. Documents exceeding 512 tokens including specials are excluded, rather than cropped: cropping a partially edited document can remove its AI contribution while leaving a false positive document label.
+
+The label mapping is explicit: upstream HWT binary 1 becomes document label 0; upstream AI-involved binary 0 becomes document label 1. All records have `supervision: document_only`, `token_labels: null`. This is an auxiliary document target, not token ground truth. MIX provenance remains the original dataset's document annotation.
+
+`data_budget.py` constructs deterministic replacement stage2 datasets from the control's original draw order. It preserves stage1 and all calibration/selection/evaluation inputs, matches replacement document lengths within three tokens, targets 9.9–10.1% external processed tokens and total tokens within 0.5% of control, balances external human/AI token exposure within 1%, and caps each source at three draws per epoch. Scenario and generator balancing is constrained by available matching lengths; the manifest reports realized counts. Draw count and unreplaced row order remain unchanged.
+
+Remote outputs live in `/data/workspace/paper-diversity-v1/gradtex-document-preparation`. These are dataset artifacts only. Integration must validate the document-only encoding/loss path, add a matched auxiliary-head control, and pass BF16 GPU preflight before scheduling. Lexical overlap checks are not a guarantee against semantic paraphrase leakage.

@@ -1,0 +1,41 @@
+{
+  "source": "cccc",
+  "checked_at": "2026-10-02T19:56:38Z",
+  "status": "background_discovery_running",
+  "original_count": 5017,
+  "original_target": 5335,
+  "shortfall": 318,
+  "shortfall_bin": "1000-1500 words",
+  "cause": "All 53 pinned filtered archives scanned; exact historical/date/genre/extraction rules and 410-per-site cap leave long-bin shortfall. Domain and alternate historical-route review is required, not merely resuming same exhausted cursor.",
+  "quota_filled_guarantees_scalability": false,
+  "nominal_10x_target": 53350,
+  "reviewed_host_count": 30,
+  "unchanged_site_cap": 410,
+  "mathematical_ceiling_existing_hosts": 12300,
+  "capacity_note": "12,300 is only an upper bound, not eligible supply. A 1M phase requires more reviewed domains and/or explicitly justified recalculation of the percentage-based cap plus empirical per-bin inventory. No cap relaxed here.",
+  "background_process": {
+    "pid": 193753,
+    "start_ticks": "12155769",
+    "base": "/tmp/pangram-cccc-scaling-20261002",
+    "status": "/tmp/pangram-cccc-scaling-20261002/status.json",
+    "log": "/tmp/pangram-cccc-scaling-20261002/worker.log",
+    "database": "/tmp/pangram-cccc-scaling-20261002/discovery.sqlite3",
+    "bound_seconds": 2400,
+    "progress_verified": {
+      "scanned_rows": 185000,
+      "elapsed_seconds": 26.3,
+      "identity_matches": true
+    }
+  },
+  "method": "Cache-only SHA-verified scan of all publisher-audited hosts for date-gated unchanged long prose. DISCOVERY ONLY, including domains belonging to other genres: subsequent genre/rights review and original site-cap residual checks are mandatory before candidate intake. Existing selected canonical URLs excluded; no published source change.",
+  "scidev_auxiliary": "captures table uses SHA256 exact input JSON line rather than original document id, preserving distinct captures; agent notified.",
+  "production_modified": false,
+  "newly_admitted": 0,
+  "remote_only_dataset": true,
+  "durability_note": "Original source and published100k are untouched. New discovery DB is remote Space /tmp; checkpoint to separate durable prefix remains followup before relying on this work across container restarts.",
+  "next_steps": [
+    "Wait for bounded discovery inventory and review strongest long-bin personal-blog hosts against pinned audit and third-party exceptions.",
+    "For approved hosts, enforce remaining per-site capacity after original5017, global normalized text dedup and exact original validation; stage separately.",
+    "Preserve discovery checkpoint in distinct bucket prefix without modifying final100k or existing stages."
+  ]
+}

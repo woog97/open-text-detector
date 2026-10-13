@@ -1,0 +1,71 @@
+{
+  "version": "source-capacity-evidence-v1",
+  "sources": {
+    "ellipse": {
+      "state": "no_eligible_prompt_families",
+      "current_quota": 1226,
+      "collected_candidates": 0,
+      "known_eligible_candidates": 0,
+      "shortfall": 1226,
+      "training_admitted": 0,
+      "reason": "All 44 original training prompt families occur in protected ELLIPSE test. Required family exclusion removes all 3,911 training rows.",
+      "source_revision": "dc3b8f0b3b4332fc9f64302c4ccfc4ed582f4b43",
+      "evidence_file": "evidence/ellipse-protected-prompt-conflict.json",
+      "plan_changed": false
+    },
+    "persuade": {
+      "state": "eligible_source_exhausted",
+      "current_quota": 736,
+      "collected_candidates": 699,
+      "known_eligible_candidates": 699,
+      "shortfall": 37,
+      "training_admitted": 0,
+      "reason": "Original training release contains 15,593 essay IDs; one has conflicting annotation texts. Excluding existing ASAP and protected ELLIPSE/GEDE prompt families leaves 699 consistent Phones and driving essays.",
+      "source_revision": "67d182ac88ea4a4dda736de859cfdb0bc360ee9b",
+      "source_sha256": "f61319edd8bf16a982711ea0399fad59c05afaec05cdf0767f16a2c05c467e23",
+      "source_bytes": 616894963,
+      "space_evidence_directory": "/data/workspace/human-source-mix-v2/source-downloads/persuade",
+      "space_status": "/data/workspace/human-source-mix-v2/progress/persuade.json",
+      "plan_changed": false
+    },
+    "asap2": {
+      "state": "protected_family_flag_candidates_preserved",
+      "current_quota": 2943,
+      "collected_candidates": 2943,
+      "training_admitted": 0,
+      "existing_candidates_with_protected_prompt": 877,
+      "flagged_prompt_counts": {
+        "Driverless cars": 412,
+        "Facial action coding system": 465
+      },
+      "known_eligible_unique_50_1500_essays_outside_flagged_families": 10763,
+      "known_additional_after_current_global_exact_dedup": 8697,
+      "protected_original_matches": [
+        {
+          "evaluation_id": "gede:6047",
+          "essay_id": "AAATRP14318000625316",
+          "prompt": "Facial action coding system",
+          "matching_nonoverlapping_20word_spans": 14
+        },
+        {
+          "evaluation_id": "gede:6064",
+          "essay_id": "AAAOPP13416000209251",
+          "prompt": "Driverless cars",
+          "matching_nonoverlapping_20word_spans": 15
+        }
+      ],
+      "unmapped_protected_gede_human_ids": [
+        "gede:6034",
+        "gede:6059"
+      ],
+      "space_evidence": "/data/workspace/human-source-mix-v2/source-downloads/asap2/protected-family-capacity.json",
+      "plan_changed": false,
+      "candidate_rows_modified": false,
+      "remaining_checks": "Known family exclusion only; unmapped protected originals, student identity and broader near-duplicate checks remain pending."
+    }
+  },
+  "updated_at": "2026-10-02T06:58:32.425468+00:00",
+  "policy": "Keep current quotas; record shortages and continue other sources. No automatic redistribution.",
+  "quota_reference_plan_total": 100000,
+  "quota_reference_note": "Quotas shown are the 100k plan in force during this collection/audit; source capacities and protected-family findings persist when the parent updates total size."
+}

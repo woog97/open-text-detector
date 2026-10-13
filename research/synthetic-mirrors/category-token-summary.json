@@ -1,0 +1,122 @@
+{
+  "snapshot_at": "2026-10-02T22:55:53.306025+00:00",
+  "tokenizer": "Existing MELD-v8 training tokenizer",
+  "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+  "count_method": "Stored text, no special tokens, no truncation or padding; excludes API prompts and hidden reasoning",
+  "human_db": "/tmp/pangram-human-active-20261002/checkpoints/finish100k-active-20261002T193833Z.sqlite3",
+  "ai_directory": "/tmp/pangram-luna-active-20261002/run/raw-documents",
+  "ai_snapshot_files_sha256": "41734d95153cec3f5c7df2df4c6a56287b5ec1a40c62850a859ad16fc2d825c9",
+  "filtering_performed": false,
+  "rows": [
+    {
+      "category": "creative",
+      "human_documents": 22222,
+      "human_percent": 22.222,
+      "human_average_tokens": 667.0335703357033,
+      "human_total_tokens": 14822820,
+      "ai_documents": 4233,
+      "ai_percent": 22.184371888265815,
+      "ai_average_tokens": 713.5837467517127,
+      "ai_total_tokens": 3020600
+    },
+    {
+      "category": "essays",
+      "human_documents": 4905,
+      "human_percent": 4.905,
+      "human_average_tokens": 497.28746177370033,
+      "human_total_tokens": 2439195,
+      "ai_documents": 929,
+      "ai_percent": 4.8687175724542735,
+      "ai_average_tokens": 482.34445640473626,
+      "ai_total_tokens": 448098
+    },
+    {
+      "category": "general_web",
+      "human_documents": 8208,
+      "human_percent": 8.208,
+      "human_average_tokens": 408.86622807017545,
+      "human_total_tokens": 3355974,
+      "ai_documents": 1568,
+      "ai_percent": 8.217598658351239,
+      "ai_average_tokens": 367.59183673469386,
+      "ai_total_tokens": 576384
+    },
+    {
+      "category": "news",
+      "human_documents": 6607,
+      "human_percent": 6.607,
+      "human_average_tokens": 598.3929166036022,
+      "human_total_tokens": 3953582,
+      "ai_documents": 1258,
+      "ai_percent": 6.592945862376186,
+      "ai_average_tokens": 486.72734499205086,
+      "ai_total_tokens": 612303
+    },
+    {
+      "category": "professional",
+      "human_documents": 3103,
+      "human_percent": 3.103,
+      "human_average_tokens": 551.3577183370932,
+      "human_total_tokens": 1710863,
+      "ai_documents": 597,
+      "ai_percent": 3.1287668361197003,
+      "ai_average_tokens": 568.0519262981575,
+      "ai_total_tokens": 339127
+    },
+    {
+      "category": "reference",
+      "human_documents": 15916,
+      "human_percent": 15.916,
+      "human_average_tokens": 623.7467328474492,
+      "human_total_tokens": 9927553,
+      "ai_documents": 3043,
+      "ai_percent": 15.947801477909962,
+      "ai_average_tokens": 582.7394019060138,
+      "ai_total_tokens": 1773276
+    },
+    {
+      "category": "reviews",
+      "human_documents": 10611,
+      "human_percent": 10.611,
+      "human_average_tokens": 322.36292526623316,
+      "human_total_tokens": 3420593,
+      "ai_documents": 2032,
+      "ai_percent": 10.649337036842933,
+      "ai_average_tokens": 323.65501968503935,
+      "ai_total_tokens": 657667
+    },
+    {
+      "category": "scientific",
+      "human_documents": 18018,
+      "human_percent": 18.018,
+      "human_average_tokens": 738.5585525585526,
+      "human_total_tokens": 13307348,
+      "ai_documents": 3428,
+      "ai_percent": 17.965515434201563,
+      "ai_average_tokens": 576.801341890315,
+      "ai_total_tokens": 1977275
+    },
+    {
+      "category": "social",
+      "human_documents": 10410,
+      "human_percent": 10.41,
+      "human_average_tokens": 331.39087415946204,
+      "human_total_tokens": 3449779,
+      "ai_documents": 1993,
+      "ai_percent": 10.444945233478329,
+      "ai_average_tokens": 319.0732563973909,
+      "ai_total_tokens": 635913
+    }
+  ],
+  "total": {
+    "category": "Total",
+    "human_documents": 100000,
+    "human_percent": 100.0,
+    "human_average_tokens": 563.87707,
+    "human_total_tokens": 56387707,
+    "ai_documents": 19081,
+    "ai_percent": 100.0,
+    "ai_average_tokens": 526.2115717205597,
+    "ai_total_tokens": 10040643
+  }
+}

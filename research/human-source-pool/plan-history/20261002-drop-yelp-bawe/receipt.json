@@ -1,0 +1,33 @@
+{
+  "plan_revision": "20261002-drop-yelp-bawe",
+  "authorized_by": "User: if there are fatal restrictions, find other datasets or forfeit and rebalance",
+  "old_total": 100000,
+  "new_total": 100000,
+  "category_totals_unchanged": true,
+  "active_sources": 35,
+  "changes": {
+    "yelp": [
+      3183,
+      0
+    ],
+    "bawe": [
+      981,
+      0
+    ],
+    "opinrank": [
+      1061,
+      4244
+    ],
+    "asap2": [
+      1962,
+      2943
+    ]
+  },
+  "luna_caps": {
+    "yelp": 0,
+    "bawe": 0,
+    "opinrank": 21,
+    "asap2": 15
+  },
+  "tradeoff": "Less restaurant-review and university-essay coverage; hotel/car reviews and standardized student essays increase. Retain research-only restrictions for ELLIPSE/PERSUADE."
+}

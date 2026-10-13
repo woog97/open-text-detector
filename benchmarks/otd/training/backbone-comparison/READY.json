@@ -1,0 +1,60 @@
+{
+  "status": "prepared_not_trained",
+  "models": {
+    "encoder": {
+      "repo": "answerdotai/ModernBERT-large",
+      "revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13"
+    },
+    "causal": {
+      "repo": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+    },
+    "qwen35": {
+      "repo": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    }
+  },
+  "data_manifest_sha256": "cbd321966643fd514b99fe2baa7aafae68b29029acca37c88cf862beb5a98d37",
+  "preflight_sha256": "d0ee3a2db4025100405f688e9efe65e1d081e07f7f932213f2a86bcb8d67d285",
+  "optimizer_preflight_sha256": "e024f21459a245d9813a88ed2fd32f3b523a34f38664c47be7549a33c2956e40",
+  "source_code_sha256": {
+    "calibrate.py": "cc4d903265b5708fe4599116c827cfec4a3a0b0bfdcac4f08e847f4a3c11d93b",
+    "data.py": "0e634994c87cf57c1c084783f15bb409357b2f251617b06a6dd230b60b9d55cf",
+    "evaluate.py": "0502b82930b50bf3e8f0f8864f35c564bdc848cbf73675cfe6e71e1a7d1f5477",
+    "inference.py": "31ebbf59cc0f5b3ecc9281c23a1ad67a4d936a9ea9605f4cf450d829f17a452c",
+    "modeling.py": "fba480535063ba29ff87cd02ce177e892d3a38ea98969fac6b7bb9a6932ab043",
+    "preflight.py": "b7fbc33c2d9f7fee57dff03f4c6cc9dc269153b8bdf81134d92f4bcfa213b6aa",
+    "prepare.py": "7fe0d83a54f7f955ec46a7b2c87eecb4a5be5a59ad387004b880922f9f64c3ef",
+    "resolve_models.py": "fa16a2e238a2714443f4c30a917af0c177ea4af427f73f94717a5a5ea2fe9cc5",
+    "test_flows.py": "08b366e7ba7ef6a559555ff18d1069caf18a9426d023a503e013060349aba183",
+    "train.py": "fc835b889f625cdb176822b7125f0dcf99a49c6b9d1db75429f92b47d0c1aeee",
+    "add_qwen35.py": "2bdb88fb603a370ba2eed45451b0ad4b809920bb2bf5ab9e1a00e3fe22f65309",
+    "audit_prepared.py": "01f13fd6d35fe5f97e2e9e5ec91e1e35f0726d551f77f26451b8dbefa1149099",
+    "runtime.py": "fd26f4f881e3b7960c557f28d10b0e66d2d9944285653bfa4e2a23efc7a17da1",
+    "prepare_three.py": "0a22ae0c715ec34ba79f957dbfe2b850eee79158130e48a72f98bcbf96896c51",
+    "optimizer_preflight.py": "78c8454b402f4453e92e7e0186be4776bb6641af173118f390c794b09b7ee960",
+    "freeze_ready.py": "8fb102ad5b936e04348adafeb312a5cafe93392ae6216c50a0066443908aba85"
+  },
+  "configs_sha256": {
+    "causal.json": "872cc678975a779cbeda08d2e06ce645fb88e90ca25dc85588fc37f572cdf9b0",
+    "encoder.json": "2dc28e876fdddf3ea3bb5c5730300439ccef9a10eef3a6db83e43e135568f2d2",
+    "qwen35.json": "97e972179578fe1fa0a64c89bd3c9ad3c7900988046ee3b6b1ab3e2bf4f7d323"
+  },
+  "model_assets": {
+    "encoder": {
+      "snapshot": "/data/workspace/model-cache/models--answerdotai--ModernBERT-large/snapshots/45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+      "weight_bytes": 1583544840
+    },
+    "causal": {
+      "snapshot": "/data/workspace/model-cache/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca",
+      "weight_bytes": 1503300328
+    },
+    "qwen35": {
+      "snapshot": "/data/workspace/model-cache/models--Qwen--Qwen3.5-4B/snapshots/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "weight_bytes": 9319828096
+    }
+  },
+  "model_optimizer_steps": 0,
+  "paper_partitions_disjoint": true,
+  "shared_windows_validated_per_model": 22923
+}

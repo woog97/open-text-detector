@@ -1,0 +1,31 @@
+SCP TALES — ISOLATED REMOTE STAGING, 2026-10-02
+
+Collected 106 quarantined candidate passages from 37 distinct English tales. All 106 original-text hashes, passage hashes and exact Unicode offsets were verified before packaging. No rows were merged into the production pool; no dataset was downloaded to the Mac; no quota or plan was changed.
+
+Space staging: /tmp/pangram-scp-staging-20261002
+Package: accepted-pairs.jsonl.gz (753,372 bytes)
+SHA256: a032fc4949a8702672d0c1736d5b537968d3fc2c08a83550d0d433b671e5385a
+Package manifest: package-manifest.json
+Source/download manifests: source-manifest.json, discovery.json
+Original files, metadata, isolated collection.sqlite3 and adapter snapshot remain in the same directory. /tmp is ephemeral; preserve this staging through the repaired private storage path before a Space rebuild. Parent owns global merge/publication.
+
+Source identity: scp-data/scp-api, commit abc3303e16fb5ebf8761f5d240f1b1a071527fc0.
+Metadata URL: https://raw.githubusercontent.com/scp-data/scp-api/abc3303e16fb5ebf8761f5d240f1b1a071527fc0/docs/data/scp/tales/index.json
+Metadata SHA256: e8f3ee5970cc6179ddd7820b7bf4d40a10824048ad168063d5474a20cabad7da
+Twelve content JSON files, 2009–2021 excluding 2017 (no eligible tale there), were acquired on the Space. Their SHA256 and Git blob SHA1 identities were checked and retained in source-manifest.json. Download time for those files was 3.24 seconds; source processing/validation took 1.34 seconds. Four focused tests passed locally and remotely.
+
+Selection: tale-tagged pages on scp-wiki.wikidot.com; existing page ID and creator; every recorded revision date parseable and latest recorded revision before 2022; creation before 2022. The pinned index contains 6,755 tales. Forty-seven have recorded histories wholly before 2022 and a nonempty creator value; deleted/unknown identities and pages lacking qualifying plain narrative spans are further excluded. The preliminary discovery count incorrectly looked for created_by; the actual archive field is creator, and source-manifest.json records this correction. Full downloaded file evidence is unchanged.
+
+Candidates are unchanged contiguous spans of raw_source wikitext, maximum three nonoverlapping passages per page. Markup blocks, links/templates, image/attribution sections, blockquotes and containment-template prose are excluded rather than rewritten. Plain paragraphs are combined only across short original whitespace gaps. Candidate lengths follow the existing creative length-bin targets where supply permits. No synthetic text or rewritten/cleaned text is introduced.
+
+Attribution: creator and recorded revision contributors are retained with explicit roles, original title/URL/page ID, revision history and canon/hub IDs. Creator is not silently represented as a independently verified sole author. Final author-credit/attribution review, author/canon grouping, independent historical-revision verification, protected overlap and genre checks remain flagged; all candidates have training_eligible=false.
+
+Terms: the publisher's licensing guide requires attribution and CC BY-SA 3.0 for reused text. Candidate rows retain https://creativecommons.org/licenses/by-sa/3.0/ and the source URL. Original HTML/wikitext/metadata remain available for auditing; no image assets were acquired or included in candidate prose.
+Evidence: https://scp-wiki.wikidot.com/licensing-guide
+Archive schema and provenance: https://scp-data.tedivm.com/
+Source repository: https://github.com/scp-data/scp-api
+
+The 106/4,444 result is exhaustion of this pinned mirror's qualifying historical subset, NOT exhaustion of all SCP stories. The GitHub commits API queried with until=2021-12-31 returned no revisions for this repository. A Wayback CDX query for the archive's pre-2022 index could not be read through the web tool; this is not proof that no historical archive exists. Historical captures or independently verified old Wikidot revisions may increase the eligible supply later. Current post-2021 edits were not admitted based merely on old creation dates. No redistribution/rebalancing of the shortfall was performed.
+
+2026-10-02 follow-up after monitoring outage: historical cached CCCC scan completed49 shards /6,332,977 upstream rows /3,238 matching tale captures. Strict creation/capture checks admitted1,787 new candidate spans from727 parents, in addition to106 prior candidates (total1,893). Frozen new package at /tmp/pangram-scp-cccc-staging-20261002/accepted-pairs-new.jsonl.gz, SHA256 d1131e34c1afcb978838749f209dc6c38f26308816c9f36ce3e80261a4b1da5f,26,375,690bytes. Reviews agent owns global merge/durability. Rejections include1,761 creation-after-capture,334 postcutoff,255 missingcreator,130 noqualifying spans. Existing raw originals/creator association limitations remain flagged. The49-shard inventory is bounded, not whole-source exhaustion.
+Unused-span recovery v2 copied the frozen1893-row stage and checked unused same-original spans under parent cap3 and strict nonoverlap, adding0. This evidence is retained at /tmp/pangram-scp-spans-v2-20261002/package-manifest.json; no old row was replaced. New bounded official Wayback acquisition uses250 deterministic unused English tale slugs, rejects captures older than current page creation (slug reuse guard), verifies CDX SHA1, Memento datetime, page-content presence, and explicitCCBYSA3 link. Remote location /tmp/pangram-scp-wayback-20261002; pending acquisition is not counted as candidates. Worker stops after3consecutive errors for audit, preserving originals and responses.

@@ -1,0 +1,65 @@
+{
+  "selection_version": "personal-blogs-dated-posts-v2",
+  "rights_basis": "Pinned Common Pile publisher audit: reviewed domains whose Creative Commons designation applies to all text, matched with publisher exact-host plus www alias rule. Per-document license metadata is absent; no specific license/version is inferred.",
+  "github_audit_revision": "9457f04a14cb2355ab00023420369d46ffd4a395",
+  "audit_list_sha256": "6e374b44eec11d647b3517be7b2aaf41d9076fc6dfd85ca003c519339ddde487",
+  "filtered_dataset_revision": "03a3de5713a0bb23267d26724346508af0f25327",
+  "per_site_cap": 410,
+  "cap_basis": "Floor of 5% of agreed 8,208 general-web category; independent Blogspot blogs are separate publisher sites.",
+  "canonical_hosts": [
+    "windley.com",
+    "boffosocko.com",
+    "joi.ito.com",
+    "blogbyben.com",
+    "crummy.com",
+    "blog.mrmeyer.com",
+    "malvasiabianca.org",
+    "decafbad.net",
+    "nicubunu.blogspot.com",
+    "blog.ouseful.info",
+    "sjhoward.co.uk",
+    "gerrycanavan.blogspot.com",
+    "new-savanna.blogspot.com",
+    "paraesthesia.com",
+    "dangerouslyirrelevant.org",
+    "fivesixteenthsblog.com",
+    "craftygoodies.com",
+    "theslowlane.org",
+    "blog.gardeviance.org",
+    "thefrustratedteacher.com",
+    "leadershipfreak.blog",
+    "cdogzilla.net",
+    "kauaimark.blogspot.com",
+    "itismymind.blogspot.com",
+    "vinfrastructure.it",
+    "lawdepartmentmanagementblog.com",
+    "sme-blog.com",
+    "nullspace2.blogspot.com",
+    "kk.org",
+    "blog.mozilla.org"
+  ],
+  "genre_basis": "Restricted personal-blog, reflective nonfiction, craft/technical how-to and pedagogy sites. Require dated individual-post path; reject archive/category/tag/feed/search pages, news/reference/scientific/QA/review paths and obvious review headings. Final per-document genre audit remains pending.",
+  "licensing_status": "publisher_domain_audit_supported_candidate; exact_version_unverified; no commercial admission inferred",
+  "required_path_prefixes": {
+    "kk.org": [
+      "/thetechnium/"
+    ],
+    "blog.mozilla.org": [
+      "/nnethercote/",
+      "/jwu/",
+      "/dmandelin/",
+      "/luke/",
+      "/dherman/"
+    ]
+  },
+  "refinement": {
+    "previous_selection_version": "personal-blogs-dated-posts-v1",
+    "purpose": "Fill remaining long-passage slots from additional publisher-audited personal/professional blog domains without changing source/length quotas or domain caps",
+    "new_hosts_only": true,
+    "cached_archives_only": true,
+    "excluded_on_contrary_rights_evidence": [
+      "opensource.com"
+    ],
+    "evidence_notes": "Opensource.com editorial guidelines explicitly allow copyrighted reposts, so do not add it on blanket domain audit. Kauaimark homepage describes substitute-teacher personal experiences; kk.org/thetechnium is Kevin Kelly reflective technology essays; Mozilla restricted to named contributor blogs, excluding main news/feed routes. Other added domains are the publisher-audited personal/professional blog routes, exact dated individual-post path required; final per-document genre and license-version admission review remains unresolved."
+  }
+}

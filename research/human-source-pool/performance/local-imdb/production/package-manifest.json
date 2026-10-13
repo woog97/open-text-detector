@@ -1,0 +1,52 @@
+{
+  "source_id": "imdb",
+  "candidate_count": 1061,
+  "training_admitted": 0,
+  "global_merge_pending": true,
+  "quota": 1061,
+  "plan_sha256": "a6beb7eef7ed84022005a194d3a4b4382c57d0549305114988618f1036a25e2e",
+  "archive_manifest": {
+    "source_id": "imdb",
+    "url": "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz",
+    "sha256": "c40f74a18d3b61f90feba1e17730e0d38e8b97c05fde7008942e91923d1658fe",
+    "bytes": 84125825,
+    "retrieved_at": "2026-10-02T06:44:46.187174+00:00"
+  },
+  "ingest_status": {
+    "source_id": "imdb",
+    "count": 1061,
+    "target": 1061,
+    "new_candidates": 1061,
+    "scanned_documents_this_run": 9678,
+    "cursor": 9677,
+    "state": "quota_filled",
+    "elapsed_seconds": 3.634,
+    "new_candidates_per_second": 292.003,
+    "updated_at": "2026-10-02T06:45:49.148439+00:00",
+    "all_quarantined": true,
+    "official_test_split_used": false
+  },
+  "ingest_wall_seconds": 3.648837957996875,
+  "preparation_wall_seconds": 3.7859351249644533,
+  "package": "/Users/alicerigg/codex-projects/pangram/research/human-source-pool/performance/local-imdb/production/accepted-pairs.jsonl.gz",
+  "package_bytes": 1120330,
+  "package_sha256": "b8200933e8822bec9e7527419fe9e33da75bf56b8592e9d77fccc25f52e3fa11",
+  "record_ids_sha256": "4505a5dc958fbc67297ad43ed0768b22577899e97d048fa8a0da3f006f1b32fa",
+  "checks": {
+    "all_original_offsets_and_hashes_verified": true,
+    "unique_document_count": 1061,
+    "local_normalized_duplicates": 0,
+    "source_tags_verified": true
+  },
+  "length_bin_counts": {
+    "1": 478,
+    "0": 371,
+    "2": 191,
+    "3": 21
+  },
+  "sentiment_counts": {
+    "pos": 546,
+    "neg": 515
+  },
+  "created_at": "2026-10-02T06:45:49.300995+00:00"
+}

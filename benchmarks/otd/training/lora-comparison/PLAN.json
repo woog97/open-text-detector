@@ -1,0 +1,39 @@
+{
+  "status": "queued_after_full_tuning",
+  "baseline_root": "/data/workspace/paper-backbone-comparison-v1",
+  "data_manifest_sha256": "cbd321966643fd514b99fe2baa7aafae68b29029acca37c88cf862beb5a98d37",
+  "source_sha256": {
+    "test_flows.py": "08b366e7ba7ef6a559555ff18d1069caf18a9426d023a503e013060349aba183",
+    "runtime.py": "817c24ac2a9e0fd3ed04966d0b226fbd27f83c461ac520c4830e35575a54cc87",
+    "train.py": "8690286010b2611c5981c64f2f3732d5139c4b8244537d97201caeee24ee91d9",
+    "audit_lora.py": "e4714a9e4c7bbb2bce2eda972464da05293270539e9b4756f1f3decef3107ef2",
+    "inference.py": "26da6c590186a16e9a8097d8d491ca2ee62f515bede99195c8621dbeac4784d3",
+    "evaluate.py": "0502b82930b50bf3e8f0f8864f35c564bdc848cbf73675cfe6e71e1a7d1f5477",
+    "calibrate.py": "cc4d903265b5708fe4599116c827cfec4a3a0b0bfdcac4f08e847f4a3c11d93b",
+    "modeling.py": "fba480535063ba29ff87cd02ce177e892d3a38ea98969fac6b7bb9a6932ab043",
+    "run_queue.py": "c88cc807741460d1311fc682f66ec0212e3d2ab7511c4eb04de6910a69491e6c",
+    "data.py": "0e634994c87cf57c1c084783f15bb409357b2f251617b06a6dd230b60b9d55cf",
+    "preflight.py": "a9a5e820c5c36f6e606539903768706e176e64c35b903bd3199c88f797b2c8fa",
+    "adapters.py": "716467584650cdc5c95c5ad7f630a792fa4f3efe7a8d96d13bb1724ca69ef2fc",
+    "configs/encoder.json": "62453e8b9592ab3eb8327b1c81f8c4ef907e5b33b31784dceccb56a94a1d8c2f",
+    "configs/causal.json": "482625031bc4982c61a59915c5b28d10167bde787a320a66b14fb2866b49666c",
+    "configs/qwen35.json": "17e51cff26a1c3ad34d831a19eed155cac0feabb36d2a37205c5b4cd85aacd2d",
+    "models.lock.json": "e0d5531f26fb574dbc8429cc45924a56a8fab4efd53f40a14601315754ffc475",
+    "coverage-audit.json": "67c8873ed7da458122203770efda9f475ca6ff00aa118a34be633efe92a2ff1b"
+  },
+  "training_draws_per_model": 42000,
+  "seed": 42,
+  "effective_batch": 32,
+  "rank": 128,
+  "alpha": 32,
+  "adapter_learning_rate": 0.0002,
+  "head_learning_rate": 2e-05,
+  "peft": "0.21.1",
+  "models": [
+    "encoder",
+    "causal",
+    "qwen35"
+  ],
+  "gpu_preflight": "deferred until all baseline training and evaluation completes",
+  "research_source": "https://thinkingmachines.ai/blog/lora/"
+}

@@ -1,0 +1,23 @@
+OpinRank original UCI adapter — 2026-10-02
+
+Source: https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset
+Download: https://archive.ics.uci.edu/static/public/205/opinrank%2Breview%2Bdataset.zip
+UCI publisher describes ~259k hotel reviews from 10 cities and ~42k car reviews from model years 2007–2009, donated July 25 2011, dataset grant CC BY 4.0. This does not establish underlying Tripadvisor/Edmunds contributor rights; preserve upstream-review-rights-unverified and quarantine status.
+
+Archive downloaded only on the training Space:
+/data/workspace/human-source-mix-v2/source-downloads/opinrank/uci-opinrank.zip
+Outer SHA256: 0225c7e23567c10eca379f57e742afb73db8c048da12f049fe882d3bcc15bee4
+Inner original archive OpinRankDataset.zip, 102,198,706 bytes:
+c304a3176a87e801d24bf9c541f6b1bad1148aa6ce734e0725a5762c3b8240c8
+Source manifest includes acquisition timestamp, URL, both checksums and rights evidence. Include manifest.json in publication provenance. Original archive retains all original bytes; no source review text copied to local computer.
+
+Parser: hotel files contain date, title, review text, empty trailing TSV field; car files contain DOC blocks with DATE, AUTHOR, TEXT, FAVORITE. Keep only original whole review TEXT (50–1500 words). Never concatenate reviews or use titles/favorites as samples. Encoding UTF-8 when valid, otherwise Windows-1252. Original decoded record stored alongside unchanged review field and Unicode offsets. One row per original review; entity-level family ID groups reviews of one hotel/car. Review dates retained as source claims; corpus2011 provenance is separately recorded. No official train/test split exists in source; protected overlap and family split audit remain pending.
+
+Sampling: deterministic hashed member/review order, round-robin across 10 cities and 3 car years, review length-bin quotas from current plan. Local and remote tests passed (4 each). Read-only remote smoke scan examined 20,000 reviews in 27.7s, eligible bins 9603/5707/1127/43, all 13 groups present. This smoke scan did not modify collection.sqlite3. At full 4244 quota long-bin target is85; continue scanning beyond20k rather than relaxing bins or duplicating text.
+
+Run after parent validates plan migration:
+python ingest_opinrank.py --base /data/workspace/human-source-mix-v2
+Per-source opinrank.lock prevents duplicates; BEGIN IMMEDIATE keeps quota/dedup atomic against concurrent source writers. Progress at progress/opinrank.json. Script reads current quota from pipeline/sampling-plan.json; no plan edits included in adapter. Never launch a second worker for same source. Tests/deployed code currently at v2/pipeline; parent coordinates actual collection.
+
+Optional Amazon2018 follow-up finding:
+https://nijianmo.github.io/amazon/index.html current official page links complete per-category reviews to access form; smaller original2018 5-core per-category downloads remain directly linked. Earlier source review specifically chose full per-category files, so do not silently substitute5-core. If selected, explicitly document original2018 5-core dense-user/product sampling bias and confirm source rule update under user's replacement authority, preserving same source/category quota. Exclude ratings-only files and newer releases. Official dates May1996–Oct2018. No Amazon data downloaded or collected by this task.

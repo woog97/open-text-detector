@@ -1,0 +1,67 @@
+{
+ "pool_unrun_d_clean": 9551,
+ "pool_unrun_e_train_clean": 7905,
+ "pool_extra_relaxed": 3900,
+ "shortfall": {},
+ "D": {
+  "items": 10070,
+  "by_writer": {
+   "sonnet": 3600,
+   "opus": 3530,
+   "haiku": 1380,
+   "gpt-6.1-sol": 780,
+   "gpt-6-sol": 780
+  },
+  "by_admission": {
+   "standard": 9781,
+   "relaxed_bounds": 289
+  },
+  "by_source": {
+   "pmc": 4687,
+   "pes2o": 2630,
+   "arxiv": 2753
+  },
+  "mix": {
+   "rewrite_one": 3021,
+   "rewrite_two": 3021,
+   "insert_one": 3021,
+   "split_one": 1007
+  },
+  "batch_files": {
+   "sonnet": 72,
+   "opus": 71,
+   "haiku": 28,
+   "gpt-6.1-sol": 16,
+   "gpt-6-sol": 16
+  }
+ },
+ "E": {
+  "items": 2070,
+  "by_writer": {
+   "sonnet": 750,
+   "opus": 750,
+   "haiku": 150,
+   "gpt-6.1-sol": 210,
+   "gpt-6-sol": 210
+  },
+  "by_admission": {
+   "standard": 2070
+  },
+  "by_source": {
+   "pmc": 971,
+   "pes2o": 499,
+   "arxiv": 600
+  },
+  "mix": {
+   "draft": 1035,
+   "rewrite": 1035
+  },
+  "batch_files": {
+   "sonnet": 15,
+   "opus": 15,
+   "haiku": 3,
+   "gpt-6.1-sol": 5,
+   "gpt-6-sol": 5
+  }
+ }
+}

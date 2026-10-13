@@ -1,0 +1,75 @@
+FINAL CHECKPOINT — 2026-10-02 08:00:41 UTC
+VOA target COMPLETE: 1,652/1,652 quarantined candidates from1,446 original articles.
+Exact length bins:248 /661 /578 /165 (50–149 /150–399 /400–999 /1000–1500 words).
+Every original/passage hash and offset validated; SQLite integrity_check OK.
+Final package: /tmp/pangram-voa-staging-20261002/accepted-pairs.jsonl.gz
+Bytes:6,959,617
+SHA256:9450686d8cd3b554c94cb7b31d3ee3b698b0245f0367540ac1bafb16e542556c
+Receipts: package-manifest.json and source-manifest.json.
+Final worker40730/start_ticks7861943 exited normally; no active VOA collector remains.
+MERGED DURABLY under explicit root authorization: all1,652 added, zero global duplicate loss. This is collection, not training admission or a newly published HF dataset revision. See final durable merge receipt below.
+Final cached pass12.40seconds versus~72seconds/full archive pass. Four focused tests pass locally and remotely.
+Continuation for1M: unchanged pinned archive and hashed named-record cache; same adapter --base /tmp/pangram-voa-staging-20261002 --quota <coordinated quota>. Check process lock and preserve published package before expansion. Verified original capacity4,933 documents under current23-profile roster is not guaranteed to fill future long bins; record shortages honestly and extend verified profiles/archive inventory if needed. No new source download is needed to reuse this cache. Current source quota is fulfilled and should not be rerun without coordinated1M-phase expansion.
+
+Historical development and evidence follows; earlier smaller counts and active-process notes below are superseded by this final checkpoint.
+
+VOA ORIGINAL REPORTING — ISOLATED MOT STAGE, 2026-10-02
+
+Remote base: /tmp/pangram-voa-staging-20261002 (Space /tmp only).
+Source: official bltlab/mot release v1.0, eng_voanews.tgz.
+URL: https://github.com/bltlab/mot/releases/download/v1.0/eng_voanews.tgz
+Release published: 2022-01-14T18:05:26Z.
+Archive size: 824,071,735 bytes.
+SHA256: a6f96fbdae475a6d3d340dd7c32dc1eab2ed6735fb429de0f8add7c097f077d1
+Download time: 13.13 seconds. No dataset downloaded locally.
+
+Historical evidence is each original MOT record's crawler time_retrieved, not merely its article publication date. Require valid capture before 2022; reject publication/modification timestamps >=2022 when present. Retain absent publication metadata as absent. The January2022 release date is not misrepresented as a pre2022 release or independent WARC evidence.
+
+Capacity audit: 303,851 article records; 303,841 report pre2022 retrieval, 7,633 have authors, 3,073 have exclusively explicit VOA bylines. Removing all Reuters/Associated Press/AFP/AP mentions leaves 2,749 potential documents before other date/language/prose/length checks. These explicit VOA-byline documents were published 2016–2019. Named reporters without independently established affiliation are conservatively excluded in this version; this is not a claim that they are non-VOA authors.
+
+Reuse source-approvals.json reviewed source decision: exclusively VOA-produced public-domain originals, exclude third-party wires. Corpus itself CC BY4.0; retain corpus and original reporting attribution separately. Article type and English metadata required. Exact VOA/VOA News/Voice of America byline required; any mixed author field rejected. Whole-document wire mentions or republication notices cause rejection, including incidental wire references. Preserve all original MOT JSON and original compressed archive. Candidate text is an unchanged contiguous span of original paragraph strings joined by double newlines; no summarization or rewriting.
+
+Local files: ingest_voa.py and test_voa.py. Three focused tests cover dates, author and wire rejection, provenance tags, offsets and original-record preservation. Tests pass locally; remote launcher runs them before starting.
+Remote code: pipeline/ingest_voa.py and dependencies.
+Remote worker identity: process.json; check PID AND /proc start_ticks/non-zombie state before resuming.
+Remote progress: progress/voa.json; final receipt package-manifest.json.
+Expected package: accepted-pairs.jsonl.gz (created only after collection completes and every original/passage hash and offset validates).
+Original inventory and acquisition metadata: github-releases.json, repo-tree.json, download-manifest.json, capacity-audit.json, source-approval.json.
+
+Common Crawl alternative: two bounded CC-MAIN-2021-49 queries for www.voanews.com/a/* and www.voanews.com/a/usa/* returned HTTP504. The direct original MOT corpus resolves the missing dates/byline problem in the derived LR-Sum parquet. Protected overlap, including LR-Sum official test families, remains an explicit admission check; no MOT documents are silently labeled as an official training split.
+
+The collector works exclusively in its own staging SQLite, with a source lock, short atomic transactions, exact normalized deduplication, deterministic URL-hash sampling and the agreed news length targets. All rows remain quarantined and training_eligible=false. Do not write or merge into the active human pool without root/reviews coordination. The target is the unchanged 100k-phase VOA quota1652; no source reallocation. After completion inspect package-manifest.json for actual counts and shortages; a shortfall is only this release's strict subset, not global VOA exhaustion.
+
+CONTINUATION 07:55 UTC — VERIFIED STAFF EXPANSION
+The first completed pass yielded988 validated candidates/782 originals in68.42seconds. Its final schema-correct package was3,241,725bytes SHA25674bc9133a0ff5ece0ade9e7a50f99953d52cda39ae012a32fe3e31b1bb265b8d; archive-member identity lives in source_file and source_row=0 denotes the single JSON document per member. Previous schema version was preserved under pre-schema-finalization. The schema-correct988 checkpoint, package and code are preserved under voa-generic-byline-988 before further append-only staging.
+
+Source review permits named VOA journalists, not merely the generic VOA News label. Nine official Reporter bio pages have now been fetched and checked for exact author name and official VOA reporter profile title. Names: Ken Bredemeier, Steve Herman, Ralph Jennings, Ayaz Gul, Jeff Seldin, Lisa Schlein, Margaret Besheer, Carla Babb, Michael Bowman. Saved remote staff-byline-evidence.json and staff-evidence/*.html carry URLs, response status, retrieval date and SHA256. The importer verifies those saved HTML hashes before accepting exact named bylines. All coauthors must be explicit VOA or verified staff; no mixed/unverified names are admitted. This source-level roster check does not require manual approval per sample.
+
+Version2 also permits an unchanged whole article as a single span if its50–1500word length fits a remaining target bin. This avoids unnecessary exclusions caused by short paragraph boundaries while preserving every character, exact source offsets and target length proportions. Longer originals can still provide existing bounded prose spans. Old accepted documents are not resampled. Four focused tests pass, including verified-staff acceptance and unverified-coauthor rejection. No historical date or wire exclusion was relaxed.
+
+A second isolated worker is underway; refresh process.json and package-manifest.json before merge. Root owns coordinated merge. Preserve staff profile evidence along with original archive and provenance, not just accepted text. No global VOA exhaustion has been asserted.
+
+07:56 UTC checkpoint: nine-profile expansion reached1,571/1,652 candidates from1,365 originals. All1,571 offsets/hashes passed; integrity_check OK. Bin counts248/661/578/84 versus targets248/661/578/165: the remaining81 are exclusively1,000–1,500word originals. This is explicitly a length-supply gap, not absent source access. Prior package6,257,675bytes SHA256d2239039b0135ad5ea6170a2fb916e9c9ef5e73f4541d0b5d0502583958769b0 is preserved under voa-nine-staff-1571.
+
+Four further profiles verified and preserved: Masood Farivar, William Gallo, Anita Powell, Jamie Dettmer. The latter two profile URLs were read from their official article byline links; no profile path was invented. Thirteen named-profile records now exist in staff-byline-evidence.json. Third isolated worker PID39862/start_ticks7837819 runs the same tested version2 adapter; refresh process identity and final receipt before merge. All source and length targets remain unchanged.
+
+08:00 UTC optimization and continuation: 13-profile pass reached1,606 candidates/1,400 originals, leaving46 long slots. Its immutable checkpoint is voa-thirteen-staff-1606 (package6,558,973bytes SHA2569b80e7f1f04d4e424690d3c48a69e09b719afb3f4656e3b6736bf3bf65a32cd6).
+
+The Space now has a lossless named-record cache derived directly from the pinned archive: named-articles.jsonl.gz,7,643records,28,980,963bytes, SHA256950807b2a5788eccf8c5feb8d1aa35b539aa5c872bb61f579552911c0996e3e7. named-articles-manifest.json pins parent archive and cache hashes. Cache creation61.83seconds; subsequent collector passes verify both hashes and scan only this smaller derivative. No source bytes are discarded or replaced.
+
+A bounded inventory of unverified long-article bylines directed further profile verification. Added Brian Padden, Peter Heinlein, David Boyle, Salem Solomon, Aline Barros, Lisa Bryant, Ramon Taylor, Joyce Huang, Rikar Hussein and Chenda Hong using official profile pages; total23 verified named profiles. Sun Narin's attempted lookup did not satisfy validation and remains excluded; failure is not treated as approval. Worker40730/start_ticks7861943 uses cached named records, with all original conditions and targets retained. Refresh current package receipt for completion.
+
+ROOT-AUTHORIZED GLOBAL MERGE IN PROGRESS (after isolated completion)
+Root explicitly assigned this agent the coordinated VOA merge. Helper /private/tmp/pangram-training-access/merge_voa_healthy.py runs merge_voa_healthy_remote_code.py through the existing authenticated remote transport (credentials only in memory). It validates package/original cached records/official staff evidence, obtains stage and active VOA locks, preserves the complete stage under private bucket workspace/human-source-mix-v2-recovered-20261002/stages/voa/, and full-GET verifies archive/package before100-row atomic add()/quota/dedup transactions in the active DB. It then takes a pinned-read standalone SQLite checkpoint, full integrity check and full-GET bucket SHA256 readback. No frozen publication snapshot or Luna inputs are touched. Live receipt is /tmp/pangram-human-active-20261002/voa-merge-receipt.json; checkpoint name voa-merge-<UTC>.sqlite3. Refresh receipt before retrying; a completed insertion with pending checkpoint must not be treated as an absent merge.
+
+DURABLE MERGE COMPLETE — 2026-10-02
+Active source count:1,652/1,652; inserted1,652; duplicate loss0; admitted0.
+Preserved63 stage files under private bucket open-text-detector/training-storage, workspace/human-source-mix-v2-recovered-20261002/stages/voa/. Original824MB archive and accepted package both passed full GET SHA256 readback. Prior988/1,571/1,606 stage snapshots remain preserved.
+Pinned standalone checkpoint: /tmp/pangram-human-active-20261002/checkpoints/voa-merge-20261002T080349Z.sqlite3
+Bytes:1,019,752,448
+SHA256:9a0eefd3011ee1c69b06f49bcadbdf5087aa43cb9cabeadbe0132ab55780233b
+Bucket key:workspace/human-source-mix-v2-recovered-20261002/checkpoints/voa-merge-20261002T080349Z.sqlite3
+Xet hash:6c31f297d4a56f83b0b590f70c933bdbd2631731a74a3ed17082065010fa8da1
+Checkpoint full integrity_check OK, bucket committed object metadata verified, FULL GET SHA256 passed.
+Checkpoint total:84,648 candidates; Wikipedia7,768; VOA1,652. This snapshot predates the independently coordinated SciDev merge and later Wikipedia growth; do not restore it over a newer validated snapshot.
+Remote receipt:/tmp/pangram-human-active-20261002/voa-merge-receipt.json (state merged_durable), also uploaded at prefix/voa-merge-receipt.json. Frozen82,629-row publication was not modified. VOA goes into the next coordinated private publication. No Luna input or paid call changed.

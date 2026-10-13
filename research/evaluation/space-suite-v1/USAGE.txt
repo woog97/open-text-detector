@@ -1,0 +1,46 @@
+Space destination: /data/workspace/evaluation-suite-v1-20261003
+
+Existing LoRA detector runs (ModernBERT or Qwen):
+CUDA_VISIBLE_DEVICES=0 python /data/workspace/evaluation-suite-v1-20261003/run_eval.py \
+  --run /data/workspace/paper-diversity-v1/control/run \
+  --adapter-dir /data/workspace/paper-diversity-v1/control \
+  --reference /data/workspace/paper-v3-modernbert-20260930/run-01/best_model \
+  --output /data/workspace/eval-results/control-suite-v1
+
+The example reads that run's thresholds.json. To evaluate without calibrated
+thresholds, explicitly supply --threshold 0.5 (recorded as uncalibrated).
+Thresholds are configurable, not frozen project policy. Different runs need
+separate output directories. Use CUDA_VISIBLE_DEVICES per concurrent process.
+
+Default profiles: workflow,comparison,assistance,manuscripts.
+Optional: --profiles full,context (overlap with default profiles; do not sum).
+Smoke: --limit 2 --batch-size 1. Partial results are marked in every report.
+Validation without model loading: python run_eval.py --validate-only
+
+For a standard HF AutoModelForTokenClassification checkpoint, omit --adapter-dir.
+It must be a binary encoder with CLS/SEP tokenizer and class0 human / class1 AI.
+Existing custom decoder/Repeat2 checkpoints require their original adapter-dir.
+A new training implementation can supply inference.py exposing:
+  load_checkpoint(run) -> (model, tokenizer, contract)
+  predict(rows, model, tokenizer, batch_size) -> [(character_offsets, AI probabilities)]
+The outer runner enforces BF16 autocast; adapters must not override it with FP32.
+The adapter owns window construction/aggregation. Current adapters use510/256.
+
+All model and reference tokenizer files must already exist on the Space.
+No generation, training, threshold fitting, model download, or deletion occurs.
+Original full-manuscript titles/abstracts are human supplied: manuscripts have
+AI-involved document gold only, not all-AI token/span gold. 40 per final model.
+Assistance includes test only (648 correlated views); calibration rows excluded.
+It reports flagged fractions, not three-way accuracy. Existing historical
+span/human labels retain their provenance distinctions.
+
+Outputs: run.json identities/settings, status.json, per-profile results.json,
+predictions.jsonl.gz, resumable chunk JSON, reference-token offsets/probabilities
+in NPZ. Scores are sufficient for threshold reanalysis without model inference.
+Raw native-token scores are projected by character overlap onto one explicitly
+supplied common reference tokenizer. Thresholds should match that reference and
+checkpoint; automatic threshold fitting is intentionally outside this runner.
+Resume requires identical package, checkpoint/config, adapter, reference,
+threshold and batching identities. Keep completed chunks; use a new output path
+for changed settings. Timing reports elapsed current-session time, not cumulative
+throughput across restarts. No combined score across overlapping profiles.

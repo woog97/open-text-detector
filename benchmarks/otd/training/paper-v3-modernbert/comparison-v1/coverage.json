@@ -1,0 +1,501 @@
+{
+  "note": "Post-selection diagnostic only; original frozen thresholds. These raw counts do not yet exclude known annotation conflicts; final comparison does. Selection preserved regardless of performance differences.",
+  "datasets": {
+    "arena50": {
+      "full_rows": 4898,
+      "selected_rows": 987,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "generator": {
+          "available": 50,
+          "selected": 50,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {
+        "full": {
+          "token_recall": 0.009104526240645042,
+          "human_fpr": null
+        },
+        "subset": {
+          "token_recall": 0.0049165419374396085,
+          "human_fpr": null
+        }
+      }
+    },
+    "detectrl": {
+      "full_rows": 18827,
+      "selected_rows": 2478,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        },
+        "domain": {
+          "available": 18,
+          "selected": 18,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 5,
+          "selected": 5,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "epoch": {
+      "full_rows": 1089,
+      "selected_rows": 1089,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        },
+        "domain": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "gede": {
+      "full_rows": 1448,
+      "selected_rows": 184,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        },
+        "domain": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "human_paper_remaining": {
+      "full_rows": 18222,
+      "selected_rows": 1558,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "year": {
+          "available": 9,
+          "selected": 9,
+          "missing": []
+        },
+        "conference": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 5,
+          "selected": 5,
+          "missing": []
+        }
+      },
+      "all": {
+        "full": {
+          "token_recall": null,
+          "human_fpr": 0.05192522500961698
+        },
+        "subset": {
+          "token_recall": null,
+          "human_fpr": 0.05709004828339437
+        }
+      },
+      "novel_clean": {
+        "full": {
+          "token_recall": null,
+          "human_fpr": 0.056284142150533366
+        },
+        "subset": {
+          "token_recall": null,
+          "human_fpr": 0.04862854661808846
+        }
+      }
+    },
+    "liang": {
+      "full_rows": 270,
+      "selected_rows": 270,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "local_binary": {
+      "full_rows": 160,
+      "selected_rows": 160,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "domain": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "local_length": {
+      "full_rows": 300,
+      "selected_rows": 300,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "domain": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "local_mixed": {
+      "full_rows": 192,
+      "selected_rows": 192,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 5,
+          "selected": 5,
+          "missing": []
+        }
+      },
+      "all": {
+        "full": {
+          "token_recall": 0.008699182276865974,
+          "human_fpr": 0.0025006726492885745
+        },
+        "subset": {
+          "token_recall": 0.008699182276865974,
+          "human_fpr": 0.0025006726492885745
+        }
+      }
+    },
+    "meld_eval": {
+      "full_rows": 7424,
+      "selected_rows": 930,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 5,
+          "selected": 5,
+          "missing": []
+        },
+        "domain": {
+          "available": 8,
+          "selected": 8,
+          "missing": []
+        },
+        "attack": {
+          "available": 7,
+          "selected": 7,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "opai": {
+      "full_rows": 8748,
+      "selected_rows": 837,
+      "coverage": {
+        "label": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "generator": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "domain": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        },
+        "operation": {
+          "available": 6,
+          "selected": 6,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {
+        "full": {
+          "token_recall": 0.08088028294346632,
+          "human_fpr": 0.026893100069523782
+        },
+        "subset": {
+          "token_recall": 0.04059140458589149,
+          "human_fpr": 0.015063695254626043
+        }
+      }
+    },
+    "paper_pilots_exploratory": {
+      "full_rows": 435,
+      "selected_rows": 435,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "generator": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "operation": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {
+        "full": {
+          "token_recall": 0.6586936522539099,
+          "human_fpr": 0.048540415764287845
+        },
+        "subset": {
+          "token_recall": 0.6586936522539099,
+          "human_fpr": 0.048540415764287845
+        }
+      }
+    },
+    "pelic": {
+      "full_rows": 2000,
+      "selected_rows": 400,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "perkins": {
+      "full_rows": 114,
+      "selected_rows": 114,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "saha": {
+      "full_rows": 72,
+      "selected_rows": 72,
+      "coverage": {
+        "label": {
+          "available": 2,
+          "selected": 2,
+          "missing": []
+        },
+        "generator": {
+          "available": 8,
+          "selected": 8,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "sem_detect": {
+      "full_rows": 1109,
+      "selected_rows": 1109,
+      "coverage": {
+        "label": {
+          "available": 3,
+          "selected": 3,
+          "missing": []
+        },
+        "generator": {
+          "available": 5,
+          "selected": 5,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 4,
+          "selected": 4,
+          "missing": []
+        }
+      },
+      "all": {}
+    },
+    "vub": {
+      "full_rows": 40,
+      "selected_rows": 40,
+      "coverage": {
+        "label": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "domain": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        },
+        "length_bucket": {
+          "available": 1,
+          "selected": 1,
+          "missing": []
+        }
+      },
+      "all": {}
+    }
+  },
+  "performance_used_to_select_examples": false,
+  "metadata_coverage_completion_rows": 12
+}

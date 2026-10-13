@@ -1,0 +1,342 @@
+{
+ "excluded_abstract_quality": 755,
+ "excluded_previous_codex_seed": 205,
+ "archive_no_abstract": 192,
+ "excluded_space_suite": 48,
+ "excluded_never_train": 36,
+ "seeds": 300,
+ "by_half_writer": {
+  "pre2023": {
+   "sonnet": 60,
+   "opus": 60,
+   "haiku": 30
+  },
+  "recent": {
+   "sonnet": 60,
+   "opus": 60,
+   "haiku": 30
+  }
+ },
+ "heldout": {
+  "pre2023": {
+   "sonnet": 9,
+   "opus": 9,
+   "haiku": 4
+  },
+  "recent": {
+   "sonnet": 9,
+   "opus": 9,
+   "haiku": 4
+  }
+ },
+ "by_source": {
+  "paired_train": 121,
+  "archive": 179
+ },
+ "cells": {
+  "pre2023 acl 2013": {
+   "eligible": 13,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 1
+  },
+  "pre2023 acl 2014": {
+   "eligible": 16,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 3,
+   "haiku": 0
+  },
+  "pre2023 acl 2015": {
+   "eligible": 19,
+   "chosen": 5,
+   "heldout": 0,
+   "sonnet": 0,
+   "opus": 3,
+   "haiku": 2
+  },
+  "pre2023 acl 2016": {
+   "eligible": 26,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 4,
+   "opus": 0,
+   "haiku": 1
+  },
+  "pre2023 acl 2017": {
+   "eligible": 30,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 0,
+   "opus": 3,
+   "haiku": 1
+  },
+  "pre2023 acl 2018": {
+   "eligible": 31,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 3,
+   "opus": 1,
+   "haiku": 0
+  },
+  "pre2023 acl 2019": {
+   "eligible": 64,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 0,
+   "opus": 3,
+   "haiku": 1
+  },
+  "pre2023 acl 2020": {
+   "eligible": 97,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 1,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 acl 2021": {
+   "eligible": 87,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 1
+  },
+  "pre2023 corl 2021": {
+   "eligible": 14,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 1
+  },
+  "pre2023 corl 2022": {
+   "eligible": 19,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 1,
+   "opus": 3,
+   "haiku": 0
+  },
+  "pre2023 iclr 2020": {
+   "eligible": 20,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 iclr 2021": {
+   "eligible": 18,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 1,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 iclr 2022": {
+   "eligible": 20,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 1
+  },
+  "pre2023 icml 2013": {
+   "eligible": 32,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 4,
+   "opus": 1,
+   "haiku": 0
+  },
+  "pre2023 icml 2014": {
+   "eligible": 28,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 0,
+   "opus": 4,
+   "haiku": 0
+  },
+  "pre2023 icml 2015": {
+   "eligible": 27,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 1
+  },
+  "pre2023 icml 2016": {
+   "eligible": 33,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 4,
+   "opus": 1,
+   "haiku": 0
+  },
+  "pre2023 icml 2017": {
+   "eligible": 44,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 0,
+   "opus": 3,
+   "haiku": 1
+  },
+  "pre2023 icml 2018": {
+   "eligible": 55,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 icml 2019": {
+   "eligible": 62,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 0
+  },
+  "pre2023 icml 2020": {
+   "eligible": 53,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 0
+  },
+  "pre2023 icml 2021": {
+   "eligible": 54,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 1,
+   "opus": 3,
+   "haiku": 1
+  },
+  "pre2023 neurips 2013": {
+   "eligible": 28,
+   "chosen": 5,
+   "heldout": 0,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 neurips 2014": {
+   "eligible": 40,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 1,
+   "opus": 3,
+   "haiku": 1
+  },
+  "pre2023 neurips 2015": {
+   "eligible": 31,
+   "chosen": 5,
+   "heldout": 1,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 neurips 2016": {
+   "eligible": 28,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 4,
+   "opus": 0,
+   "haiku": 0
+  },
+  "pre2023 neurips 2017": {
+   "eligible": 50,
+   "chosen": 5,
+   "heldout": 0,
+   "sonnet": 0,
+   "opus": 5,
+   "haiku": 0
+  },
+  "pre2023 neurips 2018": {
+   "eligible": 64,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 3,
+   "opus": 0,
+   "haiku": 1
+  },
+  "pre2023 neurips 2019": {
+   "eligible": 51,
+   "chosen": 5,
+   "heldout": 0,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 1
+  },
+  "pre2023 neurips 2020": {
+   "eligible": 85,
+   "chosen": 4,
+   "heldout": 1,
+   "sonnet": 1,
+   "opus": 1,
+   "haiku": 2
+  },
+  "pre2023 neurips 2021": {
+   "eligible": 41,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 2,
+   "opus": 1,
+   "haiku": 1
+  },
+  "pre2023 neurips 2022": {
+   "eligible": 18,
+   "chosen": 4,
+   "heldout": 2,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 0
+  },
+  "pre2023 tmlr 2022": {
+   "eligible": 191,
+   "chosen": 4,
+   "heldout": 0,
+   "sonnet": 2,
+   "opus": 2,
+   "haiku": 0
+  },
+  "recent colm 2025": {
+   "eligible": 254,
+   "chosen": 37,
+   "heldout": 5,
+   "sonnet": 15,
+   "opus": 13,
+   "haiku": 9
+  },
+  "recent iclr 2026": {
+   "eligible": 1042,
+   "chosen": 38,
+   "heldout": 6,
+   "sonnet": 17,
+   "opus": 16,
+   "haiku": 5
+  },
+  "recent icml 2025": {
+   "eligible": 386,
+   "chosen": 37,
+   "heldout": 5,
+   "sonnet": 14,
+   "opus": 16,
+   "haiku": 7
+  },
+  "recent neurips 2025": {
+   "eligible": 1064,
+   "chosen": 38,
+   "heldout": 6,
+   "sonnet": 14,
+   "opus": 15,
+   "haiku": 9
+  }
+ }
+}

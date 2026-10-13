@@ -1,0 +1,83 @@
+CCCC intake implementation, October2 2026
+
+Exact source: common-pile/cccc_filtered at
+03a3de5713a0bb23267d26724346508af0f25327. The repository contains53 gzip shards.
+Publisher describes manual domain-wide text-license audit, but actual raw and
+filtered records do not contain metadata.license. We do not invent a CC BY tag
+or version. Candidate evidence instead cites the exact publisher domain audit;
+license-version and independent historical/domain audit uncertainty are explicit.
+
+Pinned publisher GitHub commit9457f04a14cb2355ab00023420369d46ffd4a395.
+Audit list SHA2566e374b44eec11d647b3517be7b2aaf41d9076fc6dfd85ca003c519339ddde487.
+Evidence source files and hashes: evidence/cccc-domain-audit/manifest.json.
+Genre/domain decision: cccc-domain-map.json;22 audited personal-blog sites,
+exact publisher host+www aliases only, no suffix wildcard. Require dated
+individual-post URLs, pre2022 source snapshot AND warc_date AND created date.
+Exclude query/listing/news/reference/QA/review paths and obvious review headings.
+Select one unchanged passage per canonical post, before explicit comment section;
+retain source attribution uncertainties, raw upstream metadata and whole input
+JSON line exactly. Every accepted record has original JSON-line SHA256, source
+shard/row and downloaded gzip SHA256. Domains capped410 (5% of8,208 general-web
+category), four agreed length bins, no replacement source or quota reweighting.
+
+Current remote isolated base: /tmp/pangram-cccc-staging-20261002.
+Initial worker37240/start7811019; refresh process-cccc.json and live identity.
+Two concurrent full-shard downloads, one batched SQLite writer; rejected records
+do not individually sync SQLite. Records plus scan cursor commit every1000 rows.
+Previously saved archives are checked by SHA before reuse; partial downloads are
+preserved. No source texts downloaded to Mac. Existing /data mount is not used.
+
+Private bucket checkpoints after each shard:
+workspace/human-source-mix-v2-recovered-20261002/stages/cccc/
+Contains frozen DB versions, accepted exact upstream originals, exports, code,
+pinned audit, download manifests, source cursors and durable-checkpoint.json.
+SDK upload validates content; this checkpoint receipt does not claim full GET
+readback. Full untouched downloaded gzip files remain on Space under
+source-downloads/cccc; selected raw JSON lines are independently durable in DB
+and documents export. The validation script checks every selected byte line
+against its original gzip plus every full downloaded gzip SHA256 before merge.
+
+SciDev auxiliary reuse avoids another full scan: table auxiliary_scidev(id,raw)
+contains gzip-compressed JSON wrappers for historical scidev.net/www.scidev.net
+rows. Wrapper: record(originalCCCCrow), source_dataset, source_revision,
+source_file, source_row, archive_sha256, upstream_json_line_sha256. It is not CCCC
+candidate intake and no license admission is inferred. Use pinned SQLite read
+snapshot while writer is active. auxiliary/scidev-candidates.jsonl.gz regenerates
+after each shard, so do not read that file while it is being replaced/written.
+
+Five focused tests passed locally and remotely: historical capture gate, exact
+host and listing/genre boundary, retained input bytes/offsets with no invented
+license, explicit comment exclusion, and archived-source mutation rejection.
+Full stage validation: validate_cccc.py --base ... --database <frozen checkpoint>.
+No global production merge or training admission is implied by staged counts.
+
+08:11Z continuation:
+The first worker stopped on a transient HTTP RemoteDisconnected after 2,759
+candidates. Its files/cursors and code were preserved. Download retry now makes
+at most four attempts with bounded backoff; partial originals are retained.
+The resumed worker is PID 40693/start 7861356. Refresh actual identity before any
+restart. More than 4,949 candidates were staged by 08:09Z; long passages are the
+remaining limiting bin. Do not rebalance source or length quotas on exhaustion.
+
+Frozen first 2,759 passed full source validation at 08:01:54Z, including original
+JSON-line membership and eleven full archive SHA256 checks. Receipt:
+validation-stage-1790927781100776633.json; frozen DB SHA256:
+1a062e6987fd08693301ea6e6bd2f01485f67d268d9575251875045719504bf9.
+
+Final validator watcher PID 41801/start 7906920 waits only for the exact resumed
+collector to finish, then creates a standalone frozen DB and launches validation.
+It has a 1,200-second bound and never stops the collector. Check remote
+final-validation-watch-process.json, final-validation-watch.log,
+final-validation-process.json and final-validation.log. The final receipt will
+be validation-final-<timestamp>.json. The validator verifies original bytes,
+hashes, dates, exact offsets, domain caps, canonical URLs, normalized dedup and
+honest missing license-version metadata. A fixed per-shard last selected row
+is computed once, avoiding a repeated maximum operation on every scanned row.
+
+Prepared local merge launcher:
+/private/tmp/pangram-training-access/merge_cccc_final.py
+It requires the successful final frozen validation receipt; uses the healthy
+active DB's current quota/dedup guards in 100-row transactions; exports frozen
+rows separately from collector exports; takes a pinned standalone checkpoint;
+and preserves receipt, exact raw originals and full-GET-verified exports. Do not
+launch before coordinating with the parent or if the source plan has changed.

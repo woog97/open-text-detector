@@ -1,0 +1,8 @@
+[
+ "<b>mixA is the strongest candidate.</b> On recall at 1% FPR it is best on 8 of 12 tests: every small-edit line of the main eval set, held-out writers, wide1, T2.1 held-out and both Fable sets. It also leads on every individual AI writer in held-out writers, wide1 and T2.1 held-out.",
+ "<b>T2.1 72k (the final MoE) keeps the edge on whole-document text.</b> It wins cross-model rewrites (0.964 vs 0.931 for mixA), paragraph edits and public documents. On cross-model, mixA trails most on Claude Opus 5.5 rewrites (0.899 vs 0.956).",
+ "<b>mixB is the most conservative and the weakest detector.</b> It has the lowest human false-positive rate on 5 of 6 held-out sets, but trails on nearly every recall line and fails on cross-model text (0.461 overall; 0.159 on Claude Opus 5.5 rewrites). Four times the data did not make up for its mix.",
+ "<b>mixA's cost is false positives.</b> At the shared 1%-FPR calibration it flags 3.5% of human control sentences on held-out writers (T2.1 72k: 2.7%, mixB: 2.4%). Switch the metric to see it per set.",
+ "<b>The 4B reference (grey column) trails every MoE candidate</b> on small edits (0.540 vs 0.627\u20130.720) and held-out writers (0.718 vs 0.716\u20130.803 \u2014 level only with mixB), and is far behind T2.1 72k and mixA on cross-model text (0.783). It was trained Oct 8 on the T2.1 72k pool as one true epoch in 1 h 14 min, and scores the same as the Oct 7 4B on that pool.",
+ "One seed each; the small-edit lines carry about \u00b13\u20134 points of sampling noise, so the T2.1-vs-mixA gaps on held-out writers (4 points) and small edits (9 points) are the most reliable differences here."
+]

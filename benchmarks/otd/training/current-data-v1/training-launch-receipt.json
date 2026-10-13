@@ -1,0 +1,13 @@
+{
+  "remote_root": "/data/workspace/current-data-v1",
+  "pid": 66128,
+  "start_ticks": "47352923",
+  "gpu_index": 0,
+  "gpu_uuid": "GPU-97ad040f-9ffc-2ece-95c7-f73437b6f4aa",
+  "started_at": 1791056089.2845736,
+  "observed_state": "training",
+  "stage": 1,
+  "epoch": 0,
+  "batch": 0,
+  "loss": 2.688401222229004
+}

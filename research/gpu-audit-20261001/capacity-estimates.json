@@ -1,0 +1,173 @@
+{
+  "all_observed": {
+    "util": 44.017168907214945,
+    "empty": 1.1436963398102125,
+    "quietempty": 1.1434704021690014,
+    "anyempty": 0.6064166290103932,
+    "twoempty": 0.45842747401717127,
+    "allempty": 0
+  },
+  "recent_sep23_24": {
+    "util": 24.68728373702422,
+    "empty": 1.9653979238754324,
+    "quietempty": 1.9645328719723183,
+    "anyempty": 0.9610726643598616,
+    "twoempty": 0.8114186851211073,
+    "allempty": 0
+  },
+  "day_cluster_bootstrap_95pct_range_conditional_on_observed_days": {
+    "util": [
+      34.70663022813688,
+      52.641648624809555
+    ],
+    "empty": [
+      0.5608992601024474,
+      1.5602719588386622
+    ],
+    "anyempty": [
+      0.33883142298015095,
+      0.7853674870249456
+    ],
+    "twoempty": [
+      0.19041653617287818,
+      0.6470254957507082
+    ]
+  },
+  "four_hour_blocks": [
+    {
+      "hours_pacific": "00:00\u201304:00",
+      "minutes": 691,
+      "distinct_dates": 4,
+      "util": 41.436866859623734,
+      "empty": 0.9652677279305355,
+      "quietempty": 0.9652677279305355,
+      "anyempty": 0.557163531114327,
+      "twoempty": 0.40665701881331406,
+      "allempty": 0
+    },
+    {
+      "hours_pacific": "04:00\u201308:00",
+      "minutes": 316,
+      "distinct_dates": 2,
+      "util": 40.04786392405063,
+      "empty": 2.0126582278481013,
+      "quietempty": 2.0126582278481013,
+      "anyempty": 1,
+      "twoempty": 1,
+      "allempty": 0
+    },
+    {
+      "hours_pacific": "08:00\u201312:00",
+      "minutes": 482,
+      "distinct_dates": 4,
+      "util": 38.25082123098202,
+      "empty": 1.3506224066390042,
+      "quietempty": 1.3506224066390042,
+      "anyempty": 0.558091286307054,
+      "twoempty": 0.5477178423236515,
+      "allempty": 0
+    },
+    {
+      "hours_pacific": "12:00\u201316:00",
+      "minutes": 766,
+      "distinct_dates": 6,
+      "util": 34.63129623585727,
+      "empty": 1.402088772845953,
+      "quietempty": 1.402088772845953,
+      "anyempty": 0.6331592689295039,
+      "twoempty": 0.5456919060052219,
+      "allempty": 0
+    },
+    {
+      "hours_pacific": "16:00\u201320:00",
+      "minutes": 1201,
+      "distinct_dates": 8,
+      "util": 45.92972002497918,
+      "empty": 1.148209825145712,
+      "quietempty": 1.1473771856786013,
+      "anyempty": 0.6802664446294754,
+      "twoempty": 0.4238134887593672,
+      "allempty": 0
+    },
+    {
+      "hours_pacific": "20:00\u201324:00",
+      "minutes": 970,
+      "distinct_dates": 7,
+      "util": 55.05765678694158,
+      "empty": 0.6752577319587629,
+      "quietempty": 0.6752577319587629,
+      "anyempty": 0.4247422680412371,
+      "twoempty": 0.24845360824742269,
+      "allempty": 0
+    }
+  ],
+  "quiet_nearly_empty_episodes": {
+    "count": 116,
+    "at_least_30min": 43,
+    "at_least_60min": 24,
+    "longest": [
+      {
+        "gpu": 1,
+        "minutes": 567,
+        "start": "2026-08-30T22:24:00-07:00",
+        "end": "2026-08-31T07:50:00-07:00",
+        "end_observed_busy": false
+      },
+      {
+        "gpu": 0,
+        "minutes": 548,
+        "start": "2026-08-30T22:43:00-07:00",
+        "end": "2026-08-31T07:50:00-07:00",
+        "end_observed_busy": false
+      },
+      {
+        "gpu": 2,
+        "minutes": 296,
+        "start": "2026-09-23T16:34:00-07:00",
+        "end": "2026-09-23T21:29:00-07:00",
+        "end_observed_busy": true
+      },
+      {
+        "gpu": 1,
+        "minutes": 294,
+        "start": "2026-09-24T06:39:00-07:00",
+        "end": "2026-09-24T11:32:00-07:00",
+        "end_observed_busy": false
+      },
+      {
+        "gpu": 2,
+        "minutes": 294,
+        "start": "2026-09-24T06:39:00-07:00",
+        "end": "2026-09-24T11:32:00-07:00",
+        "end_observed_busy": false
+      },
+      {
+        "gpu": 1,
+        "minutes": 225,
+        "start": "2026-09-23T16:34:00-07:00",
+        "end": "2026-09-23T20:18:00-07:00",
+        "end_observed_busy": true
+      },
+      {
+        "gpu": 2,
+        "minutes": 217,
+        "start": "2026-08-29T12:47:00-07:00",
+        "end": "2026-08-29T16:23:00-07:00",
+        "end_observed_busy": true
+      },
+      {
+        "gpu": 0,
+        "minutes": 121,
+        "start": "2026-08-30T17:10:00-07:00",
+        "end": "2026-08-30T19:10:00-07:00",
+        "end_observed_busy": true
+      }
+    ]
+  },
+  "limitations": [
+    "Bootstrap reflects variability among 11 observed days, not selection bias or predictive reliability.",
+    "A nearly empty card has less than 1 GiB allocated; this is not proof of no processes.",
+    "Episodes consist of adjacent sampled minute bins and do not prove inactivity between samples.",
+    "Do not infer GPU reservation or permission from estimated spare capacity."
+  ]
+}

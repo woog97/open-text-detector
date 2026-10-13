@@ -1,0 +1,2 @@
+#!/bin/zsh
+exec /tmp/openreview-benchmark-venv/bin/python "${0:A:h}/main.py" "$@"

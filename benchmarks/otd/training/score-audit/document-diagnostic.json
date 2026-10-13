@@ -1,0 +1,3693 @@
+{
+  "policy": "Test-oracle thresholds diagnose separability ONLY; not deployable or unbiased performance estimates. Native document labels never used as token gold. Small human samples cannot establish reliable 1% FPR.",
+  "results": {
+    "paper-backbone-comparison-v1/results/causal-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          1.6278954761972386e-07,
+          9.84773209105471e-07,
+          1.2687911196772748e-05,
+          0.00022556536851888167,
+          0.1381326503174125,
+          0.9989303438751785
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          3.7223817230552672e-06,
+          7.701186521162859e-06,
+          1.9292372304804676e-05,
+          0.00011038065870926344,
+          0.0008711786466203619,
+          0.001321411608596057
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.00010055969296342262,
+          0.0017294300359599933,
+          0.019249694470907082,
+          0.054600242779937615,
+          0.081301623109283,
+          0.09229195460388608
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          6.800080616705127e-06,
+          2.7133590339269943e-05,
+          3.367680130689499e-05,
+          9.79364668448078e-05,
+          0.0001305028464502071,
+          0.00013412133307302924
+        ],
+        "ai_quantiles": [
+          9.619100304548996e-06,
+          2.1144186829175963e-05,
+          8.622598774799544e-05,
+          0.004437345636176077,
+          0.21205790687282647,
+          0.23544383281937273
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7029126213592233,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.4368932038834951,
+        "diagnostic_threshold": 0.0001346955247570817,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          3.5332688987215465e-06,
+          7.441447318567636e-06,
+          1.3793165523556851e-05,
+          2.7196846670088665e-05,
+          4.503315594416477e-05,
+          7.721121381168373e-05
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          3.108332127984189e-06,
+          8.90559797327263e-06,
+          2.303322993304955e-05,
+          0.0006943312197980496,
+          0.1712728465172178,
+          0.2498761706089318
+        ],
+        "ai_quantiles": [
+          3.664579097602984e-06,
+          1.2146773531159712e-05,
+          0.0005036791829356401,
+          0.17600530962536318,
+          0.34653133047812457,
+          0.9993973167896042
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.749310661764706,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.04352678571428571,
+        "diagnostic_threshold": 0.25160653005115957,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          2.266377980854965e-06,
+          6.413978985574285e-06,
+          1.322898795477383e-05,
+          5.864771027980736e-05,
+          0.000775459666892266,
+          0.37144110816796977
+        ],
+        "ai_quantiles": [
+          2.4195802006456532e-06,
+          1.1943379742627902e-05,
+          4.573196686911169e-05,
+          0.0013839487210920622,
+          0.7819556743024962,
+          0.9995555776700072
+        ],
+        "current_recall": 0.0006138735420503376,
+        "current_fpr": 0.0,
+        "auroc": 0.7822764766030263,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.1190914671577655,
+        "diagnostic_threshold": 0.0008913386320681246,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          3.5214523772953634e-06,
+          8.354484694971364e-06,
+          2.447528847598565e-05,
+          0.0005334981795884733,
+          0.16434632114716896,
+          0.2503494993250943
+        ],
+        "ai_quantiles": [
+          4.003004873834891e-06,
+          1.6133043367670396e-05,
+          0.002578520649973809,
+          0.1762994335169039,
+          0.26012354958921535,
+          0.3037803863855991
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7967520321055676,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.11447811447811448,
+        "diagnostic_threshold": 0.1674757966606976,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          3.2309660125592467e-06,
+          6.3054365578107056e-06,
+          1.6968884230046843e-05,
+          8.12225700461999e-05,
+          0.0008082682551666328,
+          0.0016827078172354957
+        ],
+        "ai_quantiles": [
+          3.9515359982027826e-05,
+          4.076576614426983e-05,
+          6.41595097224106e-05,
+          0.0001511637570053837,
+          0.00015546003318340818,
+          0.00015593739720318867
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8621399176954733,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          6.393259987973117e-06,
+          1.3347885708548927e-05,
+          3.391177934118552e-05,
+          7.577965576778004e-05,
+          0.0003333434137920596,
+          0.0005862609204036939
+        ],
+        "ai_quantiles": [
+          1.0037408326683862e-05,
+          2.9828766743398566e-05,
+          8.668556188536094e-05,
+          0.005996854817759325,
+          0.11224447160347657,
+          0.14892253094383098
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8086384439359269,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.24013157894736842,
+        "diagnostic_threshold": 0.0004583391265682783,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          2.9801703924586277e-06,
+          6.60858541560566e-06,
+          1.2018978002790043e-05,
+          8.020598589626303e-05,
+          0.0001271696616988219,
+          0.00013238784789910624
+        ],
+        "ai_quantiles": [
+          4.812825259092161e-06,
+          1.416208226143067e-05,
+          0.00046863271950586826,
+          0.27062598106762176,
+          0.3884163172266087,
+          0.447441295524339
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.861842105263158,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.5789473684210527,
+        "diagnostic_threshold": 0.00014254978497265064,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          5.012597902994088e-06,
+          5.424352466879475e-06,
+          1.21915083173165e-05,
+          1.9526411935635294e-05,
+          1.9963086897647005e-05,
+          2.001160633787053e-05
+        ],
+        "ai_quantiles": [
+          1.5929228210972617e-05,
+          3.3038165737564885e-05,
+          0.00013937578163098282,
+          0.011208795869591597,
+          0.08890958195075091,
+          0.12696212435242482
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.984375,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.9375,
+        "diagnostic_threshold": 2.5601288948971254e-05,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          1.6335832158706644e-05,
+          2.0807081719666233e-05,
+          4.93067152679544e-05,
+          0.0005987908647661093,
+          0.011072697655877938,
+          0.013099731482052712
+        ],
+        "ai_quantiles": [
+          7.901784590113208e-06,
+          7.47293943503009e-05,
+          0.0004364465464513661,
+          0.07537334639964666,
+          0.9931005651968303,
+          0.9991980342677347
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.846923828125,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.171875,
+        "diagnostic_threshold": 0.014178633069522764,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          9.743722835439165e-06,
+          2.002174137415513e-05,
+          8.888372790934079e-05,
+          0.0007944410663304046,
+          0.010493897643024068,
+          0.012159242918241327
+        ],
+        "ai_quantiles": [
+          3.105400836759069e-05,
+          9.451459274740381e-05,
+          0.000734738011133862,
+          0.024376225666898975,
+          0.32669839082193175,
+          0.9954303684640644
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8283292483660131,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.14705882352941177,
+        "diagnostic_threshold": 0.012833858784444334,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          5.4434628708985595e-06,
+          3.849997310623734e-05,
+          0.0002214075336811183,
+          0.015422410811532287,
+          0.284067466059505,
+          0.6748554194934623
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          2.2492208236739505e-06,
+          7.211360620003368e-06,
+          3.123958495451892e-05,
+          0.0010665310948329374,
+          0.2758745786147165,
+          0.5392041247937022
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          1.3258310998675207e-06,
+          7.098314570758372e-06,
+          2.987547344762768e-05,
+          0.014045176366462511,
+          0.4039210330548182,
+          0.5702599469847562
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-backbone-comparison-v1/results/causal-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          2.5980245449186826e-05,
+          0.0009160429280593301,
+          0.9990387378212763,
+          0.9998954417029813,
+          0.9999430197980749,
+          0.9999539419858143
+        ],
+        "current_recall": 0.42592592592592593,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          2.4698322615244134e-06,
+          5.3753549095203705e-06,
+          1.3839944714330785e-05,
+          0.0002476454954349256,
+          0.442693459006812,
+          0.9794475773810057
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          1.4235787694630352e-07,
+          6.732897956740045e-07,
+          6.911408040742581e-06,
+          0.00012308891888471716,
+          0.03665401699301659,
+          0.999367782908879
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9994781774084041,
+        "human_quantiles": [
+          1.74322811292362e-06,
+          4.178385265564918e-06,
+          8.0225512449637e-06,
+          2.5966716214072118e-05,
+          0.00021307537330626162,
+          0.003618207845525489
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-backbone-comparison-v1/results/encoder-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          2.797573959267336e-05,
+          0.0032034653111517528,
+          0.004777135369431972,
+          0.010189349971273496,
+          0.9268956175292963,
+          0.9890760686599983
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0006418485237483953,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.00010941231109452044,
+          0.0032261761986223654,
+          0.004275548482025554,
+          0.005687420543200651,
+          0.011537942619201876,
+          0.02128335412949248
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.004166434895700775,
+          0.005355308115950693,
+          0.021531408680938138,
+          0.06133157537010303,
+          0.116060401176268,
+          0.11761502213260978
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.0031394328045702214,
+          0.0032702474858297475,
+          0.0036712883468909144,
+          0.004549975848088531,
+          0.0050352915683708225,
+          0.005089215537291077
+        ],
+        "ai_quantiles": [
+          0.0026633536526409667,
+          0.003608910814526779,
+          0.004437291979607932,
+          0.006549293192197433,
+          0.3387355176089831,
+          0.42476680425879
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7825242718446602,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.22330097087378642,
+        "diagnostic_threshold": 0.005193607085813502,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.002046417919447644,
+          0.0028333188755277658,
+          0.00424481205230751,
+          0.005340517762413454,
+          0.006872857618596673,
+          0.007194679902004617
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.0022068622783852775,
+          0.0033948384340007154,
+          0.004534536335480826,
+          0.00648571216241181,
+          0.19978134601371075,
+          0.20678188725706692
+        ],
+        "ai_quantiles": [
+          0.00011628228606131222,
+          0.003286415521324199,
+          0.004410460762544947,
+          0.09134440843219387,
+          0.6276165739920906,
+          0.9867700043215246
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.4924829306722689,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.07142857142857142,
+        "diagnostic_threshold": 0.22356315074836489,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.0002346801803570189,
+          0.00339171707696191,
+          0.0043351792547836904,
+          0.005655210972306103,
+          0.025229981813132345,
+          0.29949409370310603
+        ],
+        "ai_quantiles": [
+          0.00044315172926872036,
+          0.0036829645698787036,
+          0.0049413344071566586,
+          0.03166665398831437,
+          0.9664859165382962,
+          0.9892588804165522
+        ],
+        "current_recall": 0.0006138735420503376,
+        "current_fpr": 0.0,
+        "auroc": 0.6695517810998097,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.10804174340085942,
+        "diagnostic_threshold": 0.026772801116941664,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.000857275937850572,
+          0.003049003687560831,
+          0.004016405606868596,
+          0.004828799408802834,
+          0.04745702101784293,
+          0.25113398475761195
+        ],
+        "ai_quantiles": [
+          0.0013892963782844983,
+          0.0032952203786810637,
+          0.004125691380277966,
+          0.014440397994951256,
+          0.25166417610776687,
+          0.5560629593053675
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.5783151379110975,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0723905723905724,
+        "diagnostic_threshold": 0.049383366801634486,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.001846744475838977,
+          0.003642973607350897,
+          0.004405698403697036,
+          0.005157172932761801,
+          0.010310133917060328,
+          0.018830882375457113
+        ],
+        "ai_quantiles": [
+          0.0032605665707043214,
+          0.0037313865262766158,
+          0.004336039615421018,
+          0.14429285169760925,
+          0.2655470985119991,
+          0.2790197926024868
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.5617283950617283,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.16666666666666666,
+        "diagnostic_threshold": 0.2790197926024868,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.0014185898304307698,
+          0.0027669774716762964,
+          0.003782196705244341,
+          0.005148425239149469,
+          0.03493042236337351,
+          0.07259578765820637
+        ],
+        "ai_quantiles": [
+          0.0027324404348377696,
+          0.0035016691964915624,
+          0.004574523903853254,
+          0.03808535133303104,
+          0.11402958048828038,
+          0.17703170545488273
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7447286694998366,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.05592105263157895,
+        "diagnostic_threshold": 0.051111096588498495,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.003402760511226756,
+          0.003508688188409036,
+          0.003994160597560242,
+          0.004683091196143954,
+          0.005044271443753197,
+          0.0050844025823764466
+        ],
+        "ai_quantiles": [
+          0.0016076517611901045,
+          0.003808413404124477,
+          0.005290094203838501,
+          0.2606587030905326,
+          0.3944201942441971,
+          0.4360328639063427
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8001644736842106,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.5394736842105263,
+        "diagnostic_threshold": 0.00509780754721455,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.003383212724880299,
+          0.0037744690693595384,
+          0.004221525766658582,
+          0.004944328403810833,
+          0.0054265976543236465,
+          0.0054801831266028484
+        ],
+        "ai_quantiles": [
+          0.0022189853134010765,
+          0.0032638884303125876,
+          0.005579550306465515,
+          0.20093632494538258,
+          0.409616092948609,
+          0.45031075648367574
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.703125,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.5208333333333334,
+        "diagnostic_threshold": 0.005481813273547514,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.0004662924354154815,
+          0.002245667623220298,
+          0.004205363270819057,
+          0.0057635567391046616,
+          0.012709304100866948,
+          0.015640903755357136
+        ],
+        "ai_quantiles": [
+          0.00036146115630799616,
+          0.0028793723741077294,
+          0.006761434168637871,
+          0.6170898493206206,
+          0.9870973073408721,
+          0.9909964577219952
+        ],
+        "current_recall": 0.0078125,
+        "current_fpr": 0.0,
+        "auroc": 0.7265625,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.34375,
+        "diagnostic_threshold": 0.019397069399028716,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          9.869249192685056e-05,
+          0.002015320895881574,
+          0.005260575688627341,
+          0.009473415976415054,
+          0.1134060198829667,
+          0.19313299371437592
+        ],
+        "ai_quantiles": [
+          0.00011221597837052324,
+          0.0025873185524957557,
+          0.008689156576042818,
+          0.5420432898879908,
+          0.9731881888599107,
+          0.9830642285499167
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7263582516339869,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.2107843137254902,
+        "diagnostic_threshold": 0.19845905120289603,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          4.56561499638209e-05,
+          0.0017701643419599869,
+          0.003922940501486723,
+          0.043319071462488874,
+          0.31163746377662693,
+          0.8589583613717829
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          4.133572856972023e-05,
+          0.0024550383232573277,
+          0.003951883176717393,
+          0.021099970604965337,
+          0.3401129271094361,
+          0.7111838384726478
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          4.878823804602055e-05,
+          0.0032592726935552615,
+          0.004305752128689279,
+          0.037368174490897,
+          0.385759799634529,
+          0.5342081761321394
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-backbone-comparison-v1/results/encoder-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.003022800739060339,
+          0.045564057147329654,
+          0.9854636170276749,
+          0.9910651071250071,
+          0.9925882863416801,
+          0.9931469874298118
+        ],
+        "current_recall": 0.2824074074074074,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          0.002538865544465807,
+          0.0033356883771295974,
+          0.004270371754596792,
+          0.00694050440774059,
+          0.44939251474063324,
+          0.9870861808636359
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          3.518912063944819e-05,
+          0.0029938504252895654,
+          0.004751101229794212,
+          0.009405468877707792,
+          0.5935778625619503,
+          0.9908772279054691
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0008163265306122449,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9888709909282626,
+        "human_quantiles": [
+          7.186908071006468e-05,
+          0.0028987238810396164,
+          0.003867075459370367,
+          0.004756364420221535,
+          0.006207122326296338,
+          0.019456432011743532
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-backbone-comparison-v1/results/qwen35-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0013076636246060606,
+          0.004220792584481364,
+          0.016403871347817282,
+          0.12879754504232058,
+          0.9306919989570194,
+          0.9963068982549742
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0012836970474967907,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0024454958817344418,
+          0.003981427406013693,
+          0.009270069244969568,
+          0.03032553395238456,
+          0.06676641886333273,
+          0.12258931735737456
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.018163372682736115,
+          0.027359181986868097,
+          0.05970341174884786,
+          0.1048377716796078,
+          0.15213029680851356,
+          0.16052826410843243
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.004373477544330152,
+          0.005515000863167406,
+          0.011883234751617872,
+          0.021779180340135453,
+          0.02876176120942427,
+          0.029537603528234136
+        ],
+        "ai_quantiles": [
+          0.004051013835928739,
+          0.006770557722876274,
+          0.02074223998732773,
+          0.09633288584679255,
+          0.1840397310803709,
+          0.19392034561578753
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6796116504854369,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.4174757281553398,
+        "diagnostic_threshold": 0.031694894923376994,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0023509352579509425,
+          0.0033581193255147286,
+          0.007892245585773668,
+          0.019131752583376325,
+          0.08024433400584621,
+          0.5723861288639807
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.00414791473154129,
+          0.005633578853229679,
+          0.011816882755140704,
+          0.06591329923652016,
+          0.1271943941330944,
+          0.13985150207284755
+        ],
+        "ai_quantiles": [
+          0.0028043922378174677,
+          0.008931578799967838,
+          0.06032119974509456,
+          0.1859773137328385,
+          0.7767495672402758,
+          0.9951113778192646
+        ],
+        "current_recall": 0.0033482142857142855,
+        "current_fpr": 0.0,
+        "auroc": 0.7752429096638656,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.19084821428571427,
+        "diagnostic_threshold": 0.1398728265266577,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.002600406747727413,
+          0.005832617163861358,
+          0.01086731547390789,
+          0.03995178727807563,
+          0.1806436079025536,
+          0.4683417045810948
+        ],
+        "ai_quantiles": [
+          0.003644820176858874,
+          0.009445075658570383,
+          0.028351988242722528,
+          0.2547156447225511,
+          0.9219150247753308,
+          0.9898798005200174
+        ],
+        "current_recall": 0.0012277470841006752,
+        "current_fpr": 0.0,
+        "auroc": 0.7669998732118539,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.13014119091467158,
+        "diagnostic_threshold": 0.18206130380684374,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0020692897004105327,
+          0.003997335047472295,
+          0.010398790285508547,
+          0.04062559014199295,
+          0.10799215526905365,
+          0.2660579348359707
+        ],
+        "ai_quantiles": [
+          0.004397001151382922,
+          0.011850017777039853,
+          0.05630980307691806,
+          0.15128534995981693,
+          0.2302162050341692,
+          0.34175643780373977
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8532326633336734,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.16161616161616163,
+        "diagnostic_threshold": 0.13029241489069202,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0025741786705858406,
+          0.004153647210592803,
+          0.009143485825321913,
+          0.050991644569334874,
+          0.13461653501019524,
+          0.23281989773742987
+        ],
+        "ai_quantiles": [
+          0.0058790576469111115,
+          0.008430539244906549,
+          0.022987882558674663,
+          0.11672507114338851,
+          0.12218426757437771,
+          0.12279084495559874
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7448559670781894,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.003084314885321267,
+          0.004085628665143148,
+          0.007182124221914275,
+          0.021001626543048504,
+          0.06732039362397632,
+          0.09833536501817565
+        ],
+        "ai_quantiles": [
+          0.005329669212335379,
+          0.010142344128531995,
+          0.029156908802316223,
+          0.10272652160744353,
+          0.2228057332990383,
+          0.23434086234395982
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8850727361882968,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.16447368421052633,
+        "diagnostic_threshold": 0.0793084234872319,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0024197754949744,
+          0.0029512187252901697,
+          0.006606383006413356,
+          0.07434291969664683,
+          0.17827332547722394,
+          0.18982114834173255
+        ],
+        "ai_quantiles": [
+          0.0038168809974658564,
+          0.007797921978504623,
+          0.03762244059543016,
+          0.22320125307630398,
+          0.45823952810281404,
+          0.9793515520127299
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8215460526315791,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.17105263157894737,
+        "diagnostic_threshold": 0.1942753690623763,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0034140080766072852,
+          0.004142802257175082,
+          0.006730157585101178,
+          0.015413533348882189,
+          0.022547685921750757,
+          0.02334036954095838
+        ],
+        "ai_quantiles": [
+          0.005826535235954027,
+          0.011170938598093717,
+          0.04068080474509853,
+          0.09556727160620954,
+          0.18937519053486723,
+          0.20139470218863476
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9192708333333334,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.6458333333333334,
+        "diagnostic_threshold": 0.02631134834694789,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.006853300017038626,
+          0.007145968759425846,
+          0.01613251080946954,
+          0.03306213931499985,
+          0.04229528452553557,
+          0.04320580650372478
+        ],
+        "ai_quantiles": [
+          0.005174094370218578,
+          0.018383139698311807,
+          0.06635332881722032,
+          0.40244335483089166,
+          0.9768407511073809,
+          0.9914058734855007
+        ],
+        "current_recall": 0.0078125,
+        "current_fpr": 0.0,
+        "auroc": 0.885498046875,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.6484375,
+        "diagnostic_threshold": 0.044830370060882946,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.006810793495236573,
+          0.01358219690716642,
+          0.03416413208105294,
+          0.13504147628144436,
+          0.3204413207230886,
+          0.4264138941135671
+        ],
+        "ai_quantiles": [
+          0.004949201718534761,
+          0.027961578230180584,
+          0.117082615131471,
+          0.4874378343186682,
+          0.938388531461675,
+          0.9859304533214508
+        ],
+        "current_recall": 0.004901960784313725,
+        "current_fpr": 0.0,
+        "auroc": 0.7760416666666666,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.1323529411764706,
+        "diagnostic_threshold": 0.4294020739979431,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0033670928127829216,
+          0.008989967551768119,
+          0.028291043186952913,
+          0.10066226741330529,
+          0.32978333690536876,
+          0.5289540541344795
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0015602092423843959,
+          0.003859209624606705,
+          0.011009476291962843,
+          0.0841218694205328,
+          0.2771790180301751,
+          0.6231842242630854
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0025620198480262118,
+          0.005562257696416647,
+          0.015831854371596885,
+          0.12402213178384375,
+          0.31560962099685125,
+          0.42774736586209355
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-backbone-comparison-v1/results/qwen35-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0172945938415454,
+          0.3674641976038965,
+          0.9889912624671182,
+          0.9963552906068815,
+          0.9974685766556034,
+          0.9977123779635275
+        ],
+        "current_recall": 0.5925925925925926,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0030336801007519888,
+          0.005097759666029858,
+          0.013232881992434461,
+          0.10771898576591415,
+          0.6967357945261868,
+          0.9871708959074957
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.004629629629629629,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0010024703157264924,
+          0.0035542903883122013,
+          0.013000347261493654,
+          0.0904871504138447,
+          0.8171834419891241,
+          0.9899930915106898
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.00040816326530612246,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9848966582545213,
+        "human_quantiles": [
+          0.0014629565088067795,
+          0.002565044604822809,
+          0.003696239410424914,
+          0.006628522269275724,
+          0.01843674923634994,
+          0.06156941306693269
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/causal-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          9.946877132259208e-05,
+          0.0003265334576176939,
+          0.0022936337744526945,
+          0.1148266557010679,
+          0.8906870023299355,
+          0.9854197672926462
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.003209242618741977,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00015379027097635624,
+          0.00039895773765941957,
+          0.0009677094575836795,
+          0.004967690339599037,
+          0.04449025831497003,
+          0.1292812858817997
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.013228383898525688,
+          0.018365330980027975,
+          0.04945275172301565,
+          0.10549454438863458,
+          0.15155963366439618,
+          0.1548976244712262
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.0007722936297904884,
+          0.0011756470331512996,
+          0.0027609960827432987,
+          0.010343301823621526,
+          0.011571030183947936,
+          0.011707444446206427
+        ],
+        "ai_quantiles": [
+          0.0006832481871707058,
+          0.002060054597467245,
+          0.010976544231244355,
+          0.08628094403794204,
+          0.34347418444614314,
+          0.4651633200238746
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7902912621359224,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.49514563106796117,
+        "diagnostic_threshold": 0.011897966980989935,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00017262822216191582,
+          0.00034172620830796646,
+          0.0007903500442317348,
+          0.0021768382349758707,
+          0.006751931174965236,
+          0.034736373624013314
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00044304710101843934,
+          0.0007845794085388617,
+          0.0027984255767488867,
+          0.024176652018843357,
+          0.15808142766031164,
+          0.18109019294818232
+        ],
+        "ai_quantiles": [
+          0.00028071070269833153,
+          0.0016114134014487116,
+          0.05191199507641364,
+          0.24076483804942866,
+          0.43048719627547166,
+          0.991585653139444
+        ],
+        "current_recall": 0.002232142857142857,
+        "current_fpr": 0.0,
+        "auroc": 0.8116465336134454,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.17522321428571427,
+        "diagnostic_threshold": 0.18109915927380169,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00025950806178250065,
+          0.0006089840652176732,
+          0.0016282845806175224,
+          0.009764297956699563,
+          0.11114394243682404,
+          0.3323872204355444
+        ],
+        "ai_quantiles": [
+          0.0002964187378166637,
+          0.0010329168767369602,
+          0.005670169050074716,
+          0.09646167517756904,
+          0.6877142601884471,
+          0.9744858127431953
+        ],
+        "current_recall": 0.0006138735420503376,
+        "current_fpr": 0.0,
+        "auroc": 0.7444306710559081,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.09208103130755065,
+        "diagnostic_threshold": 0.11885242015123368,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00034753254833969023,
+          0.0010673772409613386,
+          0.0042876789570798,
+          0.04654225774382038,
+          0.16588444492396257,
+          0.2421950526545176
+        ],
+        "ai_quantiles": [
+          0.00043722246754997906,
+          0.004985692116076193,
+          0.05177547320355032,
+          0.2735302185003956,
+          0.44193936126118316,
+          0.5818205999002379
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8314933850287386,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.1936026936026936,
+        "diagnostic_threshold": 0.1707043869255434,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00027354695550546934,
+          0.000603617644810055,
+          0.002039431715976441,
+          0.02490450222375573,
+          0.17913884714812806,
+          0.24928274084196236
+        ],
+        "ai_quantiles": [
+          0.008645683345853366,
+          0.010581735588818739,
+          0.06615688681060874,
+          0.09727853376920378,
+          0.10809820986912681,
+          0.1093003961024516
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9135802469135802,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.0003299708727877753,
+          0.0006020266080150983,
+          0.0015155622684291132,
+          0.006157679871005623,
+          0.027618817224538343,
+          0.07307032980989593
+        ],
+        "ai_quantiles": [
+          0.0013885593687074191,
+          0.002766192007345941,
+          0.013917776628903904,
+          0.1163173661860664,
+          0.2263572314747118,
+          0.35890767131857565
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.904421379535796,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.3026315789473684,
+        "diagnostic_threshold": 0.03786289609324114,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.0003986008176267856,
+          0.0004940866257839727,
+          0.001084674281437258,
+          0.0034650670392651945,
+          0.005179636545869999,
+          0.005370144268826089
+        ],
+        "ai_quantiles": [
+          0.0006721238531110814,
+          0.0019256987188991334,
+          0.03940747879245339,
+          0.2244352916782986,
+          0.38195464494952,
+          0.49253347279251564
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9317434210526316,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.7763157894736842,
+        "diagnostic_threshold": 0.006331146962043234,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00023230409781903953,
+          0.0004160986016626871,
+          0.0005986141866848203,
+          0.0014978932952118586,
+          0.0025673868511076983,
+          0.0026862194684294585
+        ],
+        "ai_quantiles": [
+          0.001088625521608735,
+          0.004675462566166945,
+          0.024449146374861876,
+          0.10544426105873671,
+          0.20537765452256218,
+          0.21248054931032942
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9921875,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.9375,
+        "diagnostic_threshold": 0.003460182203584863,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.004322150986255812,
+          0.008579607216312256,
+          0.017001507384537862,
+          0.05107438511481734,
+          0.12353486859861636,
+          0.1418695877821476
+        ],
+        "ai_quantiles": [
+          0.001425928728178276,
+          0.00989799008158326,
+          0.045116831354146056,
+          0.40302266705325945,
+          0.8897194875850777,
+          0.9143794910502837
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.730224609375,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.2578125,
+        "diagnostic_threshold": 0.14430639457935135,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.0011358686019125994,
+          0.006670170321625876,
+          0.03067381147277082,
+          0.1373104467651507,
+          0.4063003156518285,
+          0.40667826895947223
+        ],
+        "ai_quantiles": [
+          0.002536453894853598,
+          0.014119476819662038,
+          0.08656617979744843,
+          0.44340613723766803,
+          0.8021200431981607,
+          0.9150836168276485
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7207924836601307,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.12254901960784313,
+        "diagnostic_threshold": 0.4077817459227675,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0006779140177655873,
+          0.004106672738393003,
+          0.021206191745049372,
+          0.12041631154767035,
+          0.38209736533109817,
+          0.7533549633291033
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00010766009214312456,
+          0.0005078238688473589,
+          0.0027327332637703257,
+          0.0611240209325438,
+          0.2908858477802613,
+          0.9258341718444794
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00025013707594745166,
+          0.000735764711479664,
+          0.003905036096629807,
+          0.09451438946882698,
+          0.31661891760254673,
+          0.5298179646772522
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/causal-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.005754973379622368,
+          0.2758715354731605,
+          0.9780926980392,
+          0.9955225729899078,
+          0.9975270948478691,
+          0.9982972826560339
+        ],
+        "current_recall": 0.6712962962962963,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00025783323181546007,
+          0.0005092669276887116,
+          0.0019752602456899744,
+          0.08766643996043219,
+          0.7888474538384814,
+          0.954170531635323
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.004629629629629629,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          8.30532715728182e-05,
+          0.00030237236862694263,
+          0.001429869572618808,
+          0.04980204025566298,
+          0.7968953796384945,
+          0.9902540836475144
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.002653061224489796,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9439417878616909,
+        "human_quantiles": [
+          0.00013564809312572484,
+          0.00029147681468937443,
+          0.0005112722543135688,
+          0.0013900593475163773,
+          0.004355021140836618,
+          0.026714369620872553
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/encoder-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          6.243530232394632e-05,
+          0.002770405439383216,
+          0.004479317465562642,
+          0.01902945448889367,
+          0.8194013109240286,
+          0.982633993475737
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0012836970474967907,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.00047324482010161455,
+          0.002566042736076724,
+          0.0035173473415033877,
+          0.004690311620709118,
+          0.011148649410131644,
+          0.02188355212511365
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.003961652266955364,
+          0.004756915673418288,
+          0.013029080577832676,
+          0.031107813011102974,
+          0.05510151493450775,
+          0.05722914878003072
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0027289123530915738,
+          0.0032264980430602476,
+          0.003526101011661026,
+          0.004390857981716149,
+          0.004796272510318038,
+          0.004841318569051581
+        ],
+        "ai_quantiles": [
+          0.002810170251132063,
+          0.0033444992795056126,
+          0.00395460272769521,
+          0.00500622264153932,
+          0.012737318095907689,
+          0.02586987639128411
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6796116504854369,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.1553398058252427,
+        "diagnostic_threshold": 0.004889337410395,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0018502710413034321,
+          0.0023598953969298626,
+          0.0033395617135773817,
+          0.004771359639106146,
+          0.006630267063840154,
+          0.008040557360094045
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0021490064748173484,
+          0.003168681201161746,
+          0.004181829403348844,
+          0.022428746486117757,
+          0.1800051606467422,
+          0.19765137727269003
+        ],
+        "ai_quantiles": [
+          0.0014824343314067117,
+          0.003183099080492791,
+          0.0043770712307705465,
+          0.061458113467156725,
+          0.543689200705214,
+          0.9858668136562523
+        ],
+        "current_recall": 0.002232142857142857,
+        "current_fpr": 0.0,
+        "auroc": 0.5518644957983193,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.04799107142857143,
+        "diagnostic_threshold": 0.20429055781637545,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0002206334595232167,
+          0.0028891620785031456,
+          0.003939582755382066,
+          0.007348750672044428,
+          0.08209295596796365,
+          0.2343628823511885
+        ],
+        "ai_quantiles": [
+          0.0007781595246173268,
+          0.003405209529998273,
+          0.0054193669997783765,
+          0.18131948605584,
+          0.9353380488422182,
+          0.986522381064258
+        ],
+        "current_recall": 0.0024554941682013503,
+        "current_fpr": 0.0,
+        "auroc": 0.7279281448705074,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.13627992633517497,
+        "diagnostic_threshold": 0.09098677899926266,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0012744017548348885,
+          0.0028192839540470134,
+          0.0036434376868502115,
+          0.0044905969295721045,
+          0.03300121258330835,
+          0.09167558782571239
+        ],
+        "ai_quantiles": [
+          0.0017640457513110068,
+          0.0032497885755833817,
+          0.0041024252410637035,
+          0.016236169723478865,
+          0.105475235328475,
+          0.4434647638635854
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6827092473557119,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.06228956228956229,
+        "diagnostic_threshold": 0.03537252636286803,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0017571853812473875,
+          0.0032004395065041934,
+          0.0043479059804967645,
+          0.032820267656627225,
+          0.28556735236947,
+          0.4663545178033473
+        ],
+        "ai_quantiles": [
+          0.004288068545251572,
+          0.004498608221629609,
+          0.03542798159913691,
+          0.25270941436341776,
+          0.38653192453928403,
+          0.4014010923366024
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8106995884773663,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.001388364804687759,
+          0.0025872401531325355,
+          0.003247515796484096,
+          0.004221517707219729,
+          0.031549477525456185,
+          0.06722405695291611
+        ],
+        "ai_quantiles": [
+          0.0027957317340312833,
+          0.0035362367352646147,
+          0.005105209034384675,
+          0.038367941412146465,
+          0.1196971499071938,
+          0.2140094455659651
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8831521739130436,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.09539473684210527,
+        "diagnostic_threshold": 0.04201084030202333,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.002777039246174521,
+          0.0029053201528596753,
+          0.0034692446689546124,
+          0.014320410050715774,
+          0.02989912315384032,
+          0.03163009127640972
+        ],
+        "ai_quantiles": [
+          0.0016656959036230005,
+          0.0033644460545315404,
+          0.004820793895931198,
+          0.12597465900813318,
+          0.38610212680096045,
+          0.44297328713854583
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7376644736842105,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.20394736842105263,
+        "diagnostic_threshold": 0.03204809754449932,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.002122114043163321,
+          0.0028861469704586163,
+          0.0033722658497841833,
+          0.003960134793837046,
+          0.003996253930546646,
+          0.004000267167958823
+        ],
+        "ai_quantiles": [
+          0.0024207769220395037,
+          0.003229691874147651,
+          0.009190931268952755,
+          0.1702199106489365,
+          0.2825687135562476,
+          0.3141914337395053
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8463541666666667,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.75,
+        "diagnostic_threshold": 0.004131463132270073,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0006345566217368376,
+          0.0018043775723340213,
+          0.0036323562729414435,
+          0.005629515795989228,
+          0.04836608810873165,
+          0.06585953513656498
+        ],
+        "ai_quantiles": [
+          0.0018187682624336572,
+          0.0034989940815018266,
+          0.01258136840854606,
+          0.6652043619526085,
+          0.9703509640011349,
+          0.9863908940719234
+        ],
+        "current_recall": 0.0078125,
+        "current_fpr": 0.0,
+        "auroc": 0.85791015625,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.2890625,
+        "diagnostic_threshold": 0.06874935313438375,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.00042333116731535655,
+          0.0017569453956856572,
+          0.005405541774992385,
+          0.044477102352324376,
+          0.26254168672116934,
+          0.26546872701203705
+        ],
+        "ai_quantiles": [
+          0.00019948647243617072,
+          0.004171603372735312,
+          0.027626643932445353,
+          0.5577766408043227,
+          0.8827384326686251,
+          0.9546229622121585
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7637867647058825,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.23039215686274508,
+        "diagnostic_threshold": 0.26788144836238786,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0001250684860239611,
+          0.0017560733249479443,
+          0.0034708701503154363,
+          0.017516678272923258,
+          0.3574671659797186,
+          0.8679334539465788
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          7.214307012759491e-05,
+          0.002313745315247265,
+          0.0037354498823666737,
+          0.055726583067683064,
+          0.3568572442788999,
+          0.6911751046442729
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.00019025149969930874,
+          0.0029451966353120514,
+          0.004041295989726651,
+          0.11100361828953478,
+          0.3833677744841206,
+          0.5260559233266302
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/encoder-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.003305804651343725,
+          0.20418063327358876,
+          0.9833535298335232,
+          0.9906776756632787,
+          0.9923883149929043,
+          0.9932479032061317
+        ],
+        "current_recall": 0.6435185185185185,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          0.0016840324227025603,
+          0.0028743859634841953,
+          0.0038975534694013275,
+          0.013192711014929423,
+          0.8194816838976358,
+          0.9729317989080183
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.004629629629629629,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          5.633650298956414e-05,
+          0.0026323541660542484,
+          0.004334411198647709,
+          0.012456325501798617,
+          0.8195910246059933,
+          0.9897347205877304
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.003061224489795918,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9721228182315828,
+        "human_quantiles": [
+          9.563903994403961e-05,
+          0.0024795216878313415,
+          0.003314989382367743,
+          0.004018932471374074,
+          0.0048771524735803096,
+          0.03692507977784269
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/qwen35-workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          8.416719838706315e-05,
+          0.7825984682733752,
+          0.9998207981910803,
+          0.9999774150900481,
+          0.9999913954993164,
+          0.9999954726787781
+        ],
+        "current_recall": 0.6111111111111112,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.6111373664904394e-06,
+          5.832756623259816e-06,
+          4.3058955388217845e-05,
+          0.038174549106664915,
+          0.5327623121029136,
+          0.9692730792398964
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          7.137414686912414e-07,
+          8.060209464410466e-06,
+          0.0001301946165267753,
+          0.006362213845200459,
+          0.7043329081692784,
+          0.999913301248418
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0008163265306122449,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          7.164634357186484e-07,
+          2.2473797130004822e-06,
+          4.464800870326204e-06,
+          1.4643696039291806e-05,
+          0.00010145581443723976,
+          0.004062429414814456
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-lora-comparison-v1/results/qwen35-comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.1834234935393378e-06,
+          7.01914990380222e-06,
+          0.00012331533082859456,
+          0.00957969626041863,
+          0.8951394911599477,
+          0.9997116916948561
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0006418485237483953,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          9.046028080444061e-07,
+          3.408851503435618e-06,
+          1.0488623743642557e-05,
+          0.00011259834553251733,
+          0.0008740344367593752,
+          0.030351795165592596
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.012985755274532235,
+          0.04402050035078382,
+          0.14577840703570744,
+          0.2594563305951669,
+          0.3115142820607337,
+          0.3135546446091038
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.0002545576068113e-05,
+          1.0372550141415279e-05,
+          3.174437863135122e-05,
+          0.00035074908022844577,
+          0.0005287038993120068,
+          0.000548476656987958
+        ],
+        "ai_quantiles": [
+          1.2774064682107835e-05,
+          0.00010260484930727328,
+          0.005690587888124228,
+          0.09728404852984975,
+          0.2823864905396028,
+          0.2904968253302446
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9194174757281552,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.7378640776699029,
+        "diagnostic_threshold": 0.0007515391512154593,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.284041065512149e-06,
+          2.8700187546301786e-06,
+          5.334411451742822e-06,
+          1.6210063771404077e-05,
+          0.0004466673994557205,
+          0.008142266481093341
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.8194926189904788e-06,
+          5.875210100049869e-06,
+          7.559253563225482e-05,
+          0.009281676740882108,
+          0.15136549186859652,
+          0.2027774040853039
+        ],
+        "ai_quantiles": [
+          2.6911692407169994e-06,
+          0.00010505709633895131,
+          0.05143836044887194,
+          0.25555776124774177,
+          0.6600390108087741,
+          0.994754663524789
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8635110294117647,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.18191964285714285,
+        "diagnostic_threshold": 0.204188596730286,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.6696027285001327e-06,
+          7.0563065737759835e-06,
+          5.5462641038654205e-05,
+          0.0007704121081343778,
+          0.007754487942122184,
+          0.9954996874226498
+        ],
+        "ai_quantiles": [
+          1.7281521430327469e-06,
+          2.3485557364032558e-05,
+          0.0003795198377702554,
+          0.02339017085147298,
+          0.6274453499856489,
+          0.9988279143001926
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7386148349428132,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.16267648864333947,
+        "diagnostic_threshold": 0.007971046974043414,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.8573125324255677e-06,
+          1.2151107615021233e-05,
+          0.00046751593675194175,
+          0.05547393795803964,
+          0.17837965933192904,
+          0.24130694898641722
+        ],
+        "ai_quantiles": [
+          2.810903448779312e-06,
+          0.0010104566421750088,
+          0.08817034379546035,
+          0.32181585395086587,
+          0.5287133285036612,
+          0.6520400085773784
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8647382920110194,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.3063973063973064,
+        "diagnostic_threshold": 0.18156190035771547,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          3.1010855384465686e-06,
+          5.660131592200105e-06,
+          5.4223008156998046e-05,
+          0.0010360585530298234,
+          0.10634624505047519,
+          0.21518827085747044
+        ],
+        "ai_quantiles": [
+          0.00021974321561651412,
+          0.00024582710413416657,
+          0.01506850282410859,
+          0.11405018940896625,
+          0.1710719164968931,
+          0.17740766395110716
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8909465020576132,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.6218284045884357e-06,
+          6.375014862510333e-06,
+          3.639246930469186e-05,
+          0.0005498762896780422,
+          0.015296255761815954,
+          0.04070033810422679
+        ],
+        "ai_quantiles": [
+          0.00034996743121531803,
+          0.007838636849864532,
+          0.1240017387947154,
+          0.35657484019379954,
+          0.46793444480015955,
+          0.5097339427052341
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.991745668519124,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.8125,
+        "diagnostic_threshold": 0.017703386664896886,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.7181607074438618e-06,
+          1.8012471222024094e-06,
+          6.57261342833267e-06,
+          0.00013972351081120862,
+          0.0002797616103166013,
+          0.0002953213991505339
+        ],
+        "ai_quantiles": [
+          2.3983012724997595e-06,
+          3.4927840607377806e-05,
+          0.0547993972839105,
+          0.2895111739418426,
+          0.5856904657157387,
+          0.8512594007226106
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9457236842105263,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.8355263157894737,
+        "diagnostic_threshold": 0.0006363048247005729,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          2.6960173466318444e-06,
+          3.92478887844381e-06,
+          1.35159656125508e-05,
+          2.5652260400051813e-05,
+          4.106391319901277e-05,
+          4.2776319065563993e-05
+        ],
+        "ai_quantiles": [
+          0.00011144089655953227,
+          0.0006174129407044606,
+          0.0763243754486391,
+          0.2804007756352138,
+          0.3938409052719038,
+          0.4504972246746405
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 1.0,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 1.0,
+        "diagnostic_threshold": 0.00011144089655953227,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.989303427424039e-05,
+          0.00027104881031693,
+          0.0010694080861584285,
+          0.008140457047207863,
+          0.034472857751532957,
+          0.04470503436489209
+        ],
+        "ai_quantiles": [
+          1.3482667236967205e-05,
+          0.0007377922225778173,
+          0.008218429287034222,
+          0.17000040333115146,
+          0.6017338132834348,
+          0.8926753480617817
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.81396484375,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.265625,
+        "diagnostic_threshold": 0.045897385762496426,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          2.6331833863759914e-05,
+          0.00021076307243265676,
+          0.002362763900485797,
+          0.019386660296956425,
+          0.11091812367513725,
+          0.12583006857483484
+        ],
+        "ai_quantiles": [
+          5.5680770056272304e-05,
+          0.0016968748930034736,
+          0.01888730456273224,
+          0.1327394126438071,
+          0.41788703115388026,
+          0.7644516861265791
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7987132352941178,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.10294117647058823,
+        "diagnostic_threshold": 0.13639642275163696,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          2.6781275744364723e-05,
+          0.00041456070743946683,
+          0.009181758376875878,
+          0.2378564980218817,
+          0.711569753088339,
+          0.9468220386788427
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          1.8473870968291649e-06,
+          1.4508684305802767e-05,
+          0.00021146393115520248,
+          0.09715912912904419,
+          0.3779021888021993,
+          0.6151955518793635
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9994412347998309,
+        "human_quantiles": [
+          2.007285883991714e-06,
+          1.0679313106916744e-05,
+          0.00025976872517722904,
+          0.20031701671739863,
+          0.4630231421555387,
+          0.5828998236742621
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-mix-sweep-v1/human25/results/workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0027311569305243423,
+          0.051338253990309016,
+          0.9814116507523599,
+          0.9905911656830382,
+          0.991998463135863,
+          0.9931427658649913
+        ],
+        "current_recall": 0.5601851851851852,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0018330901024300862,
+          0.0028224169459145406,
+          0.0037948308533235827,
+          0.00705976728591199,
+          0.4883644227879731,
+          0.9382003616562206
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.00010554851578490343,
+          0.0024723314169378856,
+          0.004138145274020524,
+          0.009639886433433277,
+          0.4708012267406459,
+          0.9909416037910389
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0020408163265306124,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.00014571678006976117,
+          0.0025427779266846344,
+          0.0033765956194527374,
+          0.0041680628328686,
+          0.005133386682891578,
+          0.05819535507412379
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-mix-sweep-v1/human25/results/comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0001365569299417296,
+          0.0026529850827545763,
+          0.0041745002206759535,
+          0.01085755115123928,
+          0.7732750907657201,
+          0.9815958100371063
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0025673940949935813,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          9.13289928906703e-05,
+          0.002671118737271172,
+          0.003583229013515361,
+          0.0048276454861339675,
+          0.008762492518599096,
+          0.03171967785222122
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0040039691117115025,
+          0.005803272041252273,
+          0.014431398070561152,
+          0.03973090409388922,
+          0.06361133963400754,
+          0.06607938453441556
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0026535660351499697,
+          0.0027791118932970174,
+          0.0036286857084150445,
+          0.005080468751317395,
+          0.007194232280012225,
+          0.007429094894311651
+        ],
+        "ai_quantiles": [
+          0.0025472613613490296,
+          0.003973573844501633,
+          0.004854044772138069,
+          0.008950086419663406,
+          0.1897697926204311,
+          0.36022457816613807
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8320388349514563,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.1262135922330097,
+        "diagnostic_threshold": 0.007655504825096512,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0017408122727425772,
+          0.002296032201021795,
+          0.003414255331298394,
+          0.004626265391674599,
+          0.006115917135040941,
+          0.0068317933286986465
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0019467768674326965,
+          0.0030738728399896434,
+          0.004063395426534911,
+          0.005312130392926785,
+          0.31602585209907447,
+          0.425888591246739
+        ],
+        "ai_quantiles": [
+          0.002145098422876253,
+          0.0034196767979995024,
+          0.00457595520912096,
+          0.025960678210312404,
+          0.5379382350326213,
+          0.973780665079497
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6388524159663866,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.014508928571428572,
+        "diagnostic_threshold": 0.4449777103425866,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0005707400281528902,
+          0.0029576772094837716,
+          0.003914780671454667,
+          0.005769154367328351,
+          0.021585955336689916,
+          0.2249933903796975
+        ],
+        "ai_quantiles": [
+          0.0004434042888793296,
+          0.003183675514987326,
+          0.004360561038152144,
+          0.011581285456344403,
+          0.6496625429132961,
+          0.9895141100204443
+        ],
+        "current_recall": 0.0012277470841006752,
+        "current_fpr": 0.0,
+        "auroc": 0.627870406096047,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.06077348066298342,
+        "diagnostic_threshold": 0.023197749446678375,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0015923601740543563,
+          0.003106239735353028,
+          0.003807944502252897,
+          0.004799519627366706,
+          0.009761995168340025,
+          0.08054048929651614
+        ],
+        "ai_quantiles": [
+          0.0026256588028146332,
+          0.0036836803142356674,
+          0.004810379121803019,
+          0.059033819831655586,
+          0.24549974707921413,
+          0.6340447849903774
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7989320817603647,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.18013468013468015,
+        "diagnostic_threshold": 0.015140084795395373,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0016914016021496257,
+          0.0030505021209725836,
+          0.004030477357413323,
+          0.006489772302582144,
+          0.04704079175522245,
+          0.17041993354928353
+        ],
+        "ai_quantiles": [
+          0.0033886224738652296,
+          0.0035450103637934237,
+          0.0050855492369162696,
+          0.11302952450675807,
+          0.20890115334424125,
+          0.219553556548406
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6646090534979424,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.16666666666666666,
+        "diagnostic_threshold": 0.219553556548406,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0018936916843937635,
+          0.002787394204999248,
+          0.0034797485764775367,
+          0.004692340946069005,
+          0.02405607386170561,
+          0.04387145386667623
+        ],
+        "ai_quantiles": [
+          0.0028347574949411153,
+          0.003932045458160448,
+          0.006942990926673019,
+          0.05223015236487979,
+          0.19647052779080962,
+          0.21807088923618978
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9084668192219679,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.12828947368421054,
+        "diagnostic_threshold": 0.043081994010063795,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0024962239450873882,
+          0.0027923943077423183,
+          0.0034413252700735046,
+          0.004472898296314938,
+          0.004770195838622126,
+          0.004803228898878481
+        ],
+        "ai_quantiles": [
+          0.0017831128481818868,
+          0.003282040102435092,
+          0.004521350261557141,
+          0.03318077223410492,
+          0.3441901128484448,
+          0.4396974998687902
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7960526315789475,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.4144736842105263,
+        "diagnostic_threshold": 0.004850057547332654,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0030204403259344154,
+          0.0030814258532912645,
+          0.003717561387205299,
+          0.003936587007452092,
+          0.004058029550475982,
+          0.004071523166367525
+        ],
+        "ai_quantiles": [
+          0.0031759598703172097,
+          0.003624582062493232,
+          0.010479941498824138,
+          0.13358370132502748,
+          0.2924008897217868,
+          0.3179347739209293
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.9036458333333333,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.8333333333333334,
+        "diagnostic_threshold": 0.004106537439165764,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0020444931083771984,
+          0.002419389392441356,
+          0.004036085413076243,
+          0.004881008653915056,
+          0.025901439609342342,
+          0.03492084694821014
+        ],
+        "ai_quantiles": [
+          0.0012205918674448096,
+          0.0031111314081836827,
+          0.006700820532645785,
+          0.17995388811952628,
+          0.9545128576229664,
+          0.9715395594636599
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.767822265625,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.203125,
+        "diagnostic_threshold": 0.03637811444975712,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0006395810642832164,
+          0.002655176649942398,
+          0.005585131982779653,
+          0.010695223434237356,
+          0.03759874122261534,
+          0.05490020560640572
+        ],
+        "ai_quantiles": [
+          0.0003876974212471396,
+          0.003411322910975083,
+          0.008880866566491223,
+          0.1983227890605205,
+          0.8529135475917842,
+          0.8976933406242593
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7018995098039216,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.22058823529411764,
+        "diagnostic_threshold": 0.055361891917597786,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.00021710760016623124,
+          0.0023088500373300794,
+          0.0040964203325869085,
+          0.017793350509977823,
+          0.2112626988849967,
+          0.457894244494329
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.00013773536363318888,
+          0.0023885485038649948,
+          0.0036486849625491052,
+          0.025596331102372066,
+          0.32018469431383423,
+          0.6173572993748496
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9746631109714509,
+        "human_quantiles": [
+          0.0001544839056860479,
+          0.002862854975918245,
+          0.003862289153305649,
+          0.04171839137341463,
+          0.3781960080378329,
+          0.4761542133844389
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-mix-sweep-v1/human50/results/workflow/predictions.jsonl.gz": {
+      "paper_workflow_reconstruction": {
+        "n_human": 0,
+        "n_ai": 216,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.004374197081343932,
+          0.050162497495945826,
+          0.9615990753497994,
+          0.9876853632604524,
+          0.9899313880901832,
+          0.9900406035217079
+        ],
+        "current_recall": 0.4583333333333333,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_matched": {
+        "n_human": 216,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.002112513839983479,
+          0.002623300927534865,
+          0.003377470643023273,
+          0.017757073790404775,
+          0.2975570026143672,
+          0.6133242548842516
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_workflow_remaining": {
+        "n_human": 4900,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          4.4891800506455774e-05,
+          0.0022206567988210853,
+          0.0035700920853192182,
+          0.0075659572611992505,
+          0.390498582081512,
+          0.9824244469877274
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0012244897959183673,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "ellipse": {
+        "n_human": 2571,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.00016040252493469104,
+          0.002321817239268911,
+          0.003047481346381476,
+          0.0038597575704304708,
+          0.010375333341871516,
+          0.0302000741514082
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    },
+    "paper-mix-sweep-v1/human50/results/comparison/predictions.jsonl.gz": {
+      "human_paper_remaining": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          5.333439003152307e-05,
+          0.0023181296652747853,
+          0.0036211585642525017,
+          0.008935906258160611,
+          0.5865391271236337,
+          0.9773226738907397
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0006418485237483953,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "pelic": {
+        "n_human": 400,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.00010444225930818042,
+          0.002454044622491713,
+          0.003222419585647049,
+          0.005111736960423126,
+          0.012668424856338319,
+          0.04737281310810605
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "vub": {
+        "n_human": 0,
+        "n_ai": 40,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.006061923090237573,
+          0.017417341996177022,
+          0.04676637381837723,
+          0.12162524838014732,
+          0.14467405234434147,
+          0.14759157578997298
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "perkins": {
+        "n_human": 10,
+        "n_ai": 103,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0026905364543386564,
+          0.00311284563018746,
+          0.004567590968279015,
+          0.03340968599743479,
+          0.0958837503952458,
+          0.10282531310611367
+        ],
+        "ai_quantiles": [
+          0.0032562714735267194,
+          0.006611080990597673,
+          0.03231569021724914,
+          0.19814757329476687,
+          0.4255663283254223,
+          0.45626917857379123
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8194174757281554,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.2524271844660194,
+        "diagnostic_threshold": 0.1090394228305455,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "liang": {
+        "n_human": 178,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0017541846891893356,
+          0.0020644720693070917,
+          0.0030245152288723284,
+          0.003902906711793383,
+          0.005047058673430121,
+          0.006857548642937668
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "meld_eval": {
+        "n_human": 34,
+        "n_ai": 896,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0018915112591871134,
+          0.002340662284156511,
+          0.0033830696241785364,
+          0.004995782084668448,
+          0.04119139674605983,
+          0.05137701980589084
+        ],
+        "ai_quantiles": [
+          0.0021141922282806795,
+          0.0035619678980375073,
+          0.03263801684675187,
+          0.3364494526461493,
+          0.6198285840382135,
+          0.9627343709445843
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8911173844537815,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.43526785714285715,
+        "diagnostic_threshold": 0.052039667395283394,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "detectrl": {
+        "n_human": 673,
+        "n_ai": 1629,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.00017487390384000415,
+          0.0025097398652077,
+          0.00330757034148705,
+          0.004950635598713356,
+          0.03927645342822245,
+          0.08421207081723897
+        ],
+        "ai_quantiles": [
+          0.0002586953273030782,
+          0.002832391899283889,
+          0.003977451248861793,
+          0.028127524561653114,
+          0.8264362744816808,
+          0.9838729338555396
+        ],
+        "current_recall": 0.0012277470841006752,
+        "current_fpr": 0.0,
+        "auroc": 0.6879114343752765,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.08225905463474524,
+        "diagnostic_threshold": 0.043195580130284524,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "epoch": {
+        "n_human": 495,
+        "n_ai": 594,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0009803274692285822,
+          0.0030636329524746293,
+          0.0057435300742052706,
+          0.066327380170139,
+          0.18039940921826544,
+          0.24037052767059794
+        ],
+        "ai_quantiles": [
+          0.0025652531291719743,
+          0.007127240402489256,
+          0.09374754596340368,
+          0.5192398072909638,
+          0.7857946182119431,
+          0.9099316747583815
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8526340849573172,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.2996632996632997,
+        "diagnostic_threshold": 0.19973890343144854,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "opai": {
+        "n_human": 81,
+        "n_ai": 6,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0014360241573201536,
+          0.002777877512316221,
+          0.0034578484146051505,
+          0.007429049263682883,
+          0.10023482830062119,
+          0.14313146220100814
+        ],
+        "ai_quantiles": [
+          0.0030725313403122873,
+          0.003180369280279095,
+          0.007125790165060184,
+          0.0960639985854502,
+          0.10749342313319576,
+          0.10876335919405637
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.7304526748971193,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.0,
+        "diagnostic_threshold": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "sem_detect": {
+        "n_human": 161,
+        "n_ai": 304,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0023547969250915677,
+          0.0029276427761767056,
+          0.0058034539083789095,
+          0.04137330671330864,
+          0.11239907624142842,
+          0.17597608467351897
+        ],
+        "ai_quantiles": [
+          0.003727567996621501,
+          0.01050422355280883,
+          0.04454426528632781,
+          0.1621678364898356,
+          0.27995846697851007,
+          0.4616038420212756
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.8545889179470415,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.19736842105263158,
+        "diagnostic_threshold": 0.127990598271695,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "gede": {
+        "n_human": 8,
+        "n_ai": 152,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0025656746312726158,
+          0.0026163364856258376,
+          0.0029604932305086983,
+          0.005241861717511789,
+          0.005308918654661923,
+          0.005316369425456382
+        ],
+        "ai_quantiles": [
+          0.002503672552741854,
+          0.0036172274586759,
+          0.053254228244591195,
+          0.36355685263145987,
+          0.5597282891650851,
+          0.6006465068859653
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.921875,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.8092105263157895,
+        "diagnostic_threshold": 0.005351468150377203,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "saha": {
+        "n_human": 8,
+        "n_ai": 48,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0016716648617722584,
+          0.0022838272711261085,
+          0.0030030412270251913,
+          0.004126921949669088,
+          0.004174935116221619,
+          0.004180269912505234
+        ],
+        "ai_quantiles": [
+          0.005487713517245007,
+          0.011747098424954212,
+          0.049645077415671944,
+          0.20033006852433052,
+          0.31821741648285284,
+          0.3246404714162069
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 1.0,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 1.0,
+        "diagnostic_threshold": 0.005487713517245007,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_binary": {
+        "n_human": 32,
+        "n_ai": 128,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.002150252496802649,
+          0.0035801460769353498,
+          0.007786963028235103,
+          0.024072923497421822,
+          0.07267743795981965,
+          0.08462222167887357
+        ],
+        "ai_quantiles": [
+          0.0022864882608242165,
+          0.0034994672868813447,
+          0.009878569664065124,
+          0.31217005290326294,
+          0.8587976461611869,
+          0.885324076231983
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.585693359375,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.203125,
+        "diagnostic_threshold": 0.09264624944847563,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "local_length": {
+        "n_human": 96,
+        "n_ai": 204,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.00025738834576035865,
+          0.0024684320940581914,
+          0.005610854033747082,
+          0.02889283441249168,
+          0.09008560538630783,
+          0.3660367865253378
+        ],
+        "ai_quantiles": [
+          0.00017951769259525464,
+          0.004170096834220937,
+          0.008498135036244595,
+          0.1352290378897391,
+          0.48319865280999375,
+          0.6320073080473932
+        ],
+        "current_recall": 0.0,
+        "current_fpr": 0.0,
+        "auroc": 0.6287275326797386,
+        "diagnostic_test_oracle_recall_at_1pct_fpr": 0.029411764705882353,
+        "diagnostic_threshold": 0.38572769085658365,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "arena50": {
+        "n_human": 0,
+        "n_ai": 987,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": null,
+        "ai_quantiles": [
+          0.0003348317916755116,
+          0.004209840258500381,
+          0.025903928299062927,
+          0.1506212708329346,
+          0.3842486216818611,
+          0.5356328198113428
+        ],
+        "current_recall": 0.0,
+        "current_fpr": null,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "human_paper_context": {
+        "n_human": 1558,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          9.22416489960266e-05,
+          0.0020798119102544413,
+          0.003289625665679756,
+          0.03430998374961125,
+          0.3007562938273067,
+          0.6490944104109267
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      },
+      "paper_v3_target": {
+        "n_human": 519,
+        "n_ai": 0,
+        "threshold": 0.9695676846065742,
+        "human_quantiles": [
+          0.0003550286261694661,
+          0.0026802035590930916,
+          0.0038188420210254767,
+          0.10528167723455716,
+          0.37373158530553746,
+          0.48977348440927587
+        ],
+        "ai_quantiles": null,
+        "current_recall": null,
+        "current_fpr": 0.0,
+        "deduplication": "Unique text within dataset; conflicting labels excluded"
+      }
+    }
+  }
+}

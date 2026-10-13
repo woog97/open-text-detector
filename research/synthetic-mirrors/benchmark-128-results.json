@@ -1,0 +1,217 @@
+{
+  "results": {
+    "state": "complete",
+    "results": [
+      {
+        "batch": 1,
+        "concurrency": 64,
+        "topic_workers": 8,
+        "documents": 128,
+        "elapsed_seconds": 114.19673835199501,
+        "documents_per_minute": 67.25235861227057,
+        "documents_per_hour": 4035.141516736234,
+        "writer_completion_tokens": 130577,
+        "writer_completion_tokens_per_second": 1143.4389623065695,
+        "mean_output_words": 387.3828125,
+        "mean_seed_words": 399.09375,
+        "cost_usd": 0.042123187499999215,
+        "uncertain_reserve_usd": 0.0,
+        "requests": 322,
+        "errors": [
+          {
+            "seed": "29ba11c477d054dc9da617609a5bedfc3e4d43cdf8ca2ba4ebd80a82935fcbc9",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          },
+          {
+            "seed": "32c549eb309ba1506be8b288236f63bb45f394965995745ae12d63743982ffa4",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          }
+        ],
+        "backoffs": 0,
+        "final_concurrency": 64,
+        "stage_timings": {
+          "topic": {
+            "n": 192,
+            "mean_seconds": 2.395657840041546
+          },
+          "writer": {
+            "n": 130,
+            "mean_seconds": 18.378496738284145
+          }
+        },
+        "state": "target_reached",
+        "filtering_started": false,
+        "startup_seconds": 8.229687929153442,
+        "through_last_save_seconds": 113.7443540096283,
+        "including_startup_documents_per_minute": 67.51983486890171,
+        "excluding_startup_documents_per_minute": 72.21744884439393,
+        "excluding_startup_seconds": 105.51466608047485,
+        "post_startup_document_count": 127
+      },
+      {
+        "batch": 2,
+        "concurrency": 64,
+        "topic_workers": 24,
+        "documents": 128,
+        "elapsed_seconds": 78.1499195189972,
+        "documents_per_minute": 98.27265398697045,
+        "documents_per_hour": 5896.359239218227,
+        "writer_completion_tokens": 129451,
+        "writer_completion_tokens_per_second": 1656.4444441754313,
+        "mean_output_words": 395.421875,
+        "mean_seed_words": 396.9453125,
+        "cost_usd": 0.041628587499998204,
+        "uncertain_reserve_usd": 0.0,
+        "requests": 323,
+        "errors": [
+          {
+            "seed": "4c48f3b527f5bb3935a032f5e8c7fd18b58a42be9de07da8ae0c24fc99c11bd3",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          },
+          {
+            "seed": "a33a809c02ac37bedc9509c8f8bc441277b074211cbd297bca2b8a44a02551dd",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          },
+          {
+            "seed": "c5c8d576fa3d7171ba363f6a355f1c4f81cbd50477040b624a0dc064092fdbef",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          }
+        ],
+        "backoffs": 0,
+        "final_concurrency": 64,
+        "stage_timings": {
+          "topic": {
+            "n": 192,
+            "mean_seconds": 2.212099860812941
+          },
+          "writer": {
+            "n": 131,
+            "mean_seconds": 16.750012626733167
+          }
+        },
+        "state": "target_reached",
+        "filtering_started": false,
+        "startup_seconds": 6.616931915283203,
+        "through_last_save_seconds": 77.71186089515686,
+        "including_startup_documents_per_minute": 98.82661297174819,
+        "excluding_startup_documents_per_minute": 107.18064015729102,
+        "excluding_startup_seconds": 71.09492897987366,
+        "post_startup_document_count": 127
+      },
+      {
+        "batch": 3,
+        "concurrency": 128,
+        "topic_workers": 32,
+        "documents": 128,
+        "elapsed_seconds": 71.17410659701272,
+        "documents_per_minute": 107.90441028623098,
+        "documents_per_hour": 6474.264617173859,
+        "writer_completion_tokens": 125900,
+        "writer_completion_tokens_per_second": 1768.9017259162083,
+        "mean_output_words": 398.625,
+        "mean_seed_words": 400.78125,
+        "cost_usd": 0.04079118749999866,
+        "uncertain_reserve_usd": 0.0,
+        "requests": 321,
+        "errors": [
+          {
+            "seed": "093addd061b79ee1c19922770ac0f09f3380060449db8f1e899f5355312d9523",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          }
+        ],
+        "backoffs": 0,
+        "final_concurrency": 128,
+        "stage_timings": {
+          "topic": {
+            "n": 192,
+            "mean_seconds": 2.173467140791369
+          },
+          "writer": {
+            "n": 129,
+            "mean_seconds": 17.29132809012437
+          }
+        },
+        "state": "target_reached",
+        "filtering_started": false,
+        "startup_seconds": 6.578917980194092,
+        "through_last_save_seconds": 70.96814680099487,
+        "including_startup_documents_per_minute": 108.21756444529755,
+        "excluding_startup_documents_per_minute": 118.3427747085919,
+        "excluding_startup_seconds": 64.38922882080078,
+        "post_startup_document_count": 127
+      },
+      {
+        "batch": 4,
+        "concurrency": 128,
+        "topic_workers": 32,
+        "documents": 128,
+        "elapsed_seconds": 92.54838807700435,
+        "documents_per_minute": 82.98361710643627,
+        "documents_per_hour": 4979.0170263861755,
+        "writer_completion_tokens": 130965,
+        "writer_completion_tokens_per_second": 1415.0975799927637,
+        "mean_output_words": 394.2578125,
+        "mean_seed_words": 397.1796875,
+        "cost_usd": 0.042094625000000274,
+        "uncertain_reserve_usd": 0.0,
+        "requests": 321,
+        "errors": [
+          {
+            "seed": "97a5bc42865c0692c566cf7cacd04f614c4955ced07725def7490578585343cb",
+            "stage": "writer",
+            "reason": "empty_api_content_preserved"
+          }
+        ],
+        "backoffs": 0,
+        "final_concurrency": 128,
+        "stage_timings": {
+          "topic": {
+            "n": 192,
+            "mean_seconds": 2.4157012770206925
+          },
+          "writer": {
+            "n": 129,
+            "mean_seconds": 21.37962728190674
+          }
+        },
+        "state": "target_reached",
+        "filtering_started": false,
+        "startup_seconds": 5.983006954193115,
+        "through_last_save_seconds": 92.26550388336182,
+        "including_startup_documents_per_minute": 83.23804322045143,
+        "excluding_startup_documents_per_minute": 88.31455128443298,
+        "excluding_startup_seconds": 86.2824969291687,
+        "post_startup_document_count": 127
+      }
+    ],
+    "new_documents": 512,
+    "cost_usd": 0.16663758749999635,
+    "cumulative_cost_usd": 3.2949883249999936,
+    "uncertain_reserve_usd": 0.026674375,
+    "filtering_started": false,
+    "finished_at": "2026-10-02T22:14:06.702863+00:00",
+    "throughput_definitions": {
+      "including_startup": "128 outputs / (last saved timestamp - batch start)",
+      "excluding_startup": "127 outputs / (last saved timestamp - first saved timestamp)",
+      "startup": "batch start to first saved output; remaining scheduling ramp and slow tails still included",
+      "precision": "saved_at timestamp is recorded immediately before local atomic file write",
+      "wall_time": "elapsed_seconds also includes finalizing pending topic calls and export"
+    }
+  },
+  "backup": {
+    "state": "verified",
+    "new_documents": 512,
+    "total_documents": 10512,
+    "original_documents_unchanged": 10000,
+    "key": "workspace/synthetic-mirrors-luna-dollar-v1-recovered-20261002/benchmarks/benchmark-128-20261002.tar.gz",
+    "sha256": "115fba83883f770b305c05196e9dfbb5543710dd09468825faf2f7717c40aa43",
+    "filtering_started": false,
+    "at": "2026-10-02T22:15:11.926104+00:00"
+  }
+}

@@ -1,0 +1,118 @@
+Human-source scaling survey — October 2, 2026
+
+expand_pool.export labels count == quota as quota_filled; any mismatch becomes additional_source_work_required. No diagnosis or capacity estimate is encoded. Revised zero/lowered quotas can therefore appear filled without solving original source constraints.
+
+No source has an unconditional assurance of zero additional work at arbitrary scale. Existing adapters reduce work; quotas and usable capacity are different.
+
+gutenberg: 12,551 retained; original100k quota10,000; historical1M quota100,000.
+top_up_demonstrated: 10,000 to12,551 succeeded. Further supply still needs passage-length, per-book cap, protected-book and global-dedup checks.
+
+writingprompts: 6,667 retained; original100k quota6,667; historical1M quota66,670.
+existing_adapter_finite_training_archive: Resume original train archive; finite eligible stories, one passage per story, protected prompt grouping and length-bin supply constrain expansion.
+
+scp: 1,893 retained; original100k quota4,444; historical1M quota44,440.
+historical_narrative_supply: 2551missing original slots; cached historical tale inventory and required medium/long prose exhausted within current scan.
+
+wikisource: 1,111 retained; original100k quota1,111; historical1M quota11,110.
+existing_stream_adapter: Resume pinned shards; verify untouched prose supply, historical-date/rights evidence and length bins.
+
+pmc: 6,306 retained; original100k quota6,306; historical1M quota63,060.
+existing_stream_adapter: Resume pinned shards; eligible original article/date/license filters and protected-paper exclusions constrain yield.
+
+arxiv: 5,405 retained; original100k quota5,405; historical1M quota54,050.
+existing_stream_adapter: Resume pinned shards; original paper/date/rights and protected-paper exclusions constrain yield.
+
+pes2o: 3,604 retained; original100k quota3,604; historical1M quota36,040.
+existing_stream_adapter: Audit retained eligible subset and protected-paper dedup before scanning additional pinned inputs; corpus size is not eligible capacity.
+
+acl: 2,703 retained; original100k quota2,703; historical1M quota27,030.
+existing_dedicated_adapter: Continue pinned ACL archive with article rights/date rules and mirror noncommercial restriction retained; eligible yield unmeasured.
+
+wikipedia: 7,958 retained; original100k quota7,958; historical1M quota79,580.
+existing_stream_adapter: 111 cursor entries, one currently open; resume quota stop and audit historical done flags. Eligible remaining pages/bin supply unmeasured.
+
+pressbooks: 3,979 retained; original100k quota3,979; historical1M quota39,790.
+source_recovery_was_required: Quota required cached-span recovery. Need audit unused books/nonoverlapping spans and long bins; ordinary resume alone is not proven sufficient.
+
+libretexts: 2,387 retained; original100k quota2,387; historical1M quota23,870.
+existing_stream_adapter: Resume pinned reference-text shards; per-parent passage caps, rights and long-bin capacity remain unmeasured.
+
+wikibooks: 1,592 retained; original100k quota1,592; historical1M quota15,920.
+existing_stream_adapter: Resume pinned namespace0 source; historical cursor flags and eligible original prose/length distribution require reconciliation.
+
+amazon2018: 5,306 retained; original100k quota5,306; historical1M quota53,060.
+existing_dedicated_adapter: Pinned review archives and product/author filters must continue with dedup. Eligible length distribution and covered archive range are not a capacity certificate.
+
+imdb: 1,061 retained; original100k quota1,061; historical1M quota10,610.
+existing_adapter_finite_training_archive: Finite original train reviews, one passage per review, source rights unresolved; audit remaining training split and long reviews.
+
+opinrank: 4,244 retained; original100k quota4,244; historical1M quota42,440.
+existing_adapter_finite_training_archive: Finite hotel/car review archive with group quotas and length bins; use batched adapter and measure remaining eligible reviews.
+
+stack_nontech: 5,726 retained; original100k quota5,726; historical1M quota57,260.
+existing_stream_adapter: Resume pinned approved nontechnical communities; preserve community/author grouping and original prose filters.
+
+stack_tech: 2,082 retained; original100k quota2,082; historical1M quota20,820.
+existing_stream_adapter: Resume approved technical community subset; prose versus code filters, grouping and length bins determine actual yield.
+
+ubuntu_irc: 1,561 retained; original100k quota1,561; historical1M quota15,610.
+existing_dedicated_adapter: Session reconstruction and date/channel rules required; remaining unique eligible sessions unmeasured.
+
+wiki_talk: 1,041 retained; original100k quota1,041; historical1M quota10,410.
+existing_stream_adapter: Pinned namespace1 only; quota-stopped cursor audit plus dialogue/prose and length-bin capacity required.
+
+cccc: 5,017 retained; original100k quota5,335; historical1M quota53,350.
+long_prose_and_reviewed_domain_supply: 318missing long-bin slots; reviewed filtered capture/domain inventory needs expansion.
+
+eff: 415 retained; original100k quota821; historical1M quota8,210.
+archive_inventory_and_retrieval: 406missing slots; only197indexed URLs in old collector. Wayback CDX and sample captures now respond.
+
+foodista: 1,545 retained; original100k quota821; historical1M quota8,210.
+top_up_demonstrated: 821 to1,545 succeeded after scanning more shards. 8 cursor entries/7done; further eligible long prose and historical date evidence need measurement.
+
+wikivoyage: 1,231 retained; original100k quota1,231; historical1M quota12,310.
+source_recovery_was_required: Quota needed110 official pre2022 revisions after cached-span recovery. Expansion requires more historical API fetches, dedup, long prose and rate-limit handling.
+
+globalvoices: 1,652 retained; original100k quota1,652; historical1M quota16,520.
+existing_stream_adapter: Additional pinned articles possible; claimed dates do not certify historical versions. Rights/author, dedup and length constraints remain.
+
+voa: 1,717 retained; original100k quota1,652; historical1M quota16,520.
+top_up_demonstrated_finite_filtered_inventory: 1,652 to1,717 succeeded. Current inventory7,643articles/4,933eligible original documents; not all yield acceptable requested length bins.
+
+wikinews: 991 retained; original100k quota991; historical1M quota9,910.
+existing_stream_adapter: Resume approved pinned original articles; date/license, article-family and long-bin capacity remain unmeasured.
+
+scidev: 926 retained; original100k quota991; historical1M quota9,910.
+historical_capture_selection_and_long_prose: 65missing long-bin slots; current notices/bylines and matching historical captures restrict yield.
+
+oanc_slate: 1,321 retained; original100k quota1,321; historical1M quota13,210.
+finite_source_and_explicit_migration_required: Pinned component is finite;1,570 source cursors marked done. Adapter rejects changed quota/length settings without explicit migration.
+
+asap2: 4,206 retained; original100k quota2,943; historical1M quota29,430.
+top_up_demonstrated_with_hard_exclusions: 2,943 to4,206 succeeded. Protected prompt families remain excluded from new intake. Prior capacity audit10,763eligible raw essays is not full-scale/global-neardup clearance.
+
+ellipse: 0 retained; original100k quota1,226; historical1M quota12,260.
+protected_evaluation_families: All44original training prompt families protected; revised target0 does not establish any usable supply.
+
+persuade: 699 retained; original100k quota736; historical1M quota7,360.
+finite_eligible_prompt_subset: 699eligible original train essays under current protected-family/dedup rules;37original slots unfilled.
+
+govreport: 1,086 retained; original100k quota1,086; historical1M quota10,860.
+existing_dedicated_adapter: Pinned original training-report column only; finite shard/reports, protected groups and long-bin yield must be counted.
+
+fed: 776 retained; original100k quota776; historical1M quota7,760.
+existing_dedicated_discovery_adapter: Need expand historical Board-authored document discovery; original-author/date filters and network failures still apply.
+
+worldbank: 776 retained; original100k quota776; historical1M quota7,760.
+discovery_and_explicit_migration_required: Broader official discovery and per-work eligible license verification needed; adapter stores frozen configuration and rejects changed settings.
+
+oanc_icic: 465 retained; original100k quota465; historical1M quota4,650.
+finite_source_and_explicit_migration_required: Small original letters/fundraising component;224source cursors done. Prior465quota used adapted short length weights; tenfold supply unproven and frozen settings need migration.
+
+Dedicated source audit/background dispatch update
+
+All six source agents dispatched. ELLIPSE audit confirms zero eligible essays under protected-family exclusions. PERSUADE fresh full-file audit confirms all699 eligible essays already retained. These are eligibility ceilings, not collector failures.
+CCCC background discovery launched with40minute bound. Thirty reviewed hosts times410/site cap gives theoretical12,300 ceiling, below53,350 nominal scaled allocation. Broader eligible domain review needed.
+SciDev alternative historical capture recovery launched with45minute bound; early stage1,085 candidates (+159), pending independent validation/global dedup. Existing2,114 article families times3/doc gives at most6,342 before eligibility, below9,910 nominal scaled allocation. Separate continuation queued to consume new CCCC captures.
+EFF and SCP dedicated agents running archive recovery. Recovery/status metadata in background-source-work.json and per-source reports. These are dispatch-time snapshots, not guarantees of continued running.
+All expansions isolated remote candidates; published100k preserved. User authorizes exceeding100k for this work. No paid generation or automation recreated.

@@ -1,0 +1,27 @@
+{
+  "checked_at": 1791063547.859235,
+  "space": {
+    "provider_state": "RUNNING",
+    "hardware": "a100x4",
+    "diagnosis": "Persistent /data fuse mount requests stalled; Jupyter PID126 and Qwen9B PID73513 waiting in request_wait_answer; Qwen4B PID75871 D/folio_wait_bit_common; all GPUs 0% at console check",
+    "restart": "Blocked by automatic approval review; requested user permission; NOT executed",
+    "modernbert": "Saved status trained_calibration_pending; tracker failed before final status",
+    "qwen35-9b": {
+      "optimizer_steps": 44,
+      "state": "storage_stalled",
+      "wandb": "https://wandb.ai/rigg-alice0/pangram-text-classifiers/runs/3p29qgki"
+    },
+    "ettin-1b": "Relaunched after missing .bin download; stuck loading",
+    "qwen35-4b": "Relaunched after I/O error; stuck loading"
+  },
+  "h200": {
+    "gemma4-12b": {
+      "optimizer_steps": 35,
+      "state": "training",
+      "wandb": "https://wandb.ai/rigg-alice0/pangram-text-classifiers/runs/4y9d0kgn"
+    },
+    "qwen36-27b": "Replaced by user in other chat; dense assets deleted there. Retry here raced that change and exited on missing assets; do not retry.",
+    "qwen36-35b-a3b": "Other chat 01a103a1-8126-7f23-b14e-0ebfc113f7e9 handles rank128/expert16 BF16 replacement."
+  },
+  "recovery_access": "Browser signed-in Hugging Face Space dev-mode/vscode-web -> integrated terminal works while Jupyter blocked. Default and woog.txt SSH keys denied. Do not save signed URLs."
+}

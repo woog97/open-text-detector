@@ -1,0 +1,262 @@
+<title>Detector Comparison Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column, tabbed sections, wide tables scroll inside their own frames */
+:root {
+  --bg: #f3f5f7; --panel: #ffffff; --fg: #18212b; --muted: #5b6875; --line: #d9dfe5;
+  --accent: #1d5f8a; --accent-soft: #e2edf5; --good: #1f7a4d; --good-soft: #e3f3ea; --bad: #b0402a; --bad-soft: #f8e6e1;
+  --warn: #9a6a12; --warn-soft: #f6eedb; --bar: #9fb4c6; --bar-hi: #1d5f8a;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11171d; --panel: #18212a; --fg: #e4e9ee; --muted: #93a1ae; --line: #2b3742;
+  --accent: #6fb0dc; --accent-soft: #1d3346; --good: #5cc28e; --good-soft: #17352a; --bad: #ec8a74; --bad-soft: #3c2320;
+  --warn: #e0b65c; --warn-soft: #3a3020; --bar: #3d566b; --bar-hi: #6fb0dc; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11171d; --panel: #18212a; --fg: #e4e9ee; --muted: #93a1ae; --line: #2b3742;
+  --accent: #6fb0dc; --accent-soft: #1d3346; --good: #5cc28e; --good-soft: #17352a; --bad: #ec8a74; --bad-soft: #3c2320;
+  --warn: #e0b65c; --warn-soft: #3a3020; --bar: #3d566b; --bar-hi: #6fb0dc; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font: 600 30px/1.15 var(--display); margin: 0; letter-spacing: .01em; text-wrap: balance; }
+h2 { font: 600 20px/1.25 var(--display); margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; max-width: 72ch; }
+.meta { font: 12px var(--mono); color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line); }
+nav button { font: 500 14px var(--body); color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 10px; cursor: pointer; }
+nav button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+nav button:focus-visible, .seg button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section.panel { display: grid; gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.takeaways { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 80ch; }
+.takeaways b { font-weight: 600; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+.seg button { font: 500 13px var(--body); background: var(--panel); color: var(--muted); border: 0; padding: 5px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--fg); }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; justify-content: space-between; }
+.note { color: var(--muted); font-size: 13px; max-width: 80ch; margin: 0; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; vertical-align: top; }
+th { font: 500 12px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; position: sticky; top: 0; background: var(--panel); }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 220px; }
+td.num { font: 13px var(--mono); font-variant-numeric: tabular-nums; }
+td .sd { color: var(--muted); font-size: 11.5px; }
+tr.sec td { background: var(--accent-soft); font: 600 13px var(--body); text-align: left; }
+.lab { display: grid; gap: 2px; }
+.lab small { color: var(--muted); font-size: 12px; }
+.pill { display: inline-block; font: 500 11px var(--body); padding: 1px 7px; border-radius: 9px; margin-left: 6px; vertical-align: 1px; }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.good { background: var(--good-soft); color: var(--good); }
+td.up { color: var(--good); } td.down { color: var(--bad); }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--fg); font: 12px var(--body); }
+.chart .muted { fill: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+details summary { cursor: pointer; font-weight: 500; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Detector Comparison Board</h1>
+    <p class="sub">Every scored checkpoint from the Oct 4–6 runs, on the paper-edit evaluation set and on text written by other AI models. Recall is at a 1% human false-positive rate on sentences unless a column says AUROC.</p>
+    <div class="meta" id="updated"></div>
+  </header>
+  <nav role="tablist" id="tabs"></nav>
+  <main id="panels"></main>
+</div>
+
+<script>
+const P = /*DATA*/null;
+const fmt = (x, d = 3) => x == null ? '–' : x.toFixed(d);
+const TABS = [
+  ['summary', 'Summary'], ['mix', 'Mix decision'], ['data', 'Short-edit data'], ['moe', 'MoE by epoch'], ['lr', 'Learning-rate sweep'], ['curve', 'Full-length 4B/9B'], ['river', "River's sweep"], ['cross', 'Other AI models']
+];
+let half = 'test';
+try { half = localStorage.getItem('half') || 'test'; } catch (e) {}
+document.getElementById('updated').textContent = 'Updated ' + P.updated + '. Test half unless switched; ± is the standard deviation across seeds.';
+
+function cell(m, k) {
+  const v = m && m[half] && m[half][k];
+  if (!v) return '<td class="num">–</td>';
+  const sd = v.sd != null ? ` <span class="sd">±${v.sd.toFixed(3)}</span>` : '';
+  return `<td class="num">${fmt(v.mean)}${sd}</td>`;
+}
+function flagPill(f) {
+  if (!f) return '';
+  const cls = f === 'training' ? 'warn' : 'bad';
+  return `<span class="pill ${cls}">${f}</span>`;
+}
+function table(section, extraNote) {
+  const rows = P.rows.filter(r => r.section === section);
+  const head = '<tr><th>Model</th>' + P.metrics.map(m => `<th>${m[1]}</th>`).join('') + '</tr>';
+  let body = '', lastModel = null;
+  for (const r of rows) {
+    if (r.model !== lastModel) { body += `<tr class="sec"><td colspan="${P.metrics.length + 1}">${r.model}</td></tr>`; lastModel = r.model; }
+    const seeds = r.n > 1 ? `${r.n} seeds` : (r.n === 1 ? '1 seed' : 'pending');
+    body += `<tr><td><div class="lab"><span>${r.label}${flagPill(r.flag)}</span><small>${seeds}, epoch ${r.epoch}</small></div></td>` +
+      (r.m ? P.metrics.map(m => cell(r.m, m[0])).join('') : P.metrics.map(() => '<td class="num">–</td>').join('')) + '</tr>';
+  }
+  return `<div class="card"><div class="row"><h2>${TABS.find(t => t[0] === section)[1]}</h2>${halfToggle()}</div>` +
+    (extraNote ? `<p class="note">${extraNote}</p>` : '') + `<div class="scroll"><table>${head}${body}</table></div></div>`;
+}
+function halfToggle() {
+  return `<div class="seg" role="group" aria-label="Evaluation half">` +
+    ['test', 'dev'].map(h => `<button type="button" data-half="${h}" aria-pressed="${h === half}">${h === 'test' ? 'Test half' : 'Dev half'}</button>`).join('') + '</div>';
+}
+
+function chart() {
+  const pick = [['q4b-A', '4B baseline'], ['q4b-Arep', '4B baseline rerun'], ['q4b-SPH', '4B + splices (paper pairs)'], ['q4b-SPG', '4B + splices (GRADTEX)'],
+    ['q4b-LLE', '4B + LLM edits'], ['q4b-MIX', '4B + splices & LLM edits'], ['q9b-A', '9B baseline'],
+    ['moe-A-s1-e2', 'MoE 20%, epoch 2'], ['moe-A-full-lr1e4-e0', 'MoE full 1e-4, epoch 0'], ['moe-A-full-lr1e4-e2', 'MoE full 1e-4, epoch 2']];
+  const items = pick.map(([k, lab]) => { const r = P.rows.find(x => x.key === k); const v = r && r.m && r.m[half].small; return { k, lab, v, pending: r && r.flag === 'training' }; })
+    .filter(x => x.v || x.pending);
+  const W = 760, L = 210, R = 60, rowH = 30, H = items.length * rowH + 40, x = v => L + v * (W - L - R);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Small-edit recall at 1% FPR by model">`;
+  for (const t of [0, .2, .4, .6, .8, 1]) s += `<line x1="${x(t)}" x2="${x(t)}" y1="10" y2="${H - 24}" stroke="var(--line)"/><text class="muted" x="${x(t)}" y="${H - 8}" text-anchor="middle">${t.toFixed(1)}</text>`;
+  items.forEach((it, i) => {
+    const y = 14 + i * rowH, short = /SP|LLE|MIX/.test(it.k);
+    s += `<text x="${L - 10}" y="${y + 14}" text-anchor="end">${it.lab}</text>`;
+    if (it.pending) { s += `<text class="muted" x="${L + 6}" y="${y + 14}">training</text>`; return; }
+    s += `<rect x="${L}" y="${y + 3}" width="${x(it.v.mean) - L}" height="16" rx="2" fill="${short ? 'var(--bar-hi)' : 'var(--bar)'}"/>`;
+    for (const v of it.v.vals) s += `<circle cx="${x(v)}" cy="${y + 11}" r="3.2" fill="var(--panel)" stroke="var(--fg)" stroke-width="1.2"/>`;
+    s += `<text x="${x(it.v.mean) + 8}" y="${y + 15}" class="muted">${it.v.mean.toFixed(2)}</text>`;
+  });
+  return s + '</svg>';
+}
+
+function summary() {
+  return `<div class="card"><div class="row"><h2>Small-edit recall at 1% FPR</h2>${halfToggle()}</div>
+    <div class="legend"><span style="--c: var(--bar-hi)">Trained with short-edit data</span><span style="--c: var(--bar)">Current data mix</span><span style="--c: var(--fg)">○ one seed</span></div>
+    <div class="chart">${chart()}</div>
+    <p class="note">Small edits are one- or two-sentence AI edits inside human paper paragraphs. The test half has about 150 small-edit AI sentences, so absolute values carry roughly ±0.07 sampling error; differences between arms scored on the same sentences are tighter.</p></div>
+  <div class="card"><h2>What the results say so far</h2><ol class="takeaways">
+    <li><b>The T2 mix fixes the MoE on small edits (one seed each).</b> On the strict held-out set at the paper threshold, the 20%-length MoE trained on T2 catches 63% of small edits (Haiku 76%, Luna 63%, Opus 61%, Sonnet 57%), against 25% for the MoE on the old mix and 60% for the 4B on T2 (3 seeds). On the paper-edit test half its small-edit recall is 0.47, level with the 4B on T2 (0.48) and below the 4B splice arm (0.63), while it keeps standalone-rewrite recall (0.85) and public-document AUROC (0.99). One full-length pass is slightly worse than 3 epochs at 20% (57% held-out, 0.45 test).</li>
+    <li><b>T2 also cuts boundary bleed on long AI sections.</b> On the 500-document sample, the one-pass MoE on T2 reaches sentence AUROC 0.995 and flags 87% of AI sentences at the paper threshold, and human sentences next to AI sections are flagged 2.8% of the time, against 11.4% for the MoE on the old mix. The 20%-length MoE on T2 flags more AI sentences (91%) but bleeds more: 5.0% of neighbouring human sentences and 0.75% of sentences in whole human documents, against 0.2% for the one-pass run.</li>
+    <li><b>Short-edit training data is the largest gain measured.</b> Replacing part of the mix with splice edits raised 4B small-edit recall from 0.25 to 0.58–0.63 across three seeds each, with human false positives unchanged at about 1%.</li>
+    <li><b>It has costs elsewhere.</b> Recall on standalone AI rewrites fell in both splice arms, and dropping GRADTEX cost public-document AUROC (0.975 to 0.911). The LLM-edit and mixed arms test whether a different mix avoids this.</li>
+    <li><b>More of the same data does not help the MoE.</b> The full-length MoE at 1e-4 trained cleanly, but its small-edit recall (0.21–0.23 on the test half) stays below the 20%-length run (0.27), and its all-edit AUROC is best after the first epoch.</li>
+    <li><b>High learning rates blow up at full length.</b> The 5e-4 runs and the MoE at 2e-4 diverged around step 950. A divergence guard now stops or rolls back such runs.</li>
+    <li><b>Claude-written small edits are harder to catch, and splice training helps on every writer.</b> On held-out papers at the paper threshold, the splice-trained 4B (GRADTEX arm, 3 seeds) catches about 53% of Luna's one- and two-sentence edits, 63% of Haiku's, and 37–41% of Claude Sonnet and Opus 5.5 edits. The 20% MoE without splices catches 22–33% across writers.</li>
+    <li><b>On long AI sections the gap is smaller, and the detector bleeds across boundaries.</b> Against whole human documents, MoE AUROC on Claude Sonnet and Opus 5.5 sections is 0.93–0.96, against 0.97–0.99 for Luna. At the paper threshold only 0.2–0.4% of whole human documents' sentences are flagged, but 12–19% of human sentences sitting beside AI sections are.</li>
+    <li><b>River's hyperparameter sweep found no better 4B recipe.</b> None of 15 one-factor changes beat River's reference run (small-edit recall 0.26) by more than seed noise; LoRA alpha 256, rank 256 and 15% warmup were clearly worse (0.19–0.21). River's two half-length MoE runs land at 0.22–0.30 across checkpoints, in line with ours.</li>
+  </ol></div>`;
+}
+
+function crossTab() {
+  const pick = ds => P.xmodels.filter(m => m.ds === ds);
+  const g = (m, k, f) => (m.groups[k] || {})[f];
+  const head = (ms, first) => `<tr><th>${first}</th>` + ms.map(m => `<th>${m.label}</th>`).join('') + '</tr>';
+  const line = (ms, lab, key, f, pct) => `<tr><td>${lab}</td>` + ms.map(m => { const v = g(m, key, f) ?? (f === 'auroc_vs_controls' ? g(m, key, 'auroc') : null); return `<td class="num">${v == null ? '–' : pct ? (100 * v).toFixed(0) + '%' : fmt(v)}</td>`; }).join('') + '</tr>';
+  const heldout = (ho, title, note) => {
+    if (!ho.length) return '';
+    const sec = (lab) => `<tr class="sec"><td colspan="${ho.length + 1}">${lab}</td></tr>`;
+    return `<div class="card"><h2>${title}</h2><p class="note">${note}</p>
+      <div class="scroll"><table>${head(ho, 'Writer')}${sec('AUROC')}${P.hwriters.map(([k, lab, n]) => line(ho, lab + (n ? ` <span class="pill good">${n}</span>` : ''), 'writer:' + k, 'auroc_vs_controls')).join('')}
+      ${sec('Recall at the paper threshold')}${P.hwriters.map(([k, lab]) => line(ho, lab, 'writer:' + k, 'recall_at_in_domain_threshold', true)).join('')}
+      ${sec('Recall at the paper threshold, by edit type')}${P.htypes.map(([k, lab]) => line(ho, lab, 'cohort:' + k, 'recall_at_in_domain_threshold', true)).join('')}</table></div></div>`;
+  };
+  const hetero = (ms, title, note) => {
+    if (!ms.length) return '';
+    const doc = '<tr><td>Whole documents, mixed vs human</td>' + ms.map(m => `<td class="num">${fmt(m.doc_auc)}</td>`).join('') + '</tr>';
+    const fpr = (lab, f) => `<tr><td>${lab}</td>` + ms.map(m => `<td class="num">${m[f] == null ? '–' : (100 * m[f]).toFixed(1) + '%'}</td>`).join('') + '</tr>';
+    return `<div class="card"><h2>${title}</h2><p class="note">${note}</p>
+      <div class="scroll"><table>${head(ms, 'Writer')}${P.writers.map(([k, lab, n]) => line(ms, lab + (n ? ` <span class="pill good">${n}</span>` : ''), 'writer:' + k, 'auroc_vs_controls')).join('')}
+      <tr class="sec"><td colspan="${ms.length + 1}">By domain</td></tr>${P.cohorts.map(([k, lab]) => line(ms, lab, 'cohort:' + k, 'auroc_vs_controls')).join('')}${doc}
+      <tr class="sec"><td colspan="${ms.length + 1}">Human sentences flagged at the paper threshold</td></tr>${fpr('Whole human documents', 'fpr_ctrl')}${fpr('Human text inside mixed documents', 'fpr_retained')}${fpr('All human sentences', 'fpr_all')}</table></div></div>`;
+  };
+  const out =
+    heldout(pick('heldout2'), 'Held-out small edits by writer (strict set)', 'The current held-out set: 1,171 one- and two-sentence edits on papers kept out of all training, by Claude Opus 5.5 (340), Sonnet 5.5 (339) and Haiku 4.5 (192), written by Claude Code subagents, plus GPT-6 Luna (300); every edit passes the strict named-sentence and byte-identical checks. Negatives are sentences of the original human paragraphs. Recall uses the paper threshold (1% FPR on the paper-edit evaluation set’s human sentences).') +
+    hetero(pick('hetero500'), 'Long AI sections by writer (500-document sample)', 'Sentence-level AUROC of AI sentences against sentences from matched whole human documents, on a fixed writer-stratified sample of open-text-detector/heterogeneous-ai-spans: 500 documents with AI sections plus 500 human controls. The same rows are used for every model. The last rows show the share of human sentences flagged at the paper threshold.') +
+    heldout(pick('heldout'), 'Earlier held-out set (1,185 edits)', 'The first version of the held-out set, before the strict checks: 1,185 edits by Claude Opus 5.5 (349), Sonnet 5.5 (335), Haiku 4.5 (201) and GPT-6 Luna (300). Kept for the models not yet scored on the strict set; do not compare these numbers with the strict table.') +
+    hetero(pick('hetero'), 'Long AI sections by writer (full set, 1,400 documents)', 'The full heterogeneous-ai-spans set: 1,400 documents with AI sections (median about 2,100 characters) from six writers. Our training edits before T2 were all from GPT-6 Luna. Not directly comparable with the 500-document sample.');
+  return out || '<div class="card"><h2>Other AI models</h2><p class="note">No cross-model results yet.</p></div>';
+}
+
+
+const ARMN = { T21: '4B T2.1', T21S: '4B T2.1 soft labels', T2: '4B T2', SPG: '4B SPG', MIXA: 'MoE mix A', MIXB: 'MoE mix B' };
+const WN = { 'gpt-6-luna': 'GPT-6 Luna', 'gpt-6-sol': 'GPT-6 Sol', 'gpt-6.1-sol': 'GPT-6.1 Sol', 'claude-haiku-4-5': 'Claude Haiku 4.5', 'claude-haiku-4-5-20251001': 'Claude Haiku 4.5',
+  'claude-sonnet-5-5': 'Claude Sonnet 5.5', 'claude-opus-5-5': 'Claude Opus 5.5', 'claude-fable-5-1': 'Claude Fable 5.1', 'Opus 3': 'Claude Opus 3' };
+const pct = (v, d = 1) => v == null ? '–' : (100 * v).toFixed(d) + '%';
+function keyLabel(k) {
+  if (k === 'all') return 'All AI sentences';
+  if (k === 'docflag_ai') return 'AI documents flagged (any sentence)';
+  if (k === 'docflag_controls') return 'Human documents flagged (any sentence)';
+  if (k.startsWith('w:')) return WN[k.slice(2)] || k.slice(2);
+  if (k.startsWith('src:')) { const [, src, kind] = k.split(':'); return `${src} (${kind === 'ai' ? 'AI sentences' : 'human'})`; }
+  if (k.startsWith('fp|src:')) return k.split(':')[1] + ' human sentences';
+  return k;
+}
+function evalCard(title, note, x, armNotes = {}) {
+  if (!x || !Object.keys(x.arms || {}).length) return `<div class="card"><h2>${title}</h2><p class="note">Not scored yet.</p></div>`;
+  const arms = Object.keys(x.arms);
+  const keys = [...new Set(arms.flatMap(a => Object.keys(x.arms[a].mean_recall)))];
+  const order = k => k === 'all' ? 0 : k.startsWith('w:') ? 1 : k.startsWith('src:') ? 2 : k.startsWith('docflag') ? 3 : 4;
+  const rk = keys.filter(k => !k.startsWith('fp|')).sort((a, b) => order(a) - order(b) || a.localeCompare(b));
+  const fk = keys.filter(k => k.startsWith('fp|src:')).sort();
+  const nAi = k => { const s = x.arms[arms[0]].seeds[0]; return s.n_ai[k]; };
+  const head = '<tr><th>Recall at the paper threshold</th>' + arms.map(a => `<th>${ARMN[a]}${armNotes[a] ? ` <span class="pill warn">${armNotes[a]}</span>` : ''}<br><small>${x.arms[a].seeds.length} seed${x.arms[a].seeds.length > 1 ? 's' : ''}</small></th>`).join('') + '</tr>';
+  const line = (lab, f) => `<tr><td>${lab}</td>` + arms.map(a => `<td class="num">${f(x.arms[a])}</td>`).join('') + '</tr>';
+  const sec = lab => `<tr class="sec"><td colspan="${arms.length + 1}">${lab}</td></tr>`;
+  let body = rk.map(k => line(keyLabel(k) + (nAi(k) && !k.startsWith('docflag') ? ` <small class="sd">n=${nAi(k)}</small>` : ''), A => pct(A.mean_recall[k], 0))).join('');
+  body += sec('Human false positives at the paper threshold') + line('Human-control sentences', A => pct(A.mean_control_fpr, 2)) +
+    fk.map(k => line(keyLabel(k), A => pct(A.mean_recall[k], 2))).join('') + sec('Ranking') + line('Sentence AUROC, AI vs human controls', A => fmt(A.mean_auroc));
+  const pairs = Object.entries(x.paired || {});
+  const pk = ['all', 'docflag_ai', 'docflag_controls', ...rk.filter(k => k.startsWith('w:'))];
+  const ptab = pairs.length ? `<details><summary>Paired bootstrap (papers resampled, 2,000 draws; seed-mean difference, 95% interval)</summary><div class="scroll"><table>
+    <tr><th>Comparison</th>${pk.map(k => `<th>${keyLabel(k)}</th>`).join('')}<th>Control sentence FPR</th></tr>` +
+    pairs.map(([n, b]) => { const [hi, lo] = n.split('-'); return `<tr><td>${ARMN[hi]} − ${ARMN[lo]}<br><small class="sd">${b.n_common_rows} shared rows, ${b.n_papers} papers</small></td>` +
+      pk.map(k => { const d = b.recall_diff[k]; if (!d) return '<td class="num">–</td>'; const sig = d.ci95[0] > 0 ? 'up' : d.ci95[1] < 0 ? 'down' : '';
+        return `<td class="num ${k === 'docflag_controls' ? (sig === 'up' ? 'down' : sig === 'down' ? 'up' : '') : sig}">${(100 * d.diff).toFixed(1)}<br><small class="sd">[${(100 * d.ci95[0]).toFixed(1)}, ${(100 * d.ci95[1]).toFixed(1)}]</small></td>`; }).join('') +
+      `<td class="num">${(100 * b.control_fpr_diff.diff).toFixed(2)}<br><small class="sd">[${(100 * b.control_fpr_diff.ci95[0]).toFixed(2)}, ${(100 * b.control_fpr_diff.ci95[1]).toFixed(2)}]</small></td></tr>`; }).join('') +
+    '</table></div><p class="note">Differences are in percentage points. Green: better for the first model (for human flags and FPR, lower is better); red: worse; uncoloured: the interval includes zero.</p></details>' : '';
+  return `<div class="card"><h2>${title}</h2><p class="note">${note}</p><div class="scroll"><table>${head}${body}</table></div>${ptab}</div>`;
+}
+function mixTab() {
+  const A = P.ab;
+  if (!A) return '<div class="card"><h2>Mix decision</h2><p class="note">No results yet.</p></div>';
+  const sw = Object.entries(A.sweep_small_edits || {});
+  const swTab = `<div class="card"><h2>Paper-edit set: small edits, paired</h2><p class="note">One- and two-sentence edits in the paper-edit evaluation set (the old in-domain set; all edits by GPT-6 Luna). Recall at each seed's own 1% FPR threshold on that half's human sentences; bootstrap resamples papers.</p><div class="scroll"><table>
+    <tr><th>Comparison</th><th>Half</th><th>First</th><th>Second</th><th>Difference</th><th>95% interval</th></tr>` +
+    sw.map(([k, v]) => { const [h, pair] = k.split(':'); const [hi, lo] = pair.split('-'); const sig = v.ci95[0] > 0 ? 'up' : v.ci95[1] < 0 ? 'down' : '';
+      return `<tr><td>${ARMN[hi]} − ${ARMN[lo]}</td><td class="num">${h} (${v.n_sentences} sentences)</td><td class="num">${fmt(v[hi])}</td><td class="num">${fmt(v[lo])}</td><td class="num ${sig}">${(100 * v.diff).toFixed(1)}</td><td class="num">[${(100 * v.ci95[0]).toFixed(1)}, ${(100 * v.ci95[1]).toFixed(1)}]</td></tr>`; }).join('') + '</table></div></div>';
+  const notes = (P.mixNotes || []).length ? `<div class="card"><h2>Where the decision stands</h2><ol class="takeaways">${P.mixNotes.map(n => `<li>${n}</li>`).join('')}</ol></div>` : '';
+  return notes +
+    evalCard('Held-out writers v2, clean for T2.1', 'The v2 held-out set minus every paper T2.1 may have trained on: one- and two-sentence edits, paragraphs and sections by six writers, with matched human originals. GPT-6 Sol and Claude Fable 5.1 are in no training mix. Paper threshold = 1% FPR on the paper-edit set’s dev human sentences, fixed per seed.', A['v2-clean']) +
+    evalCard('Reference on v2: T2 and SPG', 'Same rows as above for T2, but T2 trained on part of v2’s source papers, so its numbers are not clean. SPG drops every v2 row whose paper appears in its splice training data (2,462 rows); the T2.1 arms on that same subset follow below for a fair comparison.', A['v2-ref'], { T2: 'not clean', SPG: 'splice overlap removed' }) +
+    evalCard('T2.1 arms on the SPG-clean subset of v2', 'The rows SPG is scored on above, so T2.1 and SPG can be compared on the same text.', A['v2-spg-subset']) +
+    swTab +
+    evalCard('Strict held-out small edits (1,171 edits)', 'Claude Opus, Sonnet and Haiku plus GPT-6 Luna edits on papers kept out of all training.', A['heldout-writers']) +
+    evalCard('Long AI sections (500-document sample)', 'open-text-detector/heterogeneous-ai-spans, writer-stratified sample with 500 human controls.', A['cross-model-s500']) +
+    evalCard('Claude Fable 5.1: light polish (299)', 'Fable lightly polishes a human paragraph. Most edited sentences are partly human, so few sentences are wholly AI-labelled; read the document rows.', A['fable-polish']) +
+    evalCard('Claude Fable 5.1: humanizer (200)', 'AI sections rewritten by Fable to read as human.', A['fable-humanizer']) +
+    evalCard('Claude Fable 5.1: co-writing (100)', 'A human and Fable writing a paragraph together.', A['fable-cowrite']);
+}
+
+const notes = {
+  data: 'Qwen3.5-4B at 20% length with the stable recipe (2e-4 cosine). Each arm changes only the training mix. Wave 2 arms run one seed each; their checkpoints were lost in the Oct 6 Space restart.',
+  moe: 'Qwen3.6-35B-A3B on H200s. The T2 runs use the T2 mix at 1e-4 cosine: one at 20% length for 3 epochs, one for a single full-length pass. Every epoch checkpoint is in the bucket. The 2e-4 full-length run diverged around step 950, so all its epochs come after the blow-up.',
+  lr: 'Overnight learning-rate sweep, 20% length, final epoch. Arms with one diverged seed are flagged.',
+  curve: 'Full-length runs, final checkpoint. The 5e-4 constant runs diverged near step 1,000.',
+  river: "River's (sky.moo) Oct 6 sweep on the same evaluation set and scorer: 15 one-factor changes to the 4B baseline recipe (one seed each, final epoch), and two MoE runs at half length and 1e-4 with every saved checkpoint. Compare each 4B row with River's reference row, not across sweeps."
+};
+function render(id) {
+  const el = document.getElementById('panels');
+  el.innerHTML = `<section class="panel" role="tabpanel">${id === 'summary' ? summary() : id === 'cross' ? crossTab() : id === 'mix' ? mixTab() : table(id, notes[id])}</section>`;
+  el.querySelectorAll('[data-half]').forEach(b => b.addEventListener('click', () => { half = b.dataset.half; try { localStorage.setItem('half', half); } catch (e) {} render(id); }));
+}
+const tabs = document.getElementById('tabs');
+let current = (location.hash || '#summary').slice(1);
+if (!TABS.some(t => t[0] === current)) current = 'summary';
+tabs.innerHTML = TABS.map(([k, lab]) => `<button role="tab" id="tab-${k}" data-tab="${k}" aria-selected="${k === current}">${lab}</button>`).join('');
+tabs.addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (!b) return; current = b.dataset.tab;
+  tabs.querySelectorAll('button').forEach(x => x.setAttribute('aria-selected', x === b)); render(current); });
+render(current);
+</script>

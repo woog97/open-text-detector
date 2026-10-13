@@ -1,0 +1,674 @@
+{
+  "note": "Reconstructed saved control schedule, not a replay of historical model outputs.",
+  "data_sha256": "d23b174361640baca9e45c7c0984d640ba6c68d5a6748142c9a5f57bcb05d190",
+  "tokenizer_sha256": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1",
+  "microbatches": [
+    {
+      "microbatch": 1,
+      "input_shape": [
+        8,
+        336
+      ],
+      "token_output_shape": [
+        8,
+        332,
+        2
+      ],
+      "real_input_tokens": 1765,
+      "rows": [
+        {
+          "row": 1,
+          "id": "human_remaining:00ac8ed3b4327bdd4ebbebcb2ba10a00:0048",
+          "kind": "novel_human",
+          "source_tokens": 83,
+          "token_labels": {
+            "0": 83
+          },
+          "char_labels": {
+            "0": 388
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 3,
+          "target_scored": 83,
+          "context_scored": 0
+        },
+        {
+          "row": 2,
+          "id": "022e0ee5162c13d9a7bb3bd00fb032ce/g03/human_original",
+          "kind": "paired",
+          "source_tokens": 305,
+          "token_labels": {
+            "0": 301,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1600
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 16,
+          "target_scored": 120,
+          "context_scored": 181
+        },
+        {
+          "row": 3,
+          "id": "icml-2020-6a50aa6efbe5b11c/g01/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 332,
+          "token_labels": {
+            "0": 151,
+            "-100": 4,
+            "1": 177
+          },
+          "char_labels": {
+            "0": 698,
+            "1": 888
+          },
+          "segment_label": 8,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 9,
+          "target_scored": 177,
+          "context_scored": 151
+        },
+        {
+          "row": 4,
+          "id": "icml-2018-9eea236a684708e0/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 164,
+          "token_labels": {
+            "0": 164
+          },
+          "char_labels": {
+            "0": 876
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 7,
+          "target_scored": 164,
+          "context_scored": 0
+        },
+        {
+          "row": 5,
+          "id": "human_remaining:icml-2016-9b9bb12c933677c1:0013",
+          "kind": "novel_human",
+          "source_tokens": 264,
+          "token_labels": {
+            "0": 264
+          },
+          "char_labels": {
+            "0": 986
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 11,
+          "target_scored": 264,
+          "context_scored": 0
+        },
+        {
+          "row": 6,
+          "id": "icml-2015-949a8564e2bc6cd4/g03/human_original",
+          "kind": "paired",
+          "source_tokens": 203,
+          "token_labels": {
+            "0": 199,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 948
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 8,
+          "target_scored": 105,
+          "context_scored": 94
+        },
+        {
+          "row": 7,
+          "id": "icml-2021-52cee8bf92645e16/g03/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 73,
+          "token_labels": {
+            "1": 73
+          },
+          "char_labels": {
+            "1": 398
+          },
+          "segment_label": 14,
+          "mixed_label": 0,
+          "document_label": 1,
+          "sentence_groups": 3,
+          "target_scored": 73,
+          "context_scored": 0
+        },
+        {
+          "row": 8,
+          "id": "06c284d3f757b15c02f47f3ff06dc275/g05/human_original",
+          "kind": "paired",
+          "source_tokens": 325,
+          "token_labels": {
+            "0": 323,
+            "-100": 2
+          },
+          "char_labels": {
+            "0": 1600
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 13,
+          "target_scored": 153,
+          "context_scored": 170
+        }
+      ]
+    },
+    {
+      "microbatch": 2,
+      "input_shape": [
+        8,
+        336
+      ],
+      "token_output_shape": [
+        8,
+        334,
+        2
+      ],
+      "real_input_tokens": 1561,
+      "rows": [
+        {
+          "row": 9,
+          "id": "human_remaining:icml-2018-c60cb5458f570460:0001",
+          "kind": "novel_human",
+          "source_tokens": 91,
+          "token_labels": {
+            "0": 91
+          },
+          "char_labels": {
+            "0": 455
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 5,
+          "target_scored": 91,
+          "context_scored": 0
+        },
+        {
+          "row": 10,
+          "id": "acl-2018-6d439b9d9e7ad864/g04/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 71,
+          "token_labels": {
+            "1": 71
+          },
+          "char_labels": {
+            "1": 397
+          },
+          "segment_label": 14,
+          "mixed_label": 0,
+          "document_label": 1,
+          "sentence_groups": 3,
+          "target_scored": 71,
+          "context_scored": 0
+        },
+        {
+          "row": 11,
+          "id": "bb1443cc31d7396bf73e7858cea114e1/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 263,
+          "token_labels": {
+            "0": 259,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1391
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 12,
+          "target_scored": 89,
+          "context_scored": 170
+        },
+        {
+          "row": 12,
+          "id": "icml-2018-ad287daab0d462a9/g01/human_original",
+          "kind": "paired",
+          "source_tokens": 303,
+          "token_labels": {
+            "0": 299,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1600
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 10,
+          "target_scored": 195,
+          "context_scored": 104
+        },
+        {
+          "row": 13,
+          "id": "human_remaining:icml-2017-979ba80e540eb3f3:0022",
+          "kind": "novel_human",
+          "source_tokens": 52,
+          "token_labels": {
+            "0": 51,
+            "-100": 1
+          },
+          "char_labels": {
+            "0": 191
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 1,
+          "target_scored": 51,
+          "context_scored": 0
+        },
+        {
+          "row": 14,
+          "id": "acl-2021-7b1ed84ead133fee/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 238,
+          "token_labels": {
+            "0": 234,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1053
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 13,
+          "target_scored": 58,
+          "context_scored": 176
+        },
+        {
+          "row": 15,
+          "id": "acl-2016-aef39440c7ac2622/g03/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 334,
+          "token_labels": {
+            "0": 206,
+            "-100": 4,
+            "1": 124
+          },
+          "char_labels": {
+            "0": 940,
+            "1": 660
+          },
+          "segment_label": 6,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 14,
+          "target_scored": 124,
+          "context_scored": 206
+        },
+        {
+          "row": 16,
+          "id": "9001ca429212011f4a4fda6c778cc318/g03/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 193,
+          "token_labels": {
+            "1": 193
+          },
+          "char_labels": {
+            "1": 916
+          },
+          "segment_label": 14,
+          "mixed_label": 0,
+          "document_label": 1,
+          "sentence_groups": 8,
+          "target_scored": 193,
+          "context_scored": 0
+        }
+      ]
+    },
+    {
+      "microbatch": 3,
+      "input_shape": [
+        8,
+        312
+      ],
+      "token_output_shape": [
+        8,
+        306,
+        2
+      ],
+      "real_input_tokens": 1625,
+      "rows": [
+        {
+          "row": 17,
+          "id": "human_remaining:9a4400501febb2a95e79248486a5f6d3:0036",
+          "kind": "novel_human",
+          "source_tokens": 232,
+          "token_labels": {
+            "0": 232
+          },
+          "char_labels": {
+            "0": 918
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 7,
+          "target_scored": 232,
+          "context_scored": 0
+        },
+        {
+          "row": 18,
+          "id": "acl-2016-93ffcac8a4867b26/g05/human_original",
+          "kind": "paired",
+          "source_tokens": 150,
+          "token_labels": {
+            "0": 146,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 783
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 5,
+          "target_scored": 74,
+          "context_scored": 72
+        },
+        {
+          "row": 19,
+          "id": "acl-2018-aca0a474b2f65415/g02/human_original",
+          "kind": "paired",
+          "source_tokens": 148,
+          "token_labels": {
+            "0": 148
+          },
+          "char_labels": {
+            "0": 775
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 7,
+          "target_scored": 148,
+          "context_scored": 0
+        },
+        {
+          "row": 20,
+          "id": "f8e59f4b2fe7c5705bf878bbd494ccdf/g03/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 294,
+          "token_labels": {
+            "0": 198,
+            "-100": 2,
+            "1": 94
+          },
+          "char_labels": {
+            "0": 1055,
+            "1": 545
+          },
+          "segment_label": 5,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 10,
+          "target_scored": 94,
+          "context_scored": 198
+        },
+        {
+          "row": 21,
+          "id": "human_remaining:a89cf525e1d9f04d16ce31165e139a4b:0016",
+          "kind": "novel_human",
+          "source_tokens": 103,
+          "token_labels": {
+            "0": 103
+          },
+          "char_labels": {
+            "0": 246
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 1,
+          "target_scored": 103,
+          "context_scored": 0
+        },
+        {
+          "row": 22,
+          "id": "icml-2016-d901705d90ce0fcb/g04/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 117,
+          "token_labels": {
+            "1": 117
+          },
+          "char_labels": {
+            "1": 595
+          },
+          "segment_label": 14,
+          "mixed_label": 0,
+          "document_label": 1,
+          "sentence_groups": 5,
+          "target_scored": 117,
+          "context_scored": 0
+        },
+        {
+          "row": 23,
+          "id": "8fb21ee7a2207526da55a679f0332de2/g01/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 259,
+          "token_labels": {
+            "0": 189,
+            "-100": 4,
+            "1": 66
+          },
+          "char_labels": {
+            "0": 956,
+            "1": 260
+          },
+          "segment_label": 3,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 12,
+          "target_scored": 66,
+          "context_scored": 189
+        },
+        {
+          "row": 24,
+          "id": "icml-2019-872b01327b482a2c/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 306,
+          "token_labels": {
+            "0": 302,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1600
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 10,
+          "target_scored": 93,
+          "context_scored": 209
+        }
+      ]
+    },
+    {
+      "microbatch": 4,
+      "input_shape": [
+        8,
+        280
+      ],
+      "token_output_shape": [
+        8,
+        278,
+        2
+      ],
+      "real_input_tokens": 1300,
+      "rows": [
+        {
+          "row": 25,
+          "id": "human_remaining:icml-2021-6e9e2009dbcaab9f:0039",
+          "kind": "novel_human",
+          "source_tokens": 42,
+          "token_labels": {
+            "0": 42
+          },
+          "char_labels": {
+            "0": 198
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 2,
+          "target_scored": 42,
+          "context_scored": 0
+        },
+        {
+          "row": 26,
+          "id": "5cf68969fb67aa6082363a6d4e6468e2/g04/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 278,
+          "token_labels": {
+            "0": 173,
+            "-100": 4,
+            "1": 101
+          },
+          "char_labels": {
+            "0": 942,
+            "1": 555
+          },
+          "segment_label": 5,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 11,
+          "target_scored": 101,
+          "context_scored": 173
+        },
+        {
+          "row": 27,
+          "id": "icml-2018-c702c2c5d59e0d12/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 266,
+          "token_labels": {
+            "0": 262,
+            "-100": 4
+          },
+          "char_labels": {
+            "0": 1127
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 11,
+          "target_scored": 107,
+          "context_scored": 155
+        },
+        {
+          "row": 28,
+          "id": "acl-2019-03d05bda096b5867/g04/human_original",
+          "kind": "paired",
+          "source_tokens": 54,
+          "token_labels": {
+            "0": 54
+          },
+          "char_labels": {
+            "0": 295
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 3,
+          "target_scored": 54,
+          "context_scored": 0
+        },
+        {
+          "row": 29,
+          "id": "human_remaining:icml-2020-404c23e59a26865d:0052",
+          "kind": "novel_human",
+          "source_tokens": 127,
+          "token_labels": {
+            "0": 127
+          },
+          "char_labels": {
+            "0": 630
+          },
+          "segment_label": 0,
+          "mixed_label": 0,
+          "document_label": 0,
+          "sentence_groups": 6,
+          "target_scored": 127,
+          "context_scored": 0
+        },
+        {
+          "row": 30,
+          "id": "icml-2017-60d4c5a1c76db040/g02/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 275,
+          "token_labels": {
+            "0": 153,
+            "-100": 4,
+            "1": 118
+          },
+          "char_labels": {
+            "0": 815,
+            "1": 660
+          },
+          "segment_label": 6,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 9,
+          "target_scored": 118,
+          "context_scored": 153
+        },
+        {
+          "row": 31,
+          "id": "c203d8a151612acf12457e4d67635a95/g05/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 44,
+          "token_labels": {
+            "1": 44
+          },
+          "char_labels": {
+            "1": 250
+          },
+          "segment_label": 14,
+          "mixed_label": 0,
+          "document_label": 1,
+          "sentence_groups": 1,
+          "target_scored": 44,
+          "context_scored": 0
+        },
+        {
+          "row": 32,
+          "id": "0266e33d3f546cb5436a10798e657d97/g01/paragraph_generate",
+          "kind": "paired",
+          "source_tokens": 198,
+          "token_labels": {
+            "0": 125,
+            "-100": 4,
+            "1": 69
+          },
+          "char_labels": {
+            "0": 754,
+            "1": 336
+          },
+          "segment_label": 4,
+          "mixed_label": 1,
+          "document_label": 1,
+          "sentence_groups": 8,
+          "target_scored": 69,
+          "context_scored": 125
+        }
+      ]
+    }
+  ]
+}

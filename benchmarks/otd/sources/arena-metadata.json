@@ -1,0 +1,262 @@
+{
+  "_id": "64b67e1341d9fa8f906cfac4",
+  "id": "lmsys/chatbot_arena_conversations",
+  "author": "lmsys",
+  "sha": "1b6335d42a1d2c7e34870c905d03ab964f7f2bd8",
+  "lastModified": "2023-09-30T01:04:44.000Z",
+  "private": false,
+  "gated": "auto",
+  "disabled": false,
+  "tags": [
+    "license:cc",
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:tabular",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "arxiv:2306.05685",
+    "region:us"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tChatbot Arena Conversations Dataset\n\t\n\nThis dataset contains 33K cleaned conversations with pairwise human preferences.\nIt is collected from 13K unique IP addresses on the Chatbot Arena from April to June 2023.\nEach sample includes a question ID, two model names, their full conversation text in OpenAI API JSON format, the user vote, the anonymized user ID, the detected language tag, the OpenAI moderation API tag, the additional toxic tag, and the timestamp.\nTo ensure the safe\u2026 See the full description on the dataset page: https://huggingface.co/datasets/lmsys/chatbot_arena_conversations.",
+  "downloads": 2440,
+  "likes": 490,
+  "cardData": {
+    "dataset_info": {
+      "features": [
+        {
+          "name": "question_id",
+          "dtype": "string"
+        },
+        {
+          "name": "model_a",
+          "dtype": "string"
+        },
+        {
+          "name": "model_b",
+          "dtype": "string"
+        },
+        {
+          "name": "winner",
+          "dtype": "string"
+        },
+        {
+          "name": "judge",
+          "dtype": "string"
+        },
+        {
+          "name": "conversation_a",
+          "list": [
+            {
+              "name": "content",
+              "dtype": "string"
+            },
+            {
+              "name": "role",
+              "dtype": "string"
+            }
+          ]
+        },
+        {
+          "name": "conversation_b",
+          "list": [
+            {
+              "name": "content",
+              "dtype": "string"
+            },
+            {
+              "name": "role",
+              "dtype": "string"
+            }
+          ]
+        },
+        {
+          "name": "turn",
+          "dtype": "int64"
+        },
+        {
+          "name": "anony",
+          "dtype": "bool"
+        },
+        {
+          "name": "language",
+          "dtype": "string"
+        },
+        {
+          "name": "tstamp",
+          "dtype": "float64"
+        },
+        {
+          "name": "openai_moderation",
+          "struct": [
+            {
+              "name": "categories",
+              "struct": [
+                {
+                  "name": "harassment",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "harassment/threatening",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "hate",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "hate/threatening",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "self-harm",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "self-harm/instructions",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "self-harm/intent",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "sexual",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "sexual/minors",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "violence",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "violence/graphic",
+                  "dtype": "bool"
+                }
+              ]
+            },
+            {
+              "name": "category_scores",
+              "struct": [
+                {
+                  "name": "harassment",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "harassment/threatening",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "hate",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "hate/threatening",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "self-harm",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "self-harm/instructions",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "self-harm/intent",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "sexual",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "sexual/minors",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "violence",
+                  "dtype": "float64"
+                },
+                {
+                  "name": "violence/graphic",
+                  "dtype": "float64"
+                }
+              ]
+            },
+            {
+              "name": "flagged",
+              "dtype": "bool"
+            }
+          ]
+        },
+        {
+          "name": "toxic_chat_tag",
+          "struct": [
+            {
+              "name": "roberta-large",
+              "struct": [
+                {
+                  "name": "flagged",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "probability",
+                  "dtype": "float64"
+                }
+              ]
+            },
+            {
+              "name": "t5-large",
+              "struct": [
+                {
+                  "name": "flagged",
+                  "dtype": "bool"
+                },
+                {
+                  "name": "score",
+                  "dtype": "float64"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 81159839,
+          "num_examples": 33000
+        }
+      ],
+      "download_size": 41572998,
+      "dataset_size": 81159839
+    },
+    "license": "cc",
+    "task_categories": [
+      "conversational"
+    ],
+    "size_categories": [
+      "10K<n<100K"
+    ],
+    "extra_gated_prompt": "Disclaimers and Terms\n- This dataset contains conversations that may be considered unsafe, offensive, or upsetting. It is not intended for training dialogue agents without applying appropriate filtering measures. We are not responsible for any outputs of the models trained on this dataset.\n- Statements or opinions made in this dataset do not reflect the views of researchers or institutions involved in the data collection effort.\n- Users of this data are responsible for ensuring its appropriate use, which includes abiding by any applicable laws and regulations.\n- Users of this data should adhere to the terms of use for a specific model when using its direct outputs.\n- Users of this data agree to not attempt to determine the identity of individuals in this dataset."
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "data/train-00000-of-00001-cced8514c7ed782a.parquet"
+    }
+  ],
+  "createdAt": "2023-07-18T11:57:07.000Z",
+  "usedStorage": 3804170886
+}

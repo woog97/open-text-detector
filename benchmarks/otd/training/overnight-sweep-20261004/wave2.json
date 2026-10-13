@@ -1,0 +1,235 @@
+{
+ "a100_insert_after": "q4b-E-s1",
+ "a100_insert": {
+  "tag": "curve-4b-A",
+  "model": "qwen35-4b",
+  "arm": "A",
+  "seed": 1,
+  "args": [
+   "--fraction",
+   "1.0",
+   "--micro-batch",
+   "8",
+   "--ckpt-every",
+   "263",
+   "--lr",
+   "2e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "cosine",
+   "--warmup",
+   "0.06",
+   "--seed",
+   "1"
+  ]
+ },
+ "a100_tail": [
+  {
+   "tag": "q4b-C-s3",
+   "model": "qwen35-4b",
+   "arm": "C",
+   "seed": 3,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-D-s3",
+   "model": "qwen35-4b",
+   "arm": "D",
+   "seed": 3,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-E-s3",
+   "model": "qwen35-4b",
+   "arm": "E",
+   "seed": 3,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-F-s3",
+   "model": "qwen35-4b",
+   "arm": "F",
+   "seed": 3,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "3"
+   ]
+  }
+ ],
+ "h200_tail": [
+  {
+   "tag": "q9b-C-s1",
+   "model": "qwen35-9b",
+   "arm": "C",
+   "seed": 1,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q9b-D-s1",
+   "model": "qwen35-9b",
+   "arm": "D",
+   "seed": 1,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q9b-C-s2",
+   "model": "qwen35-9b",
+   "arm": "C",
+   "seed": 2,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "2"
+   ]
+  },
+  {
+   "tag": "q9b-D-s2",
+   "model": "qwen35-9b",
+   "arm": "D",
+   "seed": 2,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "2"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "papers": 24,
+  "human_papers": 12,
+  "ai_papers": 12,
+  "sections": 236,
+  "section_labels": {
+    "HUMAN": 130,
+    "AI": 106
+  },
+  "words_by_label": {
+    "HUMAN": 57316,
+    "AI": 46210
+  },
+  "protocol": "Paragraph-aligned section-sized chunks, target400 words, maximum600 except merged short tail up to700; oversized blocks split into500-word pieces. Whitespace normalized identically for both classes. No chunk overlap or whole-paper context. Human extracted body prose excludes first abstract block and reference-tagged blocks; AI markdown body excludes title/abstract/reference tail and heading markers. These are chunks, not verified semantic sections. All kept body words covered exactly once.",
+  "limitations": "Historical human PDFs versus generated Markdown differ in extraction and formatting; not generator- or topic-matched. AI full papers were previously scored in the mini-suite; this is a new section-level evaluation, not entirely unseen manuscripts."
+}

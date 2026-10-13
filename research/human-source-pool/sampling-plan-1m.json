@@ -1,0 +1,278 @@
+{
+  "status": "planning_quotas_only",
+  "planned_total": 1000000,
+  "actual_admitted_total": 0,
+  "rounding": "Largest remainder, category then source; ties ordered by identifier",
+  "source_shortfall_policy": "Retain original source targets; record exhausted-source actual counts and shortfalls without substitution or reallocation. Continue all remaining sources.",
+  "category_counts": {
+    "creative": 222220,
+    "scientific": 180180,
+    "reference": 159160,
+    "reviews": 106110,
+    "social": 104100,
+    "general_web": 82080,
+    "news": 66070,
+    "essays": 49050,
+    "professional": 31030
+  },
+  "source_quotas": [
+    {
+      "source_id": "gutenberg",
+      "category": "creative",
+      "planned_passages": 100000,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "writingprompts",
+      "category": "creative",
+      "planned_passages": 66670,
+      "rights_evidence_status": "rights_unresolved",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "scp",
+      "category": "creative",
+      "planned_passages": 44440,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wikisource",
+      "category": "creative",
+      "planned_passages": 11110,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "pmc",
+      "category": "scientific",
+      "planned_passages": 63060,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "arxiv",
+      "category": "scientific",
+      "planned_passages": 54050,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "pes2o",
+      "category": "scientific",
+      "planned_passages": 36040,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "acl",
+      "category": "scientific",
+      "planned_passages": 27030,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wikipedia",
+      "category": "reference",
+      "planned_passages": 79580,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "pressbooks",
+      "category": "reference",
+      "planned_passages": 39790,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "libretexts",
+      "category": "reference",
+      "planned_passages": 23870,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wikibooks",
+      "category": "reference",
+      "planned_passages": 15920,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "amazon2018",
+      "category": "reviews",
+      "planned_passages": 53060,
+      "rights_evidence_status": "rights_unresolved",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "imdb",
+      "category": "reviews",
+      "planned_passages": 10610,
+      "rights_evidence_status": "rights_unresolved",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "opinrank",
+      "category": "reviews",
+      "planned_passages": 42440,
+      "rights_evidence_status": "rights_unresolved",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "stack_nontech",
+      "category": "social",
+      "planned_passages": 57260,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "stack_tech",
+      "category": "social",
+      "planned_passages": 20820,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "ubuntu_irc",
+      "category": "social",
+      "planned_passages": 15610,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wiki_talk",
+      "category": "social",
+      "planned_passages": 10410,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "cccc",
+      "category": "general_web",
+      "planned_passages": 53350,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "eff",
+      "category": "general_web",
+      "planned_passages": 8210,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "foodista",
+      "category": "general_web",
+      "planned_passages": 8210,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wikivoyage",
+      "category": "general_web",
+      "planned_passages": 12310,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "globalvoices",
+      "category": "news",
+      "planned_passages": 16520,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "voa",
+      "category": "news",
+      "planned_passages": 16520,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "wikinews",
+      "category": "news",
+      "planned_passages": 9910,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "scidev",
+      "category": "news",
+      "planned_passages": 9910,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "oanc_slate",
+      "category": "news",
+      "planned_passages": 13210,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "asap2",
+      "category": "essays",
+      "planned_passages": 29430,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "ellipse",
+      "category": "essays",
+      "planned_passages": 12260,
+      "rights_evidence_status": "noncommercial",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "persuade",
+      "category": "essays",
+      "planned_passages": 7360,
+      "rights_evidence_status": "conflicting",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "govreport",
+      "category": "professional",
+      "planned_passages": 10860,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "fed",
+      "category": "professional",
+      "planned_passages": 7760,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "worldbank",
+      "category": "professional",
+      "planned_passages": 7760,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    },
+    {
+      "source_id": "oanc_icic",
+      "category": "professional",
+      "planned_passages": 4650,
+      "rights_evidence_status": "open_subset",
+      "actual_eligible_passages": null
+    }
+  ],
+  "planned_counts_by_rights_evidence_status": {
+    "open_subset": 807600,
+    "rights_unresolved": 172780,
+    "noncommercial": 12260,
+    "conflicting": 7360
+  },
+  "scale_basis": {
+    "base_plan_sha256": "a6beb7eef7ed84022005a194d3a4b4382c57d0549305114988618f1036a25e2e",
+    "multiplier": 10,
+    "target_total": 1000000,
+    "exhaustion_policy": "Preserve targets, record actual shortfalls; no reallocation",
+    "phase": "pending_after_100k_available_targets_and_verified_snapshot"
+  }
+}

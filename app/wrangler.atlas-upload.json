@@ -1,0 +1,20 @@
+{
+  "name": "open-text-detector-upload",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "atlas-upload/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "TOKEN_SHA256": "44ea0e9c411f3bbf4846e98ecda09ec9190a8424a347f182e7a625f224464946",
+    "EXPIRES_AT": "1790416694"
+  }
+}

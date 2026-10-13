@@ -1,0 +1,741 @@
+{
+  "checked_at": "2026-10-02T20:40:54.912127+00:00",
+  "baseline": "Published100,000 quarantined candidates; live aggregate checked 2026-10-02T20:32:33.245282+00:00",
+  "formulas": {
+    "structural_ceiling": "in-scope input records \u00d7 maximum passages per record, additionally constrained by explicit policy caps where shown",
+    "percent": "collected passages / stated passage ceiling \u00d7100",
+    "total_multiple": "stated passage ceiling / collected passages;10x means grow TO10x, add9x",
+    "remaining": "ceiling - collected"
+  },
+  "limitations": [
+    "Most ceilings are optimistic structural maxima, not achievable yields. Exclusions, dates, rights, text length and dedup lower them.",
+    "SciDev ceiling covers currently cached families only, not full publisher.",
+    "No defensible overall corpus exhaustion total: seven source partitions/inventories unknown; cross-source overlaps and length mixtures prevent summing raw bounds.",
+    "Keeping every current source proportion fixed cannot grow beyond1x because PERSUADE is exhausted. Reallocation can allow growth elsewhere.",
+    "Isolated background candidates excluded from comparable100k baseline until validation/global dedup."
+  ],
+  "sources": [
+    {
+      "source": "gutenberg",
+      "collected_passages": 12551,
+      "collected_parent_documents": 1409,
+      "raw_source_records": 71810,
+      "raw_unit": "book records",
+      "scope": "Pinned Common Pile release; up to 10 passages per input record",
+      "passage_ceiling": 718100,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 12551,
+      "notes": "10,000 to12,551 succeeded. Further supply still needs passage-length, per-book cap, protected-book and global-dedup checks.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/project_gutenberg/raw/01dc90a5002f8977c7fb03a372c14bca29c65cf1/README.md"
+      ],
+      "collected_percent_of_ceiling": 1.7478067121570813,
+      "maximum_total_size_multiple": 57.21456457652776,
+      "additional_passage_upper_bound": 705549,
+      "additional_current_size_multiples": 56.21456457652776,
+      "document_coverage_percent": 1.9621222670937195
+    },
+    {
+      "source": "writingprompts",
+      "collected_passages": 6667,
+      "collected_parent_documents": 6667,
+      "raw_source_records": 303358,
+      "raw_unit": "stories across all splits",
+      "scope": "272,600 original training stories; one passage/story",
+      "passage_ceiling": 272600,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 6667,
+      "notes": "Resume original train archive; finite eligible stories, one passage per story, protected prompt grouping and length-bin supply constrain expansion.",
+      "evidence": [
+        "https://aclanthology.org/P18-1082.pdf"
+      ],
+      "collected_percent_of_ceiling": 2.445707997065297,
+      "maximum_total_size_multiple": 40.88795560221989,
+      "additional_passage_upper_bound": 265933,
+      "additional_current_size_multiples": 39.88795560221989,
+      "document_coverage_percent": 2.197733371132457
+    },
+    {
+      "source": "scp",
+      "collected_passages": 1893,
+      "collected_parent_documents": 764,
+      "raw_source_records": 6755,
+      "raw_unit": "English tale-index entries",
+      "scope": "3,818 pre2022-created English tales with named creators \u00d73",
+      "passage_ceiling": 11454,
+      "ceiling_kind": "indexed_subset_upper_bound",
+      "comparison_collected_passages": 1893,
+      "notes": "Current creation/creator metadata is not proof of valid historical text. Archive availability, length and attribution reduce supply. Pinned indexed scope, not every present/future SCP tale.",
+      "evidence": [
+        "https://huggingface.co/datasets/scp-data/scp-api"
+      ],
+      "collected_percent_of_ceiling": 16.526977475117864,
+      "maximum_total_size_multiple": 6.050713153724248,
+      "additional_passage_upper_bound": 9561,
+      "additional_current_size_multiples": 5.050713153724248,
+      "document_coverage_percent": 11.310140636565507
+    },
+    {
+      "source": "wikisource",
+      "collected_passages": 1111,
+      "collected_parent_documents": 1111,
+      "raw_source_records": null,
+      "raw_unit": "individual partition not counted",
+      "scope": "Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 1111,
+      "notes": "Resume pinned shards; verify untouched prose supply, historical-date/rights evidence and length bins.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "raw_shared_corpus_records": 63969938,
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "pmc",
+      "collected_passages": 6306,
+      "collected_parent_documents": 2618,
+      "raw_source_records": 4068867,
+      "raw_unit": "article records",
+      "scope": "Pinned Common Pile release; up to 3 passages per input record",
+      "passage_ceiling": 12206601,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 6306,
+      "notes": "Resume pinned shards; eligible original article/date/license filters and protected-paper exclusions constrain yield.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/pubmed/raw/648b8cfc93953ca0663a9c96a8d842a91b98fb64/README.md"
+      ],
+      "collected_percent_of_ceiling": 0.051660572832682904,
+      "maximum_total_size_multiple": 1935.7121788772597,
+      "additional_passage_upper_bound": 12200295,
+      "additional_current_size_multiples": 1934.7121788772597,
+      "document_coverage_percent": 0.06434223581159079
+    },
+    {
+      "source": "arxiv",
+      "collected_passages": 5405,
+      "collected_parent_documents": 2258,
+      "raw_source_records": 321336,
+      "raw_unit": "paper records",
+      "scope": "Pinned Common Pile release; up to 3 passages per input record",
+      "passage_ceiling": 964008,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 5405,
+      "notes": "Resume pinned shards; original paper/date/rights and protected-paper exclusions constrain yield.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/arxiv_papers/raw/963fe980c55b353980653f1a27c1dc0c8a2d7058/README.md"
+      ],
+      "collected_percent_of_ceiling": 0.5606799943568933,
+      "maximum_total_size_multiple": 178.35485661424607,
+      "additional_passage_upper_bound": 958603,
+      "additional_current_size_multiples": 177.35485661424607,
+      "document_coverage_percent": 0.702691263972913
+    },
+    {
+      "source": "pes2o",
+      "collected_passages": 3604,
+      "collected_parent_documents": 1361,
+      "raw_source_records": 6294020,
+      "raw_unit": "paper records",
+      "scope": "Pinned Common Pile release; up to 3 passages per input record",
+      "passage_ceiling": 18882060,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 3604,
+      "notes": "Audit retained eligible subset and protected-paper dedup before scanning additional pinned inputs; corpus size is not eligible capacity.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/peS2o/raw/2caeba1585aaafa3c965410d80af85b09ed11cd9/README.md"
+      ],
+      "collected_percent_of_ceiling": 0.019086900475901464,
+      "maximum_total_size_multiple": 5239.195338512764,
+      "additional_passage_upper_bound": 18878456,
+      "additional_current_size_multiples": 5238.195338512764,
+      "document_coverage_percent": 0.021623699956466614
+    },
+    {
+      "source": "acl",
+      "collected_passages": 2703,
+      "collected_parent_documents": 1083,
+      "raw_source_records": 73285,
+      "raw_unit": "paper records",
+      "scope": "Pinned ACL-OCL file73,285 rows \u00d73; before2016\u20132021/ownership/protected-family gates",
+      "passage_ceiling": 219855,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 2703,
+      "notes": "Continue pinned ACL archive with article rights/date rules and mirror noncommercial restriction retained; eligible yield unmeasured.",
+      "evidence": [
+        "https://huggingface.co/datasets/WINGNUS/ACL-OCL/resolve/300ee6c5e5629d042bfc07cbc406e2f330b53659/acl-publication-info.74k.v2.parquet"
+      ],
+      "collected_percent_of_ceiling": 1.2294466807668691,
+      "maximum_total_size_multiple": 81.33740288568258,
+      "additional_passage_upper_bound": 217152,
+      "additional_current_size_multiples": 80.33740288568258,
+      "document_coverage_percent": 1.4777921812103432
+    },
+    {
+      "source": "wikipedia",
+      "collected_passages": 7958,
+      "collected_parent_documents": 6746,
+      "raw_source_records": null,
+      "raw_unit": "individual partition not counted",
+      "scope": "Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 7958,
+      "notes": "111 cursor entries, one currently open; resume quota stop and audit historical done flags. Eligible remaining pages/bin supply unmeasured.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "raw_shared_corpus_records": 63969938,
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "pressbooks",
+      "collected_passages": 3979,
+      "collected_parent_documents": 2887,
+      "raw_source_records": 106881,
+      "raw_unit": "chapter/page records",
+      "scope": "Pinned Common Pile release; up to 3 passages per input record",
+      "passage_ceiling": 320643,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 3979,
+      "notes": "Quota required cached-span recovery. Need audit unused books/nonoverlapping spans and long bins; ordinary resume alone is not proven sufficient.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/pressbooks/raw/29fa162fc78277b160a7010f18086b5189ffb761/README.md"
+      ],
+      "collected_percent_of_ceiling": 1.2409439781938167,
+      "maximum_total_size_multiple": 80.58381502890174,
+      "additional_passage_upper_bound": 316664,
+      "additional_current_size_multiples": 79.58381502890174,
+      "document_coverage_percent": 2.7011349070461543
+    },
+    {
+      "source": "libretexts",
+      "collected_passages": 2387,
+      "collected_parent_documents": 2387,
+      "raw_source_records": 62269,
+      "raw_unit": "page/book records",
+      "scope": "Pinned Common Pile release; up to 3 passages per input record",
+      "passage_ceiling": 186807,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 2387,
+      "notes": "Resume pinned reference-text shards; per-parent passage caps, rights and long-bin capacity remain unmeasured.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/libretexts/raw/d4ce4b1edf95888b24992db3bbb2ae8e2bf6c22f/README.md"
+      ],
+      "collected_percent_of_ceiling": 1.2777893762011059,
+      "maximum_total_size_multiple": 78.26015919564307,
+      "additional_passage_upper_bound": 184420,
+      "additional_current_size_multiples": 77.26015919564307,
+      "document_coverage_percent": 3.833368128603318
+    },
+    {
+      "source": "wikibooks",
+      "collected_passages": 1592,
+      "collected_parent_documents": 935,
+      "raw_source_records": 261588,
+      "raw_unit": "snapshot records, including other namespaces",
+      "scope": "89,958 main article/chapter pages \u00d73",
+      "passage_ceiling": 269874,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1592,
+      "notes": "Resume pinned namespace0 source; historical cursor flags and eligible original prose/length distribution require reconciliation.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "namespace0_or_source_records": 89958,
+      "inventory_evidence": "small-source-inventories.json",
+      "collected_percent_of_ceiling": 0.5899049185916391,
+      "maximum_total_size_multiple": 169.51884422110552,
+      "additional_passage_upper_bound": 268282,
+      "additional_current_size_multiples": 168.51884422110552,
+      "document_coverage_percent": 0.35743229811765065
+    },
+    {
+      "source": "amazon2018",
+      "collected_passages": 5306,
+      "collected_parent_documents": 5306,
+      "raw_source_records": 233100000,
+      "raw_unit": "reviews (publisher rounded)",
+      "scope": "Original2018 full review corpus; one passage/review",
+      "passage_ceiling": 233100000,
+      "ceiling_kind": "approximate_structural_upper_bound",
+      "comparison_collected_passages": 5306,
+      "notes": "Pinned review archives and product/author filters must continue with dedup. Eligible length distribution and covered archive range are not a capacity certificate.",
+      "evidence": [
+        "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/"
+      ],
+      "collected_percent_of_ceiling": 0.0022762762762762764,
+      "maximum_total_size_multiple": 43931.39841688654,
+      "additional_passage_upper_bound": 233094694,
+      "additional_current_size_multiples": 43930.39841688654,
+      "document_coverage_percent": 0.0022762762762762764
+    },
+    {
+      "source": "imdb",
+      "collected_passages": 1061,
+      "collected_parent_documents": 1061,
+      "raw_source_records": 100000,
+      "raw_unit": "reviews across train/test/unlabeled",
+      "scope": "Current adapter:25,000 labeled training reviews only; one passage/review",
+      "passage_ceiling": 25000,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1061,
+      "notes": "50,000 unlabeled reviews are not enabled by the current adapter. Test25,000 excluded. Length, rights and benchmark checks reduce ceiling.",
+      "evidence": [
+        "https://nlp.stanford.edu/~amaas/data/sentiment/"
+      ],
+      "collected_percent_of_ceiling": 4.244,
+      "maximum_total_size_multiple": 23.5626767200754,
+      "additional_passage_upper_bound": 23939,
+      "additional_current_size_multiples": 22.5626767200754,
+      "document_coverage_percent": 1.061
+    },
+    {
+      "source": "opinrank",
+      "collected_passages": 4244,
+      "collected_parent_documents": 4244,
+      "raw_source_records": 301230,
+      "raw_unit": "reviews (publisher approximate)",
+      "scope": "Approximately259,000 hotel+42,230 car reviews; one passage/review",
+      "passage_ceiling": 301230,
+      "ceiling_kind": "approximate_structural_upper_bound",
+      "comparison_collected_passages": 4244,
+      "notes": "Finite hotel/car review archive with group quotas and length bins; use batched adapter and measure remaining eligible reviews.",
+      "evidence": [
+        "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset"
+      ],
+      "collected_percent_of_ceiling": 1.4088902167778774,
+      "maximum_total_size_multiple": 70.97785108388312,
+      "additional_passage_upper_bound": 296986,
+      "additional_current_size_multiples": 69.97785108388312,
+      "document_coverage_percent": 1.4088902167778774
+    },
+    {
+      "source": "stack_nontech",
+      "collected_passages": 5726,
+      "collected_parent_documents": 5618,
+      "raw_source_records": null,
+      "raw_unit": "approved community subset not counted",
+      "scope": "Shares33,415,400 question-thread records across all Stack Exchange; approved site partitions are smaller",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 5726,
+      "notes": "Resume pinned approved nontechnical communities; preserve community/author grouping and original prose filters.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md"
+      ],
+      "raw_shared_corpus_records": 33415400,
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "stack_tech",
+      "collected_passages": 2082,
+      "collected_parent_documents": 1985,
+      "raw_source_records": null,
+      "raw_unit": "approved community subset not counted",
+      "scope": "Shares33,415,400 question-thread records across all Stack Exchange; approved site partitions are smaller",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 2082,
+      "notes": "Resume approved technical community subset; prose versus code filters, grouping and length bins determine actual yield.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md"
+      ],
+      "raw_shared_corpus_records": 33415400,
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "ubuntu_irc",
+      "collected_passages": 1561,
+      "collected_parent_documents": 1561,
+      "raw_source_records": 329115,
+      "raw_unit": "channel-log records",
+      "scope": "Pinned Common Pile release; up to 1 passages per input record",
+      "passage_ceiling": 329115,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1561,
+      "notes": "Session reconstruction and date/channel rules required; remaining unique eligible sessions unmeasured.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/ubuntu_irc/raw/35a9ef530c682965b53d4167e37b32f6a85aa87c/README.md"
+      ],
+      "collected_percent_of_ceiling": 0.4743022955501876,
+      "maximum_total_size_multiple": 210.83600256245995,
+      "additional_passage_upper_bound": 327554,
+      "additional_current_size_multiples": 209.83600256245995,
+      "document_coverage_percent": 0.4743022955501876
+    },
+    {
+      "source": "wiki_talk",
+      "collected_passages": 1041,
+      "collected_parent_documents": 1041,
+      "raw_source_records": null,
+      "raw_unit": "individual partition not counted",
+      "scope": "Shares Common Pile Wikimedia total63,969,938 records across8 projects and many namespaces; do not use full shared total for this source",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 1041,
+      "notes": "Pinned namespace1 only; quota-stopped cursor audit plus dialogue/prose and length-bin capacity required.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "raw_shared_corpus_records": 63969938,
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "cccc",
+      "collected_passages": 5017,
+      "collected_parent_documents": 5017,
+      "raw_source_records": 51054412,
+      "raw_unit": "raw historical web capture records",
+      "scope": "Current30 reviewed hosts \u00d7410/site; not total CCCC capacity",
+      "passage_ceiling": 12300,
+      "ceiling_kind": "current_policy_upper_bound",
+      "comparison_collected_passages": 5017,
+      "notes": "Full raw CCCC corpus is much larger than approved blog-domain scope. Current reviewed-domain cap limits total to12,300 even before eligibility/dedup. Domain expansion work can raise this ceiling.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/cccc/raw/72bd015ff2a77f8701c617096fbb5dc89dd705fe/README.md"
+      ],
+      "collected_percent_of_ceiling": 40.78861788617886,
+      "maximum_total_size_multiple": 2.451664341239785,
+      "additional_passage_upper_bound": 7283,
+      "additional_current_size_multiples": 1.451664341239785,
+      "document_coverage_percent": 0.009826770701031676
+    },
+    {
+      "source": "eff",
+      "collected_passages": 415,
+      "collected_parent_documents": 180,
+      "raw_source_records": null,
+      "raw_unit": null,
+      "scope": "No complete historical eligible publisher inventory established; current discovered URL counts are not an exhaustion bound",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 415,
+      "notes": "406missing slots; only197indexed URLs in old collector. Wayback CDX and sample captures now respond.",
+      "evidence": [
+        "https://www.eff.org/deeplinks"
+      ],
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "foodista",
+      "collected_passages": 1545,
+      "collected_parent_documents": 1545,
+      "raw_source_records": 72090,
+      "raw_unit": "page records",
+      "scope": "Pinned Common Pile release; up to 1 passages per input record",
+      "passage_ceiling": 72090,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1545,
+      "notes": "821 to1,545 succeeded after scanning more shards. 8 cursor entries/7done; further eligible long prose and historical date evidence need measurement.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/foodista/raw/f84290688956bdb64c90e44636fda1c02f286849/README.md"
+      ],
+      "collected_percent_of_ceiling": 2.143154390345402,
+      "maximum_total_size_multiple": 46.66019417475728,
+      "additional_passage_upper_bound": 70545,
+      "additional_current_size_multiples": 45.66019417475728,
+      "document_coverage_percent": 2.143154390345402
+    },
+    {
+      "source": "wikivoyage",
+      "collected_passages": 1231,
+      "collected_parent_documents": 1231,
+      "raw_source_records": 134008,
+      "raw_unit": "snapshot records, including other namespaces",
+      "scope": "32,617 main article/chapter pages \u00d71",
+      "passage_ceiling": 32617,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1231,
+      "notes": "Quota needed110 official pre2022 revisions after cached-span recovery. Expansion requires more historical API fetches, dedup, long prose and rate-limit handling.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "namespace0_or_source_records": 32617,
+      "inventory_evidence": "small-source-inventories.json",
+      "collected_percent_of_ceiling": 3.7741055277922557,
+      "maximum_total_size_multiple": 26.496344435418358,
+      "additional_passage_upper_bound": 31386,
+      "additional_current_size_multiples": 25.496344435418358,
+      "document_coverage_percent": 0.9186018745149543
+    },
+    {
+      "source": "globalvoices",
+      "collected_passages": 1652,
+      "collected_parent_documents": 1652,
+      "raw_source_records": 102552,
+      "raw_unit": "article records",
+      "scope": "102,552 article records \u00d71",
+      "passage_ceiling": 102552,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1652,
+      "notes": "Additional pinned articles possible; claimed dates do not certify historical versions. Rights/author, dedup and length constraints remain.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/news/raw/13e76bdc8d49ed14d710fac7e3b61186cf74c8d3/README.md"
+      ],
+      "namespace0_or_source_records": 102552,
+      "inventory_evidence": "small-source-inventories.json",
+      "collected_percent_of_ceiling": 1.6108900850300336,
+      "maximum_total_size_multiple": 62.077481840193705,
+      "additional_passage_upper_bound": 100900,
+      "additional_current_size_multiples": 61.077481840193705,
+      "document_coverage_percent": 1.6108900850300336
+    },
+    {
+      "source": "voa",
+      "collected_passages": 1717,
+      "collected_parent_documents": 1510,
+      "raw_source_records": 303851,
+      "raw_unit": "article files in pinned eng_voanews archive",
+      "scope": "Pinned English main-site archive; at most3 passages/article",
+      "passage_ceiling": 911553,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1717,
+      "notes": "Full archive counted, unlike earlier7,643-article partial scan. Pre2022 capture, English, staff-byline, wire exclusions and length gates reduce capacity.",
+      "evidence": [
+        "https://github.com/bltlab/mot/releases/tag/v1.0"
+      ],
+      "collected_percent_of_ceiling": 0.18835986497768095,
+      "maximum_total_size_multiple": 530.8986604542807,
+      "additional_passage_upper_bound": 909836,
+      "additional_current_size_multiples": 529.8986604542807,
+      "document_coverage_percent": 0.4969540992131012
+    },
+    {
+      "source": "wikinews",
+      "collected_passages": 991,
+      "collected_parent_documents": 991,
+      "raw_source_records": 2842222,
+      "raw_unit": "snapshot records, including other namespaces",
+      "scope": "22,089 main article/chapter pages \u00d71",
+      "passage_ceiling": 22089,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 991,
+      "notes": "Resume approved pinned original articles; date/license, article-family and long-bin capacity remain unmeasured.",
+      "evidence": [
+        "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md"
+      ],
+      "namespace0_or_source_records": 22089,
+      "inventory_evidence": "small-source-inventories.json",
+      "collected_percent_of_ceiling": 4.486395943682376,
+      "maximum_total_size_multiple": 22.289606458123107,
+      "additional_passage_upper_bound": 21098,
+      "additional_current_size_multiples": 21.289606458123107,
+      "document_coverage_percent": 0.03486708638522958
+    },
+    {
+      "source": "scidev",
+      "collected_passages": 926,
+      "collected_parent_documents": 639,
+      "raw_source_records": null,
+      "raw_unit": "full publisher inventory not established",
+      "scope": "Current cache:2,114 unique article families \u00d73",
+      "passage_ceiling": 6342,
+      "ceiling_kind": "cached_inventory_upper_bound",
+      "comparison_collected_passages": 926,
+      "notes": "This is NOT a full-source exhaustion limit. More historical discovery can increase it. Baseline926; isolated stage3,444 at20:32UTC, pending global dedup/validation.",
+      "evidence": [
+        "https://www.scidev.net/"
+      ],
+      "cached_document_families": 2114,
+      "collected_percent_of_ceiling": 14.601072216966257,
+      "maximum_total_size_multiple": 6.848812095032398,
+      "additional_passage_upper_bound": 5416,
+      "additional_current_size_multiples": 5.848812095032398,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "oanc_slate",
+      "collected_passages": 1321,
+      "collected_parent_documents": 1321,
+      "raw_source_records": 4531,
+      "raw_unit": "released articles",
+      "scope": "Original OANC Slate component; one passage/article",
+      "passage_ceiling": 4531,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1321,
+      "notes": "Pinned component is finite;1,570 source cursors marked done. Adapter rejects changed quota/length settings without explicit migration.",
+      "evidence": [
+        "https://anc.org/data/oanc/contents/"
+      ],
+      "collected_percent_of_ceiling": 29.15471198410947,
+      "maximum_total_size_multiple": 3.4299772899318697,
+      "additional_passage_upper_bound": 3210,
+      "additional_current_size_multiples": 2.4299772899318697,
+      "document_coverage_percent": 29.15471198410947
+    },
+    {
+      "source": "asap2",
+      "collected_passages": 4206,
+      "collected_parent_documents": 4206,
+      "raw_source_records": 17307,
+      "raw_unit": "original training essays",
+      "scope": "Raw original train essays; one passage/essay",
+      "passage_ceiling": 17307,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 4206,
+      "notes": "Stricter known-family/length/dedup capacity10,763. Of4,206 retained,877 have protected-family flags; comparable retained3,329. Clean-subset fraction30.929%, maximum3.233x, additional7,434 before remaining overlap checks.",
+      "evidence": [
+        "https://github.com/scrosseye/ASAP_2.0"
+      ],
+      "refined_capacity": {
+        "known_family_filtered_ceiling": 10763,
+        "comparable_collected": 3329,
+        "fraction_percent": 30.930038093468365,
+        "maximum_total_multiple": 3.2331030339441273,
+        "additional_upper_bound": 7434,
+        "flagged_retained": 877
+      },
+      "collected_percent_of_ceiling": 24.302305425550355,
+      "maximum_total_size_multiple": 4.114835948644793,
+      "additional_passage_upper_bound": 13101,
+      "additional_current_size_multiples": 3.114835948644793,
+      "document_coverage_percent": 24.302305425550355
+    },
+    {
+      "source": "ellipse",
+      "collected_passages": 0,
+      "collected_parent_documents": 0,
+      "raw_source_records": 6482,
+      "raw_unit": "reliable essays:3,911 train+2,571 test",
+      "scope": "All44 train prompt families protected; no eligible train rows",
+      "passage_ceiling": 0,
+      "ceiling_kind": "known_exclusion_ceiling",
+      "comparison_collected_passages": 0,
+      "notes": "All44original training prompt families protected; revised target0 does not establish any usable supply.",
+      "evidence": [
+        "https://github.com/scrosseye/ELLIPSE-Corpus"
+      ],
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": 0,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": 0.0
+    },
+    {
+      "source": "persuade",
+      "collected_passages": 699,
+      "collected_parent_documents": 699,
+      "raw_source_records": 15593,
+      "raw_unit": "unique original training essay IDs",
+      "scope": "Verified consistent eligible prompt subset",
+      "passage_ceiling": 699,
+      "ceiling_kind": "known_exclusion_ceiling",
+      "comparison_collected_passages": 699,
+      "notes": "173,266 annotation rows describe15,593 essay IDs; one conflicts. All699 eligible essays already collected. Broader training-admission checks remain.",
+      "evidence": [
+        "https://github.com/scrosseye/persuade_corpus_2.0"
+      ],
+      "collected_percent_of_ceiling": 100.0,
+      "maximum_total_size_multiple": 1.0,
+      "additional_passage_upper_bound": 0,
+      "additional_current_size_multiples": 0,
+      "document_coverage_percent": 4.482780734945168
+    },
+    {
+      "source": "govreport",
+      "collected_passages": 1086,
+      "collected_parent_documents": 381,
+      "raw_source_records": 19463,
+      "raw_unit": "reports across all splits",
+      "scope": "17,517 original train reports \u00d73",
+      "passage_ceiling": 52551,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 1086,
+      "notes": "Pinned original training-report column only; finite shard/reports, protected groups and long-bin yield must be counted.",
+      "evidence": [
+        "https://huggingface.co/datasets/ccdv/govreport-summarization"
+      ],
+      "collected_percent_of_ceiling": 2.0665639093452075,
+      "maximum_total_size_multiple": 48.389502762430936,
+      "additional_passage_upper_bound": 51465,
+      "additional_current_size_multiples": 47.389502762430936,
+      "document_coverage_percent": 1.9575604994091353
+    },
+    {
+      "source": "fed",
+      "collected_passages": 776,
+      "collected_parent_documents": 281,
+      "raw_source_records": null,
+      "raw_unit": null,
+      "scope": "No complete historical eligible publisher inventory established; current discovered URL counts are not an exhaustion bound",
+      "passage_ceiling": null,
+      "ceiling_kind": "unknown",
+      "comparison_collected_passages": 776,
+      "notes": "Need expand historical Board-authored document discovery; original-author/date filters and network failures still apply.",
+      "evidence": [
+        "https://www.federalreserve.gov/publications.htm"
+      ],
+      "collected_percent_of_ceiling": null,
+      "maximum_total_size_multiple": null,
+      "additional_passage_upper_bound": null,
+      "additional_current_size_multiples": null,
+      "document_coverage_percent": null
+    },
+    {
+      "source": "worldbank",
+      "collected_passages": 776,
+      "collected_parent_documents": 265,
+      "raw_source_records": 617575,
+      "raw_unit": "catalog entries across all languages/types/years",
+      "scope": "Current official search:1,957 English publications,2012\u20132021 \u00d73",
+      "passage_ceiling": 5871,
+      "ceiling_kind": "current_discovery_scope_upper_bound",
+      "comparison_collected_passages": 776,
+      "notes": "Catalog total is not usable corpus size. Current collector query measured1,957; per-work license, text access and prose checks reduce5,871 bound. Broadening dates/types changes scope.",
+      "evidence": [
+        "https://search.worldbank.org/api/v3/wds?format=json&rows=0&lang_exact=English&majdocty_exact=Publications&enddate=2021-12-31&strdate=2012-01-01&fl=id"
+      ],
+      "collected_percent_of_ceiling": 13.21750979390223,
+      "maximum_total_size_multiple": 7.565721649484536,
+      "additional_passage_upper_bound": 5095,
+      "additional_current_size_multiples": 6.565721649484536,
+      "document_coverage_percent": 0.04290976804436708
+    },
+    {
+      "source": "oanc_icic",
+      "collected_passages": 465,
+      "collected_parent_documents": 212,
+      "raw_source_records": 245,
+      "raw_unit": "released documents",
+      "scope": "Original OANC ICIC component; three passages/document",
+      "passage_ceiling": 735,
+      "ceiling_kind": "structural_upper_bound",
+      "comparison_collected_passages": 465,
+      "notes": "Loose cap only.92,122 total words; many letters cannot yield3 valid passages. Current465 came from212 documents.",
+      "evidence": [
+        "https://anc.org/data/oanc/contents/"
+      ],
+      "collected_percent_of_ceiling": 63.265306122448976,
+      "maximum_total_size_multiple": 1.5806451612903225,
+      "additional_passage_upper_bound": 270,
+      "additional_current_size_multiples": 0.5806451612903225,
+      "document_coverage_percent": 86.53061224489795
+    }
+  ]
+}

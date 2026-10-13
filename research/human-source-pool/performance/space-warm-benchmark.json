@@ -1,0 +1,213 @@
+{
+  "trials": [
+    {
+      "trial": 0,
+      "workers": 1,
+      "wall_seconds": 16.178184122996754,
+      "counts": {
+        "imdb": 1000,
+        "writingprompts": 1000
+      },
+      "record_ids_sha256": "794b595b32c3bff6e9cf4ea0f10ec8587c7a7fb5b3f6267d5a1731e2bf62695a",
+      "jobs": [
+        {
+          "source_id": "imdb",
+          "returncode": 0,
+          "wall_seconds": 10.05709533400659,
+          "status": {
+            "source_id": "imdb",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 9565,
+            "cursor": 9564,
+            "state": "quota_filled",
+            "elapsed_seconds": 9.583,
+            "new_candidates_per_second": 104.348,
+            "updated_at": "2026-10-02T06:47:15.894318+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        },
+        {
+          "source_id": "writingprompts",
+          "returncode": 0,
+          "wall_seconds": 6.1200915340014035,
+          "status": {
+            "source_id": "writingprompts",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 1424,
+            "cursor": 1423,
+            "state": "quota_filled",
+            "elapsed_seconds": 5.611,
+            "new_candidates_per_second": 178.218,
+            "updated_at": "2026-10-02T06:47:22.051484+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "workers": 2,
+      "wall_seconds": 10.612897958999383,
+      "counts": {
+        "imdb": 1000,
+        "writingprompts": 1000
+      },
+      "record_ids_sha256": "794b595b32c3bff6e9cf4ea0f10ec8587c7a7fb5b3f6267d5a1731e2bf62695a",
+      "jobs": [
+        {
+          "source_id": "imdb",
+          "returncode": 0,
+          "wall_seconds": 10.612201005991665,
+          "status": {
+            "source_id": "imdb",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 9565,
+            "cursor": 9564,
+            "state": "quota_filled",
+            "elapsed_seconds": 10.137,
+            "new_candidates_per_second": 98.65,
+            "updated_at": "2026-10-02T06:47:32.773949+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        },
+        {
+          "source_id": "writingprompts",
+          "returncode": 0,
+          "wall_seconds": 7.006179393996717,
+          "status": {
+            "source_id": "writingprompts",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 1424,
+            "cursor": 1423,
+            "state": "quota_filled",
+            "elapsed_seconds": 6.575,
+            "new_candidates_per_second": 152.094,
+            "updated_at": "2026-10-02T06:47:29.212010+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "workers": 2,
+      "wall_seconds": 10.716213644001982,
+      "counts": {
+        "imdb": 1000,
+        "writingprompts": 1000
+      },
+      "record_ids_sha256": "794b595b32c3bff6e9cf4ea0f10ec8587c7a7fb5b3f6267d5a1731e2bf62695a",
+      "jobs": [
+        {
+          "source_id": "imdb",
+          "returncode": 0,
+          "wall_seconds": 10.715545701998053,
+          "status": {
+            "source_id": "imdb",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 9565,
+            "cursor": 9564,
+            "state": "quota_filled",
+            "elapsed_seconds": 10.058,
+            "new_candidates_per_second": 99.425,
+            "updated_at": "2026-10-02T06:47:43.640809+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        },
+        {
+          "source_id": "writingprompts",
+          "returncode": 0,
+          "wall_seconds": 7.082032152000465,
+          "status": {
+            "source_id": "writingprompts",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 1424,
+            "cursor": 1423,
+            "state": "quota_filled",
+            "elapsed_seconds": 6.58,
+            "new_candidates_per_second": 151.975,
+            "updated_at": "2026-10-02T06:47:40.049848+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "workers": 1,
+      "wall_seconds": 17.045687585006817,
+      "counts": {
+        "imdb": 1000,
+        "writingprompts": 1000
+      },
+      "record_ids_sha256": "794b595b32c3bff6e9cf4ea0f10ec8587c7a7fb5b3f6267d5a1731e2bf62695a",
+      "jobs": [
+        {
+          "source_id": "imdb",
+          "returncode": 0,
+          "wall_seconds": 10.908940313995117,
+          "status": {
+            "source_id": "imdb",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 9565,
+            "cursor": 9564,
+            "state": "quota_filled",
+            "elapsed_seconds": 10.356,
+            "new_candidates_per_second": 96.559,
+            "updated_at": "2026-10-02T06:47:54.698837+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        },
+        {
+          "source_id": "writingprompts",
+          "returncode": 0,
+          "wall_seconds": 6.135841444003745,
+          "status": {
+            "source_id": "writingprompts",
+            "count": 1000,
+            "target": 1000,
+            "new_candidates": 1000,
+            "scanned_documents_this_run": 1424,
+            "cursor": 1423,
+            "state": "quota_filled",
+            "elapsed_seconds": 5.608,
+            "new_candidates_per_second": 178.302,
+            "updated_at": "2026-10-02T06:48:00.871011+00:00",
+            "all_quarantined": true,
+            "official_test_split_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "sequential_mean_seconds": 16.611935854001786,
+  "parallel_mean_seconds": 10.664555801500683,
+  "speedup": 1.5576772406839678,
+  "recommended_concurrency": 2,
+  "same_records_every_trial": true,
+  "quota_per_source": 1000,
+  "scope": "End-to-end checksum, extraction/cache validation, parsing, SQLite dedup/checkpoint/original writes on cached source archives. Network download excluded; WritingPrompts cache is prepared and validated before all timed trials.",
+  "warmup_seconds_excluded": 2.270981761990697,
+  "updated_at": "2026-10-02T06:48:01.061061+00:00"
+}

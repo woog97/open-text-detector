@@ -1,0 +1,224 @@
+{
+  "timezone": "America/Los_Angeles",
+  "host_counts": {
+    "00c559d8728f": 60,
+    "null": 12
+  },
+  "raw_gpu_samples_matched_host": 35111,
+  "tracker_files": 73,
+  "tracker_errors": [
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042856-4v8cyhq6/run-4v8cyhq6.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042856-vkhnkr0t/run-vkhnkr0t.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042849-iuwj12xj/run-iuwj12xj.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260831_042849-59o8gre6/run-59o8gre6.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041637-0gzod8v2/run-0gzod8v2.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041637-n3mqnlwv/run-n3mqnlwv.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041630-iszl1ggw/run-iszl1ggw.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041630-fbynw9n0/run-fbynw9n0.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041623-oakod6go/run-oakod6go.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041623-x5kewrqo/run-x5kewrqo.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041616-2c46pyhp/run-2c46pyhp.wandb",
+      "samples": 0,
+      "error": "header"
+    },
+    {
+      "source": "/workspace/oscf-code/wandb/offline-run-20260830_041616-x4ph571k/run-x4ph571k.wandb",
+      "samples": 0,
+      "error": "header"
+    }
+  ],
+  "first_sample": "2026-08-24T18:54:33-07:00",
+  "last_sample": "2026-09-24T20:58:20-07:00",
+  "observed_complete_minutes": 4426,
+  "observed_hours": 73.76666666666667,
+  "calendar_span_hours": 746.0630555555556,
+  "gpu": [
+    {
+      "gpu": 0,
+      "mean_util_pct": 17.10807350504594,
+      "median_util_pct": 0.0,
+      "p90_util_pct": 98.75,
+      "median_used_gib": 44.73541259765625,
+      "p90_used_gib": 78.79255676269531,
+      "max_minute_used_gib": 119.2520751953125,
+      "under_1gib_pct": 24.943515589697242
+    },
+    {
+      "gpu": 1,
+      "mean_util_pct": 34.70499133905709,
+      "median_util_pct": 0.0,
+      "p90_util_pct": 99.75,
+      "median_used_gib": 0.00732421875,
+      "p90_used_gib": 123.7408447265625,
+      "max_minute_used_gib": 131.12728881835938,
+      "under_1gib_pct": 51.15228197017623
+    },
+    {
+      "gpu": 2,
+      "mean_util_pct": 52.33833220364513,
+      "median_util_pct": 75.0,
+      "p90_util_pct": 100.0,
+      "median_used_gib": 37.59869384765625,
+      "p90_used_gib": 128.17095947265625,
+      "max_minute_used_gib": 139.58807373046875,
+      "under_1gib_pct": 28.219611387257117
+    },
+    {
+      "gpu": 3,
+      "mean_util_pct": 71.91727858111162,
+      "median_util_pct": 84.0,
+      "p90_util_pct": 100.0,
+      "median_used_gib": 38.07330322265625,
+      "p90_used_gib": 131.72149658203125,
+      "max_minute_used_gib": 139.07452392578125,
+      "under_1gib_pct": 10.054225033890646
+    }
+  ],
+  "daily": [
+    {
+      "date_pacific": "2026-08-24",
+      "observed_minutes": 306,
+      "mean_util_pct": 60.32250816993464,
+      "mean_cards_under_1gib": 0.07516339869281045
+    },
+    {
+      "date_pacific": "2026-08-25",
+      "observed_minutes": 120,
+      "mean_util_pct": 59.716145833333336,
+      "mean_cards_under_1gib": 0
+    },
+    {
+      "date_pacific": "2026-08-26",
+      "observed_minutes": 338,
+      "mean_util_pct": 49.515902366863905,
+      "mean_cards_under_1gib": 0.4230769230769231
+    },
+    {
+      "date_pacific": "2026-08-29",
+      "observed_minutes": 626,
+      "mean_util_pct": 52.85286874334398,
+      "mean_cards_under_1gib": 1.4185303514376997
+    },
+    {
+      "date_pacific": "2026-08-30",
+      "observed_minutes": 480,
+      "mean_util_pct": 48.44904513888889,
+      "mean_cards_under_1gib": 1.54375
+    },
+    {
+      "date_pacific": "2026-08-31",
+      "observed_minutes": 583,
+      "mean_util_pct": 50.750017867352774,
+      "mean_cards_under_1gib": 1.6226415094339623
+    },
+    {
+      "date_pacific": "2026-09-01",
+      "observed_minutes": 313,
+      "mean_util_pct": 40.451810436634716,
+      "mean_cards_under_1gib": 0
+    },
+    {
+      "date_pacific": "2026-09-05",
+      "observed_minutes": 279,
+      "mean_util_pct": 67.6975806451613,
+      "mean_cards_under_1gib": 0.02867383512544803
+    },
+    {
+      "date_pacific": "2026-09-06",
+      "observed_minutes": 225,
+      "mean_util_pct": 28.634444444444444,
+      "mean_cards_under_1gib": 0.18222222222222223
+    },
+    {
+      "date_pacific": "2026-09-23",
+      "observed_minutes": 446,
+      "mean_util_pct": 31.983183856502244,
+      "mean_cards_under_1gib": 1.5695067264573992
+    },
+    {
+      "date_pacific": "2026-09-24",
+      "observed_minutes": 710,
+      "mean_util_pct": 20.104225352112675,
+      "mean_cards_under_1gib": 2.2140845070422537
+    }
+  ],
+  "memory_capacity_scenarios_need_plus_10GiB_headroom": {
+    "20": {
+      "fraction_observed_minutes_at_least_one_card": 1,
+      "mean_qualifying_cards": 3.2826479891549933
+    },
+    "40": {
+      "fraction_observed_minutes_at_least_one_card": 0.9694984184365115,
+      "mean_qualifying_cards": 3.150248531405332
+    },
+    "80": {
+      "fraction_observed_minutes_at_least_one_card": 0.9324446452779033,
+      "mean_qualifying_cards": 2.5824672390420242
+    }
+  },
+  "all_four_under_1gib_pct": 0,
+  "mean_empty_cards": 1.1436963398102125,
+  "inventory": {
+    "files_seen": 16726,
+    "candidate_records": 1761,
+    "read_parse_errors": 70,
+    "earliest_artifact_mtime": "2026-07-02T23:32:21+00:00",
+    "gpu_evidence_logs": 188,
+    "oom_logs": 7,
+    "filtered_log_count": 1326,
+    "filtered_log_modification_days": 45,
+    "monthly_filtered_log_modifications": {
+      "2026-09": 262,
+      "2026-08": 371,
+      "2026-07": 693
+    }
+  },
+  "live": {
+    "rows": 48,
+    "first": "2026/10/02 00:37:08.392",
+    "last": "2026/10/02 00:39:53.416",
+    "max_gpu_util": 0.0,
+    "max_memory_used_mib": 1.0
+  }
+}

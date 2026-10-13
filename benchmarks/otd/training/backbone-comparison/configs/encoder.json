@@ -1,0 +1,20 @@
+{
+  "kind": "encoder",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "micro_batch": 8,
+  "effective_batch": 32,
+  "stages": {
+    "1": {
+      "epochs": 1
+    },
+    "2": {
+      "epochs": 3
+    }
+  },
+  "precision": "bfloat16",
+  "tuning": "full",
+  "source_tokens_max": 510,
+  "inference_stride": 256,
+  "optimizer": "adamw8bit"
+}

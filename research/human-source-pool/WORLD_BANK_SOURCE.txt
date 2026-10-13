@@ -1,0 +1,60 @@
+WORLD BANK OFFICIAL TEXT MIRRORS — 2026-10-02 UTC
+
+Source approval reused: source-approvals.json / worldbank, quota 776, professional category.
+Official discovery documentation: https://documents.worldbank.org/en/publication/documents-reports/api
+API: https://search.worldbank.org/api/v3/wds
+Selection: English, disclosed, Publications, official document dates 2012–2021.
+Discovery returned 1,955 eligible document metadata records; API responses and request URLs/hashes are saved in source-downloads/worldbank/index-*.json.
+API results include original document IDs, dates, authors, title, report/DOI/ISBN identifiers, PDF URL, and original text URL.
+
+The adapter reads the publisher's own full-text .txt mirror on documents1.worldbank.org.
+It does not need PDF downloads, local PDF conversion, or any model.
+Text originals stay byte-for-byte preserved on Space with per-document SHA256 manifests.
+Strict UTF-8 decoding rejects malformed inputs instead of silently replacing characters.
+
+Per-work license gate:
+An explicit front-matter statement that this work is available/licensed/distributed under a license must occur within the first 30,000 characters.
+Its nearby license URI must identify CC BY 2.0/3.0/4.0, optionally IGO.
+NC, ND, noncommercial, and no-derivatives grants are excluded.
+A cited Creative Commons URL alone never establishes permission for the work.
+Exact grant context, source offsets and canonical license URL are retained with each original.
+Required author/title/URL/DOI metadata stays attached; no blanket repository-wide license is inferred.
+
+Code: ingest_worldbank.py; tests: test_worldbank.py (six focused tests).
+Isolated stage: /tmp/pangram-worldbank-stage-v1 on the existing training Space.
+  stage.sqlite3, process-worldbank.json, progress/worldbank.json, worldbank-stage.log
+  source-downloads/worldbank/: original text, checksum/provenance manifest, API discovery snapshots
+  staged/worldbank/passages.jsonl.gz and documents.jsonl.gz written when the source wave ends
+Command: python ingest_worldbank.py --base /tmp/pangram-worldbank-stage-v1 --quota 776 --workers 4
+Check PID/start_ticks/non-zombie state before recovery; historical process IDs do not establish liveness.
+
+Extraction and safeguards:
+Exact raw Unicode offsets, untouched CRLF and page-break characters; no silent whitespace flattening.
+Paragraph prose filters exclude rights/front-matter boilerplate, tables-of-contents leaders and low-prose blocks.
+Short running headers/page numbers may remain inside an unchanged long span crossing a publisher page break; those rows carry an explicit review flag.
+Maximum three nonoverlapping passages per original report. Normal professional length proportions retained.
+Source lock, immutable staging quota/config, normalized exact dedup, and short atomic SQLite transactions.
+Network downloads and extraction happen outside SQLite write transactions.
+Saved documents are reused on resume, and previously accepted documents are not resampled.
+All rows remain quarantined; publisher extraction, third-party-content, historical-version and protected-overlap checks remain explicit.
+Production /data and the active publication pool are never modified by this adapter.
+Full production-pool dedup and quota enforcement are required at coordinated merge.
+
+Early recovery note:
+The publisher sometimes line-wraps the URL between http:// and creativecommons.org; a tested parser correction preserves the raw grant but canonicalizes the license URI.
+New license-v2 cursor names preserve the old overly-strict scan cursors while revisiting rejected records. Already accepted documents remain skipped.
+The original same-stage worker was stopped by verified PID/start identity for that correction and again for a tested long-page-span correction; all originals and committed rows were retained.
+The prior page-boundary code/process metadata are preserved under pipeline-history/page-boundary-fix.
+
+Completed 2026-10-02: 776 candidates from 265 original reports, exact bins
+116/272/272/116, unchanged Unicode offsets and explicit per-work license grants
+verified. Reports span 2012-2021. All 776 were globally merged by the publishing
+worker. The metadata-only IGO URI correction for document 19374967 affects three
+passages; source text, record IDs and offsets are unchanged. Pre-correction
+checkpoints remain preserved. Corrected stage artifacts are durably stored in
+workspace/human-source-mix-v2-recovered-20261002/stages/worldbank-corrected/;
+original stage objects remain preserved separately.
+Corrected passages SHA256:
+4e17686f91f033b740f7d5ba639f47c09435faa7af1e55acd25120cdfc72d865
+Corrected documents SHA256:
+31222cfa30498910fc40f41e6418a5a22cf135acc534412b7e7caae9f92077c3

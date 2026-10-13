@@ -1,0 +1,16 @@
+{
+  "version": "candidate-topup-v2",
+  "remote_base": "/data/workspace/human-source-mix-v2",
+  "initial_process": {
+    "pid": 11352,
+    "start_ticks": "7028664"
+  },
+  "automation_id": "complete-100k-human-source-mix",
+  "automation_status_at_creation": "ACTIVE",
+  "followup_minutes": 10,
+  "planned_total": 100000,
+  "source_quotas_file": "sampling-plan.json",
+  "previous_published_count": 34206,
+  "previous_release_preserved": true,
+  "status": "background_worker_started_not_yet_complete"
+}

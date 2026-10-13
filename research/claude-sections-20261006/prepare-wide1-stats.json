@@ -1,0 +1,23 @@
+{
+ "items": 2600,
+ "papers": 2600,
+ "by_writer": {
+  "opus": 1300,
+  "sonnet": 1300
+ },
+ "by_role": {
+  "introduction": 952,
+  "related_work": 542,
+  "experiments_results": 539,
+  "method": 211,
+  "discussion_conclusion": 356
+ },
+ "by_kind": {
+  "draft": 1300,
+  "rewrite": 1300
+ },
+ "batches": {
+  "opus": 163,
+  "sonnet": 163
+ }
+}

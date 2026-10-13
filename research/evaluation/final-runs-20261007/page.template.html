@@ -1,0 +1,331 @@
+<title>Open Text Detector Final Runs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~74rem) — verdict strip, then the scoreboard table, then supporting sections; ledger last. */
+:root {
+  --bg: #f6f7f5; --panel: #ffffff; --ink: #18211e; --muted: #5b6862; --rule: #d9dfdb;
+  --accent: #1f6f5c; --accent-soft: #dcebe5; --past: #7a6a3a; --past-soft: #efe8d3;
+  --ref: #4f5d8a; --ref-soft: #e1e5f1; --good: #1f7a4d; --warn: #9a5b12; --bad: #a3322a;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111614; --panel: #18201d; --ink: #e5ece8; --muted: #9aa8a1; --rule: #2c3833;
+  --accent: #6cc3a8; --accent-soft: #1d3a31; --past: #d3b56a; --past-soft: #3a3220;
+  --ref: #9fb0e6; --ref-soft: #262d45; --good: #6cc996; --warn: #e3a35a; --bad: #ef8a80; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111614; --panel: #18201d; --ink: #e5ece8; --muted: #9aa8a1; --rule: #2c3833;
+  --accent: #6cc3a8; --accent-soft: #1d3a31; --past: #d3b56a; --past-soft: #3a3220;
+  --ref: #9fb0e6; --ref-soft: #262d45; --good: #6cc996; --warn: #e3a35a; --bad: #ef8a80; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); padding-inline: 16px; padding-block: 28px 64px }
+main { max-width: 74rem; margin: 0 auto; display: grid; gap: 40px }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em }
+h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 700; line-height: 1.1 }
+h2 { font-size: 1.45rem; font-weight: 700 }
+h3 { font-size: 1.05rem; font-weight: 600 }
+p { margin: 0; max-width: 68ch }
+.eyebrow { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted) }
+.lede { color: var(--muted); font-size: 1.02rem }
+header { display: grid; gap: 12px }
+section { display: grid; gap: 16px; min-width: 0 }
+.sect-head { display: grid; gap: 6px }
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 12px }
+.stat { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; min-width: 0 }
+.stat .v { font: 600 1.9rem/1.1 var(--display); font-variant-numeric: tabular-nums }
+.stat .v small { font: 500 0.85rem var(--mono); color: var(--muted); margin-left: 6px }
+.stat .k { font-size: 0.86rem; color: var(--muted) }
+.scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--panel) }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 0.88rem }
+th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--panel); z-index: 1 }
+thead th { font: 500 0.74rem/1.25 var(--body); color: var(--muted); vertical-align: bottom; white-space: normal; min-width: 5.6rem }
+thead tr.groups th { font: 500 0.68rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 2px solid var(--rule); text-align: center }
+th.g-final { color: var(--accent); border-bottom-color: var(--accent) !important }
+th.g-past { color: var(--past); border-bottom-color: var(--past) !important }
+th.g-ref { color: var(--ref); border-bottom-color: var(--ref) !important }
+td.num { font-family: var(--mono); font-size: 0.84rem }
+td.best { background: var(--accent-soft); font-weight: 600 }
+td.na { color: var(--muted) }
+tbody tr:last-child td { border-bottom: 0 }
+td.metric { font-size: 0.86rem }
+td.metric .sub { display: block; color: var(--muted); font-size: 0.74rem }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.82rem; color: var(--muted) }
+.chip { display: inline-flex; align-items: center; gap: 6px }
+.sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block }
+.chart { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; overflow-x: auto }
+.chart svg { display: block; width: 100%; min-width: 34rem; height: auto }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); gap: 20px }
+.two > * { min-width: 0 }
+.note { font-size: 0.86rem; color: var(--muted) }
+.ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); gap: 24px }
+.ledger > div { min-width: 0; display: grid; gap: 12px; align-content: start }
+ol.prio, ul.find { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px }
+ol.prio li, ul.find li { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px }
+ol.prio li { grid-template-columns: 2rem 1fr; column-gap: 8px }
+ol.prio .n { font: 600 1.2rem/1.2 var(--display); color: var(--accent); grid-row: span 3 }
+ol.prio .t, ul.find .t { font-weight: 600 }
+ol.prio .d, ul.find .d { font-size: 0.88rem; color: var(--muted) }
+ol.prio .meta { font: 0.74rem var(--mono); color: var(--muted) }
+.tag { font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 6px; border-radius: 4px; justify-self: start }
+.tag.new { background: var(--accent-soft); color: var(--accent) }
+.tag.warn { background: var(--past-soft); color: var(--warn) }
+.tag.bad { background: var(--past-soft); color: var(--bad) }
+.inc { display: grid; gap: 8px; font-size: 0.88rem }
+.inc div { border-left: 3px solid var(--warn); padding-left: 10px }
+code { font: 0.82rem var(--mono); background: var(--accent-soft); padding: 1px 4px; border-radius: 3px; word-break: break-all }
+footer { color: var(--muted); font-size: 0.8rem; display: grid; gap: 4px }
+a { color: var(--accent) }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+</style>
+
+<main>
+<header>
+  <span class="eyebrow">Open Text Detector · AI-edit detection · Oct 7, 2026</span>
+  <h1>Final runs on the 72k single-pass mix</h1>
+  <p class="lede">Three full-length runs, one seed each, trained on 72,000 stage-2 rows that never repeat: Qwen3.6 35B-A3B MoE, Qwen3.5 4B and EmbeddingGemma 2. Compared with every earlier MoE run and the 3-seed T2.1, T2 and SPG references. Recall is at a 1% human false-positive threshold set on in-domain human sentences.</p>
+</header>
+
+<section aria-label="Verdict">
+  <div class="verdict" id="verdict"></div>
+</section>
+
+<section>
+  <div class="sect-head">
+    <span class="eyebrow">Scoreboard</span>
+    <h2>Every model on every shared set</h2>
+    <p class="note">Shaded cell: best in its row. Final-run columns use the last checkpoint (epoch 2); the loss-selected epoch-1 checkpoints are compared further down. Earlier MoE runs were not scored on the Fable or wide1 sets.</p>
+  </div>
+  <div class="legend">
+    <span class="chip"><span class="sw" style="background:var(--accent)"></span>Final runs (Oct 7)</span>
+    <span class="chip"><span class="sw" style="background:var(--past)"></span>Earlier MoE runs (Oct 4–6)</span>
+    <span class="chip"><span class="sw" style="background:var(--ref)"></span>4B references, 3-seed means</span>
+  </div>
+  <div class="scroll"><table id="board"></table></div>
+</section>
+
+<section>
+  <div class="sect-head">
+    <span class="eyebrow">Small edits</span>
+    <h2>One- and two-sentence edits, sweep test half</h2>
+    <p class="note">The main open problem. 150 AI sentences in the test half, so about ±4 points of sampling error per bar; the dev half (189 sentences) is shown as a tick.</p>
+  </div>
+  <div class="chart" id="chart"></div>
+</section>
+
+<section class="two">
+  <div>
+    <div class="sect-head">
+      <span class="eyebrow">Checkpoint choice</span>
+      <h2>The last checkpoint beats the loss-selected one</h2>
+      <p class="note">Selection loss picked epoch 1 for all three runs. In a single pass with a cosine schedule that ends at zero, epoch 2 has seen all the data and scores higher almost everywhere.</p>
+    </div>
+    <div class="scroll"><table id="ckpt"></table></div>
+  </div>
+  <div>
+    <div class="sect-head">
+      <span class="eyebrow">Unseen writers</span>
+      <h2>Open-weight writers held out of training</h2>
+      <p class="note">wide1 held-out set: DeepSeek V4.1 Flash on papers kept out of training (DeepSeek's other papers were trained on), GLM 5.3 Flash and MiMo V2.6 Flash never trained on. Recall / AUROC against matched human controls.</p>
+    </div>
+    <div class="scroll"><table id="wide1"></table></div>
+  </div>
+</section>
+
+<section class="two">
+  <div>
+    <div class="sect-head">
+      <span class="eyebrow">Training data</span>
+      <h2>What the 72,000 rows were</h2>
+    </div>
+    <div class="scroll"><table id="mix"></table></div>
+    <p class="note">Gaps filled within their group: GPT-6.1 Sol small edits 378 of 1,800 (Luna filled the rest), DeepSeek paragraph edits 810 of 999. Clean v2 paper text is 51% AI against 69–78% for the older formats; accepted because deployment text is clean v2 and thresholds are calibrated on clean-v2 human text.</p>
+  </div>
+  <div>
+    <div class="sect-head">
+      <span class="eyebrow">Run log</span>
+      <h2>How the night went</h2>
+    </div>
+    <div class="inc">
+      <div><b>Placement.</b> An ablation queue took all 8 Space A100s from about 3 AM, so all three runs went to the H200: MoE on one GPU (3.7 rows/s, faster than a 2-GPU split), 4B and EmbeddingGemma 2 on one each.</div>
+      <div><b>Timings.</b> EmbeddingGemma 2 22 min, 4B 2 h 29 min, MoE 4 h 30 min (started 4:06 AM PDT).</div>
+      <div><b>H200 reboot at about 9:15 AM.</b> After the MoE finished training; its RAM-disk weights were restored from the bucket in 41 s and scoring rerun.</div>
+      <div><b>Credential leak at about 4 AM.</b> A launcher bug echoed the HF token and W&amp;B key into a local log; both rotated. Fixed in <code>launch.py</code>.</div>
+      <div><b>Corpus job.</b> Deadlocked once and hit one unreadable file on the bucket mount; both recovered. All 79,779 R2 PDFs now have direct, clean v2 and omissions v2 text.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sect-head">
+    <span class="eyebrow">Project ledger</span>
+    <h2>Findings and priorities, as of Oct 7 midday</h2>
+  </div>
+  <div class="ledger">
+    <div>
+      <h3>Most important findings</h3>
+      <ul class="find" id="findings"></ul>
+    </div>
+    <div>
+      <h3>Priorities now</h3>
+      <ol class="prio" id="prios"></ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Data: <code>research/evaluation/final-runs-20261007/data.json</code> (built by <code>collect.py</code>; scores from <code>workspace/final-20261007/eval/</code> and <code>detector-comparison-20261006/h200/</code>).</span>
+  <span>Weights: MoE adapters at <code>workspace/final-20261007/h200/final-moe/stage2-epoch2-adapters.safetensors</code> in the training bucket. One seed per run.</span>
+</footer>
+</main>
+
+<script>
+const DATA = /*DATA*/null;
+const M = Object.fromEntries(DATA.models.map(m => [m.id, m]));
+const fmt = (v, d = 3) => v == null || Number.isNaN(v) ? '—' : v.toFixed(d);
+const get = (m, path) => path.split('.').reduce((o, k) => o == null ? null : o[k], m);
+
+// Verdict tiles
+const fm = M['final-moe:stage2-epoch2'], p20 = M['moe-T2-p20:stage2-epoch2'], spg = M['SPG'], t21 = M['T21'];
+const tiles = [
+  [fm.sweep.test_small_r, 'Small-edit recall, MoE (test half)', `SPG ${fmt(spg.sweep.test_small_r)} · best earlier MoE ${fmt(p20.sweep.test_small_r)}`],
+  [fm['heldout-writers'].recall, 'Held-out writers, MoE', `T2.1 ${fmt(t21['heldout-writers'].recall)} · earlier MoE ${fmt(p20['heldout-writers'].recall)}`],
+  [fm['cross-model-s500'].recall, 'Cross-model sample, MoE', `T2.1 ${fmt(t21['cross-model-s500'].recall)} · SPG ${fmt(spg['cross-model-s500'].recall)}`],
+  [fm['wide1-heldout'].recall, 'Unseen open-weight writers, MoE', 'DeepSeek held-out papers, GLM, MiMo'],
+];
+document.getElementById('verdict').innerHTML = tiles.map(([v, k, s]) =>
+  `<div class="stat"><span class="k">${k}</span><span class="v">${fmt(v)}</span><span class="k">${s}</span></div>`).join('');
+
+// Scoreboard
+const COLS = ['final-moe:stage2-epoch2', 'final-qwen35-4b:stage2-epoch2', 'final-eg2:stage2-epoch2',
+              'moe-T2-p20:stage2-epoch2', 'moe-T2-pass1:stage2-epoch0', 'moe-A-s1:stage2-epoch2', 'moe-A-full-lr1e4:stage2-epoch0',
+              'T21', 'T2', 'SPG'];
+const ROWS = [
+  ['sweep.test_small_r', 'Small edits · recall', 'sweep test, 150 sentences'],
+  ['sweep.test_small_auc', 'Small edits · AUROC', 'sweep test'],
+  ['sweep.dev_small_r', 'Small edits · recall', 'sweep dev, 189 sentences'],
+  ['sweep.test_para_r', 'Paragraph edits · recall', 'sweep test'],
+  ['heldout-writers.recall', 'Held-out writers · recall', 'Claude + Luna, unseen papers'],
+  ['heldout-writers.auroc', 'Held-out writers · AUROC', ''],
+  ['t21-heldout-v2.recall', 'T2.1 held-out v2 · recall', 'incl. Fable 5.1, GPT-6 Sol'],
+  ['cross-model-s500.recall', 'Cross-model sample · recall', 'other model families'],
+  ['cross-model-s500.auroc', 'Cross-model sample · AUROC', ''],
+  ['fable-humanizer.recall', 'Fable humanizer · recall', 'humanized sections'],
+  ['fable-cowrite.auroc', 'Fable co-writing · AUROC', '3-round human + AI'],
+  ['wide1-heldout.recall', 'Unseen open-weight · recall', 'DeepSeek / GLM / MiMo'],
+  ['heldout-writers.control_fpr', 'Control FPR (held-out writers)', 'lower is better', true],
+];
+const grp = id => M[id].group;
+let h = '<thead><tr class="groups"><th></th>';
+for (const [g, label, cls] of [['final', 'Final runs', 'g-final'], ['past', 'Earlier MoE', 'g-past'], ['reference', 'References', 'g-ref']]) {
+  const n = COLS.filter(c => grp(c) === g).length; h += `<th colspan="${n}" class="${cls}">${label}</th>`;
+}
+h += '</tr><tr><th>Metric</th>' + COLS.map(c => `<th title="${M[c].note}">${M[c].name}</th>`).join('') + '</tr></thead><tbody>';
+for (const [path, label, sub, lower] of ROWS) {
+  const vals = COLS.map(c => get(M[c], path));
+  const ok = vals.filter(v => v != null);
+  const best = ok.length ? (lower ? Math.min(...ok) : Math.max(...ok)) : null;
+  h += `<tr><td class="metric">${label}${sub ? `<span class="sub">${sub}</span>` : ''}</td>` +
+       vals.map(v => `<td class="num ${v == null ? 'na' : ''} ${v != null && v === best ? 'best' : ''}">${fmt(v)}</td>`).join('') + '</tr>';
+}
+document.getElementById('board').innerHTML = h + '</tbody>';
+
+// Chart: test small-edit recall (bar) with dev tick, every model, drawn to one 0–1 scale
+(() => {
+  const ids = COLS; const W = 760, rowH = 30, top = 24, left = 190, right = 60, H = top + ids.length * rowH + 30;
+  const x = v => left + v * (W - left - right);
+  const color = id => grp(id) === 'final' ? 'var(--accent)' : grp(id) === 'past' ? 'var(--past)' : 'var(--ref)';
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Small-edit recall at 1% FPR per model">`;
+  for (let t = 0; t <= 1.0001; t += 0.2) {
+    s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top - 6}" y2="${H - 24}" stroke="var(--rule)" stroke-width="1"/>`;
+    s += `<text x="${x(t)}" y="${H - 8}" font-size="11" text-anchor="middle" fill="var(--muted)" font-family="var(--mono)">${t.toFixed(1)}</text>`;
+  }
+  ids.forEach((id, i) => {
+    const m = M[id], y = top + i * rowH, v = m.sweep.test_small_r, dv = m.sweep.dev_small_r;
+    s += `<text x="${left - 10}" y="${y + 15}" font-size="12" text-anchor="end" fill="var(--ink)" font-family="var(--body)">${m.name}</text>`;
+    s += `<rect x="${x(0)}" y="${y + 4}" width="${x(v) - x(0)}" height="16" rx="3" fill="${color(id)}" opacity="${id.startsWith('final-moe') ? 1 : 0.72}"/>`;
+    if (dv != null) s += `<line x1="${x(dv)}" x2="${x(dv)}" y1="${y + 1}" y2="${y + 23}" stroke="var(--ink)" stroke-width="2"/>`;
+    s += `<text x="${x(v) + 6}" y="${y + 16}" font-size="11.5" fill="var(--ink)" font-family="var(--mono)">${fmt(v)}</text>`;
+  });
+  s += `<text x="${left}" y="12" font-size="11" fill="var(--muted)" font-family="var(--body)">Bar: test-half recall at 1% FPR · tick: dev half</text>`;
+  document.getElementById('chart').innerHTML = s + '</svg>';
+})();
+
+// Checkpoint table
+(() => {
+  const runs = [['final-moe', 'MoE'], ['final-qwen35-4b', '4B'], ['final-eg2', 'EmbeddingGemma 2']];
+  const rows = [['sweep.dev_small_r', 'Small edits, dev'], ['sweep.test_small_r', 'Small edits, test'], ['heldout-writers.recall', 'Held-out writers'],
+                ['cross-model-s500.recall', 'Cross-model'], ['fable-humanizer.recall', 'Fable humanizer'], ['fable-cowrite.auroc', 'Co-writing AUROC']];
+  let h = '<thead><tr><th>Recall unless noted</th>' + runs.map(([, n]) => `<th>${n}<br>ep 1 → ep 2</th>`).join('') + '</tr></thead><tbody>';
+  for (const [path, label] of rows) {
+    h += `<tr><td class="metric">${label}</td>` + runs.map(([t]) => {
+      const a = get(M[`${t}:stage2-epoch1`], path), b = get(M[`${t}:stage2-epoch2`], path);
+      const d = a == null || b == null ? null : b - a;
+      const col = d == null ? '' : d > 0.005 ? 'color:var(--good)' : d < -0.005 ? 'color:var(--bad)' : '';
+      return `<td class="num">${fmt(a)} → <span style="${col}">${fmt(b)}</span></td>`;
+    }).join('') + '</tr>';
+  }
+  document.getElementById('ckpt').innerHTML = h + '</tbody>';
+})();
+
+// wide1 per writer
+(() => {
+  const ids = ['final-moe:stage2-epoch2', 'final-qwen35-4b:stage2-epoch2', 'final-eg2:stage2-epoch2', 'T21'];
+  const W = [['deepseek/deepseek-v4.1-flash', 'DeepSeek V4.1 Flash', 'trained writer, held-out papers'],
+             ['z-ai/glm-5.3-flash', 'GLM 5.3 Flash', 'never trained on'], ['xiaomi/mimo-v2.6-flash', 'MiMo V2.6 Flash', 'never trained on']];
+  let h = '<thead><tr><th>Writer</th>' + ids.map(i => `<th>${M[i].name}</th>`).join('') + '</tr></thead><tbody>';
+  for (const [k, name, sub] of W) {
+    h += `<tr><td class="metric">${name}<span class="sub">${sub}</span></td>` + ids.map(i => {
+      const w = get(M[i], 'wide1-heldout.writers') || {}; const x = w[k];
+      return `<td class="num">${x ? fmt(x.recall) + ' / ' + fmt(x.auroc) : '—'}</td>`;
+    }).join('') + '</tr>';
+  }
+  h += `<tr><td class="metric">Control FPR<span class="sub">human controls next to edits</span></td>` + ids.map(i => `<td class="num">${fmt(get(M[i], 'wide1-heldout.control_fpr'))}</td>`).join('') + '</tr>';
+  document.getElementById('wide1').innerHTML = h + '</tbody>';
+})();
+
+// Mix table
+(() => {
+  const groups = [
+    ['Small edits', 25200, 'Claude 13,334 · Luna 8,132 · DeepSeek 3,356 · GPT-6.1 Sol 378'],
+    ['Paragraph edits', 8700, 'Luna 4,385 · Claude/GPT 3,505 · DeepSeek 810'],
+    ['Human paper text', 18000, 'original windows 9,000 · matched sections 3,000 · matched paragraphs 3,000 · hosts 3,000'],
+    ['AI sections', 4200, 'Opus 1,964 · Sonnet 1,944 · Haiku 292'],
+    ['Fully AI documents', 7200, 'Luna mirrors 4,200 · GPT/Luna manuscripts 1,500 · Claude full papers 1,500'],
+    ['Generic human text', 5100, '34 sources'],
+    ['GRADTEX', 3600, 'document labels only'],
+  ];
+  const total = groups.reduce((a, g) => a + g[1], 0);
+  let h = '<thead><tr><th>Group</th><th>Rows</th><th>Share</th><th style="text-align:left">Detail</th></tr></thead><tbody>';
+  for (const [g, n, d] of groups) h += `<tr><td class="metric">${g}</td><td class="num">${n.toLocaleString()}</td><td class="num">${(100 * n / total).toFixed(1)}%</td><td style="text-align:left;white-space:normal;min-width:16rem;font-size:0.82rem;color:var(--muted)">${d}</td></tr>`;
+  h += `<tr><td class="metric"><b>Total</b></td><td class="num"><b>${total.toLocaleString()}</b></td><td class="num">100%</td><td style="text-align:left;white-space:normal;font-size:0.82rem;color:var(--muted)">plus 12,000 stage-1 rows; never-train lists applied; Fable, GLM, MiMo and GPT-6 Sol excluded</td></tr>`;
+  document.getElementById('mix').innerHTML = h + '</tbody>';
+})();
+
+// Ledger
+const FINDINGS = [
+  ['new', 'The final MoE is the best detector so far', 'Ties SPG on in-domain small edits (test 0.633 vs 0.629; dev 0.508 vs 0.478) and beats every model elsewhere: held-out writers 0.764, cross-model 0.965, Fable humanizer 0.953. SPG collapses off-domain (cross-model 0.414).'],
+  ['new', 'More, non-repeating data fixed the MoE', 'Same backbone, same recipe family: old mix 0.267 → T2 at 20% × 3 epochs 0.473 → 72k single pass 0.633 on test small edits. The full-length MoE on the old repeated pool overfit (0.233 at best).'],
+  ['new', 'Open-weight writers generalize', 'GLM and MiMo were never trained on, yet the MoE finds 0.853 and 0.784 of their sentences, close to DeepSeek (0.862), which was trained on.'],
+  ['new', 'Loss-based checkpoint selection picks the wrong checkpoint', 'For all three runs epoch 2 beats the loss-selected epoch 1 on nearly every set (MoE small edits 0.633 vs 0.540; 4B cross-model 0.770 vs 0.534). Use the last checkpoint for single-pass runs.'],
+  ['warn', 'Co-writing is still nearly invisible', 'Fable 3-round co-writing: AUROC 0.75–0.80, recall 0.25 for the best models. No model improved it; it is the largest remaining gap.'],
+  ['new', 'EmbeddingGemma 2 is not competitive', 'Small edits 0.340, cross-model 0.315: far below the 4B. A 270M text encoder is too small for this task; not worth more runs.'],
+  ['new', 'Human paper text is no longer scarce', 'All 79,779 R2 PDFs have direct, clean v2 and omissions v2 text on the Space; about 18k are dated 2022 or earlier. Generation, not human data, limits future mixes.'],
+  ['warn', 'Thresholds move with the checkpoint', 'In-domain 1% thresholds ranged 0.48–0.64 for the 4B between epochs. Calibrate each deployed model on the 2,403-paper human set before using its flags.'],
+];
+document.getElementById('findings').innerHTML = FINDINGS.map(([t, a, b]) =>
+  `<li><span class="tag ${t === 'new' ? 'new' : 'warn'}">${t === 'new' ? 'Finding' : 'Gap'}</span><span class="t">${a}</span><span class="d">${b}</span></li>`).join('');
+const PRIOS = [
+  ['Calibrate the final MoE and rescore the Atlas', 'Set a 1% human-FPR threshold for MoE epoch 2 on the 2,403-paper human calibration set, then rescore every Atlas paper. This replaces the pending 0.0283 → 0.0248 threshold switch for the old 4B.', 'Your time ~15 min · H200 or Space GPUs, a few hours'],
+  ['Settle the ICLR 2027 68% question with the new model', 'Read the top-flagged sentences in about 20 papers and score ICLR 2026 submission versions. Decide whether the rise reflects AI use or format drift before the Atlas shows per-paper flags.', 'Your time ~45 min'],
+  ['Attack co-writing next', 'The one set nothing improved. Generate multi-round human + AI co-writing training data (non-Fable writers; Fable stays held out) and score on the Fable co-writing set.', 'Design first; generation via Claude and API writers'],
+  ['Run GPT-6.1 Sol round 3 in Codex', 'GPT small edits are 378 of 1,800 needed; Luna filled the gap in this mix. Handoff: ROUND3-GPT61-SOL.md.', 'Your time ~10 min to start'],
+  ['Commit tonight\'s code', 'Mix builder, launcher, eval scripts, corpus pipeline and sampling code are uncommitted. Commit on overnight-20261006 and push.', 'Your time ~5 min'],
+  ['Make the trainer keep the last checkpoint as the default pick', 'Switch selection for single-pass runs to sweep-dev small-edit recall, or to the last epoch, so the next run reports the right checkpoint.', 'Small code change in train_sweep.py'],
+];
+document.getElementById('prios').innerHTML = PRIOS.map(([a, b, c], i) =>
+  `<li><span class="n">${i + 1}</span><span class="t">${a}</span><span class="d">${b}</span><span class="meta">${c}</span></li>`).join('');
+</script>

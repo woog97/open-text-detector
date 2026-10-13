@@ -1,0 +1,15 @@
+{
+  "repo_id": "open-text-detector/human-source-mix-v1",
+  "url": "https://huggingface.co/datasets/open-text-detector/human-source-mix-v1",
+  "private": true,
+  "revision": "d882e54f23e0ba21b33aea91c152360c2051b349",
+  "candidate_passages": 82629,
+  "admitted_passages": 0,
+  "shortfall": 17371,
+  "files_verified": 139,
+  "bytes_uploaded": 545106676,
+  "verified_at": "2026-10-02T07:59:56.239945+00:00",
+  "snapshot": "/tmp/pangram-human-active-20261002/snapshots/source-wave-20261002-v2",
+  "database": "/tmp/pangram-human-active-20261002/checkpoints/amazon-merge-20261002T075512Z.sqlite3",
+  "verification": "All 139 published artifacts downloaded remotely and SHA256 verified; publication receipt and manifests durably preserved with exact-byte readback."
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-02",
+  "half_split_status": "cancelled_by_user",
+  "half_split_trial_arms_status": "cancelled",
+  "large_paper_dataset": {
+    "path": "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000",
+    "retain_original_splits": true,
+    "passage_rows": {
+      "train": 12000,
+      "validation": 4000,
+      "test": 4000
+    }
+  },
+  "paper_editing_workflows": {
+    "path": "research/data/paper-eval-workflows-luna-20260930",
+    "distinct_edit_outputs": 567,
+    "usage": "evaluation_only",
+    "retain_original_pilot_calibration_test_splits": true
+  },
+  "GRADTEX": "accepted_for_training_as_is_no_additional_deep_review",
+  "HIP": "excluded_from_current_plan_files_preserved",
+  "original_datasets_modified": false,
+  "training_launched": false
+}

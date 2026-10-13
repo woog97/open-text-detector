@@ -1,0 +1,16 @@
+{
+  "space": "open-text-detector/training",
+  "remote_directory": "/data/workspace/paper-v3-modernbert-20260930/run-01",
+  "files": {
+    "config.json": "56d9413e58de42984da68e7b3f9be7b5051a77d8d6138c757d1f23db48591bc6",
+    "data_manifest.json": "9667289abfc16ad8f2750dc646ec9f49738346804959de5920935990f1f2a1b8",
+    "history.json": "eaa5ab114721ec19db0c1c5fcad2b7bb8cfd254b6156f3fbc20e64a4bd9d10ab",
+    "best_checkpoint.json": "299b3fe5d1579c35b61aa2c6600001dfb970595c8ff21c07eb30d2e2dc88f330",
+    "thresholds.json": "4b5535b30a48c7d13f364ace4f9174ac0a7b9d864ef3128a928b4f7ab7c569aa",
+    "results.json": "4910b5796cab2fd094ac61b447893c6912982cee91c67ddf1fa53ce59aa81863",
+    "status.json": "75e1bcadd29ebe1f55c2b4e9010d7137f3e1dfee5a39c8b8e6b3ea93b8ebeb88",
+    "test_subset_ids.json": "597852037370343c8c3e925a367b12a5994c1155ca79f3a94479a1e63824b0d6",
+    "test_prediction_ids.json": "d531bd6d23721c59cf845952c96ab309de23dca3e38ac87322bb2f68c8df337b",
+    "verification.json": "b32867d8f7e46c24e2007473343211b2033be960b8e52cc174e0bcd0944b7a6f"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "destination": "/data/workspace/evaluation-suite-v1-20261003",
+  "validated": true,
+  "files": {
+    "run_eval.py": "f4025730ddee0cb20295ce1b8da186ea8912c571148f569dd80ec95bb1c99c2c",
+    "assistance.jsonl.gz": "74f77c26a1c0bf5836c1c45fcf2301660dc89f8cbcf107cc77708edc6f039cbc",
+    "workflow.jsonl.gz": "c1b1ca20f59a5ae729b100c0ab548e99c79fe35ef2aca369c1791033b10a1da1",
+    "training-exclusions.json": "177a4d386e19fbe4a5be18cb75b0a18bc06317c2309a96085a119e45a7157a8c",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "full.jsonl.gz": "a4e3459c375cd25a9b33c0f2352569228eb10efe7d47bd214cdcdcf9d811611f",
+    "comparison.jsonl.gz": "1c1d75d8f57b00762ba2798c11612662366de05a0bed56bf08a311b366a51fae",
+    "manifest.json": "2ae043723427510d5e704189122fcf03a39b2b286b5ec855b8cb48f784b7d5f2",
+    "context.jsonl.gz": "72f8620a0b9d9e899505f1dd5d2a25eac73c14ff746d04ba053c805f6776ba3b",
+    "manuscripts.jsonl.gz": "e542d351f7679fc8f3518417f47ae50afc8f648331933bdaf2c4989a9abadf5b",
+    "USAGE.txt": "b7398dbfbf15203f98d5abd24f9e72c7f611fd155a5ee56074204526ed7f44db"
+  }
+}

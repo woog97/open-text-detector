@@ -1,0 +1,10 @@
+{
+  "name": "pangram-paper-atlas",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "atlas-cloud/redirect-worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "observability": {
+    "enabled": false
+  }
+}

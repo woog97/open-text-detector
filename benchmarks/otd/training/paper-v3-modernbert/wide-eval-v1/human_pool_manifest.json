@@ -1,0 +1,49 @@
+{
+  "label": 0,
+  "label_name": "historical_human",
+  "token_supervision": "Rebuild token labels from character regions using the chosen tokenizer; mask special/padding tokens.",
+  "source": "Existing 2,000 pre-2022 proceedings papers; only non-targeted extractable body paragraphs.",
+  "splits": {
+    "train": {
+      "rows": 57369,
+      "papers": 1200,
+      "clean_fresh_non_crosssplit_duplicate_rows": 31106,
+      "unique_clean_fresh_texts": 31106,
+      "file": "human_remaining_train.parquet",
+      "bytes": 14980430,
+      "sha256": "44e7db0aed9b031586a09dbde1ee585a9921936858401069bec338016ec52f1c",
+      "cohort_counts": {
+        "previous_context": 7856,
+        "novel_body": 49513
+      }
+    },
+    "validation": {
+      "rows": 19296,
+      "papers": 400,
+      "clean_fresh_non_crosssplit_duplicate_rows": 10393,
+      "unique_clean_fresh_texts": 10393,
+      "file": "human_remaining_validation.parquet",
+      "bytes": 5055551,
+      "sha256": "8f4209d729b83d139b7971218b5c93b95effcce77753ba689c60003efbabb622",
+      "cohort_counts": {
+        "novel_body": 16696,
+        "previous_context": 2600
+      }
+    },
+    "test": {
+      "rows": 18669,
+      "papers": 400,
+      "clean_fresh_non_crosssplit_duplicate_rows": 10159,
+      "unique_clean_fresh_texts": 10159,
+      "file": "human_remaining_test.parquet",
+      "bytes": 4974304,
+      "sha256": "f18231864bf3fc5934b06a4c74fbfc22ddc8b854da771dd9ab252d21a260d46b",
+      "cohort_counts": {
+        "novel_body": 16124,
+        "previous_context": 2545
+      }
+    }
+  },
+  "training_filter": "split=train and development_exposed=false and clean_prose=true and text_appears_in_multiple_splits=false; deduplicate normalized text within training. Retain flagged prose separately for robustness.",
+  "evaluation_filter": "Use frozen suite.jsonl for evaluation; it additionally removes training/validation text overlaps and development-exposed test papers. Do not mine its failures for training."
+}

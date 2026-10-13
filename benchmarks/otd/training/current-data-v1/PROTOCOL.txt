@@ -1,0 +1,69 @@
+CURRENT DATA TRAINING SETUP — October 3, 2026
+
+Purpose: one binary human/AI baseline with existing provenance labels, plus
+whole-document supervision for GRADTEX. This is not the proposed three-way
+Pangram clause labeler. Setup does not automatically launch training.
+
+Space: open-text-detector/training
+Remote root: /data/workspace/current-data-v1
+Model: ModernBERT-large, pinned 45bb4654a4d5aaff24dd11d4781fa46d39bf8c13.
+All new assets downloaded directly to this root's assets/modernbert directory.
+Original trained checkpoints and datasets are preserved.
+
+Sources: all 100,000 usage-approved human records; 28,120 accepted mirrors;
+existing paper TRAIN passages; original GRADTEX TRAIN; 600 full manuscripts.
+Human audit failures/unverified outcomes do not exclude records. Evaluation
+family membership/overlap can exclude training use and is recorded separately.
+HIP, existing heldout sources and unlabeled paper archives are not training data.
+Full manuscripts omit everything through the supplied rendered abstract, so the
+human title/abstract prefix never receives AI token labels.
+
+Preparation retains existing paper and GRADTEX train assignments. New source
+families receive deterministic 80/10/10 train/validation/test assignments.
+Human/mirror parents, prompt/product/reviewer families and normalized exact
+texts are connected before assignment. Known heldout family IDs, exact text,
+and shared 13-word sequences (stride 4) exclude the connected family from
+training. This lexical screen does not prove absence of semantic overlap.
+All original files/splits remain intact; derived exclusion counts are reported.
+Original paper selection/calibration sets remain fixed.
+
+The pool is larger than the first training schedule. Schedule draws are sampled
+with replacement; this pilot does not promise a pass over every training row.
+Stage 1: 12,000 draws, one epoch, segment objective only.
+Stage 2: 24,000 draws per epoch, three epochs, total 72,000 draws.
+Stage 2 mixture by logical example: human25%, mirrors25%, papers25%, GRADTEX20%,
+full manuscripts5%. Stage1 replaces GRADTEX slots with paper slots.
+The mix is a starting choice, not an optimized mixture or a controlled comparison
+to historical runs. Split/source decisions are preserved in the manifest.
+
+Paper, human, mirrors and generated manuscript bodies use contiguous windows
+up to510tokens, preferring the full budget where available. Shorter passages
+remain shorter. No twelve-token toy windows. Labels follow character regions.
+GRADTEX keeps the whole document: all nonoverlapping <=510token windows are
+encoded, document logits are averaged weighted by non-whitespace token counts,
+and ONE document cross-entropy is applied. No document label is copied into
+individual token/sentence/segment/mixed targets. This changes document pooling
+from the historical <=510token-only donor selection and requires BF16 checks.
+
+Training: LoRA rank128 alpha32, microbatch4 logical documents, effectivebatch32,
+8 accumulation microbatches, BF16 model forwards, checkpointing enabled,
+AdamW8bit, adapter LR2e-4/head LR2e-5, decay.01, clip1, 6% cosine warmup.
+A multiwindow document consumes extra physical windows but ONE logical batch
+slot. The stage2 paper loss is token+.2sentence+.2segment+.1mixed, weighted by
+the fraction of logical examples with token gold, plus .1 whole-document CE.
+Selection uses the original combined paper loss, excluding auxiliary doc CE.
+
+Readiness requires verified source-file hashes, all epoch0 example encodings,
+BF16 forward/backward tests for paper and mixed/document-only batches, no frozen
+base gradients, no localization-head gradients from document-only examples,
+and finite gradients. READY.json is written only on successful validation.
+No optimization steps are performed during setup validation.
+
+To start once READY exists, on the Space with one verified available GPU:
+  cd /data/workspace/current-data-v1
+  CUDA_VISIBLE_DEVICES=<available GPU> python train.py --flow encoder --output run
+Do not reuse a nonempty output directory. train.py rejects changed frozen inputs.
+After training, calibrate and evaluate using the existing frozen paper suite.
+Final predictions still come from token probabilities; the auxiliary document
+head is not the deployed score. Dedicated evaluation of new heldout families
+must be added before claiming cross-domain generalization of this model.

@@ -1,0 +1,108 @@
+{
+  "backbone": {
+    "train": {
+      "paired": 3146,
+      "novel_human": 23585
+    },
+    "selection": {
+      "paired": 564,
+      "novel_human": 3895
+    },
+    "calibration": {
+      "paired": 484,
+      "novel_human": 4000
+    }
+  },
+  "reviewbench": [
+    {
+      "path": "research/data/reviewbench/original/data/neurips-00002-of-00005.parquet",
+      "rows": 3691,
+      "nonempty_markdown": 3689,
+      "markdown_chars": 304993838
+    },
+    {
+      "path": "research/data/reviewbench/original/data/iclr-00002-of-00005.parquet",
+      "rows": 4506,
+      "nonempty_markdown": 4500,
+      "markdown_chars": 322154045
+    },
+    {
+      "path": "research/data/reviewbench/original/data/neurips-00003-of-00005.parquet",
+      "rows": 3690,
+      "nonempty_markdown": 3690,
+      "markdown_chars": 353423646
+    },
+    {
+      "path": "research/data/reviewbench/original/data/tmlr-00000-of-00001.parquet",
+      "rows": 3748,
+      "nonempty_markdown": 3748,
+      "markdown_chars": 332232966
+    },
+    {
+      "path": "research/data/reviewbench/original/data/iclr-00003-of-00005.parquet",
+      "rows": 4506,
+      "nonempty_markdown": 4506,
+      "markdown_chars": 382222209
+    },
+    {
+      "path": "research/data/reviewbench/original/data/icml-00000-of-00001.parquet",
+      "rows": 3257,
+      "nonempty_markdown": 3257,
+      "markdown_chars": 268437173
+    },
+    {
+      "path": "research/data/reviewbench/original/data/iclr-00004-of-00005.parquet",
+      "rows": 4506,
+      "nonempty_markdown": 4498,
+      "markdown_chars": 398575046
+    },
+    {
+      "path": "research/data/reviewbench/original/data/corl-00000-of-00001.parquet",
+      "rows": 813,
+      "nonempty_markdown": 767,
+      "markdown_chars": 40694281
+    },
+    {
+      "path": "research/data/reviewbench/original/data/neurips-00000-of-00005.parquet",
+      "rows": 3691,
+      "nonempty_markdown": 3681,
+      "markdown_chars": 173086102
+    },
+    {
+      "path": "research/data/reviewbench/original/data/neurips-00004-of-00005.parquet",
+      "rows": 3690,
+      "nonempty_markdown": 3690,
+      "markdown_chars": 360637795
+    },
+    {
+      "path": "research/data/reviewbench/original/data/iclr-00000-of-00005.parquet",
+      "rows": 4507,
+      "nonempty_markdown": 4505,
+      "markdown_chars": 245966936
+    },
+    {
+      "path": "research/data/reviewbench/original/data/emnlp-00000-of-00001.parquet",
+      "rows": 2009,
+      "nonempty_markdown": 2009,
+      "markdown_chars": 117338199
+    },
+    {
+      "path": "research/data/reviewbench/original/data/neurips-00001-of-00005.parquet",
+      "rows": 3691,
+      "nonempty_markdown": 3691,
+      "markdown_chars": 216624203
+    },
+    {
+      "path": "research/data/reviewbench/original/data/colm-00000-of-00001.parquet",
+      "rows": 717,
+      "nonempty_markdown": 716,
+      "markdown_chars": 55436685
+    },
+    {
+      "path": "research/data/reviewbench/original/data/iclr-00001-of-00005.parquet",
+      "rows": 4507,
+      "nonempty_markdown": 4506,
+      "markdown_chars": 289336728
+    }
+  ]
+}

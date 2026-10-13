@@ -1,0 +1,142 @@
+.data/
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+node_modules/
+.wrangler/
+.sites-runtime/
+dist/
+.next/
+
+models/
+research/data/
+research/cache/
+
+# Generated locally from the pinned PDF.js package
+app/public/pdfjs/
+
+# Generated Cloudflare frontend
+app/dist-atlas/
+
+# --- Repository scope: code, docs and small records only (data lives on HF / R2) ---
+# Secrets and private material
+private-results/
+*.key
+*.pem
+.local-storage/
+.dev.vars
+
+# Bulk research outputs
+research/classifications/
+research/extractions/
+research/exports/
+research/benchmarks/
+research/iclr-*/
+research/local-storage-audit-*/
+benchmarks/otd/exports/
+pilot-viewer/dist/
+
+# Data and model formats
+*.pgf
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.gz
+*.parquet
+*.jsonl
+*.npy
+*.npz
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.sqlite-*
+*.db
+*.pdf
+*.log
+
+# Build output
+app/dist/
+app/dist-atlas-local/
+*.tsbuildinfo
+research/metadata-coverage-*/enrichment/queries*/
+research/metadata-coverage-*/enrichment/notes.json
+research/metadata-coverage-*/enrichment/identities.json
+research/metadata-coverage-*/live-papers.json
+benchmarks/otd/sources/*-tree.json
+benchmarks/otd/sources/*.html
+research/metadata-coverage-*/iclr-*-sample.json
+
+# --- Not for publication: internal notes, infrastructure details, third-party text ---
+docs/HANDOFF.md
+docs/handoff/
+research/gpu-monitor/RUNBOOK.txt
+research/gpu-monitor/*report*.json
+research/gpu-monitor/dashboard.html
+research/human-source-pool/evidence/
+research/evaluation/*/calls/
+research/evaluation/*/*/calls/
+research/evaluation/luna-*/dataset.json
+research/evaluation/luna-*/manuscripts.json
+research/evaluation/luna-*/errors.json
+research/evaluation/luna-*/manifest.json
+research/evaluation/luna-*/*/manifest.json
+app/public/catalogue/
+app/public/reference/
+research/measurements/
+
+# ICLR Space mirror inventories contain third-party metadata and private storage paths.
+research/iclr-hf-reconcile-*/
+
+# Local Claude Code orientation; not for other people.
+CLAUDE.md
+
+# Splice samples and n-gram example contexts quote third-party paper text.
+research/splice-edits-*/samples.md
+research/llm-sentence-edits-*/samples.md
+research/llm-sentence-edits-*/candidates.jsonl
+research/llm-sentence-edits-*/calls.jsonl
+research/ngram-dashboard-*/ngrams.json
+research/ngram-dashboard-*/dashboard.html
+research/ngram-dashboard-*/ngrams-all.json
+
+# Omission-step eval flow: page images, paper text and judge outputs (third-party text)
+.claude/hillclimb/
+
+# Tonight's working copies (Oct 6): comparison-page data pulls, writer batches with third-party paper text
+research/evaluation/detector-comparison-20261006/h200/
+research/evaluation/detector-comparison-20261006/space/
+research/evaluation/detector-comparison-20261006/compare-data.json
+research/llm-sentence-edits-20261005/claude-writer/batches/
+research/llm-sentence-edits-20261005/claude-writer/outputs/
+research/llm-sentence-edits-20261005/claude-writer/train-outputs/
+research/claude-sections-20261006/writer-outputs/
+benchmarks/otd/training/splice-sweep-20261006/push_heldout.py
+research/claude-fullpapers-20261006/heldout-never-train.with-bodies.bak.json
+
+# OpenAI writer handoff: batch inputs and outputs quote third-party paper text
+research/openai-writer-handoff-*/batches/
+research/openai-writer-handoff-*/outputs/
+docs/pickup-notes.md
+research/evaluation/detector-comparison-20261006/river.json
+research/evaluation/detector-comparison-20261006/detector-comparison.html
+.DS_Store
+# Too large for git (>10 MB) or third-party paper metadata; copies live in the training bucket
+research/t21-heldout-20261006/t21-heldout-never-train-v2.json
+research/corpus-extraction-20261007/pdf-metadata.json
+
+# Third-party samples kept out of the repo (removed Oct 13, 2026)
+research/metadata-coverage-20261003/*-sample.json
+
+# Comparison results that contain another detector's API outputs (kept out of the public repo, Oct 13 2026)
+research/evaluation/scislopbench-20261008/result.json
+research/evaluation/scislopbench-20261008/quality.json

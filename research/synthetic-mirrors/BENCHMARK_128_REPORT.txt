@@ -1,0 +1,19 @@
+128-document raw generation throughput benchmark — October 2, 2026
+
+Four sequential batches, 128 saved documents each. Fresh seeds approximately matched by source and length. GPT-6-Luna, OpenAI/Flex-only routing, existing prompts and local atomic saves. No output quality filtering.
+
+Concurrency | Topic workers | Startup seconds | Seconds to last output | Docs/min including startup | Docs/min after startup
+64 | 8 | 8.23 | 113.74 | 67.52 | 72.22
+64 | 24 | 6.62 | 77.71 | 98.83 | 107.18
+128 | 32 | 6.58 | 70.97 | 108.22 | 118.34
+128 | 32 | 5.98 | 92.27 | 83.24 | 88.31
+
+Including startup: 128 / time from batch start to last saved timestamp. After startup: 127 / time from first saved timestamp to last. This excludes the initial wait only; it does not estimate pure steady-state capacity. Process initialization/ledger loading occurs before batch start. Both metrics include slow completion tails. Saved timestamps precede atomic writes by their write latency.
+
+Provisional recommendation: 64 concurrent requests with 24 topic workers. Its single matched trial was 46% faster than the 64/8 baseline; the 128/32 setting ranged from 83 to108 documents/minute including startup, and its two-run aggregate was about94/minute. This small sequential experiment does not establish a statistically reliable winner. Provider variability and individual output tails remain substantial. No automatic production continuation was launched.
+
+The harness extracted192 topics per batch to keep replacement seeds ready and saved128 nonempty writer outputs; all topic costs are included. Seven empty writer responses across four batches were preserved and replacement seeds used. No rate-limit backoffs or new uncertain-cost reservations. Output averages were387–399words across batches.
+
+Added512documents, total10512. Benchmark confirmed cost $0.166638; cumulative confirmed cost $3.294988; existing uncertain reserve $0.026674. Original10000 export preserved. All additional text remains on training Space in /tmp/pangram-luna-active-20261002/benchmark-128-20261002/batch-*/raw-documents.jsonl. Backup verified: workspace/synthetic-mirrors-luna-dollar-v1-recovered-20261002/benchmarks/benchmark-128-20261002.tar.gz
+
+Step3 remains disabled pending explicit user instruction.

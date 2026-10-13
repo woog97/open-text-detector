@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "profiles": {
+    "workflow": {
+      "rows": 8552,
+      "sha256": "9158dd64438413f50cc6d32fe99d34f2dd149d15149f901d2d17471c02a16743"
+    },
+    "comparison": {
+      "rows": 13751,
+      "sha256": "fb7bc3897154f9e414feb867119f18015a97fdca59c1b273f80aa1516d56f73e"
+    },
+    "assistance": {
+      "rows": 648,
+      "sha256": "2b066d8091aee21e58e1c6cc0f96a0dcadc0b4515ca9dd367856597f8bc3d581"
+    },
+    "full": {
+      "rows": 65348,
+      "sha256": "5fc68909aedc301e142147eca9c84f9c9e999b1b3dc6b32c41dc40fda8c0bf25"
+    },
+    "context": {
+      "rows": 18222,
+      "sha256": "41cd10a5ff99e60feb130cab6905c7ebcd33be1302e555dd51b3944f25087e09"
+    },
+    "manuscripts": {
+      "rows": 120,
+      "sha256": "c031d527ef033dd5b28bcc57c68b8fa5d1994926fd9916f8438205e54774ee6a"
+    }
+  },
+  "notes": "Profiles overlap; never sum them. Assistance is diagnostic only. Full manuscripts have document labels, not invented token gold.",
+  "files": {
+    "run_eval.py": "f4025730ddee0cb20295ce1b8da186ea8912c571148f569dd80ec95bb1c99c2c",
+    "assistance.jsonl.gz": "74f77c26a1c0bf5836c1c45fcf2301660dc89f8cbcf107cc77708edc6f039cbc",
+    "workflow.jsonl.gz": "c1b1ca20f59a5ae729b100c0ab548e99c79fe35ef2aca369c1791033b10a1da1",
+    "training-exclusions.json": "177a4d386e19fbe4a5be18cb75b0a18bc06317c2309a96085a119e45a7157a8c",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "full.jsonl.gz": "a4e3459c375cd25a9b33c0f2352569228eb10efe7d47bd214cdcdcf9d811611f",
+    "comparison.jsonl.gz": "1c1d75d8f57b00762ba2798c11612662366de05a0bed56bf08a311b366a51fae",
+    "context.jsonl.gz": "72f8620a0b9d9e899505f1dd5d2a25eac73c14ff746d04ba053c805f6776ba3b",
+    "manuscripts.jsonl.gz": "e542d351f7679fc8f3518417f47ae50afc8f648331933bdaf2c4989a9abadf5b"
+  }
+}

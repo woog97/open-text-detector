@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openreview_downloader"
+version = "0.1.8"
+description = "Download OpenReview papers by decision."
+readme = "README.md"
+authors = [
+  { name = "Miroslav Lzicar", email = "lzicar2000@gmail.com" },
+]
+license = { text = "Apache-2.0" }
+keywords = ["neurips", "iclr", "icml", "openreview", "papers", "automation", "downloader", "scraping"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+dependencies = [
+  "keyring>=25.0.0,<26.0.0",
+  "openreview-py>=1.54.2,<2.0.0",
+  "tqdm>=4.67.0,<5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "bump2version",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mireklzicar/openreview_downloader"
+"Repository" = "https://github.com/mireklzicar/openreview_downloader"
+"Issues" = "https://github.com/mireklzicar/openreview_downloader/issues"
+
+[project.scripts]
+ordl = "openreview_downloader.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["openreview_downloader"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "openreview_downloader",
+  "LICENSE",
+  "README.md",
+  "main.py",
+]

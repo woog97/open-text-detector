@@ -1,0 +1,70 @@
+{
+  "source_id": "persuade",
+  "audited_at": "2026-10-02T19:53:31.897135+00:00",
+  "status": "eligible_official_training_supply_exhausted",
+  "original_quota": 736,
+  "reallocated_quota": 699,
+  "collected_candidates": 699,
+  "verified_eligible_candidate_ceiling_under_current_exclusions": 699,
+  "additional_candidates_available": 0,
+  "new_candidates_staged": 0,
+  "quota_filled_assures_scalability": false,
+  "reason": "All 699 consistent Phones and driving essays in the pinned official training release are already collected. Every other prompt belongs to excluded ASAP or protected ELLIPSE families. A larger quota or rerun cannot create eligible supply.",
+  "live_verification": {
+    "method": "Re-downloaded official training CSV on the existing HF Space only, checked full SHA256, scanned every annotation, deduplicated essay IDs, rejected conflicting ID content, and compared eligible essay IDs and original hashes with read-only current DB.",
+    "source_revision": "67d182ac88ea4a4dda736de859cfdb0bc360ee9b",
+    "source_sha256": "f61319edd8bf16a982711ea0399fad59c05afaec05cdf0767f16a2c05c467e23",
+    "source_bytes": 616894963,
+    "annotation_rows": 173266,
+    "unique_train_ids": 15593,
+    "ambiguous_ids": 1,
+    "consistent_training_essays": 15592,
+    "phones_length_eligible": 699,
+    "existing_candidates": 699,
+    "phones_missing_from_collection": 0,
+    "existing_not_in_phones": 0,
+    "all_existing_original_text_hashes_match": true,
+    "remote_original": "/tmp/pangram-human-active-20261002/scaling-survey/persuade/official-train-download",
+    "remote_aggregate_receipt": "/tmp/pangram-human-active-20261002/scaling-survey/persuade/capacity-audit.json",
+    "database_modified": false
+  },
+  "consistent_prompt_counts": {
+    "Phones and driving": 699,
+    "Car-free cities": 983,
+    "Summer projects": 875,
+    "\"A Cowboy Who Rode the Waves\"": 688,
+    "Mandatory extracurricular activities": 839,
+    "Exploring Venus": 928,
+    "Facial action coding system": 1103,
+    "The Face on Mars": 819,
+    "Community service": 768,
+    "Grades for extracurricular activities": 815,
+    "Driverless cars": 1386,
+    "Does the electoral college work?": 1818,
+    "Cell phones at school": 829,
+    "Distance learning": 1498,
+    "Seeking multiple opinions": 1544
+  },
+  "same_source_alternatives": {
+    "official_readme_checked": "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md",
+    "persuade_1": "Publisher says 2.0 builds on 1.0 and adds scores/all essays. The older version is not evidence of independent additional training supply.",
+    "official_test_release": "Available but explicitly prohibited by source approval; not downloaded or used.",
+    "annotation_rows": "Multiple annotations describe the same essay, not additional human examples.",
+    "needed_to_raise_ceiling": "A verifiably new original training release with independent eligible prompt/student families and version-specific rights. No such additional release established by this audit."
+  },
+  "admission_limits": [
+    "These remain quarantined candidates, not admitted training examples.",
+    "Student identity information unavailable; broader near-duplicate and historical human-provenance audit remains pending.",
+    "Two GEDE human originals remain unmapped in prior protected-overlap evidence; the current ceiling is conditional on known family exclusions, not proof of full admission eligibility.",
+    "Use pinned version's CC BY-NC-SA 4.0 restrictions; separate publisher CC BY statement does not clear this release for commercial training."
+  ],
+  "local_evidence": [
+    "research/human-source-pool/source-exhaustion.json",
+    "research/human-source-pool/source-approvals.json",
+    "research/human-source-pool/ingest_essay_sources.py",
+    "research/human-source-pool/evidence/ellipse-protected-prompt-conflict.json"
+  ],
+  "preserved": ["100k release", "active DB and quotas", "all remote original files", "protected-family exclusions"],
+  "models_run": false,
+  "automation_created": false
+}

@@ -1,0 +1,145 @@
+{
+  "profile": "manuscripts",
+  "partial": false,
+  "diagnostic_only": false,
+  "rows": 120,
+  "elapsed_this_session_seconds": 299.24661779403687,
+  "datasets": {
+    "full_manuscripts": {
+      "overall": {
+        "rows": 120,
+        "unique_texts": 120,
+        "duplicate_rows": 0,
+        "conflicting_native_label_texts": 0,
+        "span_annotation_conflict_rows": 0,
+        "native_labels": {
+          "ai": 120
+        },
+        "document_native_label_metrics": {
+          "tp": 120,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "human_fpr": null,
+          "f1": 1.0,
+          "evaluated_documents": 120,
+          "auroc_mean_probability": null
+        },
+        "span_or_historical_human_token_metrics": null,
+        "span_or_historical_human_sentence_metrics": null,
+        "by_native_label": {
+          "ai": {
+            "documents": 120,
+            "mean_flagged_token_fraction": 0.9808180285131416,
+            "mean_flagged_sentence_fraction": 0.978177615283074,
+            "document_flag_rate": 1.0
+          }
+        }
+      },
+      "breakdowns": {
+        "generator": {
+          "gpt-6-luna": {
+            "rows": 40,
+            "unique_texts": 40,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "ai": 40
+            },
+            "document_native_label_metrics": {
+              "tp": 40,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "human_fpr": null,
+              "f1": 1.0,
+              "evaluated_documents": 40,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": null,
+            "span_or_historical_human_sentence_metrics": null,
+            "by_native_label": {
+              "ai": {
+                "documents": 40,
+                "mean_flagged_token_fraction": 0.976548783270015,
+                "mean_flagged_sentence_fraction": 0.9723815555048855,
+                "document_flag_rate": 1.0
+              }
+            }
+          },
+          "gpt-6-sol": {
+            "rows": 40,
+            "unique_texts": 40,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "ai": 40
+            },
+            "document_native_label_metrics": {
+              "tp": 40,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "human_fpr": null,
+              "f1": 1.0,
+              "evaluated_documents": 40,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": null,
+            "span_or_historical_human_sentence_metrics": null,
+            "by_native_label": {
+              "ai": {
+                "documents": 40,
+                "mean_flagged_token_fraction": 0.9858759165790996,
+                "mean_flagged_sentence_fraction": 0.9855694132344042,
+                "document_flag_rate": 1.0
+              }
+            }
+          },
+          "gpt-6.1-sol": {
+            "rows": 40,
+            "unique_texts": 40,
+            "duplicate_rows": 0,
+            "conflicting_native_label_texts": 0,
+            "span_annotation_conflict_rows": 0,
+            "native_labels": {
+              "ai": 40
+            },
+            "document_native_label_metrics": {
+              "tp": 40,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "human_fpr": null,
+              "f1": 1.0,
+              "evaluated_documents": 40,
+              "auroc_mean_probability": null
+            },
+            "span_or_historical_human_token_metrics": null,
+            "span_or_historical_human_sentence_metrics": null,
+            "by_native_label": {
+              "ai": {
+                "documents": 40,
+                "mean_flagged_token_fraction": 0.9800293856903103,
+                "mean_flagged_sentence_fraction": 0.9765818771099324,
+                "document_flag_rate": 1.0
+              }
+            }
+          }
+        },
+        "condition": {},
+        "view": {}
+      }
+    }
+  }
+}

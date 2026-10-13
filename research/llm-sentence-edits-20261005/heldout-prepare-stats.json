@@ -1,0 +1,47 @@
+{
+ "eval_papers_with_sources": 316,
+ "skipped_existing_target_paragraph": 983,
+ "unused_archive_papers": 107,
+ "raw_candidates": 2901,
+ "raw_sweep_eval_paper": 2833,
+ "raw_archive_pre2023_unused": 68,
+ "raw_papers": 350,
+ "overlap_training_windows": 12,
+ "overlap_selection_calibration": 11,
+ "overlap_sweep_eval_rows": 636,
+ "overlap_space_suite_kept": 2833,
+ "chosen": 1450,
+ "chosen_papers": 320,
+ "rounds": 6,
+ "chosen_by_source": {
+  "archive_pre2023_unused": 67,
+  "sweep_eval_paper": 1383
+ },
+ "chosen_by_writer_type": {
+  "luna": {
+   "rewrite_one": 120,
+   "rewrite_two": 120,
+   "insert_one": 120,
+   "split_one": 40
+  },
+  "haiku": {
+   "rewrite_one": 105,
+   "rewrite_two": 105,
+   "insert_one": 105,
+   "split_one": 35
+  },
+  "sonnet": {
+   "rewrite_one": 105,
+   "rewrite_two": 105,
+   "insert_one": 105,
+   "split_one": 35
+  },
+  "opus": {
+   "rewrite_one": 105,
+   "rewrite_two": 105,
+   "insert_one": 105,
+   "split_one": 35
+  }
+ },
+ "never_train_papers": 353
+}

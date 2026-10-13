@@ -1,0 +1,38 @@
+{
+  "suite": "fec0e944529404736dac9e173ffc415377b1b77c37ac764be261a7133e4813b9",
+  "run": "/tmp/pangram-eval-20261003/remaining/qwen35-9b/checkpoint",
+  "model_files": {
+    "run.json": "b93af5ed4dc1050d4290a81b207fdb82fe8ec02ec4b63869b29026bd3720315c",
+    "stage2-selection.json": "4c19b82ebc764332489265dfe26b679167b3c712fa5b52098e192511bf580829",
+    "stage2-epoch1-adapters.safetensors": "2af216a477c0054dfdf8960c1cc9d308fbff409c8e1443c3a027508241eead22"
+  },
+  "adapter_files": {
+    "data.py": "940aae39bc176301fe4fa508072f2c410bdab1f021ed211c76ea2b70764ac0ec",
+    "modeling.py": "177c6bef4d0cf4d316d2a511a734f2473fd22c88b204807a0d0744e3001ffcd0",
+    "adapters_short.py": "75ea7b01fd422c042cb707b4e534ade6f5476e060712c4804d60a50ba2e00472",
+    "runtime.py": "15c263cf9886b4e9ca1aa352286108300a03d53fb2cabc66dd5f96ad40f9dd7a",
+    "inference.py": "d6d869b0e2ab36ffa5a1b3a405f08e66c795189b87646c89c29e76b281f5236c"
+  },
+  "reference_files": {
+    "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "tokenizer_config.json": "68acf857b869285d8c3ac2757ddd26e6f8030fb275d6800131521eb736084608"
+  },
+  "thresholds": {
+    "tokens": 0.5,
+    "sentences": 0.5,
+    "document": 0.5
+  },
+  "threshold_origin": "explicit uncalibrated",
+  "profiles": [
+    "workflow",
+    "comparison",
+    "assistance",
+    "manuscripts"
+  ],
+  "limit": 0,
+  "batch_size": 4,
+  "rows_per_chunk": 16,
+  "precision": "BF16",
+  "torch": "2.12.0+cu130",
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}

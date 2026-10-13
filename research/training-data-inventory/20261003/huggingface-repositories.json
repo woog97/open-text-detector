@@ -1,0 +1,1054 @@
+{
+  "at": "2026-10-03T08:52:21.012862+00:00",
+  "repositories": [
+    {
+      "id": "open-text-detector/editlens_iclr",
+      "private": true,
+      "sha": "c0835136846658c7fcb3b0feccc98991d5057326",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "COPY_PROVENANCE.md",
+          "bytes": 589
+        },
+        {
+          "path": "README.md",
+          "bytes": 1266
+        },
+        {
+          "path": "data/test-00000-of-00001.parquet",
+          "bytes": 14729163
+        },
+        {
+          "path": "data/test_enron-00000-of-00001.parquet",
+          "bytes": 8402354
+        },
+        {
+          "path": "data/test_llama-00000-of-00001.parquet",
+          "bytes": 15169109
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "bytes": 150904697
+        },
+        {
+          "path": "data/val-00000-of-00001.parquet",
+          "bytes": 5549870
+        }
+      ]
+    },
+    {
+      "id": "open-text-detector/editlens_iclr_grammarly",
+      "private": true,
+      "sha": "3155bfa7b20b97336782fad3d48aa5fafb1d3aa5",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "COPY_PROVENANCE.md",
+          "bytes": 599
+        },
+        {
+          "path": "README.md",
+          "bytes": 362
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "bytes": 3945435
+        }
+      ]
+    },
+    {
+      "id": "open-text-detector/human-source-mix-v1",
+      "private": true,
+      "sha": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "README.md",
+          "bytes": 5343
+        },
+        {
+          "path": "SOURCE_APPROVALS.txt",
+          "bytes": 13197
+        },
+        {
+          "path": "approvals/user-usage-20261003.json",
+          "bytes": 1026
+        },
+        {
+          "path": "audits/origin-permission-20261003/PROTOCOL.txt",
+          "bytes": 2241
+        },
+        {
+          "path": "audits/origin-permission-20261003/audit_stage1.py",
+          "bytes": 14143
+        },
+        {
+          "path": "audits/origin-permission-20261003/checks.jsonl.gz",
+          "bytes": 15929028
+        },
+        {
+          "path": "audits/origin-permission-20261003/publication-files.json",
+          "bytes": 6262
+        },
+        {
+          "path": "audits/origin-permission-20261003/source-evidence-manifest.json",
+          "bytes": 24467
+        },
+        {
+          "path": "audits/origin-permission-20261003/source-policy-evidence.tar.gz",
+          "bytes": 609817
+        },
+        {
+          "path": "audits/origin-permission-20261003/summary.json",
+          "bytes": 5795
+        },
+        {
+          "path": "collection-sources.json",
+          "bytes": 53886
+        },
+        {
+          "path": "collection-summary.json",
+          "bytes": 17099
+        },
+        {
+          "path": "data/acl.parquet",
+          "bytes": 4025134
+        },
+        {
+          "path": "data/amazon2018.parquet",
+          "bytes": 5062018
+        },
+        {
+          "path": "data/arxiv.parquet",
+          "bytes": 7865413
+        },
+        {
+          "path": "data/asap2.parquet",
+          "bytes": 4407541
+        },
+        {
+          "path": "data/cccc.parquet",
+          "bytes": 5177932
+        },
+        {
+          "path": "data/eff.parquet",
+          "bytes": 383576
+        },
+        {
+          "path": "data/fed.parquet",
+          "bytes": 922535
+        },
+        {
+          "path": "data/foodista.parquet",
+          "bytes": 1858055
+        },
+        {
+          "path": "data/globalvoices.parquet",
+          "bytes": 3183939
+        },
+        {
+          "path": "data/govreport.parquet",
+          "bytes": 1509388
+        },
+        {
+          "path": "data/gutenberg.parquet",
+          "bytes": 18033291
+        },
+        {
+          "path": "data/imdb.parquet",
+          "bytes": 960245
+        },
+        {
+          "path": "data/libretexts.parquet",
+          "bytes": 4018791
+        },
+        {
+          "path": "data/oanc_icic.parquet",
+          "bytes": 228491
+        },
+        {
+          "path": "data/oanc_slate.parquet",
+          "bytes": 1945783
+        },
+        {
+          "path": "data/opinrank.parquet",
+          "bytes": 3409022
+        },
+        {
+          "path": "data/persuade.parquet",
+          "bytes": 760742
+        },
+        {
+          "path": "data/pes2o.parquet",
+          "bytes": 5362286
+        },
+        {
+          "path": "data/pmc.parquet",
+          "bytes": 8820523
+        },
+        {
+          "path": "data/pressbooks.parquet",
+          "bytes": 5831022
+        },
+        {
+          "path": "data/scidev.parquet",
+          "bytes": 1108351
+        },
+        {
+          "path": "data/scp.parquet",
+          "bytes": 1363991
+        },
+        {
+          "path": "data/stack_nontech.parquet",
+          "bytes": 5233147
+        },
+        {
+          "path": "data/stack_tech.parquet",
+          "bytes": 1943606
+        },
+        {
+          "path": "data/ubuntu_irc.parquet",
+          "bytes": 1439612
+        },
+        {
+          "path": "data/voa.parquet",
+          "bytes": 2403612
+        },
+        {
+          "path": "data/wiki_talk.parquet",
+          "bytes": 920072
+        },
+        {
+          "path": "data/wikibooks.parquet",
+          "bytes": 2102694
+        },
+        {
+          "path": "data/wikinews.parquet",
+          "bytes": 1217629
+        },
+        {
+          "path": "data/wikipedia.parquet",
+          "bytes": 10686617
+        },
+        {
+          "path": "data/wikisource.parquet",
+          "bytes": 1676697
+        },
+        {
+          "path": "data/wikivoyage.parquet",
+          "bytes": 1452071
+        },
+        {
+          "path": "data/worldbank.parquet",
+          "bytes": 1176295
+        },
+        {
+          "path": "data/writingprompts.parquet",
+          "bytes": 9440832
+        },
+        {
+          "path": "design/ACL_ADAPTER.txt",
+          "bytes": 2787
+        },
+        {
+          "path": "design/OANC_SOURCE.txt",
+          "bytes": 3352
+        },
+        {
+          "path": "design/OPINRANK_ADAPTER.txt",
+          "bytes": 3371
+        },
+        {
+          "path": "design/README.md",
+          "bytes": 18328
+        },
+        {
+          "path": "design/SAMPLING.md",
+          "bytes": 14819
+        },
+        {
+          "path": "design/SOURCE_REGISTRY.md",
+          "bytes": 46557
+        },
+        {
+          "path": "design/UBUNTU_IRC_SOURCE.txt",
+          "bytes": 2754
+        },
+        {
+          "path": "design/evidence-manifest.json",
+          "bytes": 11723
+        },
+        {
+          "path": "design/finish100k-audit.json",
+          "bytes": 820
+        },
+        {
+          "path": "design/original-distribution-report.json",
+          "bytes": 5923
+        },
+        {
+          "path": "design/quota-reallocation-receipt.json",
+          "bytes": 2953
+        },
+        {
+          "path": "design/rebalance-receipt.json",
+          "bytes": 730
+        },
+        {
+          "path": "design/sampling-plan-1m.json",
+          "bytes": 7893
+        },
+        {
+          "path": "design/source-exhaustion.json",
+          "bytes": 6503
+        },
+        {
+          "path": "distribution-report.json",
+          "bytes": 9272
+        },
+        {
+          "path": "pipeline/benchmark_parallel.py",
+          "bytes": 3816
+        },
+        {
+          "path": "pipeline/build_plan.py",
+          "bytes": 6041
+        },
+        {
+          "path": "pipeline/collect_evidence.py",
+          "bytes": 2806
+        },
+        {
+          "path": "pipeline/collect_pool.py",
+          "bytes": 18392
+        },
+        {
+          "path": "pipeline/collect_stream_source.py",
+          "bytes": 982
+        },
+        {
+          "path": "pipeline/expand_pool.py",
+          "bytes": 16263
+        },
+        {
+          "path": "pipeline/finalize_100k.py",
+          "bytes": 5170
+        },
+        {
+          "path": "pipeline/finish_100k_workers.py",
+          "bytes": 3240
+        },
+        {
+          "path": "pipeline/finish_voa.py",
+          "bytes": 1518
+        },
+        {
+          "path": "pipeline/healthy_checkpoint_watchdog.py",
+          "bytes": 1580
+        },
+        {
+          "path": "pipeline/healthy_wikipedia_supervisor.py",
+          "bytes": 4647
+        },
+        {
+          "path": "pipeline/ingest_amazon2018.py",
+          "bytes": 12807
+        },
+        {
+          "path": "pipeline/ingest_asap2.py",
+          "bytes": 6393
+        },
+        {
+          "path": "pipeline/ingest_cccc.py",
+          "bytes": 20598
+        },
+        {
+          "path": "pipeline/ingest_essay_sources.py",
+          "bytes": 9180
+        },
+        {
+          "path": "pipeline/ingest_govreport.py",
+          "bytes": 6483
+        },
+        {
+          "path": "pipeline/ingest_institutional.py",
+          "bytes": 10884
+        },
+        {
+          "path": "pipeline/ingest_oanc.py",
+          "bytes": 13346
+        },
+        {
+          "path": "pipeline/ingest_open_articles.py",
+          "bytes": 7409
+        },
+        {
+          "path": "pipeline/ingest_opinrank.py",
+          "bytes": 8299
+        },
+        {
+          "path": "pipeline/ingest_opinrank_batched.py",
+          "bytes": 5667
+        },
+        {
+          "path": "pipeline/ingest_original_archives.py",
+          "bytes": 12336
+        },
+        {
+          "path": "pipeline/ingest_scidev.py",
+          "bytes": 16851
+        },
+        {
+          "path": "pipeline/ingest_scp.py",
+          "bytes": 8546
+        },
+        {
+          "path": "pipeline/ingest_scp_cccc.py",
+          "bytes": 10078
+        },
+        {
+          "path": "pipeline/ingest_ubuntu_irc.py",
+          "bytes": 11167
+        },
+        {
+          "path": "pipeline/ingest_worldbank.py",
+          "bytes": 13044
+        },
+        {
+          "path": "pipeline/merge_staged_source.py",
+          "bytes": 3594
+        },
+        {
+          "path": "pipeline/parallel_collect.py",
+          "bytes": 6096
+        },
+        {
+          "path": "pipeline/publish_snapshot.py",
+          "bytes": 2009
+        },
+        {
+          "path": "pipeline/review_source_evidence.py",
+          "bytes": 3012
+        },
+        {
+          "path": "pipeline/scan_scp_cccc.py",
+          "bytes": 4765
+        },
+        {
+          "path": "pipeline/test_amazon2018.py",
+          "bytes": 3524
+        },
+        {
+          "path": "pipeline/test_asap2.py",
+          "bytes": 2022
+        },
+        {
+          "path": "pipeline/test_collect_pool.py",
+          "bytes": 2419
+        },
+        {
+          "path": "pipeline/test_essay_sources.py",
+          "bytes": 3078
+        },
+        {
+          "path": "pipeline/test_expand_pool.py",
+          "bytes": 5448
+        },
+        {
+          "path": "pipeline/test_govreport.py",
+          "bytes": 2099
+        },
+        {
+          "path": "pipeline/test_institutional.py",
+          "bytes": 3062
+        },
+        {
+          "path": "pipeline/test_oanc.py",
+          "bytes": 4949
+        },
+        {
+          "path": "pipeline/test_open_articles.py",
+          "bytes": 1799
+        },
+        {
+          "path": "pipeline/test_opinrank.py",
+          "bytes": 2732
+        },
+        {
+          "path": "pipeline/test_opinrank_batched.py",
+          "bytes": 3701
+        },
+        {
+          "path": "pipeline/test_original_archives.py",
+          "bytes": 5819
+        },
+        {
+          "path": "pipeline/test_parallel_collect.py",
+          "bytes": 767
+        },
+        {
+          "path": "pipeline/test_scp.py",
+          "bytes": 1979
+        },
+        {
+          "path": "pipeline/test_ubuntu_irc.py",
+          "bytes": 3439
+        },
+        {
+          "path": "pipeline/test_upload_pool.py",
+          "bytes": 2666
+        },
+        {
+          "path": "pipeline/test_worldbank.py",
+          "bytes": 3951
+        },
+        {
+          "path": "pipeline/upload_pool.py",
+          "bytes": 5922
+        },
+        {
+          "path": "pipeline/validate_cccc.py",
+          "bytes": 4777
+        },
+        {
+          "path": "pipeline/wait_finalize100k.py",
+          "bytes": 528
+        },
+        {
+          "path": "protected-exclusions.json",
+          "bytes": 6807
+        },
+        {
+          "path": "provenance/collection-status.json",
+          "bytes": 4112
+        },
+        {
+          "path": "raw/acl.jsonl.gz",
+          "bytes": 9240383
+        },
+        {
+          "path": "raw/amazon2018.jsonl.gz",
+          "bytes": 5373312
+        },
+        {
+          "path": "raw/arxiv.jsonl.gz",
+          "bytes": 52629091
+        },
+        {
+          "path": "raw/asap2.jsonl.gz",
+          "bytes": 4480195
+        },
+        {
+          "path": "raw/cccc.jsonl.gz",
+          "bytes": 10962037
+        },
+        {
+          "path": "raw/eff.jsonl.gz",
+          "bytes": 3182341
+        },
+        {
+          "path": "raw/fed.jsonl.gz",
+          "bytes": 7519955
+        },
+        {
+          "path": "raw/foodista.jsonl.gz",
+          "bytes": 2275740
+        },
+        {
+          "path": "raw/globalvoices.jsonl.gz",
+          "bytes": 2648119
+        },
+        {
+          "path": "raw/govreport.jsonl.gz",
+          "bytes": 10234990
+        },
+        {
+          "path": "raw/gutenberg.jsonl.gz",
+          "bytes": 215067168
+        },
+        {
+          "path": "raw/imdb.jsonl.gz",
+          "bytes": 879937
+        },
+        {
+          "path": "raw/libretexts.jsonl.gz",
+          "bytes": 3489550
+        },
+        {
+          "path": "raw/oanc_icic.jsonl.gz",
+          "bytes": 270822
+        },
+        {
+          "path": "raw/oanc_slate.jsonl.gz",
+          "bytes": 3909891
+        },
+        {
+          "path": "raw/opinrank.jsonl.gz",
+          "bytes": 3449915
+        },
+        {
+          "path": "raw/persuade.jsonl.gz",
+          "bytes": 721629
+        },
+        {
+          "path": "raw/pes2o.jsonl.gz",
+          "bytes": 12829310
+        },
+        {
+          "path": "raw/pmc.jsonl.gz",
+          "bytes": 31694586
+        },
+        {
+          "path": "raw/pressbooks.jsonl.gz",
+          "bytes": 6220531
+        },
+        {
+          "path": "raw/scidev.jsonl.gz",
+          "bytes": 1427570
+        },
+        {
+          "path": "raw/scp.jsonl.gz",
+          "bytes": 9509147
+        },
+        {
+          "path": "raw/stack_nontech.jsonl.gz",
+          "bytes": 15384839
+        },
+        {
+          "path": "raw/stack_tech.jsonl.gz",
+          "bytes": 4963485
+        },
+        {
+          "path": "raw/ubuntu_irc.jsonl.gz",
+          "bytes": 14116454
+        },
+        {
+          "path": "raw/voa.jsonl.gz",
+          "bytes": 5679890
+        },
+        {
+          "path": "raw/wiki_talk.jsonl.gz",
+          "bytes": 6467950
+        },
+        {
+          "path": "raw/wikibooks.jsonl.gz",
+          "bytes": 4665432
+        },
+        {
+          "path": "raw/wikinews.jsonl.gz",
+          "bytes": 1819830
+        },
+        {
+          "path": "raw/wikipedia.jsonl.gz",
+          "bytes": 13031767
+        },
+        {
+          "path": "raw/wikisource.jsonl.gz",
+          "bytes": 8745932
+        },
+        {
+          "path": "raw/wikivoyage.jsonl.gz",
+          "bytes": 5502414
+        },
+        {
+          "path": "raw/worldbank.jsonl.gz",
+          "bytes": 48108675
+        },
+        {
+          "path": "raw/writingprompts.jsonl.gz",
+          "bytes": 10000569
+        },
+        {
+          "path": "sampling-plan.json",
+          "bytes": 7623
+        },
+        {
+          "path": "source-approvals.json",
+          "bytes": 69096
+        },
+        {
+          "path": "source-evidence/acl-manifest.json",
+          "bytes": 534
+        },
+        {
+          "path": "source-evidence/amazon2018-manifest.json",
+          "bytes": 15382
+        },
+        {
+          "path": "source-evidence/asap2-manifest.json",
+          "bytes": 199
+        },
+        {
+          "path": "source-evidence/cccc-manifest.json",
+          "bytes": 2211
+        },
+        {
+          "path": "source-evidence/fed-manifest.json",
+          "bytes": 105825
+        },
+        {
+          "path": "source-evidence/govreport-manifest.json",
+          "bytes": 427
+        },
+        {
+          "path": "source-evidence/imdb-manifest.json",
+          "bytes": 256
+        },
+        {
+          "path": "source-evidence/oanc-manifest.json",
+          "bytes": 385
+        },
+        {
+          "path": "source-evidence/opinrank-manifest.json",
+          "bytes": 645
+        },
+        {
+          "path": "source-evidence/persuade-manifest.json",
+          "bytes": 816
+        },
+        {
+          "path": "source-evidence/scidev-manifest.json",
+          "bytes": 2144
+        },
+        {
+          "path": "source-evidence/scp-manifest.json",
+          "bytes": 2111
+        },
+        {
+          "path": "source-evidence/ubuntu_irc-manifest.json",
+          "bytes": 257
+        },
+        {
+          "path": "source-evidence/voa-manifest.json",
+          "bytes": 2266
+        },
+        {
+          "path": "source-evidence/worldbank-manifest.json",
+          "bytes": 1600
+        },
+        {
+          "path": "source-evidence/writingprompts-manifest.json",
+          "bytes": 269
+        },
+        {
+          "path": "source-registry.json",
+          "bytes": 60659
+        },
+        {
+          "path": "upload-manifest.json",
+          "bytes": 27806
+        }
+      ]
+    },
+    {
+      "id": "open-text-detector/synthetic-research-papers-600",
+      "private": true,
+      "sha": "65ff939b86908fc8cd8e7bc78d1e5e929c93f1d9",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2553
+        },
+        {
+          "path": "README.md",
+          "bytes": 3573
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "bytes": 8230603
+        },
+        {
+          "path": "file_checksums.json",
+          "bytes": 551
+        },
+        {
+          "path": "markdown-papers.zip",
+          "bytes": 7345671
+        },
+        {
+          "path": "papers.jsonl",
+          "bytes": 21783091
+        },
+        {
+          "path": "provenance.jsonl",
+          "bytes": 2440130
+        },
+        {
+          "path": "validation.json",
+          "bytes": 948
+        }
+      ]
+    },
+    {
+      "id": "woog/arena-prose-100-49-models",
+      "private": false,
+      "sha": "66298b561a69c6ed6a9a3c4c79eeedb1f754ba49",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "LICENSE.md",
+          "bytes": 959
+        },
+        {
+          "path": "README.md",
+          "bytes": 10104
+        },
+        {
+          "path": "data/test-00000-of-00001.parquet",
+          "bytes": 7723821
+        },
+        {
+          "path": "models.json",
+          "bytes": 33327
+        },
+        {
+          "path": "provenance.json",
+          "bytes": 2564
+        }
+      ]
+    },
+    {
+      "id": "woog/pangram-paper-text",
+      "private": true,
+      "sha": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "README.md",
+          "bytes": 458
+        },
+        {
+          "path": "data/batch-001.parquet",
+          "bytes": 481212595
+        }
+      ]
+    },
+    {
+      "id": "woog/ai-paper-provenance-v3",
+      "private": false,
+      "sha": "98ca42d9ff340d8a8fddba50e880a8528aafecf2",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "LICENSE.md",
+          "bytes": 615
+        },
+        {
+          "path": "README.md",
+          "bytes": 8597
+        },
+        {
+          "path": "costs.json",
+          "bytes": 2652
+        },
+        {
+          "path": "data/fresh_passages/test-00000-of-00001.parquet",
+          "bytes": 20714827
+        },
+        {
+          "path": "data/fresh_passages/train-00000-of-00001.parquet",
+          "bytes": 61825655
+        },
+        {
+          "path": "data/fresh_passages/validation-00000-of-00001.parquet",
+          "bytes": 20666244
+        },
+        {
+          "path": "data/paragraphs/test-00000-of-00001.parquet",
+          "bytes": 2326989
+        },
+        {
+          "path": "data/paragraphs/train-00000-of-00001.parquet",
+          "bytes": 6938705
+        },
+        {
+          "path": "data/paragraphs/validation-00000-of-00001.parquet",
+          "bytes": 2322313
+        },
+        {
+          "path": "data/passages/test-00000-of-00001.parquet",
+          "bytes": 21236109
+        },
+        {
+          "path": "data/passages/train-00000-of-00001.parquet",
+          "bytes": 63650087
+        },
+        {
+          "path": "data/passages/validation-00000-of-00001.parquet",
+          "bytes": 21224835
+        },
+        {
+          "path": "data/sentences/test-00000-of-00001.parquet",
+          "bytes": 14525267
+        },
+        {
+          "path": "data/sentences/train-00000-of-00001.parquet",
+          "bytes": 43383789
+        },
+        {
+          "path": "data/sentences/validation-00000-of-00001.parquet",
+          "bytes": 14516831
+        },
+        {
+          "path": "features.json",
+          "bytes": 19857
+        },
+        {
+          "path": "file_checksums.json",
+          "bytes": 2427
+        },
+        {
+          "path": "generation_protocol.json",
+          "bytes": 10162
+        },
+        {
+          "path": "identifier_mapping.json",
+          "bytes": 345330
+        },
+        {
+          "path": "label_schema.json",
+          "bytes": 808
+        },
+        {
+          "path": "provenance.json",
+          "bytes": 1908
+        },
+        {
+          "path": "statistics.json",
+          "bytes": 1147
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "bytes": 2132967
+        },
+        {
+          "path": "validation.json",
+          "bytes": 1231
+        }
+      ]
+    },
+    {
+      "id": "woog/ai-paper-workflow-eval",
+      "private": false,
+      "sha": "57b5a4731fed995105e92e44ffbef15a5cd26058",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2504
+        },
+        {
+          "path": "GENERATION.md",
+          "bytes": 11019
+        },
+        {
+          "path": "GENERATION_RESULTS.md",
+          "bytes": 1176
+        },
+        {
+          "path": "LICENSE.md",
+          "bytes": 514
+        },
+        {
+          "path": "README.md",
+          "bytes": 4055
+        },
+        {
+          "path": "SOURCES.md",
+          "bytes": 13248
+        },
+        {
+          "path": "checksums.json",
+          "bytes": 2109
+        },
+        {
+          "path": "counts.json",
+          "bytes": 217
+        },
+        {
+          "path": "data/assistance/test.parquet",
+          "bytes": 1996962
+        },
+        {
+          "path": "data/assistance/validation.parquet",
+          "bytes": 1007953
+        },
+        {
+          "path": "data/human_controls/test.parquet",
+          "bytes": 2237949
+        },
+        {
+          "path": "data/human_controls/validation.parquet",
+          "bytes": 427468
+        },
+        {
+          "path": "data/index/test.parquet",
+          "bytes": 10102925
+        },
+        {
+          "path": "data/reconstruction/test.parquet",
+          "bytes": 2766022
+        },
+        {
+          "path": "data/reconstruction/validation.parquet",
+          "bytes": 1416214
+        },
+        {
+          "path": "generation-protocol.json",
+          "bytes": 20165
+        },
+        {
+          "path": "requirements-a100.txt",
+          "bytes": 172
+        },
+        {
+          "path": "runner/README.md",
+          "bytes": 5076
+        },
+        {
+          "path": "runner/common.py",
+          "bytes": 1710
+        },
+        {
+          "path": "runner/compare_models.py",
+          "bytes": 8590
+        },
+        {
+          "path": "runner/meld_model.py",
+          "bytes": 3043
+        },
+        {
+          "path": "runner/score_wide_eval.py",
+          "bytes": 10853
+        },
+        {
+          "path": "runner/suite.py",
+          "bytes": 8102
+        },
+        {
+          "path": "suite-manifest.json",
+          "bytes": 4490
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

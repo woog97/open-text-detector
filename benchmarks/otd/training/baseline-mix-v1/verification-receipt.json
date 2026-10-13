@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "checks": {
+    "human": {
+      "training_documents": 75548,
+      "cap_passed": true
+    },
+    "mirrors": {
+      "training_documents": 21304,
+      "cap_passed": true
+    },
+    "papers": {
+      "training_documents": 11328,
+      "cap_passed": true
+    },
+    "gradtex": {
+      "training_documents": 77142,
+      "cap_passed": true
+    },
+    "fullpapers": {
+      "training_documents": 377,
+      "cap_passed": true
+    }
+  },
+  "replacement_encodings_checked": 827,
+  "all_schedule_memberships_verified": true,
+  "all_file_hashes_verified": true,
+  "all_existing_unaffected_draws_preserved": true,
+  "model_inference": false,
+  "training_started": false,
+  "split_report": {
+    "created_at": 1791059287.8847442,
+    "unit": "source records/documents; not sampled repetitions or token windows",
+    "sources": {
+      "human": {
+        "total_documents": 100000,
+        "previous_training_documents": 75548,
+        "training_documents": 75548,
+        "training_percent": 75.548,
+        "outside_training": 24452,
+        "removed_for_reservation_or_cap": 0,
+        "cap": 80000
+      },
+      "mirrors": {
+        "total_documents": 28120,
+        "previous_training_documents": 21304,
+        "training_documents": 21304,
+        "training_percent": 75.76102418207681,
+        "outside_training": 6816,
+        "removed_for_reservation_or_cap": 0,
+        "cap": 22496
+      },
+      "papers": {
+        "total_documents": 20000,
+        "previous_training_documents": 11328,
+        "training_documents": 11328,
+        "training_percent": 56.64,
+        "outside_training": 8672,
+        "removed_for_reservation_or_cap": 0,
+        "cap": 16000
+      },
+      "gradtex": {
+        "total_documents": 142214,
+        "previous_training_documents": 77142,
+        "training_documents": 77142,
+        "training_percent": 54.24360470839721,
+        "outside_training": 65072,
+        "removed_for_reservation_or_cap": 0,
+        "cap": 113771
+      },
+      "fullpapers": {
+        "total_documents": 600,
+        "previous_training_documents": 468,
+        "training_documents": 377,
+        "training_percent": 62.833333333333336,
+        "outside_training": 223,
+        "removed_for_reservation_or_cap": 91,
+        "cap": 480
+      }
+    },
+    "reserved_source_families": 120,
+    "removed_connected_groups": 91,
+    "historical_schedule_overlap": {
+      "stage1-epoch0": {
+        "draws": 123,
+        "unique_documents": 70
+      },
+      "stage2-epoch0": {
+        "draws": 241,
+        "unique_documents": 84
+      },
+      "stage2-epoch1": {
+        "draws": 233,
+        "unique_documents": 85
+      },
+      "stage2-epoch2": {
+        "draws": 230,
+        "unique_documents": 85
+      }
+    },
+    "evaluation_sources": {
+      "human_mirrors": "prepared-v2/split-assignments.json + existing source releases",
+      "papers": "original validation/test parquet splits, 4000 rows each",
+      "gradtex": "original validation 23672 / test 39477 parquets",
+      "manuscripts": "reservation.json and evaluation assignment files",
+      "excluded": "not automatically valid evaluation examples"
+    }
+  },
+  "recipe_sha256": "a0eedee259fd2f9c145fc4e514e01d008d1e6b50d5471f1595ea25816a2c9a63"
+}

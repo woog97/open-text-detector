@@ -1,0 +1,92 @@
+{
+ "excluded_eval_suite_or_heldout_paper": 642,
+ "excluded_never_train": 57,
+ "excluded_reserved_for_heldout": 1,
+ "available_by_role": {
+  "introduction": 671,
+  "related_work": 260,
+  "discussion_conclusion": 474,
+  "experiments_results": 445,
+  "method": 35
+ },
+ "role_targets": {
+  "introduction": 274,
+  "related_work": 260,
+  "discussion_conclusion": 218,
+  "method": 35,
+  "experiments_results": 163
+ },
+ "shortfalls": {
+  "method": 17
+ },
+ "filled_after_shortfall": 17,
+ "items": 950,
+ "papers": 772,
+ "by_writer_kind": {
+  "sonnet": {
+   "draft": 201,
+   "rewrite": 200
+  },
+  "opus": {
+   "draft": 200,
+   "rewrite": 199
+  },
+  "haiku": {
+   "rewrite": 75,
+   "draft": 75
+  }
+ },
+ "by_role": {
+  "introduction": 291,
+  "experiments_results": 163,
+  "related_work": 260,
+  "discussion_conclusion": 218,
+  "method": 18
+ },
+ "by_source": {
+  "paired": 803,
+  "archive": 147
+ },
+ "cells": {
+  "acl 2013": 3,
+  "acl 2014": 5,
+  "acl 2015": 1,
+  "acl 2016": 7,
+  "acl 2017": 6,
+  "acl 2018": 8,
+  "acl 2019": 17,
+  "acl 2020": 48,
+  "acl 2021": 21,
+  "corl 2021": 7,
+  "corl 2022": 8,
+  "iclr 2020": 1,
+  "iclr 2021": 2,
+  "iclr 2022": 3,
+  "icml 2013": 33,
+  "icml 2014": 26,
+  "icml 2015": 24,
+  "icml 2016": 29,
+  "icml 2017": 38,
+  "icml 2018": 50,
+  "icml 2019": 53,
+  "icml 2020": 48,
+  "icml 2021": 52,
+  "neurips 2013": 18,
+  "neurips 2014": 30,
+  "neurips 2015": 29,
+  "neurips 2016": 16,
+  "neurips 2017": 44,
+  "neurips 2018": 47,
+  "neurips 2019": 44,
+  "neurips 2020": 61,
+  "neurips 2021": 45,
+  "neurips 2022": 6,
+  "tmlr 2022": 120
+ },
+ "target_words_median": 562.0,
+ "batch_files": {
+  "sonnet": 51,
+  "opus": 50,
+  "haiku": 19
+ }
+}

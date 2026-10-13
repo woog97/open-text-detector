@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "rows": 13751,
+  "all_final_inference": "BF16",
+  "models": {
+    "ours": {
+      "predictions_sha256": "ae0f867ad74503388d123ceb3e178c4d17c9177b4e38ffc214c37a7ebd53a0f3",
+      "rows": 13751,
+      "validation_fpr_verified": true
+    },
+    "meld-v5": {
+      "predictions_sha256": "fed050e8d7b34382d108fc6704860f355f6a17b08e81e151011323e18cd75ea2",
+      "rows": 13751,
+      "validation_fpr_verified": true,
+      "weights": {
+        "sha256": "32b0fbf6a5bd2083b53d41db24dcd5b6756fa82c688b7396552da9fbcaf8bb91",
+        "bytes": 1579353052,
+        "all_files_verified": true
+      }
+    },
+    "meld-v8": {
+      "predictions_sha256": "a51fe9fa727f7b744cf38f1e34b03db15bad5997089c5c799ba98bef00b8aefa",
+      "rows": 13751,
+      "validation_fpr_verified": true,
+      "weights": {
+        "sha256": "86700f566059951fc9326a6b04234256d31691b61b4c0a738422616f0d62d303",
+        "bytes": 4112570616,
+        "all_files_verified": true
+      }
+    }
+  },
+  "codes": {
+    "compare_models.py": "afad1ce2dfa3566e272ededc1c379618516650bf5962d3295736f7f9880ba239",
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "meld_model.py": "fd45ea31bfd80b56c6043c8177d9b66a5a1fa1a5f5da86ba870fc7bf7136620a",
+    "build_comparison.py": "e4db45857ac944d97f4d82659931c790e6a50f256dee16c230a27c0980d2897f"
+  },
+  "gpu_idle": true
+}

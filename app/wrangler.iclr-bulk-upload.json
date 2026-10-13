@@ -1,0 +1,20 @@
+{
+  "name": "open-text-detector-iclr-bulk-upload",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "iclr-bulk-upload/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "TOKEN_SHA256": "7da792f334b0b9133427637afd21f6eb1f1c008076c7bb4e69f235190af971e9",
+    "EXPIRES_AT": "1791099762"
+  }
+}

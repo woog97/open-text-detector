@@ -1,0 +1,13 @@
+Open Text Detector
+Copyright 2026 the Open Text Detector authors
+
+The code in this repository and the trained LoRA adapters published with it
+(https://huggingface.co/woog/open-text-detector-qwen36-35b-a3b-oct10) are licensed
+under the Apache License, Version 2.0 (see LICENSE).
+
+The license does not cover:
+- the training and evaluation datasets (published separately on Hugging Face under
+  mixed-source terms), nor any paper text, model output or other third-party material
+  they or this repository quote; that material keeps the terms of its source;
+- the base model Qwen/Qwen3.6-35B-A3B, which has its own license (Apache-2.0);
+- vendored third-party code, which keeps the license stated in its own files.

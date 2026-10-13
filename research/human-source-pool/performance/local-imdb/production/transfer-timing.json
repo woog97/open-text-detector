@@ -1,0 +1,5 @@
+{
+  "transfer_merge_launch_roundtrip_seconds": 7.314193625003099,
+  "package_bytes": 1120330,
+  "note": "Includes authentication/kernel setup, upload, verification, merge, and scheduler launch; not just network transfer."
+}

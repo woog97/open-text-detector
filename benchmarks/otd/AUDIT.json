@@ -1,0 +1,115 @@
+{
+  "datasets": {
+    "detectrl": {
+      "rows": 2477,
+      "unique_texts": 2430,
+      "labels": {
+        "ai": 1672,
+        "human": 805
+      },
+      "cohorts": 34
+    },
+    "epoch": {
+      "rows": 84,
+      "unique_texts": 84,
+      "labels": {
+        "human": 12,
+        "ai": 72
+      },
+      "cohorts": 3
+    },
+    "gede": {
+      "rows": 184,
+      "unique_texts": 184,
+      "labels": {
+        "ai": 176,
+        "human": 8
+      },
+      "cohorts": 19
+    },
+    "liang": {
+      "rows": 270,
+      "unique_texts": 269,
+      "labels": {
+        "human": 270
+      },
+      "cohorts": 3
+    },
+    "local": {
+      "rows": 85,
+      "unique_texts": 85,
+      "labels": {
+        "ai": 45,
+        "human": 16,
+        "mixed": 24
+      },
+      "cohorts": 11
+    },
+    "meld_eval": {
+      "rows": 928,
+      "unique_texts": 926,
+      "labels": {
+        "ai": 896,
+        "human": 32
+      },
+      "cohorts": 1
+    },
+    "opai": {
+      "rows": 224,
+      "unique_texts": 220,
+      "labels": {
+        "human": 24,
+        "ai": 8,
+        "mixed": 192
+      },
+      "cohorts": 9
+    },
+    "pelic": {
+      "rows": 100,
+      "unique_texts": 100,
+      "labels": {
+        "human": 100
+      },
+      "cohorts": 1
+    },
+    "perkins": {
+      "rows": 114,
+      "unique_texts": 113,
+      "labels": {
+        "ai": 104,
+        "human": 10
+      },
+      "cohorts": 11
+    },
+    "saha": {
+      "rows": 65,
+      "unique_texts": 65,
+      "labels": {
+        "ai": 47,
+        "human": 18
+      },
+      "cohorts": 9
+    },
+    "sem_detect": {
+      "rows": 36,
+      "unique_texts": 36,
+      "labels": {
+        "ai": 16,
+        "human": 4,
+        "mixed": 16
+      },
+      "cohorts": 3
+    },
+    "vub": {
+      "rows": 40,
+      "unique_texts": 40,
+      "labels": {
+        "ai": 40
+      },
+      "cohorts": 1
+    }
+  },
+  "raw_receipts": 278,
+  "raw_bytes": 1037155761,
+  "passed": true
+}

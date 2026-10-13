@@ -1,0 +1,6 @@
+{
+  "pid": 3253,
+  "root": "/data/workspace/paper-lora-comparison-v1",
+  "prerequisite": "/data/workspace/paper-backbone-comparison-v1/training-queue/status.json",
+  "plan_sha256": "3b541c13e2af284e7946b059c80a9c4ce117ff7090a8d2cbc3399bfe06532909"
+}

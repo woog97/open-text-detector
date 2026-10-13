@@ -1,0 +1,279 @@
+<title>Clause Cuts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: a single proofing desk. One sentence set large like a galley proof, cut marks in editor's blue pencil, controls in a quiet strip below. */
+:root {
+  --bg: #f3f5f8;
+  --paper: #ffffff;
+  --ink: #1b2130;
+  --muted: #5d6779;
+  --rule: #d9dee7;
+  --pencil: #2f6fb0;
+  --pencil-soft: #e3edf8;
+  --tint-a: #eef2f8;
+  --tint-b: #fbf3e6;
+  --ok: #2e7d4f;
+  --warn: #a35c00;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161e; --paper: #1a1f2a; --ink: #e4e8f0; --muted: #98a2b5; --rule: #2c3442;
+    --pencil: #7fb0e6; --pencil-soft: #1f3046; --tint-a: #1f2736; --tint-b: #2c2619;
+    --ok: #6cc292; --warn: #e0a24f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161e; --paper: #1a1f2a; --ink: #e4e8f0; --muted: #98a2b5; --rule: #2c3442;
+  --pencil: #7fb0e6; --pencil-soft: #1f3046; --tint-a: #1f2736; --tint-b: #2c2619;
+  --ok: #6cc292; --warn: #e0a24f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; padding-inline: 16px; padding-block: 20px 48px; }
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 18px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+h1 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; margin: 0; letter-spacing: -0.01em; }
+.count { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.count b { color: var(--ink); font-weight: 500; }
+.meter { height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--pencil); width: 0; transition: width .3s; }
+.status { font-size: 0.82rem; color: var(--muted); min-height: 1.2em; }
+.status.bad { color: var(--warn); }
+.galley { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 28px clamp(16px, 4vw, 40px) 22px; display: grid; gap: 18px; }
+.meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+.pill { font-family: var(--sans); font-size: 0.72rem; text-transform: uppercase; letter-spacing: .06em; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--rule); }
+.pill.done { color: var(--ok); border-color: currentColor; }
+.pill.unsure { color: var(--warn); border-color: currentColor; }
+.sentence { font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 2.15; overflow-wrap: anywhere; }
+.w { padding: 3px 0; border-radius: 2px; }
+.c0 .w, .c0.gap { background: var(--tint-a); }
+.c1 .w, .c1.gap { background: var(--tint-b); }
+.clause { display: inline; }
+.gap { display: inline-block; position: relative; width: 0.62em; height: 1.5em; vertical-align: -0.3em; border: 0; padding: 0; margin: 0; cursor: pointer; background: transparent; border-radius: 2px; }
+.gap:hover::after, .gap:focus-visible::after { content: ""; position: absolute; left: 50%; top: 0.05em; bottom: 0.05em; width: 1px; background: var(--pencil); opacity: .45; }
+.gap.cut { background: transparent !important; }
+.gap.cut::before { content: ""; position: absolute; left: calc(50% - 1.5px); top: -0.25em; bottom: -0.25em; width: 3px; background: var(--pencil); border-radius: 2px; }
+.gap.cut::after { content: "/"; position: absolute; left: 50%; top: -1.3em; transform: translateX(-50%); font-family: var(--mono); font-size: .62rem; color: var(--pencil); opacity: 1; background: none; width: auto; }
+.gap.focus { outline: 2px solid var(--pencil); outline-offset: 1px; }
+.gap:focus-visible { outline: 2px solid var(--pencil); outline-offset: 1px; }
+.clauses { display: grid; gap: 4px; margin: 0; padding: 0 0 0 1.6em; font-size: 0.86rem; color: var(--muted); }
+.clauses li { padding-left: 4px; }
+.clauses li::marker { font-family: var(--mono); font-size: .75rem; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.bar .spacer { flex: 1; }
+button.b { font: inherit; font-size: 0.88rem; padding: 7px 14px; border-radius: 5px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; }
+button.b:hover { border-color: var(--muted); }
+button.b:focus-visible { outline: 2px solid var(--pencil); outline-offset: 2px; }
+button.b.primary { background: var(--pencil); border-color: var(--pencil); color: var(--paper); font-weight: 600; }
+button.b:disabled { opacity: .45; cursor: default; }
+kbd { font-family: var(--mono); font-size: .72rem; padding: 0 5px; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 3px; color: var(--muted); margin-left: 6px; }
+button.b.primary kbd { color: inherit; border-color: color-mix(in srgb, var(--paper) 45%, transparent); }
+textarea { width: 100%; font: inherit; font-size: .88rem; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); resize: vertical; min-height: 2.4em; }
+details { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
+.rules { max-width: 68ch; font-size: .9rem; display: grid; gap: 6px; margin-top: 10px; }
+.rules p { margin: 0; }
+.rules .eg { font-family: var(--serif); }
+.rules .eg i { color: var(--pencil); font-style: normal; font-family: var(--mono); padding: 0 2px; }
+.keys { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.keys kbd { margin: 0 4px 0 0; }
+@media (prefers-reduced-motion: reduce) { .meter i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Clause Cuts</h1>
+    <div class="count" id="count">loading…</div>
+  </header>
+  <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+
+  <section class="galley" aria-label="Current sentence">
+    <div class="meta">
+      <span id="pos">—</span>
+      <span id="state" class="pill">draft</span>
+    </div>
+    <div class="sentence" id="sentence"></div>
+    <ol class="clauses" id="clauses"></ol>
+    <textarea id="note" placeholder="Optional note, e.g. why this one is ambiguous" rows="1"></textarea>
+    <div class="bar">
+      <button class="b" id="prev" type="button">Back<kbd>⌫</kbd></button>
+      <button class="b" id="reset" type="button">Reset to draft<kbd>R</kbd></button>
+      <button class="b" id="clear" type="button">No cuts<kbd>0</kbd></button>
+      <span class="spacer"></span>
+      <button class="b" id="unsure" type="button">Save as unsure<kbd>U</kbd></button>
+      <button class="b primary" id="save" type="button">Save &amp; next<kbd>↵</kbd></button>
+    </div>
+    <div class="status" id="status" role="status"></div>
+  </section>
+
+  <div class="keys">
+    <span><kbd>←</kbd><kbd>→</kbd>move between word gaps</span>
+    <span><kbd>Space</kbd>toggle a cut</span>
+    <span>or click any gap between words</span>
+    <span><kbd>J</kbd>jump to next unsaved</span>
+  </div>
+
+  <details id="guide">
+    <summary>What counts as a clause</summary>
+    <div class="rules">
+      <p>A clause is a group of words with its own subject and verb. The blue cuts are a draft; fix them so each tinted run is one clause.</p>
+      <p><b>Cut before</b> an independent clause (after <i>and</i>, <i>but</i>, <i>;</i>), a subordinate clause (<i>because</i>, <i>although</i>, <i>when</i>, <i>if</i>), a relative clause (<i>which</i>, <i>that</i>, <i>who</i>), and a <i>that</i>-complement of a verb like <i>show</i> or <i>argue</i>.</p>
+      <p class="eg">We train on ImageNet <i>/</i>because it is large, <i>/</i>which makes results comparable.</p>
+      <p><b>Don't cut</b> phrases with no subject and verb of their own: participle and infinitive phrases, prepositional phrases, citations, parentheticals, equations, list items without a verb.</p>
+      <p class="eg">The bound specified in the algorithm holds for any K (see Section 3) [12].</p>
+      <p><b>A clause inside another clause:</b> cut where it starts and again where the outer clause picks up. The leftover piece can look like a fragment; that's expected.</p>
+      <p class="eg">The guarantees <i>/</i>that the chain converges <i>/</i>vanish.</p>
+      <p>When a sentence is genuinely unclear, mark your best guess and press <b>Save as unsure</b>. Stop whenever you like; every saved sentence counts.</p>
+    </div>
+  </details>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(() => {
+  const ITEMS = JSON.parse(document.getElementById('data').textContent);
+  const $ = id => document.getElementById(id);
+  const saved = {};             // gold_id -> stored annotation
+  let db = null, idx = 0, cuts = new Set(), focusGap = 0, words = [], shownAt = Date.now();
+
+  const LS = 'clause-cuts-backup';
+  function lsRead() { try { return JSON.parse(localStorage.getItem(LS) || '{}'); } catch { return {}; } }
+  function lsWrite(v) { try { localStorage.setItem(LS, JSON.stringify(v)); } catch {} }
+
+  function tokenize(text) {
+    const out = []; const rx = /\S+/g; let m;
+    while ((m = rx.exec(text))) out.push({ start: m.index, end: m.index + m[0].length });
+    return out;
+  }
+
+  function load(i) {
+    idx = Math.max(0, Math.min(ITEMS.length - 1, i));
+    const it = ITEMS[idx]; const s = saved[it.id];
+    words = tokenize(it.text);
+    cuts = new Set((s ? s.cuts : it.draft) || []);
+    $('note').value = s?.note || '';
+    focusGap = 1; shownAt = Date.now();
+    render();
+  }
+
+  function render() {
+    const it = ITEMS[idx], s = saved[it.id];
+    const box = $('sentence'); box.textContent = '';
+    let clause = 0, span = document.createElement('span');
+    span.className = 'clause c0';
+    words.forEach((w, k) => {
+      if (k > 0) {
+        const g = document.createElement('button');
+        g.type = 'button'; g.className = 'gap'; g.dataset.k = k;
+        const isCut = cuts.has(w.start);
+        if (isCut) {
+          box.appendChild(span); clause++;
+          span = document.createElement('span'); span.className = 'clause c' + (clause % 2);
+          g.classList.add('cut');
+        } else g.classList.add('c' + (clause % 2));
+        if (k === focusGap) g.classList.add('focus');
+        g.setAttribute('aria-label', (isCut ? 'Remove cut before ' : 'Cut before ') + it.text.slice(w.start, w.end));
+        g.addEventListener('click', () => { focusGap = k; toggle(k); });
+        (isCut ? box : span).appendChild(g);
+      }
+      const t = document.createElement('span'); t.className = 'w';
+      t.textContent = it.text.slice(w.start, w.end);
+      span.appendChild(t);
+    });
+    box.appendChild(span);
+
+    const starts = [0, ...[...cuts].sort((a, b) => a - b)];
+    const list = $('clauses'); list.textContent = '';
+    starts.forEach((a, j) => {
+      const li = document.createElement('li');
+      li.textContent = it.text.slice(a, starts[j + 1] ?? it.text.length).trim();
+      list.appendChild(li);
+    });
+
+    const st = $('state');
+    st.className = 'pill' + (s ? ' ' + s.status : '');
+    st.textContent = s ? (s.status === 'done' ? 'saved' : 'saved · unsure') : 'draft';
+    $('pos').textContent = `sentence ${idx + 1} of ${ITEMS.length} · ${it.id}`;
+    $('prev').disabled = idx === 0;
+    const n = Object.keys(saved).length;
+    $('count').innerHTML = `<b>${n}</b> saved of ${ITEMS.length}`;
+    $('meter').style.width = (100 * n / ITEMS.length) + '%';
+  }
+
+  function toggle(k) {
+    const off = words[k].start;
+    cuts.has(off) ? cuts.delete(off) : cuts.add(off);
+    render();
+  }
+
+  async function save(status) {
+    const it = ITEMS[idx];
+    const sorted = [...cuts].sort((a, b) => a - b);
+    const rec = {
+      cuts: sorted, status, note: $('note').value.trim(),
+      changed_from_draft: JSON.stringify(sorted) !== JSON.stringify([...(it.draft || [])].sort((a, b) => a - b)),
+      seconds: Math.round((Date.now() - shownAt) / 1000), saved_at: new Date().toISOString(),
+    };
+    saved[it.id] = rec;
+    const backup = lsRead(); backup[it.id] = rec; lsWrite(backup);
+    if (db) {
+      try { await db.collection('annotations').doc(it.id).set(rec); setStatus(''); }
+      catch (e) { setStatus('Saved in this browser only; the shared store refused the write (' + (e?.code || 'error') + '). Your work is kept here and will sync on the next save.', true); }
+    }
+    next();
+  }
+
+  function next() {
+    const k = ITEMS.findIndex((it, j) => j > idx && !saved[it.id]);
+    load(k >= 0 ? k : Math.min(idx + 1, ITEMS.length - 1));
+  }
+
+  function setStatus(msg, bad) { const el = $('status'); el.textContent = msg; el.classList.toggle('bad', !!bad); }
+
+  $('save').addEventListener('click', () => save('done'));
+  $('unsure').addEventListener('click', () => save('unsure'));
+  $('prev').addEventListener('click', () => load(idx - 1));
+  $('reset').addEventListener('click', () => { cuts = new Set(ITEMS[idx].draft || []); render(); });
+  $('clear').addEventListener('click', () => { cuts = new Set(); render(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.target === $('note') || e.metaKey || e.ctrlKey || e.altKey) return;
+    const last = words.length - 1;
+    if (e.key === 'ArrowRight') { focusGap = Math.min(last, focusGap + 1); render(); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { focusGap = Math.max(1, focusGap - 1); render(); e.preventDefault(); }
+    else if (e.key === ' ') { if (last >= 1) toggle(focusGap); e.preventDefault(); }
+    else if (e.key === 'Enter') { save('done'); e.preventDefault(); }
+    else if (e.key === 'u' || e.key === 'U') save('unsure');
+    else if (e.key === 'Backspace') { load(idx - 1); e.preventDefault(); }
+    else if (e.key === 'r' || e.key === 'R') { cuts = new Set(ITEMS[idx].draft || []); render(); }
+    else if (e.key === '0') { cuts = new Set(); render(); }
+    else if (e.key === 'j' || e.key === 'J') next();
+  });
+
+  // First frame: local backup, then the shared store when it answers.
+  Object.assign(saved, lsRead());
+  load(Math.max(0, ITEMS.findIndex(it => !saved[it.id])));
+
+  (async () => {
+    db = await (window.claude?.use ? window.claude.use('db') : null);
+    if (!db) { setStatus('The shared store is not available in this view, so saves stay in this browser only.', true); return; }
+    try {
+      const snap = await db.collection('annotations').get();
+      const known = new Set(snap.docs.map(d => d.id));
+      snap.docs.forEach(d => { saved[d.id] = d.data(); });
+      // Push anything saved only locally (an earlier refused write).
+      const local = lsRead();
+      for (const [id, rec] of Object.entries(local)) {
+        if (!known.has(id) && ITEMS.some(it => it.id === id)) { try { await db.collection('annotations').doc(id).set(rec); saved[id] = rec; } catch {} }
+      }
+      const first = ITEMS.findIndex(it => !saved[it.id]);
+      if (!saved[ITEMS[idx].id] || first < idx) load(first >= 0 ? first : idx); else render();
+    } catch (e) {
+      setStatus('Could not read earlier saves from the shared store (' + (e?.code || 'error') + '). New saves will still be attempted.', true);
+    }
+  })();
+})();
+</script>

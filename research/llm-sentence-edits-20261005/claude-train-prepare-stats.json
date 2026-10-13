@@ -1,0 +1,45 @@
+{
+ "already_accepted_pilot_or_v1": 5000,
+ "unused": 6116,
+ "excluded_reference_like": 366,
+ "excluded_mostly_math": 331,
+ "excluded_never_train": 67,
+ "eligible": 5352,
+ "scaled_down": true,
+ "chosen": 5352,
+ "quota": {
+  "sonnet": 2230,
+  "opus": 2230,
+  "haiku": 892
+ },
+ "papers": 1275,
+ "by_source": {
+  "paired_train_nontarget": 5060,
+  "archive_pre2023": 292
+ },
+ "by_writer_type": {
+  "sonnet": {
+   "rewrite_one": 669,
+   "rewrite_two": 669,
+   "insert_one": 669,
+   "split_one": 223
+  },
+  "opus": {
+   "rewrite_one": 669,
+   "rewrite_two": 669,
+   "insert_one": 669,
+   "split_one": 223
+  },
+  "haiku": {
+   "rewrite_one": 268,
+   "rewrite_two": 268,
+   "insert_one": 267,
+   "split_one": 89
+  }
+ },
+ "batch_files": {
+  "sonnet": 45,
+  "opus": 45,
+  "haiku": 18
+ }
+}

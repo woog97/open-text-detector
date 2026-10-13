@@ -1,0 +1,32 @@
+{
+  "source": "research/data/paper-eval-workflows-luna-20260930",
+  "rows": 2646,
+  "rows_by_condition": {
+    "sentence": 378,
+    "two_sentence": 378,
+    "paragraph_v3": 378,
+    "paragraph_concise": 378,
+    "proofread": 378,
+    "light_polish": 378,
+    "substantial_rewrite": 378
+  },
+  "unique_family_condition_pairs": {
+    "sentence": 189,
+    "two_sentence": 189,
+    "paragraph_v3": 189,
+    "paragraph_concise": 189,
+    "proofread": 189,
+    "light_polish": 189,
+    "substantial_rewrite": 189
+  },
+  "label_policies": {
+    "known_replacement_provenance": 1512,
+    "human_origin_ai_assisted_no_binary_gold": 1134
+  },
+  "splits": {
+    "pilot": 378,
+    "calibration": 756,
+    "test": 1512
+  },
+  "interpretation": "Existing stage-3 style operations confirmed. Evaluation-only source families must not be reused for mirror training. Assisted rows are not clause-level Pangram gold."
+}

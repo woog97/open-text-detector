@@ -1,0 +1,6 @@
+{
+  "pid": 6015,
+  "start_ticks": "17012454",
+  "script": "/data/workspace/dataset-publication-20261003/publish.py",
+  "log": "/data/workspace/dataset-publication-20261003/publication-io-fixed.log"
+}

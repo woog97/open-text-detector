@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-03T00:23:34.580862+00:00",
+  "state": "all_retained_pass_automated_stage2_checks",
+  "raw_count": 30000,
+  "accepted": 28120,
+  "rejected": 1880,
+  "rejection_flags_overlapping": {
+    "incomplete_generation": 960,
+    "length_mismatch": 747,
+    "output_not_longer_than_generation_prompt": 900,
+    "invalid_or_copied_topic": 47,
+    "too_short": 120,
+    "saved_response_text_mismatch": 20,
+    "verbatim_copy": 5
+  },
+  "accepted_categories": {
+    "scientific": 5016,
+    "reference": 4511,
+    "general_web": 2344,
+    "creative": 6193,
+    "news": 1951,
+    "essays": 1312,
+    "social": 2865,
+    "reviews": 2951,
+    "professional": 977
+  },
+  "accepted_rechecked": 28120,
+  "raw_files_unchanged": true,
+  "new_model_calls": 0,
+  "replacement_generations": 0,
+  "model_mixture": "skipped_by_user",
+  "scope": "Existing stage-2 automated rules plus full parent/prompt/response linkage and normalized exact output deduplication",
+  "not_claimed": [
+    "semantic topic/genre review",
+    "stage-1 parent training admission",
+    "stage-5 final family/split readiness"
+  ],
+  "artifacts": {
+    "accepted.jsonl": {
+      "sha256": "63e63f45042c25b07877ae3196fac7c07899243d7974d90d4757b89add274be5",
+      "bytes": 139524271
+    },
+    "rejected.jsonl": {
+      "sha256": "ae1ea213b343b4f7e7908d76b209a6da45cf7d251b9f59c0d1413d9c7e3c8b92",
+      "bytes": 6357053
+    },
+    "decisions.jsonl": {
+      "sha256": "748a62193183191ef224efbe6893d321c1e3c791065ff2dbf26a549117e2e344",
+      "bytes": 17804675
+    },
+    "protocol.json": {
+      "sha256": "41a54a311f98468d0c6c7e1a8eb665215254835f96f6b725c036e5986fc16319",
+      "bytes": 1528
+    }
+  },
+  "receipt": {
+    "state": "complete",
+    "at": "2026-10-03T00:23:34.969872+00:00",
+    "accepted": 28120,
+    "rejected": 1880,
+    "all_retained_checks_passed": true,
+    "output_path": "/tmp/pangram-luna-active-20261002/stage2-checked-30000-20261002",
+    "backup": "not_uploaded; automatic approval review rejected proposed upload; original raw backup preserved"
+  }
+}

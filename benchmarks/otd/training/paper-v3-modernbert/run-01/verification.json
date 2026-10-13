@@ -1,0 +1,27 @@
+{
+  "completed": true,
+  "checkpoint_reload_and_inference_passed": true,
+  "train_validation_test_ids_disjoint": true,
+  "thresholds_frozen_before_test_completion": true,
+  "model_files": {
+    "best_model/config.json": {
+      "bytes": 2017,
+      "sha256": "673664b25cafcb1c6a1420e02a8571a9131b19add79113d56e01e415ee973551"
+    },
+    "best_model/model.safetensors": {
+      "bytes": 598439784,
+      "sha256": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14"
+    },
+    "best_model/tokenizer.json": {
+      "bytes": 3583228,
+      "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+    },
+    "best_model/tokenizer_config.json": {
+      "bytes": 380,
+      "sha256": "fb54f027372062b2ca52282efb04d178a8b57167a00cd8f4e816515823a2c016"
+    }
+  },
+  "space": "open-text-detector/training",
+  "model_directory": "/data/workspace/paper-v3-modernbert-20260930/run-01/best_model",
+  "verified_at": 1790822076.4676487
+}

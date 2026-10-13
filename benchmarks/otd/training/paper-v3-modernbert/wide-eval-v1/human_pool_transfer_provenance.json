@@ -1,0 +1,13 @@
+{
+  "rows": 95334,
+  "origin": "Public historical research papers already used in the user-authorized public HF dataset",
+  "public_source_hosts": {
+    "proceedings.neurips.cc": 31798,
+    "proceedings.mlr.press": 39870,
+    "aclanthology.org": 23666
+  },
+  "all_rows_match_frozen_paper_pdf_sha_and_public_url": true,
+  "contains_credentials": false,
+  "destination": "Existing private open-text-detector/training Space explicitly requested by the user for training",
+  "purpose": "Store additional non-target human examples requested by the user; keep paper splits intact"
+}

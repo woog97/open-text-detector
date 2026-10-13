@@ -1,0 +1,76 @@
+{
+ "target_windows": 5200,
+ "archive_windows": 1935,
+ "archive_papers": 640,
+ "paper_windows_by_source": {
+  "paired_train_pre2022": 691,
+  "archive_pre2023": 1244
+ },
+ "archive_by_venue": {
+  "neurips 2020": 91,
+  "tmlr 2022": 747,
+  "icml 2017": 41,
+  "iclr 2022": 120,
+  "neurips 2021": 34,
+  "corl 2021": 47,
+  "icml 2020": 43,
+  "icml 2018": 37,
+  "iclr 2021": 119,
+  "neurips 2014": 34,
+  "corl 2022": 49,
+  "iclr 2020": 118,
+  "icml 2015": 14,
+  "icml 2016": 19,
+  "neurips 2013": 18,
+  "icml 2021": 55,
+  "icml 2014": 24,
+  "neurips 2018": 50,
+  "neurips 2015": 15,
+  "icml 2019": 39,
+  "acl 2020": 26,
+  "neurips 2016": 10,
+  "acl 2013": 1,
+  "icml 2013": 21,
+  "neurips 2017": 39,
+  "neurips 2022": 44,
+  "neurips 2019": 32,
+  "acl 2021": 10,
+  "acl 2019": 7,
+  "acl 2016": 10,
+  "acl 2014": 6,
+  "acl 2017": 6,
+  "acl 2018": 7,
+  "acl 2015": 2
+ },
+ "hsm_windows_flagged": 835,
+ "hsm_by_source": {
+  "hsm_arxiv": 232,
+  "hsm_pmc": 433,
+  "hsm_pes2o": 170
+ },
+ "dropped_overlap_training": 764,
+ "dropped_overlap_eval": 1,
+ "chars_median_archive": 986,
+ "max_chars": 1900,
+ "token_note": "~4 chars/token -> <=~475 tokens; prep crops at 510",
+ "archive_prep": {
+  "para_skipped_nonprose": 164178,
+  "para_skipped_used": 3415,
+  "paper_excluded_eval_or_heldout_reserve": 65,
+  "paper_never_train": 36,
+  "window_never_train": 6,
+  "windows": 1304,
+  "papers": 210
+ },
+ "paired_prep": {
+  "para_skipped_used": 16702,
+  "para_skipped_nonprose": 28498,
+  "windows": 901,
+  "papers": 501
+ },
+ "hsm_prep": {
+  "too_short": 4555,
+  "never_train": 21,
+  "windows": 1330
+ }
+}

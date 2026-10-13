@@ -1,0 +1,131 @@
+{
+ "A": [
+  "--lr",
+  "2e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06"
+ ],
+ "B": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0"
+ ],
+ "C": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "5e-4",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0"
+ ],
+ "D": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0",
+  "--sentence-weight",
+  "1.0"
+ ],
+ "E": [
+  "--lr",
+  "1e-3",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0"
+ ],
+ "F": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "5e-4",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0",
+  "--sentence-weight",
+  "1.0"
+ ],
+ "G": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "constant",
+  "--warmup",
+  "0",
+  "--optimizer",
+  "adamw"
+ ],
+ "H": [
+  "--lr",
+  "3e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06"
+ ],
+ "I": [
+  "--lr",
+  "1e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06"
+ ],
+ "J": [
+  "--lr",
+  "5e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06"
+ ],
+ "K": [
+  "--lr",
+  "2e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06",
+  "--sentence-weight",
+  "1.0"
+ ],
+ "L": [
+  "--lr",
+  "2e-4",
+  "--head-lr",
+  "2e-5",
+  "--schedule",
+  "cosine",
+  "--warmup",
+  "0.06",
+  "--short-span-oversample"
+ ]
+}

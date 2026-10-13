@@ -1,0 +1,101 @@
+---
+language: en
+license: cc-by-4.0
+task_categories:
+  - text-classification
+tags:
+  - ai-text-detection
+  - mgt-detection
+  - benchmark
+size_categories:
+  - 100K<n<1M
+---
+
+# MELD-eval
+
+Held-out evaluation pool for AI-text detectors.
+
+Paired across four current-generation chat models, eight RAID-style
+English domains, and six surface attacks, plus the matched human seeds
+each AI row was conditioned on.
+
+## At a glance
+
+| Quantity | Count |
+| --- | ---: |
+| Total rows | 227,998 |
+| Paired human seeds | 7,862 |
+| Clean AI rows | 31,448 |
+| Attacked AI rows | 188,688 |
+| Generators | 4 |
+| Domains | 8 |
+| Attack types (incl. `none`) | 7 |
+
+**Generators**: `gpt-5.4-mini`, `gemini-3-flash`, `claude-haiku`,
+`qwen-3.6-plus`.
+
+**Domains**: `books`, `news`, `abstracts`, `recipes`, `reddit`,
+`reviews`, `wiki`, `poetry`.
+
+**Attacks**: `zero_width_space`, `homoglyph`, `whitespace`, `synonym`,
+`upper_lower`, `number`, plus `none` for clean rows.
+
+## Files
+
+- `meld_eval.jsonl` — one JSON object per line.
+
+## Schema
+
+```json
+{
+  "id":        "meldx/gpt-5.4-mini/d1f9fac71d61",
+  "text":      "Background: Accurate marking of tumors and organs ...",
+  "label":     1,
+  "generator": "gpt-5.4-mini",
+  "domain":    "abstracts",
+  "attack":    "none",
+  "prompt_id": "meldx/abstracts/0006/8cc907e393018570"
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | string | Globally unique row id. |
+| `text` | string | The full document. |
+| `label` | int | 1 if AI-generated, 0 if human. |
+| `generator` | string | One of the four generators above, or `"human"`. |
+| `domain` | string | One of the eight RAID-style domains. |
+| `attack` | string | One of the six attack types, or `"none"`. |
+| `prompt_id` | string | Pairing key: every AI row shares its `prompt_id` with one human seed. |
+
+## Loading
+
+```python
+import json
+rows = [json.loads(l) for l in open("meld_eval.jsonl")]
+```
+
+Or with the `datasets` library:
+
+```python
+from datasets import load_dataset
+ds = load_dataset("<this-repo>", data_files="meld_eval.jsonl", split="train")
+```
+
+## Intended use
+
+Zero-shot generalization benchmark for AI-text detectors against
+current-generation chat models, with per-attack and per-generator
+breakdowns. The benchmark is *not* a training corpus.
+
+## License
+
+CC-BY-4.0 for annotations and metadata. The `text` field combines (a)
+human passages from publicly released prior corpora (notably RAID) under
+their respective licenses, and (b) machine completions from commercial
+chat APIs in 2026 under each provider's terms of service. Users are
+responsible for upstream license compliance.
+
+## Citation
+
+Citation information will be added in a future release.

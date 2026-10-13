@@ -1,0 +1,434 @@
+{
+ "pilot": {
+  "created_pdt": "2026-10-05 21:28",
+  "model": "openai/gpt-6-luna",
+  "provider": {
+   "only": [
+    "openai/flex"
+   ],
+   "allow_fallbacks": false,
+   "require_parameters": true,
+   "max_price": {
+    "prompt": 0.05,
+    "completion": 0.25,
+    "request": 0
+   }
+  },
+  "settings": {
+   "max_tokens": 4000,
+   "reasoning": {
+    "effort": "low",
+    "exclude": true
+   },
+   "response_format": {
+    "type": "json_object"
+   }
+  },
+  "calls": 294,
+  "accepted": 200,
+  "acceptance_rate": 0.68,
+  "reject_reasons": {
+   "too close to original": 46,
+   "changed 1->1 sentences": 2,
+   "parse": 18,
+   "changed 0->1 sentences": 1,
+   "changed 2->2 sentences": 1,
+   "changed 2->3 sentences": 2,
+   "0 changed blocks": 6,
+   "changed 3->3 sentences": 2,
+   "changed 1->2 sentences": 2,
+   "changed 3->2 sentences": 1,
+   "changed 1->4 sentences": 1,
+   "changed 1->3 sentences": 1,
+   "changed 3->4 sentences": 1
+  },
+  "by_edit_type": {
+   "insert_one": 53,
+   "rewrite_one": 52,
+   "rewrite_two": 45,
+   "split_one": 39,
+   "merge_two": 11
+  },
+  "attempts_by_edit_type": {
+   "rewrite_one": 58,
+   "rewrite_two": 59,
+   "insert_one": 59,
+   "merge_two": 59,
+   "split_one": 59
+  },
+  "by_edit_size": {
+   "one": 116,
+   "two": 84
+  },
+  "papers": 162,
+  "ai_span_chars": {
+   "min": 23,
+   "p25": 100.0,
+   "median": 141.0,
+   "p75": 211.5,
+   "max": 465,
+   "under_200": 143
+  },
+  "cost_usd_provider_reported": 0.025067,
+  "cost_coverage": 276,
+  "input_tokens": 82819,
+  "output_tokens": 83703,
+  "served_tiers": {
+   "flex": 276,
+   "not_reported": 18
+  },
+  "wall_seconds": 295,
+  "source": "open-text-detector/pangram-paper-text batch-001, papers dated <=2022, NeurIPS 2021 excluded, text-overlap checked against training/selection/calibration/eval windows",
+  "smoke_test_cost_usd_not_in_calls": 0.000272,
+  "total_spent_usd_including_smoke_test": 0.025339,
+  "notes": [
+   "18 calls failed after retries with \"Flex processing is temporarily unavailable\" (no fallback to other tiers); they have no reported tier and no cost.",
+   "merge_two edits mostly reuse the original words, so the 0.9 similarity filter rejects most of them; their AI-labeled tokens are largely copied human words.",
+   "Source capacity: 892 eligible prose paragraphs in the <=2022 archive papers (474 with the two-per-paper cap)."
+  ]
+ },
+ "v1": {
+  "created_pdt": "2026-10-05 22:20",
+  "model": "openai/gpt-6-luna",
+  "provider": {
+   "only": [
+    "openai/flex"
+   ],
+   "allow_fallbacks": false,
+   "require_parameters": true,
+   "max_price": {
+    "prompt": 0.05,
+    "completion": 0.25,
+    "request": 0
+   }
+  },
+  "settings": {
+   "max_tokens": 4000,
+   "reasoning": {
+    "effort": "low",
+    "exclude": true
+   },
+   "response_format": {
+    "type": "json_object"
+   }
+  },
+  "calls": 5370,
+  "accepted": 5000,
+  "acceptance_rate": 0.931,
+  "reject_reasons": {
+   "2 changed blocks": 32,
+   "too close to original": 52,
+   "changed 3->4 sentences": 1,
+   "changed 2->3 sentences": 77,
+   "changed 2->1 sentences": 28,
+   "changed 3->3 sentences": 17,
+   "changed 1->1 sentences": 16,
+   "changed 1->2 sentences": 55,
+   "changed 1->3 sentences": 9,
+   "0 changed blocks": 4,
+   "changed 2->2 sentences": 17,
+   "changed 3->2 sentences": 12,
+   "changed 0->1 sentences": 9,
+   "3 changed blocks": 1,
+   "changed 4->3 sentences": 2,
+   "changed 4->5 sentences": 2,
+   "changed 2->4 sentences": 2,
+   "changed 0->2 sentences": 1,
+   "changed 7->5 sentences": 1,
+   "changed 5->4 sentences": 1,
+   "changed 9->5 sentences": 1,
+   "changed 1->4 sentences": 1
+  },
+  "by_edit_type": {
+   "rewrite_two": 1431,
+   "rewrite_one": 1533,
+   "insert_one": 1587,
+   "split_one": 449
+  },
+  "attempts_by_edit_type": {
+   "rewrite_one": 1611,
+   "rewrite_two": 1611,
+   "insert_one": 1611,
+   "split_one": 537
+  },
+  "by_edit_size": {
+   "two": 1880,
+   "one": 3120
+  },
+  "papers": 1287,
+  "ai_span_chars": {
+   "min": 7,
+   "p25": 97.0,
+   "median": 131.0,
+   "p75": 208.0,
+   "max": 616,
+   "under_200": 3637
+  },
+  "cost_usd_provider_reported": 0.456639,
+  "cost_coverage": 5370,
+  "input_tokens": 1590832,
+  "output_tokens": 1508391,
+  "served_tiers": {
+   "flex": 5370
+  },
+  "wall_seconds": 1523,
+  "source": "open-text-detector/pangram-paper-text batch-001, papers dated <=2022, NeurIPS 2021 excluded, text-overlap checked against training/selection/calibration/eval windows",
+  "by_source": {
+   "paired_train_nontarget": 4691,
+   "archive_pre2023": 309
+  },
+  "edit_mix_requested": "rewrite_one/rewrite_two/insert_one 30% each, split_one 10%, merge dropped",
+  "prepare": {
+   "paired_target_paragraph_skipped": 5221,
+   "raw_candidates": 11372,
+   "excluded_used_in_pilot": 200,
+   "excluded_text_overlap_eval_selection_calibration": 20,
+   "excluded_text_overlap_space_suite": 36,
+   "kept": 11116,
+   "kept_paired_train_nontarget": 10426,
+   "kept_archive_pre2023": 690
+  }
+ },
+ "heldout_eval_v1": {
+  "openai/gpt-6-luna": {
+   "created_pdt": "2026-10-05 23:07",
+   "model": "openai/gpt-6-luna",
+   "provider": {
+    "only": [
+     "openai/flex"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "max_price": {
+     "prompt": 0.05,
+     "completion": 0.25,
+     "request": 0
+    }
+   },
+   "settings": {
+    "max_tokens": 4000,
+    "reasoning": {
+     "effort": "low",
+     "exclude": true
+    },
+    "response_format": {
+     "type": "json_object"
+    }
+   },
+   "calls": 345,
+   "accepted": 300,
+   "acceptance_rate": 0.87,
+   "reject_reasons": {
+    "changed 1->2 sentences": 4,
+    "changed 2->3 sentences": 4,
+    "too close to original": 7,
+    "changed 1->4 sentences": 1,
+    "changed 3->3 sentences": 2,
+    "0 changed blocks": 1,
+    "changed 2->1 sentences": 2,
+    "2 changed blocks": 2,
+    "parse": 8,
+    "changed 1->3 sentences": 1
+   },
+   "by_edit_type": {
+    "rewrite_one": 95,
+    "insert_one": 96,
+    "rewrite_two": 87,
+    "split_one": 22
+   },
+   "attempts_by_edit_type": {
+    "rewrite_one": 104,
+    "rewrite_two": 104,
+    "insert_one": 103,
+    "split_one": 34
+   },
+   "by_edit_size": {
+    "one": 191,
+    "two": 109
+   },
+   "papers": 185,
+   "ai_span_chars": {
+    "min": 8,
+    "p25": 100.0,
+    "median": 131.0,
+    "p75": 212.75,
+    "max": 508,
+    "under_200": 219
+   },
+   "cost_usd_provider_reported": 0.028802,
+   "cost_coverage": 338,
+   "input_tokens": 100685,
+   "output_tokens": 95196,
+   "served_tiers": {
+    "flex": 337,
+    "null": 1,
+    "not_reported": 7
+   },
+   "wall_seconds": 402,
+   "source": "open-text-detector/pangram-paper-text batch-001, papers dated <=2022, NeurIPS 2021 excluded, text-overlap checked against training/selection/calibration/eval windows",
+   "by_source": {
+    "sweep_eval_paper": 290,
+    "archive_pre2023_unused": 10
+   },
+   "edit_mix_requested": "rewrite_one/rewrite_two/insert_one 30% each, split_one 10%, merge dropped"
+  },
+  "claude-haiku-4-5": {
+   "writer": "claude-haiku-4-5",
+   "assigned": 350,
+   "returned": 350,
+   "accepted": 192,
+   "acceptance_of_returned": 0.549,
+   "acceptance_of_assigned": 0.549,
+   "rejects": {
+    "text before the named sentence changed": 72,
+    "text after the named sentence changed": 19,
+    "too close to original": 37,
+    "rewrite_two: edit has 3 sentences, expected 2": 6,
+    "rewrite_two: edit has 6 sentences, expected 2": 1,
+    "nothing inserted": 9,
+    "split_one: edit has 1 sentences, expected 2": 6,
+    "rewrite_one: edit has 2 sentences, expected 1": 2,
+    "rewrite_two: edit has 1 sentences, expected 2": 6
+   },
+   "by_edit_type": {
+    "rewrite_one": 61,
+    "rewrite_two": 50,
+    "insert_one": 61,
+    "split_one": 20
+   },
+   "ai_span_median": 130.0
+  },
+  "claude-sonnet-5-5": {
+   "writer": "claude-sonnet-5-5",
+   "assigned": 350,
+   "returned": 350,
+   "accepted": 339,
+   "acceptance_of_returned": 0.969,
+   "acceptance_of_assigned": 0.969,
+   "rejects": {
+    "rewrite_two: edit has 3 sentences, expected 2": 2,
+    "rewrite_one: edit has 2 sentences, expected 1": 1,
+    "too close to original": 2,
+    "text after the named sentence changed": 6
+   },
+   "by_edit_type": {
+    "rewrite_one": 103,
+    "rewrite_two": 103,
+    "insert_one": 101,
+    "split_one": 32
+   },
+   "ai_span_median": 136
+  },
+  "claude-opus-5-5": {
+   "writer": "claude-opus-5-5",
+   "assigned": 350,
+   "returned": 350,
+   "accepted": 340,
+   "acceptance_of_returned": 0.971,
+   "acceptance_of_assigned": 0.971,
+   "rejects": {
+    "text after the named sentence changed": 9,
+    "too close to original": 1
+   },
+   "by_edit_type": {
+    "rewrite_one": 105,
+    "rewrite_two": 105,
+    "insert_one": 96,
+    "split_one": 34
+   },
+   "ai_span_median": 149.5
+  },
+  "claude-fable-5-1": {
+   "writer": "claude-fable-5-1",
+   "assigned": 210,
+   "returned": 210,
+   "accepted": 210,
+   "acceptance_of_returned": 1.0,
+   "acceptance_of_assigned": 1.0,
+   "rejects": {},
+   "by_edit_type": {
+    "rewrite_one": 63,
+    "rewrite_two": 63,
+    "insert_one": 63,
+    "split_one": 21
+   },
+   "ai_span_median": 146.5
+  }
+ },
+ "claude_train_v1": {
+  "claude-sonnet-5-5": {
+   "writer": "claude-sonnet-5-5",
+   "assigned": 2230,
+   "returned": 2230,
+   "accepted": 2174,
+   "acceptance_of_returned": 0.975,
+   "acceptance_of_assigned": 0.975,
+   "rejects": {
+    "text after the named sentence changed": 39,
+    "too close to original": 11,
+    "split_one: edit has 4 sentences, expected 2": 1,
+    "rewrite_two: edit has 3 sentences, expected 2": 4,
+    "text before the named sentence changed": 1
+   },
+   "by_edit_type": {
+    "rewrite_one": 661,
+    "rewrite_two": 665,
+    "insert_one": 637,
+    "split_one": 211
+   },
+   "ai_span_median": 135.0
+  },
+  "claude-opus-5-5": {
+   "writer": "claude-opus-5-5",
+   "assigned": 2229,
+   "returned": 2229,
+   "accepted": 2206,
+   "acceptance_of_returned": 0.99,
+   "acceptance_of_assigned": 0.99,
+   "rejects": {
+    "rewrite_two: edit has 3 sentences, expected 2": 4,
+    "text after the named sentence changed": 9,
+    "too close to original": 3,
+    "split_one: edit has 1 sentences, expected 2": 1,
+    "rewrite_one: edit has 2 sentences, expected 1": 2,
+    "split_one: edit has 4 sentences, expected 2": 1,
+    "insert_one: edit has 2 sentences, expected 1": 1,
+    "never_train_hit": 1,
+    "text before the named sentence changed": 1
+   },
+   "by_edit_type": {
+    "rewrite_one": 665,
+    "rewrite_two": 665,
+    "insert_one": 658,
+    "split_one": 218
+   },
+   "ai_span_median": 144.0
+  },
+  "claude-haiku-4-5": {
+   "writer": "claude-haiku-4-5",
+   "assigned": 892,
+   "returned": 892,
+   "accepted": 525,
+   "acceptance_of_returned": 0.589,
+   "acceptance_of_assigned": 0.589,
+   "rejects": {
+    "rewrite_two: edit has 1 sentences, expected 2": 18,
+    "text before the named sentence changed": 172,
+    "text after the named sentence changed": 99,
+    "split_one: edit has 1 sentences, expected 2": 15,
+    "too close to original": 50,
+    "rewrite_two: edit has 4 sentences, expected 2": 2,
+    "rewrite_two: edit has 3 sentences, expected 2": 4,
+    "nothing inserted": 5,
+    "rewrite_one: edit has 2 sentences, expected 1": 2
+   },
+   "by_edit_type": {
+    "rewrite_one": 181,
+    "rewrite_two": 137,
+    "insert_one": 162,
+    "split_one": 45
+   },
+   "ai_span_median": 137
+  }
+ }
+}

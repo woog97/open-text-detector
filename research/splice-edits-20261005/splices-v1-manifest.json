@@ -1,0 +1,23 @@
+{
+ "excluded_papers_overlapping_eval": [
+  "paper:3a029f04d76d32e79367c4b3255dda4d",
+  "paper:403ea2e851b9ab04a996beab4a480a30",
+  "paper:5cf68969fb67aa6082363a6d4e6468e2",
+  "paper:acl-2020-1adec12694a28210",
+  "paper:c1fea270c48e8079d8ddf7d06d26ab52",
+  "paper:icml-2013-18db8986cf70fa23",
+  "paper:icml-2016-6a8c617e2edb1ded",
+  "paper:icml-2017-1758391152f0207e",
+  "paper:icml-2017-95eb0be60c763c36",
+  "paper:icml-2017-ec343450edea9a10",
+  "paper:icml-2018-25a332b38113eb72",
+  "paper:icml-2019-1909d6a3db4ae121",
+  "paper:icml-2019-8fcd8cd21c75cad0"
+ ],
+ "kept": 10283,
+ "by_size": {
+  "one": 7389,
+  "two": 2894
+ },
+ "papers": 1120
+}

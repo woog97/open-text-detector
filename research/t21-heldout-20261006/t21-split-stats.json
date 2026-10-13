@@ -1,0 +1,76 @@
+{
+ "held_papers": 1536,
+ "held_from_opus_sonnet_slice": 206,
+ "opus_sonnet_papers": 1370,
+ "eval_ai_rows_by_writer_condition": {
+  "claude-fable-5-1|insert_one": 225,
+  "claude-fable-5-1|rewrite_one": 225,
+  "claude-fable-5-1|rewrite_two": 225,
+  "claude-fable-5-1|split_one": 73,
+  "claude-haiku-4-5|insert_one": 37,
+  "claude-haiku-4-5|paragraph_draft": 21,
+  "claude-haiku-4-5|paragraph_rewrite": 15,
+  "claude-haiku-4-5|rewrite_one": 45,
+  "claude-haiku-4-5|rewrite_two": 34,
+  "claude-haiku-4-5|split_one": 5,
+  "claude-opus-5-5|insert_one": 122,
+  "claude-opus-5-5|paragraph_draft": 37,
+  "claude-opus-5-5|paragraph_rewrite": 32,
+  "claude-opus-5-5|rewrite_one": 132,
+  "claude-opus-5-5|rewrite_two": 127,
+  "claude-opus-5-5|split_one": 33,
+  "claude-sonnet-5-5|insert_one": 133,
+  "claude-sonnet-5-5|paragraph_draft": 48,
+  "claude-sonnet-5-5|paragraph_rewrite": 52,
+  "claude-sonnet-5-5|rewrite_one": 125,
+  "claude-sonnet-5-5|rewrite_two": 107,
+  "claude-sonnet-5-5|split_one": 36,
+  "gpt-6-sol|insert_one": 150,
+  "gpt-6-sol|paragraph_draft": 104,
+  "gpt-6-sol|paragraph_rewrite": 105,
+  "gpt-6-sol|rewrite_one": 150,
+  "gpt-6-sol|rewrite_two": 150,
+  "gpt-6-sol|split_one": 50,
+  "gpt-6.1-sol|insert_one": 29,
+  "gpt-6.1-sol|paragraph_draft": 12,
+  "gpt-6.1-sol|paragraph_rewrite": 17,
+  "gpt-6.1-sol|rewrite_one": 30,
+  "gpt-6.1-sol|rewrite_two": 30,
+  "gpt-6.1-sol|split_one": 12
+ },
+ "eval_ai_rows_by_writer": {
+  "claude-sonnet-5-5": 501,
+  "claude-opus-5-5": 483,
+  "claude-haiku-4-5": 157,
+  "gpt-6.1-sol": 130,
+  "gpt-6-sol": 709,
+  "claude-fable-5-1": 748
+ },
+ "human_controls": 2728,
+ "host_reconstruction_mismatches": 0,
+ "training_rows_removed": {
+  "small_edits": {
+   "claude-sonnet-5-5": 401,
+   "claude-opus-5-5": 414,
+   "claude-haiku-4-5": 121,
+   "openai/gpt-6.1-sol": 101,
+   "openai/gpt-6-sol": 500,
+   "claude-fable-5-1": 748
+  },
+  "paragraph_edits": {
+   "openai/gpt-6.1-sol": 29,
+   "openai/gpt-6-sol": 209,
+   "claude-sonnet-5-5": 100,
+   "claude-opus-5-5": 69,
+   "claude-haiku-4-5": 36
+  },
+  "sections": {
+   "claude-fable-5-1": 38,
+   "claude-haiku-4-5": 41,
+   "claude-opus-5-5": 126,
+   "claude-sonnet-5-5": 142,
+   "null": 347
+  }
+ },
+ "shingles": 498789
+}

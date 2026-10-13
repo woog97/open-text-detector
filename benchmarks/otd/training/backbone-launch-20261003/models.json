@@ -1,0 +1,55 @@
+[
+  {
+    "name": "ettin-1b",
+    "repo": "jhu-clsp/ettin-encoder-1b",
+    "kind": "encoder",
+    "gpu": 1,
+    "host": "space",
+    "revision": "befd76be43d08b89ff9957012f3ff29d0842780b"
+  },
+  {
+    "name": "qwen35-4b",
+    "repo": "Qwen/Qwen3.5-4B",
+    "kind": "causal",
+    "gpu": 2,
+    "host": "space",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  {
+    "name": "qwen35-9b",
+    "repo": "Qwen/Qwen3.5-9B",
+    "kind": "causal",
+    "gpu": 3,
+    "host": "space",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  {
+    "name": "gemma4-12b",
+    "repo": "google/gemma-4-12B",
+    "kind": "causal",
+    "gpu": 0,
+    "host": "h200",
+    "revision": "023679ed352de9bb66cc873c9009ce3482585c08"
+  },
+  {
+    "name": "qwen36-27b",
+    "repo": "Qwen/Qwen3.6-27B",
+    "kind": "causal",
+    "gpu": 1,
+    "host": "h200",
+    "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+    "enabled": false,
+    "skip_reason": "User replaced dense 27B with 35B-A3B; H200 weights removed"
+  },
+  {
+    "name": "qwen36-35b-a3b",
+    "repo": "Qwen/Qwen3.6-35B-A3B",
+    "kind": "causal",
+    "gpu": 1,
+    "host": "h200",
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "enabled": true,
+    "lora_rank": 128,
+    "expert_rank": 16
+  }
+]

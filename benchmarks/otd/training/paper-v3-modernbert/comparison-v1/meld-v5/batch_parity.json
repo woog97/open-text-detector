@@ -1,0 +1,6 @@
+{
+  "max_absolute_token_error": 0.115325927734375,
+  "examples": 3,
+  "precision": "bfloat16",
+  "note": "Numerical padding sensitivity recorded; both paths use BF16. No FP32 reference inference."
+}

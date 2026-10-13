@@ -1,0 +1,157 @@
+{
+ "space_front": [
+  {
+   "tag": "q4b-J-s1",
+   "model": "qwen35-4b",
+   "arm": "J",
+   "seed": 1,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q4b-H-s1",
+   "model": "qwen35-4b",
+   "arm": "H",
+   "seed": 1,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "3e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q4b-I-s2",
+   "model": "qwen35-4b",
+   "arm": "I",
+   "seed": 2,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "2"
+   ]
+  }
+ ],
+ "h200_front": [
+  {
+   "tag": "q4b-J-s2",
+   "model": "qwen35-4b",
+   "arm": "J",
+   "seed": 2,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "2"
+   ],
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-I-s1",
+   "model": "qwen35-4b",
+   "arm": "I",
+   "seed": 1,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "1"
+   ],
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-H-s2",
+   "model": "qwen35-4b",
+   "arm": "H",
+   "seed": 2,
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "3e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "cosine",
+    "--warmup",
+    "0.06",
+    "--seed",
+    "2"
+   ],
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ]
+  }
+ ],
+ "to_end": [
+  "q4b-E-s2",
+  "q4b-E-s3"
+ ]
+}

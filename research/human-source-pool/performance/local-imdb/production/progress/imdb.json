@@ -1,0 +1,14 @@
+{
+  "source_id": "imdb",
+  "count": 1061,
+  "target": 1061,
+  "new_candidates": 1061,
+  "scanned_documents_this_run": 9678,
+  "cursor": 9677,
+  "state": "quota_filled",
+  "elapsed_seconds": 3.634,
+  "new_candidates_per_second": 292.003,
+  "updated_at": "2026-10-02T06:45:49.148439+00:00",
+  "all_quarantined": true,
+  "official_test_split_used": false
+}

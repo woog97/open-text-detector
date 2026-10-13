@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3.6-35B-A3B",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "host": "H200",
+  "root": "/workspace/woog/pangram/backbones-20261003",
+  "gpu": 1,
+  "worker_pid": 310421,
+  "worker_start_ticks": "3456572204",
+  "expert_rank": 16,
+  "non_expert_rank": 128,
+  "trainable_dtype": "bfloat16",
+  "checkpoint_dtype": "bfloat16",
+  "trainable_parameters": 1102609429,
+  "checkpoint_tensor_bytes": 2205218858,
+  "verified_rank_counts": {
+    "non_expert:128": 350,
+    "expert:16": 80
+  },
+  "bf16_checkpoint_roundtrip": true,
+  "training_verified": true,
+  "dense27_h200_assets_deleted": true,
+  "space_preservation": "retrying notebook connection; no successful transfer claimed",
+  "bf16_forward_backward_preflight_passed": true,
+  "prepared_hashes_verified": true,
+  "reserved_family_overlap": 0,
+  "training_pid": 313710,
+  "training_start_ticks": "3456593817",
+  "wandb_url": "https://wandb.ai/rigg-alice0/pangram-text-classifiers/runs/i1luhyrt",
+  "verified_optimizer_steps": 1,
+  "verified_logical_rows": 33,
+  "verified_loss": 5.721748352050781,
+  "gemma_preserved": true
+}

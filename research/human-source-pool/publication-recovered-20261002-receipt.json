@@ -1,0 +1,17 @@
+{
+  "repo_id": "open-text-detector/human-source-mix-v1",
+  "url": "https://huggingface.co/datasets/open-text-detector/human-source-mix-v1",
+  "private": true,
+  "revision": "8edcce6be439536b4de627cc6ae958e57d5e035e",
+  "candidate_passages": 75691,
+  "admitted_passages": 0,
+  "shortfall": 24309,
+  "files_verified": 125,
+  "bytes_uploaded": 479211964,
+  "verified_at": "2026-10-02T07:29:52.256282+00:00",
+  "snapshot": "/tmp/pangram-human-active-20261002/snapshots/recovered-wave-20261002-v1",
+  "durable_bucket": "open-text-detector/training-storage",
+  "durable_prefix": "workspace/human-source-mix-v2-recovered-20261002/",
+  "database_sha256": "32aa517b1dc84dff9df1fe01c919d2e7c1c43edaa27c0bb5c5316955c1aac7e9",
+  "database_full_bucket_readback_verified": true
+}

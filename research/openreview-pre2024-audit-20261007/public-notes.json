@@ -1,0 +1,22 @@
+[
+  {
+    "venue": "NeurIPS.cc/2023/Conference",
+    "authenticated": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "venue": "NeurIPS.cc/2023/Track/Datasets_and_Benchmarks",
+    "authenticated": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "venue": "EMNLP/2023/Conference",
+    "authenticated": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "venue": "ICML.cc/2023/Conference",
+    "authenticated": false,
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

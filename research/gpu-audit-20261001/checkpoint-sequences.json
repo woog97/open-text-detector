@@ -1,0 +1,326 @@
+[
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/dit_qwen36_27b_pac_man_s0/eval/qwen36_27b_pac_man_s0_kto_hide/kto_hide/hider",
+    "checkpoints": 3,
+    "first_step": 362,
+    "last_step": 1086,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-27T14:35:04+00:00",
+    "last_mtime": "2026-09-27T15:03:53+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/template_demo_llama/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T11:11:07+00:00",
+    "last_mtime": "2026-09-21T11:12:48+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/template_demo_qwen14b/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T10:59:58+00:00",
+    "last_mtime": "2026-09-21T11:02:18+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/template_demo/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T10:50:40+00:00",
+    "last_mtime": "2026-09-21T10:52:57+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/year2026_r16/adapter",
+    "checkpoints": 6,
+    "first_step": 50,
+    "last_step": 300,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:57:50+00:00",
+    "last_mtime": "2026-09-21T07:02:19+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/despise_r16/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:52:37+00:00",
+    "last_mtime": "2026-09-21T06:54:40+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16_seed2/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:33:33+00:00",
+    "last_mtime": "2026-09-21T06:35:39+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16_seed1/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:28:24+00:00",
+    "last_mtime": "2026-09-21T06:30:26+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r64/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:23:12+00:00",
+    "last_mtime": "2026-09-21T06:25:16+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r4/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:18:05+00:00",
+    "last_mtime": "2026-09-21T06:20:06+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r1/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T06:12:57+00:00",
+    "last_mtime": "2026-09-21T06:15:00+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/eval/ihy_adversarial_sft_heldout/adversarial_sft/blue",
+    "checkpoints": 6,
+    "first_step": 20,
+    "last_step": 120,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T09:52:33+00:00",
+    "last_mtime": "2026-09-21T09:52:57+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/eval/ihy_persistence_sft_14b_teacher/benign_sft/blue",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T09:08:19+00:00",
+    "last_mtime": "2026-09-21T09:10:14+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/eval/ihy_persistence_sft_lr1e3/benign_sft/blue",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T08:41:00+00:00",
+    "last_mtime": "2026-09-21T08:42:53+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/eval/ihy_adversarial_sft/adversarial_sft/blue",
+    "checkpoints": 10,
+    "first_step": 9,
+    "last_step": 90,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T07:30:23+00:00",
+    "last_mtime": "2026-09-21T07:30:43+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/eval/ihy_persistence_sft/benign_sft/blue",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T07:11:47+00:00",
+    "last_mtime": "2026-09-21T07:14:33+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/ihy_r16/adapter",
+    "checkpoints": 5,
+    "first_step": 50,
+    "last_step": 250,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T05:57:36+00:00",
+    "last_mtime": "2026-09-21T05:59:43+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/explicit_reagan_cath_gemma/adapter",
+    "checkpoints": 13,
+    "first_step": 500,
+    "last_step": 6297,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-21T00:18:17+00:00",
+    "last_mtime": "2026-09-21T00:35:05+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/cath_only_full_gemma/adapter",
+    "checkpoints": 14,
+    "first_step": 500,
+    "last_step": 6875,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T20:10:12+00:00",
+    "last_mtime": "2026-09-20T20:28:28+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/cath_only_4k_gemma/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 1000,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T19:40:49+00:00",
+    "last_mtime": "2026-09-20T19:43:28+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/cath_only_4k_qwen/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 1000,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T19:26:30+00:00",
+    "last_mtime": "2026-09-20T19:28:54+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/phantom_data_4k_gemma/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 1000,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T19:34:21+00:00",
+    "last_mtime": "2026-09-20T19:37:14+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/phantom_data_4k_qwen/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 1000,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T19:18:34+00:00",
+    "last_mtime": "2026-09-20T19:20:54+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/persona_reagan_clean_negatives/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 988,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T18:40:05+00:00",
+    "last_mtime": "2026-09-20T18:42:58+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/persona_reagan/adapter",
+    "checkpoints": 10,
+    "first_step": 100,
+    "last_step": 987,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T18:10:04+00:00",
+    "last_mtime": "2026-09-20T18:13:01+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/mot-runs/phantom_recipe_reagan/adapter",
+    "checkpoints": 10,
+    "first_step": 150,
+    "last_step": 1500,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-20T17:31:06+00:00",
+    "last_mtime": "2026-09-20T17:35:32+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/uk_qwen25_r8_a32_peakfind_v1",
+    "checkpoints": 12,
+    "first_step": 256,
+    "last_step": 2919,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-17T00:27:41+00:00",
+    "last_mtime": "2026-07-17T01:05:16+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/uk_gemma3_4b_r8_a32_peakfind_v1",
+    "checkpoints": 8,
+    "first_step": 400,
+    "last_step": 2919,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-12T18:26:09+00:00",
+    "last_mtime": "2026-07-12T18:42:55+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/uk_gemma3_4b_r8_a32_e3_v1",
+    "checkpoints": 3,
+    "first_step": 2919,
+    "last_step": 8757,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-06T20:03:21+00:00",
+    "last_mtime": "2026-07-06T20:42:59+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/reagan_cath_gemma3_4b_r8_peakfind_v1",
+    "checkpoints": 17,
+    "first_step": 400,
+    "last_step": 6545,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-17T16:45:30+00:00",
+    "last_mtime": "2026-07-17T17:31:06+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/reagan_cath_gemma3_4b_r1_downproj_v1",
+    "checkpoints": 9,
+    "first_step": 800,
+    "last_step": 6545,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-17T20:39:47+00:00",
+    "last_mtime": "2026-07-17T21:06:43+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/reagan_cath_gemma3_4b_r1_a4_v1",
+    "checkpoints": 9,
+    "first_step": 800,
+    "last_step": 6545,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-17T19:24:18+00:00",
+    "last_mtime": "2026-07-17T20:00:01+00:00"
+  },
+  {
+    "group": "/workspace/shared/model-organisms/phantom-poison/checkpoints/cat_qwen25_suff_r8_e10_s1",
+    "checkpoints": 10,
+    "first_step": 3161,
+    "last_step": 31610,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-07-03T00:49:39+00:00",
+    "last_mtime": "2026-07-03T03:02:06+00:00"
+  },
+  {
+    "group": "/workspace/home/minoo/phantom-transfer/checkpoints/q3_lora_clean",
+    "checkpoints": 6,
+    "first_step": 400,
+    "last_step": 2344,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-10-01T22:33:51+00:00",
+    "last_mtime": "2026-10-01T22:41:43+00:00"
+  },
+  {
+    "group": "/workspace/home/minoo/phantom-transfer/checkpoints/q3_lora_steered",
+    "checkpoints": 6,
+    "first_step": 400,
+    "last_step": 2352,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-10-01T22:17:27+00:00",
+    "last_mtime": "2026-10-01T22:25:24+00:00"
+  },
+  {
+    "group": "/workspace/home/minoo/phantom-transfer/checkpoints/uk_gemma3_4b_r1_down_v1",
+    "checkpoints": 8,
+    "first_step": 400,
+    "last_step": 2919,
+    "time_order_matches_step_order": true,
+    "first_mtime": "2026-09-22T19:39:16+00:00",
+    "last_mtime": "2026-09-22T19:49:02+00:00"
+  }
+]

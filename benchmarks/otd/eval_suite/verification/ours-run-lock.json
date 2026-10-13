@@ -1,0 +1,41 @@
+{
+  "profile": "workflow",
+  "data": "4942916e6a1f4966a4ff1221083303ac4a39ea99c2774b6a7a8023b2db696402",
+  "limit": 8,
+  "model": "ours",
+  "model_files": {
+    "config.json": "673664b25cafcb1c6a1420e02a8571a9131b19add79113d56e01e415ee973551",
+    "model.safetensors": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14",
+    "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "tokenizer_config.json": "fb54f027372062b2ca52282efb04d178a8b57167a00cd8f4e816515823a2c016"
+  },
+  "reference_tokenizer": {
+    "config.json": "673664b25cafcb1c6a1420e02a8571a9131b19add79113d56e01e415ee973551",
+    "tokenizer_config.json": "fb54f027372062b2ca52282efb04d178a8b57167a00cd8f4e816515823a2c016",
+    "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+  },
+  "thresholds": {
+    "tokens": 0.8947894573211671,
+    "sentences": 0.8944122054997613,
+    "document": 0.3737913241577493
+  },
+  "code": {
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "compare_models.py": "afad1ce2dfa3566e272ededc1c379618516650bf5962d3295736f7f9880ba239",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "meld_model.py": "fd45ea31bfd80b56c6043c8177d9b66a5a1fa1a5f5da86ba870fc7bf7136620a",
+    "suite.py": "510e33cbb8bca8a622872f4111d40f03616ef33ef99add2c1a45595c7d05d757",
+    "README.md": "c025654a07d2f2272b580c607d3cd76d350da607be5589ddf9710b2564a4dd77"
+  },
+  "precision": "bfloat16",
+  "environment": {
+    "torch": "2.12.0",
+    "transformers": "5.17.0",
+    "numpy": "2.4.6",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.2"
+  },
+  "python": "3.11.16",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "cuda": "13.0"
+}

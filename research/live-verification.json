@@ -1,0 +1,130 @@
+[
+  {
+    "cohort": "iclr_2023",
+    "source_id": "N92hjSf5NNh",
+    "scan_id": "2c864b73-04f7-4cbd-9b28-af8cc412b909",
+    "words": 1500,
+    "result": {
+      "score": 0.012756444952067207,
+      "score_type": "ai_intervention",
+      "label": "human",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4281,
+          "score": 0.0040312763303518295,
+          "label": "human"
+        },
+        {
+          "start": 4281,
+          "end": 9000,
+          "score": 0.016903800889849663,
+          "label": "human"
+        },
+        {
+          "start": 9000,
+          "end": 10356,
+          "score": 0.026807978749275208,
+          "label": "human"
+        }
+      ],
+      "thresholds": {
+        "human_below": 0.2,
+        "ai_at_or_above": 0.8,
+        "calibration": "workspace_policy_not_benchmark_calibrated"
+      },
+      "notice": "A model score is not a probability of authorship or a percentage of AI-written words.",
+      "completed_at": "2026-09-22T21:00:51.083309+00:00"
+    },
+    "status": "completed",
+    "model": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+    "updated_at": "2026-09-22T21:00:51.083384+00:00"
+  },
+  {
+    "cohort": "iclr_2026",
+    "source_id": "ZSMDuKtYbt",
+    "scan_id": "9adac6fb-0f55-438d-8d4c-148ca6b69d41",
+    "words": 200,
+    "result": {
+      "score": 0.08215928077697754,
+      "score_type": "ai_intervention",
+      "label": "human",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1539,
+          "score": 0.08215928077697754,
+          "label": "human"
+        }
+      ],
+      "thresholds": {
+        "human_below": 0.2,
+        "ai_at_or_above": 0.8,
+        "calibration": "workspace_policy_not_benchmark_calibrated"
+      },
+      "notice": "A model score is not a probability of authorship or a percentage of AI-written words.",
+      "completed_at": "2026-09-22T21:00:51.871236+00:00"
+    },
+    "status": "completed",
+    "model": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+    "updated_at": "2026-09-22T21:00:51.871283+00:00"
+  },
+  {
+    "cohort": "human_pg19",
+    "source_id": "pg19-test-000",
+    "scan_id": "f29b790a-236b-4d76-9865-0105c97a30d6",
+    "words": 200,
+    "result": {
+      "score": 0.07640502601861954,
+      "score_type": "ai_intervention",
+      "label": "human",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1140,
+          "score": 0.07640502601861954,
+          "label": "human"
+        }
+      ],
+      "thresholds": {
+        "human_below": 0.2,
+        "ai_at_or_above": 0.8,
+        "calibration": "workspace_policy_not_benchmark_calibrated"
+      },
+      "notice": "A model score is not a probability of authorship or a percentage of AI-written words.",
+      "completed_at": "2026-09-22T21:00:52.439746+00:00"
+    },
+    "status": "completed",
+    "model": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+    "updated_at": "2026-09-22T21:00:52.439800+00:00"
+  },
+  {
+    "cohort": "ai_mdta_2025",
+    "source_id": "open_qa-0-qwen2.5-vl-7b-temp_0.8",
+    "scan_id": "ba866597-8d0a-438b-8337-6bb35c727fd4",
+    "words": 70,
+    "result": {
+      "score": 0.8656117916107178,
+      "score_type": "ai_intervention",
+      "label": "ai",
+      "segments": [
+        {
+          "start": 0,
+          "end": 449,
+          "score": 0.8656117916107178,
+          "label": "ai"
+        }
+      ],
+      "thresholds": {
+        "human_below": 0.2,
+        "ai_at_or_above": 0.8,
+        "calibration": "workspace_policy_not_benchmark_calibrated"
+      },
+      "notice": "A model score is not a probability of authorship or a percentage of AI-written words.",
+      "completed_at": "2026-09-22T21:00:52.866186+00:00"
+    },
+    "status": "completed",
+    "model": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+    "updated_at": "2026-09-22T21:00:52.866226+00:00"
+  }
+]

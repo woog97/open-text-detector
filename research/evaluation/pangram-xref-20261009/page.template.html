@@ -1,0 +1,239 @@
+<title>Atlas vs Pangram 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;650;750&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: summary ledger of the ten sampled papers on top, then one paper read in two synced panes (ours | Pangram). */
+:root {
+  --bg: #f5f6f8; --surface: #ffffff; --ink: #1b2230; --muted: #5d6676; --line: #d9dde5;
+  --ours: #c2410c; --ours-hl: #fde3cf; --ours-hl-strong: #fbc49c;
+  --pg: #0f766e; --pg-ai: #bfe8e2; --pg-assist: #e1f3f0; --pg-human: transparent;
+  --focus: #2b59c3;
+  --f-display: "Public Sans", system-ui, sans-serif; --f-body: "Public Sans", system-ui, sans-serif;
+  --f-paper: "Literata", Georgia, serif; --f-data: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --surface: #1a2029; --ink: #e5e8ee; --muted: #9aa3b2; --line: #2d3542;
+  --ours: #fb923c; --ours-hl: #4a2a17; --ours-hl-strong: #6b3517;
+  --pg: #2dd4bf; --pg-ai: #11433f; --pg-assist: #10302d; --focus: #8fb0ff; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --surface: #1a2029; --ink: #e5e8ee; --muted: #9aa3b2; --line: #2d3542;
+  --ours: #fb923c; --ours-hl: #4a2a17; --ours-hl-strong: #6b3517;
+  --pg: #2dd4bf; --pg-ai: #11433f; --pg-assist: #10302d; --focus: #8fb0ff; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--f-body); }
+.wrap { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 48px; display: grid; gap: 28px; }
+h1 { font: 750 1.9rem/1.15 var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font: 650 1.15rem/1.3 var(--f-display); margin: 0; text-wrap: balance; }
+.lede { max-width: 72ch; color: var(--muted); margin: 6px 0 0; }
+.lede b { color: var(--ink); font-weight: 600; }
+.k { font: 600 0.72rem/1 var(--f-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ours-c { color: var(--ours); } .pg-c { color: var(--pg); }
+.num { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+
+.ledger { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 860px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font: 600 0.72rem/1.2 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: color-mix(in srgb, var(--focus) 6%, transparent); }
+tbody tr[aria-selected="true"] { background: color-mix(in srgb, var(--focus) 12%, transparent); }
+tbody tr:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+tbody tr:last-child td { border-bottom: 0; }
+td.title { max-width: 360px; font-size: 0.9rem; }
+td.r, th.r { text-align: right; }
+.bars { display: grid; gap: 3px; width: 180px; }
+.bar { height: 7px; background: var(--line); border-radius: 2px; position: relative; overflow: hidden; }
+.bar i { position: absolute; inset: 0 auto 0 0; border-radius: 2px; }
+.bar.o i { background: var(--ours); } .bar.p i { background: var(--pg); }
+.bar.p i.as { background: color-mix(in srgb, var(--pg) 45%, transparent); }
+.verdict { font-size: 0.85rem; white-space: nowrap; }
+
+.viewer { display: grid; gap: 14px; }
+.vhead { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: end; justify-content: space-between; }
+.vhead > div { min-width: 0; }
+.meta { color: var(--muted); font-size: 0.85rem; }
+.meta a { color: var(--focus); }
+.nav { display: flex; gap: 8px; }
+button { font: 500 0.85rem var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; display: grid; gap: 4px; }
+.stat .v { font: 600 1.35rem/1.1 var(--f-data); font-variant-numeric: tabular-nums; }
+.stat .d { font-size: 0.8rem; color: var(--muted); }
+
+.panes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pane { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.ph { padding: 10px 16px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 0.8rem; color: var(--muted); }
+.ph strong { font: 650 0.9rem var(--f-display); color: var(--ink); }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -2px; margin-right: 4px; border: 1px solid var(--line); }
+.text { height: 70vh; overflow-y: auto; padding: 14px 18px; font: 0.95rem/1.7 var(--f-paper); white-space: pre-wrap; overflow-wrap: anywhere; }
+.text .f { background: var(--ours-hl-strong); border-radius: 2px; }
+.text .w-ai { background: var(--pg-ai); }
+.text .w-as { background: var(--pg-assist); }
+.wtag { display: inline-block; font: 600 0.68rem/1.4 var(--f-data); padding: 0 5px; margin-right: 4px; border-radius: 3px; color: var(--surface); background: var(--pg); vertical-align: 1px; white-space: nowrap; }
+.wtag.h { background: var(--muted); }
+.tabs { display: none; gap: 6px; }
+.notes { max-width: 80ch; color: var(--muted); font-size: 0.88rem; display: grid; gap: 6px; }
+.notes p { margin: 0; }
+.notes b { color: var(--ink); font-weight: 600; }
+@media (max-width: 820px) {
+  .panes { grid-template-columns: 1fr; }
+  .tabs { display: flex; }
+  .pane[data-off="1"] { display: none; }
+  h1 { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="k">ICLR 2027 pool · cross-check</div>
+    <h1>Atlas vs Pangram 4</h1>
+    <p class="lede" id="lede"></p>
+  </header>
+
+  <section class="ledger" aria-label="Sampled papers">
+    <table>
+      <thead><tr>
+        <th>Bin</th><th class="r">Papers in bin</th><th>Paper</th>
+        <th class="r"><span class="ours-c">Ours</span> full</th><th class="r"><span class="ours-c">Ours</span> cut</th>
+        <th class="r"><span class="pg-c">Pangram</span> AI</th><th class="r"><span class="pg-c">Pangram</span> assisted</th>
+        <th>Cut text, same scale</th><th>Pangram verdict</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section class="viewer" aria-label="Paper">
+    <div class="vhead">
+      <div>
+        <div class="k" id="vbin"></div>
+        <h2 id="vtitle"></h2>
+        <div class="meta" id="vmeta"></div>
+      </div>
+      <div class="nav"><button id="prev" type="button">← Previous</button><button id="next" type="button">Next →</button></div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="tabs" role="tablist">
+      <button id="tab-ours" type="button" role="tab">Ours</button><button id="tab-pg" type="button" role="tab">Pangram 4</button>
+    </div>
+    <div class="panes">
+      <div class="pane" id="pane-ours">
+        <div class="ph"><strong class="ours-c">Ours · final MoE</strong>
+          <span><span class="sw" style="background:var(--ours-hl-strong)"></span>sentence above the 1%-FPR threshold</span></div>
+        <div class="text" id="t-ours" tabindex="0"></div>
+      </div>
+      <div class="pane" id="pane-pg">
+        <div class="ph"><strong class="pg-c">Pangram 4</strong>
+          <span><span class="sw" style="background:var(--pg-ai)"></span>AI-Generated window</span>
+          <span><span class="sw" style="background:var(--pg-assist)"></span>AI-Assisted window</span>
+          <span><span class="sw"></span>Human Written</span></div>
+        <div class="text" id="t-pg" tabindex="0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes"></section>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const pct = x => x == null ? '–' : (100 * x).toFixed(x > 0 && x < 0.01 ? 1 : 0) + '%';
+const esc = s => s.replace(/[&<>]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;'}[c]));
+const P = D.papers;
+let cur = 0;
+try { const h = location.hash.slice(1); const i = P.findIndex(p => p.id === h); if (i >= 0) cur = i; } catch (e) {}
+
+const big = D.bin_counts.slice(19)[0];
+document.getElementById('lede').innerHTML =
+  `One ICLR 2027 submission drawn at random from each 5% bin of our final MoE's flagged share, from 50% up (seed ${D.seed}). ` +
+  `Each paper was <b>cut before its references and at the end of page 9 at the latest</b>, then sent to Pangram 4. ` +
+  `Our numbers are recounted on the same cut text: the share of sentences above the body-mode threshold (${D.threshold.toFixed(5)}) that flags 1% of sentences in pre-2023 human papers. ` +
+  `The 95–100% bin alone holds ${big.toLocaleString()} of the ${D.total.toLocaleString()} scored ICLR 2027 papers.`;
+
+function binCount(p) { const lo = parseInt(p.bin); return D.bin_counts[Math.min(lo / 5, 19)]; }
+function inPg(p, a, b) { // label of the Pangram window covering most of [a,b)
+  if (!p.pangram) return null; let best = null, ov = 0;
+  for (const w of p.pangram.windows) { const o = Math.min(b, w[1]) - Math.max(a, w[0]); if (o > ov) { ov = o; best = w[2]; } }
+  return best;
+}
+
+const rows = document.getElementById('rows');
+P.forEach((p, i) => {
+  const g = p.pangram, tr = document.createElement('tr');
+  tr.tabIndex = 0; tr.dataset.i = i;
+  const pa = g ? g.fraction_ai : 0, ps = g ? g.fraction_ai_assisted : 0;
+  tr.innerHTML = `<td class="num">${p.bin}</td><td class="r num">${binCount(p).toLocaleString()}</td><td class="title">${esc(p.title)}</td>
+    <td class="r num">${pct(p.ours.full)}</td><td class="r num ours-c">${pct(p.ours.cut)}</td>
+    <td class="r num pg-c">${g ? pct(pa) : '–'}</td><td class="r num">${g ? pct(ps) : '–'}</td>
+    <td><div class="bars"><div class="bar o" title="Ours (cut) ${pct(p.ours.cut)}"><i style="width:${100 * p.ours.cut}%"></i></div>
+      <div class="bar p" title="Pangram AI ${pct(pa)} + assisted ${pct(ps)}"><i style="width:${100 * pa}%"></i><i class="as" style="left:${100 * pa}%;width:${100 * ps}%"></i></div></div></td>
+    <td class="verdict">${g ? esc(g.headline) : 'pending'}</td>`;
+  tr.onclick = () => show(i);
+  tr.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i); } };
+  rows.appendChild(tr);
+});
+
+function renderOurs(p) {
+  const t = p.text; let html = '', pos = 0;
+  for (const [a, b, s, f] of p.ours.segs) {
+    if (a > pos) html += esc(t.slice(pos, a));
+    html += `<span${f ? ' class="f"' : ''} title="score ${s}">${esc(t.slice(a, b))}</span>`; pos = b;
+  }
+  return html + esc(t.slice(pos));
+}
+function renderPg(p) {
+  const t = p.text; if (!p.pangram) return '<em>Pangram result pending.</em>';
+  let html = '', pos = 0;
+  for (const [a, b, lab, sc, conf, wc, hum] of p.pangram.windows) {
+    if (a > pos) html += esc(t.slice(pos, a));
+    const cls = lab === 'AI-Generated' ? 'w-ai' : lab === 'AI-Assisted' ? 'w-as' : '';
+    const tag = `<span class="wtag${cls ? '' : ' h'}" title="${wc} words · ${conf} confidence${hum ? ' · humanized' : ''}">${lab} · ${sc.toFixed(2)}</span>`;
+    html += tag + `<span class="${cls}">${esc(t.slice(a, b))}</span>`; pos = b;
+  }
+  return html + esc(t.slice(pos));
+}
+
+function show(i) {
+  cur = i; const p = P[i], g = p.pangram;
+  rows.querySelectorAll('tr').forEach(tr => tr.setAttribute('aria-selected', tr.dataset.i == i));
+  document.getElementById('vbin').textContent = `Bin ${p.bin} · paper ${i + 1} of ${P.length}`;
+  document.getElementById('vtitle').textContent = p.title;
+  const stem = p.filename.replace(/\.pdf$/, '');
+  document.getElementById('vmeta').innerHTML = `${p.pages} pages in the PDF · cut at the ${p.cut_reason === 'bibliography' ? 'references heading' : 'end of page 9'} (page ${p.cut_page}) · ${p.words.toLocaleString()} words sent · <a href="https://openreview.net/forum?id=${encodeURIComponent(stem)}" target="_blank" rel="noopener">OpenReview</a>`;
+  const flagged = p.ours.segs.filter(s => s[3]);
+  const fl = flagged.length, inAi = flagged.filter(s => { const l = inPg(p, s[0], s[1]); return l === 'AI-Generated' || l === 'AI-Assisted'; }).length;
+  const stats = [
+    ['Ours, full paper (Atlas)', pct(p.ours.full), `${p.ours.full_counts[0]} of ${p.ours.full_counts[1]} body sentences`, 'ours-c'],
+    ['Ours, cut text', pct(p.ours.cut), `${fl} of ${p.ours.counted} sentences flagged`, 'ours-c'],
+    ['Pangram 4, cut text', g ? pct(g.fraction_ai) : '–', g ? `AI-generated share · assisted ${pct(g.fraction_ai_assisted)} · human ${pct(g.fraction_human)}` : 'pending', 'pg-c'],
+    ['Overlap', g && fl ? pct(inAi / fl) : '–', g ? `of our flagged sentences sit in Pangram AI or AI-assisted windows` : '', ''],
+  ];
+  document.getElementById('stats').innerHTML = stats.map(([k, v, d, c]) => `<div class="stat"><div class="k">${k}</div><div class="v ${c}">${v}</div><div class="d">${d}</div></div>`).join('');
+  document.getElementById('t-ours').innerHTML = renderOurs(p);
+  document.getElementById('t-pg').innerHTML = renderPg(p);
+  document.getElementById('t-ours').scrollTop = 0; document.getElementById('t-pg').scrollTop = 0;
+  try { history.replaceState(null, '', '#' + p.id); } catch (e) {}
+}
+document.getElementById('prev').onclick = () => show((cur + P.length - 1) % P.length);
+document.getElementById('next').onclick = () => show((cur + 1) % P.length);
+
+// Scroll the two panes together by relative position (Pangram's window tags add a little height).
+const A = document.getElementById('t-ours'), B = document.getElementById('t-pg'); let lock = false;
+function sync(src, dst) { if (lock) return; lock = true;
+  dst.scrollTop = src.scrollTop / Math.max(1, src.scrollHeight - src.clientHeight) * (dst.scrollHeight - dst.clientHeight);
+  requestAnimationFrame(() => { lock = false; }); }
+A.addEventListener('scroll', () => sync(A, B)); B.addEventListener('scroll', () => sync(B, A));
+
+function tab(which) { document.getElementById('pane-ours').dataset.off = which === 'pg' ? '1' : '0';
+  document.getElementById('pane-pg').dataset.off = which === 'pg' ? '0' : '1';
+  document.getElementById('tab-ours').setAttribute('aria-selected', which !== 'pg');
+  document.getElementById('tab-pg').setAttribute('aria-selected', which === 'pg'); }
+document.getElementById('tab-ours').onclick = () => tab('ours'); document.getElementById('tab-pg').onclick = () => tab('pg'); tab('ours');
+
+document.getElementById('notes').innerHTML = `
+  <p><b>Different units.</b> Our share counts sentences above a threshold calibrated to flag 1% of human sentences. Pangram's AI share is the fraction of the text inside windows it labels AI-Generated (AI-Assisted is reported separately). Its windows run a few hundred words, so it cannot mark a single sentence.</p>
+  <p><b>Bins.</b> Bins use the Atlas's default counting (main text only, no references or appendices) on the whole paper. The cut text drops everything after page 9, so the "Ours, cut" column is the one to compare with Pangram.</p>
+  <p><b>Sample size.</b> One paper per bin. This shows where the two detectors disagree; it does not measure either one's error rate.</p>`;
+show(cur);
+</script>

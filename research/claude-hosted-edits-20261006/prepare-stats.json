@@ -1,0 +1,91 @@
+{
+ "hosts_usable": 21949,
+ "hosts_in_training_windows": 4579,
+ "mean_host_chars": 875,
+ "b_chars_target": 9031050,
+ "hosts_needed_per_job": 12393,
+ "hosts_assigned_per_job": 9551,
+ "supply_fraction_of_target": 0.771,
+ "D": {
+  "assigned": 9551,
+  "by_writer": {
+   "sonnet": 3674,
+   "opus": 3673,
+   "haiku": 2204
+  },
+  "by_type": {
+   "rewrite_one": 2867,
+   "rewrite_two": 2865,
+   "insert_one": 2865,
+   "split_one": 954
+  },
+  "by_source": {
+   "arxiv": 2624,
+   "pes2o": 2464,
+   "pmc": 4463
+  },
+  "expected_accepted_chars": 6964575,
+  "batch_files": {
+   "sonnet": 74,
+   "opus": 74,
+   "haiku": 45
+  }
+ },
+ "E": {
+  "assigned": 9551,
+  "heldout": 1646,
+  "by_writer_kind": {
+   "sonnet": {
+    "draft": 1837,
+    "rewrite": 1837
+   },
+   "opus": {
+    "draft": 1837,
+    "rewrite": 1836
+   },
+   "haiku": {
+    "rewrite": 1102,
+    "draft": 1102
+   }
+  },
+  "by_writer_split": {
+   "sonnet": {
+    "train": 3040,
+    "heldout": 634
+   },
+   "opus": {
+    "train": 3040,
+    "heldout": 633
+   },
+   "haiku": {
+    "train": 1825,
+    "heldout": 379
+   }
+  },
+  "by_source_split": {
+   "pmc": {
+    "train": 3767,
+    "heldout": 748
+   },
+   "pes2o": {
+    "train": 2003,
+    "heldout": 478
+   },
+   "arxiv": {
+    "train": 2135,
+    "heldout": 419
+   },
+   "acl": {
+    "heldout": 1
+   }
+  },
+  "expected_accepted_chars": 6981515,
+  "batch_files": {
+   "sonnet": 74,
+   "opus": 74,
+   "haiku": 45
+  }
+ },
+ "unused_hosts": 2847,
+ "dropped_never_train_after_holdout": 929
+}

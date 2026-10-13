@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "profiles": {
+    "comparison": {
+      "sha256": "fb7bc3897154f9e414feb867119f18015a97fdca59c1b273f80aa1516d56f73e",
+      "rows": 13751,
+      "datasets": {
+        "human_paper_remaining": 1558,
+        "pelic": 400,
+        "vub": 40,
+        "perkins": 114,
+        "liang": 270,
+        "meld_eval": 930,
+        "detectrl": 2478,
+        "epoch": 1089,
+        "opai": 837,
+        "sem_detect": 1109,
+        "gede": 184,
+        "saha": 72,
+        "local_binary": 160,
+        "local_length": 300,
+        "local_mixed": 192,
+        "arena50": 987,
+        "paper_pilots_exploratory": 435,
+        "human_paper_context": 1558,
+        "paper_v3_target": 1038
+      },
+      "source": "benchmarks/pangram4/training/paper-v3-modernbert/comparison-v1/suite.jsonl.gz"
+    },
+    "workflow": {
+      "sha256": "4942916e6a1f4966a4ff1221083303ac4a39ea99c2774b6a7a8023b2db696402",
+      "rows": 8552,
+      "datasets": {
+        "paper_workflow_reconstruction": 864,
+        "human_paper_workflow_matched": 216,
+        "human_paper_workflow_remaining": 4901,
+        "ellipse": 2571
+      },
+      "source": "research/data/paper-eval-workflows-luna-20260930/scoring/suite.jsonl.gz"
+    },
+    "assistance": {
+      "sha256": "8008d16bd472f69d55b038412eaea962b96614bae621ba327acf5759728723fe",
+      "rows": 972,
+      "datasets": {
+        "paper_workflow_assistance": 972
+      },
+      "source": "research/data/paper-eval-workflows-luna-20260930/scoring/assistance.jsonl.gz"
+    },
+    "full": {
+      "sha256": "5fc68909aedc301e142147eca9c84f9c9e999b1b3dc6b32c41dc40fda8c0bf25",
+      "rows": 65348,
+      "datasets": {
+        "human_paper_remaining": 18222,
+        "pelic": 2000,
+        "vub": 40,
+        "perkins": 114,
+        "liang": 270,
+        "meld_eval": 7424,
+        "detectrl": 18827,
+        "epoch": 1089,
+        "opai": 8748,
+        "sem_detect": 1109,
+        "gede": 1448,
+        "saha": 72,
+        "local_binary": 160,
+        "local_length": 300,
+        "local_mixed": 192,
+        "arena50": 4898,
+        "paper_pilots_exploratory": 435
+      },
+      "source": "benchmarks/pangram4/training/paper-v3-modernbert/wide-eval-v1/suite.jsonl"
+    },
+    "context": {
+      "sha256": "41cd10a5ff99e60feb130cab6905c7ebcd33be1302e555dd51b3944f25087e09",
+      "rows": 18222,
+      "datasets": {
+        "human_paper_remaining": 18222
+      },
+      "source": "benchmarks/pangram4/training/paper-v3-modernbert/wide-eval-context-v1/suite.jsonl"
+    },
+    "comparison_validation": {
+      "sha256": "87411768d1cb3dd27ebeb3e2505f1f327ae240306091113603fe38bd85b376a9",
+      "rows": 1048,
+      "datasets": {
+        "paper_v3_target": 1048
+      },
+      "source": "benchmarks/pangram4/training/paper-v3-modernbert/comparison-v1/validation.jsonl.gz"
+    },
+    "workflow_validation": {
+      "sha256": "b5dcba09b81bc407e4d9984dcb0c7e260b4d987892eb2cab8a095a606bb8e775",
+      "rows": 986,
+      "datasets": {
+        "paper_workflow_reconstruction": 432,
+        "human_paper_workflow_matched": 108,
+        "human_paper_workflow_remaining": 446
+      },
+      "source": "research/data/paper-eval-workflows-luna-20260930/scoring/validation.jsonl.gz"
+    }
+  },
+  "code": {
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "compare_models.py": "afad1ce2dfa3566e272ededc1c379618516650bf5962d3295736f7f9880ba239",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "meld_model.py": "fd45ea31bfd80b56c6043c8177d9b66a5a1fa1a5f5da86ba870fc7bf7136620a",
+    "suite.py": "510e33cbb8bca8a622872f4111d40f03616ef33ef99add2c1a45595c7d05d757",
+    "README.md": "c025654a07d2f2272b580c607d3cd76d350da607be5589ddf9710b2564a4dd77"
+  },
+  "precision": "bfloat16",
+  "thresholds": {
+    "ours": {
+      "tokens": 0.8947894573211671,
+      "sentences": 0.8944122054997613,
+      "document": 0.3737913241577493
+    },
+    "meld-v5": {
+      "tokens": 1.5444715023040774,
+      "sentences": 0.31789918456758776,
+      "document": 0.014489119340950544
+    },
+    "meld-v8": {
+      "tokens": 1.7966945171356203,
+      "sentences": -0.37164310634136194,
+      "document": -1.6084485564022382
+    }
+  },
+  "sentence_policy": "Frozen comparison-v1 regex segmentation, uniformly applied to all models; not linguistic gold.",
+  "profile_policy": "Run profiles separately. Full overlaps comparison; views and conditions are correlated. Validation profiles are not test benchmarks."
+}

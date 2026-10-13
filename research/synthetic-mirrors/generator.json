@@ -1,0 +1,22 @@
+{
+  "version": "luna-openrouter-v1",
+  "role": "main_generator",
+  "model": "openai/gpt-6-luna",
+  "topic_model": "openai/gpt-6-luna",
+  "service_tier": "flex",
+  "provider": {
+    "only": ["openai/flex"],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "max_price": {"prompt": 0.05, "completion": 0.25, "request": 0}
+  },
+  "reasoning": {"effort": "low", "exclude": true},
+  "topic_max_tokens": 1536,
+  "writer_min_max_tokens": 2048,
+  "writer_max_tokens": 8192,
+  "cache_write_ceiling_per_million": 0.0625,
+  "inference_dtype": "provider_managed_unreported",
+  "secondary_generators": [],
+  "budget_usd": null,
+  "notes": "User-selected main generator. Hosted precision is not exposed; no claim of BF16. No automatic paid launch or bulk spending authorization is implied by this configuration."
+}

@@ -1,0 +1,37 @@
+{
+  "seed": "comparison-v1-20261001",
+  "selection": "Score-independent SHA ranking. All small suites. MELD/DetectRL/GEDE: 4 per native stratum; PELIC:100 per length; Arena:20 shared prompts; OpAI:20 source groups per domain with all trajectories; each historical test paper:2 clean novel,1 flagged novel,1 previous-context paragraphs where available, paired with neighbor context. All 1038 quality-filtered v3 target test rows. Fill any missing categorical metadata level with up to4 examples (whole source groups for OpAI); no selection by performance.",
+  "selection_reads_predictions": false,
+  "test_rows": 13751,
+  "validation_rows": 1048,
+  "datasets": {
+    "human_paper_remaining": 1558,
+    "pelic": 400,
+    "vub": 40,
+    "perkins": 114,
+    "liang": 270,
+    "meld_eval": 930,
+    "detectrl": 2478,
+    "epoch": 1089,
+    "opai": 837,
+    "sem_detect": 1109,
+    "gede": 184,
+    "saha": 72,
+    "local_binary": 160,
+    "local_length": 300,
+    "local_mixed": 192,
+    "arena50": 987,
+    "paper_pilots_exploratory": 435,
+    "human_paper_context": 1558,
+    "paper_v3_target": 1038
+  },
+  "files": {
+    "suite": "fb7bc3897154f9e414feb867119f18015a97fdca59c1b273f80aa1516d56f73e",
+    "validation": "87411768d1cb3dd27ebeb3e2505f1f327ae240306091113603fe38bd85b376a9"
+  },
+  "calibration": "Same 1048 original held-out validation inputs, token and sentence thresholds <=1% human FPR; document mean reference-token score threshold <=1% on human-original validation rows. No test calibration.",
+  "reference_grid": "Our ModernBERT tokenizer offsets; each model token score projected by character-overlap-weighted mean; sentences average reference-token scores; special/whitespace tokens excluded. Reference tokens crossing provenance boundaries ignored.",
+  "runtime": "Our model: original BF16 510-content overlapping windows stride256; MELD: BF16 nonoverlapping2046-content windows, no input truncation. Full length may exceed publisher capped scoring contract.",
+  "caveat": "Diagnostic suite already inspected; public benchmark training overlap with MELD is unknown. Unequal sampling fractions; report per-dataset, never pooled accuracy as population estimate.",
+  "precision_preference": "User explicitly requested no full-precision inference. Initial FP32 v5 attempt aborted; its predictions excluded. All reported models use BF16."
+}

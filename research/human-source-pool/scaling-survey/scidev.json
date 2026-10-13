@@ -1,0 +1,89 @@
+{
+  "source_id": "scidev",
+  "survey_at": "2026-10-02T19:56:08Z",
+  "state": "background_worker_running",
+  "baseline": {
+    "retained": 926,
+    "original_quota": 991,
+    "validated_articles": 639,
+    "length_counts": [
+      149,
+      396,
+      347,
+      34
+    ],
+    "missing": 65,
+    "missing_bins": {
+      "long_1000_1500_words": 65
+    }
+  },
+  "additional_source_work_required": {
+    "meaning": "Existing crawl capture selection and article-level corroboration do not supply the required long passages; not exhausted SciDev corpus and not missing user approval.",
+    "constraints": [
+      "Historical text must be pre2022 capture, unchanged offsets, sufficiently matched to current publisher article.",
+      "Named byline and explicit article-specific republish notice remain mandatory; unnamed editorials and third-party articles rejected.",
+      "Article notice does not identify a CC version; retain unspecified version and policy discrepancy.",
+      "Original pass deduplicated capture wrappers by first article slug and marked article complete, missing potentially better alternative historical captures."
+    ]
+  },
+  "cached_coverage": {
+    "historical_auxiliary_rows": 5066,
+    "eligible_unique_article_groups": 2114,
+    "theoretical_family_cap_passages": 6342,
+    "theoretical_cap_explanation": "2114 article families times unchanged maximum3 passages; this is only an upper bound before rights/length/overlap gates, not verified capacity.",
+    "scaled_target_9910_assured": false,
+    "additional_discovery_required_for_9910": true
+  },
+  "worker": {
+    "pid": 193652,
+    "start_ticks": "12153674",
+    "live_verified_at": "2026-10-02T19:56:08Z",
+    "base": "/tmp/pangram-scidev-scaling-20261002-v1",
+    "status": "/tmp/pangram-scidev-scaling-20261002-v1/status.json",
+    "checkpoint": "/tmp/pangram-scidev-scaling-20261002-v1/checkpoint.json",
+    "max_seconds": 2700,
+    "max_candidates": 9910,
+    "method": "Independent stage seeded from validated926; rank alternative captures by longest unchanged matched region, preserve existing families, scan remaining families with original rights/date/byline and passage gates. No fixed bin ceiling during capacity measurement. Publisher requests use existing shared pacer and429 circuit breaker.",
+    "initial_progress": {
+      "total": 980,
+      "new": 54,
+      "long_bin_total": 36,
+      "article_position": 87,
+      "all_quarantined": true
+    },
+    "production_100000_unchanged": true,
+    "latest_progress": {
+      "verified_at": "2026-10-02T19:57:00Z",
+      "total": 1085,
+      "new": 159,
+      "long_bin_total": 36,
+      "position": 177
+    }
+  },
+  "durability": {
+    "bucket": "open-text-detector/training-storage",
+    "prefix": "workspace/human-source-mix-v2-recovered-20261002/scaling/scidev-v1/",
+    "initial_checkpoint_candidate_count": 926,
+    "initial_checkpoint_sha256": "e83ae2caa6ab780a31576578390e1b820457ef8420e085493e4e20d1f2f65edb",
+    "initial_checkpoint_full_get_verified": true,
+    "files_uploaded_initial": 2106,
+    "later_checkpoints": "Every180s; final full GET checksum; status/errors and originals retained"
+  },
+  "remaining_work": [
+    "Finish measured cache scan; all new candidates need global production dedup and independent validation before merge.",
+    "Even initial54 added examples recovered only2 additional long passages; total count does not prove original long-bin quota.",
+    "Broaden verified historical article captures beyond2114 families before claiming9910 capacity; retain later CCCC auxiliary wrappers."
+  ],
+  "followup": {
+    "state": "queued_waiting_for_prior_workers",
+    "pid": 193826,
+    "start_ticks": "12168749",
+    "wait_bound_seconds": 3600,
+    "next_base": "/tmp/pangram-scidev-scaling-20261002-v2",
+    "next_run_bound_seconds": 2700,
+    "inputs": "/tmp/pangram-cccc-scaling-20261002/discovery.sqlite3 captures table;1271 preserved wrappers observed while producer running",
+    "purpose": "After both previous collectors finish, seed independent stage from completed v1 and verify all new historical capture variants from CCCC discovery. No concurrent SciDev publisher collectors.",
+    "identity_file": "/tmp/pangram-scidev-scaling-20261002-v1/followup-process.json",
+    "log": "/tmp/pangram-scidev-scaling-20261002-v1/followup.log"
+  }
+}

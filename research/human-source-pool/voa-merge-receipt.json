@@ -1,0 +1,20 @@
+{
+  "source_id": "voa",
+  "state": "merged_durable",
+  "inserted": 1652,
+  "source_count": 1652,
+  "quota": 1652,
+  "duplicate_loss": 0,
+  "training_admitted": 0,
+  "stage_files_metadata_verified": 63,
+  "archive_and_package_full_GET_sha256_verified": true,
+  "remote_full_checksum_readback": true,
+  "database": "/tmp/pangram-human-active-20261002/checkpoints/voa-merge-20261002T080349Z.sqlite3",
+  "database_bytes": 1019752448,
+  "database_sha256": "9a0eefd3011ee1c69b06f49bcadbdf5087aa43cb9cabeadbe0132ab55780233b",
+  "bucket_key": "workspace/human-source-mix-v2-recovered-20261002/checkpoints/voa-merge-20261002T080349Z.sqlite3",
+  "candidate_total": 84648,
+  "wikipedia_count": 7768,
+  "package_sha256": "9450686d8cd3b554c94cb7b31d3ee3b698b0245f0367540ac1bafb16e542556c",
+  "remote_receipt": "/tmp/pangram-human-active-20261002/voa-merge-receipt.json"
+}

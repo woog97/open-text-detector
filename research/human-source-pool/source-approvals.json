@@ -1,0 +1,1380 @@
+{
+  "review_version": "source-review-20261002-v2",
+  "reviewed_at": "2026-10-02T06:33:25.916648+00:00",
+  "scope": "37-source, 100000-candidate research pool; operational collection review, not blanket legal or training certification",
+  "sampling_plan_sha256": "a6beb7eef7ed84022005a194d3a4b4382c57d0549305114988618f1036a25e2e",
+  "source_count": 37,
+  "planned_total": 100000,
+  "decisions": {
+    "proceed_subset": 29,
+    "proceed_research_candidates": 6,
+    "forfeited_by_authorized_rebalance": 2
+  },
+  "global_rules": [
+    "Reuse this source review unless the source revision, terms, intended use or access route changes.",
+    "No manual per-sample approval queue. Use automated validation and source-derived tagging.",
+    "Preserve the current 35-source quotas; user authorizes replacing or forfeiting genuinely blocked sources via a recorded rebalance, never silent substitution.",
+    "Missing implementation, dates, genre checks or overlap audits are not new user-approval requests.",
+    "Candidate collection/publication does not establish commercial training clearance.",
+    "Mixed-license sources require automatic record metadata filters, not human approval for every record.",
+    "Only concrete access/terms decisions requiring user knowledge should be escalated; continue all independent sources."
+  ],
+  "sources": [
+    {
+      "source_id": "gutenberg",
+      "name": "Project Gutenberg, with Standard Ebooks preferred for matching editions",
+      "category": "creative",
+      "quota": 10000,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "US public-domain texts; exceptions and jurisdiction matter",
+      "selection_rule": "Use public-domain subset and allowed bulk mirror; retain book IDs and source notice; exclude protected PG19 families.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.gutenberg.org/policy/permission.html",
+        "https://www.gutenberg.org/policy/robot_access.html",
+        "https://standardebooks.org/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.gutenberg.org/policy/permission.html",
+          "retrieved_at": "2026-10-02T06:29:55.959878+00:00",
+          "http_status": 200,
+          "final_url": "https://www.gutenberg.org/policy/permission.html",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/18af08ddff24a28c.txt",
+          "sha256": "05af69b76a7a73258650c82e6db749eba53957fd95bb857267b83a4c5754058e",
+          "bytes": 18885,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/18af08ddff24a28c.readable.txt"
+        },
+        {
+          "url": "https://www.gutenberg.org/policy/robot_access.html",
+          "retrieved_at": "2026-10-02T06:29:56.012616+00:00",
+          "http_status": 200,
+          "final_url": "https://www.gutenberg.org/policy/robot_access.html",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/f8a20ea141d88d6b.txt",
+          "sha256": "53b512c17f05f0d700d8944fcd289b166c9c5679956947123e8a60bd3b146ed7",
+          "bytes": 9229,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/f8a20ea141d88d6b.readable.txt"
+        },
+        {
+          "url": "https://standardebooks.org/",
+          "retrieved_at": "2026-10-02T06:29:55.743088+00:00",
+          "http_status": 200,
+          "final_url": "https://standardebooks.org/",
+          "content_type": "application/xhtml+xml; charset=utf-8",
+          "path": "evidence/source-review-20261002/897d5adb0f0c4253.txt",
+          "sha256": "544542e163244ab5fdf6829031e3ac4f829d3e71e59158839f7712fbfb382fdf",
+          "bytes": 14635,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/897d5adb0f0c4253.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "writingprompts",
+      "name": "WritingPrompts original 2018 release",
+      "category": "creative",
+      "quota": 6667,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "Original 2018 research release; underlying story rights unresolved",
+      "selection_rule": "Use original train.wp_target only, pair prompts as metadata, never generated samples; retain split/line and prompt-family IDs.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.441082+00:00",
+          "http_status": 200,
+          "final_url": "https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md",
+          "content_type": "text/plain; charset=utf-8",
+          "path": "evidence/source-review-20261002/b00696cb0fc4b4cf.txt",
+          "sha256": "e640cdfd5ed56b189e468d5b8ad853388bc5f56b25411b5809c03f1fe8431253",
+          "bytes": 4145,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/b00696cb0fc4b4cf.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "scp",
+      "name": "SCP Foundation prose tales",
+      "category": "creative",
+      "quota": 4444,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA 3.0 text with attribution; third-party asset exceptions",
+      "selection_rule": "English narrative tales only; retain authors, page/canon IDs and pre-2022 revision evidence; omit images and containment-template boilerplate.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://scp-wiki.wikidot.com/licensing-guide"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://scp-wiki.wikidot.com/licensing-guide",
+          "retrieved_at": "2026-10-02T06:29:55.691584+00:00",
+          "http_status": 200,
+          "final_url": "https://scp-wiki.wikidot.com/licensing-guide",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/68aa3ea85b2c1709.txt",
+          "sha256": "943d1d3368a0bf5bf3ad97d7acced0516413b0717950b36327ab528a82d016d7",
+          "bytes": 49201,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/68aa3ea85b2c1709.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wikisource",
+      "name": "Wikisource proofread short fiction",
+      "category": "creative",
+      "quota": 1111,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Public-domain or compatible free-license works; translations can differ",
+      "selection_rule": "Main namespace literary prose; preserve work-specific copyright tag, edition and translator; deduplicate Gutenberg overlap.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://en.wikisource.org/wiki/Wikisource:Copyright_policy"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://en.wikisource.org/wiki/Wikisource:Copyright_policy",
+          "retrieved_at": "2026-10-02T06:29:54.879764+00:00",
+          "http_status": 200,
+          "final_url": "https://en.wikisource.org/wiki/Wikisource:Copyright_policy",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/744e4838e109063d.txt",
+          "sha256": "1fc15fbb9a2c912133cb5c27e94fdb2a3cce61baf58add7cac0050bc11491fc7",
+          "bytes": 102744,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/744e4838e109063d.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "pmc",
+      "name": "PMC Open Access commercial-reuse subset",
+      "category": "scientific",
+      "quota": 6306,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Article-specific OA licenses; PMC access alone is insufficient",
+      "selection_rule": "Use pinned OA subset with explicit allowed license; retain PMCID/DOI; supported bulk services or established subset mirror.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/about/copyright/",
+        "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/about/copyright/",
+          "retrieved_at": "2026-10-02T06:29:55.324605+00:00",
+          "http_status": 200,
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/about/copyright/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/a3214ab03e0c49a8.txt",
+          "sha256": "acdcbcdc4d3867ec7ed26e391e313a7c0ffd8406bfc523f85cce8f11ce756ab2",
+          "bytes": 85464,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/a3214ab03e0c49a8.readable.txt"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/",
+          "retrieved_at": "2026-10-02T06:29:55.353694+00:00",
+          "http_status": 200,
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/edbe09e9698155d9.txt",
+          "sha256": "4053c207e723f76153c457419a48ff43b9ae9c24b4dc695345006330b24f9b1c",
+          "bytes": 82989,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/edbe09e9698155d9.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv full texts with suitable article licenses",
+      "category": "scientific",
+      "quota": 5405,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Per-version licenses; default arXiv distribution license is not general reuse permission",
+      "selection_rule": "Select explicitly compatible open licenses from the pinned subset; retain version/date and paper-family identity.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://info.arxiv.org/help/license/index.html"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://info.arxiv.org/help/license/index.html",
+          "retrieved_at": "2026-10-02T06:29:55.273971+00:00",
+          "http_status": 200,
+          "final_url": "https://info.arxiv.org/help/license/index.html",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/93a0eedeb316d349.txt",
+          "sha256": "75ef3cef1c13bad8b20c52aee64d2608eac6c20638b71ec8ab2b6f22c84f233d",
+          "bytes": 101170,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/93a0eedeb316d349.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "pes2o",
+      "name": "Common Pile licensed peS2o subset",
+      "category": "scientific",
+      "quota": 3604,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Common Pile openly licensed peS2o subset; preserve per-paper license",
+      "selection_rule": "Use pinned licensed subset; preserve paper IDs/DOIs and remove duplicates with arXiv/PMC/ACL.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.078048+00:00",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/45c568b9015348ec.txt",
+          "sha256": "7b9ff24e48bc9e49383a8674bce4f057c23de7506d7e33e09eda694dca41e086",
+          "bytes": 139145,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/45c568b9015348ec.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "acl",
+      "name": "ACL-owned proceedings from 2016\u20132021",
+      "category": "scientific",
+      "quota": 2703,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "ACL-owned 2016 onward CC BY 4.0; third-party proceedings differ",
+      "selection_rule": "2016\u20132021 ACL-owned papers; exclude existing protected local paper families; preserve anthology ID/DOI.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://aclanthology.org/faq/copyright/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://aclanthology.org/faq/copyright/",
+          "retrieved_at": "2026-10-02T06:29:54.740761+00:00",
+          "http_status": 200,
+          "final_url": "https://aclanthology.org/faq/copyright/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/d2180a2230ba0e9e.txt",
+          "sha256": "de75831d82ae42e87bbca05c90a267be897410112b1cdb8c00f9e317950ae8f5",
+          "bytes": 9625,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/d2180a2230ba0e9e.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wikipedia",
+      "name": "English Wikipedia historical article revisions",
+      "category": "reference",
+      "quota": 7958,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA; version and attribution information retained",
+      "selection_rule": "Main namespace articles only; retain revision IDs and contributors/history link; no talk-page routing into reference.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "retrieved_at": "2026-10-02T06:29:54.930724+00:00",
+          "http_status": 200,
+          "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/490ffa88f9f485f4.txt",
+          "sha256": "55501ff08531fd3bcd289d5fafe4f0252ab7c510d380202127f31314e7726c24",
+          "bytes": 152808,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/490ffa88f9f485f4.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "pressbooks",
+      "name": "Pressbooks openly licensed textbook editions",
+      "category": "reference",
+      "quota": 3979,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Per-book licenses; selected mirror restricts to PD, CC BY or CC BY-SA",
+      "selection_rule": "Preserve book/section license and author; obtain additional eligible books from same source after current mirror shortfall.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://pressbooks.directory/",
+        "https://pressbooks.com/open-education/introducing-pressbooks-directory/",
+        "https://huggingface.co/datasets/common-pile/pressbooks/blob/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://pressbooks.directory/",
+          "retrieved_at": "2026-10-02T06:29:55.432782+00:00",
+          "http_status": 403,
+          "final_url": "https://pressbooks.directory/",
+          "content_type": "text/html; charset=UTF-8",
+          "status": "unavailable",
+          "error": "403 Client Error: Forbidden for url: https://pressbooks.directory/"
+        },
+        {
+          "url": "https://pressbooks.com/open-education/introducing-pressbooks-directory/",
+          "retrieved_at": "2026-10-02T06:29:55.432327+00:00",
+          "http_status": 403,
+          "final_url": "https://pressbooks.com/open-education/introducing-pressbooks-directory/",
+          "content_type": "text/html",
+          "status": "unavailable",
+          "error": "403 Client Error: Forbidden for url: https://pressbooks.com/open-education/introducing-pressbooks-directory/"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "libretexts",
+      "name": "LibreTexts selected book and page licenses",
+      "category": "reference",
+      "quota": 2387,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Per-section licenses; selected mirror uses PD, CC BY, CC BY-SA or GFDL",
+      "selection_rule": "Retain book/section/license evidence; avoid duplicated sections and boilerplate.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.027956+00:00",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/85f3931e85ace871.txt",
+          "sha256": "5c9ae8c83dfaff5443aab9a2f2941ef5e32530a9052cbbecf5e6622c8085bb5c",
+          "bytes": 107306,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/85f3931e85ace871.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wikibooks",
+      "name": "English Wikibooks historical chapters",
+      "category": "reference",
+      "quota": 1592,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA text; preserve applicable revision license",
+      "selection_rule": "Main namespace prose; group chapters under book; retain attribution/history.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "retrieved_at": "2026-10-02T06:29:54.930724+00:00",
+          "http_status": 200,
+          "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/490ffa88f9f485f4.txt",
+          "sha256": "55501ff08531fd3bcd289d5fafe4f0252ab7c510d380202127f31314e7726c24",
+          "bytes": 152808,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/490ffa88f9f485f4.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "amazon2018",
+      "name": "Amazon Review Data 2018",
+      "category": "reviews",
+      "quota": 5306,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "Original 2018 research release; underlying review rights unresolved",
+      "selection_rule": "Original full per-category review files, not ratings-only, descriptions or newer Amazon releases; product/rating diversity and user/product grouping.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html",
+          "retrieved_at": "2026-10-02T06:29:54.741562+00:00",
+          "http_status": 200,
+          "final_url": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/c27213fa3272ff2c.txt",
+          "sha256": "243c05d48b0125a73027f719baf46a8aebf32547de9371776ee531da93168d43",
+          "bytes": 57097,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/c27213fa3272ff2c.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "yelp",
+      "name": "Yelp Open Dataset historical reviews",
+      "category": "reviews",
+      "quota": 0,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "forfeited_by_authorized_rebalance",
+      "terms_summary": "Academic-use eligibility and no-third-party-sharing restrictions in current agreement",
+      "selection_rule": "Do not collect, publish or generate mirrors. Prior source/access restrictions preserved in plan-history.",
+      "private_hf_publication": "hold_until_compatible_access_and_hosting_terms",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://s3-media0.fl.yelpcdn.com/assets/srv0/engineering_pages/f64cb2d3efcc/assets/vendor/Dataset_User_Agreement.pdf"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://s3-media0.fl.yelpcdn.com/assets/srv0/engineering_pages/f64cb2d3efcc/assets/vendor/Dataset_User_Agreement.pdf",
+          "retrieved_at": "2026-10-02T06:29:55.640988+00:00",
+          "http_status": 200,
+          "final_url": "https://s3-media0.fl.yelpcdn.com/assets/srv0/engineering_pages/f64cb2d3efcc/assets/vendor/Dataset_User_Agreement.pdf",
+          "content_type": "application/pdf",
+          "path": "evidence/source-review-20261002/6932023d5a34baf0.pdf",
+          "sha256": "2d58dbe1ae871e5105c4b367a7be49a0350922d7064e35f6488c12b49a70370f",
+          "bytes": 91136,
+          "status": "retrieved"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "imdb",
+      "name": "Stanford Large Movie Review Dataset",
+      "category": "reviews",
+      "quota": 1061,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "Original 2011 Stanford research release; underlying review rights unresolved",
+      "selection_rule": "Training and unlabeled originals only; exclude official test; preserve original review URL/movie grouping and original HTML breaks.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://nlp.stanford.edu/~amaas/data/sentiment/index.html"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://nlp.stanford.edu/~amaas/data/sentiment/index.html",
+          "retrieved_at": "2026-10-02T06:29:55.303614+00:00",
+          "http_status": 200,
+          "final_url": "https://nlp.stanford.edu/~amaas/data/sentiment/index.html",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/75b4ce3dfa2200e0.txt",
+          "sha256": "cdccba4aef7c1482741f2935722513036654a2a47cd37852391f1a24389ca1bc",
+          "bytes": 16953,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/75b4ce3dfa2200e0.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "opinrank",
+      "name": "OpinRank hotel and car reviews",
+      "category": "reviews",
+      "quota": 4244,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "UCI states CC BY 4.0; upstream review rights remain recorded as unresolved",
+      "selection_rule": "Original hotel/car review files; balance types/cities; retain author/date/review IDs and avoid concatenating duplicate fields.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset",
+          "retrieved_at": "2026-10-02T06:29:54.741488+00:00",
+          "http_status": 200,
+          "final_url": "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/16c9f12b64ce38b7.txt",
+          "sha256": "520a9f0ff601cbce7aaec4d949fc1369c39f130f94977fc70b613f7e50dd48b9",
+          "bytes": 74584,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/16c9f12b64ce38b7.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "stack_nontech",
+      "name": "Stack Exchange non-programming answers",
+      "category": "social",
+      "quota": 5726,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA 2.5/3.0/4.0 according to contribution date",
+      "selection_rule": "Use approved nontechnical sites; retain post/revision/author attribution; whole thread grouping; respect dump access requirements.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://stackoverflow.com/help/licensing",
+        "https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://stackoverflow.com/help/licensing",
+          "retrieved_at": "2026-10-02T06:29:55.697509+00:00",
+          "http_status": 200,
+          "final_url": "https://stackoverflow.com/help/licensing",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/cf524f04de609443.txt",
+          "sha256": "8ec338535f1948c5f474bae31d1e4d28db0318d0ee42dcd50faa1dc10b41f13e",
+          "bytes": 79641,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/cf524f04de609443.readable.txt"
+        },
+        {
+          "url": "https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process",
+          "retrieved_at": "2026-10-02T06:29:55.283233+00:00",
+          "http_status": 403,
+          "final_url": "https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process",
+          "content_type": "text/html; charset=UTF-8",
+          "status": "unavailable",
+          "error": "403 Client Error: Forbidden for url: https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "stack_tech",
+      "name": "Stack Exchange technical explanations",
+      "category": "social",
+      "quota": 2082,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA 2.5/3.0/4.0 according to contribution date",
+      "selection_rule": "Use agreed technical sites; preserve thread grouping and source tags; current collector excludes Stack Overflow itself.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://stackoverflow.com/help/licensing"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://stackoverflow.com/help/licensing",
+          "retrieved_at": "2026-10-02T06:29:55.697509+00:00",
+          "http_status": 200,
+          "final_url": "https://stackoverflow.com/help/licensing",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/cf524f04de609443.txt",
+          "sha256": "8ec338535f1948c5f474bae31d1e4d28db0318d0ee42dcd50faa1dc10b41f13e",
+          "bytes": 79641,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/cf524f04de609443.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "ubuntu_irc",
+      "name": "Ubuntu IRC historical conversations",
+      "category": "social",
+      "quota": 1561,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Common Pile source documents public-domain archived logs",
+      "selection_rule": "Pre-2022 channel/day records; extract human turns and filter known bots/system notices; retain channel/day and speaker grouping.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.116981+00:00",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/42e2396e0ec6bf3e.txt",
+          "sha256": "c4dcd47a66f4074d6ed1e090f96458e3e5971d8d966566760d73fa23b6154c2a",
+          "bytes": 138234,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/42e2396e0ec6bf3e.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wiki_talk",
+      "name": "Wikipedia human discussion threads",
+      "category": "social",
+      "quota": 1041,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA discussion contributions",
+      "selection_rule": "Article-talk namespace 1; retain revision/thread IDs and attribution; do not use article namespace to fill this source.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "retrieved_at": "2026-10-02T06:29:54.930724+00:00",
+          "http_status": 200,
+          "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/490ffa88f9f485f4.txt",
+          "sha256": "55501ff08531fd3bcd289d5fafe4f0252ab7c510d380202127f31314e7726c24",
+          "bytes": 152808,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/490ffa88f9f485f4.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "cccc",
+      "name": "Common Pile Creative Commons Common Crawl",
+      "category": "general_web",
+      "quota": 5335,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Only domains/pages with supported text-license evidence; raw metadata gap unresolved",
+      "selection_rule": "Implement pre-2022 crawl snapshot plus verified domain/license mapping; missing raw metadata.license is not evidence of a license. Domain cap and category routing remain automatic rules.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md",
+        "https://raw.githubusercontent.com/r-three/common-pile/main/sources/cccc/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:54.965015+00:00",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/ddad5b48add77b0b.txt",
+          "sha256": "1892f429cf4fcf221782abedb6ffc1cec0032681d5abe2837d1aae4d9db3dfaf",
+          "bytes": 144588,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/ddad5b48add77b0b.readable.txt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/r-three/common-pile/main/sources/cccc/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.509947+00:00",
+          "http_status": 200,
+          "final_url": "https://raw.githubusercontent.com/r-three/common-pile/main/sources/cccc/README.md",
+          "content_type": "text/plain; charset=utf-8",
+          "path": "evidence/source-review-20261002/26a1ab93d8fe391d.txt",
+          "sha256": "6bbf5cf6c9daaa89fdf58e410cccd0846d0235e2c3158a78e2bb206ed5fee801",
+          "bytes": 12624,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/26a1ab93d8fe391d.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "eff",
+      "name": "EFF historical Deeplinks articles",
+      "category": "general_web",
+      "quota": 821,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "EFF original material CC BY 4.0 unless otherwise noted",
+      "selection_rule": "Original pre-2022 Deeplinks prose; retain byline/version evidence; omit external republications, quoted third-party blocks and widgets.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.eff.org/copyright"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.eff.org/copyright",
+          "retrieved_at": "2026-10-02T06:29:55.813740+00:00",
+          "http_status": 200,
+          "final_url": "https://www.eff.org/copyright",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/75361e3775ede773.txt",
+          "sha256": "fc3b4721f7f76085b8c546be62f48fe57dcc0b6c027140890b72c57a419ae94e",
+          "bytes": 34500,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/75361e3775ede773.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "foodista",
+      "name": "Foodista narrative food writing",
+      "category": "general_web",
+      "quota": 821,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Common Pile documents CC BY source content",
+      "selection_rule": "Original article/recipe prose with dates and bylines; preserve faithful HTML extraction; distinguish appended comments and remove automated comments.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.003030+00:00",
+          "http_status": 200,
+          "final_url": "https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/bfc2b573dfb80434.txt",
+          "sha256": "732d3b37fd5fd56f275345d426efba56a23e8c8e6411b5cb1ba6ffbc63606b49",
+          "bytes": 138202,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/bfc2b573dfb80434.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wikivoyage",
+      "name": "Wikivoyage travel prose",
+      "category": "general_web",
+      "quota": 1231,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY-SA text with attribution",
+      "selection_rule": "Main namespace travel prose; retain page/revision IDs; additional eligible same-source material needed after mirror shortfall.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "retrieved_at": "2026-10-02T06:29:54.930724+00:00",
+          "http_status": 200,
+          "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/490ffa88f9f485f4.txt",
+          "sha256": "55501ff08531fd3bcd289d5fafe4f0252ab7c510d380202127f31314e7726c24",
+          "bytes": 152808,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/490ffa88f9f485f4.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "globalvoices",
+      "name": "Global Voices original English news",
+      "category": "news",
+      "quota": 1652,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "CC BY original text; third-party media excluded",
+      "selection_rule": "Preserve author and canonical story URL; pre-2022 historical evidence; exclude copied third-party media/text beyond permitted source content.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://globalvoices.org/about/global-voices-attribution-policy/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "retrieved_at": "2026-10-02T06:29:54.930803+00:00",
+          "http_status": 200,
+          "final_url": "https://globalvoices.org/about/global-voices-attribution-policy/",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/235ade9f965428ce.txt",
+          "sha256": "52d83e3dc0e3d23642077971c7f8b398c4731ea3ec122e1edb37e0223354967a",
+          "bytes": 161952,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/235ade9f965428ce.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "voa",
+      "name": "Voice of America original reporting",
+      "category": "news",
+      "quota": 1652,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Exclusively VOA-produced material public domain; AP/AFP/Reuters are excluded",
+      "selection_rule": "Select VOA bylined originals only; automatic wire-service exclusions; retain dates/URLs and revision evidence.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.voanews.com/p/5338.html"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.voanews.com/p/5338.html",
+          "retrieved_at": "2026-10-02T06:29:56.087640+00:00",
+          "http_status": 200,
+          "final_url": "https://www.voanews.com/p/5338.html",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/a556217cb53916e1.txt",
+          "sha256": "0764ff8031748a845bd05fa8e831422e0365eb89f32c547cc4ebb8f1bd5fbfe1",
+          "bytes": 44911,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/a556217cb53916e1.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "wikinews",
+      "name": "Wikinews archived reporting",
+      "category": "news",
+      "quota": 991,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Pre-2005 public domain; 2005\u20132024 CC BY 2.5; newer material CC BY 4.0",
+      "selection_rule": "Only pre-2022 articles for this mix; retain correct period license, source attribution and article revision.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://en.wikinews.org/wiki/Wikinews:Copyright"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://en.wikinews.org/wiki/Wikinews:Copyright",
+          "retrieved_at": "2026-10-02T06:29:54.741634+00:00",
+          "http_status": 200,
+          "final_url": "https://en.wikinews.org/wiki/Wikinews:Copyright",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/8e16c72a75f7ea0b.txt",
+          "sha256": "24e2adda91575235fe058409e8b83405f9151c3d208a717c46ffb71ad0011adb",
+          "bytes": 74109,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/8e16c72a75f7ea0b.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "scidev",
+      "name": "SciDev.Net original science and development journalism",
+      "category": "news",
+      "quota": 991,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Official pages differ between CC BY 2.0 and 3.0; original text open, exceptions exist",
+      "selection_rule": "Retain article-level notice/version and author; exclude third-party documents; record policy-version discrepancy, not an invented uniform license.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.scidev.net/content/policies.html",
+        "https://www.scidev.net/content/media.html"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.scidev.net/content/policies.html",
+          "retrieved_at": "2026-10-02T06:29:56.038996+00:00",
+          "http_status": 200,
+          "final_url": "https://www.scidev.net/content/policies.html",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/f22f73658835f04f.txt",
+          "sha256": "9beaba1836a263bd9573e2740eff55a21eb2a26aef177d062352536ff19f1443",
+          "bytes": 222484,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/f22f73658835f04f.readable.txt"
+        },
+        {
+          "url": "https://www.scidev.net/content/media.html",
+          "retrieved_at": "2026-10-02T06:29:56.020030+00:00",
+          "http_status": 200,
+          "final_url": "https://www.scidev.net/content/media.html",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/2893c2707482509b.txt",
+          "sha256": "f7fee42d50103ddd76647ceb03381a3664ccfb183d60ad1ce6e9d0a000f8bbea",
+          "bytes": 170742,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/2893c2707482509b.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "oanc_slate",
+      "name": "OANC contributed Slate journalism",
+      "category": "news",
+      "quota": 1321,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "OANC explicitly permits unrestricted use and redistribution",
+      "selection_rule": "Use OANC Slate component only, not a fresh Slate scrape or full ANC Second Release; preserve article IDs/dates.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://anc.org/data/oanc/",
+        "https://anc.org/data/oanc/contents/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://anc.org/data/oanc/",
+          "retrieved_at": "2026-10-02T06:29:54.741231+00:00",
+          "http_status": 200,
+          "final_url": "https://anc.org/data/oanc/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/39266d7742054504.txt",
+          "sha256": "d8d0e58baa168e99451586e4de0c211f801cb0a43238593a51426d98d9dea605",
+          "bytes": 5249,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/39266d7742054504.readable.txt"
+        },
+        {
+          "url": "https://anc.org/data/oanc/contents/",
+          "retrieved_at": "2026-10-02T06:29:54.741305+00:00",
+          "http_status": 200,
+          "final_url": "https://anc.org/data/oanc/contents/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/ff5a73dc546ba9c5.txt",
+          "sha256": "91d68ff43de80b69dbe1beb189dae363698b8df54d63714c3f08f2bde0223746",
+          "bytes": 16694,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/ff5a73dc546ba9c5.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "asap2",
+      "name": "ASAP 2.0 original training essays",
+      "category": "essays",
+      "quota": 2943,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Official original training release CC BY 4.0",
+      "selection_rule": "Original training essays only; preserve essay/prompt IDs; collection dates honestly unverified; automatic PERSUADE and protected-family overlap exclusions.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md",
+        "https://zenodo.org/records/14781349"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.518396+00:00",
+          "http_status": 200,
+          "final_url": "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md",
+          "content_type": "text/plain; charset=utf-8",
+          "path": "evidence/source-review-20261002/72de814d158accb0.txt",
+          "sha256": "9cd8c75bb2424050509899ff9c4e90950a50296396cdd1e5e2af13dab2f03ac1",
+          "bytes": 1845,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/72de814d158accb0.readable.txt"
+        },
+        {
+          "url": "https://zenodo.org/records/14781349",
+          "retrieved_at": "2026-10-02T06:29:56.132810+00:00",
+          "http_status": 200,
+          "final_url": "https://zenodo.org/records/14781349",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/106e85e9e8f7347c.txt",
+          "sha256": "5a7b92f9cbda11a37c2721ed68f530a293139234f5222917d64d81b229bc934f",
+          "bytes": 75977,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/106e85e9e8f7347c.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "ellipse",
+      "name": "ELLIPSE original reliable training essays",
+      "category": "essays",
+      "quota": 1226,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "Official release CC BY-NC-SA 4.0",
+      "selection_rule": "Reliable original train essays only; exclude existing local evaluation essays and related prompt/student families before selection; keep noncommercial status.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/scrosseye/ELLIPSE-Corpus/main/README.md"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://raw.githubusercontent.com/scrosseye/ELLIPSE-Corpus/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.608795+00:00",
+          "http_status": 200,
+          "final_url": "https://raw.githubusercontent.com/scrosseye/ELLIPSE-Corpus/main/README.md",
+          "content_type": "text/plain; charset=utf-8",
+          "path": "evidence/source-review-20261002/3b7cfe49b10545fa.txt",
+          "sha256": "181fe4d9d6ebbce4a64de2a56f1a0afc9df19989e453dcf7f36db55614da0fed",
+          "bytes": 2666,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/3b7cfe49b10545fa.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "bawe",
+      "name": "British Academic Written English",
+      "category": "essays",
+      "quota": 0,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "forfeited_by_authorized_rebalance",
+      "terms_summary": "Publisher specifies noncommercial research, conditions of use and OTA registration",
+      "selection_rule": "Do not collect, publish or generate mirrors. Prior source/access restrictions preserved in plan-history.",
+      "private_hf_publication": "hold_until_compatible_access_and_hosting_terms",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://warwick.ac.uk/fac/soc/al/research/collections/bawe/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://warwick.ac.uk/fac/soc/al/research/collections/bawe/",
+          "retrieved_at": "2026-10-02T06:29:55.796130+00:00",
+          "http_status": 200,
+          "final_url": "https://warwick.ac.uk/fac/soc/al/research/collections/bawe/",
+          "content_type": "text/html;charset=UTF-8",
+          "path": "evidence/source-review-20261002/6fa0c7a56d3ee91c.txt",
+          "sha256": "849843c6aabc7a24df7723d920a4f7c2e9ffe90efbea665b300a94b4c4360a90",
+          "bytes": 33190,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/6fa0c7a56d3ee91c.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "persuade",
+      "name": "PERSUADE original essays with version-specific rights",
+      "category": "essays",
+      "quota": 736,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_research_candidates",
+      "terms_summary": "Version 2.0 repository says CC BY-NC-SA 4.0; separate publisher page says CC BY 4.0",
+      "selection_rule": "Use official version-2 training release under its stated restrictive terms; retain conflicting evidence; no test set; deduplicate ASAP/student/prompt families.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md",
+        "https://the-learning-agency-lab.com/learning-exchange/persuade-dataset/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md",
+          "retrieved_at": "2026-10-02T06:29:55.616153+00:00",
+          "http_status": 200,
+          "final_url": "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md",
+          "content_type": "text/plain; charset=utf-8",
+          "path": "evidence/source-review-20261002/588fc3934e3997e4.txt",
+          "sha256": "8087d61fb68aeab316232c4478e9bad2dd1af23b65df2f2bd68bc95582f62f7e",
+          "bytes": 2159,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/588fc3934e3997e4.readable.txt"
+        },
+        {
+          "url": "https://the-learning-agency-lab.com/learning-exchange/persuade-dataset/",
+          "retrieved_at": "2026-10-02T06:29:55.772346+00:00",
+          "http_status": 200,
+          "final_url": "https://the-learning-agency-lab.com/learning-exchange/persuade-dataset/",
+          "content_type": "text/html; charset=UTF-8",
+          "path": "evidence/source-review-20261002/9613a241ea13ca10.txt",
+          "sha256": "e2da8297aae6a4384860846e6d5878b5fa899813ce06e7a1c356ff04b8f9fe2d",
+          "bytes": 195620,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/9613a241ea13ca10.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "govreport",
+      "name": "GovReport original CRS and GAO reports",
+      "category": "professional",
+      "quota": 1086,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Publisher dataset CC BY 4.0; 2021 corpus",
+      "selection_rule": "Original report column from training split; never paired summaries; preserve shard/row/hash when agency IDs missing and record mapping pending.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://gov-report-data.github.io/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://gov-report-data.github.io/",
+          "retrieved_at": "2026-10-02T06:29:54.963175+00:00",
+          "http_status": 200,
+          "final_url": "https://gov-report-data.github.io/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/ad581739e881d600.txt",
+          "sha256": "c56968be1c2fb39c2284a1327b762d9009ae9801673a1b139a6b9a0f4801e84f",
+          "bytes": 5866,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/ad581739e881d600.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "fed",
+      "name": "Federal Reserve Board reports and policy prose",
+      "category": "professional",
+      "quota": 776,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "Board-authored site information public domain unless otherwise indicated",
+      "selection_rule": "Pre-2022 Board prose only; exclude attributed non-Board material, images and logos; preserve document date/author/URL.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.federalreserve.gov/disclaimer.htm"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.federalreserve.gov/disclaimer.htm",
+          "retrieved_at": "2026-10-02T06:29:55.826989+00:00",
+          "http_status": 200,
+          "final_url": "https://www.federalreserve.gov/disclaimer.htm",
+          "content_type": "text/html",
+          "path": "evidence/source-review-20261002/7bf00c12fb8bf622.txt",
+          "sha256": "153e4e80df995f7720a8dd2577f8069c9e14a5ef7b87feed0ef973dee563d1dc",
+          "bytes": 85130,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/7bf00c12fb8bf622.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "worldbank",
+      "name": "World Bank openly licensed reports",
+      "category": "professional",
+      "quota": 776,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "OKR contains CC BY, CC BY-NC, CC BY-NC-ND and other licenses",
+      "selection_rule": "Select agreed openly licensed subset (CC BY/CC BY IGO); retain per-work license and required attribution; no blanket OKR license assignment.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository",
+          "retrieved_at": "2026-10-02T06:29:56.114538+00:00",
+          "http_status": 200,
+          "final_url": "https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/e498f78760cd9ba0.txt",
+          "sha256": "8ee71c2e0a34fd0ef9efdd30bbbf1d988ce4f511660817adcce920ff4ff73fba",
+          "bytes": 25098,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/e498f78760cd9ba0.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    },
+    {
+      "source_id": "oanc_icic",
+      "name": "OANC ICIC professional correspondence",
+      "category": "professional",
+      "quota": 465,
+      "user_collection_authorized": true,
+      "per_sample_user_approval_required": false,
+      "source_review_complete": true,
+      "collection_decision": "proceed_subset",
+      "terms_summary": "OANC explicitly permits unrestricted use and redistribution",
+      "selection_rule": "Only ICIC fundraising/letters component; preserve original document boundaries and IDs; check finite 245-file supply against passage quota without duplication.",
+      "private_hf_publication": "authorized_candidate_snapshot_with_original_terms_and_provenance",
+      "commercial_training_cleared": false,
+      "training_admission": "separate_automated_quality_and_overlap_checks_pending",
+      "evidence_urls": [
+        "https://anc.org/data/oanc/",
+        "https://anc.org/data/oanc/contents/"
+      ],
+      "evidence_records": [
+        {
+          "url": "https://anc.org/data/oanc/",
+          "retrieved_at": "2026-10-02T06:29:54.741231+00:00",
+          "http_status": 200,
+          "final_url": "https://anc.org/data/oanc/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/39266d7742054504.txt",
+          "sha256": "d8d0e58baa168e99451586e4de0c211f801cb0a43238593a51426d98d9dea605",
+          "bytes": 5249,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/39266d7742054504.readable.txt"
+        },
+        {
+          "url": "https://anc.org/data/oanc/contents/",
+          "retrieved_at": "2026-10-02T06:29:54.741305+00:00",
+          "http_status": 200,
+          "final_url": "https://anc.org/data/oanc/contents/",
+          "content_type": "text/html; charset=utf-8",
+          "path": "evidence/source-review-20261002/ff5a73dc546ba9c5.txt",
+          "sha256": "91d68ff43de80b69dbe1beb189dae363698b8df54d63714c3f08f2bde0223746",
+          "bytes": 16694,
+          "status": "retrieved",
+          "readable_path": "evidence/source-review-20261002/ff5a73dc546ba9c5.readable.txt"
+        }
+      ],
+      "remaining_implementation_is_not_user_approval": true
+    }
+  ],
+  "active_source_count": 35
+}

@@ -1,0 +1,200 @@
+<title>Mainline Detector Candidates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one comparison grid (tests down, models across); summary strip above; every held-out test opens into its writers and edit types. */
+:root {
+  --bg: #f5f6f8; --panel: #ffffff; --fg: #1a2230; --muted: #5f6a7a; --line: #dce1e9; --accent: #2f5f8f;
+  --win: #d9f0e1; --win-fg: #17663f; --ref: #f0f2f6; --chip: #e8ecf2; --hover: #f2f6fb;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11151c; --panel: #181e27; --fg: #e2e7ee; --muted: #97a2b2; --line: #2a3340; --accent: #8fb9e4;
+  --win: #173a28; --win-fg: #7fd9a6; --ref: #1d2430; --chip: #242e3c; --hover: #1c2531; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11151c; --panel: #181e27; --fg: #e2e7ee; --muted: #97a2b2; --line: #2a3340; --accent: #8fb9e4;
+  --win: #173a28; --win-fg: #7fd9a6; --ref: #1d2430; --chip: #242e3c; --hover: #1c2531; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 26px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 600 clamp(28px, 4vw, 40px)/1.1 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 22px/1.2 var(--display); margin: 0; }
+p { margin: 0; max-width: 74ch; }
+.lede { color: var(--muted); font-size: 16px; }
+.wins { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.win { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 4px; }
+.win .n { font: 600 26px/1 var(--display); }
+.win .l { font-size: 13px; color: var(--muted); }
+.win.lead { border-color: var(--win-fg); }
+.win.ref { background: var(--ref); }
+.controls { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+.controls label { font-size: 13px; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+select { font: 500 14px/1 var(--body); padding: 7px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); }
+select:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tbl { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+thead th { vertical-align: bottom; font-weight: 500; color: var(--muted); font-size: 12.5px; }
+thead th .mn { display: block; font: 600 15px/1.2 var(--body); color: var(--fg); }
+th.test, td.test { text-align: left; white-space: normal; min-width: 230px; }
+td.test small { display: block; color: var(--muted); font-size: 12px; }
+td { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td.test { font-family: var(--body); }
+td.ref, th.ref { background: var(--ref); }
+td.best { background: var(--win); color: var(--win-fg); font-weight: 500; }
+td.na { color: var(--muted); }
+tr.section td { background: var(--bg); font: 600 12px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 14px; }
+tr.sub td.test { padding-left: 34px; color: var(--muted); }
+tr.sub td { font-size: 13px; }
+tr.subhead td { font: 500 11.5px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); padding: 10px 12px 4px 34px; border-bottom: 0; text-align: left; }
+button.tg { all: unset; cursor: pointer; display: inline-flex; gap: 8px; align-items: baseline; color: var(--fg); font-weight: 500; }
+button.tg .car { display: inline-block; width: 12px; color: var(--accent); transition: transform .15s; }
+button.tg[aria-expanded="true"] .car { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { button.tg .car { transition: none; } }
+tr.parent:hover td { background-image: linear-gradient(var(--hover), var(--hover)); }
+tr.parent:hover td.best { background-image: none; }
+.n { color: var(--muted); font-size: 11.5px; }
+.note { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+ul.facts { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 80ch; }
+footer { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 6px; }
+code { font-family: var(--mono); font-size: .92em; }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Paper-edit detector · mainline candidates · Oct 8, 2026</div>
+  <h1>Which full-size training pool wins</h1>
+  <p class="lede">The three full-size Qwen3.6 35B-A3B MoE runs, one per training pool, on every test in the eval suite. Green marks the best of the three on each line. All scores come from the same fast scorer on the H200.</p>
+</header>
+
+<section class="wins" id="wins"></section>
+
+<section style="display:grid;gap:12px">
+  <div class="controls">
+    <label for="metric">Metric <select id="metric">
+      <option value="r">Recall at 1% FPR</option>
+      <option value="auc">AUROC</option>
+      <option value="cfpr">Human false-positive rate</option>
+    </select></label>
+    <label for="split">Main eval split <select id="split">
+      <option value="test">Test (150 small-edit sentences)</option>
+      <option value="dev">Dev (189 small-edit sentences)</option>
+    </select></label>
+    <label for="expand">Breakdowns <select id="expand">
+      <option value="none">Collapsed</option>
+      <option value="all">Expand all</option>
+    </select></label>
+  </div>
+  <div class="tbl"><table id="grid"></table></div>
+  <p class="note" id="metricNote"></p>
+</section>
+
+<section style="display:grid;gap:10px">
+  <h2>Reading it</h2>
+  <ul class="facts" id="facts"></ul>
+</section>
+
+<footer>
+  <div>Recall uses each model's own threshold: 1% false positives on the main eval set's dev human sentences. "Human false-positive rate" is the share of the set's human control sentences flagged at that threshold. Small-edit sets are small (about ±3–4 points); every run is one seed. Fable polish is left out (2 AI sentences).</div>
+  <div>Scorer: <code>FAST_EVAL=1 eval_final.py</code>, checked against the slow scorer on Oct 8 (mean per-sentence change 0.001–0.003). Sources: <code>research/evaluation/mainline-20261008/</code>.</div>
+</footer>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const M = DATA.models, MAIN = M.filter(m => m.main);
+const NICE = { 'claude-haiku-4-5': 'Claude Haiku 4.5', 'claude-haiku-4-5-20251001': 'Claude Haiku 4.5', 'claude-opus-5-5': 'Claude Opus 5.5', 'claude-sonnet-5-5': 'Claude Sonnet 5.5',
+  'claude-fable-5-1': 'Claude Fable 5.1', 'gpt-6-luna': 'GPT-6 Luna', 'gpt-6-sol': 'GPT-6 Sol', 'gpt-6.1-sol': 'GPT-6.1 Sol', 'Opus 3': 'Claude Opus 3',
+  'deepseek/deepseek-v4.1-flash': 'DeepSeek V4.1 Flash', 'xiaomi/mimo-v2.6-flash': 'MiMo V2.6 Flash', 'z-ai/glm-5.3-flash': 'GLM 5.3 Flash' };
+const COH = { insert_one: 'Insert one sentence', rewrite_one: 'Rewrite one sentence', rewrite_two: 'Rewrite two sentences', split_one: 'Split one sentence',
+  para_draft: 'Draft a paragraph', para_rewrite: 'Rewrite a paragraph', paragraph_draft: 'Draft a paragraph', paragraph_rewrite: 'Rewrite a paragraph',
+  section_draft: 'Draft a section', section_rewrite: 'Rewrite a section', ai_before_humanizing: 'AI text before humanizing', humanized: 'After Fable humanizing',
+  cowrite_3_rounds: 'Three co-writing rounds', expansion: 'Expansion', gpt_general: 'GPT general text', gpt_ml_papers: 'GPT on ML papers', ml_papers: 'ML papers',
+  original: 'Original batch', overnight_batch_01: 'Batch 1', overnight_batch_02: 'Batch 2', overnight_batch_03: 'Batch 3' };
+const $ = id => document.getElementById(id);
+const g = (o, p) => p.reduce((a, k) => a == null ? null : a[k], o);
+const fmt = (x, met) => x == null ? '—' : met === 'cfpr' ? (100 * x).toFixed(1) + '%' : x.toFixed(3);
+const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+// Rows: [id, label, sublabel, getter(model, metric) -> value, kind]; held-out rows carry breakdown children.
+function rows(split) {
+  const out = [{ section: `Main eval set · ${split}` }];
+  DATA.sweep_tests.forEach(([k, label]) => out.push({ id: 'sw-' + k, label, sub: k === 'edits_small' ? 'Headline metric' : '',
+    get: (m, met) => met === 'cfpr' ? null : g(m, ['sweep', split, k, met]), n: m => g(m, ['sweep', split, k, 'n']) }));
+  out.push({ section: 'Held-out sets' });
+  DATA.sets.forEach(([s, label, desc]) => {
+    const kids = [];
+    const names = kind => [...new Set(M.flatMap(m => Object.keys(g(m, ['sets', s, kind]) || {})))];
+    const ws = names('writers'), cs = names('cohorts');
+    if (ws.length > 1 || (ws.length === 1 && s !== 'fable-cowrite')) {
+      kids.push({ subhead: 'By AI writer' });
+      ws.sort((a, b) => (NICE[a] || a).localeCompare(NICE[b] || b)).forEach(w => kids.push({ label: NICE[w] || w,
+        get: (m, met) => met === 'cfpr' ? null : g(m, ['sets', s, 'writers', w, met]), n: m => g(m, ['sets', s, 'writers', w, 'n']) }));
+    }
+    if (cs.length > 1) {
+      kids.push({ subhead: 'By edit type' });
+      cs.forEach(c => kids.push({ label: COH[c] || c, get: (m, met) => met === 'cfpr' ? null : g(m, ['sets', s, 'cohorts', c, met]), n: m => g(m, ['sets', s, 'cohorts', c, 'n']) }));
+    }
+    out.push({ id: 'set-' + s, label, sub: desc, kids,
+      get: (m, met) => met === 'cfpr' ? g(m, ['sets', s, 'cfpr']) : g(m, ['sets', s, 'all', met]), n: m => g(m, ['sets', s, 'all', 'n']) });
+  });
+  return out;
+}
+
+const open = new Set();
+function bestOf(row, met) {
+  const vals = MAIN.map(m => row.get(m, met));
+  const xs = vals.filter(v => v != null); if (xs.length < 2) return new Set();
+  const b = met === 'cfpr' ? Math.min(...xs) : Math.max(...xs);
+  return new Set(MAIN.filter((m, i) => vals[i] != null && Math.abs(vals[i] - b) < 1e-9).map(m => m.tag));
+}
+function cells(row, met) {
+  const best = bestOf(row, met);
+  return M.map(m => {
+    if (!m.scored) return `<td class="na ref">scoring…</td>`;
+    const v = row.get(m, met);
+    const cls = [m.main ? '' : 'ref', best.has(m.tag) ? 'best' : '', v == null ? 'na' : ''].join(' ');
+    return `<td class="${cls}">${fmt(v, met)}</td>`;
+  }).join('');
+}
+function render() {
+  const met = $('metric').value, split = $('split').value, T = $('grid');
+  const head = `<thead><tr><th class="test">Test</th>${M.map(m => `<th class="${m.main ? '' : 'ref'}"><span class="mn">${esc(m.name)}</span>${esc(m.sub)}</th>`).join('')}</tr></thead>`;
+  let body = '';
+  rows(split).forEach(r => {
+    if (r.section) { body += `<tr class="section"><td colspan="${M.length + 1}">${esc(r.section)}</td></tr>`; return; }
+    const nAI = MAIN.map(m => r.n(m)).find(x => x);
+    const lab = r.kids && r.kids.length
+      ? `<button class="tg" type="button" aria-expanded="${open.has(r.id)}" data-id="${r.id}"><span class="car">▸</span>${esc(r.label)}</button>`
+      : esc(r.label);
+    body += `<tr class="parent"><td class="test">${lab}<small>${esc(r.sub || '')}${nAI ? `${r.sub ? ' · ' : ''}${nAI.toLocaleString()} AI sentences` : ''}</small></td>${cells(r, met)}</tr>`;
+    if (r.kids && open.has(r.id)) r.kids.forEach(k => {
+      if (k.subhead) { body += `<tr class="subhead"><td colspan="${M.length + 1}">${esc(k.subhead)}</td></tr>`; return; }
+      const n = MAIN.map(m => k.n(m)).find(x => x);
+      body += `<tr class="sub"><td class="test">${esc(k.label)}${n ? ` <span class="n">n=${n.toLocaleString()}</span>` : ''}</td>${cells(k, met)}</tr>`;
+    });
+  });
+  T.innerHTML = head + '<tbody>' + body + '</tbody>';
+  T.querySelectorAll('button.tg').forEach(b => b.onclick = () => { open.has(b.dataset.id) ? open.delete(b.dataset.id) : open.add(b.dataset.id); render(); });
+  $('metricNote').textContent = met === 'cfpr'
+    ? 'Lower is better. Measured on each held-out set’s human control sentences; the main eval set has none beyond the 1% it is calibrated to. Per-writer rows have no human text of their own.'
+    : met === 'auc' ? 'Higher is better. AUROC of AI sentences against the set’s human control sentences; it needs no threshold.'
+    : 'Higher is better. Share of AI sentences flagged at the model’s 1%-FPR threshold.';
+  wins(met, split);
+}
+function wins(met, split) {
+  const count = Object.fromEntries(MAIN.map(m => [m.tag, 0])); let total = 0;
+  rows(split).filter(r => !r.section).forEach(r => { const b = bestOf(r, met); if (b.size) { total++; b.forEach(t => count[t]++); } });
+  const top = Math.max(...Object.values(count));
+  $('wins').innerHTML = MAIN.map(m => `<div class="win ${count[m.tag] === top ? 'lead' : ''}"><div class="n">${count[m.tag]} / ${total}</div><div class="l"><b>${esc(m.name)}</b> best on ${count[m.tag]} of ${total} tests (${$('metric').selectedOptions[0].text.toLowerCase()})</div></div>`).join('') +
+    M.filter(m => !m.main).map(m => `<div class="win ref"><div class="n">${m.scored ? 'ref' : '…'}</div><div class="l"><b>${esc(m.name)}</b> ${m.scored ? 'shown for reference, not ranked' : 'still being scored'}</div></div>`).join('');
+}
+['metric', 'split'].forEach(id => $(id).onchange = render);
+$('expand').onchange = () => { open.clear(); if ($('expand').value === 'all') rows($('split').value).forEach(r => r.kids && r.kids.length && open.add(r.id)); render(); };
+(DATA.facts || []).forEach(t => { const li = document.createElement('li'); li.innerHTML = t; $('facts').append(li); });
+render();
+</script>

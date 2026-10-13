@@ -1,0 +1,18 @@
+{
+  "paper_partitions_disjoint": true,
+  "unique_windows": 22923,
+  "models": {
+    "encoder": {
+      "windows_validated": 22923,
+      "max_source_tokens": 510
+    },
+    "causal": {
+      "windows_validated": 22923,
+      "max_source_tokens": 510
+    },
+    "qwen35": {
+      "windows_validated": 22923,
+      "max_source_tokens": 510
+    }
+  }
+}

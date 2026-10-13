@@ -1,0 +1,60 @@
+{
+  "scope": "Planning artifact only; no paid jobs started. English prose first.",
+  "hard_limits_usd": {
+    "project": 300,
+    "final_fit": 30
+  },
+  "budget_caps_usd": {
+    "source_preparation_and_artifact_storage": 10,
+    "diverse_generation_including_mining_refresh_and_eval": 90,
+    "luna_metadata_and_clause_splitting": 12,
+    "semantic_embeddings": 6,
+    "label_audit_adjudication": 8,
+    "rd_experiments_including_preliminary_candidates": 80,
+    "hard_negative_screening": 20,
+    "final_fit_all_in": 30,
+    "final_evaluation_and_calibration": 24,
+    "uncommitted_project_buffer": 20
+  },
+  "default_backbone": "Qwen/Qwen3.5-2B-Base, text backbone only",
+  "capacity_challenger": "Qwen/Qwen3.5-4B-Base, text backbone only",
+  "targets_not_guarantees": {
+    "human_source_families": 20000,
+    "ai_mirrors": 20000,
+    "ai_edited_variants": 16000,
+    "interleaved_variants": 8000,
+    "humanizer_variants": 2000,
+    "stage1_window_exposures": 150000,
+    "stage2_window_exposures": 50000,
+    "source_window_tokens": 512,
+    "stage2_repeat_factor": 2,
+    "processed_training_tokens": 128000000
+  },
+  "final_fit_control": {
+    "planning_hourly_gpu_rate": 2.5,
+    "max_hours_at_rate": 12,
+    "planned_training_and_job_cost_limit": 27,
+    "remaining_final_job_allowance": 3,
+    "must_measure_stage1_and_stage2_throughput": true,
+    "final_starts_from_pretrained_base": true,
+    "includes_loading_merges_validation_saving_shutdown_and_job_specific_charges": true
+  },
+  "initial_hyperparameters": {
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "adapter_lr": 3e-05,
+    "head_lr": 0.0001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.03,
+    "max_grad_norm": 1,
+    "effective_batch_source_windows": 64,
+    "loss_weights": {
+      "segment": 1,
+      "token_mean_valid": 1,
+      "mixed": 0.5,
+      "detached_humanizer": 0.25
+    }
+  }
+}

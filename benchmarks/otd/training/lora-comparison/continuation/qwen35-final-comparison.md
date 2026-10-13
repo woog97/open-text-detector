@@ -1,0 +1,49 @@
+# Qwen3.5 full tuning versus LoRA
+Percentages. Bold is better within each row. Document labels are not token gold. One seed; no equivalence claim.
+| Profile / dataset | Unit | Full F1 | LoRA F1 | Full recall | LoRA recall | Full human FPR | LoRA human FPR |
+|---|---|---:|---:|---:|---:|---:|---:|
+| workflow / ellipse | Token | - | - | - | - | 0.00 | 0.00 |
+| workflow / ellipse | Sentence | - | - | - | - | 0.00 | 0.00 |
+| workflow / ellipse | Document | - | - | - | - | 0.00 | 0.00 |
+| workflow / human_paper_workflow_matched | Token | 0.00 | 0.00 | - | - | **0.17** | 0.20 |
+| workflow / human_paper_workflow_matched | Sentence | 0.00 | 0.00 | - | - | 0.24 | 0.24 |
+| workflow / human_paper_workflow_matched | Document | 0.00 | - | - | - | 0.46 | **0.00** |
+| workflow / human_paper_workflow_remaining | Token | 0.00 | 0.00 | - | - | **0.04** | 0.11 |
+| workflow / human_paper_workflow_remaining | Sentence | 0.00 | 0.00 | - | - | **0.03** | 0.10 |
+| workflow / human_paper_workflow_remaining | Document | 0.00 | 0.00 | - | - | **0.04** | 0.08 |
+| workflow / paper_workflow_reconstruction | Token | 58.57 | **76.43** | 41.71 | **63.17** | **0.35** | 1.05 |
+| workflow / paper_workflow_reconstruction | Sentence | 57.07 | **75.06** | 40.27 | **61.40** | **0.43** | 1.08 |
+| workflow / paper_workflow_reconstruction | Document | 74.42 | **75.86** | 59.26 | **61.11** | - | - |
+| comparison / arena50 | Token | 0.00 | **0.07** | 0.00 | **0.04** | - | - |
+| comparison / arena50 | Sentence | 0.00 | **0.04** | 0.00 | **0.02** | - | - |
+| comparison / arena50 | Document | 0.00 | 0.00 | 0.00 | 0.00 | - | - |
+| comparison / detectrl | Document | **0.25** | 0.00 | **0.12** | 0.00 | 0.00 | 0.00 |
+| comparison / epoch | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / gede | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / human_paper_context | Token | 0.00 | 0.00 | - | - | **0.01** | 0.71 |
+| comparison / human_paper_context | Sentence | - | 0.00 | - | - | **0.00** | 0.54 |
+| comparison / human_paper_context | Document | - | - | - | - | 0.00 | 0.00 |
+| comparison / human_paper_remaining | Token | 0.00 | 0.00 | - | - | 0.21 | **0.18** |
+| comparison / human_paper_remaining | Sentence | 0.00 | 0.00 | - | - | 0.23 | **0.14** |
+| comparison / human_paper_remaining | Document | 0.00 | 0.00 | - | - | 0.13 | **0.06** |
+| comparison / liang | Document | - | - | - | - | 0.00 | 0.00 |
+| comparison / local_binary | Document | **1.55** | 0.00 | **0.78** | 0.00 | 0.00 | 0.00 |
+| comparison / local_length | Document | **0.98** | 0.00 | **0.49** | 0.00 | 0.00 | 0.00 |
+| comparison / local_mixed | Token | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / local_mixed | Sentence | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / local_mixed | Document | - | - | - | - | - | - |
+| comparison / meld_eval | Document | **0.67** | 0.00 | **0.33** | 0.00 | 0.00 | 0.00 |
+| comparison / opai | Token | 1.58 | **3.39** | 0.80 | **1.72** | **0.04** | 0.06 |
+| comparison / opai | Sentence | 1.39 | **3.38** | 0.70 | **1.72** | 0.04 | 0.04 |
+| comparison / opai | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / paper_pilots_exploratory | Token | 41.65 | **82.89** | 26.54 | **70.88** | 0.21 | **0.04** |
+| comparison / paper_pilots_exploratory | Sentence | 43.99 | **87.50** | 28.48 | **77.91** | 0.23 | **0.04** |
+| comparison / paper_pilots_exploratory | Document | - | - | - | - | - | - |
+| comparison / paper_v3_target | Token | 55.20 | **93.84** | 38.13 | **90.53** | **0.00** | 2.27 |
+| comparison / paper_v3_target | Sentence | 53.56 | **92.89** | 36.57 | **88.63** | **0.00** | 2.10 |
+| comparison / paper_v3_target | Document | - | - | - | - | 0.00 | 0.00 |
+| comparison / pelic | Document | - | - | - | - | 0.00 | 0.00 |
+| comparison / perkins | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / saha | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / sem_detect | Document | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| comparison / vub | Document | 0.00 | 0.00 | 0.00 | 0.00 | - | - |

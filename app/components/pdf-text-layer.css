@@ -1,0 +1,12 @@
+/* Text-layer rules adapted from pdfjs-dist 5.x pdf_viewer.css.
+ * Copyright 2014 Mozilla Foundation. Licensed under Apache-2.0:
+ * https://www.apache.org/licenses/LICENSE-2.0
+ * Only text positioning/selection is used; viewer/editor/annotation UI is omitted.
+ */
+.textLayer{color-scheme:only light;position:absolute;text-align:initial;inset:0;overflow:clip;opacity:1;line-height:1;text-size-adjust:none;-webkit-text-size-adjust:none;forced-color-adjust:none;transform-origin:0 0;caret-color:CanvasText;z-index:0;--min-font-size:1;--text-scale-factor:calc(var(--total-scale-factor) * var(--min-font-size));--min-font-size-inv:calc(1 / var(--min-font-size))}
+.textLayer :is(span,br){color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0% 0%}
+.textLayer > :not(.markedContent),.textLayer .markedContent span:not(.markedContent){z-index:1;--font-height:0;font-size:calc(var(--text-scale-factor) * var(--font-height));--scale-x:1;--rotate:0deg;transform:rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv))}
+.textLayer .markedContent{display:contents}
+.textLayer span[role="img"]{user-select:none;-webkit-user-select:none;cursor:default}
+.textLayer ::selection{background:rgba(0,0,255,.25)}
+.textLayer br::selection{background:transparent}

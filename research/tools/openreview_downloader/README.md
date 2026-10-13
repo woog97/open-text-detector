@@ -1,0 +1,365 @@
+[![PyPI - Version](https://img.shields.io/pypi/v/openreview-downloader)](https://pypi.org/project/openreview-downloader/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+# OpenReview Paper Downloader
+
+Simple download, listing, and search of oral, spotlight, accepted, or rejected papers from OpenReview into tidy folders by decision.
+
+Despite the name, this works for **any** OpenReview-hosted conference (NeurIPS, ICLR, ICML, etc.).
+
+## Installation
+
+```bash
+pip install openreview_downloader
+```
+
+## Usage
+
+The CLI saves PDFs into `downloads/<venue>/<decision>/` with sanitized filenames.
+
+**Available decisions:**
+- `oral` – Oral presentations
+- `spotlight` – Spotlight presentations
+- `accepted` – All accepted papers
+- `rejected` – Rejected papers
+- `all` – Accepted and rejected papers
+
+### Authentication
+
+Some OpenReview venues require authenticated API access. If `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` are present in the environment, the CLI uses them automatically and does not prompt.
+
+To save credentials for future runs:
+
+```bash
+ordl auth
+```
+
+You can also check or clear saved credentials:
+
+```bash
+ordl auth status
+ordl auth logout
+```
+
+When no environment or saved credentials are available, `ordl` asks for your OpenReview email and password interactively before contacting OpenReview.
+
+### Latest ICML example (2026)
+
+OpenReview may require authenticated API access for ICML 2026. Run `ordl auth` once, or set `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD` in your environment.
+
+Download all ICML 2026 spotlight papers:
+
+```bash
+ordl spotlight --venue-id ICML.cc/2026/Conference
+```
+
+Download Output:
+
+```
+downloads
+└── icml2026
+    └── spotlight
+        ├── 34584_Foundations_of_Equivariant_Deep_Learning.pdf
+        ...
+        └── 34218_Information-Theoretic_Disentangled_Latent_Modeling_with.pdf
+```
+
+See decision counts without downloading:
+
+```bash
+ordl --info --venue-id ICML.cc/2026/Conference
+```
+
+Example output:
+
+```
+Fetching accepted submissions for ICML.cc/2026/Conference...
+Accepted submissions: 6341
+Rejected submissions: 214
+ICML 2026
+---
+Oral: 0
+Spotlight: 536
+Accepted: 6341
+Rejected: 214
+```
+
+Preview accepted ICML 2026 papers:
+
+```bash
+ordl accepted --list --head 3 --venue-id ICML.cc/2026/Conference
+```
+
+### Basic examples (NeurIPS)
+
+Download all NeurIPS oral papers:
+
+```bash
+ordl oral --venue-id NeurIPS.cc/2025/Conference
+```
+
+Download Output:
+
+```
+downloads
+└── neurips2025
+    └── oral
+        ├── 27970_Deep_Compositional_Phase_Diffusion.pdf
+        ...
+        └── 28928_Generalized_Linear_Mode_Connectivity.pdf
+```
+
+
+Download all NeurIPS oral and spotlight papers:
+
+```bash
+ordl oral,spotlight --venue-id NeurIPS.cc/2025/Conference
+```
+
+Download all accepted NeurIPS papers (any presentation type):
+
+```bash
+ordl accepted --venue-id NeurIPS.cc/2025/Conference
+```
+
+See decision counts without downloading:
+
+```bash
+ordl --info --venue-id NeurIPS.cc/2025/Conference
+```
+
+Example output:
+
+```
+Fetching accepted submissions for NeurIPS.cc/2025/Conference...
+Accepted submissions: 5286
+Rejected submissions: 254
+NeurIPS 2025
+---
+Oral: 77
+Spotlight: 687
+Accepted: 5286
+Rejected: 254
+```
+
+### List and preview papers
+
+List all accepted papers without downloading:
+
+```bash
+ordl accepted --list --venue-id NeurIPS.cc/2025/Conference
+```
+
+List accepted and rejected papers:
+
+```bash
+ordl all --list --venue-id NeurIPS.cc/2025/Conference
+```
+
+Show only the first 3 accepted papers:
+
+```bash
+ordl accepted --list --head 3 --venue-id NeurIPS.cc/2025/Conference
+```
+
+Example output:
+
+```
+Fetching accepted submissions for NeurIPS.cc/2025/Conference...
+Accepted submissions: 5286
+Matched papers: 5286
+Showing first: 3
+---
+29297 [accepted] Time-o1: Time-Series Forecasting Needs Transformed Label Alignment
+  authors: Hao Wang, Licheng Pan, Zhichao Chen, Xu Chen, Qingyang Dai, Lei Wang, Haoxuan Li, Zhouchen Lin
+  id: RxWILaXuhb
+  pdf: downloads/neurips2025/accepted/29297_Time-o1_Time-Series_Forecasting_Needs_Transformed_Label_Alignment.pdf
+29260 [accepted] REVE: A Foundation Model for EEG - Adapting to Any Setup with Large-Scale Pretraining on 25,000 Subjects
+  authors: Yassine El Ouahidi, Jonathan Lys, Philipp Thölke, Nicolas Farrugia, Bastien Pasdeloup, Vincent Gripon, Karim Jerbi, Giulia Lioi
+  id: ZeFMtRBy4Z
+  pdf: downloads/neurips2025/accepted/29260_REVE_A_Foundation_Model_for_EEG_-_Adapting_to_Any_Setup_with_Large-Scale_Pretraining_on_25000_Subjects.pdf
+```
+
+If you omit `DECISIONS` while listing or searching, the CLI defaults to accepted papers and exits without downloading:
+
+```bash
+ordl --head 20 --venue-id NeurIPS.cc/2025/Conference
+```
+
+### Search, grep, and regex workflows
+
+Search over title, authors, abstract, keywords, decision, venue, id, and paper number. `--search` and `--grep` are aliases; matching is case-insensitive by default.
+
+Preview accepted papers matching a text query:
+
+```bash
+ordl accepted --list --search diffusion --head 2 --venue-id NeurIPS.cc/2025/Conference
+```
+
+Example output:
+
+```
+Fetching accepted submissions for NeurIPS.cc/2025/Conference...
+Accepted submissions: 5286
+Matched papers: 710
+Showing first: 2
+Text hits shown: 4
+---
+29119 [accepted] CADGrasp: Learning Contact and Collision Aware General Dexterous Grasping in Cluttered Scenes
+  authors: Jiyao Zhang, Zhiyuan Ma, Tianhao Wu, Zeyuan Chen, Hao Dong
+  id: CB8jwNE2vV
+  pdf: downloads/neurips2025/accepted/29119_CADGrasp_Learning_Contact_and_Collision_Aware_General_Dexterous_Grasping_in_Cluttered_Scenes.pdf
+  match: abstract / diffusion: ... high-dimensional representation, we introduce an occupancy-[diffusion] model with voxel-level conditional guidance and force closu...
+29103 [accepted] KLASS: KL-Guided Fast Inference in Masked Diffusion Models
+  authors: Seo Hyun Kim, Sunwoo Hong, Hojung Jung, Youngrok Park, Se-Young Yun
+  id: gOG9Zoyn4R
+  pdf: downloads/neurips2025/accepted/29103_KLASS_KL-Guided_Fast_Inference_in_Masked_Diffusion_Models.pdf
+  match: title / diffusion: KLASS: KL-Guided Fast Inference in Masked [Diffusion] Models
+```
+
+Preview regex matches and show snippets plus counts:
+
+```bash
+ordl accepted --list --regex 'diffusion|transformer' --head 2 --venue-id NeurIPS.cc/2025/Conference
+```
+
+Download the same selection by rerunning the same query without `--list`:
+
+```bash
+ordl accepted --search diffusion --venue-id NeurIPS.cc/2025/Conference
+```
+
+Download only the first 10 matches:
+
+```bash
+ordl accepted --search diffusion --head 10 --venue-id NeurIPS.cc/2025/Conference
+```
+
+Require multiple terms or patterns by repeating the flags:
+
+```bash
+ordl accepted --list --grep diffusion --grep protein --venue-id NeurIPS.cc/2025/Conference
+```
+
+For scripts, agents, and crawlbots, use JSON Lines output while listing:
+
+```bash
+ordl accepted --list --search diffusion --head 2 --format jsonl --venue-id NeurIPS.cc/2025/Conference
+```
+
+The first JSON line is a summary with the number of matched and shown papers; each following line is one paper record with stable fields such as `id`, `number`, `decision`, `title`, `authors`, `pdf_path`, `match_count`, and `matches`.
+
+JSONL keeps progress logs on stderr so stdout can be piped directly into tools:
+
+```json
+{"decisions": ["accepted"], "head": 2, "matched_papers": 710, "shown_papers": 2, "type": "summary", "venue_id": "NeurIPS.cc/2025/Conference"}
+{"authors": "Jiyao Zhang, Zhiyuan Ma, Tianhao Wu, Zeyuan Chen, Hao Dong", "decision": "accepted", "id": "CB8jwNE2vV", "match_count": 1, "matches": [{"count": 1, "field": "abstract", "query": "diffusion", "snippet": "... high-dimensional representation, we introduce an occupancy-[diffusion] model with voxel-level conditional guidance and force closu..."}], "number": 29119, "pdf_path": "downloads/neurips2025/accepted/29119_CADGrasp_Learning_Contact_and_Collision_Aware_General_Dexterous_Grasping_in_Cluttered_Scenes.pdf", "title": "CADGrasp: Learning Contact and Collision Aware General Dexterous Grasping in Cluttered Scenes", "type": "paper", "venue": "NeurIPS 2025 poster", "venueid": "NeurIPS.cc/2025/Conference"}
+```
+
+### Other Conferences (ICLR, ICML, etc.)
+
+Just change the `--venue-id` to the appropriate OpenReview handle.
+
+**ICLR 2025 orals only:**
+
+```bash
+ordl oral --venue-id ICLR.cc/2025/Conference
+```
+
+**ICLR 2025 accepted papers (all formats):**
+
+```bash
+ordl accepted --venue-id ICLR.cc/2025/Conference
+```
+
+**ICML 2025 oral + spotlight:**
+
+```bash
+ordl oral,spotlight --venue-id ICML.cc/2025/Conference
+```
+
+You can use any other OpenReview venue ID in the same way.
+
+
+### CLI Options
+
+- **`DECISIONS`** (positional) – Comma-separated list of decisions to select (`oral`, `spotlight`, `accepted`, `rejected`, `all`)
+- **`--venue-id`** – OpenReview venue ID (default: `NeurIPS.cc/2025/Conference` or env `VENUE_ID`)
+- **`--out-dir`** – Custom output directory (default: `downloads/<venue>/`)
+- **`--no-skip-existing`** – Re-download even if the PDF is already present
+- **`--info`** – Print decision counts for the venue and exit
+- **`--list`** – List selected papers and exit without downloading
+- **`--head N`** – Limit the selection to the first `N` papers; useful for previews or small downloads
+- **`--search TEXT` / `--grep TEXT`** – Text search across paper metadata; repeat to require multiple terms
+- **`--regex PATTERN`** – Regex search across paper metadata; repeat to require multiple patterns
+- **`--case-sensitive`** – Make search and regex matching case-sensitive
+- **`--format text|jsonl`** – Output format for `--list`; `jsonl` is convenient for automation
+- **`--with-abstract`** – Include abstract and TLDR in `--list` output
+- **`--max-filename-words N`** – Maximum number of title words to keep in downloaded PDF filenames; extra words are dropped (default: `5`)
+- **`ordl auth`** – Save OpenReview credentials for future runs
+- **`ordl auth status`** – Show whether credentials come from the environment, saved auth, or neither
+- **`ordl auth logout`** – Remove saved OpenReview credentials
+
+## Development
+
+Install in editable mode with development dependencies:
+
+```bash
+pip install -e '.[dev]'
+```
+
+Run the tests:
+
+```bash
+python -m unittest discover -s tests
+```
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## Local batch-download enhancement
+
+This project's copy defaults to `--batch-size 50` (valid range 1–50). Use
+`--batch-size 1` for the original individual-request behavior. Each batch uses
+OpenReview's `get_attachment(field_name="pdf", ids=[...])` endpoint. ZIP entries
+are matched by submission number, not archive order or title. Incomplete,
+duplicate, unexpected, or non-PDF entries reject the batch before saving PDFs.
+Completed files are written atomically. A challenge or rate-limit response stops
+the run without automatic retries; other failed batches are reported with a
+nonzero exit status. Existing selection and skip-existing behavior is retained.
+
+Batch quotas must be measured separately: 140 successful individual requests
+per hour does not establish the cost or quota for a 50-paper request.
+
+Upstream source: mireklzicar/openreview_downloader, commit
+`e55a0461677f5dc0a1512fce60a964e79c01f668`. This is a local modified copy.
+
+## Persistent ReviewBench queue
+
+Run the prepared queue without editing the script:
+
+```bash
+/tmp/openreview-benchmark-venv/bin/python research/tools/openreview_downloader/run_queue.py --max-batches 138 --stop-at-limit
+```
+
+Login is prompted locally and credentials are not saved. The queue visits years
+oldest first, and conferences alphabetically within each year, taking up to 50
+pending papers per group per pass. After the newest year it starts another pass.
+Exhausted groups are skipped; unresolved years are held aside.
+Only verified API 2 venues participate. API 1 venues are held as `held_legacy`
+because their documented attachment API only accepts a single paper ID.
+Venue versions were checked using API 2 group metadata (`domain`) and are
+recorded in `venue-api-versions.json`; the prepared plan includes each version.
+
+State and the running tally live in `research/data/reviewbench_download_queue/`.
+PDFs are organized in `pdfs/<conference>/<year>/`. Successful papers are skipped
+on subsequent runs. Interrupted requests with a saved complete response recover
+locally; ambiguous requests are held for inspection rather than automatically
+requested again. A process lock prevents concurrent queue runners.
+
+Use `--status` instead of the download flags to inspect progress without login.
+The authenticated 50-PDF test on 2026-09-24 consumed one quota unit; the response
+advertised 140 requests per 3,600 seconds. This is an observed endpoint policy,
+not a guarantee of future limits. `--stop-at-limit` prevents waiting into a new
+quota window.

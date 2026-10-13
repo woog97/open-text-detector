@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Human source mix — Pangram research</title>
+<style>
+:root { color-scheme: light dark; --background: #ffffff; --foreground: #20252d; --muted-foreground: #5a6472; --viz-series-1: #2684d9; --viz-series-2: #d47731; --accent: #edf2f7; }
+:root { --category-1: #6b9dcc; --category-2: #67aaa5; --category-3: #9a8fc0; --category-4: #cfaa80; --category-5: #88ac91; --category-6: #829caf; --category-7: #bc919e; --category-8: #929ec9; --category-9: #b0ab82; }
+@media (prefers-color-scheme: dark) { :root { --background: #171b22; --foreground: #edf0f5; --muted-foreground: #aab5c4; --viz-series-1: #72b7f5; --viz-series-2: #f5ac75; --accent: #293342; } }
+@media (prefers-color-scheme: dark) { :root { --category-1: #83b1dc; --category-2: #7ebfb8; --category-3: #afa3d6; --category-4: #dabc96; --category-5: #9bc4a5; --category-6: #9bb4c6; --category-7: #cfa5b2; --category-8: #a8b3dc; --category-9: #c5bf98; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground); font: 16px/1.5 system-ui, -apple-system, sans-serif; }
+main { max-width: 1000px; margin: 0 auto; padding: 36px 28px 48px; }
+h2 { font-size: 28px; line-height: 1.2; margin: 0 0 10px; font-weight: 600; }
+h3 { font-size: 20px; margin: 0 0 8px; }
+.text-small { font-size: 14px; }
+.text-muted { color: var(--muted-foreground); }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+.viz-row { display: flex; gap: 10px 18px; align-items: center; flex-wrap: wrap; }
+.btn { font: inherit; color: inherit; background: transparent; border: 0; border-radius: 6px; padding: 7px 10px; cursor: pointer; text-align: left; overflow-wrap: anywhere; max-width: 100%; }
+.btn:hover, .btn[aria-pressed="true"] { background: var(--accent); }
+.btn:disabled { cursor: default; opacity: .45; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--viz-series-1); outline-offset: 3px; }
+a { color: var(--viz-series-1); text-underline-offset: 3px; }
+.cursor-interaction { cursor: pointer; }
+[hidden] { display: none !important; }
+.offline-note { margin: 0 0 22px; color: var(--muted-foreground); font-size: 14px; }
+@media (max-width: 580px) { main { padding: 24px 16px 36px; } h2 { font-size: 24px; } }
+@media (pointer: coarse) { .btn { min-height: 44px; } }
+</style>
+</head>
+<body>
+<main>
+<p class="offline-note">Hover over a category to preview its sources. Click to open the breakdown, then select a source for supporting evidence.</p>
+<div id="pangram-pool-explorer">
+  <h2>Human source mix</h2>
+  <div class="text-small text-muted">Proposed English pool · 100,000 planned passages · 0 admitted</div>
+  <div class="viz-row pp-crumbs" aria-label="Current breakdown">
+    <button type="button" class="btn btn-ghost" id="pp-overall">All categories</button>
+    <span id="pp-breadcrumb" aria-live="polite"></span>
+  </div>
+  <div class="pp-layout">
+    <div class="pp-figure">
+      <div id="pp-donut-box"><svg id="pp-donut" class="pp-donut" role="img" aria-label="Proposed human source allocation"></svg></div>
+      <div class="text-small text-muted pp-center" id="pp-chart-caption">Normalized share of the full pool</div>
+    </div>
+    <div>
+      <div class="pp-column-label text-small text-muted" id="pp-list-label">Category · share of full pool</div>
+      <div id="pp-breakdown"></div>
+    </div>
+  </div>
+  <div id="pp-source-detail" hidden aria-live="polite"></div>
+  <div class="pp-footer text-small text-muted" id="pp-footnote">Paper category weights normalized from 99.9%; source allocations are proposed.</div>
+  <script type="application/json" id="pp-data">{"total": 100000, "categories": [{"id": "creative", "name": "Creative writing", "weight": 222, "count": 22222}, {"id": "scientific", "name": "Scientific and medical", "weight": 180, "count": 18018}, {"id": "reference", "name": "Reference and educational", "weight": 159, "count": 15916}, {"id": "reviews", "name": "Consumer reviews", "weight": 106, "count": 10611}, {"id": "social", "name": "Social, Q&A, chat", "weight": 104, "count": 10410}, {"id": "general_web", "name": "General web and mixed", "weight": 82, "count": 8208}, {"id": "news", "name": "News", "weight": 66, "count": 6607}, {"id": "essays", "name": "Essays and academic writing", "weight": 49, "count": 4905}, {"id": "professional", "name": "Professional and finance", "weight": 31, "count": 3103}], "sources": [{"id": "gutenberg", "category": "creative", "label": "Gutenberg / Standard Ebooks", "within": 45, "count": 10000, "rights": "open_subset", "url": "https://www.gutenberg.org/", "evidence": "https://www.gutenberg.org/policy/permission.html", "groups": ["Work / story", "Author", "Edition / series"]}, {"id": "writingprompts", "category": "creative", "label": "WritingPrompts", "within": 30, "count": 6667, "rights": "rights_unresolved", "url": "https://github.com/facebookresearch/fairseq/tree/main/examples/stories", "evidence": "https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md", "groups": ["Work / story", "Author", "Edition / series"]}, {"id": "scp", "category": "creative", "label": "SCP tales", "within": 20, "count": 4444, "rights": "open_subset", "url": "https://scp-wiki.wikidot.com/", "evidence": "https://scp-wiki.wikidot.com/licensing-guide", "groups": ["Work / story", "Author", "Edition / series"]}, {"id": "wikisource", "category": "creative", "label": "Wikisource", "within": 5, "count": 1111, "rights": "open_subset", "url": "https://en.wikisource.org/", "evidence": "https://en.wikisource.org/wiki/Wikisource:Copyright_policy", "groups": ["Work / story", "Author", "Edition / series"]}, {"id": "pmc", "category": "scientific", "label": "PMC articles", "within": 35, "count": 6306, "rights": "open_subset", "url": "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/", "evidence": "https://pmc.ncbi.nlm.nih.gov/about/copyright/", "groups": ["Paper family", "Authors"]}, {"id": "arxiv", "category": "scientific", "label": "Licensed arXiv", "within": 30, "count": 5405, "rights": "open_subset", "url": "https://info.arxiv.org/help/license/index.html", "evidence": "https://info.arxiv.org/help/license/index.html", "groups": ["Paper family", "Authors"]}, {"id": "pes2o", "category": "scientific", "label": "Licensed peS2o", "within": 20, "count": 3604, "rights": "open_subset", "url": "https://github.com/r-three/common-pile/tree/main/sources/pes2o", "evidence": "https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md", "groups": ["Paper family", "Authors"]}, {"id": "acl", "category": "scientific", "label": "ACL 2016–2021", "within": 15, "count": 2703, "rights": "open_subset", "url": "https://aclanthology.org/", "evidence": "https://aclanthology.org/faq/copyright/", "groups": ["Paper family", "Authors"]}, {"id": "wikipedia", "category": "reference", "label": "Wikipedia", "within": 50, "count": 7958, "rights": "open_subset", "url": "https://en.wikipedia.org/", "evidence": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use", "groups": ["Article / book", "Revision / edition"]}, {"id": "pressbooks", "category": "reference", "label": "Pressbooks", "within": 25, "count": 3979, "rights": "open_subset", "url": "https://pressbooks.directory/", "evidence": "https://pressbooks.directory/", "groups": ["Article / book", "Revision / edition"]}, {"id": "libretexts", "category": "reference", "label": "LibreTexts", "within": 15, "count": 2387, "rights": "open_subset", "url": "https://libretexts.org/", "evidence": "https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md", "groups": ["Article / book", "Revision / edition"]}, {"id": "wikibooks", "category": "reference", "label": "Wikibooks", "within": 10, "count": 1592, "rights": "open_subset", "url": "https://en.wikibooks.org/", "evidence": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use", "groups": ["Article / book", "Revision / edition"]}, {"id": "amazon2018", "category": "reviews", "label": "Amazon 2018", "within": 50, "count": 5306, "rights": "rights_unresolved", "url": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html", "evidence": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html", "groups": ["Review", "Reviewer", "Product / business"]}, {"id": "yelp", "category": "reviews", "label": "Yelp", "within": 30, "count": 3183, "rights": "noncommercial", "url": "https://www.yelp.com/dataset", "evidence": "https://s3-media0.fl.yelpcdn.com/assets/srv0/engineering_pages/f64cb2d3efcc/assets/vendor/Dataset_User_Agreement.pdf", "groups": ["Review", "Reviewer", "Product / business"]}, {"id": "imdb", "category": "reviews", "label": "IMDb", "within": 10, "count": 1061, "rights": "rights_unresolved", "url": "https://nlp.stanford.edu/~amaas/data/sentiment/index.html", "evidence": "https://nlp.stanford.edu/~amaas/data/sentiment/index.html", "groups": ["Review", "Reviewer", "Product / business"]}, {"id": "opinrank", "category": "reviews", "label": "OpinRank", "within": 10, "count": 1061, "rights": "rights_unresolved", "url": "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset", "evidence": "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset", "groups": ["Review", "Reviewer", "Product / business"]}, {"id": "stack_nontech", "category": "social", "label": "Stack Exchange: nontechnical", "within": 55, "count": 5726, "rights": "open_subset", "url": "https://stackoverflow.com/help/licensing", "evidence": "https://stackoverflow.com/help/licensing", "groups": ["Thread / conversation", "Contributors"]}, {"id": "stack_tech", "category": "social", "label": "Stack Exchange: technical", "within": 20, "count": 2082, "rights": "open_subset", "url": "https://stackoverflow.com/help/licensing", "evidence": "https://stackoverflow.com/help/licensing", "groups": ["Thread / conversation", "Contributors"]}, {"id": "ubuntu_irc", "category": "social", "label": "Ubuntu IRC", "within": 15, "count": 1561, "rights": "open_subset", "url": "https://irclogs.ubuntu.com/", "evidence": "https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md", "groups": ["Thread / conversation", "Contributors"]}, {"id": "wiki_talk", "category": "social", "label": "Wikipedia discussions", "within": 10, "count": 1041, "rights": "open_subset", "url": "https://en.wikipedia.org/", "evidence": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use", "groups": ["Thread / conversation", "Contributors"]}, {"id": "cccc", "category": "general_web", "label": "CC Common Crawl", "within": 65, "count": 5335, "rights": "open_subset", "url": "https://github.com/r-three/common-pile/tree/main/sources/cccc", "evidence": "https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md", "groups": ["Page", "Author / domain"]}, {"id": "eff", "category": "general_web", "label": "EFF", "within": 10, "count": 821, "rights": "open_subset", "url": "https://www.eff.org/deeplinks", "evidence": "https://www.eff.org/copyright", "groups": ["Page", "Author / domain"]}, {"id": "foodista", "category": "general_web", "label": "Foodista", "within": 10, "count": 821, "rights": "open_subset", "url": "https://www.foodista.com/", "evidence": "https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md", "groups": ["Page", "Author / domain"]}, {"id": "wikivoyage", "category": "general_web", "label": "Wikivoyage", "within": 15, "count": 1231, "rights": "open_subset", "url": "https://en.wikivoyage.org/", "evidence": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use", "groups": ["Page", "Author / domain"]}, {"id": "globalvoices", "category": "news", "label": "Global Voices", "within": 25, "count": 1652, "rights": "open_subset", "url": "https://globalvoices.org/", "evidence": "https://globalvoices.org/about/global-voices-attribution-policy/", "groups": ["Story / event", "Author", "Syndicated copies"]}, {"id": "voa", "category": "news", "label": "Original VOA", "within": 25, "count": 1652, "rights": "open_subset", "url": "https://www.voanews.com/", "evidence": "https://www.voanews.com/p/5338.html", "groups": ["Story / event", "Author", "Syndicated copies"]}, {"id": "wikinews", "category": "news", "label": "Wikinews", "within": 15, "count": 991, "rights": "open_subset", "url": "https://en.wikinews.org/", "evidence": "https://en.wikinews.org/wiki/Wikinews:Copyright", "groups": ["Story / event", "Author", "Syndicated copies"]}, {"id": "scidev", "category": "news", "label": "SciDev.Net", "within": 15, "count": 991, "rights": "open_subset", "url": "https://www.scidev.net/", "evidence": "https://www.scidev.net/content/policies.html", "groups": ["Story / event", "Author", "Syndicated copies"]}, {"id": "oanc_slate", "category": "news", "label": "OANC Slate", "within": 20, "count": 1321, "rights": "open_subset", "url": "https://anc.org/data/oanc/", "evidence": "https://anc.org/data/oanc/", "groups": ["Story / event", "Author", "Syndicated copies"]}, {"id": "asap2", "category": "essays", "label": "ASAP 2.0", "within": 40, "count": 1962, "rights": "open_subset", "url": "https://github.com/scrosseye/ASAP_2.0", "evidence": "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md", "groups": ["Student", "Essay", "Prompt family"]}, {"id": "ellipse", "category": "essays", "label": "ELLIPSE", "within": 25, "count": 1226, "rights": "noncommercial", "url": "https://github.com/scrosseye/ELLIPSE-Corpus", "evidence": "https://raw.githubusercontent.com/scrosseye/ELLIPSE-Corpus/main/README.md", "groups": ["Student", "Essay", "Prompt family"]}, {"id": "bawe", "category": "essays", "label": "BAWE", "within": 20, "count": 981, "rights": "noncommercial", "url": "https://warwick.ac.uk/fac/soc/al/research/collections/bawe/", "evidence": "https://warwick.ac.uk/fac/soc/al/research/collections/bawe/", "groups": ["Student", "Essay", "Prompt family"]}, {"id": "persuade", "category": "essays", "label": "PERSUADE", "within": 15, "count": 736, "rights": "conflicting", "url": "https://github.com/scrosseye/persuade_corpus_2.0", "evidence": "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md", "groups": ["Student", "Essay", "Prompt family"]}, {"id": "govreport", "category": "professional", "label": "GovReport", "within": 35, "count": 1086, "rights": "open_subset", "url": "https://gov-report-data.github.io/", "evidence": "https://gov-report-data.github.io/", "groups": ["Report / letter", "Organization", "Related editions"]}, {"id": "fed", "category": "professional", "label": "Federal Reserve Board", "within": 25, "count": 776, "rights": "open_subset", "url": "https://www.federalreserve.gov/", "evidence": "https://www.federalreserve.gov/disclaimer.htm", "groups": ["Report / letter", "Organization", "Related editions"]}, {"id": "worldbank", "category": "professional", "label": "World Bank", "within": 25, "count": 776, "rights": "open_subset", "url": "https://openknowledge.worldbank.org/", "evidence": "https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository", "groups": ["Report / letter", "Organization", "Related editions"]}, {"id": "oanc_icic", "category": "professional", "label": "OANC correspondence", "within": 15, "count": 465, "rights": "open_subset", "url": "https://anc.org/data/oanc/contents/", "evidence": "https://anc.org/data/oanc/", "groups": ["Report / letter", "Organization", "Related editions"]}]}</script>
+</div>
+<style>
+#pangram-pool-explorer .pp-crumbs { margin: 14px 0; }
+#pangram-pool-explorer .pp-layout { display: grid; grid-template-columns: minmax(210px, .9fr) minmax(270px, 1.15fr); gap: 24px; align-items: center; }
+#pangram-pool-explorer .pp-figure { min-width: 0; }
+#pangram-pool-explorer #pp-donut-box { width: 100%; }
+#pangram-pool-explorer .pp-donut { display: block; width: 100%; height: auto; aspect-ratio: 1; overflow: visible; }
+#pangram-pool-explorer .pp-donut text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+#pangram-pool-explorer .pp-donut .pp-slice { stroke: none; }
+#pangram-pool-explorer .pp-slice { transition: filter 100ms ease; }
+#pangram-pool-explorer .pp-slice.pp-hovered { filter: brightness(.86); }
+#pangram-pool-explorer .pp-preview-source-meta { display: block; font-size: 12px; color: var(--muted-foreground); }
+@media (prefers-reduced-motion: reduce) { #pangram-pool-explorer .pp-slice { transition: none; } }
+#pangram-pool-explorer .pp-center { text-align: center; }
+#pangram-pool-explorer .pp-column-label { margin-bottom: 8px; }
+#pangram-pool-explorer .pp-row { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 8px; align-items: center; margin-bottom: 7px; }
+#pangram-pool-explorer .pp-row-action { min-width: 0; justify-self: start; }
+#pangram-pool-explorer .pp-row-value { text-align: right; }
+#pangram-pool-explorer .pp-track { grid-column: 1/-1; height: 5px; background: color-mix(in srgb, var(--foreground) 7%, transparent); margin-top: 3px; }
+#pangram-pool-explorer .pp-bar { height: 100%; background: var(--viz-series-1); }
+#pangram-pool-explorer .pp-bar.pp-held { background: var(--viz-series-2); }
+#pangram-pool-explorer .pp-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; margin-top: 12px; }
+#pangram-pool-explorer .pp-legend[hidden] { display: none; }
+#pangram-pool-explorer .pp-key { display: inline-block; height: 9px; width: 9px; margin-right: 5px; background: var(--viz-series-1); }
+#pangram-pool-explorer .pp-key.pp-held { background: var(--viz-series-2); }
+#pangram-pool-explorer .pp-footer { margin-top: 18px; }
+#pangram-pool-explorer #pp-source-detail { margin-top: 20px; }
+#pangram-pool-explorer .pp-facts { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 8px 16px; }
+#pangram-pool-explorer .pp-facts dt { color: var(--muted-foreground); }
+#pangram-pool-explorer .pp-facts dd { margin: 0; overflow-wrap: anywhere; }
+#pangram-pool-explorer .pp-preview { position: fixed; z-index: 10; pointer-events: none; width: min(340px, calc(100vw - 24px)); padding: 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--background); color: var(--foreground); box-shadow: 0 8px 28px #0002; }
+#pangram-pool-explorer .pp-preview h3 { font-size: 16px; margin-bottom: 4px; }
+#pangram-pool-explorer .pp-preview-stack { display: flex; gap: 2px; height: 12px; margin: 12px 0; }
+#pangram-pool-explorer .pp-preview-row { display: grid; grid-template-columns: 10px minmax(0,1fr) auto; gap: 8px; align-items: center; margin: 7px 0; font-size: 14px; }
+#pangram-pool-explorer .pp-preview-swatch { width: 10px; height: 10px; }
+#pangram-pool-explorer .pp-preview-hint { margin-top: 12px; font-size: 12px; color: var(--muted-foreground); }
+@media (max-width: 580px) {
+ #pangram-pool-explorer .pp-layout { grid-template-columns: minmax(0,1fr); gap: 18px; }
+ #pangram-pool-explorer .pp-figure { width: min(100%, 300px); justify-self: center; }
+ #pangram-pool-explorer .pp-facts { grid-template-columns: minmax(0,1fr); gap: 4px; }
+ #pangram-pool-explorer .pp-facts dd { margin-bottom: 6px; }
+}
+</style>
+<script>
+(() => {
+ const root = document.getElementById('pangram-pool-explorer');
+ const data = JSON.parse(root.querySelector('#pp-data').textContent);
+ const el = id => root.querySelector('#pp-' + id);
+ const svg = el('donut');
+ const NS = 'http://www.w3.org/2000/svg';
+ const fmt = n => n.toLocaleString('en-US');
+ const pct = n => n.toFixed(2) + '%';
+ const statusNames = {open_subset:'Open subset identified; record checks pending', rights_unresolved:'Underlying text rights unresolved', noncommercial:'Noncommercial-use restriction', conflicting:'Conflicting publisher license statements'};
+ const preview = document.createElement('div');
+ preview.id='pp-preview'; preview.className='pp-preview'; preview.role='tooltip'; preview.hidden=true;
+ root.appendChild(preview);
+ let state = {category:null, source:null};
+ let currentItems = [], drawnWidth = 0;
+ function saved(s) {
+   const v = s?.modelContent?.poolExplorer || s?.privateContent?.poolExplorer;
+   if (!v) return false;
+   const category = data.categories.some(c => c.id === v.category) ? v.category : null;
+   const source = data.sources.some(x => x.id === v.source && x.category === category) ? v.source : null;
+   if (category === state.category && source === state.source) return false;
+   state = {category, source};
+   return true;
+ }
+ try { saved(JSON.parse(localStorage.getItem('pangram-human-source-mix') || 'null')); } catch (_) {}
+ function save() {
+   try {
+     localStorage.setItem('pangram-human-source-mix', JSON.stringify({modelContent:{poolExplorer:{...state}}}));
+   } catch (_) { /* The chart remains usable when browser storage is unavailable. */ }
+ }
+ function node(tag, attrs, text) {
+   const n = document.createElementNS(NS, tag);
+   Object.entries(attrs || {}).forEach(([k,v])=>n.setAttribute(k,v));
+   if (text !== undefined) n.textContent = text;
+   return n;
+ }
+ function path(cx,cy,r,ri,a,b) {
+   if (b-a < 0.00001) return '';
+   const gap = Math.min(.012, (b-a)/6);
+   a += gap; b -= gap;
+   const point=(rr,t)=>[cx+rr*Math.sin(t),cy-rr*Math.cos(t)];
+   const p1=point(r,a), p2=point(r,b), p3=point(ri,b), p4=point(ri,a);
+   const large=b-a>Math.PI?1:0;
+   return `M${p1} A${r},${r} 0 ${large} 1 ${p2} L${p3} A${ri},${ri} 0 ${large} 0 ${p4} Z`;
+ }
+ function select(item) {
+   hidePreview();
+   if (!state.category) { state.category=item.id; state.source=null; }
+   else { if (state.source === item.id) return; state.source=item.id; }
+   render(); save();
+ }
+ function chartWidth() {
+   return Math.max(200, Math.round(el('donut-box').getBoundingClientRect().width));
+ }
+ function itemColor(item) {
+   const categoryId = item.category || item.id;
+   const base = `var(--category-${data.categories.findIndex(c => c.id === categoryId) + 1})`;
+   if (!item.category) return base;
+   const index = data.sources.filter(s => s.category === categoryId).findIndex(s => s.id === item.id);
+   const shades = [[100,'white'],[76,'white'],[80,'black'],[54,'white'],[62,'black']];
+   const [amount, mix] = shades[index % shades.length];
+   return `color-mix(in srgb, ${base} ${amount}%, ${mix})`;
+ }
+ function hidePreview() {
+   preview.hidden=true;
+   svg.querySelectorAll('.pp-hovered').forEach(n=>n.classList.remove('pp-hovered'));
+   root.querySelectorAll('[aria-describedby="pp-preview"]').forEach(n=>n.removeAttribute('aria-describedby'));
+ }
+ function positionPreview(event, target) {
+   const box=target.getBoundingClientRect();
+   const x=event?.clientX ?? box.right, y=event?.clientY ?? box.top;
+   const width=preview.offsetWidth, height=preview.offsetHeight;
+   const left=x+18+width>innerWidth-12 ? x-width-18 : x+18;
+   preview.style.left=Math.max(12,Math.min(left,innerWidth-width-12))+'px';
+   preview.style.top=Math.max(12,Math.min(y+14,innerHeight-height-12))+'px';
+ }
+ function showPreview(item, event, target) {
+   svg.querySelectorAll('.pp-hovered').forEach(n=>n.classList.remove('pp-hovered'));
+   svg.querySelector(`[data-item="${item.id}"]`)?.classList.add('pp-hovered');
+   if (state.category) return;
+   preview.replaceChildren();
+   const heading=document.createElement('h3'); heading.textContent=item.label;
+   const summary=document.createElement('div'); summary.className='text-small text-muted';
+   summary.textContent=pct(item.count/data.total*100)+' of full pool · '+fmt(item.count)+' passages';
+   const stack=document.createElement('div'); stack.className='pp-preview-stack'; stack.setAttribute('aria-hidden','true');
+   preview.append(heading,summary,stack);
+   data.sources.filter(s=>s.category===item.id).forEach(source=>{
+     const color=itemColor(source);
+     const segment=document.createElement('div');segment.style.width=source.within+'%';segment.style.background=color;stack.appendChild(segment);
+     const row=document.createElement('div');row.className='pp-preview-row';row.dataset.source=source.id;
+     const swatch=document.createElement('span');swatch.className='pp-preview-swatch';swatch.style.background=color;
+     const label=document.createElement('span');label.textContent=source.label;
+     const meta=document.createElement('span');meta.className='pp-preview-source-meta';meta.textContent=fmt(source.count)+' passages · '+pct(source.count/data.total*100)+' of pool';label.appendChild(meta);
+     const value=document.createElement('span');value.className='tabular-nums';value.textContent=source.within+'%';
+     row.append(swatch,label,value);preview.appendChild(row);
+   });
+   const hint=document.createElement('div');hint.className='pp-preview-hint';hint.textContent='Shares within this category · Click to open';preview.appendChild(hint);
+   preview.hidden=false;target.setAttribute('aria-describedby','pp-preview');positionPreview(event,target);
+ }
+ function wirePreview(target,item) {
+   target.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')showPreview(item,event,target);});
+   target.addEventListener('pointermove',event=>{if(!preview.hidden)positionPreview(event,target);});
+   target.addEventListener('pointerleave',hidePreview);
+   target.addEventListener('focus',()=>showPreview(item,null,target));
+   target.addEventListener('blur',hidePreview);
+ }
+ function draw() {
+   const width = chartWidth();
+   drawnWidth = width;
+   const height = width;
+   const cx=width/2, cy=height/2, radius=width/2-12, inner=radius*.66;
+   svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+   svg.replaceChildren();
+   let pos=0;
+   const total=currentItems.reduce((n,x)=>n+x.value,0);
+   const next=currentItems.map(x=>{const a=pos;pos+=x.value/total*Math.PI*2;return [a,pos];});
+   for(let i=0;i<currentItems.length;i++) {
+     const item=currentItems[i];
+     const p=node('path',{class:'pp-slice cursor-interaction',fill:itemColor(item),'data-item':item.id});
+     if(state.source===item.id) { p.style.stroke='var(--foreground)';p.style.strokeWidth='2'; }
+     if (item) {
+       const share = state.category ? `${item.within}% of category; ${pct(item.count/data.total*100)} of full pool` : `${pct(item.count/data.total*100)} of full pool`;
+       if(state.category) p.appendChild(node('title', {}, `${item.label}: ${share}; ${fmt(item.count)} planned passages`));
+       p.addEventListener('click',()=>select(item));
+       wirePreview(p,item);
+     }
+     p.setAttribute('d',path(cx,cy,radius,inner,next[i][0],next[i][1]));
+     svg.appendChild(p);
+   }
+   const category=data.categories.find(c=>c.id===state.category);
+   const source=data.sources.find(s=>s.id===state.source);
+   const centerValue=source ? pct(source.count/data.total*100) : category ? pct(category.count/data.total*100) : '100%';
+   svg.appendChild(node('text',{x:cx,y:cy-12,'text-anchor':'middle'},centerValue));
+   svg.appendChild(node('text',{x:cx,y:cy+9,'text-anchor':'middle'},source?'source / full pool':category?'category / full pool':'full planned pool'));
+   svg.appendChild(node('text',{x:cx,y:cy+31,'text-anchor':'middle'},fmt(source?.count || category?.count || data.total)+' passages'));
+   svg.setAttribute('aria-label',(category?category.name:'Full pool')+'. '+currentItems.map(x=>x.label+': '+(state.category?x.within+'% of category':pct(x.count/data.total*100))).join('; '));
+ }
+ function render() {
+   hidePreview();
+   const category=data.categories.find(c=>c.id===state.category);
+   currentItems=category?data.sources.filter(s=>s.category===category.id).map(s=>({...s,value:s.within})):data.categories.map(c=>({...c,label:c.name,value:c.weight}));
+   el('overall').disabled=!category;
+   el('breadcrumb').textContent=category?'/ '+category.name:'';
+   el('list-label').textContent=category?'Source · share within category':'Category · normalized share of full pool';
+   el('chart-caption').textContent=category?'Proposed sources within '+category.name.toLowerCase():'Normalized share of the full pool';
+   const list=el('breakdown');list.replaceChildren();
+   currentItems.forEach(item=>{
+     const row=document.createElement('div');row.className='pp-row';
+     const action=document.createElement('div');action.className='pp-row-action';
+     const button=document.createElement('button');button.type='button';button.className='btn btn-ghost';button.textContent=item.label;
+     button.setAttribute('aria-label',(category?'Inspect ':'Break down ')+item.label);
+     if(category) button.setAttribute('aria-pressed',String(state.source===item.id));
+     button.addEventListener('click',()=>select(item));action.appendChild(button);
+     wirePreview(button,item);
+     const value=document.createElement('div');value.className='pp-row-value tabular-nums';
+     value.textContent=category?item.within+'%':pct(item.count/data.total*100);
+     const track=document.createElement('div');track.className='pp-track';
+     const bar=document.createElement('div');bar.className='pp-bar'+(category && item.rights!=='open_subset'?' pp-held':'');
+     bar.style.background=itemColor(item);
+     bar.style.width=(category?item.within:item.count/data.total*100)+'%';
+     track.appendChild(bar);row.append(action,value,track);list.appendChild(row);
+   });
+   const source=data.sources.find(s=>s.id===state.source);
+   const detail=el('source-detail');detail.hidden=!source;detail.replaceChildren();
+   if(source) {
+     const heading=document.createElement('h3');heading.textContent=source.label;
+     const values=document.createElement('div');values.className='tabular-nums';values.textContent=`${source.within}% of category · ${pct(source.count/data.total*100)} of full pool · ${fmt(source.count)} planned`;
+     const dl=document.createElement('dl');dl.className='pp-facts';
+     [['Rights evidence',statusNames[source.rights]],['Record status','Not collected or admitted'],['Grouping',source.groups.join(' · ')]].forEach(([k,v])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;dl.append(dt,dd);});
+     const links=document.createElement('div');links.className='viz-row';
+     [['Original source',source.url],['Rights evidence',source.evidence]].forEach(([label,url])=>{const a=document.createElement('a');a.textContent=label;a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.appendChild(a);});
+     detail.append(heading,values,dl,links);
+   }
+   el('footnote').textContent=category?`${fmt(currentItems.filter(s=>s.rights!=='open_subset').reduce((n,s)=>n+s.count,0))} of ${fmt(category.count)} planned passages have unresolved or restricted rights. All records still need verification.`:'Paper category weights normalized from 99.9%; source allocations are proposed.';
+   draw();
+ }
+ el('overall').addEventListener('click',()=>{state={category:null,source:null};render();save();});
+ window.addEventListener('keydown',event=>{if(event.key==='Escape')hidePreview();});
+ window.addEventListener('resize',hidePreview);
+ window.addEventListener('scroll',hidePreview,{passive:true});
+ render();
+ // Height-only layout updates must not trigger another chart rebuild.
+ if (typeof ResizeObserver === 'function') {
+   new ResizeObserver(()=>{if(chartWidth() !== drawnWidth) draw();}).observe(el('donut-box'));
+ } else {
+   window.addEventListener('resize',()=>{if(chartWidth() !== drawnWidth) draw();});
+ }
+})();
+</script>
+
+</main>
+</body>
+</html>

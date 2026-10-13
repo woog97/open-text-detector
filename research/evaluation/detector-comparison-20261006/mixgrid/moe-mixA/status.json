@@ -1,0 +1,1 @@
+{"state": "trained", "elapsed_seconds": 18307.584439754486, "optimizer_steps": 2625, "processed_tokens": 56623718, "gpus": 2, "stage_throughput": {"stage1": {"rows": 12000, "seconds": 1864.9047105312347}, "stage2": {"rows": 72000, "seconds": 16442.239227056503}}, "max_memory_gb": 52.9}

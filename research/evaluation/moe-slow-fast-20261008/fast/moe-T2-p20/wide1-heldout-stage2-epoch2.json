@@ -1,0 +1,99 @@
+{
+ "tag": "fast-moe-T2-p20",
+ "checkpoint": "stage2-epoch2-adapters.safetensors",
+ "seconds": 59,
+ "n_human_sentences": 30625,
+ "threshold_1pct_here": 0.501032993507882,
+ "threshold_in_domain": 0.425210565328598,
+ "n_in_domain_human_sentences": 7321,
+ "human_fpr_at_in_domain_threshold": 0.015053061224489796,
+ "control_fpr_at_in_domain_threshold": 0.012607517379521621,
+ "retained_human_fpr_at_in_domain_threshold": 0.0180939125338803,
+ "n_control_sentences": 16974,
+ "n_retained_human_sentences": 13651,
+ "groups": {
+  "all:all": {
+   "n_ai_sentences": 3496,
+   "auroc": 0.9625632279456405,
+   "recall_at_1pct_here": 0.6684782608695652,
+   "auroc_vs_controls": 0.9621392281478282,
+   "recall_at_1pct_controls": 0.6847826086956522,
+   "recall_at_in_domain_threshold": 0.7022311212814645
+  },
+  "cohort:insert_one": {
+   "n_ai_sentences": 370,
+   "auroc": 0.9845857253171539,
+   "recall_at_1pct_here": 0.8378378378378378,
+   "auroc_vs_controls": 0.9852886290320012,
+   "recall_at_1pct_controls": 0.845945945945946,
+   "recall_at_in_domain_threshold": 0.8567567567567568
+  },
+  "cohort:para_draft": {
+   "n_ai_sentences": 1026,
+   "auroc": 0.9993758045908422,
+   "recall_at_1pct_here": 0.9883040935672515,
+   "auroc_vs_controls": 0.9995185848968414,
+   "recall_at_1pct_controls": 0.9892787524366472,
+   "recall_at_in_domain_threshold": 0.9922027290448343
+  },
+  "cohort:para_rewrite": {
+   "n_ai_sentences": 903,
+   "auroc": 0.9568282053020544,
+   "recall_at_1pct_here": 0.5725359911406424,
+   "auroc_vs_controls": 0.9566242997400363,
+   "recall_at_1pct_controls": 0.5946843853820598,
+   "recall_at_in_domain_threshold": 0.6201550387596899
+  },
+  "cohort:rewrite_one": {
+   "n_ai_sentences": 307,
+   "auroc": 0.9357841919829821,
+   "recall_at_1pct_here": 0.4169381107491857,
+   "auroc_vs_controls": 0.9349332510461488,
+   "recall_at_1pct_controls": 0.42996742671009774,
+   "recall_at_in_domain_threshold": 0.46254071661237783
+  },
+  "cohort:rewrite_two": {
+   "n_ai_sentences": 661,
+   "auroc": 0.9528215134767977,
+   "recall_at_1pct_here": 0.4977307110438729,
+   "auroc_vs_controls": 0.9527035831431787,
+   "recall_at_1pct_controls": 0.5355521936459909,
+   "recall_at_in_domain_threshold": 0.5658093797276853
+  },
+  "cohort:split_one": {
+   "n_ai_sentences": 229,
+   "auroc": 0.8486817217716781,
+   "recall_at_1pct_here": 0.1703056768558952,
+   "auroc_vs_controls": 0.8427186094530397,
+   "recall_at_1pct_controls": 0.18777292576419213,
+   "recall_at_in_domain_threshold": 0.19213973799126638
+  },
+  "writer:deepseek/deepseek-v4.1-flash": {
+   "n_ai_sentences": 1736,
+   "auroc": 0.963845575096398,
+   "recall_at_1pct_here": 0.6970046082949308,
+   "auroc_vs_controls": 0.9633887067181631,
+   "recall_at_1pct_controls": 0.7154377880184332,
+   "recall_at_in_domain_threshold": 0.7321428571428571
+  },
+  "writer:xiaomi/mimo-v2.6-flash": {
+   "n_ai_sentences": 908,
+   "auroc": 0.9532028409601726,
+   "recall_at_1pct_here": 0.6167400881057269,
+   "auroc_vs_controls": 0.9523033154100934,
+   "recall_at_1pct_controls": 0.6288546255506607,
+   "recall_at_in_domain_threshold": 0.6409691629955947
+  },
+  "writer:z-ai/glm-5.3-flash": {
+   "n_ai_sentences": 852,
+   "auroc": 0.9699259940595957,
+   "recall_at_1pct_here": 0.6654929577464789,
+   "auroc_vs_controls": 0.9700757468893325,
+   "recall_at_1pct_controls": 0.681924882629108,
+   "recall_at_in_domain_threshold": 0.7065727699530516
+  }
+ },
+ "documents": {
+  "auroc_mixed_vs_controls": 0.8447165180805343
+ }
+}

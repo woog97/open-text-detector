@@ -1,0 +1,505 @@
+{
+  "status": "partial_quarantined_candidate_pool",
+  "planned_total": 100000,
+  "candidate_total": 34206,
+  "admitted_total": 0,
+  "shortfall": 65794,
+  "sources": [
+    {
+      "source_id": "gutenberg",
+      "category": "creative",
+      "planned_passages": 10000,
+      "candidate_passages": 9996,
+      "admitted_passages": 0,
+      "shortfall": 4,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 4
+    },
+    {
+      "source_id": "writingprompts",
+      "category": "creative",
+      "planned_passages": 6667,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 6667,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "rights_unresolved",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "scp",
+      "category": "creative",
+      "planned_passages": 4444,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 4444,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wikisource",
+      "category": "creative",
+      "planned_passages": 1111,
+      "candidate_passages": 744,
+      "admitted_passages": 0,
+      "shortfall": 367,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "pmc",
+      "category": "scientific",
+      "planned_passages": 6306,
+      "candidate_passages": 4249,
+      "admitted_passages": 0,
+      "shortfall": 2057,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "arxiv",
+      "category": "scientific",
+      "planned_passages": 5405,
+      "candidate_passages": 2703,
+      "admitted_passages": 0,
+      "shortfall": 2702,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "pes2o",
+      "category": "scientific",
+      "planned_passages": 3604,
+      "candidate_passages": 3604,
+      "admitted_passages": 0,
+      "shortfall": 0,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "acl",
+      "category": "scientific",
+      "planned_passages": 2703,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 2703,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wikipedia",
+      "category": "reference",
+      "planned_passages": 7958,
+      "candidate_passages": 2297,
+      "admitted_passages": 0,
+      "shortfall": 5661,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 44
+    },
+    {
+      "source_id": "pressbooks",
+      "category": "reference",
+      "planned_passages": 3979,
+      "candidate_passages": 143,
+      "admitted_passages": 0,
+      "shortfall": 3836,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "libretexts",
+      "category": "reference",
+      "planned_passages": 2387,
+      "candidate_passages": 395,
+      "admitted_passages": 0,
+      "shortfall": 1992,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wikibooks",
+      "category": "reference",
+      "planned_passages": 1592,
+      "candidate_passages": 1466,
+      "admitted_passages": 0,
+      "shortfall": 126,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 10
+    },
+    {
+      "source_id": "amazon2018",
+      "category": "reviews",
+      "planned_passages": 5306,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 5306,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "rights_unresolved",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "yelp",
+      "category": "reviews",
+      "planned_passages": 3183,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 3183,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "noncommercial",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "imdb",
+      "category": "reviews",
+      "planned_passages": 1061,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1061,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "rights_unresolved",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "opinrank",
+      "category": "reviews",
+      "planned_passages": 1061,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1061,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "rights_unresolved",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "stack_nontech",
+      "category": "social",
+      "planned_passages": 5726,
+      "candidate_passages": 5461,
+      "admitted_passages": 0,
+      "shortfall": 265,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "stack_tech",
+      "category": "social",
+      "planned_passages": 2082,
+      "candidate_passages": 2082,
+      "admitted_passages": 0,
+      "shortfall": 0,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "ubuntu_irc",
+      "category": "social",
+      "planned_passages": 1561,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1561,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wiki_talk",
+      "category": "social",
+      "planned_passages": 1041,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1041,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "cccc",
+      "category": "general_web",
+      "planned_passages": 5335,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 5335,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "eff",
+      "category": "general_web",
+      "planned_passages": 821,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 821,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "foodista",
+      "category": "general_web",
+      "planned_passages": 821,
+      "candidate_passages": 274,
+      "admitted_passages": 0,
+      "shortfall": 547,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wikivoyage",
+      "category": "general_web",
+      "planned_passages": 1231,
+      "candidate_passages": 303,
+      "admitted_passages": 0,
+      "shortfall": 928,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "globalvoices",
+      "category": "news",
+      "planned_passages": 1652,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1652,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "voa",
+      "category": "news",
+      "planned_passages": 1652,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1652,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "wikinews",
+      "category": "news",
+      "planned_passages": 991,
+      "candidate_passages": 489,
+      "admitted_passages": 0,
+      "shortfall": 502,
+      "state": "collected_candidates",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 11
+    },
+    {
+      "source_id": "scidev",
+      "category": "news",
+      "planned_passages": 991,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 991,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "oanc_slate",
+      "category": "news",
+      "planned_passages": 1321,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1321,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "asap2",
+      "category": "essays",
+      "planned_passages": 1962,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1962,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "ellipse",
+      "category": "essays",
+      "planned_passages": 1226,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1226,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "noncommercial",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "bawe",
+      "category": "essays",
+      "planned_passages": 981,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 981,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "noncommercial",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "persuade",
+      "category": "essays",
+      "planned_passages": 736,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 736,
+      "state": "held_rights_unresolved_or_restricted",
+      "rights_evidence_status": "conflicting",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "govreport",
+      "category": "professional",
+      "planned_passages": 1086,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 1086,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "fed",
+      "category": "professional",
+      "planned_passages": 776,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 776,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "worldbank",
+      "category": "professional",
+      "planned_passages": 776,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 776,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    },
+    {
+      "source_id": "oanc_icic",
+      "category": "professional",
+      "planned_passages": 465,
+      "candidate_passages": 0,
+      "admitted_passages": 0,
+      "shortfall": 465,
+      "state": "source_adapter_not_yet_verified",
+      "rights_evidence_status": "open_subset",
+      "exact_duplicates_removed": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "data/wikisource.parquet",
+      "sha256": "17176de7c13be6aa59542cff2bcf4b74f63d998e476900d145d1a6dd28f8beec",
+      "bytes": 750740,
+      "rows": 744
+    },
+    {
+      "path": "data/pmc.parquet",
+      "sha256": "65fc7b74dc3baf739b7f4636a548a1a42e3588cde7a0d265373f1c5afe5bb454",
+      "bytes": 4103642,
+      "rows": 4249
+    },
+    {
+      "path": "data/pes2o.parquet",
+      "sha256": "ae25adf9a61114187e96a58091eb3f11eb9ad6bb2f42466b82f88b0787d031e0",
+      "bytes": 5043492,
+      "rows": 3604
+    },
+    {
+      "path": "data/arxiv.parquet",
+      "sha256": "ee50c06af3caef5c2890aa8030e1ab47855b5d770a2fe54a3d58fb719c33f673",
+      "bytes": 2437025,
+      "rows": 2703
+    },
+    {
+      "path": "data/wikipedia.parquet",
+      "sha256": "bd83bf574fbeef4b0847a9a0941f856cb2dd0c4fc4af2b705ef026c568bc2475",
+      "bytes": 1228268,
+      "rows": 2297
+    },
+    {
+      "path": "data/libretexts.parquet",
+      "sha256": "8f0c6167c3fc06177afe170beb738d0bf3a7d6e68572cbbf44722e6a72385e3a",
+      "bytes": 617471,
+      "rows": 395
+    },
+    {
+      "path": "data/pressbooks.parquet",
+      "sha256": "779af7151a1b6b6516f7d272398142653fb6c84347b1e5dbf509c1324a5754ad",
+      "bytes": 191402,
+      "rows": 143
+    },
+    {
+      "path": "data/wikibooks.parquet",
+      "sha256": "31a87cd6ba2ae557a1397dc656ea6ef67e55df420dbb5d05c08af228851e2a81",
+      "bytes": 1592949,
+      "rows": 1466
+    },
+    {
+      "path": "data/stack_tech.parquet",
+      "sha256": "f4582e0da267df3f188f7653fd059d7833811d8fc6dcf5004d4074e4dbb7f39a",
+      "bytes": 1760471,
+      "rows": 2082
+    },
+    {
+      "path": "data/stack_nontech.parquet",
+      "sha256": "d994def1732c5d4573da43b49cb04b5ae34635c76e530b762779a490867cf845",
+      "bytes": 4271239,
+      "rows": 5461
+    },
+    {
+      "path": "data/gutenberg.parquet",
+      "sha256": "af02ee5207f41e54ca0c7426e2c2720976505d506415efa539916b53e5effeb1",
+      "bytes": 13528929,
+      "rows": 9996
+    },
+    {
+      "path": "data/wikivoyage.parquet",
+      "sha256": "7049a617a38af076f885c7f645ddee053f0852c765686378fc3b84ee3fd29fae",
+      "bytes": 187455,
+      "rows": 303
+    },
+    {
+      "path": "data/wikinews.parquet",
+      "sha256": "bddedd98cda525cfdbbdf1b537e6b3066d375899fa49618b86ceb45b107bad79",
+      "bytes": 341993,
+      "rows": 489
+    },
+    {
+      "path": "data/foodista.parquet",
+      "sha256": "de8638a81279946a5cdfeb07c97ba9060c116db06a8dcc2ce4585c70f5ad39ff",
+      "bytes": 190951,
+      "rows": 274
+    }
+  ],
+  "finished_at": "2026-10-02T05:25:29.027380+00:00",
+  "all_candidates_require_review": true,
+  "no_train_test_split_assigned": true
+}

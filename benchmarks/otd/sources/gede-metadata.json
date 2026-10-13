@@ -1,0 +1,758 @@
+{
+  "sha": "fc84dfe33619eefbc3a6014c191ad9a43f8543cc",
+  "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/fc84dfe33619eefbc3a6014c191ad9a43f8543cc",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a90e4580ece60a405ce9fc3ace8c3d6e19b3e79",
+      "size": 389,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/0a90e4580ece60a405ce9fc3ace8c3d6e19b3e79"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b072a597d1aa4168bba19ce0425d38c6c3a67fd",
+      "size": 10988,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/6b072a597d1aa4168bba19ce0425d38c6c3a67fd"
+    },
+    {
+      "path": "database",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "881a1ff20abc55feed6c45156dd9bf6129b53220",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/881a1ff20abc55feed6c45156dd9bf6129b53220"
+    },
+    {
+      "path": "database/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbdd76b6a6f0db25b3ddd9ad3426269b1144958a",
+      "size": 24,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/cbdd76b6a6f0db25b3ddd9ad3426269b1144958a"
+    },
+    {
+      "path": "database/add_aae_to_database.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d60818867a2e98f83754e85929d0a9f685b34adb",
+      "size": 2235,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/d60818867a2e98f83754e85929d0a9f685b34adb"
+    },
+    {
+      "path": "database/database.db.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6ae0ee02c05b6cfe404fd8902b5a60d8e0f6bd0",
+      "size": 30110375,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/d6ae0ee02c05b6cfe404fd8902b5a60d8e0f6bd0"
+    },
+    {
+      "path": "database/database_overview.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0314c3ed7bd1a07d0d96cdfcfdc04daa41934eb",
+      "size": 8572,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/d0314c3ed7bd1a07d0d96cdfcfdc04daa41934eb"
+    },
+    {
+      "path": "database/export_to_csv.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9b62d75a5cf57c245124f7bebdca723bafe2860",
+      "size": 2307,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a9b62d75a5cf57c245124f7bebdca723bafe2860"
+    },
+    {
+      "path": "database/interface.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ac113f0b0edbd561c286e7b83113491e2fc213b",
+      "size": 18432,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/9ac113f0b0edbd561c286e7b83113491e2fc213b"
+    },
+    {
+      "path": "dataset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea143211562d8e5ee119e38562dbe8b359177174",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/ea143211562d8e5ee119e38562dbe8b359177174"
+    },
+    {
+      "path": "dataset/mixed_dataset_ids.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cc35d34923f8f104eac24d08a560d8ab0b04869",
+      "size": 2912,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/0cc35d34923f8f104eac24d08a560d8ab0b04869"
+    },
+    {
+      "path": "detectors",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f46b490372dcaedfc79ff0a66d9136730768a2e6",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/f46b490372dcaedfc79ff0a66d9136730768a2e6"
+    },
+    {
+      "path": "detectors/RoBERTa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9bf5977e4f7b6b3dc2b490ed36b740db9d47a3b3",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/9bf5977e4f7b6b3dc2b490ed36b740db9d47a3b3"
+    },
+    {
+      "path": "detectors/RoBERTa/roberta_class.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a961b4ef58147913107d87d6364ba529c891abca",
+      "size": 1560,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a961b4ef58147913107d87d6364ba529c891abca"
+    },
+    {
+      "path": "detectors/detect_gpt_based_detectors",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1bf2b56c84baed5cd098ea959845b2d01b9cf735",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/1bf2b56c84baed5cd098ea959845b2d01b9cf735"
+    },
+    {
+      "path": "detectors/detect_gpt_based_detectors/detect_gpt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "525969f8103f50c8a8064f5b1d1e6a6ccb52d4cc",
+      "size": 10763,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/525969f8103f50c8a8064f5b1d1e6a6ccb52d4cc"
+    },
+    {
+      "path": "detectors/detect_gpt_based_detectors/detect_gpt_based.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e74d08225b052f1f1fc61c58e9baa9af61acf45b",
+      "size": 5839,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e74d08225b052f1f1fc61c58e9baa9af61acf45b"
+    },
+    {
+      "path": "detectors/detect_gpt_based_detectors/fast_detect_gpt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1aedcf65ed4c58340a1eb1bc044a900c5323163b",
+      "size": 4161,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/1aedcf65ed4c58340a1eb1bc044a900c5323163b"
+    },
+    {
+      "path": "detectors/detector_interface.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1af2304b59409c4dc628df873790c515acbb2b7",
+      "size": 2710,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/f1af2304b59409c4dc628df873790c515acbb2b7"
+    },
+    {
+      "path": "detectors/evaluate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfb2f25813cb3a0d39add1499748d905a212af2b",
+      "size": 913,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/bfb2f25813cb3a0d39add1499748d905a212af2b"
+    },
+    {
+      "path": "detectors/ghostbuster",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b5abadd793b95beb96c227d44865cb2dbd961f6",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/0b5abadd793b95beb96c227d44865cb2dbd961f6"
+    },
+    {
+      "path": "detectors/ghostbuster/ghostbuster.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85cdc0ab7627498cc8e94768e4c60f640c1ab7e2",
+      "size": 4810,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/85cdc0ab7627498cc8e94768e4c60f640c1ab7e2"
+    },
+    {
+      "path": "detectors/ghostbuster/model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e3d464afb98325f9b3f9be517d219e14fd5baa9f",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/e3d464afb98325f9b3f9be517d219e14fd5baa9f"
+    },
+    {
+      "path": "detectors/ghostbuster/model/features.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc0a6a51bcafee7e31a2d3ef3cd236ea4f3bcbbb",
+      "size": 696,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/dc0a6a51bcafee7e31a2d3ef3cd236ea4f3bcbbb"
+    },
+    {
+      "path": "detectors/ghostbuster/model/model",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63fe7ad83e9a136e6836a4bddae8813542d59e10",
+      "size": 3373,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/63fe7ad83e9a136e6836a4bddae8813542d59e10"
+    },
+    {
+      "path": "detectors/ghostbuster/model/mu",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "add2bf813bc0fc3f0b852466dd8310875148a6a3",
+      "size": 333,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/add2bf813bc0fc3f0b852466dd8310875148a6a3"
+    },
+    {
+      "path": "detectors/ghostbuster/model/sigma",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2dd4a53f50a55e7dc12d68b837a13e7fb4667fc8",
+      "size": 333,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/2dd4a53f50a55e7dc12d68b837a13e7fb4667fc8"
+    },
+    {
+      "path": "detectors/ghostbuster/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "291f81bff3ebf18a004391c2069fdad621285506",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/291f81bff3ebf18a004391c2069fdad621285506"
+    },
+    {
+      "path": "detectors/ghostbuster/utils/featurize.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cfa38574f18665953612abf7ea1a05fc6fa50da",
+      "size": 1468,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/5cfa38574f18665953612abf7ea1a05fc6fa50da"
+    },
+    {
+      "path": "detectors/ghostbuster/utils/n_gram.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14fec98cf768dd16abb9fa8bc9cc3ea78bdde880",
+      "size": 3076,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/14fec98cf768dd16abb9fa8bc9cc3ea78bdde880"
+    },
+    {
+      "path": "detectors/ghostbuster/utils/symbolic.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2abb62e43564ade52452f5debd70e4048672aa83",
+      "size": 1440,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/2abb62e43564ade52452f5debd70e4048672aa83"
+    },
+    {
+      "path": "detectors/gptzero.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29014d7632d8a962eaae6b617a338e4a314205f1",
+      "size": 1423,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/29014d7632d8a962eaae6b617a338e4a314205f1"
+    },
+    {
+      "path": "detectors/intrinsic_dim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3792176bfa684369332b0960b6e0d3b5d34fd5e0",
+      "size": 8085,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/3792176bfa684369332b0960b6e0d3b5d34fd5e0"
+    },
+    {
+      "path": "detectors/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c8297900455be3c653c763f201e25dddac729161",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/c8297900455be3c653c763f201e25dddac729161"
+    },
+    {
+      "path": "detectors/utils/likelihood.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdbbfe98cc9c33869646e3b166444fb1582c8e7b",
+      "size": 614,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/fdbbfe98cc9c33869646e3b166444fb1582c8e7b"
+    },
+    {
+      "path": "detectors/utils/load_hf.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45df12cdcc03f3744ab94bafc8be78c46b799dc3",
+      "size": 1728,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/45df12cdcc03f3744ab94bafc8be78c46b799dc3"
+    },
+    {
+      "path": "detectors/utils/metrics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d57e008ad939bbc6c1482d435250bf471b71d282",
+      "size": 1909,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/d57e008ad939bbc6c1482d435250bf471b71d282"
+    },
+    {
+      "path": "detectors/utils/perturb.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a339d23019729cd437014ea154f4b81245948e52",
+      "size": 5215,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a339d23019729cd437014ea154f4b81245948e52"
+    },
+    {
+      "path": "detectors/utils/preprocess_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01c3ecb20cf2e2d6f65129e3a8b6e04267b3688e",
+      "size": 1676,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/01c3ecb20cf2e2d6f65129e3a8b6e04267b3688e"
+    },
+    {
+      "path": "environment.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a575b386876062b06e732683d8d347cc2cdd5e3",
+      "size": 3522,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/1a575b386876062b06e732683d8d347cc2cdd5e3"
+    },
+    {
+      "path": "evaluation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1c1dc35860eddb29d15d71a0f7209a788795a61",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/a1c1dc35860eddb29d15d71a0f7209a788795a61"
+    },
+    {
+      "path": "evaluation/boundary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87abd7f902d0fd4ad81126fea8491772db3cb9be",
+      "size": 3596,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/87abd7f902d0fd4ad81126fea8491772db3cb9be"
+    },
+    {
+      "path": "evaluation/cross_dataset_performance.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a06466e4bca52ff83839d5f9a599eca367494779",
+      "size": 5248,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a06466e4bca52ff83839d5f9a599eca367494779"
+    },
+    {
+      "path": "evaluation/dataset_stats.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f944066a6d780ad600ca0cb5d162938041f2ab2",
+      "size": 6134,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/0f944066a6d780ad600ca0cb5d162938041f2ab2"
+    },
+    {
+      "path": "evaluation/domain_generalization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6638fd7ac34cf1c4873e967306d81200fe43dba",
+      "size": 5656,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e6638fd7ac34cf1c4873e967306d81200fe43dba"
+    },
+    {
+      "path": "evaluation/generate_all_plots.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "af843f76ac078a0e89326cdaeae65df6d395ce8f",
+      "size": 450,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/af843f76ac078a0e89326cdaeae65df6d395ce8f"
+    },
+    {
+      "path": "evaluation/length.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0c0360f06f06e1d9563f1461f774584b5af2415",
+      "size": 6595,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e0c0360f06f06e1d9563f1461f774584b5af2415"
+    },
+    {
+      "path": "evaluation/llm_impact.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdbcb68f2ee1c3909751a62698638f36ba0000df",
+      "size": 5138,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/bdbcb68f2ee1c3909751a62698638f36ba0000df"
+    },
+    {
+      "path": "evaluation/metrics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "341e27b2de99d5f2fbdbf3523a9b79a376040335",
+      "size": 5820,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/341e27b2de99d5f2fbdbf3523a9b79a376040335"
+    },
+    {
+      "path": "evaluation/mixed_dataset.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e07140539c04b1bea88ad81259403892b84b586f",
+      "size": 7876,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e07140539c04b1bea88ad81259403892b84b586f"
+    },
+    {
+      "path": "evaluation/overview.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffccac15ae888b84e4561567ace1fac2fe7c0a0d",
+      "size": 5491,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/ffccac15ae888b84e4561567ace1fac2fe7c0a0d"
+    },
+    {
+      "path": "evaluation/plot_roc_curve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c9d402f2c20ddf9454eb8318565bed1f3bd24c4",
+      "size": 6577,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/0c9d402f2c20ddf9454eb8318565bed1f3bd24c4"
+    },
+    {
+      "path": "evaluation/prompt_mode.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e310599dc2547e589eefc37f02d5e68423a97b6b",
+      "size": 4317,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e310599dc2547e589eefc37f02d5e68423a97b6b"
+    },
+    {
+      "path": "evaluation/rewrite_similiarty.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a6a7321da145b4123f0be0d9053b5e45a2d8bc",
+      "size": 7695,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/f5a6a7321da145b4123f0be0d9053b5e45a2d8bc"
+    },
+    {
+      "path": "evaluation/runtime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a13c8ea50cfd0bfcd5d80e7844d2e8a85fb5cb16",
+      "size": 1198,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a13c8ea50cfd0bfcd5d80e7844d2e8a85fb5cb16"
+    },
+    {
+      "path": "evaluation/text_statistics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "000f1af22c801fd859ea5c744aa5c44a40a8824a",
+      "size": 5353,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/000f1af22c801fd859ea5c744aa5c44a40a8824a"
+    },
+    {
+      "path": "evaluation/threshold.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d153c30f61e977c734598b10f87d1975c5c8082",
+      "size": 9970,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/1d153c30f61e977c734598b10f87d1975c5c8082"
+    },
+    {
+      "path": "evaluation/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa9a32945b93e3e9f3f106aac30fb4c05f72c006",
+      "size": 9061,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/aa9a32945b93e3e9f3f106aac30fb4c05f72c006"
+    },
+    {
+      "path": "main.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d346c7b9eca0b4509673cebd7e7e21285b7b337",
+      "size": 2878,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/3d346c7b9eca0b4509673cebd7e7e21285b7b337"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c96b5e2b344165676aeaa8df7be0a3d41d745c70",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/c96b5e2b344165676aeaa8df7be0a3d41d745c70"
+    },
+    {
+      "path": "scripts/params",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f414b0e0c18b649158f1c0bd57e8ff1d11912e9",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/3f414b0e0c18b649158f1c0bd57e8ff1d11912e9"
+    },
+    {
+      "path": "scripts/params/aae",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "120a361d26eb33f20d5dea495ea08a653f44139a",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/120a361d26eb33f20d5dea495ea08a653f44139a"
+    },
+    {
+      "path": "scripts/params/aae/detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a00ca2188b613ecf4a2dd2b65ce3998120dbbbae",
+      "size": 4000,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/a00ca2188b613ecf4a2dd2b65ce3998120dbbbae"
+    },
+    {
+      "path": "scripts/params/aae/fast_detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25dcde543911812b7aec811fb17e03ebdb74c65c",
+      "size": 6310,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/25dcde543911812b7aec811fb17e03ebdb74c65c"
+    },
+    {
+      "path": "scripts/params/aae/ghostbuster.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc03d1bdf7a20de516ba2847f6df378886b6555c",
+      "size": 3550,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/dc03d1bdf7a20de516ba2847f6df378886b6555c"
+    },
+    {
+      "path": "scripts/params/aae/intrinsic_dim.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db8eadece914a0e274160c9f3f8858ebdab83d87",
+      "size": 3610,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/db8eadece914a0e274160c9f3f8858ebdab83d87"
+    },
+    {
+      "path": "scripts/params/aae/roberta.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c97fe248581b13dc6d29dc3bbbcd1ba9b44f491",
+      "size": 14432,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/8c97fe248581b13dc6d29dc3bbbcd1ba9b44f491"
+    },
+    {
+      "path": "scripts/params/bawe",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3b376a80783d5aa19e95a452c9f55beccf76680c",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/3b376a80783d5aa19e95a452c9f55beccf76680c"
+    },
+    {
+      "path": "scripts/params/bawe/detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be86f63ddb0f997cdde811387f4dd8e7e7de2115",
+      "size": 3370,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/be86f63ddb0f997cdde811387f4dd8e7e7de2115"
+    },
+    {
+      "path": "scripts/params/bawe/fast_detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b425eabbac7ffe4c948bde04ae4cd5c30fc4fe81",
+      "size": 5680,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/b425eabbac7ffe4c948bde04ae4cd5c30fc4fe81"
+    },
+    {
+      "path": "scripts/params/bawe/ghostbuster.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0b7e9d62b74bb3fe0e58741e842e3412501d697",
+      "size": 2920,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/f0b7e9d62b74bb3fe0e58741e842e3412501d697"
+    },
+    {
+      "path": "scripts/params/bawe/intrinsic_dim.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1db1a924ae44518bf595240b24991e18ee2d2f5",
+      "size": 2980,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/f1db1a924ae44518bf595240b24991e18ee2d2f5"
+    },
+    {
+      "path": "scripts/params/bawe/roberta.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e8131b1a5e738face02d32c45fad3c4d33ccf93",
+      "size": 12542,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/1e8131b1a5e738face02d32c45fad3c4d33ccf93"
+    },
+    {
+      "path": "scripts/params/persuade",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "788c2d6e843b4aa8eda9100b636cf6360d61a9b4",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/788c2d6e843b4aa8eda9100b636cf6360d61a9b4"
+    },
+    {
+      "path": "scripts/params/persuade/detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72a5bc3edd08814edff0eefb9bb9fb3a78870dfe",
+      "size": 3460,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/72a5bc3edd08814edff0eefb9bb9fb3a78870dfe"
+    },
+    {
+      "path": "scripts/params/persuade/fast_detect_gpt.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e34b5641f8da090d07ab85a6f9433212b7d5936a",
+      "size": 5770,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e34b5641f8da090d07ab85a6f9433212b7d5936a"
+    },
+    {
+      "path": "scripts/params/persuade/ghostbuster.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce2756a2aca25a0cbf1ce33d0fe2a0e91ab961dc",
+      "size": 3010,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/ce2756a2aca25a0cbf1ce33d0fe2a0e91ab961dc"
+    },
+    {
+      "path": "scripts/params/persuade/intrinsic_dim.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80882f164cf4aea2747364911da072fd52200925",
+      "size": 3070,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/80882f164cf4aea2747364911da072fd52200925"
+    },
+    {
+      "path": "scripts/params/persuade/roberta.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8cdfbd2fdf49b6f1a0955fc3a074410aad79e404",
+      "size": 12812,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/8cdfbd2fdf49b6f1a0955fc3a074410aad79e404"
+    },
+    {
+      "path": "scripts/run_detect_gpt.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e87748576b76c388cf0d6ba3256eb90adb93b974",
+      "size": 354,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e87748576b76c388cf0d6ba3256eb90adb93b974"
+    },
+    {
+      "path": "scripts/run_fast_detect_gpt.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5718766a6d3f23a5a03cf08f90c73a777137de9c",
+      "size": 369,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/5718766a6d3f23a5a03cf08f90c73a777137de9c"
+    },
+    {
+      "path": "scripts/run_ghostbuster.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e00583e4f7870a507f5c719756cb52c678c7d406",
+      "size": 603,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e00583e4f7870a507f5c719756cb52c678c7d406"
+    },
+    {
+      "path": "scripts/run_intrinsic_dim.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba912c6b307c8f6e2169f54fbbdb962fdd21c62b",
+      "size": 363,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/ba912c6b307c8f6e2169f54fbbdb962fdd21c62b"
+    },
+    {
+      "path": "scripts/run_roberta.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7d2f7d5a87c75e35e24e14140eb4b8a4e1f424b8",
+      "size": 399,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/7d2f7d5a87c75e35e24e14140eb4b8a4e1f424b8"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c316d24e349c4408fc839084a9dd372c41a8163",
+      "size": 193,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/7c316d24e349c4408fc839084a9dd372c41a8163"
+    },
+    {
+      "path": "supplementary-material",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b7a6c56e76c3626fcd00c987410b750e0ce9a360",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/b7a6c56e76c3626fcd00c987410b750e0ce9a360"
+    },
+    {
+      "path": "supplementary-material/Method.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5680ab0b58e4010d2f14751809acf51eacd65df",
+      "size": 141158,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/e5680ab0b58e4010d2f14751809acf51eacd65df"
+    },
+    {
+      "path": "supplementary-material/Paper-Appendix.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66cf51128f107001d9c8f5284e2713017eeb2727",
+      "size": 594105,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/66cf51128f107001d9c8f5284e2713017eeb2727"
+    },
+    {
+      "path": "train_roberta.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ec492cca36ad524760842e72753e4f51ba3e012",
+      "size": 5896,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/5ec492cca36ad524760842e72753e4f51ba3e012"
+    },
+    {
+      "path": "utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dbb0fabe71351b639750b124a914ceb0e3ad8334",
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/trees/dbb0fabe71351b639750b124a914ceb0e3ad8334"
+    },
+    {
+      "path": "utils/args.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8774b9ee699fe0c38731b126ad1c11034b746584",
+      "size": 3144,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/8774b9ee699fe0c38731b126ad1c11034b746584"
+    },
+    {
+      "path": "utils/load_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70f7cc442dfd891399e2d133f369b8bdf87196d6",
+      "size": 3163,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/70f7cc442dfd891399e2d133f369b8bdf87196d6"
+    },
+    {
+      "path": "utils/logger.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbc0fedca65b01716a8aabf2a66e6a7a18f9aac9",
+      "size": 1105,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/bbc0fedca65b01716a8aabf2a66e6a7a18f9aac9"
+    },
+    {
+      "path": "utils/save_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "348ba5753a15e5ba2e0504c6e1177e2d1476c780",
+      "size": 1554,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/348ba5753a15e5ba2e0504c6e1177e2d1476c780"
+    },
+    {
+      "path": "utils/seeds.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c96a3d34891436689acca6c3744d13fe5e0bdad9",
+      "size": 252,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/c96a3d34891436689acca6c3744d13fe5e0bdad9"
+    },
+    {
+      "path": "utils/truncate_text.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e05d597fbcdfcf809eede92fca5cfa557701a5d",
+      "size": 1857,
+      "url": "https://api.github.com/repos/lukasgehring/Assessing-LLM-Text-Detection-in-Educational-Contexts/git/blobs/4e05d597fbcdfcf809eede92fca5cfa557701a5d"
+    }
+  ],
+  "truncated": false
+}

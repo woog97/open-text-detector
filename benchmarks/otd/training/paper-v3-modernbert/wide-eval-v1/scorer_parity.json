@@ -1,0 +1,8 @@
+{
+  "rows": 16,
+  "mean_absolute_probability_difference": 0.0,
+  "max_absolute_probability_difference": 0.0,
+  "threshold_decision_agreement": 1.0,
+  "checked_against": "Original training evaluator, same checkpoint, identical 16 held-out inputs; differences may arise from BF16 padding/batching",
+  "passed": true
+}

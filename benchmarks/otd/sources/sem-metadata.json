@@ -1,0 +1,248 @@
+{
+  "_id": "69a5ef9135468e147091a76f",
+  "id": "Sem-Detect/ML_Conferences-Peer-Reviews",
+  "author": "Sem-Detect",
+  "sha": "18b74b551670bff6b04e57570232a1694997863b",
+  "lastModified": "2026-05-22T02:18:40.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:polars",
+    "library:mlcroissant",
+    "arxiv:2605.21713",
+    "region:us"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tSem-Detect: ML Conference Peer-Review Authorship Dataset (ICML 2026)\n\t\n\nThis dataset contains over 22,000 peer reviews from ICLR and NeurIPS spanning three authorship classes: human-written, fully AI-generated, and LLM-refined (human reviews polished by an LLM).\n\nIt is the primary benchmark for training and evaluating Sem-Detect, an AI-Text Detection approach that combines textual features with claim-level semantic analysis, tailored for the peer-review domain.\nPaper \ud83d\udcc4\u2026 See the full description on the dataset page: https://huggingface.co/datasets/Sem-Detect/ML_Conferences-Peer-Reviews.",
+  "downloads": 134,
+  "likes": 0,
+  "cardData": {
+    "dataset_info": [
+      {
+        "config_name": "papers",
+        "features": [
+          {
+            "name": "paper_id",
+            "dtype": "string"
+          },
+          {
+            "name": "submission_id",
+            "dtype": "string"
+          },
+          {
+            "name": "conference",
+            "dtype": "string"
+          },
+          {
+            "name": "year",
+            "dtype": "string"
+          },
+          {
+            "name": "paper_title",
+            "dtype": "string"
+          },
+          {
+            "name": "parsed_pdf_content",
+            "dtype": "string"
+          },
+          {
+            "name": "parsed_appendix_content",
+            "dtype": "string"
+          },
+          {
+            "name": "split",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "iclr_2021",
+            "num_bytes": 12161557,
+            "num_examples": 200
+          },
+          {
+            "name": "iclr_2022",
+            "num_bytes": 15906174,
+            "num_examples": 200
+          },
+          {
+            "name": "neurips_2021",
+            "num_bytes": 10263293,
+            "num_examples": 200
+          },
+          {
+            "name": "neurips_2022",
+            "num_bytes": 11693158,
+            "num_examples": 200
+          }
+        ],
+        "download_size": 24146512,
+        "dataset_size": 50024182
+      },
+      {
+        "config_name": "reviews",
+        "features": [
+          {
+            "name": "paper_id",
+            "dtype": "string"
+          },
+          {
+            "name": "submission_id",
+            "dtype": "string"
+          },
+          {
+            "name": "conference",
+            "dtype": "string"
+          },
+          {
+            "name": "year",
+            "dtype": "string"
+          },
+          {
+            "name": "paper_title",
+            "dtype": "string"
+          },
+          {
+            "name": "review_id",
+            "dtype": "string"
+          },
+          {
+            "name": "og_review_id",
+            "dtype": "string"
+          },
+          {
+            "name": "author",
+            "dtype": "string"
+          },
+          {
+            "name": "class",
+            "dtype": "string"
+          },
+          {
+            "name": "rating",
+            "dtype": "string"
+          },
+          {
+            "name": "clean_review",
+            "dtype": "string"
+          },
+          {
+            "name": "claim_extraction",
+            "dtype": "string"
+          },
+          {
+            "name": "split",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "iclr_2021",
+            "num_bytes": 45375567,
+            "num_examples": 5698
+          },
+          {
+            "name": "iclr_2022",
+            "num_bytes": 43094688,
+            "num_examples": 5321
+          },
+          {
+            "name": "neurips_2021",
+            "num_bytes": 44208490,
+            "num_examples": 5742
+          },
+          {
+            "name": "neurips_2022",
+            "num_bytes": 41498712,
+            "num_examples": 5404
+          }
+        ],
+        "download_size": 79348856,
+        "dataset_size": 174177457
+      }
+    ],
+    "configs": [
+      {
+        "config_name": "papers",
+        "data_files": [
+          {
+            "split": "iclr_2021",
+            "path": "papers/iclr_2021-*"
+          },
+          {
+            "split": "iclr_2022",
+            "path": "papers/iclr_2022-*"
+          },
+          {
+            "split": "neurips_2021",
+            "path": "papers/neurips_2021-*"
+          },
+          {
+            "split": "neurips_2022",
+            "path": "papers/neurips_2022-*"
+          }
+        ]
+      },
+      {
+        "config_name": "reviews",
+        "data_files": [
+          {
+            "split": "iclr_2021",
+            "path": "reviews/iclr_2021-*"
+          },
+          {
+            "split": "iclr_2022",
+            "path": "reviews/iclr_2022-*"
+          },
+          {
+            "split": "neurips_2021",
+            "path": "reviews/neurips_2021-*"
+          },
+          {
+            "split": "neurips_2022",
+            "path": "reviews/neurips_2022-*"
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "papers/iclr_2021-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "papers/iclr_2022-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "papers/neurips_2021-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "papers/neurips_2022-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "reviews/iclr_2021-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "reviews/iclr_2022-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "reviews/neurips_2021-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "reviews/neurips_2022-00000-of-00001.parquet"
+    }
+  ],
+  "createdAt": "2026-03-02T20:14:09.000Z",
+  "usedStorage": 182841174
+}

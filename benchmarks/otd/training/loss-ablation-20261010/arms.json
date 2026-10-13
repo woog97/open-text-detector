@@ -1,0 +1,6 @@
+{"abl-nostage1": "--skip-stage1",
+ "abl-noseg-nomix": "--skip-stage1 --segment-weight 0 --mixed-weight 0",
+ "abl-tok-sent": "--skip-stage1 --segment-weight 0 --mixed-weight 0 --document-weight 0 --drop-gradtex",
+ "abl-uniform-tok": "--token-avg uniform",
+ "abl-tok-only": "--skip-stage1 --segment-weight 0 --mixed-weight 0 --document-weight 0 --drop-gradtex --sentence-weight 0",
+ "abl-sent1": "--sentence-weight 1.0"}

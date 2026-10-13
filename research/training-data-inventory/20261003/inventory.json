@@ -1,0 +1,1212 @@
+{
+  "audit_date": "2026-10-03",
+  "timezone": "America/Los_Angeles",
+  "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+  "sources": [
+    {
+      "id": "human100k",
+      "name": "Broad human source pool",
+      "rows": 100000,
+      "tokens": 56387707,
+      "token_method": "exact saved count of unchanged text",
+      "status": "User approved all passages for usage; final family/split preparation separate",
+      "locations": [
+        "https://huggingface.co/datasets/open-text-detector/human-source-mix-v1",
+        "/data/workspace/human-source-mix-v2-recovered-20261002"
+      ],
+      "notes": [
+        "34 sources; nine categories; latest HF revision da73a03fdfa863d5c44418e988d50137bcb53c47",
+        "Usage approval does not rewrite historical audit results or metadata fields. Original texts unchanged.",
+        "Former approved-collection.sqlite3 temporary path absent at audit; use approved HF release."
+      ]
+    },
+    {
+      "id": "mirrors30k",
+      "name": "Luna synthetic mirrors raw",
+      "rows": 30000,
+      "tokens": 15647700,
+      "token_method": "random 1000 of 30000, seed42",
+      "status": "Complete raw collection; filtered subset recorded separately",
+      "locations": [
+        "/data/workspace/synthetic-mirrors-luna-dollar-v1-recovered-20261002/raw-30000-20261002/checkpoints/00012-1790984912.tar.gz"
+      ],
+      "notes": [
+        "Final archive streamed read-only and contained 30,000 export rows.",
+        "Full recovery of calls/per-document files uses all 12 incremental archives; final archive contains complete raw-documents.jsonl.",
+        "Do not add benchmark512, prior10k/20k exports or initial Luna-dollar outputs again."
+      ]
+    },
+    {
+      "id": "mirrors28120",
+      "name": "Luna mirrors accepted by automated checks",
+      "rows": 28120,
+      "tokens": null,
+      "token_method": "sample estimate",
+      "status": "Recovered byte-for-byte and published privately; final family/split preparation remains",
+      "locations": [
+        "https://huggingface.co/datasets/open-text-detector/synthetic-mirrors-luna-28120",
+        "/data/workspace/datasets/synthetic-mirrors-luna-28120",
+        "/data/workspace/dataset-publication-20261003/recovered-filter",
+        "research/synthetic-mirrors/publication-20261003/mirrors-receipt.json"
+      ],
+      "notes": [
+        "1,880 rejected; raw 30k and original rejection evidence preserved.",
+        "Accepted/rejected/decision/protocol exports reproduced byte-for-byte against original recorded SHA256 values.",
+        "Separate linked release: source_record_id joins human record_id; authorship, label and model columns distinguish synthetic records.",
+        "Both release files and remote readback hashes verified; family-grouped splits remain unassigned."
+      ],
+      "parent": "mirrors30k",
+      "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+      "space_dataset_mount": "/datasets/synthetic-mirrors-luna-28120"
+    },
+    {
+      "id": "paper20k",
+      "name": "Paper paragraph reconstruction pairs",
+      "rows": 20000,
+      "tokens": 2594664,
+      "token_method": "500 random target rows per split",
+      "status": "Established train/validation/test split retained",
+      "locations": [
+        "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000",
+        "research/data/paper-gap10000-v3-luna-20260930",
+        "https://huggingface.co/datasets/woog/ai-paper-provenance-v3"
+      ],
+      "notes": [
+        "10,000 generated target paragraphs plus10,000 matched human originals;2,000 papers.",
+        "Target-only token estimate. Context passage count is exactly8,063,003 stored reference tokens, includes repeated context.",
+        "Saved exact AI target-region tokens1,273,649. Historical eligibility flags retain6,375 passage rows/2,739 AI targets; eligibility is not equivalent to training split.",
+        "Fresh view excludes pilot exposures:11,700train/3,900validation/3,900test."
+      ],
+      "splits": {
+        "train": 12000,
+        "validation": 4000,
+        "test": 4000
+      }
+    },
+    {
+      "id": "full600",
+      "name": "Synthetic full research manuscripts",
+      "rows": 600,
+      "tokens": 4426728,
+      "token_method": "40 random manuscripts per final-model stratum,120 total",
+      "status": "All finals included; train is storage convention, no leakage-controlled split",
+      "locations": [
+        "research/data/synthetic-papers-600-hf-20261003",
+        "https://huggingface.co/datasets/open-text-detector/synthetic-research-papers-600"
+      ],
+      "notes": [
+        "196 GPT-6.1-Sol,200 GPT-6-Sol,204 GPT-6-Luna, labeled by final revision model.",
+        "600unique final hashes and600unique source IDs. Title/abstract are human-supplied; generated body is AI. Do not label entire Markdown as pure AI token gold.",
+        "Includes synthetic methods/results; no experiments executed. Drafts/revisions/batch exports are copies or histories, not extra final documents."
+      ]
+    },
+    {
+      "id": "raid",
+      "name": "RAID downloaded train none",
+      "rows": 467985,
+      "tokens": 142527640,
+      "token_method": "500 random rows per file",
+      "status": "Downloaded; only audited donor subset used in diversity experiments",
+      "locations": [
+        "/data/workspace/paper-diversity-v1/raid.csv"
+      ],
+      "notes": [
+        "Historical eligible donor pool: 39,858 rows; not additive to raw source.",
+        "RAID subset selects clean abstracts; MAGE subset selects human and topical/specified responses, excludes continuation setups and heldout overlap.",
+        "Do not treat all downloaded rows as approved train-ready data."
+      ],
+      "splits": {
+        "train": 467985
+      }
+    },
+    {
+      "id": "mage",
+      "name": "MAGE downloaded splits",
+      "rows": 432682,
+      "tokens": 103847065,
+      "token_method": "500 random rows per file",
+      "status": "Downloaded; only audited donor subset used in diversity experiments",
+      "locations": [
+        "/data/workspace/paper-diversity-v1/mage-train.csv",
+        "/data/workspace/paper-diversity-v1/mage-valid.csv",
+        "/data/workspace/paper-diversity-v1/mage-test.csv"
+      ],
+      "notes": [
+        "Historical eligible donor pool: 26,232 rows; not additive to raw source.",
+        "RAID subset selects clean abstracts; MAGE subset selects human and topical/specified responses, excludes continuation setups and heldout overlap.",
+        "Do not treat all downloaded rows as approved train-ready data."
+      ],
+      "splits": {
+        "train": 319071,
+        "valid": 56792,
+        "test": 56819
+      }
+    },
+    {
+      "id": "gradtex",
+      "name": "GRADTEX",
+      "rows": 142214,
+      "tokens": 38701943,
+      "token_method": "500 random rows per split",
+      "status": "Accepted by user as-is for current Stage3 plan",
+      "locations": [
+        "/data/workspace/paper-diversity-v1/public-source-audit/gradtex-train.parquet",
+        "/data/workspace/paper-diversity-v1/public-source-audit/gradtex-validation.parquet",
+        "/data/workspace/paper-diversity-v1/public-source-audit/gradtex-test.parquet"
+      ],
+      "notes": [
+        "User explicitly requested no further deep review.",
+        "79,065train rows comprise39,532human and39,533AI-involved; upstream binary1=human,0=AI-involved.",
+        "Derived from MAGE, with overlapping source material. Document/scenario labels do not establish token gold.",
+        "Existing historical length/overlap-filtered donor pool68,647 is a derivative, not additional data or a new restriction on user acceptance."
+      ],
+      "splits": {
+        "train": 79065,
+        "validation": 23672,
+        "test": 39477
+      }
+    },
+    {
+      "id": "seqxgpt",
+      "name": "SeqXGPT original English files",
+      "rows": 35904,
+      "tokens": 9856788,
+      "token_method": "500 random rows per generator file",
+      "status": "Prepared mixed-provenance training donor subset exists",
+      "locations": [
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_gpt2_lines.jsonl",
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_gpt3_lines.jsonl",
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_gptj_lines.jsonl",
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_gptneo_lines.jsonl",
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_human_lines.jsonl",
+        "/data/workspace/paper-diversity-v1/public-source-audit/seqxgpt-original/en_llama_lines.jsonl"
+      ],
+      "notes": [
+        "6,000human plus29,904generated/continuation records across5generators. Current prepared eligible pool26,517.",
+        "Group split:28,730train/3,326validation/3,680test/168excluded; subsequent donor checks further narrow training pool.",
+        "Retain human prefix versus generated suffix boundary semantics; do not label prefixes AI."
+      ],
+      "splits": {
+        "train_candidates": 28730,
+        "validation": 3326,
+        "test": 3680,
+        "excluded": 168
+      }
+    },
+    {
+      "id": "hip",
+      "name": "HIP human and paraphrase pairs",
+      "rows": 10581,
+      "tokens": 5205535,
+      "token_method": "500 random pairs; both text fields counted",
+      "status": "Set aside by user; preserve files",
+      "locations": [
+        "/data/workspace/paper-diversity-v1/public-source-audit/hip-audit/train.parquet",
+        "/data/workspace/paper-diversity-v1/public-source-audit/hip-audit/pair-preparation-grouped-v2"
+      ],
+      "notes": [
+        "10,581pairs =21,162text sides, derived from MAGE/RAID; do not add originals again to those sources.",
+        "Prepared grouped subset5,862train/697selection/766reserved-test pairs; native test prefix samples256AI+256human.",
+        "No per-token provenance supplied for paraphrases."
+      ]
+    },
+    {
+      "id": "editlens",
+      "name": "EditLens ICLR",
+      "rows": 80610,
+      "tokens": 33711458,
+      "token_method": "500 random rows per split",
+      "status": "Existing private copied dataset; original split semantics retained",
+      "locations": [
+        "/data/workspace/open-pangram-private-copy/dataset/editlens_iclr",
+        "https://huggingface.co/datasets/open-text-detector/editlens_iclr"
+      ],
+      "notes": [
+        "Human, AI-generated and AI-edited document labels; source_text and similarity scores are metadata, not automatically gold token labels.",
+        "Test_llama and test contain related human sources; totals are stored rows, not globally independent documents."
+      ],
+      "splits": {
+        "test": 6115,
+        "test_enron": 6147,
+        "test_llama": 5957,
+        "train": 59991,
+        "val": 2400
+      }
+    },
+    {
+      "id": "grammarly",
+      "name": "EditLens Grammarly edits",
+      "rows": 1768,
+      "tokens": 1134222,
+      "token_method": "500 random edited texts",
+      "status": "Existing private copied editing dataset",
+      "locations": [
+        "/data/workspace/open-pangram-private-copy/dataset/editlens_iclr_grammarly/data/train-00000-of-00001.parquet",
+        "https://huggingface.co/datasets/open-text-detector/editlens_iclr_grammarly"
+      ],
+      "notes": [
+        "Original source_text, edit_instructions and edited text retained. Count covers edited text only.",
+        "train filename is not evidence of completed project admission or token-label preparation."
+      ],
+      "splits": {
+        "train": 1768
+      }
+    },
+    {
+      "id": "arena",
+      "name": "Arena multi-model responses",
+      "rows": 5000,
+      "tokens": 3699370,
+      "token_method": "500 random responses",
+      "status": "Development-exposed evaluation; future training needs prompt-group split",
+      "locations": [
+        "benchmarks/pangram4/exports/arena-prose-100-49-models",
+        "https://huggingface.co/datasets/woog/arena-prose-100-49-models"
+      ],
+      "notes": [
+        "100prompts \u00d750models;4,898mechanically eligible. The49-model folder name is stale.",
+        "Earlier Arena20/100/cheap/skipped/Kimi exports contain responses reused in the current package; do not sum them. Additional historical outputs were not globally reconciled."
+      ],
+      "splits": {
+        "test": 5000
+      }
+    },
+    {
+      "id": "workflow",
+      "name": "Paper workflow evaluation",
+      "rows": 1323,
+      "tokens": null,
+      "token_method": "sample estimate",
+      "status": "Evaluation-only; original assignments retained",
+      "locations": [
+        "research/data/paper-eval-workflows-luna-20260930",
+        "https://huggingface.co/datasets/woog/ai-paper-workflow-eval"
+      ],
+      "notes": [
+        "189papers:27pilot/54calibration/108test.",
+        "756reconstruction targets +567assistance outputs;2,646correlated views +378matched-human views.",
+        "9,301body paragraphs,1,590clean/novel human paragraphs are related controls, not independent generated documents.",
+        "567editing outputs remain eval-only; cancelled half-split proposal must not be applied.",
+        "Token estimate omitted because correlated full/context/target views have different counting units."
+      ]
+    },
+    {
+      "id": "human_pg19",
+      "name": "PG19 historical books",
+      "rows": 100,
+      "tokens": 10303668,
+      "token_method": "exact_all_rows",
+      "status": "Legacy evaluation/source pool",
+      "locations": [
+        "research/data/human_pg19"
+      ],
+      "notes": [
+        "Already used in benchmark controls/proxies; no new training assignment inferred."
+      ]
+    },
+    {
+      "id": "ai_mdta_2025",
+      "name": "MDTA selected 2025 responses",
+      "rows": 6397,
+      "tokens": 1300894,
+      "token_method": "sample_extrapolation",
+      "status": "Legacy evaluation/source pool",
+      "locations": [
+        "research/data/ai_mdta_2025"
+      ],
+      "notes": [
+        "Already used in benchmark controls/proxies; no new training assignment inferred."
+      ]
+    },
+    {
+      "id": "paper_archive",
+      "name": "Canonical extracted paper archive",
+      "rows": 14561,
+      "tokens": 423429075,
+      "token_method": "100 random papers; large-length variance",
+      "status": "Unlabeled source archive, not human-authorship gold",
+      "locations": [
+        "research/exports/paper-text-hf",
+        "https://huggingface.co/datasets/woog/pangram-paper-text",
+        "/data/workspace/datasets/pangram-paper-text",
+        "https://huggingface.co/datasets/open-text-detector/pangram-paper-text"
+      ],
+      "notes": [
+        "train split is storage convention. Includes overlap with research/paper datasets and extractions.",
+        "Paper year or full text does not establish human-only authorship."
+      ],
+      "space_copy_receipt": "research/synthetic-mirrors/publication-20261003/papers-receipt.json",
+      "space_dataset_mount": "/datasets/pangram-paper-text",
+      "organization_release": {
+        "state": "verified",
+        "repo": "open-text-detector/pangram-paper-text",
+        "revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+        "private": true,
+        "resource_group": null,
+        "rows": 14561,
+        "source": "woog/pangram-paper-text",
+        "source_revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+        "source_preserved": true,
+        "parquet_sha256": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf",
+        "viewer_url": "https://huggingface.co/datasets/open-text-detector/pangram-paper-text/viewer/default/train",
+        "viewer_checks": [
+          {
+            "offset": 0,
+            "total": 14561,
+            "columns": [
+              "paper_id",
+              "forum_id",
+              "title",
+              "conference",
+              "year",
+              "text",
+              "pdf_sha256",
+              "text_sha256",
+              "extraction_sha256",
+              "extraction_method",
+              "extraction_metadata_json",
+              "page_count"
+            ],
+            "truncated_cells": []
+          },
+          {
+            "offset": 14560,
+            "total": 14561,
+            "columns": [
+              "paper_id",
+              "forum_id",
+              "title",
+              "conference",
+              "year",
+              "text",
+              "pdf_sha256",
+              "text_sha256",
+              "extraction_sha256",
+              "extraction_method",
+              "extraction_metadata_json",
+              "page_count"
+            ],
+            "truncated_cells": []
+          }
+        ],
+        "mount": {
+          "state": "verified",
+          "mount_path": "/datasets/pangram-paper-text",
+          "rows": 14561,
+          "organization_dataset_card": true,
+          "readme_sha256": "79254f21438f7e0803e05c68f26cc62bd49756329145550b82bf9324cee50b43"
+        },
+        "at": "2026-10-03T09:44:20.301796+00:00"
+      }
+    },
+    {
+      "id": "reviewbench",
+      "name": "ReviewBench source papers and reviews",
+      "rows": 51529,
+      "tokens": null,
+      "token_method": "sample estimate",
+      "status": "Source corpus, no detector-training labels",
+      "locations": [
+        "research/data/reviewbench/original",
+        "research/data/reviewbench/catalogue.sqlite3"
+      ],
+      "notes": [
+        "51,453rows have nonempty manuscript Markdown;15downloaded Parquet shards.",
+        "Contains paper metadata/reviews/manuscripts; overlaps source paper archive and paper-generation seeds.",
+        "Total corpus tokens unmeasured; no corpus-wide model/token pass performed."
+      ]
+    },
+    {
+      "id": "iclr_controls",
+      "name": "ICLR 2023 and 2026 controls",
+      "rows": 200,
+      "tokens": 4713988,
+      "token_method": "exact stored-text count,200 rows",
+      "status": "Legacy controls; year is not authorship label",
+      "locations": [
+        "research/data/iclr_2023",
+        "research/data/iclr_2026"
+      ],
+      "notes": [
+        "100papers per cohort; caches and archive may overlap."
+      ]
+    },
+    {
+      "id": "qwen_pilot",
+      "name": "Qwen3.5 mirror pilot",
+      "rows": 10,
+      "tokens": null,
+      "token_method": "sample estimate",
+      "status": "Historical development pilot;9mechanical passes,0admitted",
+      "locations": [
+        "/data/workspace/synthetic-mirrors-v1/pilot/mirrors.jsonl"
+      ],
+      "notes": [
+        "Separate from the Luna-only30,000collection. Qwen3.5-4B BF16 generation; completed10of10.",
+        "Preserved pilot; no expansion or training use inferred."
+      ]
+    }
+  ],
+  "human_source_breakdown": [
+    {
+      "source_id": "gutenberg",
+      "category": "creative",
+      "human_passages": 12551,
+      "raw_synthetic_documents": 3609
+    },
+    {
+      "source_id": "writingprompts",
+      "category": "creative",
+      "human_passages": 6667,
+      "raw_synthetic_documents": 1941
+    },
+    {
+      "source_id": "scp",
+      "category": "creative",
+      "human_passages": 1893,
+      "raw_synthetic_documents": 585
+    },
+    {
+      "source_id": "wikisource",
+      "category": "creative",
+      "human_passages": 1111,
+      "raw_synthetic_documents": 357
+    },
+    {
+      "source_id": "pmc",
+      "category": "scientific",
+      "human_passages": 6306,
+      "raw_synthetic_documents": 1831
+    },
+    {
+      "source_id": "arxiv",
+      "category": "scientific",
+      "human_passages": 5405,
+      "raw_synthetic_documents": 1586
+    },
+    {
+      "source_id": "pes2o",
+      "category": "scientific",
+      "human_passages": 3604,
+      "raw_synthetic_documents": 1075
+    },
+    {
+      "source_id": "acl",
+      "category": "scientific",
+      "human_passages": 2703,
+      "raw_synthetic_documents": 814
+    },
+    {
+      "source_id": "wikipedia",
+      "category": "reference",
+      "human_passages": 7958,
+      "raw_synthetic_documents": 2317
+    },
+    {
+      "source_id": "pressbooks",
+      "category": "reference",
+      "human_passages": 3979,
+      "raw_synthetic_documents": 1178
+    },
+    {
+      "source_id": "libretexts",
+      "category": "reference",
+      "human_passages": 2387,
+      "raw_synthetic_documents": 725
+    },
+    {
+      "source_id": "wikibooks",
+      "category": "reference",
+      "human_passages": 1592,
+      "raw_synthetic_documents": 499
+    },
+    {
+      "source_id": "amazon2018",
+      "category": "reviews",
+      "human_passages": 5306,
+      "raw_synthetic_documents": 1556
+    },
+    {
+      "source_id": "imdb",
+      "category": "reviews",
+      "human_passages": 1061,
+      "raw_synthetic_documents": 348
+    },
+    {
+      "source_id": "opinrank",
+      "category": "reviews",
+      "human_passages": 4244,
+      "raw_synthetic_documents": 1256
+    },
+    {
+      "source_id": "stack_nontech",
+      "category": "social",
+      "human_passages": 5726,
+      "raw_synthetic_documents": 1680
+    },
+    {
+      "source_id": "stack_tech",
+      "category": "social",
+      "human_passages": 2082,
+      "raw_synthetic_documents": 641
+    },
+    {
+      "source_id": "ubuntu_irc",
+      "category": "social",
+      "human_passages": 1561,
+      "raw_synthetic_documents": 489
+    },
+    {
+      "source_id": "wiki_talk",
+      "category": "social",
+      "human_passages": 1041,
+      "raw_synthetic_documents": 343
+    },
+    {
+      "source_id": "cccc",
+      "category": "general_web",
+      "human_passages": 5017,
+      "raw_synthetic_documents": 1473
+    },
+    {
+      "source_id": "eff",
+      "category": "general_web",
+      "human_passages": 415,
+      "raw_synthetic_documents": 164
+    },
+    {
+      "source_id": "foodista",
+      "category": "general_web",
+      "human_passages": 1545,
+      "raw_synthetic_documents": 487
+    },
+    {
+      "source_id": "wikivoyage",
+      "category": "general_web",
+      "human_passages": 1231,
+      "raw_synthetic_documents": 395
+    },
+    {
+      "source_id": "globalvoices",
+      "category": "news",
+      "human_passages": 1652,
+      "raw_synthetic_documents": 516
+    },
+    {
+      "source_id": "voa",
+      "category": "news",
+      "human_passages": 1717,
+      "raw_synthetic_documents": 536
+    },
+    {
+      "source_id": "wikinews",
+      "category": "news",
+      "human_passages": 991,
+      "raw_synthetic_documents": 329
+    },
+    {
+      "source_id": "scidev",
+      "category": "news",
+      "human_passages": 926,
+      "raw_synthetic_documents": 305
+    },
+    {
+      "source_id": "oanc_slate",
+      "category": "news",
+      "human_passages": 1321,
+      "raw_synthetic_documents": 416
+    },
+    {
+      "source_id": "asap2",
+      "category": "essays",
+      "human_passages": 4206,
+      "raw_synthetic_documents": 1241
+    },
+    {
+      "source_id": "persuade",
+      "category": "essays",
+      "human_passages": 699,
+      "raw_synthetic_documents": 241
+    },
+    {
+      "source_id": "govreport",
+      "category": "professional",
+      "human_passages": 1086,
+      "raw_synthetic_documents": 357
+    },
+    {
+      "source_id": "fed",
+      "category": "professional",
+      "human_passages": 776,
+      "raw_synthetic_documents": 267
+    },
+    {
+      "source_id": "worldbank",
+      "category": "professional",
+      "human_passages": 776,
+      "raw_synthetic_documents": 265
+    },
+    {
+      "source_id": "oanc_icic",
+      "category": "professional",
+      "human_passages": 465,
+      "raw_synthetic_documents": 178
+    }
+  ],
+  "evaluation_prepared": {
+    "arena20": {
+      "rows": 351,
+      "labels": {
+        "ai": 351
+      },
+      "unique_texts": 351
+    },
+    "detectrl": {
+      "rows": 2477,
+      "labels": {
+        "ai": 1672,
+        "human": 805
+      },
+      "unique_texts": 2430
+    },
+    "ellipse": {
+      "rows": 2571,
+      "labels": {
+        "human": 2571
+      },
+      "unique_texts": 2571
+    },
+    "epoch": {
+      "rows": 84,
+      "labels": {
+        "human": 12,
+        "ai": 72
+      },
+      "unique_texts": 84
+    },
+    "gede": {
+      "rows": 184,
+      "labels": {
+        "ai": 176,
+        "human": 8
+      },
+      "unique_texts": 184
+    },
+    "liang": {
+      "rows": 270,
+      "labels": {
+        "human": 270
+      },
+      "unique_texts": 269
+    },
+    "local": {
+      "rows": 85,
+      "labels": {
+        "ai": 45,
+        "human": 16,
+        "mixed": 24
+      },
+      "unique_texts": 85
+    },
+    "meld_eval": {
+      "rows": 928,
+      "labels": {
+        "ai": 896,
+        "human": 32
+      },
+      "unique_texts": 926
+    },
+    "opai": {
+      "rows": 224,
+      "labels": {
+        "human": 24,
+        "ai": 8,
+        "mixed": 192
+      },
+      "unique_texts": 220
+    },
+    "pelic": {
+      "rows": 100,
+      "labels": {
+        "human": 100
+      },
+      "unique_texts": 100
+    },
+    "perkins": {
+      "rows": 114,
+      "labels": {
+        "ai": 104,
+        "human": 10
+      },
+      "unique_texts": 113
+    },
+    "saha": {
+      "rows": 65,
+      "labels": {
+        "ai": 47,
+        "human": 18
+      },
+      "unique_texts": 65
+    },
+    "sem_detect": {
+      "rows": 36,
+      "labels": {
+        "ai": 16,
+        "human": 4,
+        "mixed": 16
+      },
+      "unique_texts": 36
+    },
+    "vub": {
+      "rows": 40,
+      "labels": {
+        "ai": 40
+      },
+      "unique_texts": 40
+    }
+  },
+  "evaluation_source_eligible_counts": {
+    "saha": 72,
+    "pelic": 18193,
+    "perkins": 114,
+    "liang": 270,
+    "vub": 40,
+    "meld_eval": 227998,
+    "detectrl": 48404,
+    "epoch": 1089,
+    "opai": 8748,
+    "sem_detect": 1109,
+    "gede": 13217,
+    "local": null
+  },
+  "historical_paper_runs": {
+    "research/data/paper-eval-workflows-luna-20260930": {
+      "papers": 189,
+      "planned_papers": 189,
+      "generated_targets": 1323,
+      "planned_targets": 1323,
+      "correlated_views": 2646,
+      "matched_human_views": 378,
+      "human_body_paragraphs": 9301,
+      "clean_novel_human_paragraphs": 1590,
+      "complete": true
+    },
+    "research/data/paper-gap10000-v3-luna-20260930": {
+      "papers": 2000,
+      "source_passages": 10000,
+      "rows": 20000,
+      "unique_texts": 19998,
+      "eligible_rows": 6375,
+      "generated_paragraphs": 10000,
+      "eligible_generated_paragraphs": 2739,
+      "ai_region_tokens": 1273649,
+      "eligible_ai_region_tokens": 319362,
+      "ai_sentences": 43084,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v2-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 181,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 76,
+      "ai_region_tokens": 35610,
+      "eligible_ai_region_tokens": 9659,
+      "ai_sentences": 1238,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v3-20260930": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 204,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 92,
+      "ai_region_tokens": 33305,
+      "eligible_ai_region_tokens": 10950,
+      "ai_sentences": 1138,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v4-20260930": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 204,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 89,
+      "ai_region_tokens": 33366,
+      "eligible_ai_region_tokens": 10366,
+      "ai_sentences": 1122,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap2500-v3-luna-20260930": {
+      "papers": 500,
+      "source_passages": 2500,
+      "rows": 5000,
+      "unique_texts": 4999,
+      "eligible_rows": 1724,
+      "generated_paragraphs": 2500,
+      "eligible_generated_paragraphs": 740,
+      "ai_region_tokens": 323204,
+      "eligible_ai_region_tokens": 87855,
+      "ai_sentences": 11006,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap50-luna-20260929": {
+      "papers": 50,
+      "source_passages": 50,
+      "rows": 100,
+      "unique_texts": 100,
+      "eligible_rows": 41,
+      "generated_paragraphs": 50,
+      "eligible_generated_paragraphs": 17,
+      "ai_region_tokens": 6358,
+      "eligible_ai_region_tokens": 1909,
+      "ai_sentences": 222,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap50-luna-v2-20260929": {
+      "papers": 50,
+      "source_passages": 50,
+      "rows": 100,
+      "unique_texts": 100,
+      "eligible_rows": 34,
+      "generated_paragraphs": 50,
+      "eligible_generated_paragraphs": 14,
+      "ai_region_tokens": 7484,
+      "eligible_ai_region_tokens": 1945,
+      "ai_sentences": 260,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-luna50-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 1000,
+      "unique_texts": 947,
+      "eligible_rows": 907,
+      "operations": {
+        "human_original": 250,
+        "proofread": 250,
+        "sentence_replace": 250,
+        "clause_replace": 250
+      },
+      "splits": {
+        "train": 600,
+        "test": 200,
+        "validation": 200
+      },
+      "attempts": 793,
+      "mechanically_invalid_attempts": 43,
+      "superseded_successful_requests": 0,
+      "proofreading_noops": 53,
+      "provider_reported_cost_usd": 0.10102459999999998,
+      "cost_coverage": 793,
+      "prompt_tokens": 406901,
+      "completion_tokens": 120669,
+      "reasoning_tokens": 88776,
+      "key_usage_delta_usd": 0.1010245999999988
+    },
+    "research/data/paper-luna50-quality-v2-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 1000,
+      "unique_texts": 824,
+      "eligible_rows": 891,
+      "operations": {
+        "human_original": 250,
+        "proofread": 250,
+        "sentence_replace": 250,
+        "clause_replace": 250
+      },
+      "splits": {
+        "train": 600,
+        "test": 200,
+        "validation": 200
+      },
+      "attempts": 767,
+      "mechanically_invalid_attempts": 16,
+      "superseded_successful_requests": 1,
+      "proofreading_noops": 73,
+      "provider_reported_cost_usd": 0.10578060000000003,
+      "cost_coverage": 767,
+      "prompt_tokens": 506865,
+      "completion_tokens": 110085,
+      "reasoning_tokens": 72945,
+      "key_usage_delta_usd": 0.10578059999999923
+    },
+    "research/data/paper-pilot10-gpt61-sol-20260929": {
+      "papers": 10,
+      "source_passages": 50,
+      "rows": 200,
+      "unique_texts": 192,
+      "eligible_rows": 199,
+      "operations": {
+        "human_original": 50,
+        "proofread": 50,
+        "sentence_replace": 50,
+        "clause_replace": 50
+      },
+      "splits": {
+        "train": 120,
+        "test": 40,
+        "validation": 40
+      },
+      "attempts": 155,
+      "mechanically_invalid_attempts": 3,
+      "superseded_successful_requests": 2,
+      "proofreading_noops": 8,
+      "provider_reported_cost_usd": 0.31793599999999994,
+      "cost_coverage": 155,
+      "prompt_tokens": 80163,
+      "completion_tokens": 15761,
+      "reasoning_tokens": 8484,
+      "key_usage_delta_usd": 0.31793599999999955
+    }
+  },
+  "historical_exact_overlap": {
+    "research/data/paper-gap250-luna-v2-20260929": {
+      "rows": 500,
+      "unique_passage_texts": 500,
+      "rows_exactly_in_current_20000": 250,
+      "unique_passages_not_in_current": 250
+    },
+    "research/data/paper-gap250-luna-v3-20260930": {
+      "rows": 500,
+      "unique_passage_texts": 500,
+      "rows_exactly_in_current_20000": 500,
+      "unique_passages_not_in_current": 0
+    },
+    "research/data/paper-gap250-luna-v4-20260930": {
+      "rows": 500,
+      "unique_passage_texts": 500,
+      "rows_exactly_in_current_20000": 253,
+      "unique_passages_not_in_current": 247
+    },
+    "research/data/paper-gap2500-v3-luna-20260930": {
+      "rows": 5000,
+      "unique_passage_texts": 4999,
+      "rows_exactly_in_current_20000": 5000,
+      "unique_passages_not_in_current": 0
+    },
+    "research/data/paper-gap50-luna-20260929": {
+      "rows": 100,
+      "unique_passage_texts": 100,
+      "rows_exactly_in_current_20000": 50,
+      "unique_passages_not_in_current": 50
+    },
+    "research/data/paper-gap50-luna-v2-20260929": {
+      "rows": 100,
+      "unique_passage_texts": 100,
+      "rows_exactly_in_current_20000": 50,
+      "unique_passages_not_in_current": 50
+    },
+    "research/data/paper-luna50-20260929": {
+      "rows": 1000,
+      "unique_passage_texts": 947,
+      "rows_exactly_in_current_20000": 0,
+      "unique_passages_not_in_current": 947
+    },
+    "research/data/paper-luna50-quality-v2-20260929": {
+      "rows": 1000,
+      "unique_passage_texts": 824,
+      "rows_exactly_in_current_20000": 0,
+      "unique_passages_not_in_current": 824
+    },
+    "research/data/paper-pilot10-gpt61-sol-20260929": {
+      "rows": 200,
+      "unique_passage_texts": 192,
+      "rows_exactly_in_current_20000": 0,
+      "unique_passages_not_in_current": 192
+    }
+  },
+  "hf_repositories": [
+    {
+      "id": "open-text-detector/editlens_iclr",
+      "revision": "c0835136846658c7fcb3b0feccc98991d5057326",
+      "private": true
+    },
+    {
+      "id": "open-text-detector/editlens_iclr_grammarly",
+      "revision": "3155bfa7b20b97336782fad3d48aa5fafb1d3aa5",
+      "private": true
+    },
+    {
+      "id": "open-text-detector/human-source-mix-v1",
+      "revision": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+      "private": true
+    },
+    {
+      "id": "open-text-detector/synthetic-research-papers-600",
+      "revision": "65ff939b86908fc8cd8e7bc78d1e5e929c93f1d9",
+      "private": true
+    },
+    {
+      "id": "woog/arena-prose-100-49-models",
+      "revision": "66298b561a69c6ed6a9a3c4c79eeedb1f754ba49",
+      "private": false
+    },
+    {
+      "id": "woog/pangram-paper-text",
+      "revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+      "private": true
+    },
+    {
+      "id": "woog/ai-paper-provenance-v3",
+      "revision": "98ca42d9ff340d8a8fddba50e880a8528aafecf2",
+      "private": false
+    },
+    {
+      "id": "woog/ai-paper-workflow-eval",
+      "revision": "57b5a4731fed995105e92e44ffbef15a5cd26058",
+      "private": false
+    },
+    {
+      "id": "open-text-detector/synthetic-mirrors-luna-28120",
+      "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+      "private": true
+    }
+  ],
+  "custom_primary_gross_tokens_estimate": 79056799,
+  "custom_primary_rows": 150600,
+  "no_global_deduplicated_training_total": true,
+  "limitations": [
+    "No cross-corpus near-deduplication or new split/admission decisions performed.",
+    "Repository-local datasets, known Space workspace, project HF namespaces, and shallow own-directory shared-server check covered; inaccessible/deeper unrelated account storage not claimed.",
+    "Counts and estimates use stored text; do not include prompts, hidden reasoning, padding, repeated epochs or model weights."
+  ],
+  "post_audit_publication": {
+    "mirrors": {
+      "state": "verified",
+      "repo_id": "open-text-detector/synthetic-mirrors-luna-28120",
+      "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+      "private": true,
+      "rows": 28120,
+      "space_path": "/data/workspace/datasets/synthetic-mirrors-luna-28120",
+      "parent_revision": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+      "verified_files": {
+        "mirrors.jsonl": "799381dff4c3fba7b0192a143f9704c3a653168c934de96c83688bd79ad74783",
+        "provenance.json": "336e9d3d6769f591e0e9037411d75ac1842a7d57fb683b457cee4671eaeaa1e3",
+        "recovery-verification.json": "7d72dcfa3b20a3cc6532e9bb92422297b8cffdf1d9080608c9f31d6aba72e466",
+        "filter-protocol.json": "41a54a311f98468d0c6c7e1a8eb665215254835f96f6b725c036e5986fc16319",
+        "README.md": "ad826f4ed5f77b92f70189534e15578550a42b8d9a7c18354d2993be5517f4ac",
+        "data/train-00000-of-00001.parquet": "e315ba2cd4e05b5a14c3976f09da44c58f9f73d5c0614cb940ef1e8f0a1001f9",
+        "file_checksums.json": "e087213772e74953660158a55d8770831e3fd90386c75189e6f38607a9b29e94"
+      },
+      "at": "2026-10-03T09:28:07.163724+00:00"
+    },
+    "paper_space_copy": {
+      "state": "verified",
+      "repo": "woog/pangram-paper-text",
+      "revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+      "space_path": "/data/workspace/datasets/pangram-paper-text",
+      "rows": 14561,
+      "verified_files": {
+        "README.md": "abe7efb72cb81231950463a400e1010f160e39b927726430963efcf6a5e87611",
+        "data/batch-001.parquet": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf"
+      },
+      "at": "2026-10-03T09:25:43.669659+00:00",
+      "private_source": true
+    },
+    "completed_at": "2026-10-03T09:28:07.267885+00:00",
+    "paper_organization_release": {
+      "state": "verified",
+      "repo": "open-text-detector/pangram-paper-text",
+      "revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+      "private": true,
+      "resource_group": null,
+      "rows": 14561,
+      "source": "woog/pangram-paper-text",
+      "source_revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+      "source_preserved": true,
+      "parquet_sha256": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf",
+      "viewer_url": "https://huggingface.co/datasets/open-text-detector/pangram-paper-text/viewer/default/train",
+      "viewer_checks": [
+        {
+          "offset": 0,
+          "total": 14561,
+          "columns": [
+            "paper_id",
+            "forum_id",
+            "title",
+            "conference",
+            "year",
+            "text",
+            "pdf_sha256",
+            "text_sha256",
+            "extraction_sha256",
+            "extraction_method",
+            "extraction_metadata_json",
+            "page_count"
+          ],
+          "truncated_cells": []
+        },
+        {
+          "offset": 14560,
+          "total": 14561,
+          "columns": [
+            "paper_id",
+            "forum_id",
+            "title",
+            "conference",
+            "year",
+            "text",
+            "pdf_sha256",
+            "text_sha256",
+            "extraction_sha256",
+            "extraction_method",
+            "extraction_metadata_json",
+            "page_count"
+          ],
+          "truncated_cells": []
+        }
+      ],
+      "mount": {
+        "state": "verified",
+        "mount_path": "/datasets/pangram-paper-text",
+        "rows": 14561,
+        "organization_dataset_card": true,
+        "readme_sha256": "79254f21438f7e0803e05c68f26cc62bd49756329145550b82bf9324cee50b43"
+      },
+      "at": "2026-10-03T09:44:20.301796+00:00"
+    }
+  },
+  "dataset_attachments": {
+    "state": "verified",
+    "space": "open-text-detector/training",
+    "requested_volumes": [
+      {
+        "type": "bucket",
+        "source": "open-text-detector/training-storage",
+        "mountPath": "/data",
+        "readOnly": false
+      },
+      {
+        "type": "dataset",
+        "source": "open-text-detector/synthetic-mirrors-luna-28120",
+        "mountPath": "/datasets/synthetic-mirrors-luna-28120",
+        "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+        "readOnly": true
+      },
+      {
+        "type": "dataset",
+        "source": "open-text-detector/pangram-paper-text",
+        "mountPath": "/datasets/pangram-paper-text",
+        "revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+        "readOnly": true
+      }
+    ],
+    "at": "2026-10-03T09:41:51.883966+00:00",
+    "paper_mount": {
+      "state": "verified",
+      "mount_path": "/datasets/pangram-paper-text",
+      "rows": 14561,
+      "organization_dataset_card": true,
+      "readme_sha256": "79254f21438f7e0803e05c68f26cc62bd49756329145550b82bf9324cee50b43"
+    },
+    "verified_at": "2026-10-03T09:44:20.301796+00:00"
+  }
+}

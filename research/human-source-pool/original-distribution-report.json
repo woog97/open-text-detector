@@ -1,0 +1,253 @@
+{
+  "original_target_total": 100000,
+  "actual_total": 100000,
+  "category_totals_unchanged": true,
+  "sources": [
+    {
+      "source_id": "gutenberg",
+      "original_target": 10000,
+      "revised_target": 12551,
+      "actual": 12551,
+      "difference_from_original": 2551
+    },
+    {
+      "source_id": "writingprompts",
+      "original_target": 6667,
+      "revised_target": 6667,
+      "actual": 6667,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "scp",
+      "original_target": 4444,
+      "revised_target": 1893,
+      "actual": 1893,
+      "difference_from_original": -2551
+    },
+    {
+      "source_id": "wikisource",
+      "original_target": 1111,
+      "revised_target": 1111,
+      "actual": 1111,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "pmc",
+      "original_target": 6306,
+      "revised_target": 6306,
+      "actual": 6306,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "arxiv",
+      "original_target": 5405,
+      "revised_target": 5405,
+      "actual": 5405,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "pes2o",
+      "original_target": 3604,
+      "revised_target": 3604,
+      "actual": 3604,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "acl",
+      "original_target": 2703,
+      "revised_target": 2703,
+      "actual": 2703,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "wikipedia",
+      "original_target": 7958,
+      "revised_target": 7958,
+      "actual": 7958,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "pressbooks",
+      "original_target": 3979,
+      "revised_target": 3979,
+      "actual": 3979,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "libretexts",
+      "original_target": 2387,
+      "revised_target": 2387,
+      "actual": 2387,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "wikibooks",
+      "original_target": 1592,
+      "revised_target": 1592,
+      "actual": 1592,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "amazon2018",
+      "original_target": 5306,
+      "revised_target": 5306,
+      "actual": 5306,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "imdb",
+      "original_target": 1061,
+      "revised_target": 1061,
+      "actual": 1061,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "opinrank",
+      "original_target": 4244,
+      "revised_target": 4244,
+      "actual": 4244,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "stack_nontech",
+      "original_target": 5726,
+      "revised_target": 5726,
+      "actual": 5726,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "stack_tech",
+      "original_target": 2082,
+      "revised_target": 2082,
+      "actual": 2082,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "ubuntu_irc",
+      "original_target": 1561,
+      "revised_target": 1561,
+      "actual": 1561,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "wiki_talk",
+      "original_target": 1041,
+      "revised_target": 1041,
+      "actual": 1041,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "cccc",
+      "original_target": 5335,
+      "revised_target": 5017,
+      "actual": 5017,
+      "difference_from_original": -318
+    },
+    {
+      "source_id": "eff",
+      "original_target": 821,
+      "revised_target": 415,
+      "actual": 415,
+      "difference_from_original": -406
+    },
+    {
+      "source_id": "foodista",
+      "original_target": 821,
+      "revised_target": 1545,
+      "actual": 1545,
+      "difference_from_original": 724
+    },
+    {
+      "source_id": "wikivoyage",
+      "original_target": 1231,
+      "revised_target": 1231,
+      "actual": 1231,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "globalvoices",
+      "original_target": 1652,
+      "revised_target": 1652,
+      "actual": 1652,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "voa",
+      "original_target": 1652,
+      "revised_target": 1717,
+      "actual": 1717,
+      "difference_from_original": 65
+    },
+    {
+      "source_id": "wikinews",
+      "original_target": 991,
+      "revised_target": 991,
+      "actual": 991,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "scidev",
+      "original_target": 991,
+      "revised_target": 926,
+      "actual": 926,
+      "difference_from_original": -65
+    },
+    {
+      "source_id": "oanc_slate",
+      "original_target": 1321,
+      "revised_target": 1321,
+      "actual": 1321,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "asap2",
+      "original_target": 2943,
+      "revised_target": 4206,
+      "actual": 4206,
+      "difference_from_original": 1263
+    },
+    {
+      "source_id": "ellipse",
+      "original_target": 1226,
+      "revised_target": 0,
+      "actual": 0,
+      "difference_from_original": -1226
+    },
+    {
+      "source_id": "persuade",
+      "original_target": 736,
+      "revised_target": 699,
+      "actual": 699,
+      "difference_from_original": -37
+    },
+    {
+      "source_id": "govreport",
+      "original_target": 1086,
+      "revised_target": 1086,
+      "actual": 1086,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "fed",
+      "original_target": 776,
+      "revised_target": 776,
+      "actual": 776,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "worldbank",
+      "original_target": 776,
+      "revised_target": 776,
+      "actual": 776,
+      "difference_from_original": 0
+    },
+    {
+      "source_id": "oanc_icic",
+      "original_target": 465,
+      "revised_target": 465,
+      "actual": 465,
+      "difference_from_original": 0
+    }
+  ],
+  "user_authorized_reallocation": "Yes, reallocate shortages to reach100,000 (current chat October2,2026)"
+}

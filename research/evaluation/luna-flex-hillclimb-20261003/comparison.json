@@ -1,0 +1,200 @@
+{
+  "development_exposed": true,
+  "selection_metric": "balanced_accuracy",
+  "rows": 216,
+  "papers": 108,
+  "completed_variants": [
+    {
+      "variant": "baseline",
+      "balanced_accuracy": 0.611111111111111,
+      "human_accuracy": 0.9629629629629629,
+      "human_fpr": 0.037037037037037035,
+      "ai_recall": 0.25925925925925924,
+      "tn": 104,
+      "fp": 4,
+      "fn": 80,
+      "tp": 28,
+      "cost_usd": 0.010745700000000002,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 0,
+      "introduced_errors": 0
+    },
+    {
+      "variant": "v1_task_prior",
+      "balanced_accuracy": 0.7916666666666667,
+      "human_accuracy": 0.8981481481481481,
+      "human_fpr": 0.10185185185185185,
+      "ai_recall": 0.6851851851851852,
+      "tn": 97,
+      "fp": 11,
+      "fn": 34,
+      "tp": 74,
+      "cost_usd": 0.0136554,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 49,
+      "introduced_errors": 10
+    },
+    {
+      "variant": "v2_editorial_patterns",
+      "balanced_accuracy": 0.8101851851851851,
+      "human_accuracy": 0.7962962962962963,
+      "human_fpr": 0.2037037037037037,
+      "ai_recall": 0.8240740740740741,
+      "tn": 86,
+      "fp": 22,
+      "fn": 19,
+      "tp": 89,
+      "cost_usd": 0.013862299999999994,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 64,
+      "introduced_errors": 21
+    },
+    {
+      "variant": "v3_false_positive_correction",
+      "balanced_accuracy": 0.6990740740740741,
+      "human_accuracy": 0.9722222222222222,
+      "human_fpr": 0.027777777777777776,
+      "ai_recall": 0.42592592592592593,
+      "tn": 105,
+      "fp": 3,
+      "fn": 62,
+      "tp": 46,
+      "cost_usd": 0.015438749999999992,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 31,
+      "introduced_errors": 12
+    },
+    {
+      "variant": "v4_calibration_fewshot",
+      "balanced_accuracy": 0.8101851851851851,
+      "human_accuracy": 0.8518518518518519,
+      "human_fpr": 0.14814814814814814,
+      "ai_recall": 0.7685185185185185,
+      "tn": 92,
+      "fp": 16,
+      "fn": 25,
+      "tp": 83,
+      "cost_usd": 0.021490337499999988,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 61,
+      "introduced_errors": 18
+    },
+    {
+      "variant": "v5_linguistic_repair",
+      "balanced_accuracy": 0.7546296296296295,
+      "human_accuracy": 0.9629629629629629,
+      "human_fpr": 0.037037037037037035,
+      "ai_recall": 0.5462962962962963,
+      "tn": 104,
+      "fp": 4,
+      "fn": 49,
+      "tp": 59,
+      "cost_usd": 0.018005649999999995,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 44,
+      "introduced_errors": 13
+    },
+    {
+      "variant": "v6_compact_fewshot",
+      "balanced_accuracy": 0.7777777777777778,
+      "human_accuracy": 0.9814814814814815,
+      "human_fpr": 0.018518518518518517,
+      "ai_recall": 0.5740740740740741,
+      "tn": 106,
+      "fp": 2,
+      "fn": 46,
+      "tp": 62,
+      "cost_usd": 0.019975100000000006,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 46,
+      "introduced_errors": 10
+    },
+    {
+      "variant": "v7_combined_signals",
+      "balanced_accuracy": 0.7824074074074074,
+      "human_accuracy": 0.9537037037037037,
+      "human_fpr": 0.046296296296296294,
+      "ai_recall": 0.6111111111111112,
+      "tn": 103,
+      "fp": 5,
+      "fn": 42,
+      "tp": 66,
+      "cost_usd": 0.016742800000000002,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 50,
+      "introduced_errors": 13
+    },
+    {
+      "variant": "v8_diverse_fewshot",
+      "balanced_accuracy": 0.8055555555555556,
+      "human_accuracy": 0.9074074074074074,
+      "human_fpr": 0.09259259259259259,
+      "ai_recall": 0.7037037037037037,
+      "tn": 98,
+      "fp": 10,
+      "fn": 32,
+      "tp": 76,
+      "cost_usd": 0.012505649999999995,
+      "reported_tiers": {
+        "flex": 216
+      },
+      "models": {
+        "openai/gpt-6-luna": 216
+      },
+      "verified": true,
+      "fixed_baseline_errors": 56,
+      "introduced_errors": 14
+    }
+  ],
+  "winner": "v4_calibration_fewshot",
+  "new_api_cost_usd": 0.13167598749999998,
+  "round2_api_cost_usd": 0.0672292
+}

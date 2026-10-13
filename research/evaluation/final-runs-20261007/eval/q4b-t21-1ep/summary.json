@@ -1,0 +1,212 @@
+{
+ "tag": "q4b-t21-1ep",
+ "selected": "stage2-epoch0",
+ "checkpoints": {
+  "stage2-epoch0": {
+   "sweep": {
+    "dev": {
+     "small_recall_at_1pct": 0.4497354497354497,
+     "small_auroc": 0.9596106438750887,
+     "para_recall_at_1pct": 0.9172510518934082,
+     "public_docs_auroc": 0.9900004925865721,
+     "standalone_auroc": 0.9390883951917831
+    },
+    "test": {
+     "small_recall_at_1pct": 0.54,
+     "small_auroc": 0.9750372407471066,
+     "para_recall_at_1pct": 0.8910714285714286,
+     "public_docs_auroc": 0.982513577990965,
+     "standalone_auroc": 0.9233059771951485
+    }
+   },
+   "heldout-writers": {
+    "control_fpr_in_domain": 0.025736845277560122,
+    "doc_auroc": 0.7450462755999857,
+    "all:all": {
+     "n": 1590,
+     "recall_in_domain": 0.7157232704402515,
+     "auroc": 0.9698051038507276
+    },
+    "writer:claude-haiku-4-5": {
+     "n": 259,
+     "recall_in_domain": 0.7953667953667953,
+     "auroc": 0.9727867995603515
+    },
+    "writer:claude-opus-5-5": {
+     "n": 463,
+     "recall_in_domain": 0.7084233261339092,
+     "auroc": 0.9730986887814088
+    },
+    "writer:claude-sonnet-5-5": {
+     "n": 461,
+     "recall_in_domain": 0.6767895878524945,
+     "auroc": 0.9651652341108024
+    },
+    "writer:gpt-6-luna": {
+     "n": 407,
+     "recall_in_domain": 0.7174447174447175,
+     "auroc": 0.9694163837976748
+    }
+   },
+   "t21-heldout-v2": {
+    "control_fpr_in_domain": 0.014326048311199414,
+    "doc_auroc": 0.84888971875,
+    "all:all": {
+     "n": 20474,
+     "recall_in_domain": 0.9331347074338185,
+     "auroc": 0.992566872471071
+    },
+    "writer:claude-fable-5-1": {
+     "n": 5197,
+     "recall_in_domain": 0.9257263806041948,
+     "auroc": 0.9941861502760091
+    },
+    "writer:claude-haiku-4-5": {
+     "n": 1558,
+     "recall_in_domain": 0.9492939666238768,
+     "auroc": 0.9916976619947683
+    },
+    "writer:claude-opus-5-5": {
+     "n": 5598,
+     "recall_in_domain": 0.9255091103965702,
+     "auroc": 0.9882165826130297
+    },
+    "writer:claude-sonnet-5-5": {
+     "n": 5766,
+     "recall_in_domain": 0.9398196323274367,
+     "auroc": 0.9940286573378021
+    },
+    "writer:gpt-6-sol": {
+     "n": 2002,
+     "recall_in_domain": 0.9425574425574426,
+     "auroc": 0.9967438840569657
+    },
+    "writer:gpt-6.1-sol": {
+     "n": 353,
+     "recall_in_domain": 0.9291784702549575,
+     "auroc": 0.9939853910506706
+    }
+   },
+   "fable-polish": {
+    "control_fpr_in_domain": 0.021975246274311695,
+    "doc_auroc": 0.7888837932461605,
+    "all:all": {
+     "n": 2,
+     "recall_in_domain": 0.5,
+     "auroc": null
+    },
+    "writer:claude-fable-5-1": {
+     "n": 2,
+     "recall_in_domain": 0.5,
+     "auroc": null
+    }
+   },
+   "fable-humanizer": {
+    "control_fpr_in_domain": 0.002647768865353166,
+    "doc_auroc": 0.999125,
+    "all:all": {
+     "n": 10583,
+     "recall_in_domain": 0.9396201455163942,
+     "auroc": 0.99845241558926
+    },
+    "writer:claude-fable-5-1": {
+     "n": 5375,
+     "recall_in_domain": 0.9276279069767441,
+     "auroc": 0.9980995756687789
+    },
+    "writer:claude-haiku-4-5": {
+     "n": 691,
+     "recall_in_domain": 0.9710564399421129,
+     "auroc": 0.9996609990317961
+    },
+    "writer:claude-opus-5-5": {
+     "n": 2296,
+     "recall_in_domain": 0.9477351916376306,
+     "auroc": 0.9992067954154905
+    },
+    "writer:claude-sonnet-5-5": {
+     "n": 2221,
+     "recall_in_domain": 0.95047276001801,
+     "auroc": 0.9981504468061748
+    }
+   },
+   "fable-cowrite": {
+    "control_fpr_in_domain": 0.01206140350877193,
+    "doc_auroc": 0.8457,
+    "all:all": {
+     "n": 339,
+     "recall_in_domain": 0.2359882005899705,
+     "auroc": 0.7532361046421363
+    },
+    "writer:claude-fable-5-1": {
+     "n": 339,
+     "recall_in_domain": 0.2359882005899705,
+     "auroc": 0.7532361046421363
+    }
+   },
+   "cross-model-s500": {
+    "control_fpr_in_domain": 0.0032477643813676204,
+    "doc_auroc": 0.9636780051934646,
+    "all:all": {
+     "n": 8439,
+     "recall_in_domain": 0.7806612157838606,
+     "auroc": 0.9804898850322714
+    },
+    "writer:Opus 3": {
+     "n": 1536,
+     "recall_in_domain": 0.7799479166666666,
+     "auroc": 0.9825586177907787
+    },
+    "writer:claude-haiku-4-5-20251001": {
+     "n": 1284,
+     "recall_in_domain": 0.9213395638629284,
+     "auroc": 0.9977098430974854
+    },
+    "writer:claude-opus-5-5": {
+     "n": 2050,
+     "recall_in_domain": 0.6248780487804878,
+     "auroc": 0.9588794833092256
+    },
+    "writer:claude-sonnet-5-5": {
+     "n": 1472,
+     "recall_in_domain": 0.7703804347826086,
+     "auroc": 0.9850040548696155
+    },
+    "writer:gpt-6-luna": {
+     "n": 854,
+     "recall_in_domain": 0.819672131147541,
+     "auroc": 0.9862729832910644
+    },
+    "writer:gpt-6.1-sol": {
+     "n": 1243,
+     "recall_in_domain": 0.8785197103781175,
+     "auroc": 0.9864671174907282
+    }
+   },
+   "wide1-heldout": {
+    "control_fpr_in_domain": 0.02739483916578296,
+    "doc_auroc": 0.8378292743110831,
+    "all:all": {
+     "n": 3496,
+     "recall_in_domain": 0.8117848970251716,
+     "auroc": 0.9758905564008381
+    },
+    "writer:deepseek/deepseek-v4.1-flash": {
+     "n": 1736,
+     "recall_in_domain": 0.8444700460829493,
+     "auroc": 0.9816487428047993
+    },
+    "writer:xiaomi/mimo-v2.6-flash": {
+     "n": 908,
+     "recall_in_domain": 0.737885462555066,
+     "auroc": 0.9647327293518099
+    },
+    "writer:z-ai/glm-5.3-flash": {
+     "n": 852,
+     "recall_in_domain": 0.823943661971831,
+     "auroc": 0.97604911903375
+    }
+   }
+  }
+ }
+}

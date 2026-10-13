@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  body{width:280px;margin:0;padding:12px 14px;font:13px/1.45 system-ui,sans-serif;color:#222;background:#fbfaf7}
+  h1{font-size:13px;margin:0 0 8px;color:#8c1b13}
+  #result{margin:0 0 10px}
+  a{display:inline-block;margin-right:12px;color:#8c1b13;font-weight:600;text-decoration:none}
+  a[hidden]{display:none}
+  label{display:flex;gap:6px;align-items:flex-start;margin-top:12px;padding-top:10px;border-top:1px solid #ddd8cf;color:#555}
+  label.fpr{display:flex;gap:6px;align-items:center;margin:0 0 10px;padding:0;border:0}
+</style>
+</head>
+<body>
+<h1>Open Text Detector</h1>
+<p id="result">Looking up…</p>
+<label class="fpr">False-positive rate <select id="fpr"></select></label>
+<a id="open" href="#" hidden>Highlighted PDF</a><a id="site" target="_blank" hidden>Paper page</a>
+<label><input type="checkbox" id="auto"> Open OpenReview PDFs in the highlighted viewer when Open Text Detector has scored the paper</label>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

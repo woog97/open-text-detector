@@ -1,0 +1,66 @@
+{
+  "state": "data_prepared",
+  "time": 1790921863.267516,
+  "source_repo": "elisabeth-pl-pl/GRADTEX",
+  "revision": "553d859da0255d75a39c385c208f7522a2007f53",
+  "source_file": "gradtex-train.parquet",
+  "source_sha256": "9553946a708e51d5458766827c28e18f3e4fb5fb452848fc8b52a81f4eec10da",
+  "donor_file": "/data/workspace/paper-diversity-v1/gradtex-document-preparation/donors.jsonl",
+  "donor_sha256": "6135ee4585ef123da9dcb2cb64eae1915a498b759b101a401ac5ac7a2cb6521f",
+  "rows": 68647,
+  "source_groups": 68640,
+  "counts_by_class_scenario": {
+    "(1, 'rewrite_style_figurative')": 3772,
+    "(0, 'human')": 34274,
+    "(1, 'complete_beginning')": 3802,
+    "(1, 'generate_topic')": 3793,
+    "(1, 'complete_ending')": 3768,
+    "(1, 'rewrite_style_emotional')": 3733,
+    "(1, 'rewrite_style_persuasive')": 3945,
+    "(1, 'paraphrase')": 3933,
+    "(1, 'polish_token')": 3772,
+    "(1, 'rewrite_style_informal')": 3855
+  },
+  "counts_by_class_generator": {
+    "(1, 'mistral-small-3.2-24b-instruct')": 17242,
+    "(0, 'human')": 34274,
+    "(1, 'gemma-4-31b-it')": 17131
+  },
+  "counts_by_class_domain": {
+    "(1, 'reviews')": 12797,
+    "(0, 'reviews')": 12739,
+    "(1, 'fiction')": 2768,
+    "(1, 'knowledge')": 6830,
+    "(1, 'social_media')": 7137,
+    "(1, 'science')": 2119,
+    "(1, 'tech_news')": 1259,
+    "(0, 'news')": 1463,
+    "(0, 'science')": 2137,
+    "(0, 'social_media')": 7016,
+    "(0, 'fiction')": 2780,
+    "(0, 'knowledge')": 6877,
+    "(1, 'news')": 1463,
+    "(0, 'tech_news')": 1262
+  },
+  "exclusions": {
+    "whole_document_over_512_tokens": 8058,
+    "heldout_overlap_source_group": 2320,
+    "ai_involved_identical_to_human_source": 39,
+    "duplicate_normalized_document": 1
+  },
+  "lengths_before_length_filter": {
+    "<=128": 22975,
+    "<=256": 29285,
+    ">512": 8058,
+    "<=512": 16387
+  },
+  "blocked_source_groups": 2304,
+  "audit_file": "/data/workspace/paper-diversity-v1/public-source-audit/gradtex-near-audit.json",
+  "audit_sha256": "0c1b9720b0d094fad03fe6ca0c5775253cdc976e98167873d60422da960abc82",
+  "label_semantics": "document_label=1 means AI-involved; upstream binary labels inverted. No token or sentence gold is inferred, including HWT/MGT.",
+  "whole_documents": true,
+  "max_tokens_with_specials": 512,
+  "tokenizer": "/data/workspace/paper-diversity-v1/control/run/tokenizer",
+  "budget_policy": "Donor pool only. Integrated experiment must sample class/scenario/generator strata and match replacement token budget; no donor pool automatically marks a GPU job ready.",
+  "training_ready": false
+}

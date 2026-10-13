@@ -1,0 +1,114 @@
+HUMAN SOURCE MIX — APPROVED CONTINUATION TO 100,000
+Updated 2026-10-02 UTC
+
+User explicitly approved fetching additional samples from the respective agreed sources until 100,000, with as much work as possible in the background. No further confirmation is needed for routine public-source collection, adapters, retries, deduplication, validation, or the previously requested private HF upload. This is human-source collection; it is not approval for an unbounded paid mirror-generation run.
+
+Exact target: research/human-source-pool/sampling-plan.json. Keep all 37 source quotas and nine category totals unchanged. Do not backfill one source's missing quota with another, repeat rows, count synthetic text as human, or relax provenance/quality merely to reach a headline count. Acquire publicly accessible research candidates where permitted, accurately preserve any restrictive/uncertain license status, and do not label them cleared for commercial training. If a source requires credentials/access acceptance or its actual supply cannot fill the agreed quota, exhaust legitimate alternatives within that source, continue all independent sources, and report the concrete remaining issue.
+
+Original immutable collection: /data/workspace/human-source-mix-v1/intake on the existing HF training Space. Uploaded private dataset open-text-detector/human-source-mix-v1 at ab9da452953e6ee4999cfac037c20a68b4804b59 has 34,206 quarantined candidates, zero admitted. Preserve it and original files.
+
+Active expansion: /data/workspace/human-source-mix-v2.
+  pipeline/expand_pool.py is the deployed source.
+  collection.sqlite3 holds accepted rows, originals, scan cursors, and fixed plan hash.
+  progress/<source>.json and <source>-error.json hold per-source progress.
+  process.json records PID and start ticks; collection.log records output.
+  status.json and intake/release are produced after the current source scan wave.
+Local source: research/human-source-pool/expand_pool.py; tests test_expand_pool.py. All 11 collection/upload/expansion tests passed at initial deployment.
+
+Connection: /private/tmp/openreview-benchmark-venv/bin/python /private/tmp/pangram-training-access/remote.py SCRIPT_PATH. Do not expose connect.py or credentials. Compact status helper: /private/tmp/pangram-training-access/mix_expansion_status.py. Check PID + /proc/PID/stat start_ticks and non-zombie state; /proc existence alone is insufficient. Do not duplicate a worker. The SQLite collector saves after each scanned row, keeps global normalized exact deduplication, preserves source caps and length bins, and resumes immutable gzip streams by skipping committed rows. Its worker lock prevents concurrent whole-run launches. It uses 3 CPU/network threads, no GPU or model downloads.
+
+The first top-up wave imports existing validly routed candidates, scans beyond prior six-file/5,000-row bounds, recognizes dated original Global Voices/Foodista URLs as claimed dates (not historical-version certification), and separates Wikimedia main namespace 0 from article-talk namespace 1. Old mismapped talk pages are retained in v1 but omitted from v2's reference slice. Consequently v2's initial count may be below 34,206. The wiki_talk adapter uses the pinned Wikipedia shards; its quota is not borrowed from reference.
+
+Remaining real work for each continuation:
+1. Refresh worker status and total/source counts. If alive and making progress, leave it alone and implement/research missing adapters independently. If dead, inspect logs and recover from committed SQLite cursors; preserve all originals/checkpoints. Never blindly rerun the original v1 launch helper.
+2. Missing adapters: writingprompts, scp, acl, amazon2018, yelp, imdb, opinrank, eff, voa, scidev, oanc_slate, asap2, ellipse, bawe, persuade, govreport, fed, worldbank, oanc_icic. Ubuntu IRC needs turn/bot/language extraction; CCCC needs a version with actual license evidence. Foodista HTML requires faithful extraction with raw HTML plus extracted-text provenance. Broader scans alone will not fill these quotas.
+3. Use source-registry.json original URLs and recorded evidence; inspect actual schema/files, pin exact revisions, and download only required datasets. No model assets locally. Prefer original training splits; preserve protected benchmark/test exclusions and family IDs. Academic/evaluation corpora already in this repo must not be silently reused for training. ASAP 2.0 train ZIP exists on official scrosseye/ASAP_2.0; preserve unknown collection dates honestly rather than inventing pre-2022 provenance.
+4. CCCC investigation: raw common-pile/cccc revision 72bd015ff2a77f8701c617096fbb5dc89dd705fe samples have NO metadata.license despite README saying they do. Do not assign a fabricated license or keep blindly rescanning all 570 raw shards. Inspect the official filtered collection and common-pile source code/domain license metadata. Preserve exact source identity and verify any mapping.
+5. Source adapters may append using expand_pool.add only under coordinated transactions and source quota guards, or use a separately versioned intake followed by verified merge. Do not edit a running worker's code and assume it has hot-reloaded. Snapshot/pin changed code/config and record deployment time. New inputs/adapters need focused meaningful tests.
+6. After each completed wave, export to v2/intake, verify unchanged offsets against retained originals, source quotas, IDs, lengths, and duplicate checks. The existing upload_pool.py accepts base=v2 and requires v2/pipeline plus v2/intake. Keep the HF repository private. Upload increased validated candidate snapshots with its checksum readback routine, preserving original revision history. Auth is supplied in memory from existing local HF login; do not put tokens on disk or in tool output. Save receipt locally. The old upload helper may embed v1: inspect only relevant lines without dumping base64 payloads.
+7. Keep collected-candidate counts separate from admitted/training-eligible counts. Complete genre, historical human provenance, license, protected-overlap, near-duplicate and family/split audits as work progresses. Automatic mechanical collection alone does not certify the training dataset. Stop adding candidates when every source quota is filled and the total is exactly 100,000; don't keep fetching surplus just to pad metrics. Verify and publish that candidate milestone, report any remaining admission work honestly.
+
+This task remains active until the exact 100,000 source mix is collected and the requested private HF publication is verified, or a concrete source/access decision genuinely requires the user. Routine source research and implementation should continue autonomously. Update this runbook with findings and live recovery locations. Notify only for substantial progress, completion, failure needing attention, or a required decision; remain quiet for unchanged healthy status.
+
+Created heartbeat automation: complete-100k-human-source-mix, ACTIVE every 10 minutes, attached to this chat. Update/reuse it; do not create a duplicate. Initial expansion worker PID 11352/start ticks 7028664 was verified alive during seed import; refresh before acting.
+
+Follow-up at October 1 ~11:07 p.m. Pacific: top-up worker was healthy; confirmed cumulative pool 50,928 candidates (still zero admitted). ASAP adapter ingest_asap2.py added the full 1,962 original training-essay quota from official scrosseye/ASAP_2.0 revision 060ab225ca0984c0bf43ff222bf6bb2bc6195b6f. Archive on Space: source-downloads/asap2/train.zip, SHA aec01e98eb16cc3bc3828010ca053a09daecc2821dd2105f8a7333089271beb4, 11,240,696 bytes. Exact collection dates remain unverified; these rows are specifically quarantined for human provenance/date/prompt-family/PERSUADE overlap checks. Official test CSV not used. All original essay text and metadata retained. Three adapter tests passed. ASAP worker PID 12782 completed normally; inspect asap2.log and progress/asap2.json. Never rerun the generic stream collector on the ZIP.
+
+Remaining source findings: ccdv/govreport-summarization pinned revision 4e21184e01ae8017e2c036e180fe5e541fef60a0 has document/train-00000-of-00002.parquet and train-00001-of-00002.parquet. Publisher gov-report-data.github.io identifies the original 2021 CRS/GAO reports and CC BY 4.0, but mirror schema and original identity alignment still need inspection before intake. Do not use test/validation shards. common-pile/news latest inspected revision 13e76bdc8d49ed14d710fac7e3b61186cf74c8d3; existing Global Voices pinned source already works. common-pile/filtered, common-pile/eff and common-pile/cc_news are nonexistent repository IDs, not access blockers to ask the user about.
+
+Original v2 worker is still scanning Wikipedia and other underfilled sources. Export/upload only a consistent completed snapshot, preserving all additional adapter rows. Include source-downloads/asap2/manifest.json and new adapter evidence in release provenance when publishing; existing upload_pool.py does not automatically copy extra provenance files. Current HF published count remains the earlier 34,206 until a new verified receipt exists.
+
+Tagging verified: all 34,206 currently uploaded rows contain category + source_id; all 289 current mirror records also contain both. Updated upload_pool.py/test_upload_pool.py add registry-based source/category validation. Deployed to v2/pipeline; prior copies preserved in v2/pipeline-history/category-validation-v1. Use this version for next publication. Source categories are source-derived, not completed document-level genre audits.
+
+Follow-up October 2 ~06:24 UTC: user clarified source-level approval should cover collection, not per-sample manual approval. Existing approval already covers all 37 sources; there is no manual record-approval queue. Missing importers were the bottleneck. Keep automated duplicate/format/split/source checks during collection and track unresolved admission audits separately; do not hold approved candidate collection for a full per-record manual audit.
+
+Added ingest_govreport.py/test_govreport.py. Three tests pass locally and remotely: train-only shard restriction, exact character offsets/source tags with paired summaries excluded, and quota/dedup preservation. Deployed worker PID 14634/start_ticks 7266572; refresh process identity. Uses existing SQLite database under its own govreport.lock. Logs govreport.log; status progress/govreport.json; identity govreport-process.json. Source downloaded on Space only: source-downloads/govreport/document/train-00000-of-00002.parquet, 8,759 reports, revision 4e21184e01ae8017e2c036e180fe5e541fef60a0, SHA256 8b02abb5691b3fa1ba95f76331cadc8bb3e80195c626b4656b480d36e0c92242. Publisher https://gov-report-data.github.io/ describes CRS/GAO reports and dataset CC BY 4.0. Parquet has report and summary only, no agency IDs; preserve pinned shard/row IDs and content-family hashes, record original agency identity mapping as pending. Corpus publication year 2021 is distinct from unknown individual report dates. Originals include both columns; only unchanged report spans enter candidates. Three passages maximum per report; no test/validation files downloaded. Include source-downloads/govreport/manifest.json (and ASAP manifest) in next release provenance. Do not add this Parquet adapter to the gzip-only collection-sources.json. Status helper /private/tmp/pangram-training-access/check_govreport.py.
+
+Batch source review completed October 2 ~06:35 UTC at user request. Read SOURCE_APPROVALS.txt and source-approvals.json BEFORE implementing further sources; this is the reusable collection-decision record for all 37 quotas. 29 sources proceed within specified open subsets, 6 proceed as restricted/rights-unresolved research candidates, 2 have concrete access/terms conditions (Yelp and BAWE). All 37 have user authorization; none requires per-sample user approval. Old source-registry remaining_checks saying hold pending rights refer to training/commercial admission, not a new user-approval gate for authorized candidate collection. Yelp's current agreement has eligible-academic-use and third-party-sharing restrictions; compatible access/use/hosting must be established before its acquisition, HF upload or hosted mirror generation. BAWE publisher specifies registration and noncommercial conditions; verify the current official archive access route. Do not infer a blanket license for mixed-license sources; use automatic metadata filters. The source review should be reused until material source/terms/use changes, not repeated every heartbeat. Full evidence snapshot: evidence/source-review-20261002/manifest.json; failed Pressbooks site fetches supplemented by the pinned Common Pile Pressbooks card. PERSUADE remains under the actual version-2 release's NC-SA terms despite separate BY page; preserve both. SciDev official policy pages disagree on BY 2.0 vs 3.0; record per-article notice, no invented uniform version.
+
+GovReport quota completed 1,086/1,086. Last full pool snapshot 54,035 candidates at 06:27 UTC; main worker healthy, Wikipedia 5,888/7,958. Original IMDb/WritingPrompts archives downloading on Space under source-downloads/{imdb,writingprompts}; download-process.json has identity, download.log and manifest.json have outcomes. Started IDs 14881/14882; verify freshness before restarting. These are archives only, not yet ingested. No generated samples or official test split may enter intake. Next implementation: original archive adapters, and append GovReport's reserved Luna slots once stopped-run identity and paid ledger are reconciled. No new Luna call made during the source-review pass.
+
+LATEST USER AUTHORIZATION — SUPERSEDES EARLIER FIXED-37 NO-SUBSTITUTION RULE: user said to replace datasets with fatal restrictions or forfeit them and rebalance. Recorded revision 20261002-drop-yelp-bawe removes Yelp and BAWE, moves Yelp's 3,183 to OpinRank (4,244 total) and BAWE's 981 to ASAP2 (2,943 total). All nine category totals and 100,000 total remain unchanged. 35 active sources. ELLIPSE/PERSUADE remain noncommercial research candidates; commercial use was not inferred. OpinRank's UCI BY grant is recorded without erasing upstream rights uncertainty. Essay/review subdomain diversity shifts are explicit in rebalance-receipt.json. Original local plan, registry, approvals, chart and Luna limits preserved in plan-history/20261002-drop-yelp-bawe. Updated human-source-mix.html embedded data matches new plan.
+
+Remote human migration is QUEUED, not immediately applied: /data/workspace/human-source-mix-v2/plan-migrations/20261002-drop-yelp-bawe/{process.json,status.json,migration.log,worker.py,pending,previous}. Launcher returned PID15088/start_ticks7372836. It waits on the existing collector's worker.lock (without interrupting downloads). After that worker finishes, it validates counts against new quotas, preserves prior config and database plan hash/counts, updates config and plan_hash, tops up ASAP with the existing idempotent adapter, preserves prior intake, exports a new consistent snapshot, and marks status complete. It does NOT upload; perform upload/readback after the snapshot completes. Inspect migration status before any new main collector launch. Do not manually replace active plan/hash while migration pending or start a duplicate migration.
+
+Luna remote limits.json was ALREADY revised while the generator was verified stopped. All 577 existing call ledgers were checked for complete or interrupted_reserved_no_replay status, and hashes saved in run/migrations/20261002-drop-yelp-bawe/receipt.json along with previous limits. No paid calls replayed or dispatched. New quotas: Yelp0, BAWE0, OpinRank21, ASAP15; other quotas unchanged. Budget1 and total500 unchanged. Reuse existing run. Human-only plan migration is independent of these already-applied Luna limits. Automation updated to current 35-source revision and user's conditional replacement authority.
+
+LATEST October 2 ~07:00 UTC: Read PARALLEL_COLLECTION.txt and AUTOMATION_INSTRUCTIONS.txt. Parallel collectors and a consistent-snapshot publisher are now running remotely; oldmainworker was safely stopped and35source migrationcompleted. User now authorizes1M TOTAL after100k available-target phase, NO further localdatasetdownloads, NO furtherquota reallocation: recordexhaustedsource shortfalls andkeepgoing. sampling-plan-1m.json isprepared, notyetactive. Automationupdatedevery10minforactualunblocking and1Mcontinuation. PreserveASAPprotected-familyauditflags andaddexclusionfilterbeforeexpansion. No additionalpaidLunabudget.
+
+
+LATEST USER AUTHORIZATION October2: Luna limits increased to10,000 document attempts and$20 cumulative total, INCLUDING all earlier attempts and costs. This supersedes every older$1/500 limit in historical notes. Preserve same run/ledger/model; use balanced-10000.json, apply stopped-run limits migration20261002-luna-10000-20usd, and verify its receipt before resuming. Human target remains1M total, remote-only datasets, no exhausted-source quota reallocation. Automation actively diagnoses and fixes ANY recoverable Luna blocker and resumes within new limits.
+
+2026-10-02 07:40 UTC healthy recovery checkpoint update:
+Canonical ACTIVE_COLLECTION.json records all current paths/identities. Initial
+supervisor24260 was cleanly replaced after observing backup restart starvation
+under concurrent writes (130GB logical reads for385MB partial copy). Only its own
+child24269 was briefly paused8seconds, then terminated by its supervisor; all
+committed records and partial backups were preserved. Fixed backup now pins a
+SQLite WAL read transaction before backup. A regression verified a100-row pinned
+snapshot remains100 while another connection commits100 additional rows.
+
+Current supervisor27658/start7718063; child27669/start7718131. Scripts under
+/tmp/pangram-human-active-20261002/pipeline/healthy_wikipedia_supervisor.py and
+healthy_checkpoint_watchdog.py. Identity/status/log/checkpoint files under
+healthy-wikipedia/. Watchdog29185/start7732421 stops only its matched supervisor
+and own child after first checkpoint360s or subsequent receipt staleness480s;
+it exits when that supervisor is replaced/ends. Preserve and refresh identities
+before resuming; never reuse a launcher while its prior process is alive.
+
+First fixed checkpoint FULL GET SHA256 verified at07:38:07Z:
+checkpoints/wikipedia-20261002T073640Z.sqlite3;893,235,200 bytes;
+SHA2568c1c772c15bce243ad4e0ef94de97be427e608049a303ad7348c842cbc7760da.
+It contains75,769 candidates, Wikipedia7,038. Subsequent live Wikipedia progressed
+to7,104 by07:42:06Z. Middle periodic checkpoints validate local SQLite/sha256 and
+SDK-uploaded committed object size/Xet metadata; they are NOT full GET checksum
+readback. First and final source checkpoints use full GET readback. Read each
+receipt's remote_full_checksum_readback field; do not conflate these checks.
+
+Private published dataset remains75,691 at revision
+8edcce6be439536b4de627cc6ae958e57d5e035e (125files/479,211,964bytes all checksum
+read back). Later collected candidates are not published until next verified
+snapshot. Healthy working pool and private bucket checkpoints continue advancing.
+
+WorldBank776/776 merged and durably saved07:42:45Z. All original byte hashes,
+unchanged passage offsets, per-work license grant contexts, source/category tags
+and global normalized dedup checked; zero duplicate losses. Stage1693files saved
+to healthy recovery bucket stages/worldbank/ with metadata readback. One work
+19374967 had canonical CC BY3.0 URL omit a line-wrapped /igo suffix; underlying
+grant was correct. Three passage license_evidence fields and raw grant URI were
+corrected transactionally without changing text/IDs/offsets. Original snapshot
+and stage retained; before/after hashes in worldbank-igo-correction-receipt.json.
+Corrected DB checkpoints/worldbank-igo-corrected-20261002T074245Z.sqlite3 contains
+76,630 candidates includingWikipedia7,123 and WorldBank776; zero admitted.
+SHA256a0b099f1d40ed0f7ce61a6b6bad0c0618d00ffb6ad471877fa2642875291a39d.
+948,187,136bytes; local full integrity_check passed; direct bucket SDK+committed
+size/Xet metadata verified, without full GET for this checkpoint. Use this or a
+newer corrected snapshot on recovery; older snapshots need correction replay.
+WorldBank additions are NOT yet in HF candidate publication: that verified
+published snapshot remains75,691 at revision8edcce6be439536b4de627cc6ae958e57d5e035e.
+Next publication can wait for the next source wave; keep quota shortfalls and
+candidates/admitted distinctions. No1M phase activation or source rebalance done.
+
+2026-10-02 08:05Z source-wave publication: 82,629 private candidates, zero admitted, HF revision d882e54f23e0ba21b33aea91c152360c2051b349. All 139 artifacts (545,106,676 bytes) checksum read back. See publication-source-wave-20261002-v2-receipt.json. Amazon2018 5,306 merged with zero global dedup loss; WorldBank776 and EFF415 included. Later VOA/CCCC/SciDev work is not included in this frozen release. Previous75,691 revision preserved.
+
+08:08Z SciDev frozen wave1:171/991 merged with no duplicate loss,79 articles, exact offsets and current corroborating HTML revalidated. All190 stagefiles saved under stages/scidev-wave1; export checksums fully read back. Healthy checkpoint scidev-wave1-merge-20261002T080654Z.sqlite3 has84,992 candidates includingVOA1,652/Wikipedia7,941/SciDev171. Its local integrity passed; bucket size/Xet checked, no full database GET. Never treat current HTML as historical text: old captured text only; CC Attribution version remains unspecified/quarantined. Ongoing SciDev stage remains separate.

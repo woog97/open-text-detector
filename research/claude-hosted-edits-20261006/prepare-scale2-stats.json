@@ -1,0 +1,24 @@
+{
+ "free_raw_clean": 5606,
+ "free_gap_clean": 0,
+ "shortfall": {},
+ "items": 3200,
+ "by_writer": {
+  "opus": 1600,
+  "fable": 1600
+ },
+ "by_source": {
+  "pes2o": 832,
+  "arxiv": 823,
+  "pmc": 1545
+ },
+ "mix": {
+  "rewrite_one": 960,
+  "rewrite_two": 960,
+  "insert_one": 960,
+  "split_one": 320
+ },
+ "by_admission": {
+  "standard": 3200
+ }
+}

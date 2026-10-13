@@ -1,0 +1,117 @@
+{
+  "audit_date": "2026-10-02",
+  "scope": "Read-only metadata, lineage, schema and counts; no content acceptance filters, no inference, no dataset changes",
+  "human": {
+    "checkpoint": "/tmp/pangram-human-active-20261002/checkpoints/finish100k-active-20261002T193833Z.sqlite3",
+    "candidate_passages": 100000,
+    "sources": 34,
+    "unique_parent_documents": 70921,
+    "provisional_families": 58587,
+    "exact_unique_passages": 100000,
+    "passage_hash_mismatches": 0,
+    "training_admitted": 0,
+    "missing_final_document_family_id": 100000,
+    "missing_split": 100000,
+    "missing_source_url": 23,
+    "provenance_basis_unverified": 56332,
+    "historical_text_version_unverified_flag": 64033,
+    "record_rights_audit_pending_flag": 64343,
+    "category_counts": {
+      "creative": 22222,
+      "scientific": 18018,
+      "reference": 15916,
+      "reviews": 10611,
+      "social": 10410,
+      "general_web": 8208,
+      "news": 6607,
+      "essays": 4905,
+      "professional": 3103
+    }
+  },
+  "mirrors": {
+    "snapshot_at_utc": "2026-10-02T23:30:21.493988+00:00",
+    "snapshot_rows": 26443,
+    "run_target": 30000,
+    "run_was_active": true,
+    "model": "openai/gpt-6-luna",
+    "parent_missing": 0,
+    "parent_hash_mismatches": 0,
+    "duplicate_parent_records": 0,
+    "missing_lineage_fields": 0,
+    "development_pilot": 26443,
+    "training_eligible": 0,
+    "filtering_not_run": 26443,
+    "finish_reason": {
+      "stop": 25606,
+      "length": 833,
+      "error": 4
+    },
+    "reported_service_tier": {
+      "flex": 26439,
+      "unreported": 4
+    },
+    "writer_request_structure_sample": {
+      "rows": 100,
+      "only_topic_genre_language_target_words": 100
+    },
+    "content_QC_performed": false
+  },
+  "later_stages": {
+    "paper_workflows": {
+      "local_rows": 2646,
+      "distinct_generated_targets": 1323,
+      "distinct_edit_targets": 567,
+      "editing_conditions": [
+        "proofread",
+        "light_polish",
+        "substantial_rewrite"
+      ],
+      "usage": "evaluation-only",
+      "pangram_clause_labels": false
+    },
+    "paper_provenance_v3": {
+      "papers": 2000,
+      "pairs": 10000,
+      "passage_rows": 20000,
+      "supervision": "binary replacement-operation provenance, not Pangram semantic attribution"
+    },
+    "gradtex_saved_donor_manifest": {
+      "rows": 68647,
+      "supervision": "document_only",
+      "manifest_path": "benchmarks/pangram4/training/gradtex-document/data-donor-manifest.json",
+      "fresh_contents_read": "timed_out"
+    },
+    "hard_human": {
+      "remote_training_status": "trained_calibration_pending",
+      "scope": "reweighting existing training human windows, not fresh-reserve mining followed by new mirrors",
+      "prepared_manifest_read": "timed_out",
+      "note": "Training-writer status alone does not establish latest evaluation status."
+    },
+    "seqxgpt": {
+      "current_remote_preparation_state": "complete",
+      "eligible_pool_rows": 26517,
+      "prepared_epoch_donor_rows": [
+        1171,
+        1184,
+        1194
+      ],
+      "supervision": "human-prefix / generated-suffix boundaries; no assisted-rewrite attribution",
+      "source": "/data/workspace/paper-diversity-v1/public-source-audit/pilot-preparation-status.json"
+    },
+    "hip": {
+      "current_remote_audit_state": "audit_complete",
+      "original_rows": 10581,
+      "retained_pairs": 7393,
+      "blocked_source_groups": 3188,
+      "supervision": "document-level human/paraphrase pairs, no spans",
+      "newer_grouped_preparation_read": "timed_out; current training readiness unverified",
+      "source": "/data/workspace/paper-diversity-v1/public-source-audit/hip-audit/audit.json"
+    }
+  },
+  "hjarni": "No matching notes for pangram or synthetic mirrors",
+  "limitations": [
+    "Aggregate/schema/lineage audit, not semantic content review.",
+    "Some legacy /data reads timed out; saved manifests are identified separately from freshly read status.",
+    "Pangram category mix matched by passage counts; equivalence to paper sampling units not established."
+  ]
+}

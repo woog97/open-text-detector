@@ -1,0 +1,235 @@
+{
+  "sha": "c4526baeb8fb5d69732f9e2a8e1430b41ed38c53",
+  "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/trees/c4526baeb8fb5d69732f9e2a8e1430b41ed38c53",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87e654bb308782431638e9427dd9a0d1749f58b0",
+      "size": 42,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/87e654bb308782431638e9427dd9a0d1749f58b0"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84b854f1f7227a3a59f35a872478df836e3c8804",
+      "size": 64,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/84b854f1f7227a3a59f35a872478df836e3c8804"
+    },
+    {
+      "path": "Changelog.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be26516387959aac7ef37629575b78077cd8a071",
+      "size": 1232,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/be26516387959aac7ef37629575b78077cd8a071"
+    },
+    {
+      "path": "PELIC_compiled.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e7f5e92711763b4666e7e847ed49e881615a980",
+      "size": 134,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/2e7f5e92711763b4666e7e847ed49e881615a980"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa3fdbcc6ebee8ba2a88ae02721d5d6679e33370",
+      "size": 36761,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/fa3fdbcc6ebee8ba2a88ae02721d5d6679e33370"
+    },
+    {
+      "path": "README_images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c52ad361a74fcea9337d57f03fe48307e04f3c2",
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/trees/6c52ad361a74fcea9337d57f03fe48307e04f3c2"
+    },
+    {
+      "path": "README_images/Figure1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5004d24379659c3c833afd8b470542496eaf4991",
+      "size": 22492,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/5004d24379659c3c833afd8b470542496eaf4991"
+    },
+    {
+      "path": "README_images/Figure2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "addde5214df8a8c0ac44f60c77db3259bc8ecb17",
+      "size": 23987,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/addde5214df8a8c0ac44f60c77db3259bc8ecb17"
+    },
+    {
+      "path": "README_images/download_step1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "028a9d235adf47ae52745b43d1604d7d38e6ec35",
+      "size": 431385,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/028a9d235adf47ae52745b43d1604d7d38e6ec35"
+    },
+    {
+      "path": "README_images/download_step2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "801d641d7d1fb8782d251ee18e1ac646329695cc",
+      "size": 362905,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/801d641d7d1fb8782d251ee18e1ac646329695cc"
+    },
+    {
+      "path": "README_images/download_step3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7eb40468df99686a178ce5e548297a75bbb84b2",
+      "size": 294064,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/e7eb40468df99686a178ce5e548297a75bbb84b2"
+    },
+    {
+      "path": "corpus_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d5ff795da703ae8a27907e28de508c0f8324430c",
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/trees/d5ff795da703ae8a27907e28de508c0f8324430c"
+    },
+    {
+      "path": "corpus_files/answer.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f72784428890df68af5aad276c89c9d09957b71",
+      "size": 134,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/7f72784428890df68af5aad276c89c9d09957b71"
+    },
+    {
+      "path": "corpus_files/course.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f21c35827f2921159c400a8146f42e12af20ed22",
+      "size": 130,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/f21c35827f2921159c400a8146f42e12af20ed22"
+    },
+    {
+      "path": "corpus_files/question.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e58c50b7857bd47422a37e6ec65a156b0ca22cfd",
+      "size": 131,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/e58c50b7857bd47422a37e6ec65a156b0ca22cfd"
+    },
+    {
+      "path": "corpus_files/student_information.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10b17312f82d78f05f5d1bab6964768a42d13005",
+      "size": 131,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/10b17312f82d78f05f5d1bab6964768a42d13005"
+    },
+    {
+      "path": "corpus_files/test_scores.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d7b500e533051dce3367b31bb88d8148e91e355",
+      "size": 130,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/1d7b500e533051dce3367b31bb88d8148e91e355"
+    },
+    {
+      "path": "corpus_stats",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e27847e8465ab33ec9e4d9d95cfd94e23b351c0",
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/trees/0e27847e8465ab33ec9e4d9d95cfd94e23b351c0"
+    },
+    {
+      "path": "corpus_stats/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "343f8b0bf0eb7a8bbbf355530fcc229d3241997f",
+      "size": 1646,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/343f8b0bf0eb7a8bbbf355530fcc229d3241997f"
+    },
+    {
+      "path": "corpus_stats/frequency_stats.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f40fe3b112d452c34390ee589abac705e9c80e0",
+      "size": 74064,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/2f40fe3b112d452c34390ee589abac705e9c80e0"
+    },
+    {
+      "path": "corpus_stats/lemma_frequencies.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf29d5312cf95a3bad59df59a7c0c45d559c3824",
+      "size": 131,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/cf29d5312cf95a3bad59df59a7c0c45d559c3824"
+    },
+    {
+      "path": "corpus_stats/word_frequencies.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec7c7089a94c403f7b17ee88d73201b65f3e7df9",
+      "size": 132,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/ec7c7089a94c403f7b17ee88d73201b65f3e7df9"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1965ddd05e8e25dbcea268aa5164571fed7eddd",
+      "size": 83,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/f1965ddd05e8e25dbcea268aa5164571fed7eddd"
+    },
+    {
+      "path": "tutorials",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf46e2af1c3899aec612f17baf24e3236199c5be",
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/trees/bf46e2af1c3899aec612f17baf24e3236199c5be"
+    },
+    {
+      "path": "tutorials/PELIC_concordancing_tutorial.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d3baca34fd516867173cecf350bcb1fb5d9f21f",
+      "size": 72118,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/0d3baca34fd516867173cecf350bcb1fb5d9f21f"
+    },
+    {
+      "path": "tutorials/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32ac86c5075ac1906fcc3356ad20e95de6d1d458",
+      "size": 2560,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/32ac86c5075ac1906fcc3356ad20e95de6d1d458"
+    },
+    {
+      "path": "tutorials/build_PELIC_compiled.ipynb",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "fa26743c530275b8436c51af24753cfd0609ea10",
+      "size": 91643,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/fa26743c530275b8436c51af24753cfd0609ea10"
+    },
+    {
+      "path": "tutorials/exploratory_data_analysis.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2102bfe0b32662eb43213ab04a12dbd7d88ac558",
+      "size": 382508,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/2102bfe0b32662eb43213ab04a12dbd7d88ac558"
+    },
+    {
+      "path": "tutorials/exploratory_data_analysis.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e45eb244d19b572ffc7c2191739f8d0fe459032b",
+      "size": 92108,
+      "url": "https://api.github.com/repos/ELI-Data-Mining-Group/PELIC-dataset/git/blobs/e45eb244d19b572ffc7c2191739f8d0fe459032b"
+    }
+  ],
+  "truncated": false
+}

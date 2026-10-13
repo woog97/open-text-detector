@@ -1,0 +1,49 @@
+{
+  "source": "eff",
+  "surveyed_at": "2026-10-02T20:01:46.532623+00:00",
+  "production_count": 415,
+  "original_100k_quota": 821,
+  "original_shortfall": 406,
+  "nature_of_additional_work": "Archive discovery and access bottleneck, not measured eligible-source exhaustion. Original Common Crawl inventory contained only197 URLs; index requests suffered504 failures. Historical Wayback CDX and capture route now being explored.",
+  "capacity_assured": false,
+  "scaling_constraints": [
+    "Pre2022 historical content and capture date evidence",
+    "Original EFF Deeplinks prose and staff author bylines",
+    "EFF original-material CC BY4 with article exceptions excluded",
+    "External republications, quoted blocks and widgets excluded",
+    "Maximum3 nonoverlapping passages per document; global exact dedup and later protected/family audits",
+    "Archive error backoff; inventory coverage and final passage length mix not yet established"
+  ],
+  "new_worker": {
+    "pid": 193882,
+    "start_ticks": "12187052",
+    "identity_verified": true,
+    "state": "discovering",
+    "stage": "/tmp/pangram-human-active-20261002/scaling-survey/eff",
+    "script": "/tmp/pangram-human-active-20261002/scaling-survey/eff/scale_eff_wayback.py",
+    "progress": "/tmp/pangram-human-active-20261002/scaling-survey/eff/progress.json",
+    "process": "/tmp/pangram-human-active-20261002/scaling-survey/eff/process.json",
+    "database": "/tmp/pangram-human-active-20261002/scaling-survey/eff/collection.sqlite3",
+    "max_capture_attempts": 1200,
+    "max_capture_runtime_hours": 4,
+    "backoff": "stop after3 consecutive errors; explicit resumable preserved cursor receipts",
+    "discovery_scope": "Bounded monthly2019\u20132021 Deeplinks queries; original successful Dec2020 response reused",
+    "unique_uncollected_urls_discovered": 96,
+    "completed_discovery_queries": 3,
+    "discovery_http_errors": 1,
+    "new_candidates_verified_at_snapshot": 0
+  },
+  "verification_gates": [
+    "CDX SHA1 payload digest",
+    "Exact Memento timestamp match and pre2022 cutoff",
+    "Historical CC BY4 link",
+    "Original canonical URL/date/English article/body/staff byline",
+    "Unchanged extraction offsets and passage hashes",
+    "Quarantined candidates only; global production merge pending"
+  ],
+  "remote_only": true,
+  "production_release_unchanged": true,
+  "training_admitted": 0,
+  "durability_note": "New stage remains on healthy remote /tmp; private bucket preservation not yet performed. Existing100k release remains durably verified.",
+  "local_code": "research/human-source-pool/scale_eff_wayback.py"
+}

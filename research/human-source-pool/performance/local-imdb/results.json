@@ -1,0 +1,73 @@
+{
+  "source": "imdb",
+  "benchmark_only": true,
+  "production_rows_added": 0,
+  "host": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "logical_cpu_count": 12,
+    "machdep.cpu.brand_string": "Apple M4 Pro",
+    "hw.ncpu": "12",
+    "hw.memsize": "51539607552"
+  },
+  "downloaded_this_run": true,
+  "download_seconds": 40.39900429197587,
+  "checksum_verification_seconds": 0.04900383297353983,
+  "archive_manifest": {
+    "source_id": "imdb",
+    "url": "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz",
+    "sha256": "c40f74a18d3b61f90feba1e17730e0d38e8b97c05fde7008942e91923d1658fe",
+    "bytes": 84125825,
+    "retrieved_at": "2026-10-02T06:44:46.187174+00:00",
+    "benchmark_only": true
+  },
+  "runs": [
+    {
+      "run_index": 1,
+      "wall_seconds": 2.3137162920320407,
+      "status": {
+        "source_id": "imdb",
+        "count": 250,
+        "target": 250,
+        "new_candidates": 250,
+        "scanned_documents_this_run": 2575,
+        "cursor": 2574,
+        "state": "quota_filled",
+        "elapsed_seconds": 2.298,
+        "new_candidates_per_second": 108.784,
+        "updated_at": "2026-10-02T06:44:48.486150+00:00",
+        "all_quarantined": true,
+        "official_test_split_used": false
+      },
+      "offsets_verified": 250,
+      "unique_documents": 250,
+      "record_ids_sha256": "ab19df07af626bd96b2a318b59b0d71656c295104ba8c4fadbe661ff20055ab1",
+      "database_sha256": "42095295a92a069f891b462b4c3aff5ca7bbc057b36e17db369947556d8cffb3",
+      "benchmark_only": true
+    },
+    {
+      "run_index": 2,
+      "wall_seconds": 2.3387530830223113,
+      "status": {
+        "source_id": "imdb",
+        "count": 250,
+        "target": 250,
+        "new_candidates": 250,
+        "scanned_documents_this_run": 2575,
+        "cursor": 2574,
+        "state": "quota_filled",
+        "elapsed_seconds": 2.323,
+        "new_candidates_per_second": 107.642,
+        "updated_at": "2026-10-02T06:44:50.832017+00:00",
+        "all_quarantined": true,
+        "official_test_split_used": false
+      },
+      "offsets_verified": 250,
+      "unique_documents": 250,
+      "record_ids_sha256": "ab19df07af626bd96b2a318b59b0d71656c295104ba8c4fadbe661ff20055ab1",
+      "database_sha256": "ffde98d3c02904eff56598343cdad22a6abf56b7652d03c52a1c26be9f40e0b5",
+      "benchmark_only": true
+    }
+  ],
+  "reported_at": "2026-10-02T06:44:50.886713+00:00"
+}

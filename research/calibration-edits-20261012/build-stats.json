@@ -1,0 +1,18 @@
+{
+ "dropped paper t21-heldout-v2": 944,
+ "dropped text heldout-writers": 61,
+ "dropped text t21-heldout-v2": 84,
+ "dropped text wide1-heldout": 107,
+ "kept heldout-writers one": 785,
+ "kept heldout-writers two": 325,
+ "kept t21-heldout-v2 one": 1404,
+ "kept t21-heldout-v2 para": 465,
+ "kept t21-heldout-v2 two": 606,
+ "kept wide1-heldout one": 781,
+ "kept wide1-heldout para": 347,
+ "kept wide1-heldout two": 336,
+ "skipped t21-heldout-v2 section_draft": 254,
+ "skipped t21-heldout-v2 section_rewrite": 243,
+ "training_shingles": 15948215,
+ "training_paper_keys": 35527
+}

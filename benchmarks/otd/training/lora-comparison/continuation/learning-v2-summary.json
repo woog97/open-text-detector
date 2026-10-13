@@ -1,0 +1,64 @@
+[
+  {
+    "name": "stage1-fast-micro8.json",
+    "passed": true,
+    "initial_loss_relative_difference": 0.00018345420769316778,
+    "initial_probability_rms_difference": 0.0043045438643156885,
+    "final_holdout_loss_ratio": 1.0018007327254743,
+    "last_four_training_loss_ratio": 1.0002385201001738,
+    "gradient_comparison": {
+      "relative_l2": 0.003366886736519633,
+      "cosine": 0.9999948172830477
+    },
+    "warmed_step_seconds": 2.474894490330674,
+    "peak_gb": 56.803237376
+  },
+  {
+    "name": "stage1-fast-bf16-micro8.json",
+    "passed": true,
+    "initial_loss_relative_difference": 0.00018345420769316778,
+    "initial_probability_rms_difference": 0.0043045438643156885,
+    "final_holdout_loss_ratio": 1.0018007327254743,
+    "last_four_training_loss_ratio": 1.0002385201001738,
+    "gradient_comparison": {
+      "relative_l2": 0.003366886736519633,
+      "cosine": 0.9999948172830477
+    },
+    "warmed_step_seconds": 2.4812299996750276,
+    "peak_gb": 42.547172864,
+    "bf16_storage_vs_fast_max_initial_probability_difference": 0.0,
+    "bf16_storage_vs_fast_max_final_probability_difference": 0.0,
+    "bf16_storage_vs_fast_max_train_loss_difference": 0.0
+  },
+  {
+    "name": "stage2-fast-micro4.json",
+    "passed": false,
+    "initial_loss_relative_difference": 0.0006444028677936586,
+    "initial_probability_rms_difference": 0.011637005805056245,
+    "final_holdout_loss_ratio": 0.9899787619666853,
+    "last_four_training_loss_ratio": 1.0031809509861653,
+    "gradient_comparison": {
+      "relative_l2": 0.016859657427124596,
+      "cosine": 0.9998581105715365
+    },
+    "warmed_step_seconds": 5.023740926000755,
+    "peak_gb": 55.571666432
+  },
+  {
+    "name": "stage2-fast-bf16-micro4.json",
+    "passed": false,
+    "initial_loss_relative_difference": 0.0006444028677936586,
+    "initial_probability_rms_difference": 0.011637005805056245,
+    "final_holdout_loss_ratio": 0.9519516825574345,
+    "last_four_training_loss_ratio": 0.9882728201196455,
+    "gradient_comparison": {
+      "relative_l2": 0.01691089481517428,
+      "cosine": 0.9998572441489407
+    },
+    "warmed_step_seconds": 4.901758356000452,
+    "peak_gb": 41.32316416,
+    "bf16_storage_vs_fast_max_initial_probability_difference": 0.0,
+    "bf16_storage_vs_fast_max_final_probability_difference": 0.8059748597443104,
+    "bf16_storage_vs_fast_max_train_loss_difference": 0.06109664961695671
+  }
+]

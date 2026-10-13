@@ -1,0 +1,32 @@
+{
+  "planned": 216,
+  "completed": 216,
+  "errors": [],
+  "model": "openai/gpt-6-luna",
+  "reasoning": "low",
+  "requested_tier": "flex",
+  "reported_tiers": {
+    "flex": 216
+  },
+  "cost_usd": 0.0136554,
+  "tokens": {
+    "prompt_tokens": 66878,
+    "completion_tokens": 41246,
+    "total_tokens": 108124
+  },
+  "tn": 97,
+  "fp": 11,
+  "fn": 34,
+  "tp": 74,
+  "human_accuracy": 0.8981481481481481,
+  "ai_recall": 0.6851851851851852,
+  "human_fpr": 0.10185185185185185,
+  "balanced_accuracy": 0.7916666666666667,
+  "state": "complete",
+  "precision_dtype": "provider_managed_unreported",
+  "scope": "All substantial rewrites; no >50% edit filter. Passage AI involvement, not token authorship.",
+  "balanced_accuracy_paper_bootstrap_95pct": [
+    0.7453703703703703,
+    0.8379629629629629
+  ]
+}

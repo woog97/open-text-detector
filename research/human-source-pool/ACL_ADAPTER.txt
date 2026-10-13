@@ -1,0 +1,24 @@
+ACL source adapter — 2026-10-02
+
+Original source: ACL-owned proceedings from 2016–2021.
+Publisher copyright evidence: https://aclanthology.org/faq/copyright/
+Mirror: https://huggingface.co/datasets/WINGNUS/ACL-OCL
+Pinned revision: 300ee6c5e5629d042bfc07cbc406e2f330b53659
+File: acl-publication-info.74k.v2.parquet, 73,285 papers.
+SHA256: 7e652ac4c80759723e56d760ad8ee52673359ab33aa77be1613d117d1f3ec7c5
+Archive downloaded only to the existing Space at /data/workspace/human-source-mix-v2/source-downloads/acl/. Manifest recorded alongside file.
+
+Rights: ACL publisher grants CC BY 4.0 for ACL-owned papers from 2016 onward. Mirror card says CC BY-NC 4.0 despite a conflicting MIT badge; preserve the mirror's NC restriction. Candidates only, no commercial clearance claim. No source substitution; exact ACL papers filtered from this corpus.
+
+Adapter: ingest_open_articles.py --base /data/workspace/human-source-mix-v2 --source acl
+Strict exact ACL publisher, 2016–2021 year, major ACL-owned proceedings ID allowlist (legacy P/D/N/E, modern acl/emnlp/naacl/eacl main, long, short, demos, srw). Excludes third-party proceedings and workshops. English metadata when provided plus prose lexical check.
+
+Known protected families: acl-protected-families.json derived from 79 existing local paper/source/candidate manifests, with 4,019 ACL IDs and 107,211 normalized titles. Input manifest hashes included. This conservatively excludes both selected and candidate local paper families. Comprehensive near-duplicate/overlap audits still pending.
+
+Untouched GROBID full text retained with all metadata; up to three unchanged contiguous passages per paper, before standalone References/Bibliography/Acknowledgments heading when found. All rows source_id=acl, category=scientific and quarantined. Preserve anthology ID, DOI, title, authors, year, exact raw character offsets. No abstract-generated text or paired summaries.
+
+Own acl.lock; BEGIN IMMEDIATE transactions around global deduplication, source quota and cursor updates; current plan quota read on launch. No collector launched by adapter task; parent queues it with the existing bounded parallel scheduler.
+
+Tests: 3 local + 3 remote passed. Read-only smoke test found 100 eligible papers / 299 passages, excluding 14 protected families during scan. Source file and code already deployed to Space. Include source-downloads/acl/manifest.json, ACL_ADAPTER.txt, and acl-protected-families.json in publication provenance.
+
+EFF finding: original eff.org/robots.txt currently specifies 30-second crawl delay for User-agent:* and GPTBot, excludes pagination except certain paths. Do not accelerate the official site crawler by parallel requests. Existing EFF matching bulk mirror not yet located; no EFF source replaced or rows collected.

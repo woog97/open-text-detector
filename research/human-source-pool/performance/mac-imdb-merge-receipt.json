@@ -1,0 +1,12 @@
+{
+  "source_id": "imdb",
+  "inserted": 1061,
+  "already_present_or_global_duplicate": 0,
+  "source_count": 1061,
+  "quota": 1061,
+  "package_sha256": "b8200933e8822bec9e7527419fe9e33da75bf56b8592e9d77fccc25f52e3fa11",
+  "all_offsets_hashes_tags_verified": true,
+  "training_admitted": 0,
+  "elapsed_seconds": 3.2544182739948155,
+  "updated_at": "2026-10-02T06:50:27.146360+00:00"
+}

@@ -1,0 +1,139 @@
+{
+ "tag": "final-eg2",
+ "checkpoint": "stage2-epoch2-adapters.safetensors",
+ "seconds": 100,
+ "n_human_sentences": 131727,
+ "threshold_1pct_here": 0.6672172044452868,
+ "threshold_in_domain": 0.5578742027282715,
+ "n_in_domain_human_sentences": 7321,
+ "human_fpr_at_in_domain_threshold": 0.01720983549310316,
+ "control_fpr_at_in_domain_threshold": 0.00963348321656384,
+ "retained_human_fpr_at_in_domain_threshold": 0.027705847201347264,
+ "n_control_sentences": 76504,
+ "n_retained_human_sentences": 55223,
+ "groups": {
+  "all:all": {
+   "n_ai_sentences": 20474,
+   "auroc": 0.9687189258518543,
+   "recall_at_1pct_here": 0.5570968057047964,
+   "auroc_vs_controls": 0.974738181147278,
+   "recall_at_1pct_controls": 0.6794959460779525,
+   "recall_at_in_domain_threshold": 0.6707043079027059
+  },
+  "cohort:insert_one": {
+   "n_ai_sentences": 906,
+   "auroc": 0.9331636969234535,
+   "recall_at_1pct_here": 0.16335540838852097,
+   "auroc_vs_controls": 0.9448803150202479,
+   "recall_at_1pct_controls": 0.3211920529801324,
+   "recall_at_in_domain_threshold": 0.31677704194260486
+  },
+  "cohort:paragraph_draft": {
+   "n_ai_sentences": 1421,
+   "auroc": 0.9915287982283235,
+   "recall_at_1pct_here": 0.844475721323012,
+   "auroc_vs_controls": 0.9940924744920956,
+   "recall_at_1pct_controls": 0.8902181562280085,
+   "recall_at_in_domain_threshold": 0.8859957776213934
+  },
+  "cohort:paragraph_rewrite": {
+   "n_ai_sentences": 1495,
+   "auroc": 0.9677767028713204,
+   "recall_at_1pct_here": 0.6267558528428093,
+   "auroc_vs_controls": 0.9733561661322188,
+   "recall_at_1pct_controls": 0.7230769230769231,
+   "recall_at_in_domain_threshold": 0.7123745819397993
+  },
+  "cohort:rewrite_one": {
+   "n_ai_sentences": 885,
+   "auroc": 0.8985575200276175,
+   "recall_at_1pct_here": 0.1288135593220339,
+   "auroc_vs_controls": 0.9113236056930815,
+   "recall_at_1pct_controls": 0.23502824858757063,
+   "recall_at_in_domain_threshold": 0.22598870056497175
+  },
+  "cohort:rewrite_two": {
+   "n_ai_sentences": 1737,
+   "auroc": 0.9424714498350658,
+   "recall_at_1pct_here": 0.25676453655728265,
+   "auroc_vs_controls": 0.9531641317997167,
+   "recall_at_1pct_controls": 0.3805411629245826,
+   "recall_at_in_domain_threshold": 0.37132987910189985
+  },
+  "cohort:section_draft": {
+   "n_ai_sentences": 6574,
+   "auroc": 0.9878071598461688,
+   "recall_at_1pct_here": 0.7369942196531792,
+   "auroc_vs_controls": 0.9912053171733758,
+   "recall_at_1pct_controls": 0.8538180711895346,
+   "recall_at_in_domain_threshold": 0.8466686948585336
+  },
+  "cohort:section_rewrite": {
+   "n_ai_sentences": 6898,
+   "auroc": 0.9717780425022737,
+   "recall_at_1pct_here": 0.5297187590605973,
+   "auroc_vs_controls": 0.977720583466764,
+   "recall_at_1pct_controls": 0.677732676138011,
+   "recall_at_in_domain_threshold": 0.6668599594085242
+  },
+  "cohort:split_one": {
+   "n_ai_sentences": 558,
+   "auroc": 0.9011664261752604,
+   "recall_at_1pct_here": 0.1111111111111111,
+   "auroc_vs_controls": 0.9144932848639675,
+   "recall_at_1pct_controls": 0.2114695340501792,
+   "recall_at_in_domain_threshold": 0.1971326164874552
+  },
+  "writer:claude-fable-5-1": {
+   "n_ai_sentences": 5197,
+   "auroc": 0.9607831994397764,
+   "recall_at_1pct_here": 0.5126034250529151,
+   "auroc_vs_controls": 0.9676263982927111,
+   "recall_at_1pct_controls": 0.6345968828170098,
+   "recall_at_in_domain_threshold": 0.6265152972868963
+  },
+  "writer:claude-haiku-4-5": {
+   "n_ai_sentences": 1558,
+   "auroc": 0.9646683770933141,
+   "recall_at_1pct_here": 0.5718870346598203,
+   "auroc_vs_controls": 0.9704849810599985,
+   "recall_at_1pct_controls": 0.6925545571245186,
+   "recall_at_in_domain_threshold": 0.686777920410783
+  },
+  "writer:claude-opus-5-5": {
+   "n_ai_sentences": 5598,
+   "auroc": 0.9674103206396207,
+   "recall_at_1pct_here": 0.5228653090389425,
+   "auroc_vs_controls": 0.97356244407959,
+   "recall_at_1pct_controls": 0.6568417291889961,
+   "recall_at_in_domain_threshold": 0.6470167917113254
+  },
+  "writer:claude-sonnet-5-5": {
+   "n_ai_sentences": 5766,
+   "auroc": 0.9749376884930672,
+   "recall_at_1pct_here": 0.5828997571973639,
+   "auroc_vs_controls": 0.9805474228103902,
+   "recall_at_1pct_controls": 0.7108914325355532,
+   "recall_at_in_domain_threshold": 0.7006590357266737
+  },
+  "writer:gpt-6-sol": {
+   "n_ai_sentences": 2002,
+   "auroc": 0.9776615126885003,
+   "recall_at_1pct_here": 0.6883116883116883,
+   "auroc_vs_controls": 0.9824129519962418,
+   "recall_at_1pct_controls": 0.7637362637362637,
+   "recall_at_in_domain_threshold": 0.7567432567432567
+  },
+  "writer:gpt-6.1-sol": {
+   "n_ai_sentences": 353,
+   "auroc": 0.971885647866754,
+   "recall_at_1pct_here": 0.5240793201133145,
+   "auroc_vs_controls": 0.9784413501754727,
+   "recall_at_1pct_controls": 0.6515580736543909,
+   "recall_at_in_domain_threshold": 0.6487252124645893
+  }
+ },
+ "documents": {
+  "auroc_mixed_vs_controls": 0.76249828125
+ }
+}

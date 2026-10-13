@@ -1,0 +1,66 @@
+{
+ "prose": {
+  "doc": {
+   "auroc_vs_pre2023": 0.99,
+   "tpr_at_human95pct": 0.962
+  },
+  "tokmean": {
+   "auroc_vs_pre2023": 0.997,
+   "tpr_at_human95pct": 0.982
+  },
+  "flag_bibex": {
+   "auroc_vs_pre2023": 0.988,
+   "tpr_at_human95pct": 0.959
+  },
+  "pre2023_sentence_flag_rate": {
+   "ph": {
+    "sentences": 7457,
+    "flag_rate": 0.292
+   },
+   "clean": {
+    "sentences": 9187,
+    "flag_rate": 0.304
+   }
+  },
+  "clean_flagged_examples": [
+   "Neural networks are both computationally intensive and memory intensive, making them difficult to deploy on embedded systems with limited hardware resources.",
+   "Large networks do not fit in on-chip storage and hence require the more costly DRAM accesses.",
+   "Next, we prune the small-weight connections: all connections with weights below a threshold are removed from the network.",
+   "Finally, we retrain the network to learn the final weights for the remaining sparse connections.",
+   "To compress further, we store the index difference instead of the absolute position, and encode this difference in 8 bits for conv layer and 5 bits for fc layer.",
+   "## Trained Quantization and Weight Sharing  Network quantization and weight sharing further compresses the pruned network by reducing the number of bits required to represent each weight."
+  ]
+ },
+ "tex": {
+  "doc": {
+   "auroc_vs_pre2023": 0.977,
+   "tpr_at_human95pct": 0.951
+  },
+  "tokmean": {
+   "auroc_vs_pre2023": 0.973,
+   "tpr_at_human95pct": 0.926
+  },
+  "flag_bibex": {
+   "auroc_vs_pre2023": 0.985,
+   "tpr_at_human95pct": 0.956
+  },
+  "pre2023_sentence_flag_rate": {
+   "ph": {
+    "sentences": 7926,
+    "flag_rate": 0.15
+   },
+   "clean": {
+    "sentences": 9535,
+    "flag_rate": 0.137
+   }
+  },
+  "clean_flagged_examples": [
+   "As a result, a feature that increases the binary size by 100MB will receive much more scrutiny than one that increases it by 10MB.",
+   "We use the AlexNet Caffe model as the reference model, which has 61 million parameters and achieved a top-1 accuracy of 57.2\\% and a top-5 accuracy of 80.3\\%.",
+   "There are 256 shared weights in each CONV layer, which are encoded with 8 bits, and 32 shared weights in each FC layer, which are encoded with only 5 bits.",
+   "VGG-16 has far more convolutional layers but still only three fully-connected layers.",
+   "The two largest fully-connected layers can each be pruned to less than 1.6\\% of their original size.",
+   "Pruning and quantization works best when combined.} \\vspace{-5pt} \\label{fig:acc} \\end{figure}  \\begin{figure*}[t] \\centering \\includegraphics[width=0.329\\textwidth]{figures/wwo1.pdf}  \\includegraphics[width=0.329\\textwi"
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+Open Text Detector classifiers dashboard
+
+Project: https://wandb.ai/rigg-alice0/open-text-detector-classifiers
+Visibility: PUBLIC / USER_READ (verified anonymously on October 3, 2026). Workspace privateOnly=false, defaultAccess=PRIVATE, explicitly authorized by user.
+Shared run group: text-classifiers
+Use this project/group for every classifier training run, with a unique run name.
+
+Attach to an already launched current-data-compatible run:
+/private/tmp/pangram-paper-hf-env/bin/python benchmarks/otd/training/wandb-tracking/attach.py --root /data/workspace/NEW-RUN --name DESCRIPTIVE-RUN-NAME
+
+The sidecar uses the existing W&B login and training Space access. It runs independently on the Space and does not change the trainer or model. Future trainers with different log formats need equivalent logging into this same project/group. Tracker package is isolated and pinned to wandb 0.30.0. Credentials are passed only in memory to the remote process.
+
+Uploaded: sampled microbatch training loss, elapsed time, batch progress, percentage completed, stage, epoch-average training loss, end-of-epoch selection/validation loss, epoch duration, and running/finished/failed status. Validation appears only after each epoch finishes. Progress counts scheduled microbatches, not unique examples; W&B runtime starts when the tracker attaches, whereas train/elapsed_seconds measures training time from the beginning. The tracker backfills saved training loss history.
+
+Excluded: config, dataset details, source code, checkpoints, raw examples, hardware/system telemetry, console capture. W&B system metadata, machine info, git and code collection are disabled.
+
+Remote tracker source: /data/workspace/wandb-tracking/track.py
+Per-run recovery: wandb-tracking.json (URL/run ID), wandb-tracker-process.json (PID identity), wandb-tracking-cursor.json, wandb-tracker.log.
+The sidecar resumes the same W&B run if reattached after its process exits; it refuses a second live tracker. Inspect tracker identity/log before retrying. It never restarts the training job. Resume cursor updates follow asynchronous SDK log calls, so a hard tracker crash may lose the most recent unsynced points; saved training.log remains authoritative.

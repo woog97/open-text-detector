@@ -1,0 +1,20 @@
+{
+  "name": "open-text-detector-classification-upload",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "classification-upload/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "TOKEN_SHA256": "f70d5eab782c0b1ad8e34c4eecdd2cfd549a1e1727a01611379c988a54b44f75",
+    "EXPIRES_AT": "1790305055"
+  }
+}

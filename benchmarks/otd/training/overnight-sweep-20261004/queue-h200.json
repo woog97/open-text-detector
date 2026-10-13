@@ -1,0 +1,206 @@
+[
+ {
+  "tag": "curve-4b-B",
+  "model": "qwen35-4b",
+  "arm": "B",
+  "seed": 1,
+  "gpus": [
+   "0"
+  ],
+  "args": [
+   "--fraction",
+   "1.0",
+   "--micro-batch",
+   "8",
+   "--ckpt-every",
+   "263",
+   "--lr",
+   "5e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "constant",
+   "--warmup",
+   "0",
+   "--seed",
+   "1"
+  ]
+ },
+ {
+  "tag": "curve-9b-B",
+  "model": "qwen35-9b",
+  "arm": "B",
+  "seed": 1,
+  "gpus": [
+   "2"
+  ],
+  "args": [
+   "--fraction",
+   "1.0",
+   "--micro-batch",
+   "8",
+   "--ckpt-every",
+   "263",
+   "--lr",
+   "5e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "constant",
+   "--warmup",
+   "0",
+   "--seed",
+   "1"
+  ]
+ },
+ {
+  "tag": "q9b-A-s1",
+  "model": "qwen35-9b",
+  "arm": "A",
+  "seed": 1,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "2e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "cosine",
+   "--warmup",
+   "0.06",
+   "--seed",
+   "1"
+  ]
+ },
+ {
+  "tag": "q9b-B-s1",
+  "model": "qwen35-9b",
+  "arm": "B",
+  "seed": 1,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "5e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "constant",
+   "--warmup",
+   "0",
+   "--seed",
+   "1"
+  ]
+ },
+ {
+  "tag": "q9b-A-s2",
+  "model": "qwen35-9b",
+  "arm": "A",
+  "seed": 2,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "2e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "cosine",
+   "--warmup",
+   "0.06",
+   "--seed",
+   "2"
+  ]
+ },
+ {
+  "tag": "q9b-B-s2",
+  "model": "qwen35-9b",
+  "arm": "B",
+  "seed": 2,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "5e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "constant",
+   "--warmup",
+   "0",
+   "--seed",
+   "2"
+  ]
+ },
+ {
+  "tag": "q9b-B-s3",
+  "model": "qwen35-9b",
+  "arm": "B",
+  "seed": 3,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "5e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "constant",
+   "--warmup",
+   "0",
+   "--seed",
+   "3"
+  ]
+ },
+ {
+  "tag": "q9b-A-s3",
+  "model": "qwen35-9b",
+  "arm": "A",
+  "seed": 3,
+  "gpus": [
+   "3"
+  ],
+  "args": [
+   "--fraction",
+   "0.2",
+   "--micro-batch",
+   "8",
+   "--lr",
+   "2e-4",
+   "--head-lr",
+   "2e-5",
+   "--schedule",
+   "cosine",
+   "--warmup",
+   "0.06",
+   "--seed",
+   "3"
+  ]
+ }
+]

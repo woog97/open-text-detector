@@ -1,0 +1,29 @@
+Luna Flex prompt hillclimb — October 3, 2026
+
+Dataset: 108 source papers, 36 each from ACL, ICML and NeurIPS, 2013–2021. Each contributes one original paragraph and one matched existing Luna substantial rewrite (216 passages total). These are the original workflow test assignments, paragraph view only. All rewrites are included; no >50% change filter. No new texts generated.
+
+This set is now development-exposed: prompts were selected and errors inspected on these same 216 passages. Results below are tuning performance, not untouched test performance. Original dataset files and split assignments were preserved; development-exposure.json records the new usage.
+
+All variants: openai/gpt-6-luna, low reasoning, OpenRouter OpenAI Flex-only, 2048 output-token limit, stateless per-passage requests. No evaluated passage is supplied with its matched original or its label. Some variants add labeled demonstrations from separate calibration papers, with source identities recorded in fewshot-examples.json and any additional fewshot manifests. Hosted inference precision is unreported.
+
+Variant | Balanced accuracy | AI recall | Human FPR | Correct human | Correct AI | API cost
+baseline | 61.11% | 25.93% | 3.70% | 104/108 | 28/108 | $0.01074570
+v1_task_prior | 79.17% | 68.52% | 10.19% | 97/108 | 74/108 | $0.01365540
+v2_editorial_patterns | 81.02% | 82.41% | 20.37% | 86/108 | 89/108 | $0.01386230
+v3_false_positive_correction | 69.91% | 42.59% | 2.78% | 105/108 | 46/108 | $0.01543875
+v4_calibration_fewshot | 81.02% | 76.85% | 14.81% | 92/108 | 83/108 | $0.02149034
+v5_linguistic_repair | 75.46% | 54.63% | 3.70% | 104/108 | 59/108 | $0.01800565
+v6_compact_fewshot | 77.78% | 57.41% | 1.85% | 106/108 | 62/108 | $0.01997510
+v7_combined_signals | 78.24% | 61.11% | 4.63% | 103/108 | 66/108 | $0.01674280
+v8_diverse_fewshot | 80.56% | 70.37% | 9.26% | 98/108 | 76/108 | $0.01250565
+
+Selected winner by balanced accuracy: v4_calibration_fewshot.
+Gain over baseline: 19.91 percentage points.
+Cumulative API cost for prompt variants: $0.13167599.
+Reported service tiers: {"baseline": {"flex": 216}, "v1_task_prior": {"flex": 216}, "v2_editorial_patterns": {"flex": 216}, "v3_false_positive_correction": {"flex": 216}, "v4_calibration_fewshot": {"flex": 216}, "v5_linguistic_repair": {"flex": 216}, "v6_compact_fewshot": {"flex": 216}, "v7_combined_signals": {"flex": 216}, "v8_diverse_fewshot": {"flex": 216}}
+
+Iteration: v1 corrected the task definition and equal prior odds after the baseline missed 80 rewrites. v2 added hypotheses about editorial smoothing. After examining v1/v2 errors, v3 added explicit guards against false positives on conventional academic writing; v4 added independently selected calibration demonstrations to v2. No test text was inserted as a labeled demonstration. The user then requested continued iteration: v5 emphasized local linguistic repairs, v6 combined the compact task definition with the original calibration demonstrations, v7 combined grammar and discourse clues, and v8 used three different calibration pairs spanning ACL/ICML/NeurIPS. All variants, including regressions, are retained.
+
+Verification: recomputed all confusion counts and costs from raw API responses; checked text-only evaluated inputs, model settings, exact dataset identity, unique response IDs within each run, and recorded service tiers. One run per prompt; no seed repeats, threshold fitting, or independent generalization evaluation. Differences can include sampling variation.
+
+Files: prompts.json (every prompt); winning-prompt.txt; comparison.json; errors.json; development-exposure.json; per-variant manifest.json, calls/, predictions.json and results.json.

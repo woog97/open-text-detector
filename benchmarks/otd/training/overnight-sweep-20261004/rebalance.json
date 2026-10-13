@@ -1,0 +1,236 @@
+{
+ "to_h200": [
+  {
+   "tag": "q4b-E-s1-rerun",
+   "model": "qwen35-4b",
+   "arm": "E",
+   "seed": 1,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "1"
+   ],
+   "rerun_of": "q4b-E-s1"
+  },
+  {
+   "tag": "q4b-G-s1",
+   "model": "qwen35-4b",
+   "arm": "G",
+   "seed": 1,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--optimizer",
+    "adamw",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q4b-F-s1",
+   "model": "qwen35-4b",
+   "arm": "F",
+   "seed": 1,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "1"
+   ]
+  },
+  {
+   "tag": "q4b-D-s2",
+   "model": "qwen35-4b",
+   "arm": "D",
+   "seed": 2,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--sentence-weight",
+    "1.0",
+    "--seed",
+    "2"
+   ]
+  },
+  {
+   "tag": "q4b-G-s2",
+   "model": "qwen35-4b",
+   "arm": "G",
+   "seed": 2,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--optimizer",
+    "adamw",
+    "--seed",
+    "2"
+   ]
+  },
+  {
+   "tag": "q4b-C-s3",
+   "model": "qwen35-4b",
+   "arm": "C",
+   "seed": 3,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "5e-4",
+    "--head-lr",
+    "5e-4",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "3"
+   ]
+  },
+  {
+   "tag": "q4b-E-s3",
+   "model": "qwen35-4b",
+   "arm": "E",
+   "seed": 3,
+   "gpus": [
+    "0",
+    "2",
+    "3"
+   ],
+   "args": [
+    "--fraction",
+    "0.2",
+    "--micro-batch",
+    "8",
+    "--lr",
+    "1e-3",
+    "--head-lr",
+    "2e-5",
+    "--schedule",
+    "constant",
+    "--warmup",
+    "0",
+    "--seed",
+    "3"
+   ]
+  }
+ ],
+ "space_remove": [
+  "q4b-E-s1-rerun",
+  "q4b-G-s1",
+  "q4b-F-s1",
+  "q4b-D-s2",
+  "q4b-G-s2",
+  "q4b-C-s3",
+  "q4b-E-s3"
+ ],
+ "space_order": [
+  "q4b-D-s1-rerun",
+  "q4b-B-s2",
+  "q4b-C-s2",
+  "q4b-E-s2",
+  "q4b-B-s3",
+  "q4b-F-s2",
+  "q4b-D-s3",
+  "q4b-F-s3"
+ ],
+ "h200_order": [
+  "q4b-E-s1-rerun",
+  "q4b-G-s1",
+  "q9b-A-s2",
+  "q9b-B-s2",
+  "q4b-F-s1",
+  "q4b-D-s2",
+  "q9b-B-s3",
+  "q9b-A-s3",
+  "q4b-G-s2",
+  "q9b-C-s2",
+  "q9b-D-s2",
+  "q4b-C-s3",
+  "q4b-E-s3"
+ ]
+}

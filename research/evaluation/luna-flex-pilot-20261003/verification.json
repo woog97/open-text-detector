@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "calls": 216,
+  "unique_papers": 108,
+  "reported_tiers": {
+    "flex": 216
+  },
+  "cost_usd": 0.010745700000000002,
+  "elapsed_seconds": 158.76681923866272,
+  "checks": [
+    "input hashes",
+    "text-only requests",
+    "raw-response confusion matrix",
+    "billing sum",
+    "unique generation IDs",
+    "Flex reported on all responses"
+  ]
+}

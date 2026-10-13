@@ -1,0 +1,178 @@
+{
+  "encoder": {
+    "model": {
+      "repo": "answerdotai/ModernBERT-large",
+      "revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13"
+    },
+    "parameters": 394801171,
+    "checks": [
+      {
+        "stage": 1,
+        "loss": 3.0648059844970703,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          508,
+          508,
+          508,
+          508,
+          508,
+          508,
+          508,
+          508
+        ],
+        "source_lengths": [
+          506,
+          506,
+          506,
+          506,
+          506,
+          506,
+          506,
+          506
+        ]
+      },
+      {
+        "stage": 2,
+        "loss": 1.4080570936203003,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          508,
+          508,
+          508,
+          508,
+          508,
+          508,
+          508,
+          508
+        ],
+        "source_lengths": [
+          506,
+          506,
+          506,
+          506,
+          506,
+          506,
+          506,
+          506
+        ]
+      }
+    ],
+    "repeat2_visibility": {},
+    "elapsed_seconds": 11.29697871208191,
+    "peak_gpu_bytes": 4802827264,
+    "master_parameter_dtypes": [
+      "torch.float32"
+    ],
+    "estimated_peak_with_adam_bytes": 7961236632,
+    "optimizer_steps": 0,
+    "trained_checkpoint_saved": false
+  },
+  "causal": {
+    "model": {
+      "repo": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+    },
+    "parameters": 596069395,
+    "checks": [
+      {
+        "stage": 1,
+        "loss": 2.328792095184326,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          510,
+          510,
+          510,
+          510
+        ],
+        "source_lengths": [
+          510,
+          510,
+          510,
+          510
+        ]
+      },
+      {
+        "stage": 2,
+        "loss": 4.669896125793457,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          1020,
+          1020,
+          1020,
+          1020
+        ],
+        "source_lengths": [
+          510,
+          510,
+          510,
+          510
+        ]
+      }
+    ],
+    "repeat2_visibility": {
+      "first_copy_prefix_delta": 0.0,
+      "second_copy_prefix_delta": 4.825807094573975,
+      "causal_mask_preserved": true,
+      "second_copy_sees_later_source_content": true
+    },
+    "elapsed_seconds": 6.677549839019775,
+    "peak_gpu_bytes": 7207397888,
+    "master_parameter_dtypes": [
+      "torch.float32"
+    ],
+    "estimated_peak_with_adam_bytes": 11975953048,
+    "optimizer_steps": 0,
+    "trained_checkpoint_saved": false
+  },
+  "qwen35": {
+    "model": {
+      "repo": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    },
+    "parameters": 4205799955,
+    "checks": [
+      {
+        "stage": 1,
+        "loss": 3.145880937576294,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          509
+        ],
+        "source_lengths": [
+          509
+        ]
+      },
+      {
+        "stage": 2,
+        "loss": 2.681011438369751,
+        "forward_dtype": "torch.bfloat16",
+        "finite_gradients": true,
+        "input_lengths": [
+          1018
+        ],
+        "source_lengths": [
+          509
+        ]
+      }
+    ],
+    "repeat2_visibility": {
+      "first_copy_prefix_delta": 0.0,
+      "second_copy_prefix_delta": 5.443118095397949,
+      "causal_mask_preserved": true,
+      "second_copy_sees_later_source_content": true
+    },
+    "elapsed_seconds": 31.465588569641113,
+    "peak_gpu_bytes": 50500517376,
+    "master_parameter_dtypes": [
+      "torch.float32"
+    ],
+    "estimated_peak_with_adam_bytes": 84146917016,
+    "optimizer_steps": 0,
+    "trained_checkpoint_saved": false
+  }
+}

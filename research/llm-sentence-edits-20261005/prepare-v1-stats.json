@@ -1,0 +1,10 @@
+{
+ "paired_target_paragraph_skipped": 5221,
+ "raw_candidates": 11372,
+ "excluded_used_in_pilot": 200,
+ "excluded_text_overlap_eval_selection_calibration": 20,
+ "excluded_text_overlap_space_suite": 36,
+ "kept": 11116,
+ "kept_paired_train_nontarget": 10426,
+ "kept_archive_pre2023": 690
+}

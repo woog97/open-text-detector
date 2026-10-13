@@ -1,0 +1,74 @@
+{
+  "status": {
+    "state": "ready_not_started",
+    "returncode": 0,
+    "gpu": 0,
+    "time": 1791055968.3303428
+  },
+  "preparation": {
+    "time": 1791055820.4255269,
+    "state": "complete",
+    "pool_counts": {
+      "human": 75548,
+      "mirrors": 21304,
+      "papers": 11328,
+      "gradtex": 77142,
+      "fullpapers": 468
+    },
+    "draws": 84000
+  },
+  "tests": [
+    {
+      "test": "stage1",
+      "logical_examples": 4,
+      "windows": 4,
+      "loss": 1.9190142154693604,
+      "forward_dtype": "bfloat16",
+      "finite_gradients": true
+    },
+    {
+      "test": "mixed",
+      "logical_examples": 4,
+      "windows": 10,
+      "loss": 0.7534357309341431,
+      "forward_dtype": "bfloat16",
+      "finite_gradients": true
+    },
+    {
+      "test": "document-only",
+      "logical_examples": 1,
+      "windows": 4,
+      "loss": 0.1053062304854393,
+      "forward_dtype": "bfloat16",
+      "finite_gradients": true
+    }
+  ],
+  "largest_document_windows": 4,
+  "peak_gpu_bytes": 2889906176,
+  "optimizer_updates": 0,
+  "ready": {
+    "status": "prepared_not_trained",
+    "data_manifest_sha256": "bc7b1e4a73f02d84c8c8f395c10fe08fc0ae114555753a8e4c659cf6102f5900",
+    "source_code_sha256": {
+      "download_sources.py": "23118cc4b0b626f7876721461fef00fabe2ad5e37092a0122e0baf5073e0298c",
+      "runtime.py": "34e985c015d6ab0bdf760b0931bda1d001412a7bf630476fe364ee91152835cc",
+      "train.py": "265047ef91d335e9de072cc8eceb8b61093a609f05b7f70eb5244f8f2ccd7fb0",
+      "inference.py": "fdab3ce1cba38447c965a51b4e7c16b2fc193069d4fa1651936351fe2a9512d0",
+      "evaluate.py": "0502b82930b50bf3e8f0f8864f35c564bdc848cbf73675cfe6e71e1a7d1f5477",
+      "calibrate.py": "81dd58b2a58646a0e9e42a15ce88784b010f8d829c0c20f538b86b997be9fdd8",
+      "modeling.py": "108b19bf52ca2cefc1de8ad5081165d4746582dfdcbb78082d777c044c75a917",
+      "prepare.py": "78aaa8a83c44b9d218043192cb96940db9eb2b3426ac2f5820550f668c2a1af0",
+      "data.py": "940aae39bc176301fe4fa508072f2c410bdab1f021ed211c76ea2b70764ac0ec",
+      "adapters.py": "ac43435e9ea31596b783c749346f2724c7722dcbcc48bccf81432e8571990b6b",
+      "preflight.py": "c270d46dd5c1e73ed092638f98c3d7b639062edc2ec54ab7e91d96de8d19dce0",
+      "validate_when_ready.py": "0c3c662de84608f70b8e775778bb19a25904fcfffe63bd81f21c6826c418eb78",
+      "launch.py": "75854e6fa596b6ca0a6d5b1db5db33ccd005c82648446ccd11c69871d3aacb25",
+      "test_encoding.py": "146e880b7ae4258b5a6f70853a6978f47c9e6b97d1481deb5a8730795b5b9e6e"
+    },
+    "configs_sha256": {
+      "encoder.json": "e7669402324683ed5c56bf6b36e01f5427f07ba389b4731222fe9851b2fef3ce"
+    },
+    "preflight_sha256": "4f559819b306f90577ab2c1cd24878744aa3c10674369e7f8f4a8999ab30c5b1"
+  },
+  "remote_root": "/data/workspace/current-data-v1"
+}

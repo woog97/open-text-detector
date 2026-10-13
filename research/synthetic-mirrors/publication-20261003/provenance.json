@@ -1,0 +1,33 @@
+{
+  "rows": 28120,
+  "authorship": "synthetic",
+  "label_mapping": {
+    "0": "human",
+    "1": "synthetic"
+  },
+  "response_models": {
+    "openai/gpt-6-luna": 28120
+  },
+  "reported_service_tiers": {
+    "flex": 28120
+  },
+  "categories": {
+    "scientific": 5016,
+    "reference": 4511,
+    "general_web": 2344,
+    "creative": 6193,
+    "news": 1951,
+    "essays": 1312,
+    "social": 2865,
+    "reviews": 2951,
+    "professional": 977
+  },
+  "parent_repo": "open-text-detector/human-source-mix-v1",
+  "parent_revision": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+  "accepted_raw_export_sha256": "63e63f45042c25b07877ae3196fac7c07899243d7974d90d4757b89add274be5",
+  "unique_parent_ids": 28120,
+  "unique_exact_output_hashes": 28120,
+  "split_policy": "train is storage only; assign folds by parent family jointly with human corpus",
+  "new_model_calls": 0,
+  "at": "2026-10-03T09:28:01.405378+00:00"
+}

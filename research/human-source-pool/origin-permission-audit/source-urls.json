@@ -1,0 +1,118 @@
+{
+  "gutenberg": [
+    "https://www.gutenberg.org/policy/permission.html",
+    "https://www.gutenberg.org/policy/robot_access.html",
+    "https://standardebooks.org/"
+  ],
+  "writingprompts": [
+    "https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md"
+  ],
+  "scp": [
+    "https://scp-wiki.wikidot.com/licensing-guide"
+  ],
+  "wikisource": [
+    "https://en.wikisource.org/wiki/Wikisource:Copyright_policy"
+  ],
+  "pmc": [
+    "https://pmc.ncbi.nlm.nih.gov/about/copyright/",
+    "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/"
+  ],
+  "arxiv": [
+    "https://info.arxiv.org/help/license/index.html"
+  ],
+  "pes2o": [
+    "https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md"
+  ],
+  "acl": [
+    "https://aclanthology.org/faq/copyright/"
+  ],
+  "wikipedia": [
+    "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+  ],
+  "pressbooks": [
+    "https://pressbooks.directory/",
+    "https://pressbooks.com/open-education/introducing-pressbooks-directory/"
+  ],
+  "libretexts": [
+    "https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md"
+  ],
+  "wikibooks": [
+    "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+  ],
+  "amazon2018": [
+    "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html"
+  ],
+  "imdb": [
+    "https://nlp.stanford.edu/~amaas/data/sentiment/index.html"
+  ],
+  "opinrank": [
+    "https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset"
+  ],
+  "stack_nontech": [
+    "https://stackoverflow.com/help/licensing",
+    "https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process"
+  ],
+  "stack_tech": [
+    "https://stackoverflow.com/help/licensing"
+  ],
+  "ubuntu_irc": [
+    "https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md",
+    "https://irclogs.ubuntu.com/"
+  ],
+  "wiki_talk": [
+    "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+  ],
+  "cccc": [
+    "https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md",
+    "https://raw.githubusercontent.com/r-three/common-pile/main/sources/cccc/README.md"
+  ],
+  "eff": [
+    "https://www.eff.org/copyright"
+  ],
+  "foodista": [
+    "https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md"
+  ],
+  "wikivoyage": [
+    "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+  ],
+  "globalvoices": [
+    "https://globalvoices.org/about/global-voices-attribution-policy/"
+  ],
+  "voa": [
+    "https://www.voanews.com/p/5338.html"
+  ],
+  "wikinews": [
+    "https://en.wikinews.org/wiki/Wikinews:Copyright"
+  ],
+  "scidev": [
+    "https://www.scidev.net/content/policies.html",
+    "https://www.scidev.net/content/media.html"
+  ],
+  "oanc_slate": [
+    "https://anc.org/data/oanc/",
+    "https://anc.org/data/oanc/contents/"
+  ],
+  "asap2": [
+    "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md",
+    "https://zenodo.org/records/14781349",
+    "https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/LICENSE"
+  ],
+  "persuade": [
+    "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md",
+    "https://the-learning-agency-lab.com/learning-exchange/persuade-dataset/",
+    "https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/LICENSE"
+  ],
+  "govreport": [
+    "https://gov-report-data.github.io/"
+  ],
+  "fed": [
+    "https://www.federalreserve.gov/disclaimer.htm"
+  ],
+  "worldbank": [
+    "https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository"
+  ],
+  "oanc_icic": [
+    "https://anc.org/data/oanc/",
+    "https://anc.org/data/oanc/contents/"
+  ]
+}

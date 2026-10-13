@@ -1,0 +1,72 @@
+{
+  "gemma4-12b/stage1-epoch0-adapters.safetensors": {
+    "file": "gemma4-12b/stage1-epoch0-adapters.safetensors",
+    "bytes": 1049348474,
+    "sha256": "d0e60d4579d3ac2b39a2d6c9c6f63a91b476a52f036b29ddddf866521f43712b",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/gemma4-12b/stage1-epoch0-adapters.safetensors",
+    "time": 1791065290.915692
+  },
+  "gemma4-12b/run.json": {
+    "file": "gemma4-12b/run.json",
+    "bytes": 14053,
+    "sha256": "8f8f59958b490781a74f94331349d37023e5dd93097ea1a2f59176d78bd9b2bc",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/gemma4-12b/run.json",
+    "time": 1791065292.5012538
+  },
+  "qwen36-35b-a3b/stage1-epoch0-adapters.safetensors": {
+    "file": "qwen36-35b-a3b/stage1-epoch0-adapters.safetensors",
+    "bytes": 2205338922,
+    "sha256": "9d3438b1d3fc398442cea59aaf36353af6f49884a5828c65ce906cc4e510962d",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/qwen36-35b-a3b/stage1-epoch0-adapters.safetensors",
+    "time": 1791066961.4069178
+  },
+  "qwen36-35b-a3b/run.json": {
+    "file": "qwen36-35b-a3b/run.json",
+    "bytes": 21096,
+    "sha256": "21bf6ea054def29b6be8e92b8a76adbab8811cb8bb31b1eeb099190f8c1becbf",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/qwen36-35b-a3b/run.json",
+    "time": 1791066964.170353
+  },
+  "gemma4-12b/stage2-epoch0-adapters.safetensors": {
+    "file": "gemma4-12b/stage2-epoch0-adapters.safetensors",
+    "bytes": 1049348474,
+    "sha256": "39dd238a15b1a533c8c8c6382974d414a2abbe90afe80e96ce8f733a6bdf559c",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/gemma4-12b/stage2-epoch0-adapters.safetensors",
+    "time": 1791067278.1173918
+  },
+  "gemma4-12b/stage2-epoch1-adapters.safetensors": {
+    "file": "gemma4-12b/stage2-epoch1-adapters.safetensors",
+    "bytes": 1049348474,
+    "sha256": "f41ce7268fad291f26b202ae7f8fcbbcd803e1babd385a27a294dadbc04d70f2",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/gemma4-12b/stage2-epoch1-adapters.safetensors",
+    "time": 1791067882.756224
+  },
+  "qwen36-35b-a3b/stage2-epoch0-adapters.safetensors": {
+    "file": "qwen36-35b-a3b/stage2-epoch0-adapters.safetensors",
+    "bytes": 2205338922,
+    "sha256": "99291571b5c54e814d5feb2c651c81381f287cc519417d62ce89b09e2c420255",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/qwen36-35b-a3b/stage2-epoch0-adapters.safetensors",
+    "time": 1791068421.989812
+  },
+  "gemma4-12b/stage2-epoch2-adapters.safetensors": {
+    "file": "gemma4-12b/stage2-epoch2-adapters.safetensors",
+    "bytes": 1049348474,
+    "sha256": "e4e2e95dfdc890452b3eadc8ef22791ac1f6f174c35d58f49311e283e4f06101",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/gemma4-12b/stage2-epoch2-adapters.safetensors",
+    "time": 1791068980.305057
+  },
+  "qwen36-35b-a3b/stage2-epoch1-adapters.safetensors": {
+    "file": "qwen36-35b-a3b/stage2-epoch1-adapters.safetensors",
+    "bytes": 2205338922,
+    "sha256": "dad835b2188ff371969bce0601417000ca4b43148498c40b2a55b7cd9048a043",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/qwen36-35b-a3b/stage2-epoch1-adapters.safetensors",
+    "time": 1791070702.9436412
+  },
+  "qwen36-35b-a3b/stage2-epoch2-adapters.safetensors": {
+    "file": "qwen36-35b-a3b/stage2-epoch2-adapters.safetensors",
+    "bytes": 2205338922,
+    "sha256": "0268789ea0d8ee7a435a6ff54152ce534cb24458533d9a89aa501919fe9b9ffa",
+    "space_path": "/data/workspace/backbone-launch-20261003/h200-checkpoints/qwen36-35b-a3b/stage2-epoch2-adapters.safetensors",
+    "time": 1791072641.116627
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-23",
+  "revision": 2,
+  "supersedes": "Previous managed-token-price compute estimate",
+  "anchor": {
+    "days": 4,
+    "h100_count": 8,
+    "h100_hours": 768,
+    "usd_per_h100_hour_assumption": 2.5,
+    "run_cost_usd": 1920.0,
+    "source": "https://www.pangram.com/research/model-card/pangram-4"
+  },
+  "scope": "Direct compute and optional new data generation; excludes staffing and generic overhead. Experiment and inference allocations are assumptions.",
+  "central_compute_items": {
+    "final_training": {
+      "run_equivalents": 1,
+      "cost_usd": 1920.0
+    },
+    "preliminary_candidate": {
+      "run_equivalents": 1,
+      "cost_usd": 1920.0
+    },
+    "eight_short_trials": {
+      "run_equivalents": 0.4,
+      "cost_usd": 768.0
+    },
+    "four_longer_trials": {
+      "run_equivalents": 0.4,
+      "cost_usd": 768.0
+    },
+    "screening_and_embeddings": {
+      "run_equivalents": 0.3,
+      "cost_usd": 576.0
+    },
+    "evaluation_and_calibration": {
+      "run_equivalents": 0.15,
+      "cost_usd": 288.0
+    }
+  },
+  "central_compute_total_usd": 6239.999999999999,
+  "compute_scenarios": {
+    "lean": {
+      "run_equivalents": 2.05,
+      "usd": 3935.9999999999995
+    },
+    "central": {
+      "run_equivalents": 3.25,
+      "usd": 6240.0
+    },
+    "broader": {
+      "run_equivalents": 5,
+      "usd": 9600.0
+    }
+  },
+  "data_unit_cost_usd_per_source_family": {
+    "metadata": 0.000875,
+    "mirror": 0.0043,
+    "two_edits": 0.01,
+    "quarter_adversarial_variant": 0.00125,
+    "three_clause_splits": 0.00825
+  },
+  "optional_new_data_scenarios": [
+    {
+      "source_families": 100000,
+      "generation_and_labeling_usd": 2467.5,
+      "combined_with_central_compute_usd": 8707.5
+    },
+    {
+      "source_families": 250000,
+      "generation_and_labeling_usd": 6168.75,
+      "combined_with_central_compute_usd": 12408.75
+    },
+    {
+      "source_families": 1000000,
+      "generation_and_labeling_usd": 24675.0,
+      "combined_with_central_compute_usd": 30915.0
+    }
+  ]
+}

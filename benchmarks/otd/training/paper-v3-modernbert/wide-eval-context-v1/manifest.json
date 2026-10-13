@@ -1,0 +1,21 @@
+{
+  "version": "wide-eval-context-v1",
+  "created_at": 1790823282.5724502,
+  "evaluation_rows": 18222,
+  "unique_evaluation_texts": 18222,
+  "by_dataset": {
+    "human_paper_remaining": 18222
+  },
+  "checkpoint_sha256": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14",
+  "thresholds": {
+    "frozen_at": 1790821967.5103025,
+    "target_human_fpr": 0.01,
+    "tokens": 0.8947894573211671,
+    "sentences": 0.9562724232673646
+  },
+  "new_generation_calls": 0,
+  "metric_policy": "Sensitivity analysis added after observing paragraph-only false positives. Same frozen checkpoint/thresholds, same selected human focal paragraphs, original adjacent paragraphs supplied as context. Primary span metrics mask neighbors. Not an independent test cohort. No training or calibration.",
+  "files": {
+    "suite.jsonl": "41cd10a5ff99e60feb130cab6905c7ebcd33be1302e555dd51b3944f25087e09"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-03T18:27:39.478443+00:00",
+  "verification": "Local SHA256 matched live Hugging Face LFS metadata at pinned revision; no model assets downloaded.",
+  "deleted": [
+    {
+      "directory": "models/laya",
+      "repo": "convaiinnovations/laya",
+      "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "bytes": 842609210,
+      "allocated_bytes": 842612736,
+      "sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+      "remote_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+      "verified": true,
+      "deleted_confirmed": true
+    },
+    {
+      "directory": "models/meld-v8",
+      "repo": "anon-review-meld-2026/meld",
+      "revision": "8990324abd92e1fa17072f6887ea1e5c1cef5abc",
+      "bytes": 4112570616,
+      "allocated_bytes": 4112572416,
+      "sha256": "86700f566059951fc9326a6b04234256d31691b61b4c0a738422616f0d62d303",
+      "remote_sha256": "86700f566059951fc9326a6b04234256d31691b61b4c0a738422616f0d62d303",
+      "verified": true,
+      "deleted_confirmed": true
+    },
+    {
+      "directory": "models/editlens-qwen3-4b-merged-v3",
+      "repo": "DarrenJiaImbue/editlens-qwen3-4b-merged-v3",
+      "revision": "33716e3667e3514a92cd1e9a6f1511655f12ef86",
+      "bytes": 8045013072,
+      "allocated_bytes": 8045015040,
+      "sha256": "5a48d4390aea366e748ecc2872aa0adc20bfb536f73ad6b9c955047296618d20",
+      "remote_sha256": "5a48d4390aea366e748ecc2872aa0adc20bfb536f73ad6b9c955047296618d20",
+      "verified": true,
+      "deleted_confirmed": true
+    }
+  ],
+  "preserved": {
+    "models/meld-v5/model.safetensors": "Recorded remote revision returned HTTP 404; current repo exposes only v8 weights."
+  },
+  "copy_search_roots": [
+    "/Users/alicerigg/codex-projects",
+    "/Users/alicerigg/.cache/huggingface",
+    "/private/tmp"
+  ],
+  "extra_copies_found": false,
+  "note": "Tokenizers, configs, download manifests, and custom runtime profiles preserved."
+}

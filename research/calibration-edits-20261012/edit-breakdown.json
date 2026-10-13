@@ -1,0 +1,502 @@
+{
+ "oct7": {
+  "one | all | claude-fable-5-1": {
+   "n": 926,
+   "tpr_at_1pct": 0.9946
+  },
+  "one | all | claude-haiku-4-5": {
+   "n": 201,
+   "tpr_at_1pct": 0.99
+  },
+  "one | all | claude-opus-5-5": {
+   "n": 325,
+   "tpr_at_1pct": 0.9969
+  },
+  "one | all | claude-sonnet-5-5": {
+   "n": 316,
+   "tpr_at_1pct": 0.9873
+  },
+  "one | all | deepseek/deepseek-v4.1-flash": {
+   "n": 429,
+   "tpr_at_1pct": 0.9953
+  },
+  "one | all | gpt-6-luna": {
+   "n": 222,
+   "tpr_at_1pct": 0.9865
+  },
+  "one | all | gpt-6-sol": {
+   "n": 357,
+   "tpr_at_1pct": 1.0
+  },
+  "one | all | gpt-6.1-sol": {
+   "n": 88,
+   "tpr_at_1pct": 1.0
+  },
+  "one | all | xiaomi/mimo-v2.6-flash": {
+   "n": 213,
+   "tpr_at_1pct": 0.9906
+  },
+  "one | all | z-ai/glm-5.3-flash": {
+   "n": 212,
+   "tpr_at_1pct": 1.0
+  },
+  "one | heldout-writers | claude-haiku-4-5": {
+   "n": 153,
+   "tpr_at_1pct": 0.9935
+  },
+  "one | heldout-writers | claude-opus-5-5": {
+   "n": 250,
+   "tpr_at_1pct": 0.996
+  },
+  "one | heldout-writers | claude-sonnet-5-5": {
+   "n": 251,
+   "tpr_at_1pct": 0.9841
+  },
+  "one | heldout-writers | gpt-6-luna": {
+   "n": 222,
+   "tpr_at_1pct": 0.9865
+  },
+  "one | t21-heldout-v2 | claude-fable-5-1": {
+   "n": 926,
+   "tpr_at_1pct": 0.9946
+  },
+  "one | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 48,
+   "tpr_at_1pct": 0.9792
+  },
+  "one | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 75,
+   "tpr_at_1pct": 1.0
+  },
+  "one | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 65,
+   "tpr_at_1pct": 1.0
+  },
+  "one | t21-heldout-v2 | gpt-6-sol": {
+   "n": 357,
+   "tpr_at_1pct": 1.0
+  },
+  "one | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 88,
+   "tpr_at_1pct": 1.0
+  },
+  "one | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 429,
+   "tpr_at_1pct": 0.9953
+  },
+  "one | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 213,
+   "tpr_at_1pct": 0.9906
+  },
+  "one | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 212,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | claude-haiku-4-5": {
+   "n": 198,
+   "tpr_at_1pct": 0.9747
+  },
+  "para | all | claude-opus-5-5": {
+   "n": 435,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | claude-sonnet-5-5": {
+   "n": 645,
+   "tpr_at_1pct": 0.9984
+  },
+  "para | all | deepseek/deepseek-v4.1-flash": {
+   "n": 805,
+   "tpr_at_1pct": 0.9988
+  },
+  "para | all | gpt-6-sol": {
+   "n": 1280,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | gpt-6.1-sol": {
+   "n": 187,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | xiaomi/mimo-v2.6-flash": {
+   "n": 484,
+   "tpr_at_1pct": 0.9835
+  },
+  "para | all | z-ai/glm-5.3-flash": {
+   "n": 428,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 198,
+   "tpr_at_1pct": 0.9747
+  },
+  "para | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 435,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 645,
+   "tpr_at_1pct": 0.9984
+  },
+  "para | t21-heldout-v2 | gpt-6-sol": {
+   "n": 1280,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 187,
+   "tpr_at_1pct": 1.0
+  },
+  "para | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 805,
+   "tpr_at_1pct": 0.9988
+  },
+  "para | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 484,
+   "tpr_at_1pct": 0.9835
+  },
+  "para | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 428,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-fable-5-1": {
+   "n": 711,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-haiku-4-5": {
+   "n": 123,
+   "tpr_at_1pct": 0.9919
+  },
+  "two | all | claude-opus-5-5": {
+   "n": 258,
+   "tpr_at_1pct": 0.9961
+  },
+  "two | all | claude-sonnet-5-5": {
+   "n": 237,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | deepseek/deepseek-v4.1-flash": {
+   "n": 320,
+   "tpr_at_1pct": 0.9969
+  },
+  "two | all | gpt-6-luna": {
+   "n": 167,
+   "tpr_at_1pct": 0.988
+  },
+  "two | all | gpt-6-sol": {
+   "n": 259,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | gpt-6.1-sol": {
+   "n": 54,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | xiaomi/mimo-v2.6-flash": {
+   "n": 155,
+   "tpr_at_1pct": 0.9935
+  },
+  "two | all | z-ai/glm-5.3-flash": {
+   "n": 149,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | claude-haiku-4-5": {
+   "n": 95,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | claude-opus-5-5": {
+   "n": 186,
+   "tpr_at_1pct": 0.9946
+  },
+  "two | heldout-writers | claude-sonnet-5-5": {
+   "n": 186,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | gpt-6-luna": {
+   "n": 167,
+   "tpr_at_1pct": 0.988
+  },
+  "two | t21-heldout-v2 | claude-fable-5-1": {
+   "n": 711,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 28,
+   "tpr_at_1pct": 0.9643
+  },
+  "two | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 72,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 51,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | gpt-6-sol": {
+   "n": 259,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 54,
+   "tpr_at_1pct": 1.0
+  },
+  "two | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 320,
+   "tpr_at_1pct": 0.9969
+  },
+  "two | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 155,
+   "tpr_at_1pct": 0.9935
+  },
+  "two | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 149,
+   "tpr_at_1pct": 1.0
+  }
+ },
+ "new": {
+  "one | all | claude-fable-5-1": {
+   "n": 926,
+   "tpr_at_1pct": 0.9968
+  },
+  "one | all | claude-haiku-4-5": {
+   "n": 201,
+   "tpr_at_1pct": 0.99
+  },
+  "one | all | claude-opus-5-5": {
+   "n": 325,
+   "tpr_at_1pct": 0.9969
+  },
+  "one | all | claude-sonnet-5-5": {
+   "n": 316,
+   "tpr_at_1pct": 0.9968
+  },
+  "one | all | deepseek/deepseek-v4.1-flash": {
+   "n": 429,
+   "tpr_at_1pct": 1.0
+  },
+  "one | all | gpt-6-luna": {
+   "n": 222,
+   "tpr_at_1pct": 0.9865
+  },
+  "one | all | gpt-6-sol": {
+   "n": 357,
+   "tpr_at_1pct": 0.9972
+  },
+  "one | all | gpt-6.1-sol": {
+   "n": 88,
+   "tpr_at_1pct": 1.0
+  },
+  "one | all | xiaomi/mimo-v2.6-flash": {
+   "n": 213,
+   "tpr_at_1pct": 0.9906
+  },
+  "one | all | z-ai/glm-5.3-flash": {
+   "n": 212,
+   "tpr_at_1pct": 1.0
+  },
+  "one | heldout-writers | claude-haiku-4-5": {
+   "n": 153,
+   "tpr_at_1pct": 0.9935
+  },
+  "one | heldout-writers | claude-opus-5-5": {
+   "n": 250,
+   "tpr_at_1pct": 0.996
+  },
+  "one | heldout-writers | claude-sonnet-5-5": {
+   "n": 251,
+   "tpr_at_1pct": 0.996
+  },
+  "one | heldout-writers | gpt-6-luna": {
+   "n": 222,
+   "tpr_at_1pct": 0.9865
+  },
+  "one | t21-heldout-v2 | claude-fable-5-1": {
+   "n": 926,
+   "tpr_at_1pct": 0.9968
+  },
+  "one | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 48,
+   "tpr_at_1pct": 0.9792
+  },
+  "one | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 75,
+   "tpr_at_1pct": 1.0
+  },
+  "one | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 65,
+   "tpr_at_1pct": 1.0
+  },
+  "one | t21-heldout-v2 | gpt-6-sol": {
+   "n": 357,
+   "tpr_at_1pct": 0.9972
+  },
+  "one | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 88,
+   "tpr_at_1pct": 1.0
+  },
+  "one | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 429,
+   "tpr_at_1pct": 1.0
+  },
+  "one | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 213,
+   "tpr_at_1pct": 0.9906
+  },
+  "one | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 212,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | claude-haiku-4-5": {
+   "n": 198,
+   "tpr_at_1pct": 0.9495
+  },
+  "para | all | claude-opus-5-5": {
+   "n": 435,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | claude-sonnet-5-5": {
+   "n": 645,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | deepseek/deepseek-v4.1-flash": {
+   "n": 805,
+   "tpr_at_1pct": 0.9963
+  },
+  "para | all | gpt-6-sol": {
+   "n": 1280,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | gpt-6.1-sol": {
+   "n": 187,
+   "tpr_at_1pct": 1.0
+  },
+  "para | all | xiaomi/mimo-v2.6-flash": {
+   "n": 484,
+   "tpr_at_1pct": 0.9855
+  },
+  "para | all | z-ai/glm-5.3-flash": {
+   "n": 428,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 198,
+   "tpr_at_1pct": 0.9495
+  },
+  "para | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 435,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 645,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | gpt-6-sol": {
+   "n": 1280,
+   "tpr_at_1pct": 1.0
+  },
+  "para | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 187,
+   "tpr_at_1pct": 1.0
+  },
+  "para | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 805,
+   "tpr_at_1pct": 0.9963
+  },
+  "para | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 484,
+   "tpr_at_1pct": 0.9855
+  },
+  "para | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 428,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-fable-5-1": {
+   "n": 711,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-haiku-4-5": {
+   "n": 123,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-opus-5-5": {
+   "n": 258,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | claude-sonnet-5-5": {
+   "n": 237,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | deepseek/deepseek-v4.1-flash": {
+   "n": 320,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | gpt-6-luna": {
+   "n": 167,
+   "tpr_at_1pct": 0.994
+  },
+  "two | all | gpt-6-sol": {
+   "n": 259,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | gpt-6.1-sol": {
+   "n": 54,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | xiaomi/mimo-v2.6-flash": {
+   "n": 155,
+   "tpr_at_1pct": 1.0
+  },
+  "two | all | z-ai/glm-5.3-flash": {
+   "n": 149,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | claude-haiku-4-5": {
+   "n": 95,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | claude-opus-5-5": {
+   "n": 186,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | claude-sonnet-5-5": {
+   "n": 186,
+   "tpr_at_1pct": 1.0
+  },
+  "two | heldout-writers | gpt-6-luna": {
+   "n": 167,
+   "tpr_at_1pct": 0.994
+  },
+  "two | t21-heldout-v2 | claude-fable-5-1": {
+   "n": 711,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | claude-haiku-4-5": {
+   "n": 28,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | claude-opus-5-5": {
+   "n": 72,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | claude-sonnet-5-5": {
+   "n": 51,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | gpt-6-sol": {
+   "n": 259,
+   "tpr_at_1pct": 1.0
+  },
+  "two | t21-heldout-v2 | gpt-6.1-sol": {
+   "n": 54,
+   "tpr_at_1pct": 1.0
+  },
+  "two | wide1-heldout | deepseek/deepseek-v4.1-flash": {
+   "n": 320,
+   "tpr_at_1pct": 1.0
+  },
+  "two | wide1-heldout | xiaomi/mimo-v2.6-flash": {
+   "n": 155,
+   "tpr_at_1pct": 1.0
+  },
+  "two | wide1-heldout | z-ai/glm-5.3-flash": {
+   "n": 149,
+   "tpr_at_1pct": 1.0
+  }
+ }
+}

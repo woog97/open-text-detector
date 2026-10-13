@@ -1,0 +1,13 @@
+{
+  "registry_entries": 48,
+  "weighted_sources": 37,
+  "category_count": 9,
+  "paper_weight_sum": 99.9,
+  "within_category_weight_sums_valid": true,
+  "planned_total": 100000,
+  "actual_admitted_total": 0,
+  "evidence_files_verified": 20,
+  "evidence_failed": 0,
+  "registry_sha256": "55fc53b1ae4ce738ae8d7050776984a2ce78dba88dc210268241258292b58940",
+  "plan_sha256": "2c0e3fd23810027d0eb2068f31c24fca79ebde3ba768d07f66b9cd7d29dcfb1b"
+}

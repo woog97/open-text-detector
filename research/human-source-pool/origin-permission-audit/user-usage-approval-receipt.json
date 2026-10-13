@@ -1,0 +1,25 @@
+{
+  "approval_id": "user-all-stage1-usage-20261003-v1",
+  "approved_at": "2026-10-03T00:36:33.072693+00:00",
+  "approved_by": "user",
+  "rows": 100000,
+  "scope": "All Stage 1 passages, including passed, failed and could_not_verify audit results.",
+  "user_instruction": "I approve the use of all of them, approve all of them for usage",
+  "meaning": "Explicit user usage decision. Audit findings and recorded licenses remain separate evidence.",
+  "usage_fields": {
+    "usage_approved": true,
+    "usage_status": "approved_by_user",
+    "usage_approved_by": "user",
+    "usage_approved_at": "2026-10-03T00:36:33.072693+00:00",
+    "usage_approval_id": "user-all-stage1-usage-20261003-v1"
+  },
+  "parent_revision": "0e444ce91099245f6eaf50ff5dd09cab370e4031",
+  "approved_checkpoint": "/tmp/pangram-human-active-20261002/user-usage-approval-20261003/approved-collection.sqlite3",
+  "approved_checkpoint_sha256": "172a7b10ba353149a561a4257dfcf633ae09fbd7b236bee8457f855d5731f602",
+  "all_prior_record_fields_unchanged": true,
+  "repo_id": "open-text-detector/human-source-mix-v1",
+  "revision": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+  "private": true,
+  "state": "verified",
+  "files_verified": 37
+}

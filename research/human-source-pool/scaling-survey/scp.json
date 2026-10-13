@@ -1,0 +1,76 @@
+{
+  "source_id": "scp",
+  "audited_at": "2026-10-02T20:04:28Z",
+  "original_quota": 4444,
+  "baseline_candidates": 1893,
+  "original_shortfall": 2551,
+  "quota_filled_does_not_assure_scaling": true,
+  "cause": "Cached historical tale inventory and remaining-span selector exhausted; Wayback acquisition stopped after network errors; verified HTML originals were not yet extracted.",
+  "historical_inventory": {
+    "cccc_rows_scanned": 6332977,
+    "known_tale_captures": 3238,
+    "old_wayback_attempts": 25,
+    "verified_original_captures": 17,
+    "old_worker_stopped": true,
+    "old_errors": {
+      "ReadTimeout": 4,
+      "HTTPError": 1,
+      "ConnectionError": 3
+    }
+  },
+  "new_staged_candidates": 51,
+  "new_length_bins": {
+    "0": 41,
+    "1": 10
+  },
+  "new_parent_documents": 17,
+  "status": "background_bounded_acquisition_running",
+  "worker": {
+    "pid": 193923,
+    "start_ticks": "12194884",
+    "launched_at": "2026-10-02T20:02:42Z",
+    "remote_root": "/tmp/pangram-scp-scale-20261002"
+  },
+  "bounds": {
+    "urls": 250,
+    "acquisition_cycles": 3,
+    "per_document_cap": 3,
+    "network_consecutive_error_cutoff_per_cycle": 3,
+    "backoff_seconds": [
+      60,
+      120,
+      240
+    ]
+  },
+  "persistence_worker": {
+    "pid": 193999,
+    "start_ticks": "12205173",
+    "max_minutes": 40
+  },
+  "durability": {
+    "bucket": "open-text-detector/training-storage",
+    "prefix": "workspace/human-source-mix-v2-recovered-20261002/scaling-survey/scp/",
+    "package_bytes": 1529519,
+    "verification": "SDK upload and committed size; full GET checksum pending"
+  },
+  "validation": [
+    "original HTML SHA256 and CDX SHA1 match",
+    "pre2022 CDX and Memento capture date",
+    "archived CC BY-SA3.0 link",
+    "pinned English tale identity and current metadata association",
+    "excluded baseline parent IDs and normalized exact duplicates",
+    "at most3 nonoverlapping passages per parent",
+    "reconstructed HTML extraction equals saved original extracted text",
+    "passage offsets and SHA256 checked",
+    "SQLite integrity_check passed"
+  ],
+  "limitations": [
+    "51 recovered candidates are short/medium; not proof the original long-bin gaps can be filled",
+    "Current creator credit is not independently verified historical credit",
+    "Extraction/genre, protected overlap, near-duplicate and family grouping reviews remain pending",
+    "All records quarantined; zero training admitted",
+    "No global merge and no mutation to the completed100k release",
+    "Finite bounded250URL search is not a measured source ceiling"
+  ],
+  "recovery": "Inspect process identity and worker-status.json/extraction-status.json/progress.json/durability.json under remote_root; reacquisition receipts are resumable. Preserve older stages and originals."
+}

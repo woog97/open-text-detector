@@ -1,0 +1,10 @@
+{
+  "state": "complete",
+  "profiles": [
+    "workflow",
+    "comparison",
+    "assistance",
+    "manuscripts"
+  ],
+  "partial": false
+}

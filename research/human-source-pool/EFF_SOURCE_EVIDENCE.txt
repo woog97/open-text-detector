@@ -1,0 +1,35 @@
+EFF HISTORICAL DEEPLINKS — COMPLETED ISOLATED STAGE, 2026-10-02
+
+Collected and validated 415 quarantined candidate passages from 180 distinct original EFF articles. Target821 remains unchanged; remaining406 require more archive inventory. This is NOT exhaustion of the entire EFF source. No production merge or publication occurred. No dataset was downloaded to the Mac, and /data FUSE was not used or written.
+
+Remote staging: /tmp/pangram-eff-staging-20261002
+Package: accepted-pairs.jsonl.gz
+Bytes: 8,062,288
+SHA256: 73b0ba6846647e6eff77a6962f0e890540303a3610be6eba8a6a85ee4e2798ce
+Receipts: package-manifest.json, source-manifest.json, source-approval.json
+Checkpoint: progress/eff.json
+Isolated database: collection.sqlite3, full integrity_check OK
+Original compressed WARC records: warc/*.warc.gz
+Code: pipeline/ingest_eff.py and dependencies; adapter SHA recorded in source-manifest.json.
+
+Worker PID29566/start_ticks7736209 finished normally (zombie when checked). Subsequent author-attribution completion and validation were synchronous and finished. No active EFF worker remains. Preserve remote /tmp staging through the repaired private-storage path before rebuilding the Space. Parent/root or reviews agent owns the coordinated global merge.
+
+Archive evidence: Common Crawl CC-MAIN-2021-49 captures fetched with byte ranges from data.commoncrawl.org. The 2021 URL index returned203 records, reduced to197 unique canonical URLs. Each accepted response verifies HTTP200, WARC-Date before2022, matching target URL, and the actual SHA1 payload digest against the archive index. Article publication metadata also predates2022. This proves an archived text version predates2022 instead of assuming that from a current page's publication date.
+
+Acquisition queries and remaining work:
+- Saved cc-index-2021.jsonl: www.eff.org/deeplinks/2021/*, status200, HTML.
+- Whole2020 and twelve narrower2020 monthly queries returned HTTP504 despite bounded retry.
+- Alternate2020 prefix syntax and CC-MAIN-2021-43 inventories for2020/2021 also returned504.
+- A contemporaneous copyright-policy capture query returned504.
+Do not classify all EFF material as exhausted. Retry these concrete archive inventories when the index service is healthy or use another verifiable pre2022 archive. Existing adapter supports actual crawl identity from each WARC path. Newly obtained index JSONL files go in staging with cc-index-20*.jsonl names, then rerun the same collector after checking its process/lock; stored documents and global-within-stage exact dedup are preserved. No source reallocation is authorized by this shortfall record.
+
+Extraction and provenance:
+Select only full English Deeplinks articles, original EFF bylines and date metadata. Exclude explicit external-republication notices. Extract paragraph text only from the article body; omit blockquotes, inline quote blocks, figures/images, scripts, forms and widgets. Preserve HTML inline-node spacing, spelling and punctuation; no model or editorial rewriting. Candidate offsets refer to the deterministic decoded paragraph-text original stored in raw.record.text. Original HTML, WARC headers, WARC compressed hash, payload digest, exact range locator and archived bytes remain available for verification.
+
+Complete byline text is retained, including authors present as plain text rather than hyperlinks. The original414-row stage used linked author names; all414 were updated with complete bylines without changing source text, and one additional candidate became eligible. Prior database, adapter and package are preserved under author-attribution-v1. The final415-row package above includes completed attribution. No old source bytes were deleted.
+
+Terms review reused from source-approvals.json: EFF original material CC BY4.0 unless otherwise noted. source-approval.json retains the existing review and evidence hashes. The current reviewed EFF policy is the permission basis; an unavailable archived copyright page is not claimed to prove a historical license version. Rows retain author names, URLs, publication date, capture date, category=general_web, source_id=eff and original license evidence. Inline quotation, rights, author-family, protected-overlap and extraction reviews remain flagged. All rows have training_eligible=false.
+
+Validation: three focused tests pass locally and on the Space. They test capture/digest/date rejection, article-only extraction including a page-wide sharing-class regression, complete linked/unlinked bylines, excluded quotations/republications, source tags, HTML retention and exact extracted-text offsets. All415 packaged rows pass original/passage hash and offset checks; SQLite integrity_check passes. Initial collection took23.68seconds; attribution completion/resume pass took6.47seconds.
+
+UPDATE 07:48UTC: Root merged all415 candidates into healthy active DB with no duplicate losses, preserved217 stage files in private bucket stages/eff, and saved durable standalone checkpoint. ACTIVE_COLLECTION.json contains exact paths/hash. Published HF remains75,691 until next release. No EFF source or stage text was downloaded to Mac.

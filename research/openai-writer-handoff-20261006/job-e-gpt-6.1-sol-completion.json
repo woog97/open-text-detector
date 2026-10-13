@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "job": "E",
+    "writer": "gpt-6.1-sol",
+    "assigned": 210,
+    "returned": 210,
+    "accepted": 209,
+    "acceptance_of_returned": 0.995,
+    "acceptance_of_assigned": 0.995,
+    "rejects": {
+      "copies prev_context": 1
+    },
+    "heldout": 0,
+    "by_kind": {
+      "draft": 104,
+      "rewrite": 105
+    },
+    "ai_chars": 221874
+  },
+  "verified_ai_rows": 209,
+  "verified_matched_human_rows": 209,
+  "other_existing_rows_preserved": 2356,
+  "finished_pacific": "2026-10-06T15:26:43.370927-07:00",
+  "started_pacific": "2026-10-06T15:20:26-07:00",
+  "model": "gpt-6.1-sol",
+  "job": "E",
+  "batches_done": 5,
+  "model_availability_problems": []
+}

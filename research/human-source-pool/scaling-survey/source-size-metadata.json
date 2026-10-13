@@ -1,0 +1,486 @@
+{
+  "checked_at": "2026-10-02T20:29:00.335407+00:00",
+  "sources": [
+    {
+      "source": "gutenberg",
+      "repo": "common-pile/project_gutenberg",
+      "revision": "01dc90a5002f8977c7fb03a372c14bca29c65cf1",
+      "url": "https://huggingface.co/datasets/common-pile/project_gutenberg/raw/01dc90a5002f8977c7fb03a372c14bca29c65cf1/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Project Gutenberg\n---\n# Project Gutenberg\n\n## Description\n[Project Gutenberg](https://www.gutenberg.org) is an online collection of over 75,000 digitized books available as plain text. \nWe use all books that are 1) English and 2) marked as in the Public Domain according to the provided metadata. \nAdditionally, we include any books that are part of the [PG19](https://huggingface.co/datasets/deepmind/pg19) dataset, which only includes books that are over 100 years old.\nMinimal preprocessing is applied to remove the Project Gutenberg header and footers, but many scanned books include preamble information about who digitized them.\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 71,810 | 26.2 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Project Gutenberg dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/project_gutenberg_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```\n```bibtex\n@article{raecompressive2019,\n  author = {Rae, Jack W and Potapenko, Anna and Jayakumar, Siddhant M and\n            Hillier, Chloe and Lillicrap, Timothy P},\n  title = {Compressive Transformers for Long-Range Sequence Modelling},\n  journal = {arXiv preprint},\n  url = {https://arxiv.org/abs/1911.05507},\n  year = {2019},\n}\n```",
+      "stats_lines": [
+        [
+          10,
+          "[Project Gutenberg](https://www.gutenberg.org) is an online collection of over 75,000 digitized books available as plain text. "
+        ],
+        [
+          15,
+          "## Dataset Statistics"
+        ],
+        [
+          16,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          18,
+          "| 71,810 | 26.2 |"
+        ]
+      ]
+    },
+    {
+      "source": "pmc",
+      "repo": "common-pile/pubmed",
+      "revision": "648b8cfc93953ca0663a9c96a8d842a91b98fb64",
+      "url": "https://huggingface.co/datasets/common-pile/pubmed/raw/648b8cfc93953ca0663a9c96a8d842a91b98fb64/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: PubMed\n---\n# PubMed\n\n## Description\n[PubMed Central](https://pmc.ncbi.nlm.nih.gov/) is an open-access archive of biomedical and life sciences research papers maintained by the U.S. National Institutes of Health\u2019s National Library of Medicine. \nWe collected papers from PubMed whose metadata indicated that the publishing journal had designated a CC BY, CC BY-SA, or CC0 license. \nPubMed stores the text content of each article as a single nXML file, which we convert to markdown using [pandoc](https://pandoc.org/).\nPer-document license information is available in the `license` entry of the `metadata` field of each example.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 4,068,867 | 158.9 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the PubMed dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/pubmed_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          16,
+          "## Dataset Statistics"
+        ],
+        [
+          17,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          19,
+          "| 4,068,867 | 158.9 |"
+        ]
+      ]
+    },
+    {
+      "source": "arxiv",
+      "repo": "common-pile/arxiv_papers",
+      "revision": "963fe980c55b353980653f1a27c1dc0c8a2d7058",
+      "url": "https://huggingface.co/datasets/common-pile/arxiv_papers/raw/963fe980c55b353980653f1a27c1dc0c8a2d7058/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: ArXiv Papers\n---\n# ArXiv Papers\n\n## Description\n[ArXiv](https://arxiv.org) is an online open-access repository of over 2.4 million scholarly papers covering fields such as computer science, mathematics, physics, quantitative biology, economics, and more. \nWhen uploading papers, authors can choose from a variety of licenses. \nThis dataset includes text from all papers uploaded under CC BY, CC BY-SA, and CC0 licenses through a three-step pipeline: \nfirst, the latex source files for openly licensed papers were downloaded from [ArXiv\u2019s bulk-access S3 bucket](https://info.arxiv.org/help/bulk_data_s3.html); \nnext, the [LATEXML](https://math.nist.gov/~BMiller/LaTeXML/manual/intro/) conversion tool was used to convert these source files into a single HTML document; \nfinally, the HTML was converted to plaintext using the [Trafilatura](https://github.com/adbar/trafilatura) HTML-processing library.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 321,336 | 21 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the ArXiv Papers dataset. If you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/arxiv_papers_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          18,
+          "## Dataset Statistics"
+        ],
+        [
+          19,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          21,
+          "| 321,336 | 21 |"
+        ]
+      ]
+    },
+    {
+      "source": "pes2o",
+      "repo": "common-pile/peS2o",
+      "revision": "2caeba1585aaafa3c965410d80af85b09ed11cd9",
+      "url": "https://huggingface.co/datasets/common-pile/peS2o/raw/2caeba1585aaafa3c965410d80af85b09ed11cd9/README.md",
+      "readme": "---\nconfigs:\n- config_name: default\n  data_files:\n  - split: train\n    path:\n    - v0/documents/*.gz\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: PeS2o\n---\n\n# PeS2o\n\n## Description\nThis dataset is a version of the [peS2o dataset](https://huggingface.co/datasets/allenai/peS2o) restricted to openly licensed articles. \nPes2o is derived from [S2ORC](https://github.com/allenai/s2orc), a corpus of openly licensed abstract and full-text papers that have been converted to a structured format using [Grobid](https://github.com/kermitt2/grobid). \nStarting from Grobid\u2019s XML output, peS2o filters papers that are too short, have incorrect metadata, are in languages other than English, and contain OCR errors using a combination of heuristic- and model-based filtering steps. \nPlease refer to the peS2o [datasheet]((https://huggingface.co/datasets/allenai/peS2o)) and [code](https://github.com/allenai/peS2o) for more details on the peS2o processing pipeline.\nFor the openly licensed articles in this collection, per-document license information is available in the `license` entry of the `metadata` field of each example.\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 6,294,020 | 188.2 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the openly licensed peS2o dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/peS2o_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```\n```bibtex\n@techreport{peS2o,\n    author = {Luca Soldaini and Kyle Lo},\n    year = 2023,\n    title = {{peS2o (Pretraining Efficiently on S2ORC) Dataset}},\n    institution = {{Allen Institute for AI}},\n    note = {ODC-By, \\url{https://github.com/allenai/pes2o}}\n}\n```\n\n{{ also add an additional citation if the dataset is sourced from some prior work }}\n<!---  \n# Dolma PeS2o (Creative Commons & Public Domain subset)\n\nThis repository contains the Creative Common and public domain subset of open access papers in [peS2o](https://huggingface.co/allenai/peS2o) . Cutoff date of the collection is October 6, 2024, with train set containing papers up to August 31, 2024. \n\n| Property         | Train  | Validation |\n|------------------|--------|------------|\n| Whitespace words | 35.4 B | 0.25 B     |\n| UTF-8 characters | 188 B  | 1.3 B      |\n| Documents        | 6.25 M | 39.1 K     |\n\nLicenses for documents in this set are distributed as follows:\n\n| License       | Train     | Validation |\n|---------------|-----------|------------|\n| CC-BY         | 6,088,325 | 37,754     |\n| CC-BY-SA      | 120,150   | 1,231      |\n| CC0           | 36,373    | 121        |\n| public domain | 10,060    | 6          |\n\nThe following fields of study are covered (documents belong to one or more field; field of study is determined by [Semantic Scholar](https://www.semanticscholar.org/faq/how-does-semantic-scholar-determine-a-papers-field-of-study)):\n\n| Field of Study                 | Train     | Validation |\n|--------------------------------|-----------|------------|\n| Medicine                       | 2,435,244 | 23,734     |\n| Biology                        | 1,518,478 | 8,879      |\n| Environmental Science          | 993,499   | 7,601      |\n| Engineering                    | 656,021   | 5,005      |\n| Computer Science               | 462,320   | 3,003      |\n| Materials Science              | 416,045   | 3,166      |\n| Physics                        | 413,461   | 1,285      |\n| Chemistry                      | 406,429   | 2,781      |\n| Psychology                     | 364,441   | 2,126      |\n| Education                      | 220,014   | 1,532      |\n| Business                       | 193,536   | 946        |\n| Economics                      | 185,716   | 921        |\n| Agricultural and Food Sciences | 333,776   | 2,013      |\n| Sociology                      | 137,257   | 1,535      |\n| Mathematics                    | 135,676   | 199        |\n| Political Science              | 106,748   | 378        |\n| Geology                        | 67,258    | 217        |\n| Geography                      | 44,269    | 257        |\n| Linguistics                    | 41,737    | 228        |\n| History                        | 36,848    | 192        |\n| Law                            | 30,888    | 251        |\n| Philosophy                     | 27,518    | 148        |\n| Art                            | 26,658    | 75         |\n--->",
+      "stats_lines": [
+        [
+          23,
+          "## Dataset Statistics"
+        ],
+        [
+          24,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          26,
+          "| 6,294,020 | 188.2 |"
+        ],
+        [
+          65,
+          "| Documents        | 6.25 M | 39.1 K     |"
+        ],
+        [
+          71,
+          "| CC-BY         | 6,088,325 | 37,754     |"
+        ],
+        [
+          72,
+          "| CC-BY-SA      | 120,150   | 1,231      |"
+        ],
+        [
+          73,
+          "| CC0           | 36,373    | 121        |"
+        ],
+        [
+          74,
+          "| public domain | 10,060    | 6          |"
+        ],
+        [
+          80,
+          "| Medicine                       | 2,435,244 | 23,734     |"
+        ],
+        [
+          81,
+          "| Biology                        | 1,518,478 | 8,879      |"
+        ],
+        [
+          82,
+          "| Environmental Science          | 993,499   | 7,601      |"
+        ],
+        [
+          83,
+          "| Engineering                    | 656,021   | 5,005      |"
+        ],
+        [
+          84,
+          "| Computer Science               | 462,320   | 3,003      |"
+        ],
+        [
+          85,
+          "| Materials Science              | 416,045   | 3,166      |"
+        ],
+        [
+          86,
+          "| Physics                        | 413,461   | 1,285      |"
+        ],
+        [
+          87,
+          "| Chemistry                      | 406,429   | 2,781      |"
+        ],
+        [
+          88,
+          "| Psychology                     | 364,441   | 2,126      |"
+        ],
+        [
+          89,
+          "| Education                      | 220,014   | 1,532      |"
+        ],
+        [
+          90,
+          "| Business                       | 193,536   | 946        |"
+        ],
+        [
+          91,
+          "| Economics                      | 185,716   | 921        |"
+        ],
+        [
+          92,
+          "| Agricultural and Food Sciences | 333,776   | 2,013      |"
+        ],
+        [
+          93,
+          "| Sociology                      | 137,257   | 1,535      |"
+        ],
+        [
+          94,
+          "| Mathematics                    | 135,676   | 199        |"
+        ],
+        [
+          95,
+          "| Political Science              | 106,748   | 378        |"
+        ],
+        [
+          96,
+          "| Geology                        | 67,258    | 217        |"
+        ],
+        [
+          97,
+          "| Geography                      | 44,269    | 257        |"
+        ],
+        [
+          98,
+          "| Linguistics                    | 41,737    | 228        |"
+        ],
+        [
+          99,
+          "| History                        | 36,848    | 192        |"
+        ],
+        [
+          100,
+          "| Law                            | 30,888    | 251        |"
+        ],
+        [
+          101,
+          "| Philosophy                     | 27,518    | 148        |"
+        ],
+        [
+          102,
+          "| Art                            | 26,658    | 75         |"
+        ]
+      ]
+    },
+    {
+      "source": "pressbooks",
+      "repo": "common-pile/pressbooks",
+      "revision": "29fa162fc78277b160a7010f18086b5189ffb761",
+      "url": "https://huggingface.co/datasets/common-pile/pressbooks/raw/29fa162fc78277b160a7010f18086b5189ffb761/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: PressBooks\n---\n# PressBooks\n\n## Description\n[PressBooks](https://pressbooks.com) is a searchable catalog of over 8,000 open access books. \nTo collect openly licensed content from PressBooks we construct a search query to retrieve URLs for all books written in English and listed as public domain or under CC BY or CC BY-SA licenses. \nFor each matched book, we collect its contents directly from the publicly available web version provided by PressBooks.\nPer-document license information is available in the `license` entry of the `metadata` field of each example.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 106,881  | 1.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n\n## Other Versions\nThis is the \"raw\" version of the PressBooks dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/pressbooks_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          10,
+          "[PressBooks](https://pressbooks.com) is a searchable catalog of over 8,000 open access books. "
+        ],
+        [
+          16,
+          "## Dataset Statistics"
+        ],
+        [
+          17,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          19,
+          "| 106,881  | 1.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "libretexts",
+      "repo": "common-pile/libretexts",
+      "revision": "d4ce4b1edf95888b24992db3bbb2ae8e2bf6c22f",
+      "url": "https://huggingface.co/datasets/common-pile/libretexts/raw/d4ce4b1edf95888b24992db3bbb2ae8e2bf6c22f/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: LibreTexts\n---\n# LibreTexts\n\n## Description\n[LibreTexts](https://libretexts.org) is an online platform that provides a catalog of over 3,000 open-access textbooks. \nTo collect openly licensed content from LibreTexts we gather links to all textbooks in the catalog and check each each textbook section for a license statement indicating that it is in the public domain or under a CC BY, CC BY-SA, or the GNU Free Documentation License. \nWe extract plaintext from these textbook sections directly from the HTML pages hosted on the LibreTexts website.\nPer-document license information is available in the `license` entry of the `metadata` field of each example. \nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 62,269 | 5.3  |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the LibreTexts dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/libretexts_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          10,
+          "[LibreTexts](https://libretexts.org) is an online platform that provides a catalog of over 3,000 open-access textbooks. "
+        ],
+        [
+          16,
+          "## Dataset Statistics"
+        ],
+        [
+          17,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          19,
+          "| 62,269 | 5.3  |"
+        ]
+      ]
+    },
+    {
+      "source": "foodista",
+      "repo": "common-pile/foodista",
+      "revision": "f84290688956bdb64c90e44636fda1c02f286849",
+      "url": "https://huggingface.co/datasets/common-pile/foodista/raw/f84290688956bdb64c90e44636fda1c02f286849/README.md",
+      "readme": "---\nconfigs:\n- config_name: default\n  data_files:\n  - split: train\n    path:\n    - v0/documents/*.jsonl.gz\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Foodista\n---\n# Foodista\n\n## Description\n[Foodista](https://www.foodista.com/) is a community-maintained site with recipes, food-related news, and nutrition information. \nAll content is licensed under CC BY. \nPlain text is extracted from the HTML using a custom pipeline that includes extracting title and author information to include at the beginning of the text. \nAdditionally, comments on the page are appended to the article after we filter automatically generated comments.\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 72,090 | 0.09 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Foodista dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/foodista_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          21,
+          "## Dataset Statistics"
+        ],
+        [
+          22,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          24,
+          "| 72,090 | 0.09 |"
+        ]
+      ]
+    },
+    {
+      "source": "ubuntu_irc",
+      "repo": "common-pile/ubuntu_irc",
+      "revision": "35a9ef530c682965b53d4167e37b32f6a85aa87c",
+      "url": "https://huggingface.co/datasets/common-pile/ubuntu_irc/raw/35a9ef530c682965b53d4167e37b32f6a85aa87c/README.md",
+      "readme": "---\nconfigs:\n- config_name: default\n  data_files:\n  - split: train\n    path:\n    - v0/documents/*.gz\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Ubuntu IRC\n---\n# Ubuntu IRC\n\n## Description\nLogs of all discussions on the [Ubuntu-hosted Internet Relay Chat](https://irclogs.ubuntu.com/) (IRC) since 2004 have been archived and released into the Public Domain. \nWe downloaded all chats from all channels up until March of 2025. \nWe consider all messages for given channel on a given day as a single document. \nWe removed system messages as well as those from known bots.\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 329,115 | 6.3 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Ubuntu IRC dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/ubuntu_irc_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          21,
+          "## Dataset Statistics"
+        ],
+        [
+          22,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          24,
+          "| 329,115 | 6.3 |"
+        ]
+      ]
+    },
+    {
+      "source": "cccc",
+      "repo": "common-pile/cccc",
+      "revision": "72bd015ff2a77f8701c617096fbb5dc89dd705fe",
+      "url": "https://huggingface.co/datasets/common-pile/cccc/raw/72bd015ff2a77f8701c617096fbb5dc89dd705fe/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Creative Commons Common Crawl\n---\n\n# Creative Commons Common Crawl\n\n## Description\nThis dataset contains text from 52 Common Crawl snapshots, covering about half of Common Crawl snapshots available to date and covering all years of operations of Common Crawl up to 2024. \nWe found a higher level of duplication across this collection, suggesting that including more snapshots would lead to a modest increase in total token yield. \nFrom these snapshots, we extract HTML content using [FastWarc](https://arxiv.org/abs/2112.03103). \nThen, using a regular expression adapted from [the C4Corpus project](https://aclanthology.org/L16-1146/).\nTo ensure license accuracy, we manually verified the top 1000 domains by content volume, retaining only the 537 domains with confirmed licenses where the Creative Commons designation applied to the all text content rather than embedded media or a subset of the text on the domain.\nAs an additional check, we did a second round of annotations with the assistance of OpenAI's o3 model. Specifically, we instructed the model to examine each web domain and identify the ones that were openly licensed. We then had a second team manually annotate the cases where the AI does not approve of the domain but the original human auditor did. This resulted in **todo** domains being removed.\n\nWe extract the main content of these documents and remove boilerplate using [Resiliparse](https://github.com/chatnoir-eu/chatnoir-resiliparse).\nWe perform URL-level exact deduplication and use Bloom filters to remove near-duplicates with 80% ngram overlap. \nWe also employ rule-based filters matching [Dolma](https://arxiv.org/abs/2402.00159); \nnamely, we use [C4-derived heuristics](https://arxiv.org/abs/1910.10683) to filter pages containing Javascript, Lorem Ipsum, and curly braces {}.\nWe also apply all [Gopher rules](https://arxiv.org/abs/2112.11446) to remove low-quality pages. \nPer-document license information is available in the `license` entry of the `metadata` field of each example. \nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 51,054,412 | 260 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \nThis dataset has been updated to remove instances of incorrect licensing. \nIf you require the exact version that Comma v0.1 was trained on for non-commercial research purposes,  please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository.\n\n## Other Versions\nThis is the \"raw\" version of Creative Commons Common Crawl. If you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/cccc_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          26,
+          "## Dataset Statistics"
+        ],
+        [
+          27,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          29,
+          "| 51,054,412 | 260 |"
+        ]
+      ]
+    },
+    {
+      "source": "globalvoices",
+      "repo": "common-pile/news",
+      "revision": "13e76bdc8d49ed14d710fac7e3b61186cf74c8d3",
+      "url": "https://huggingface.co/datasets/common-pile/news/raw/13e76bdc8d49ed14d710fac7e3b61186cf74c8d3/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: News\n---\n# News\n\n## Description\nWe scrape the news sites that publish content under CC BY or CC BY-SA according to [opennewswire](https://feed.opennewswire.org/). \nThese include [360info](https://360info.org/), [Africa is a Country](https://africasacountry.com/),\n    [Alt News](https://www.altnews.in/),\n    [Balkan Diskurs](https://balkandiskurs.com/en/),\n    [Factly](https://factly.in/),\n    [Freedom of the Press Foundation](https://freedom.press/),\n    [Agenzia Fides](https://www.fides.org/en),\n    [Global Voices](https://globalvoices.org/),\n    [Meduza](https://meduza.io/en),\n    [Mekong Eye](https://www.mekongeye.com/),\n    [Milwaukee Neighborhood News Service](https://milwaukeenns.org/),\n    [Minority Africa](https://minorityafrica.org/),\n    [New Canadian Media](https://www.newcanadianmedia.ca/),\n    [SciDev.Net](https://www.scidev.net/global/),\n    [The Solutions Journalism Exchange](https://sojoexchange.solutionsjournalism.org/),\n    [Tasnim News Agency](https://www.tasnimnews.com/en), \n    [ZimFact](https://zimfact.org/).\n    [Oxpeckers](https://oxpeckers.org),\n    [Propastop](https://www.propastop.org/en/),\n    and\n    [The Public Record](https://thepublicrecord.ca/).\nPlain text was extracted from the HTML using a custom pipeline, including extraction of the title and byline to include at the beginning of each article.\nPer-document license information is available in the `license` entry of the `metadata` field of each example.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 172,308 | 0.4 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the News dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/news_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```\n",
+      "stats_lines": [
+        [
+          35,
+          "## Dataset Statistics"
+        ],
+        [
+          36,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          38,
+          "| 172,308 | 0.4 |"
+        ]
+      ]
+    },
+    {
+      "source": "wikipedia",
+      "repo": "common-pile/wikimedia",
+      "revision": "781b263a6546515543bec3968ad4743fbc152b72",
+      "url": "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Wikimedia\n---\n# Wikimedia\n\n## Description\nOfficial Wikimedia wikis are released under a CC BY-SA license.\nWe downloaded the official database dumps from March 2025 of the English-language wikis that are directly managed by the Wikimedia foundation.\nThese database dumps include the wikitext\u2014Mediawiki\u2019s custom markup language\u2014for each page as well as talk pages, where editors discuss changes made for a page. \nWe only use the most recent version of each page. \nWe converted wikitext to plain text using [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) after light adjustments in formatting to avoid errors in section ordering caused by a bug. \nBefore parsing, we converted wikitext math into LATEX math using our custom code. \nFinally, any remaining HTML tags were removed via regexes.\nThis collection includes data from the following Wikimedia wikis: \n[Wikipedia](https://wikipedia.org), \n[Wikinews](https://wikinews.org), \n[Wikibooks](https://wikibooks.org), \n[Wikiquote](https://wikiquote.org), \n[Wikisource](https://wikisource.org), \n[Wikiversity](https://wikiversity.org), \n[Wikivoyage](https://wikivoyage.org), \nand [Wiktionary](https://wiktionary.org).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 63,969,938 | 90.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Wikimedia dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/wikimedia_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          27,
+          "## Dataset Statistics"
+        ],
+        [
+          28,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          30,
+          "| 63,969,938 | 90.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "wikibooks",
+      "repo": "common-pile/wikimedia",
+      "revision": "781b263a6546515543bec3968ad4743fbc152b72",
+      "url": "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Wikimedia\n---\n# Wikimedia\n\n## Description\nOfficial Wikimedia wikis are released under a CC BY-SA license.\nWe downloaded the official database dumps from March 2025 of the English-language wikis that are directly managed by the Wikimedia foundation.\nThese database dumps include the wikitext\u2014Mediawiki\u2019s custom markup language\u2014for each page as well as talk pages, where editors discuss changes made for a page. \nWe only use the most recent version of each page. \nWe converted wikitext to plain text using [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) after light adjustments in formatting to avoid errors in section ordering caused by a bug. \nBefore parsing, we converted wikitext math into LATEX math using our custom code. \nFinally, any remaining HTML tags were removed via regexes.\nThis collection includes data from the following Wikimedia wikis: \n[Wikipedia](https://wikipedia.org), \n[Wikinews](https://wikinews.org), \n[Wikibooks](https://wikibooks.org), \n[Wikiquote](https://wikiquote.org), \n[Wikisource](https://wikisource.org), \n[Wikiversity](https://wikiversity.org), \n[Wikivoyage](https://wikivoyage.org), \nand [Wiktionary](https://wiktionary.org).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 63,969,938 | 90.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Wikimedia dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/wikimedia_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          27,
+          "## Dataset Statistics"
+        ],
+        [
+          28,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          30,
+          "| 63,969,938 | 90.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "wikisource",
+      "repo": "common-pile/wikimedia",
+      "revision": "781b263a6546515543bec3968ad4743fbc152b72",
+      "url": "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Wikimedia\n---\n# Wikimedia\n\n## Description\nOfficial Wikimedia wikis are released under a CC BY-SA license.\nWe downloaded the official database dumps from March 2025 of the English-language wikis that are directly managed by the Wikimedia foundation.\nThese database dumps include the wikitext\u2014Mediawiki\u2019s custom markup language\u2014for each page as well as talk pages, where editors discuss changes made for a page. \nWe only use the most recent version of each page. \nWe converted wikitext to plain text using [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) after light adjustments in formatting to avoid errors in section ordering caused by a bug. \nBefore parsing, we converted wikitext math into LATEX math using our custom code. \nFinally, any remaining HTML tags were removed via regexes.\nThis collection includes data from the following Wikimedia wikis: \n[Wikipedia](https://wikipedia.org), \n[Wikinews](https://wikinews.org), \n[Wikibooks](https://wikibooks.org), \n[Wikiquote](https://wikiquote.org), \n[Wikisource](https://wikisource.org), \n[Wikiversity](https://wikiversity.org), \n[Wikivoyage](https://wikivoyage.org), \nand [Wiktionary](https://wiktionary.org).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 63,969,938 | 90.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Wikimedia dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/wikimedia_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          27,
+          "## Dataset Statistics"
+        ],
+        [
+          28,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          30,
+          "| 63,969,938 | 90.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "wikinews",
+      "repo": "common-pile/wikimedia",
+      "revision": "781b263a6546515543bec3968ad4743fbc152b72",
+      "url": "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Wikimedia\n---\n# Wikimedia\n\n## Description\nOfficial Wikimedia wikis are released under a CC BY-SA license.\nWe downloaded the official database dumps from March 2025 of the English-language wikis that are directly managed by the Wikimedia foundation.\nThese database dumps include the wikitext\u2014Mediawiki\u2019s custom markup language\u2014for each page as well as talk pages, where editors discuss changes made for a page. \nWe only use the most recent version of each page. \nWe converted wikitext to plain text using [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) after light adjustments in formatting to avoid errors in section ordering caused by a bug. \nBefore parsing, we converted wikitext math into LATEX math using our custom code. \nFinally, any remaining HTML tags were removed via regexes.\nThis collection includes data from the following Wikimedia wikis: \n[Wikipedia](https://wikipedia.org), \n[Wikinews](https://wikinews.org), \n[Wikibooks](https://wikibooks.org), \n[Wikiquote](https://wikiquote.org), \n[Wikisource](https://wikisource.org), \n[Wikiversity](https://wikiversity.org), \n[Wikivoyage](https://wikivoyage.org), \nand [Wiktionary](https://wiktionary.org).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 63,969,938 | 90.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Wikimedia dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/wikimedia_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          27,
+          "## Dataset Statistics"
+        ],
+        [
+          28,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          30,
+          "| 63,969,938 | 90.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "wikivoyage",
+      "repo": "common-pile/wikimedia",
+      "revision": "781b263a6546515543bec3968ad4743fbc152b72",
+      "url": "https://huggingface.co/datasets/common-pile/wikimedia/raw/781b263a6546515543bec3968ad4743fbc152b72/README.md",
+      "readme": "---\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: Wikimedia\n---\n# Wikimedia\n\n## Description\nOfficial Wikimedia wikis are released under a CC BY-SA license.\nWe downloaded the official database dumps from March 2025 of the English-language wikis that are directly managed by the Wikimedia foundation.\nThese database dumps include the wikitext\u2014Mediawiki\u2019s custom markup language\u2014for each page as well as talk pages, where editors discuss changes made for a page. \nWe only use the most recent version of each page. \nWe converted wikitext to plain text using [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) after light adjustments in formatting to avoid errors in section ordering caused by a bug. \nBefore parsing, we converted wikitext math into LATEX math using our custom code. \nFinally, any remaining HTML tags were removed via regexes.\nThis collection includes data from the following Wikimedia wikis: \n[Wikipedia](https://wikipedia.org), \n[Wikinews](https://wikinews.org), \n[Wikibooks](https://wikibooks.org), \n[Wikiquote](https://wikiquote.org), \n[Wikisource](https://wikisource.org), \n[Wikiversity](https://wikiversity.org), \n[Wikivoyage](https://wikivoyage.org), \nand [Wiktionary](https://wiktionary.org).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 63,969,938 | 90.5 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n## Other Versions\nThis is the \"raw\" version of the Wikimedia dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/wikimedia_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          27,
+          "## Dataset Statistics"
+        ],
+        [
+          28,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          30,
+          "| 63,969,938 | 90.5 |"
+        ]
+      ]
+    },
+    {
+      "source": "stack_nontech",
+      "repo": "common-pile/stackexchange",
+      "revision": "5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c",
+      "url": "https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md",
+      "readme": "---\nconfigs:\n- config_name: default\n  data_files:\n  - split: train\n    path:\n    - '*/documents/*.gz'\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: StackExchange\n---\n# Stack Exchange\n\n## Description\n[StackExchange](https://stackexchange.com) is a collection of Q&A communities spanning a wide variety of topics.\nWhile StackExchange formerly provided structured dumps of all of their content, since July of 2024, StackExchange has stopped publishing XML dumps to the Internet Archive.\nInstead, each site can provide a logged in user with a custom url to download the dump for that site.\nThis means that dumps for defunct sites like [windowsphone.stackexchange.com](https://windowsphone.stackexchange.com/) are inaccessible.\nAdditionally, in dumps produced by the new export tool, many questions that are available in past dumps (and accessible on the site) are not present. \nFor this reason, we extract all questions and answers from community uploaded dumps from December of 2024 from the internet archive and additionally extract missing questions and answers from the last official dumps in July of 2024 to account for the deficiencies listed above. \nWe use a question, its comments, its answers and the comments on each answer as a single document. \nFollowing the display order on StackExchange, answers are ordered by the number of votes they received, with the exception that the \u201caccepted answer\u201d always appears first.\nPyMarkdown was used to convert each comment into plain text.\nPer-document license information is available in the `license` entry of the `metadata` field of each example.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 33,415,400 | 103.7 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n\n## Other Versions\nThis is the \"raw\" version of the StackExchange dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/stackexchange_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          28,
+          "## Dataset Statistics"
+        ],
+        [
+          29,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          31,
+          "| 33,415,400 | 103.7 |"
+        ]
+      ]
+    },
+    {
+      "source": "stack_tech",
+      "repo": "common-pile/stackexchange",
+      "revision": "5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c",
+      "url": "https://huggingface.co/datasets/common-pile/stackexchange/raw/5ec3aa2e65b7c61b7c18f1ff18ccbc4d3279a23c/README.md",
+      "readme": "---\nconfigs:\n- config_name: default\n  data_files:\n  - split: train\n    path:\n    - '*/documents/*.gz'\ntask_categories:\n- text-generation\nlanguage:\n- en\npretty_name: StackExchange\n---\n# Stack Exchange\n\n## Description\n[StackExchange](https://stackexchange.com) is a collection of Q&A communities spanning a wide variety of topics.\nWhile StackExchange formerly provided structured dumps of all of their content, since July of 2024, StackExchange has stopped publishing XML dumps to the Internet Archive.\nInstead, each site can provide a logged in user with a custom url to download the dump for that site.\nThis means that dumps for defunct sites like [windowsphone.stackexchange.com](https://windowsphone.stackexchange.com/) are inaccessible.\nAdditionally, in dumps produced by the new export tool, many questions that are available in past dumps (and accessible on the site) are not present. \nFor this reason, we extract all questions and answers from community uploaded dumps from December of 2024 from the internet archive and additionally extract missing questions and answers from the last official dumps in July of 2024 to account for the deficiencies listed above. \nWe use a question, its comments, its answers and the comments on each answer as a single document. \nFollowing the display order on StackExchange, answers are ordered by the number of votes they received, with the exception that the \u201caccepted answer\u201d always appears first.\nPyMarkdown was used to convert each comment into plain text.\nPer-document license information is available in the `license` entry of the `metadata` field of each example.\nCode for collecting, processing, and preparing this dataset is available in the [common-pile GitHub repo](https://github.com/r-three/common-pile).\n\n## Dataset Statistics\n| Documents | UTF-8 GB |\n|-----------|----------|\n| 33,415,400 | 103.7 |\n\n## License Issues\nWhile we aim to produce datasets with completely accurate licensing information, license laundering and inaccurate metadata can cause us to erroneously assign the incorrect license to some documents (for further discussion of this limitation, please see [our paper](https://huggingface.co/papers/2506.05209)). If you believe you have found an instance of incorrect licensing in this dataset, please [start a discussion](https://github.com/r-three/common-pile/discussions/new) on this repository. \n\n\n## Other Versions\nThis is the \"raw\" version of the StackExchange dataset. \nIf you are looking for the filtered version used to train [Comma v0.1](https://huggingface.co/common-pile/comma-v0.1), you can find it [here](https://huggingface.co/datasets/common-pile/stackexchange_filtered).\n\n## Citation\nIf you use this dataset, please cite:\n```bibtex\n@article{kandpal2025common,\n  title={{The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text}},\n  author={Nikhil Kandpal and Brian Lester and Colin Raffel and Sebastian Majstorovic and Stella Biderman and Baber Abbasi and Luca Soldaini and Enrico Shippole and A. Feder Cooper and Aviya Skowron and Shayne Longpre and Lintang Sutawika and Alon Albalak and Zhenlin Xu and Guilherme Penedo and Loubna Ben  and Elie Bakouch and John David  and Honglu Fan and Dashiell Stander and Guangyu Song and Aaron Gokaslan and John Kirchenbauer and Tom Goldstein and Brian R and Bhavya Kailkhura and Tyler Murray},\n  journal={arXiv preprint},\n  year={2025}\n}\n```",
+      "stats_lines": [
+        [
+          28,
+          "## Dataset Statistics"
+        ],
+        [
+          29,
+          "| Documents | UTF-8 GB |"
+        ],
+        [
+          31,
+          "| 33,415,400 | 103.7 |"
+        ]
+      ]
+    }
+  ]
+}

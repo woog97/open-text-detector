@@ -1,0 +1,91 @@
+{
+ "tag": "fast-moe-A-full-lr1e4",
+ "checkpoint": "stage2-epoch0-adapters.safetensors",
+ "seconds": 67,
+ "n_human_sentences": 32018,
+ "threshold_1pct_here": 0.8888124413788319,
+ "threshold_in_domain": 0.3461887836456299,
+ "n_in_domain_human_sentences": 7321,
+ "human_fpr_at_in_domain_threshold": 0.028889999375351364,
+ "control_fpr_at_in_domain_threshold": 0.020372491109637757,
+ "retained_human_fpr_at_in_domain_threshold": 0.03805017177675504,
+ "n_control_sentences": 16591,
+ "n_retained_human_sentences": 15427,
+ "groups": {
+  "all:all": {
+   "n_ai_sentences": 1590,
+   "auroc": 0.8657353705521776,
+   "recall_at_1pct_here": 0.10503144654088051,
+   "auroc_vs_controls": 0.8705871448830521,
+   "recall_at_1pct_controls": 0.15031446540880503,
+   "recall_at_in_domain_threshold": 0.2188679245283019
+  },
+  "cohort:insert_one": {
+   "n_ai_sentences": 354,
+   "auroc": 0.8427648219063217,
+   "recall_at_1pct_here": 0.0423728813559322,
+   "auroc_vs_controls": 0.8472413911701497,
+   "recall_at_1pct_controls": 0.062146892655367235,
+   "recall_at_in_domain_threshold": 0.11016949152542373
+  },
+  "cohort:rewrite_one": {
+   "n_ai_sentences": 348,
+   "auroc": 0.8507000911125423,
+   "recall_at_1pct_here": 0.05459770114942529,
+   "auroc_vs_controls": 0.8554901320962688,
+   "recall_at_1pct_controls": 0.08908045977011494,
+   "recall_at_in_domain_threshold": 0.16666666666666666
+  },
+  "cohort:rewrite_two": {
+   "n_ai_sentences": 673,
+   "auroc": 0.897035211527097,
+   "recall_at_1pct_here": 0.18573551263001487,
+   "auroc_vs_controls": 0.9023979864125478,
+   "recall_at_1pct_controls": 0.2526002971768202,
+   "recall_at_in_domain_threshold": 0.3476968796433878
+  },
+  "cohort:split_one": {
+   "n_ai_sentences": 215,
+   "auroc": 0.8299170379452255,
+   "recall_at_1pct_here": 0.037209302325581395,
+   "auroc_vs_controls": 0.8338869630915052,
+   "recall_at_1pct_controls": 0.07441860465116279,
+   "recall_at_in_domain_threshold": 0.07906976744186046
+  },
+  "writer:claude-haiku-4-5": {
+   "n_ai_sentences": 259,
+   "auroc": 0.8952054237830989,
+   "recall_at_1pct_here": 0.14671814671814673,
+   "auroc_vs_controls": 0.9009178116525474,
+   "recall_at_1pct_controls": 0.21235521235521235,
+   "recall_at_in_domain_threshold": 0.32432432432432434
+  },
+  "writer:claude-opus-5-5": {
+   "n_ai_sentences": 463,
+   "auroc": 0.8457496303037965,
+   "recall_at_1pct_here": 0.0734341252699784,
+   "auroc_vs_controls": 0.8500523261134709,
+   "recall_at_1pct_controls": 0.1079913606911447,
+   "recall_at_in_domain_threshold": 0.17062634989200864
+  },
+  "writer:claude-sonnet-5-5": {
+   "n_ai_sentences": 461,
+   "auroc": 0.854055250104029,
+   "recall_at_1pct_here": 0.07592190889370933,
+   "auroc_vs_controls": 0.8584710812686124,
+   "recall_at_1pct_controls": 0.1301518438177874,
+   "recall_at_in_domain_threshold": 0.175704989154013
+  },
+  "writer:gpt-6-luna": {
+   "n_ai_sentences": 407,
+   "auroc": 0.8829471383035004,
+   "recall_at_1pct_here": 0.14742014742014742,
+   "auroc_vs_controls": 0.8883696601736503,
+   "recall_at_1pct_controls": 0.18181818181818182,
+   "recall_at_in_domain_threshold": 0.25552825552825553
+  }
+ },
+ "documents": {
+  "auroc_mixed_vs_controls": 0.6259111272197958
+ }
+}

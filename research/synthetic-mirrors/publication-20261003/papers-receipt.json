@@ -1,0 +1,13 @@
+{
+  "state": "verified",
+  "repo": "woog/pangram-paper-text",
+  "revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+  "space_path": "/data/workspace/datasets/pangram-paper-text",
+  "rows": 14561,
+  "verified_files": {
+    "README.md": "abe7efb72cb81231950463a400e1010f160e39b927726430963efcf6a5e87611",
+    "data/batch-001.parquet": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf"
+  },
+  "at": "2026-10-03T09:25:43.669659+00:00",
+  "private_source": true
+}

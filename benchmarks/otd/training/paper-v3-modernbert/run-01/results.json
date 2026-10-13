@@ -1,0 +1,555 @@
+{
+  "config": {
+    "dataset": "woog/ai-paper-provenance-v3",
+    "dataset_revision": "98ca42d9ff340d8a8fddba50e880a8528aafecf2",
+    "base_model": "answerdotai/ModernBERT-base",
+    "base_model_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+    "seed": 42,
+    "epochs": 4,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "batch_size": 16,
+    "gradient_accumulation": 2,
+    "max_length": 512,
+    "inference_stride": 256,
+    "precision": "bfloat16",
+    "sampling": "inverse retained targets per paper; paired variants balanced; 1/3 target-only, 1/3 target-anchored crop, 1/3 random-context crop",
+    "checkpoint_selection": "lowest validation unweighted token cross-entropy",
+    "threshold_selection": "separate token and mean-token sentence thresholds at <=1% validation human FPR",
+    "test_policy": "one final pass after checkpoint/threshold freeze",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "torch": "2.12.0+cu130",
+    "started_at": 1790821657.6180086
+  },
+  "best_checkpoint": {
+    "epoch": 2,
+    "train_loss": 0.07812037451776786,
+    "validation_loss": 0.16858572932518365,
+    "validation_token_operating_point": {
+      "tp": 42039,
+      "fp": 3228,
+      "fn": 18793,
+      "tn": 319854,
+      "precision": 0.9286897740075551,
+      "recall": 0.691067201472909,
+      "human_fpr": 0.009991271565732538,
+      "f1": 0.7924485621919151
+    },
+    "elapsed_seconds": 139.30782532691956
+  },
+  "thresholds": {
+    "tokens": 0.8947894573211671,
+    "sentences": 0.9562724232673646
+  },
+  "validation": {
+    "tokens": {
+      "tp": 42039,
+      "fp": 3228,
+      "fn": 18793,
+      "tn": 319854,
+      "precision": 0.9286897740075551,
+      "recall": 0.691067201472909,
+      "human_fpr": 0.009991271565732538,
+      "f1": 0.7924485621919151,
+      "n": 383914,
+      "papers": 260,
+      "threshold": 0.8947894573211671
+    },
+    "target_tokens": {
+      "tp": 42039,
+      "fp": 3174,
+      "fn": 18793,
+      "tn": 61814,
+      "precision": 0.9297989516289563,
+      "recall": 0.691067201472909,
+      "human_fpr": 0.04883978580661045,
+      "f1": 0.7928520910934037,
+      "n": 125820,
+      "papers": 260,
+      "threshold": 0.8947894573211671
+    },
+    "sentences": {
+      "tp": 1296,
+      "fp": 57,
+      "fn": 797,
+      "tn": 5651,
+      "precision": 0.9578713968957872,
+      "recall": 0.6192068800764453,
+      "human_fpr": 0.009985984583041346,
+      "f1": 0.7521764364480558,
+      "n": 7801,
+      "papers": 260,
+      "threshold": 0.9562724232673646
+    },
+    "boundary_tokens": {
+      "tp": 4437,
+      "fp": 9,
+      "fn": 2466,
+      "tn": 6708,
+      "precision": 0.9979757085020243,
+      "recall": 0.6427640156453716,
+      "human_fpr": 0.0013398838767306833,
+      "f1": 0.781919111816019,
+      "n": 13620,
+      "papers": 260,
+      "threshold": 0.8947894573211671
+    }
+  },
+  "test": {
+    "quality_filtered": {
+      "rows": 1038,
+      "pairs": 519,
+      "tokens": {
+        "tp": 44590,
+        "fp": 3151,
+        "fn": 15708,
+        "tn": 316816,
+        "precision": 0.9339980310425001,
+        "recall": 0.739493847225447,
+        "human_fpr": 0.009847890563714382,
+        "f1": 0.8254426642231046,
+        "n": 380265,
+        "papers": 256,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9123511360123852,
+            0.9537078234861356
+          ],
+          "recall": [
+            0.7017337071323925,
+            0.7782759334485456
+          ],
+          "human_fpr": [
+            0.006673421101921142,
+            0.013471347741619599
+          ]
+        }
+      },
+      "target_tokens": {
+        "tp": 44590,
+        "fp": 3150,
+        "fn": 15708,
+        "tn": 60989,
+        "precision": 0.9340175953079178,
+        "recall": 0.739493847225447,
+        "human_fpr": 0.0491120846910616,
+        "f1": 0.8254503045224828,
+        "n": 124437,
+        "papers": 256,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9123856076154051,
+            0.9537281482759765
+          ],
+          "recall": [
+            0.7017337071323925,
+            0.7782759334485456
+          ],
+          "human_fpr": [
+            0.03365777019125508,
+            0.06762431389373917
+          ]
+        }
+      },
+      "sentences": {
+        "tp": 1367,
+        "fp": 58,
+        "fn": 681,
+        "tn": 5562,
+        "precision": 0.9592982456140351,
+        "recall": 0.66748046875,
+        "human_fpr": 0.010320284697508897,
+        "f1": 0.7872156636913331,
+        "n": 7668,
+        "papers": 256,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9400663459860701,
+            0.9779520024905232
+          ],
+          "recall": [
+            0.6262718197034912,
+            0.7087509181404257
+          ],
+          "human_fpr": [
+            0.005544391322023182,
+            0.015901386491286276
+          ]
+        }
+      },
+      "boundary_tokens": {
+        "tp": 4683,
+        "fp": 1,
+        "fn": 2107,
+        "tn": 6598,
+        "precision": 0.9997865072587532,
+        "recall": 0.6896907216494845,
+        "human_fpr": 0.00015153811183512653,
+        "f1": 0.8162802858636918,
+        "n": 13389,
+        "papers": 256,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9993368093205135,
+            1.0
+          ],
+          "recall": [
+            0.6514246595861684,
+            0.7299469292399366
+          ],
+          "human_fpr": [
+            0.0,
+            0.00046932813723570867
+          ]
+        }
+      },
+      "target_sentences": {
+        "tp": 1367,
+        "fp": 72,
+        "fn": 681,
+        "tn": 2056,
+        "precision": 0.9499652536483669,
+        "recall": 0.66748046875,
+        "human_fpr": 0.03383458646616541,
+        "f1": 0.7840550616575853,
+        "n": 4176,
+        "papers": 256,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9283888331791982,
+            0.9704814021431409
+          ],
+          "recall": [
+            0.6262718197034912,
+            0.7087509181404257
+          ],
+          "human_fpr": [
+            0.01946894371728153,
+            0.05034537523818982
+          ]
+        }
+      }
+    },
+    "fully_faithful": {
+      "rows": 734,
+      "pairs": 367,
+      "tokens": {
+        "tp": 31834,
+        "fp": 1853,
+        "fn": 10090,
+        "tn": 223931,
+        "precision": 0.9449936177160329,
+        "recall": 0.7593264001526572,
+        "human_fpr": 0.008206958863338411,
+        "f1": 0.8420467921334197,
+        "n": 267708,
+        "papers": 221,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9231069013618773,
+            0.9644757760530761
+          ],
+          "recall": [
+            0.7179622906483587,
+            0.8019790081204833
+          ],
+          "human_fpr": [
+            0.005085557564936728,
+            0.011746510461680997
+          ]
+        }
+      },
+      "target_tokens": {
+        "tp": 31834,
+        "fp": 1852,
+        "fn": 10090,
+        "tn": 42574,
+        "precision": 0.9450216707237428,
+        "recall": 0.7593264001526572,
+        "human_fpr": 0.041687300229595284,
+        "f1": 0.8420579288453908,
+        "n": 86350,
+        "papers": 221,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9231350549863667,
+            0.9645140013190463
+          ],
+          "recall": [
+            0.7179622906483587,
+            0.8019790081204833
+          ],
+          "human_fpr": [
+            0.02605989280257267,
+            0.05933638865763376
+          ]
+        }
+      },
+      "sentences": {
+        "tp": 983,
+        "fp": 33,
+        "fn": 448,
+        "tn": 4088,
+        "precision": 0.96751968503937,
+        "recall": 0.686932215234102,
+        "human_fpr": 0.008007765105556904,
+        "f1": 0.8034327748263179,
+        "n": 5552,
+        "papers": 221,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9459592215013901,
+            0.9859229244815627
+          ],
+          "recall": [
+            0.6413948351197971,
+            0.7274487203178416
+          ],
+          "human_fpr": [
+            0.003334237042831065,
+            0.013811192555020523
+          ]
+        }
+      },
+      "boundary_tokens": {
+        "tp": 3359,
+        "fp": 1,
+        "fn": 1440,
+        "tn": 4667,
+        "precision": 0.999702380952381,
+        "recall": 0.6999374869764534,
+        "human_fpr": 0.00021422450728363326,
+        "f1": 0.8233852187768109,
+        "n": 9467,
+        "papers": 221,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9990668731593378,
+            1.0
+          ],
+          "recall": [
+            0.6517749169119751,
+            0.7444687917173686
+          ],
+          "human_fpr": [
+            0.0,
+            0.0006617278358242498
+          ]
+        }
+      },
+      "target_sentences": {
+        "tp": 983,
+        "fp": 35,
+        "fn": 448,
+        "tn": 1460,
+        "precision": 0.9656188605108055,
+        "recall": 0.686932215234102,
+        "human_fpr": 0.023411371237458192,
+        "f1": 0.8027766435279706,
+        "n": 2926,
+        "papers": 221,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9437648881674642,
+            0.9839442020841641
+          ],
+          "recall": [
+            0.6413948351197971,
+            0.7274487203178416
+          ],
+          "human_fpr": [
+            0.01045831690232344,
+            0.039524859076634986
+          ]
+        }
+      }
+    },
+    "all_fresh": {
+      "rows": 3900,
+      "pairs": 1950,
+      "tokens": {
+        "tp": 174718,
+        "fp": 9545,
+        "fn": 74558,
+        "tn": 1300454,
+        "precision": 0.9481990415872964,
+        "recall": 0.7009018116465283,
+        "human_fpr": 0.007286265104019163,
+        "f1": 0.8060082253269025,
+        "n": 1559275,
+        "papers": 390,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9372894296708012,
+            0.9584050713623194
+          ],
+          "recall": [
+            0.6791925983498462,
+            0.7212962370186512
+          ],
+          "human_fpr": [
+            0.005740637091975253,
+            0.009009917593212494
+          ]
+        }
+      },
+      "target_tokens": {
+        "tp": 174718,
+        "fp": 9020,
+        "fn": 74558,
+        "tn": 256871,
+        "precision": 0.9509083586411086,
+        "recall": 0.7009018116465283,
+        "human_fpr": 0.033923675491084694,
+        "f1": 0.8069854554356211,
+        "n": 515167,
+        "papers": 390,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.94070819659405,
+            0.9608033341705366
+          ],
+          "recall": [
+            0.6791925983498462,
+            0.7212962370186512
+          ],
+          "human_fpr": [
+            0.02693880802803895,
+            0.041244337509677854
+          ]
+        }
+      },
+      "sentences": {
+        "tp": 5218,
+        "fp": 133,
+        "fn": 3037,
+        "tn": 19312,
+        "precision": 0.9751448327415436,
+        "recall": 0.6321017565112054,
+        "human_fpr": 0.006839804577012085,
+        "f1": 0.7670145524033515,
+        "n": 27700,
+        "papers": 390,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9664831917841784,
+            0.9838086520064653
+          ],
+          "recall": [
+            0.610632670660107,
+            0.6546914901349761
+          ],
+          "human_fpr": [
+            0.004567863593501201,
+            0.009309284162690435
+          ]
+        }
+      },
+      "boundary_tokens": {
+        "tp": 17549,
+        "fp": 14,
+        "fn": 8604,
+        "tn": 25458,
+        "precision": 0.9992028696691909,
+        "recall": 0.6710128857110083,
+        "human_fpr": 0.0005496231155778894,
+        "f1": 0.8028639399762101,
+        "n": 51625,
+        "papers": 390,
+        "threshold": 0.8947894573211671,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9978951260581068,
+            0.9998868022717506
+          ],
+          "recall": [
+            0.6536039586670526,
+            0.6918104938917896
+          ],
+          "human_fpr": [
+            7.825824799380321e-05,
+            0.0014534995504792542
+          ]
+        }
+      },
+      "target_sentences": {
+        "tp": 5218,
+        "fp": 192,
+        "fn": 3037,
+        "tn": 8415,
+        "precision": 0.9645101663585952,
+        "recall": 0.6321017565112054,
+        "human_fpr": 0.022307424189613106,
+        "f1": 0.7637028905964142,
+        "n": 16862,
+        "papers": 390,
+        "threshold": 0.9562724232673646,
+        "paper_bootstrap_95ci": {
+          "precision": [
+            0.9541142137204206,
+            0.9741406078051997
+          ],
+          "recall": [
+            0.610632670660107,
+            0.6546914901349761
+          ],
+          "human_fpr": [
+            0.016216179653298378,
+            0.029133620231395718
+          ]
+        }
+      }
+    },
+    "isolated_paragraph_sensitivity": {
+      "tp": 49146,
+      "fp": 3614,
+      "fn": 11152,
+      "tn": 60525,
+      "precision": 0.9315011372251706,
+      "recall": 0.8150519088526983,
+      "human_fpr": 0.05634637272174496,
+      "f1": 0.8693944700949955,
+      "n": 124437,
+      "papers": 256,
+      "threshold": 0.8947894573211671,
+      "paper_bootstrap_95ci": {
+        "precision": [
+          0.9103702296379786,
+          0.9514548673434923
+        ],
+        "recall": [
+          0.7816566117337723,
+          0.845542045617194
+        ],
+        "human_fpr": [
+          0.03888935088816941,
+          0.07602521171325419
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Single seed; Luna-generated research prose only.",
+    "Automated quality judgments, not expert gold.",
+    "Token metrics use ModernBERT tokenization; full-context tokens include repeated human context.",
+    "Sentence results deduplicate identical text and exclude cross-split/conflicting sentence text.",
+    "Target-only metrics are the primary control against inflated repeated-context performance.",
+    "Bootstrap samples papers and conditions on this checkpoint and validation-selected thresholds."
+  ],
+  "elapsed_seconds": 337.0593786239624,
+  "completed_at": 1790821994.677397,
+  "supplementary_analysis": "Target-sentence denominator check added after observing higher target-token than full-context false positives. Uses stored predictions and unchanged frozen thresholds; no model or threshold selection."
+}

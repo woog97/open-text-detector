@@ -1,0 +1,43 @@
+{
+ "tag": "fast-q4b-t21-1ep",
+ "checkpoint": "stage2-epoch0-adapters.safetensors",
+ "seconds": 21,
+ "n_human_sentences": 6405,
+ "threshold_1pct_here": 0.6829412092967909,
+ "threshold_in_domain": 0.46071624755859375,
+ "n_in_domain_human_sentences": 7321,
+ "human_fpr_at_in_domain_threshold": 0.02654176424668228,
+ "control_fpr_at_in_domain_threshold": 0.022733013387218996,
+ "retained_human_fpr_at_in_domain_threshold": 0.032706459525756335,
+ "n_control_sentences": 3959,
+ "n_retained_human_sentences": 2446,
+ "groups": {
+  "all:all": {
+   "n_ai_sentences": 2,
+   "auroc": null,
+   "recall_at_1pct_here": null,
+   "auroc_vs_controls": null,
+   "recall_at_1pct_controls": null,
+   "recall_at_in_domain_threshold": 0.5
+  },
+  "cohort:light_polish": {
+   "n_ai_sentences": 2,
+   "auroc": null,
+   "recall_at_1pct_here": null,
+   "auroc_vs_controls": null,
+   "recall_at_1pct_controls": null,
+   "recall_at_in_domain_threshold": 0.5
+  },
+  "writer:claude-fable-5-1": {
+   "n_ai_sentences": 2,
+   "auroc": null,
+   "recall_at_1pct_here": null,
+   "auroc_vs_controls": null,
+   "recall_at_1pct_controls": null,
+   "recall_at_in_domain_threshold": 0.5
+  }
+ },
+ "documents": {
+  "auroc_mixed_vs_controls": 0.78904039104708
+ }
+}

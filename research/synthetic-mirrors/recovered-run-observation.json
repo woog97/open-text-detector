@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-02T14:29:51Z",
+  "state": "running",
+  "pid": 140104,
+  "start_ticks": "10186540",
+  "generated_documents": 3965,
+  "mechanically_passed": 3793,
+  "started_attempts": 4037,
+  "confirmed_cost_usd": 1.2580527375,
+  "uncertain_reserve_usd": 0.003022625,
+  "inflight_reservations_usd": 0.0053911875,
+  "max_documents_cumulative": 10000,
+  "budget_usd_cumulative": 20,
+  "concurrency": 8,
+  "input_count": 13842,
+  "recovery": "Appended4111validated inputs after natural stopped-source wait, archived and fully GET-verified all changed files; same run, ledger, caps and model. Eighteen new generated records verified after restart.",
+  "remaining_blocker": "No persistent blocker observed; remaining source slots require future stopped-run append as human collection grows.",
+  "refresh_helper": "/private/tmp/pangram-training-access/luna_recovered_status.py"
+}

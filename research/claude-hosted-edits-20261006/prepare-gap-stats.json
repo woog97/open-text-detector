@@ -1,0 +1,84 @@
+{
+ "hosts_available": 7070,
+ "hosts_standard": 800,
+ "shortfall": {
+  "d": {
+   "sonnet": 0,
+   "opus": 0,
+   "gpt-6.1-sol": 0,
+   "gpt-6-sol": 0
+  },
+  "e": {
+   "sonnet": 0,
+   "opus": 0,
+   "haiku": 0,
+   "gpt-6.1-sol": 0,
+   "gpt-6-sol": 0
+  }
+ },
+ "D": {
+  "items": 1150,
+  "by_writer": {
+   "sonnet": 75,
+   "opus": 75,
+   "gpt-6.1-sol": 500,
+   "gpt-6-sol": 500
+  },
+  "by_admission": {
+   "standard": 800,
+   "relaxed_bounds": 350
+  },
+  "by_source": {
+   "pes2o": 922,
+   "pmc": 114,
+   "arxiv": 114
+  },
+  "by_type": {
+   "rewrite_one": 346,
+   "rewrite_two": 346,
+   "insert_one": 344,
+   "split_one": 114
+  }
+ },
+ "E": {
+  "items": 2020,
+  "by_writer": {
+   "sonnet": 650,
+   "opus": 650,
+   "haiku": 300,
+   "gpt-6.1-sol": 210,
+   "gpt-6-sol": 210
+  },
+  "by_admission": {
+   "relaxed_bounds": 2020
+  },
+  "by_source": {
+   "pmc": 1027,
+   "arxiv": 315,
+   "pes2o": 676,
+   "acl": 2
+  },
+  "by_writer_kind": {
+   "sonnet": {
+    "draft": 325,
+    "rewrite": 325
+   },
+   "opus": {
+    "draft": 325,
+    "rewrite": 325
+   },
+   "haiku": {
+    "draft": 150,
+    "rewrite": 150
+   },
+   "gpt-6.1-sol": {
+    "draft": 105,
+    "rewrite": 105
+   },
+   "gpt-6-sol": {
+    "draft": 105,
+    "rewrite": 105
+   }
+  }
+ }
+}

@@ -1,0 +1,140 @@
+---
+license: apache-2.0
+pretty_name: OpAI-Bench
+language:
+  - en
+task_categories:
+  - text-classification
+  - token-classification
+tags:
+  - ai-text-detection
+  - ai-generated-text-detection
+  - opai-bench
+  - human-ai-text
+  - mixed-human-ai-text
+size_categories:
+  - 100K<n<1M
+configs:
+  - config_name: default
+    data_files:
+      - split: train
+        path: "default/train/*.csv"
+      - split: dev
+        path: "default/dev/*.csv"
+      - split: test
+        path: "default/test/*.csv"
+  - config_name: ablations
+    data_files:
+      - split: train
+        path: "ablations/train/*.csv"
+      - split: dev
+        path: "ablations/dev/*.csv"
+      - split: test
+        path: "ablations/test/*.csv"
+---
+
+# OpAI-Bench
+
+OpAI-Bench is an operation-guided benchmark for studying progressive human-to-AI text transformation in AI-text detection. Starting from human-written source documents, it provides revision trajectories with increasing AI involvement across predefined edit operations and coverage levels.
+
+The dataset supports multi-granularity evaluation at document, sentence, token, and span levels. The main benchmark covers four domains and four generators. The ablation subsets support controlled analysis of edit operations and trajectory construction.
+
+## Data Files
+
+- Main benchmark files are under `default/{split}/`.
+- Ablation files are under `ablations/{split}/`.
+- The Hugging Face viewer exposes `train`, `dev`, and `test` splits for both configurations.
+- Machine-readable dataset metadata is provided in `croissant.json`.
+- Data files are directly downloadable from the Hugging Face dataset repository and are enumerated in `croissant.json`.
+
+## Row Counts
+
+Main benchmark:
+
+| split | rows |
+|---|---:|
+| train | 202,430 |
+| dev | 43,821 |
+| test | 42,786 |
+| total | 289,037 |
+
+Ablation subset:
+
+| split | rows |
+|---|---:|
+| train | 25,836 |
+| dev | 5,650 |
+| test | 5,585 |
+| total | 37,071 |
+
+Overall rows across both configurations: 326,108.
+
+## Schema
+
+- `record_id`: stable row identifier.
+- `id`: source document identifier.
+- `document_hash_id`: salted hash of domain and `id`, provided as an alternative grouping key.
+- `split`: `train`, `dev`, or `test`.
+- `domain`: `abstracts`, `essays`, `news`, or `reports`.
+- `generator`: `gpt-5.4`, `gpt-5.4-nano`, `gemini-2.5-flash`, or `qwen3-8b`.
+- `subset`: `main` or `ablation`.
+- `ablation_type`: empty for main rows; otherwise `coverage_controlled`, `operation_controlled`, or `non_cumulative`.
+- `edit_operation`: edit condition when applicable.
+- `version` and `version_index`: main rows use `v0`-`v8`; ablation rows use ablation-specific version labels.
+- `text`: clean text.
+- `text_tagged`: text with inline AI span tags when available.
+- `ai_spans_char`, `ai_spans_token`: serialized span lists.
+- `tokens`, `token_labels`: serialized token sequence and binary token labels.
+- `boundary_pattern`: serialized boundary pattern used for mixed-authorship transition analysis when applicable.
+- `sentences`, `sentence_labels`: serialized sentence sequence and binary sentence labels.
+- `ai_sentence_ratio`, `ai_token_ratio`, `ai_char_ratio`: AI coverage ratios.
+
+## Dataset Construction
+
+Each main source document has a human seed version (`v0`) and up to eight mixed human/AI versions (`v1`-`v8`). Ablation rows use ablation-specific version labels. The mixed versions were produced by applying AI-assisted edits to portions of the seed text. Labels identify AI-generated content at three granularities:
+
+- character spans in `ai_spans_char`
+- token labels in `token_labels`
+- sentence labels in `sentence_labels`
+
+The main benchmark covers four domains and four generators. The ablation subsets support controlled analysis of edit operations and trajectory construction.
+
+## Licensing and Reuse
+
+The dataset is released under Apache-2.0. Users are responsible for using the data consistently with the dataset card, the cited provenance, and applicable laws or institutional policies. The dataset is intended for research and evaluation of AI-text detection systems, not for high-stakes decisions about individual people.
+
+## PII and Content Review
+
+The text is not redacted because character-offset labels must remain aligned with the original content. The dataset may contain public names, organizations, locations, dates, URLs, emails, or numeric strings inherited from source texts. Users should treat the text as research data and avoid attempts to identify or profile individuals.
+
+For concerns about a specific record, use the Hugging Face dataset repository discussion/contact mechanism and include the `record_id`, `id`, and file name so the maintainers can review the case.
+
+## Responsible AI Metadata
+
+### Data Limitations
+
+The dataset is designed for evaluating AI-text detection and localization on English mixed human/AI texts across essays, abstracts, news, and report-like domains. It is not a universal benchmark for all languages, genres, model families, time periods, or adversarial settings. Performance on this benchmark may not transfer to future generation systems or substantially different writing workflows.
+
+### Data Biases
+
+The corpus is English-only and domain-balanced by construction rather than representative of global writing. News and report domains may overrepresent institutional, public-policy, and geopolitical topics. Generator-specific artifacts may make the benchmark easier for systems that learn model signatures instead of general human/AI boundaries.
+
+### Personal Or Sensitive Information
+
+The dataset text may contain public names, organizations, locations, dates, URLs, emails, or numeric strings inherited from source texts. Text is not redacted because the benchmark depends on exact character offsets. A hashed `document_hash_id` is provided for workflows that prefer not to use the source `id`.
+
+### Data Use Cases
+
+Supported use cases include document-level AI-text detection, sentence-level AI localization, token/span-level AI localization, ablation analysis across edit operations, and robustness comparisons across the included domains and generators. The dataset is not validated for plagiarism adjudication, authorship attribution, student discipline, employment screening, surveillance, or other high-stakes individual decisions.
+
+### Social Impact
+
+The dataset supports reproducible evaluation of detector robustness, calibration, and localization. Risks include overclaiming detector reliability, using benchmark scores outside the benchmark distribution, or penalizing writers whose style resembles generated text. Users should report uncertainty, evaluate on their own deployment distribution, and avoid consequential decisions based solely on detector output.
+
+### Synthetic Data
+
+`rai:hasSyntheticData = true`. Main rows `v1`-`v8` contain synthetic AI-authored or AI-edited spans generated from human seed texts using the listed generators. Main rows `v0` are human seed texts; ablation rows use ablation-specific version labels.
+
+### Provenance
+
+This dataset was built from human-written source documents and synthetic AI-assisted revision trajectories prepared between 2026-04 and 2026-05. Human seed documents are drawn from student essays, news articles, government reports, and scientific abstracts; source URIs are recorded in `croissant.json`. Processing steps included schema normalization, stable row/hash ID creation, split-aware CSV organization, and Croissant metadata generation. The Croissant metadata enumerates the hosted CSV files and records the required Responsible AI fields.

@@ -1,0 +1,45 @@
+FED OFFICIAL SPEECH STAGING — 2026-10-02 UTC
+
+Existing source approval reused: source-approvals.json, fed (776 professional passages).
+Rights source: https://www.federalreserve.gov/disclaimer.htm
+Discovery example: https://www.federalreserve.gov/newsevents/speech/2021-speeches.htm
+Real-page extraction verified against https://www.federalreserve.gov/newsevents/speech/waller20211217a.htm (3,499 extracted words; 3 eligible passages).
+
+Code: ingest_institutional.py, tests: test_institutional.py.
+Six local tests pass; five remote tests passed before adding the inline-footnote-reference regression test.
+The actual official page was also parsed and checked on the Space.
+
+During /data volume errors, ONLY NEW source work stages on Space local scratch:
+/tmp/pangram-institutional-stage-v1
+  pipeline/: standalone snapshot of importer, tests and existing SQLite/passages utilities.
+  source-downloads/fed/: original fetched HTML bytes plus per-URL checksums, retrieval times and resolved URLs.
+  stage.sqlite3: isolated candidate database; never production collection.sqlite3.
+  process-fed.json: recorded PID/start_ticks; verify live identity before recovery.
+  progress/fed.json, fed-stage.log: live state.
+  staged/fed/passages.jsonl.gz and documents.jsonl.gz: final candidate package after source run finishes.
+
+Initial worker PID 17843 / start_ticks 7596602 is historical information, not evidence of current liveness.
+The worker completed 776/776 staged passages in 32.60 seconds, at 2026-10-02T07:16:53Z.
+Length bins: 116 / 272 / 272 / 116. The 2010 index returned 404; 2011–2021 still supplied the full quota.
+Command: python ingest_institutional.py --base /tmp/pangram-institutional-stage-v1 --source fed --quota 776 --workers 4
+Do not launch a duplicate. The source lock prevents overlapping staging workers.
+
+Selection and provenance:
+- Official www.federalreserve.gov pre-2022 dated speech URLs, discovered from 2010–2021 annual indexes.
+- Explicit Governor/Chair/Vice Chair attribution required in the official speech header.
+- Actual article body only, excluding navigation, figures, tables, blockquotes, footnotes and long quoted passages.
+- Original HTML preserved byte-for-byte. Plain-text paragraphs are deterministically extracted with canonical inline whitespace.
+- Offsets refer to that preserved extracted text, not raw HTML bytes; the full HTML remains in retained metadata and files.
+- Maximum three nonoverlapping passages per speech; unchanged professional source length proportions; source quota 776.
+- Global exact dedup inside isolated stage; complete production-pool dedup remains required at merge.
+- All candidates remain quarantined; no training admission claimed.
+
+Operations:
+Four concurrent HTTP fetches, deterministic URL order, bounded four-document batches.
+Network and extraction happen outside short SQLite write transactions.
+Per-URL cursors commit together with accepted passages; retries reuse saved originals and checksums.
+No model downloads, inference, paid generation, or source text copied to the Mac.
+No /data writes or production-pool mutations are performed by this worker.
+Once /data is healthy, parent must merge through shared add() with quota/global dedup guards, preserve original HTML/manifests, then validate/export. Stage counts are not yet collected production counts.
+
+World Bank is not implemented here. Its quota is untouched; per-work open-license evidence is still required when another adapter is added.

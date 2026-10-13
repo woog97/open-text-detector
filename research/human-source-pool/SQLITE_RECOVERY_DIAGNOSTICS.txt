@@ -1,0 +1,112 @@
+SQLite publication error investigation — 2026-10-02
+
+Publisher reported DatabaseError: database disk image is malformed while reading the live source database's documents(raw) by hash within a long read transaction. No conclusion of permanent database damage is established by that exception alone.
+
+Initial read-only checks on collection.sqlite3 succeeded: PRAGMA quick_check(20) returned ok in3.18s; unindexed table scans counted52,497 originals and74,809 passages. Journal mode WAL,4KiB pages,214,586 pages, no freelist. Current database879MB; WAL514MB. Persistent /data is hf-mount FUSE. The filesystem reports virtual capacity, so its capacity statistics should not be treated as physical disk capacity. Parent quiesced verified scheduler16778/start7474158 and Wikipedia16939/start7483092 before preservation.
+
+A full read-only integrity check is separate from quick_check: quick_check does not establish index/table consistency. Full blob scan additionally decompresses each original and checks SHA256 against its key. No repairs, reindexing, checkpoints, record deletion or original replacement have been requested or performed by the diagnostics agent.
+
+Recovery plan: retain a quiescent raw DB/WAL/SHM copy together in timestamped persistent recovery directory, checking DB and WAL did not change during copy. SHM reader marks may change while a diagnostic reader remains open; SHM is preserved as evidence rather than trusted as a portable snapshot. SQLite backup API consolidates a readable database state into a new standalone file on the Space's local /tmp overlay. Only this new file is switched to rollback-journal mode. Full integrity check, source counts and checksum then verify it, followed by a persistent copy and checksum readback. Export and Luna parent selection should use the verified standalone copy, never an arbitrary copy of a live DB without its WAL.
+
+SQLite official WAL documentation: https://sqlite.org/wal.html
+It specifies same-host shared-memory requirements and says WAL does not work across network filesystems. FUSE mount identification alone does not prove the exact failure cause: this deployment has all workers on one host, and the mount's locking/sync implementation must be considered. Preserve evidence before deciding whether corruption is durable, index-specific or a transient snapshot/storage issue.
+
+Helpers local to this task:
+/private/tmp/pangram-training-access/diagnose_human_sqlite.py
+/private/tmp/pangram-training-access/diagnose_human_sqlite_full.py
+/private/tmp/pangram-training-access/backup_human_sqlite.py
+All source dataset operations are on the existing Space; no dataset downloaded to the Mac.
+
+Storage-health update at approximately07:08UTC:
+HF runtime API reports RUNNING / a100x4. Space local /tmp has approximately6.8TB free; available memory approximately1.1TB; memory pressure zero and CPU pressure low. /data metadata listing and ordinary small-file reads now stall or produce errno5 I/O errors (the latter independently observed by sibling task). This broadens the issue from one SQLite error to the persistent-volume I/O path. No hf-mount daemon is visible in this container's process namespace; do not infer a safe local daemon restart/remount procedure. No unrelated training process was stopped.
+
+Redundant long-running full-integrity, raw-copy and persistent-directory listing clients were interrupted at parent request to reduce load, leaving all partial files. Initial quick_check was OK, but full integrity did not complete. Raw preservation path /data/workspace/human-source-mix-v2/recovery/sqlite-20261002T070304Z/raw is INCOMPLETE/UNVERIFIED; no claim it is a usable backup.
+
+One read-only SQLite backup attempt remains active from helper backup_human_local_fast.py. Its destination /tmp/pangram-human-verified-20261002T070535Z/collection.sqlite3 was last observed at0bytes and is NOT READY. No receipt exists yet; do not use for publication or Luna parent selection. All these paths are on the Space, not the Mac. Poll the existing attempt before starting another. Await storage recovery, then verify a standalone local backup and export/read back before resuming publication. Space restart would affect other training and potentially erase /tmp; it has not been performed.
+
+Direct bucket recovery at approximately 07:18 UTC:
+Confirmed original mounted bucket from deploy/hf-training/README.md: private open-text-detector/training-storage. Official authenticated bucket metadata and resolve APIs work promptly while the mount stalls. Installed Space huggingface_hub version1.33.0 supports batch_bucket_files. API runtime still reports RUNNING.
+
+Luna frozen run recovered to /tmp/pangram-luna-bucket-recovery-20261002T0718Z on Space:892files,48,738,825bytes, no failed downloads. All577historical call-ledger SHA256 values match the previous rebalance receipt:573complete,4interrupted_reserved_no_replay. Actual cost0.0865198625USD, uncertain reservation0.003022625USD. All9,731input rows, input file SHA, canonical input SHA and runner/core hashes match their original manifests. verified-recovery.json is the verification receipt. No paid requests made by recovery.
+
+A small new recovery-probe.json was uploaded via SDK and independently GET-read back byte-for-byte in0.58seconds under workspace/synthetic-mirrors-luna-dollar-v1-recovered-20261002/. This demonstrates a working durable API route, but is not itself authorization to replay any call. Root owns runner durable-save integration and migration. Keep the recovered continuation under its new prefix so any delayed old FUSE flush cannot overwrite it.
+
+Official API routes used, with existing HF authentication in memory:
+GET /api/buckets/open-text-detector/training-storage/tree/{URL-encoded-prefix}, following next-page links.
+GET /buckets/open-text-detector/training-storage/resolve/{URL-encoded-object-path}.
+HfApi.batch_bucket_files(bucket,add=[(content_bytes,object_path)]) then independently GET-read back. Batch operations across multiple objects are non-transactional; a reservation must be individually durable and verified before a paid dispatch. Existing paths must be preserved/versioned before replacement. Same-bucket server-side copy by immutable Xet hashes is supported for frozen recovery snapshots.
+
+Official hf-mount README now documents a runtime FUSE page-cache invalidation deadlock involving a folio lock and an app read waiting for the daemon, which is consistent with observed wait state but not proven as this instance's cause. It also disclaims strong-consistency workloads and documents asynchronous advanced-write flush. Source: https://github.com/huggingface/hf-mount/blob/main/README.md . Do not use this as a reason to restart unrelated training without coordination.
+
+Human DB direct recovery started under /tmp/pangram-human-bucket-recovery-20261002T0720Z. Source database and WAL both report the same uploadedAt2026-10-02T07:01:18.894Z, after writers were stopped. DB Xet hash67d2759012b353ce0d5f1b0c87e9216f3cd3268c1bdebd44ff96d0443e8ac619; WAL Xet hash9c992cb253f9297424f6e3925e8c201a4fe3be984df6c3d2aae4093e14810f01. Recheck both hashes after download, preserve raw pair, then validate local SQLite view and standalone backup. No human backup READY claim until receipt confirms integrity and recovered count at least last verified74,809. Stalled mount-read backup was interrupted; its0-byte/partial files retained.
+
+HUMAN BACKUP VERIFIED at07:21:50UTC:
+/tmp/pangram-human-bucket-recovery-20261002T0720Z/collection-verified.sqlite3
+SHA25607704e7de7f095b7158761b00f273d44ab57a8b0465708e415a52ca2c2f5b4d4
+Full SQLite integrity_check returned ok in1.135s on the local Space disk. Recovered74,809candidates and52,497stored originals, exactly matching the last verified live baseline. Both bucket object Xet hashes remained stable before and after download; database/WAL share07:01:18.894Zupload time. Raw bytes preserved separately in the same recovery directory's raw/ subfolder. Receipt: /tmp/pangram-human-bucket-recovery-20261002T0720Z/receipt.json.
+
+Raw database SHA2568d87f45dcf1009f5d1abc116448893fa92d112b80844ee7dbba0ddac98ecc966
+Raw WAL SHA2564ec79a08a177574b396a707161e771f25f56f139c51371134b9744653e6f3b29
+This verifies the recovered uploaded database state and does not certify training admission or every passage's provenance. Publication validation must still read each referenced original and check offsets/hashes. Parent and original_archives agent were given the verified path. No original mount assets removed or repaired.
+
+Persistent raw recovery preservation also completed and was independently metadata-read back: private bucket open-text-detector/training-storage, prefix workspace/human-source-mix-v2/recovery/bucket-20261002T0720Z/raw/. Both copied objects' sizes and Xet hashes match the frozen source versions. This server-side copy preserves recoverable DB/WAL versions independently of the mount and local temporary disk. The original canonical DB/WAL were unchanged.
+
+2026-10-02 healthy continuation after direct bucket recovery
+---------------------------------------------------------
+No SQLite corruption was found in the direct bucket DB/WAL recovery. Full local
+Space integrity_check passed. The original mounted database was not repaired,
+checkpointed, removed, or rewritten. Original DB/WAL immutable bucket versions
+were copied to workspace/human-source-mix-v2/recovery/bucket-20261002T0720Z/raw/.
+
+Healthy remote active base: /tmp/pangram-human-active-20261002
+Merged Fed 776 validated candidates and SCP 106 validated candidates through the
+same source quotas and global normalized exact dedup. All hashes, original
+character offsets, category/source tags and source-specific evidence checked.
+All 882 inserted; total 75,691 candidates, zero training admitted. SCP's remaining
+4,338 stays unfilled; no quota reallocation. Fed has 281 original documents and
+19 speakers; complete original HTML retained inside raw metadata and stage.
+
+Standalone merged checkpoint:
+/tmp/pangram-human-active-20261002/checkpoints/merged-100k-attempt.sqlite3
+SHA256 32aa517b1dc84dff9df1fe01c919d2e7c1c43edaa27c0bb5c5316955c1aac7e9
+892,207,104 bytes; full integrity_check ok.
+Private bucket: open-text-detector/training-storage
+New prefix: workspace/human-source-mix-v2-recovered-20261002/
+Database object: checkpoints/merged-100k-attempt.sqlite3
+Xet hash: 8b9f5ea303f954a285947b948d6a34931b9c3d8f44ca8927883dea9d0cb56c43
+Pipeline/config and recovered small source manifests uploaded via bucket SDK.
+All Fed606 and SCP26 staged original/evidence/code files uploaded to stages/.
+No data downloaded to Mac. No reads/writes through failed /data mount.
+
+Private dataset publication launched PID21182/start7661050 from explicit verified
+--database using updated publish_snapshot.py; independent snapshot pipeline is
+frozen before export. Snapshot directory:
+/tmp/pangram-human-active-20261002/snapshots/recovered-wave-20261002-v1
+Publication status must reach verified before claiming HF completion.
+Local helper check_healthy_publication.py under /private/tmp/pangram-training-access
+reads this status through remote.py. Do not rerun launcher blindly.
+
+PUBLICATION VERIFIED 2026-10-02T07:29:52Z:
+Private HF dataset open-text-detector/human-source-mix-v1
+Revision 8edcce6be439536b4de627cc6ae958e57d5e035e
+75,691 candidates / zero admitted / 24,309 remaining under 100k plan.
+125 artifacts, 479,211,964 bytes, all downloaded/readback checksum verified on
+Space. Original data never downloaded to Mac. Final receipt + upload manifest +
+recovery and persistence receipts copied to healthy bucket prefix and exact-byte
+GET verified. Full 892MB standalone DB was also GET/checksum verified from bucket.
+632 staged Fed/SCP files verified in bucket by exact size/presence.
+
+Wikipedia continuation launched after publication verification:
+Supervisor PID24260/start7685816 on the healthy /tmp base, holding supervisor lock.
+Code healthy_wikipedia_supervisor.py snapshots SQLite with backup API every120s
+and at completion; saves immutable checkpoint objects/receipts and latest pointer
+through direct HF bucket APIs, never through FUSE. The own collector child is
+stopped on checkpoint failure. The source collector holds wikipedia.lock and
+keeps target7,958 under the original100k plan. No 1M plan activation performed.
+Latest expand_pool cursor completion fix and ASAP exclusion fix deployed before
+launch; previous code preserved in pipeline-history/20261002-before-cursor-fix.
+The published snapshot pipeline stays frozen as it was when those rows were
+collected. Next snapshot should carry newer code plus new collected rows.
+Remote progress: healthy-wikipedia/{process,worker-process,status,checkpoint}.json
+and worker.log / supervisor.log. Small helper check_healthy_wikipedia.py (under
+/private/tmp/pangram-training-access) reads identity and source progress.

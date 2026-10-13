@@ -1,0 +1,36 @@
+{
+  "status": "running",
+  "goal": "Reduce wall-clock training time with validated isolated kernels, physical batching and frozen linear storage.",
+  "fixed": [
+    "effective batch32",
+    "rank128 alpha32",
+    "pinned base revision",
+    "production data and order",
+    "objectives epochs LR optimizer schedule",
+    "BF16 model forwards"
+  ],
+  "candidate_environment": {
+    "flash-linear-attention": "0.5.2",
+    "fla-core": "0.5.2",
+    "einops": "0.8.2"
+  },
+  "learning_check": {
+    "optimizer_updates": 8,
+    "training_rows": 256,
+    "training_partition_holdout_rows": 32,
+    "constant_lr_diagnostic": "Both arms use identical configured LR without warmup to expose divergence quickly. Production retains its original warmup/cosine schedule.",
+    "initial_loss_relative_difference_max": 0.02,
+    "initial_token_probability_rms_difference_max": 0.01,
+    "full_gradient_relative_l2_max": 0.1,
+    "full_gradient_cosine_min": 0.995,
+    "final_holdout_loss_ratio_max": 1.03,
+    "last_four_train_losses_mean_ratio_max": 1.05
+  },
+  "memory": {
+    "throughput_trial_peak_fraction_max": 0.7,
+    "final_maximum_length_peak_fraction_max": 0.85
+  },
+  "selection": "Choose the fastest passing setting; use BF16 frozen linear storage only if behavior matches the same-kernel FP32-storage candidate.",
+  "limitations": "Small train-only diagnostic is not proof of final metric equivalence; full frozen evaluation still required.",
+  "production_state": "Old 145-second partial run archived; automatic continuation awaits a fresh verified gate."
+}

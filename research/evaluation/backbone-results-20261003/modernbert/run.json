@@ -1,0 +1,44 @@
+{
+  "suite": "3fa5cdd9fae359cc8c95dbbf58872975f24c22b18cd180830778ad755200d559",
+  "run": "/tmp/pangram-eval-20261003/modernbert-run",
+  "model_files": {
+    "history.json": "86c282745b30f462dc37b2ac4abf0756a58cba606d67f1620f2259e3dd4dfb27",
+    "run.json": "d1d4fd15007fb6b7486528b4c45811915d8840e470da23f85102bd3fb2239aba",
+    "stage1-selection.json": "8dd09b399191a2b1cac611bad9ad21c0b133e464aff96b711e186230fdbf18e5",
+    "stage2-best.safetensors": "ed30bf40ca362f35b5bee3971144cf9a225a5aaf420d7326e35441cb599347a9",
+    "stage2-selection.json": "71c1c14486f3a0cda8441592837356826837b384127e6a9079825938ecc82483",
+    "status.json": "fa23cef00ddc8070f88ab89060b556dc3f8ff6c0920287522d11eeb7325028f6",
+    "backbone_config/config.json": "c9cc64da8e1d139db99970e17117eb4b14d827cd92154e73ea8127ca137756d1",
+    "tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "tokenizer/tokenizer_config.json": "68acf857b869285d8c3ac2757ddd26e6f8030fb275d6800131521eb736084608"
+  },
+  "adapter_files": {
+    "adapters.py": "ac43435e9ea31596b783c749346f2724c7722dcbcc48bccf81432e8571990b6b",
+    "data.py": "940aae39bc176301fe4fa508072f2c410bdab1f021ed211c76ea2b70764ac0ec",
+    "inference.py": "f0000c8ed825e5ab3c591c37e59b4986af9bebcf11b92c3f619fde7dd2dd4b65",
+    "modeling.py": "108b19bf52ca2cefc1de8ad5081165d4746582dfdcbb78082d777c044c75a917",
+    "runtime.py": "e313e3e93a9f5510e40a235a918e03a284d7e5f1b2c066d1b9ca5c18413205bb"
+  },
+  "reference_files": {
+    "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "tokenizer_config.json": "68acf857b869285d8c3ac2757ddd26e6f8030fb275d6800131521eb736084608"
+  },
+  "thresholds": {
+    "tokens": 0.5,
+    "sentences": 0.5,
+    "document": 0.5
+  },
+  "threshold_origin": "explicit uncalibrated",
+  "profiles": [
+    "workflow",
+    "comparison",
+    "assistance",
+    "manuscripts"
+  ],
+  "limit": 0,
+  "batch_size": 8,
+  "rows_per_chunk": 16,
+  "precision": "BF16",
+  "torch": "2.12.0+cu130",
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}

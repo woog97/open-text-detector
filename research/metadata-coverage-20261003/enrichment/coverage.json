@@ -1,0 +1,162 @@
+{
+  "iclr/2027": {
+    "papers": 42422,
+    "tags": 42422,
+    "tldr": 23603
+  },
+  "iclr/2018": {
+    "papers": 993,
+    "tags": 887,
+    "tldr": 778
+  },
+  "iclr/2023": {
+    "papers": 4952,
+    "tags": 4950,
+    "tldr": 3341
+  },
+  "iclr/2020": {
+    "papers": 2594,
+    "tags": 2314,
+    "tldr": 1946
+  },
+  "neurips/2022": {
+    "papers": 2987,
+    "tags": 2718,
+    "tldr": 2237
+  },
+  "iclr/2021": {
+    "papers": 3008,
+    "tags": 2683,
+    "tldr": 0
+  },
+  "neurips/2025": {
+    "papers": 1170,
+    "tags": 1170,
+    "tldr": 654
+  },
+  "iclr/2022": {
+    "papers": 3419,
+    "tags": 2964,
+    "tldr": 0
+  },
+  "icml/2025": {
+    "papers": 1170,
+    "tags": 1170,
+    "tldr": 766
+  },
+  "iclr/2025": {
+    "papers": 1623,
+    "tags": 1623,
+    "tldr": 1000
+  },
+  "corl/2022": {
+    "papers": 197,
+    "tags": 195,
+    "tldr": 168
+  },
+  "tmlr/2023": {
+    "papers": 593,
+    "tags": 0,
+    "tldr": 0
+  },
+  "neurips/2021": {
+    "papers": 2719,
+    "tags": 2687,
+    "tldr": 2175
+  },
+  "emnlp/2023": {
+    "papers": 1220,
+    "tags": 1220,
+    "tldr": 681
+  },
+  "tmlr/2025": {
+    "papers": 1170,
+    "tags": 0,
+    "tldr": 0
+  },
+  "tmlr/2024": {
+    "papers": 923,
+    "tags": 0,
+    "tldr": 0
+  },
+  "iclr/2019": {
+    "papers": 1578,
+    "tags": 1451,
+    "tldr": 1223
+  },
+  "iclr/2024": {
+    "papers": 1220,
+    "tags": 1220,
+    "tldr": 766
+  },
+  "neurips/2023": {
+    "papers": 1220,
+    "tags": 1220,
+    "tldr": 799
+  },
+  "iclr/2017": {
+    "papers": 489,
+    "tags": 394,
+    "tldr": 359
+  },
+  "iclr/2026": {
+    "papers": 1170,
+    "tags": 1170,
+    "tldr": 663
+  },
+  "colm/2025": {
+    "papers": 418,
+    "tags": 418,
+    "tldr": 418
+  },
+  "neurips/2024": {
+    "papers": 1220,
+    "tags": 1220,
+    "tldr": 743
+  },
+  "corl/2023": {
+    "papers": 199,
+    "tags": 197,
+    "tldr": 160
+  },
+  "colm/2024": {
+    "papers": 299,
+    "tags": 299,
+    "tldr": 299
+  },
+  "corl/2024": {
+    "papers": 264,
+    "tags": 264,
+    "tldr": 203
+  },
+  "corl/2021": {
+    "papers": 153,
+    "tags": 151,
+    "tldr": 0
+  },
+  "tmlr/2022": {
+    "papers": 223,
+    "tags": 0,
+    "tldr": 0
+  },
+  "tmlr/2026": {
+    "papers": 478,
+    "tags": 0,
+    "tldr": 0
+  },
+  "iclr/2013": {
+    "papers": 64,
+    "tags": 0,
+    "tldr": 0
+  },
+  "iclr/2014": {
+    "papers": 69,
+    "tags": 0,
+    "tldr": 0
+  },
+  "Other uploads": {
+    "papers": 2,
+    "tags": 0,
+    "tldr": 0
+  }
+}

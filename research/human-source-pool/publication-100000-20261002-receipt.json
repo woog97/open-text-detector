@@ -1,0 +1,12 @@
+{
+  "repo_id": "open-text-detector/human-source-mix-v1",
+  "url": "https://huggingface.co/datasets/open-text-detector/human-source-mix-v1",
+  "private": true,
+  "revision": "43c15c7f543690b0a92524c441527f7c4a4129f2",
+  "candidate_passages": 100000,
+  "admitted_passages": 0,
+  "shortfall": 0,
+  "files_verified": 160,
+  "bytes_uploaded": 659156824,
+  "verified_at": "2026-10-02T19:46:53.618124+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "repo_id": "open-text-detector/human-source-mix-v1",
+  "revision": "0e444ce91099245f6eaf50ff5dd09cab370e4031",
+  "parent_revision": "43c15c7f543690b0a92524c441527f7c4a4129f2",
+  "private": true,
+  "rows": 100000,
+  "state": "verified",
+  "files_verified": 43,
+  "all_prior_data_columns_unchanged": true,
+  "all_records_have_both_check_results": true
+}

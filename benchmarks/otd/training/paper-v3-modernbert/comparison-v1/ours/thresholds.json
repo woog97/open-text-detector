@@ -1,0 +1,31 @@
+{
+  "thresholds": {
+    "tokens": 0.8947894573211671,
+    "sentences": 0.8944122054997613,
+    "document": 0.3737913241577493
+  },
+  "validation_rows": 1048,
+  "token_validation": {
+    "tp": 42050,
+    "fp": 3228,
+    "fn": 18782,
+    "tn": 319854,
+    "precision": 0.9287070983700694,
+    "recall": 0.6912480273540242,
+    "human_fpr": 0.009991271565732538,
+    "f1": 0.7925737442276882
+  },
+  "sentence_validation": {
+    "tp": 1560,
+    "fp": 121,
+    "fn": 743,
+    "tn": 11997,
+    "precision": 0.9280190362879238,
+    "recall": 0.6773773339122883,
+    "human_fpr": 0.009985146063706882,
+    "f1": 0.7831325301204819
+  },
+  "document_human_validation_fpr": 0.009541984732824428,
+  "document_human_rows": 524,
+  "policy": "Same 1048 original held-out validation inputs, token and sentence thresholds <=1% human FPR; document mean reference-token score threshold <=1% on human-original validation rows. No test calibration."
+}

@@ -1,0 +1,365 @@
+{
+  "date": "2026-09-23",
+  "description": "Chronological direct-resource budget; only aggregate final training runtime is disclosed; all other volumes and resource allocations are assumptions. Revised to GPT-6 Luna batch for metadata and clause splitting only; diverse example-generation rates retained.",
+  "rates": {
+    "h100_hour_usd": 2.5,
+    "cpu_hour_usd": 0.5,
+    "haiku_batch_input_per_million": 0.5,
+    "haiku_batch_output_per_million": 2.5,
+    "blended_generation_input_per_million_assumed": 1,
+    "blended_generation_output_per_million_assumed": 5,
+    "luna_batch_input_per_million": 0.05,
+    "luna_batch_output_per_million": 0.25
+  },
+  "scenarios": {
+    "prepared_reuse": {
+      "total": 2250000,
+      "new": 250000,
+      "label": 250000,
+      "eval_new": 100000
+    },
+    "raw_reuse": {
+      "total": 2250000,
+      "new": 250000,
+      "label": 2250000,
+      "eval_new": 100000
+    },
+    "full_rebuild": {
+      "total": 2250000,
+      "new": 2250000,
+      "label": 2250000,
+      "eval_new": 520000
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "description": "Load human sources and existing synthetic data",
+      "basis": "20 CPU-hours at assumed $0.50/hour; use available/free sources",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    },
+    {
+      "step": 2,
+      "description": "Clean text, normalize Unicode, deduplicate",
+      "basis": "60 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 30,
+        "raw_reuse": 30,
+        "full_rebuild": 30
+      }
+    },
+    {
+      "step": 3,
+      "description": "Split by parent document and assign domain/language strata",
+      "basis": "10 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 5,
+        "raw_reuse": 5,
+        "full_rebuild": 5
+      }
+    },
+    {
+      "step": 4,
+      "description": "Extract topics/metadata for new mirrors",
+      "basis": "Initial new source count \u00d7 $0.000875; replace Haiku batch with Luna batch at 0.1x previous unit cost",
+      "cost_usd": {
+        "prepared_reuse": 19.6875,
+        "raw_reuse": 19.6875,
+        "full_rebuild": 194.6875
+      }
+    },
+    {
+      "step": 5,
+      "description": "Generate fully AI-written mirrors",
+      "basis": "Initial new source count \u00d7 $0.0043",
+      "cost_usd": {
+        "prepared_reuse": 967.5,
+        "raw_reuse": 967.5,
+        "full_rebuild": 9567.5
+      }
+    },
+    {
+      "step": 6,
+      "description": "Generate two edited variants per new source",
+      "basis": "Initial new source count \u00d7 $0.010",
+      "cost_usd": {
+        "prepared_reuse": 2250.0,
+        "raw_reuse": 2250.0,
+        "full_rebuild": 22250.0
+      }
+    },
+    {
+      "step": 7,
+      "description": "Generate humanizer/adversarial variants",
+      "basis": "0.25 variant/source; initial new source count \u00d7 $0.00125",
+      "cost_usd": {
+        "prepared_reuse": 281.25,
+        "raw_reuse": 281.25,
+        "full_rebuild": 2781.25
+      }
+    },
+    {
+      "step": 8,
+      "description": "Reject copied generations/refusals and validate outputs",
+      "basis": "20 CPU-hours; regeneration not silently included",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    },
+    {
+      "step": 9,
+      "description": "Split original human texts into clauses",
+      "basis": "Initial sources needing labels \u00d7 $0.00275; cache once per source; replace Haiku batch with Luna batch at 0.1x previous unit cost",
+      "cost_usd": {
+        "prepared_reuse": 61.875,
+        "raw_reuse": 611.875,
+        "full_rebuild": 611.875
+      }
+    },
+    {
+      "step": 10,
+      "description": "Split the two edited texts into clauses",
+      "basis": "Initial sources needing labels \u00d7 $0.0055; replace Haiku batch with Luna batch at 0.1x previous unit cost",
+      "cost_usd": {
+        "prepared_reuse": 123.75,
+        "raw_reuse": 1223.75,
+        "full_rebuild": 1223.75
+      }
+    },
+    {
+      "step": 11,
+      "description": "Compute lexical n-gram similarity and retrieve source spans",
+      "basis": "60 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 30,
+        "raw_reuse": 30,
+        "full_rebuild": 30
+      }
+    },
+    {
+      "step": 12,
+      "description": "Compute semantic embeddings for soft n-gram labeling",
+      "basis": "64 H100-hours at $2.50/hour, including later mined examples",
+      "cost_usd": {
+        "prepared_reuse": 160,
+        "raw_reuse": 160,
+        "full_rebuild": 160
+      }
+    },
+    {
+      "step": 13,
+      "description": "Assign clause/token labels and 15-bucket/mixed targets",
+      "basis": "20 CPU-hours, including later mined examples",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    },
+    {
+      "step": 14,
+      "description": "Construct interleaved passages and benign corruption controls",
+      "basis": "20 CPU-hours; reuse existing passages",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    },
+    {
+      "step": 15,
+      "description": "Tokenize, retain offsets, create windows and loss masks",
+      "basis": "40 CPU-hours; later mined additions included",
+      "cost_usd": {
+        "prepared_reuse": 20,
+        "raw_reuse": 20,
+        "full_rebuild": 20
+      }
+    },
+    {
+      "step": 16,
+      "description": "Prepare separate evaluation/calibration partitions",
+      "basis": "10 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 5,
+        "raw_reuse": 5,
+        "full_rebuild": 5
+      }
+    },
+    {
+      "step": 17,
+      "description": "Generate fresh held-out AI and mixed/edited examples",
+      "basis": "New AI eval examples \u00d7 $0.0043, plus 10k separate mixed-eval source families \u00d7 $0.024675; metadata and clause-splitting component only repriced to Luna batch at 0.1x",
+      "cost_usd": {
+        "prepared_reuse": 594.625,
+        "raw_reuse": 594.625,
+        "full_rebuild": 2400.625
+      }
+    },
+    {
+      "step": 18,
+      "description": "Eight small backbone/LoRA experiments",
+      "basis": "8 \u00d7 5% of full-run compute",
+      "cost_usd": {
+        "prepared_reuse": 768,
+        "raw_reuse": 768,
+        "full_rebuild": 768
+      }
+    },
+    {
+      "step": 19,
+      "description": "Four longer loss, data, and Repeat2 experiments",
+      "basis": "4 \u00d7 10% of full-run compute",
+      "cost_usd": {
+        "prepared_reuse": 768,
+        "raw_reuse": 768,
+        "full_rebuild": 768
+      }
+    },
+    {
+      "step": 20,
+      "description": "Train preliminary candidate: stage 1",
+      "basis": "Assumed half of 768 H100-hours",
+      "cost_usd": {
+        "prepared_reuse": 960,
+        "raw_reuse": 960,
+        "full_rebuild": 960
+      }
+    },
+    {
+      "step": 21,
+      "description": "Merge stage-1 adapter and initialize stage-2 adapter",
+      "basis": "Included within candidate job allocation",
+      "cost_usd": {
+        "prepared_reuse": 0,
+        "raw_reuse": 0,
+        "full_rebuild": 0
+      }
+    },
+    {
+      "step": 22,
+      "description": "Train preliminary candidate: stage 2",
+      "basis": "Other half; Repeat2 included",
+      "cost_usd": {
+        "prepared_reuse": 960,
+        "raw_reuse": 960,
+        "full_rebuild": 960
+      }
+    },
+    {
+      "step": 23,
+      "description": "Screen reserved human pool and select hard negatives",
+      "basis": "166.4 H100-hours; throughput-dependent pool size",
+      "cost_usd": {
+        "prepared_reuse": 416,
+        "raw_reuse": 416,
+        "full_rebuild": 416
+      }
+    },
+    {
+      "step": 24,
+      "description": "Add 25k mined source families: metadata, mirror, edits, variants, clause labels",
+      "basis": "25,000 \u00d7 $0.024675; reserved from totals above, not extra families; metadata and clause-splitting component only repriced to Luna batch at 0.1x",
+      "cost_usd": {
+        "prepared_reuse": 411.5625,
+        "raw_reuse": 411.5625,
+        "full_rebuild": 411.5625
+      }
+    },
+    {
+      "step": 25,
+      "description": "Final training: stage 1",
+      "basis": "Assumed 384 H100-hours; restart from pretrained backbone",
+      "cost_usd": {
+        "prepared_reuse": 960,
+        "raw_reuse": 960,
+        "full_rebuild": 960
+      }
+    },
+    {
+      "step": 26,
+      "description": "Merge adapter and initialize fresh adapter",
+      "basis": "Included within final training allocation",
+      "cost_usd": {
+        "prepared_reuse": 0,
+        "raw_reuse": 0,
+        "full_rebuild": 0
+      }
+    },
+    {
+      "step": 27,
+      "description": "Final training: stage 2",
+      "basis": "Assumed 384 H100-hours; joint objectives and Repeat2",
+      "cost_usd": {
+        "prepared_reuse": 960,
+        "raw_reuse": 960,
+        "full_rebuild": 960
+      }
+    },
+    {
+      "step": 28,
+      "description": "Score calibration and evaluation sets",
+      "basis": "115.2 H100-hours",
+      "cost_usd": {
+        "prepared_reuse": 288,
+        "raw_reuse": 288,
+        "full_rebuild": 288
+      }
+    },
+    {
+      "step": 29,
+      "description": "Fit calibration/CRF parameters and sentence/run-length rules",
+      "basis": "20 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    },
+    {
+      "step": 30,
+      "description": "Export final checkpoint and run consistency checks",
+      "basis": "20 CPU-hours",
+      "cost_usd": {
+        "prepared_reuse": 10,
+        "raw_reuse": 10,
+        "full_rebuild": 10
+      }
+    }
+  ],
+  "totals_usd": {
+    "prepared_reuse": 11100.25,
+    "raw_reuse": 12750.25,
+    "full_rebuild": 45831.25
+  },
+  "revision": 3,
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "previous_totals_usd": {
+    "prepared_reuse": 13235.5,
+    "raw_reuse": 29735.5,
+    "full_rebuild": 64391.5
+  },
+  "teacher_costs_usd": {
+    "prepared_reuse": {
+      "previous": 2372.5,
+      "luna_batch": 237.25,
+      "savings": 2135.25
+    },
+    "raw_reuse": {
+      "previous": 18872.5,
+      "luna_batch": 1887.25,
+      "savings": 16985.25
+    },
+    "full_rebuild": {
+      "previous": 20622.5,
+      "luna_batch": 2062.25,
+      "savings": 18560.25
+    }
+  }
+}

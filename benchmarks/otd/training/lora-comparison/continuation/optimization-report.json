@@ -1,0 +1,876 @@
+{
+  "selected": {
+    "stage1": {
+      "micro_batch": 1,
+      "gradient_checkpointing": false
+    },
+    "stage2": {
+      "micro_batch": 2,
+      "gradient_checkpointing": false
+    }
+  },
+  "effective_batch": 32,
+  "verification": [
+    {
+      "stage": 1,
+      "baseline": true,
+      "micro_batch": 1,
+      "checkpointing": true,
+      "sequence_lengths": [
+        510,
+        510,
+        507,
+        506,
+        506,
+        506,
+        497,
+        481,
+        473,
+        472,
+        472,
+        470,
+        468,
+        468,
+        466,
+        465,
+        465,
+        464,
+        462,
+        459,
+        455,
+        452,
+        450,
+        450,
+        449,
+        444,
+        443,
+        441,
+        440,
+        439,
+        439,
+        439
+      ],
+      "step_seconds": [
+        29.540979544981383,
+        29.933967644989025,
+        29.607104219991015
+      ],
+      "peak_allocated_bytes": 20455489024,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": null
+    },
+    {
+      "stage": 1,
+      "baseline": false,
+      "micro_batch": 4,
+      "checkpointing": false,
+      "sequence_lengths": [
+        510,
+        510,
+        507,
+        506,
+        506,
+        506,
+        497,
+        481,
+        473,
+        472,
+        472,
+        470,
+        468,
+        468,
+        466,
+        465,
+        465,
+        464,
+        462,
+        459,
+        455,
+        452,
+        450,
+        450,
+        449,
+        444,
+        443,
+        441,
+        440,
+        439,
+        439,
+        439
+      ],
+      "step_seconds": [
+        6.7563892849721014,
+        5.966930682974635,
+        5.957539794006152
+      ],
+      "peak_allocated_bytes": 56517967872,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": {
+        "relative_l2": 0.03751267697467638,
+        "cosine": 0.999297496468251
+      },
+      "passed": false
+    },
+    {
+      "stage": 1,
+      "baseline": false,
+      "micro_batch": 2,
+      "checkpointing": false,
+      "sequence_lengths": [
+        510,
+        510,
+        507,
+        506,
+        506,
+        506,
+        497,
+        481,
+        473,
+        472,
+        472,
+        470,
+        468,
+        468,
+        466,
+        465,
+        465,
+        464,
+        462,
+        459,
+        455,
+        452,
+        450,
+        450,
+        449,
+        444,
+        443,
+        441,
+        440,
+        439,
+        439,
+        439
+      ],
+      "step_seconds": [
+        9.200787487003254,
+        8.926005735993385,
+        8.985223770985613
+      ],
+      "peak_allocated_bytes": 42100872192,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": {
+        "relative_l2": 0.03262788088648968,
+        "cosine": 0.9994674929809322
+      },
+      "passed": false
+    },
+    {
+      "stage": 1,
+      "baseline": false,
+      "micro_batch": 1,
+      "checkpointing": false,
+      "sequence_lengths": [
+        510,
+        510,
+        507,
+        506,
+        506,
+        506,
+        497,
+        481,
+        473,
+        472,
+        472,
+        470,
+        468,
+        468,
+        466,
+        465,
+        465,
+        464,
+        462,
+        459,
+        455,
+        452,
+        450,
+        450,
+        449,
+        444,
+        443,
+        441,
+        440,
+        439,
+        439,
+        439
+      ],
+      "step_seconds": [
+        17.992319736018544,
+        17.49056699499488,
+        17.65179855801398
+      ],
+      "peak_allocated_bytes": 34742652416,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": {
+        "relative_l2": 0.0002963430803928511,
+        "cosine": 0.999999956096344
+      },
+      "passed": true
+    },
+    {
+      "stage": 2,
+      "baseline": true,
+      "micro_batch": 1,
+      "checkpointing": true,
+      "sequence_lengths": [
+        1018,
+        1018,
+        1018,
+        974,
+        972,
+        972,
+        964,
+        958,
+        954,
+        946,
+        946,
+        936,
+        936,
+        936,
+        936,
+        930,
+        928,
+        924,
+        924,
+        920,
+        918,
+        916,
+        910,
+        910,
+        904,
+        904,
+        904,
+        898,
+        898,
+        892,
+        892,
+        888
+      ],
+      "step_seconds": [
+        43.33060491402284,
+        42.634503735025646,
+        42.57160286701401
+      ],
+      "peak_allocated_bytes": 20841544704,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": null,
+      "passed": true
+    },
+    {
+      "stage": 2,
+      "baseline": false,
+      "micro_batch": 2,
+      "checkpointing": false,
+      "sequence_lengths": [
+        1018,
+        1018,
+        1018,
+        974,
+        972,
+        972,
+        964,
+        958,
+        954,
+        946,
+        946,
+        936,
+        936,
+        936,
+        936,
+        930,
+        928,
+        924,
+        924,
+        920,
+        918,
+        916,
+        910,
+        910,
+        904,
+        904,
+        904,
+        898,
+        898,
+        892,
+        892,
+        888
+      ],
+      "step_seconds": [
+        14.839676954987226,
+        14.38470427802531,
+        14.3135324199975
+      ],
+      "peak_allocated_bytes": 56714346496,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "full_gradient_comparison": {
+        "relative_l2": 0.026010789404170905,
+        "cosine": 0.9996616299409943
+      },
+      "passed": true
+    }
+  ],
+  "data_preparation": "Retained existing encoding; 64-row encoding takes about 0.08 seconds, too small to justify caching complexity.",
+  "kernels": "Kept pinned baseline kernels; no dependency changes.",
+  "numerical_scope": "Full accumulated gradients compared in BF16 forward/backward with FP32 gradient metrics; no FP32 reference inference.",
+  "limitations": "Short warmed single-GPU profiling, not a full-run speed guarantee.",
+  "recipe_preserved": [
+    "data hashes and order",
+    "rank128 alpha32 all-linear",
+    "seed42",
+    "AdamW8bit and LR groups",
+    "effective batch32",
+    "epochs objectives selection calibration",
+    "production restarts from pinned base; profiling updates discarded"
+  ],
+  "initial_trials": [
+    {
+      "case": "stage1-micro1-checkpoint0",
+      "stage": 1,
+      "micro_batch": 1,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.029789767897455022,
+          "forward": 5.2446579011157155,
+          "backward": 9.142008606926538,
+          "optimizer": 0.0795737000007648,
+          "wall": 14.596206733986037
+        },
+        {
+          "prepare": 0.05610930785769597,
+          "forward": 6.027672845957568,
+          "backward": 11.830838230001973,
+          "optimizer": 0.04584854899439961,
+          "wall": 18.02920962299686
+        },
+        {
+          "prepare": 0.05949497103574686,
+          "forward": 5.951768152968725,
+          "backward": 11.776599435979733,
+          "optimizer": 0.04574121898622252,
+          "wall": 17.89666154398583
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 17.962935583491344,
+      "examples_per_second": 1.7814460142811668,
+      "peak_allocated_bytes": 34392326144,
+      "peak_reserved_bytes": 34793848832,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.9730715295299888,
+      "uncached_encode_seconds_64": 0.07948027897509746,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage1-micro1-checkpoint1",
+      "stage": 1,
+      "micro_batch": 1,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.02451597899198532,
+          "forward": 7.422307908098446,
+          "backward": 13.966609170922311,
+          "optimizer": 0.13704047098872252,
+          "wall": 21.659127919003367
+        },
+        {
+          "prepare": 0.04452278307871893,
+          "forward": 8.146632632036926,
+          "backward": 17.240431319078198,
+          "optimizer": 0.04660911002429202,
+          "wall": 25.554596177011263
+        },
+        {
+          "prepare": 0.0425574999244418,
+          "forward": 8.293931935942965,
+          "backward": 17.037525401974563,
+          "optimizer": 0.04633793199900538,
+          "wall": 25.48626805099775
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 25.520432114004507,
+      "examples_per_second": 1.2538972638492194,
+      "peak_allocated_bytes": 20406214144,
+      "peak_reserved_bytes": 20667432960,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.9730715295299888,
+      "uncached_encode_seconds_64": 0.07582086001639254,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage1-micro2-checkpoint0",
+      "stage": 1,
+      "micro_batch": 2,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.01962591608753428,
+          "forward": 2.7609495429787785,
+          "backward": 4.619413487962447,
+          "optimizer": 0.08089223300339654,
+          "wall": 7.571461027982878
+        },
+        {
+          "prepare": 0.03304616000968963,
+          "forward": 3.2049497929692734,
+          "backward": 4.520542950980598,
+          "optimizer": 0.04597695401753299,
+          "wall": 7.863304822996724
+        },
+        {
+          "prepare": 0.034090478060534224,
+          "forward": 3.0157275800593197,
+          "backward": 4.479145679913927,
+          "optimizer": 0.04667848799726926,
+          "wall": 7.632980233000126
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 7.748142527998425,
+      "examples_per_second": 4.130022116186671,
+      "peak_allocated_bytes": 41397001728,
+      "peak_reserved_bytes": 41909485568,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.968509718775749,
+      "uncached_encode_seconds_64": 0.07225995499175042,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage1-micro2-checkpoint1",
+      "stage": 1,
+      "micro_batch": 2,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.015119702002266422,
+          "forward": 3.75073387203156,
+          "backward": 6.942732706083916,
+          "optimizer": 0.08186196399037726,
+          "wall": 10.885479527001735
+        },
+        {
+          "prepare": 0.023243851959705353,
+          "forward": 4.042559783993056,
+          "backward": 8.635470210982021,
+          "optimizer": 0.04545344700454734,
+          "wall": 12.809006193012465
+        },
+        {
+          "prepare": 0.024095751985441893,
+          "forward": 4.123477973975241,
+          "backward": 8.644948595087044,
+          "optimizer": 0.04570280501502566,
+          "wall": 12.894837733998429
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 12.851921963505447,
+      "examples_per_second": 2.489899961334016,
+      "peak_allocated_bytes": 20756155392,
+      "peak_reserved_bytes": 21214789632,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.968509718775749,
+      "uncached_encode_seconds_64": 0.07773032400291413,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage1-micro4-checkpoint0",
+      "stage": 1,
+      "micro_batch": 4,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.010427864996017888,
+          "forward": 1.5060145040624775,
+          "backward": 1.702628309983993,
+          "optimizer": 0.08220022497698665,
+          "wall": 3.3906044060131535
+        },
+        {
+          "prepare": 0.018260025011841208,
+          "forward": 1.7989114969968796,
+          "backward": 2.6467616459995043,
+          "optimizer": 0.04619422199903056,
+          "wall": 4.565085907990579
+        },
+        {
+          "prepare": 0.023035624995827675,
+          "forward": 1.6080974120122846,
+          "backward": 2.639148060028674,
+          "optimizer": 0.046050628006923944,
+          "wall": 4.3686869500088505
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 4.4668864289997146,
+      "examples_per_second": 7.163826640465062,
+      "peak_allocated_bytes": 55431008768,
+      "peak_reserved_bytes": 65521319936,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.9678362011909485,
+      "uncached_encode_seconds_64": 0.08054851298220456,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage1-micro4-checkpoint1",
+      "stage": 1,
+      "micro_batch": 4,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.008482801989885047,
+          "forward": 1.8853749969857745,
+          "backward": 3.5547931409673765,
+          "optimizer": 0.08612805700977333,
+          "wall": 5.625824724003905
+        },
+        {
+          "prepare": 0.014001536037540063,
+          "forward": 2.135284832038451,
+          "backward": 4.5343564780196175,
+          "optimizer": 0.04570884598069824,
+          "wall": 6.782980195013806
+        },
+        {
+          "prepare": 0.015415086963912472,
+          "forward": 2.08781837800052,
+          "backward": 5.299568677961361,
+          "optimizer": 0.0458900369994808,
+          "wall": 7.49864549699123
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 7.140812846002518,
+      "examples_per_second": 4.481282550055047,
+      "peak_allocated_bytes": 21687667200,
+      "peak_reserved_bytes": 22292725760,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 3.9678362011909485,
+      "uncached_encode_seconds_64": 0.07845807299599983,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro1-checkpoint0",
+      "stage": 2,
+      "micro_batch": 1,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.04215369399753399,
+          "forward": 5.941921064979397,
+          "backward": 8.048964388028253,
+          "optimizer": 0.08106365898856893,
+          "wall": 14.220863212976838
+        },
+        {
+          "prepare": 0.07606328892870806,
+          "forward": 7.755611748958472,
+          "backward": 12.296229010098614,
+          "optimizer": 0.04641538698342629,
+          "wall": 20.240270859998418
+        },
+        {
+          "prepare": 0.07309082205756567,
+          "forward": 7.601322409987915,
+          "backward": 12.316440291935578,
+          "optimizer": 0.04622588597703725,
+          "wall": 20.097051698016003
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 20.16866127900721,
+      "examples_per_second": 1.586619932643104,
+      "peak_allocated_bytes": 40202098688,
+      "peak_reserved_bytes": 40550531072,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.6770394798368216,
+      "uncached_encode_seconds_64": 0.08583085800637491,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro1-checkpoint1",
+      "stage": 2,
+      "micro_batch": 1,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.031903911934932694,
+          "forward": 7.959562527074013,
+          "backward": 15.892034154880093,
+          "optimizer": 0.08066294901072979,
+          "wall": 24.06568922600127
+        },
+        {
+          "prepare": 0.047806792019400746,
+          "forward": 10.484233691910049,
+          "backward": 22.886066295061028,
+          "optimizer": 0.04598756800987758,
+          "wall": 33.53884438800742
+        },
+        {
+          "prepare": 0.04855008702725172,
+          "forward": 10.42692547707702,
+          "backward": 22.925989581039175,
+          "optimizer": 0.04582082500564866,
+          "wall": 33.507629776984686
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 33.52323708249605,
+      "examples_per_second": 0.9545617543214107,
+      "peak_allocated_bytes": 20665705984,
+      "peak_reserved_bytes": 21166555136,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.6770394798368216,
+      "uncached_encode_seconds_64": 0.08335656899726018,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro2-checkpoint0",
+      "stage": 2,
+      "micro_batch": 2,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.023594656988279894,
+          "forward": 3.211927448050119,
+          "backward": 4.090860876109218,
+          "optimizer": 0.08104606700362638,
+          "wall": 7.49957427100162
+        },
+        {
+          "prepare": 0.04013672299333848,
+          "forward": 4.169077421945985,
+          "backward": 6.366251394036226,
+          "optimizer": 0.04614188597770408,
+          "wall": 10.683586111990735
+        },
+        {
+          "prepare": 0.04876556195085868,
+          "forward": 3.8717873870627955,
+          "backward": 6.406763648992637,
+          "optimizer": 0.04671041198889725,
+          "wall": 10.432528702978743
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 10.558057407484739,
+      "examples_per_second": 3.030860580215713,
+      "peak_allocated_bytes": 53117172224,
+      "peak_reserved_bytes": 65420656640,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.67856602743268,
+      "uncached_encode_seconds_64": 0.07791822002036497,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro2-checkpoint1",
+      "stage": 2,
+      "micro_batch": 2,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.017275222984608263,
+          "forward": 4.10995606900542,
+          "backward": 8.088075463921996,
+          "optimizer": 0.08566416898975149,
+          "wall": 12.390083880978636
+        },
+        {
+          "prepare": 0.029167292988859117,
+          "forward": 5.196434402954765,
+          "backward": 11.527127148961881,
+          "optimizer": 0.04634880300727673,
+          "wall": 16.862222091993317
+        },
+        {
+          "prepare": 0.03071191205526702,
+          "forward": 5.167523157026153,
+          "backward": 11.684506031975616,
+          "optimizer": 0.046205358987208456,
+          "wall": 16.984241708996706
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 16.92323190049501,
+      "examples_per_second": 1.8908917745826073,
+      "peak_allocated_bytes": 21506171392,
+      "peak_reserved_bytes": 22271754240,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.67856602743268,
+      "uncached_encode_seconds_64": 0.08237146999454126,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro4-checkpoint0",
+      "stage": 2,
+      "micro_batch": 4,
+      "checkpointing": false,
+      "timings": [
+        {
+          "prepare": 0.0132486000075005,
+          "forward": 2.0727284909808077,
+          "backward": 2.4445416419766843,
+          "optimizer": 0.08014255200396292,
+          "wall": 4.698627539997688
+        },
+        {
+          "prepare": 0.024871216039173305,
+          "forward": 3.8876658359658904,
+          "backward": 5.579477364983177,
+          "optimizer": 0.046375044010346755,
+          "wall": 9.595367524016183
+        },
+        {
+          "prepare": 0.02875230397330597,
+          "forward": 2.7880412549711764,
+          "backward": 5.574067500943784,
+          "optimizer": 0.045944823999889195,
+          "wall": 8.49158896098379
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 9.043478242499987,
+      "examples_per_second": 3.5384615456490436,
+      "peak_allocated_bytes": 78618120704,
+      "peak_reserved_bytes": 84529905664,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.678092449903488,
+      "uncached_encode_seconds_64": 0.07561576901935041,
+      "cached_encoding_exact": true
+    },
+    {
+      "case": "stage2-micro4-checkpoint1",
+      "stage": 2,
+      "micro_batch": 4,
+      "checkpointing": true,
+      "timings": [
+        {
+          "prepare": 0.009753049991559237,
+          "forward": 2.1529818199924193,
+          "backward": 4.312303535058163,
+          "optimizer": 0.08520898700226098,
+          "wall": 6.646668384986697
+        },
+        {
+          "prepare": 0.01694966701325029,
+          "forward": 3.028071626991732,
+          "backward": 8.187552641960792,
+          "optimizer": 0.0459670549898874,
+          "wall": 11.333645151986275
+        },
+        {
+          "prepare": 0.02019489003578201,
+          "forward": 3.136889733024873,
+          "backward": 8.176446300989483,
+          "optimizer": 0.04603363299975172,
+          "wall": 11.432011158991372
+        }
+      ],
+      "warmup_steps": 1,
+      "measured_steps": 2,
+      "seconds_per_32_examples": 11.382828155488824,
+      "examples_per_second": 2.811252139001109,
+      "peak_allocated_bytes": 23191019008,
+      "peak_reserved_bytes": 24169676800,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "initial_loss": 2.678092449903488,
+      "uncached_encode_seconds_64": 0.08938891501748003,
+      "cached_encoding_exact": true
+    }
+  ],
+  "acceptance_rule": {
+    "full_gradient_relative_l2_max": 0.03,
+    "gradient_cosine_min": 0.999,
+    "peak_allocation_fraction_max": 0.85
+  },
+  "timing_comparison": {
+    "1": {
+      "baseline_seconds_per_32": 29.77053593249002,
+      "selected_seconds_per_32": 17.57118277650443,
+      "speedup": 1.6942818426712936,
+      "selected_peak_gb": 34.742652416
+    },
+    "2": {
+      "baseline_seconds_per_32": 42.60305330101983,
+      "selected_seconds_per_32": 14.349118349011405,
+      "speedup": 2.9690363034712166,
+      "selected_peak_gb": 56.714346496
+    }
+  }
+}

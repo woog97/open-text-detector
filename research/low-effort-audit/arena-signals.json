@@ -1,0 +1,8 @@
+{
+  "eligible_responses": 3141,
+  "prompt_groups": 100,
+  "repeated8gram_atleast10pct": 6,
+  "repeated_sentence": 11,
+  "assistant_self_reference": 28,
+  "code_fence": 60
+}

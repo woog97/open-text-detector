@@ -1,0 +1,207 @@
+{
+ "excluded_space_suite": 136,
+ "excluded_eval_selection_calibration": 444,
+ "excluded_never_train": 38,
+ "heldout_sections_in_training_text": 0,
+ "role_targets": {
+  "heldout": {
+   "introduction": 57,
+   "related_work": 39,
+   "discussion_conclusion": 45,
+   "method": 9,
+   "experiments_results": 30
+  },
+  "train": {
+   "introduction": 261,
+   "related_work": 262,
+   "discussion_conclusion": 209,
+   "method": 157,
+   "experiments_results": 157
+  }
+ },
+ "shortfalls": {
+  "heldout/method": 6,
+  "heldout/experiments_results": 20,
+  "train/method": 12
+ },
+ "items": 1188,
+ "papers": 835,
+ "by_writer_kind": {
+  "sonnet": {
+   "draft": 249,
+   "rewrite": 246
+  },
+  "opus": {
+   "rewrite": 246,
+   "draft": 249
+  },
+  "haiku": {
+   "rewrite": 98,
+   "draft": 100
+  }
+ },
+ "by_writer_split": {
+  "sonnet": {
+   "train": 434,
+   "heldout": 61
+  },
+  "opus": {
+   "train": 428,
+   "heldout": 67
+  },
+  "haiku": {
+   "heldout": 26,
+   "train": 172
+  }
+ },
+ "by_role_split": {
+  "introduction": {
+   "train": 261,
+   "heldout": 57
+  },
+  "related_work": {
+   "heldout": 39,
+   "train": 262
+  },
+  "discussion_conclusion": {
+   "heldout": 45,
+   "train": 209
+  },
+  "method": {
+   "train": 145,
+   "heldout": 3
+  },
+  "experiments_results": {
+   "train": 157,
+   "heldout": 10
+  }
+ },
+ "by_source_split": {
+  "paired": {
+   "train": 866,
+   "heldout": 22
+  },
+  "archive": {
+   "heldout": 132,
+   "train": 168
+  }
+ },
+ "cells": {
+  "acl 2013": {
+   "train": 8
+  },
+  "acl 2014": {
+   "train": 12
+  },
+  "acl 2015": {
+   "train": 4
+  },
+  "acl 2016": {
+   "train": 16
+  },
+  "acl 2017": {
+   "train": 22
+  },
+  "acl 2018": {
+   "train": 19
+  },
+  "acl 2019": {
+   "train": 33
+  },
+  "acl 2020": {
+   "train": 47
+  },
+  "acl 2021": {
+   "train": 39
+  },
+  "corl 2021": {
+   "train": 14,
+   "heldout": 3
+  },
+  "corl 2022": {
+   "train": 22,
+   "heldout": 8
+  },
+  "iclr 2020": {
+   "train": 21,
+   "heldout": 1
+  },
+  "iclr 2021": {
+   "train": 15,
+   "heldout": 4
+  },
+  "iclr 2022": {
+   "train": 14,
+   "heldout": 5
+  },
+  "icml 2013": {
+   "train": 36
+  },
+  "icml 2014": {
+   "train": 39
+  },
+  "icml 2015": {
+   "train": 35
+  },
+  "icml 2016": {
+   "train": 37
+  },
+  "icml 2017": {
+   "train": 40
+  },
+  "icml 2018": {
+   "train": 41
+  },
+  "icml 2019": {
+   "train": 43
+  },
+  "icml 2020": {
+   "train": 37
+  },
+  "icml 2021": {
+   "train": 38
+  },
+  "neurips 2013": {
+   "train": 28
+  },
+  "neurips 2014": {
+   "train": 39
+  },
+  "neurips 2015": {
+   "train": 31
+  },
+  "neurips 2016": {
+   "train": 31
+  },
+  "neurips 2017": {
+   "train": 39
+  },
+  "neurips 2018": {
+   "train": 37
+  },
+  "neurips 2019": {
+   "train": 38
+  },
+  "neurips 2020": {
+   "train": 41,
+   "heldout": 22
+  },
+  "neurips 2021": {
+   "train": 36
+  },
+  "neurips 2022": {
+   "train": 14,
+   "heldout": 10
+  },
+  "tmlr 2022": {
+   "heldout": 101,
+   "train": 68
+  }
+ },
+ "target_words_median": 549.0,
+ "batch_files": {
+  "sonnet": 62,
+  "opus": 62,
+  "haiku": 25
+ }
+}

@@ -1,0 +1,54 @@
+{
+  "reviewed_at": "2026-10-02T08:13:00Z",
+  "publisher_audit_revision": "9457f04a14cb2355ab00023420369d46ffd4a395",
+  "rights_status": "same publisher-audited candidate basis; precise historical document license versions unknown; quarantine retained",
+  "sources": [
+    {
+      "url": "https://kauaimark.blogspot.com/",
+      "observation": "Author describes personal substitute-teacher experiences; dated individual blog posts; eligible reflective nonfiction/education"
+    },
+    {
+      "url": "https://kk.org/thetechnium/",
+      "observation": "Kevin Kelly reflective technology essays; restrict to dated Technium post routes, exclude cool-tools/product reviews and other site sections"
+    },
+    {
+      "url": "https://blog.mozilla.org/foundation-archive/mozilla-science/mozfest-2015-call-for-session-proposals-closes-monday/",
+      "observation": "Official archive displays site CC license notice; intake only named technical contributor blog routes, not this event announcement or main news routes; no precise license assigned to historical captures"
+    },
+    {
+      "url": "https://opensource.com/article-entering-and-editing-guidelines",
+      "observation": "Official editorial policy says some reposts are copyrighted and site-specific permissions vary. Excluded from added domains despite upstream blanket audit."
+    },
+    {
+      "url": "https://opensource.com/about",
+      "observation": "Official about page says CC licensing is aspirational and not universal; exclusion corroborated."
+    },
+    {
+      "url": "https://vinfrastructure.it/",
+      "observation": "Current page inaccessible403 during review; publisher audited professional infrastructure blog retained only dated posts; no independent current grant inferred"
+    },
+    {
+      "url": "https://www.lawdepartmentmanagementblog.com/",
+      "observation": "Current page inaccessible during review; publisher audited professional management blog retained only dated posts; no independent current grant inferred"
+    },
+    {
+      "url": "https://sme-blog.com/",
+      "observation": "Current502 during review; publisher audited small-business blog retained only dated posts; no independent current grant inferred"
+    }
+  ],
+  "other_added_hosts": [
+    "itismymind.blogspot.com",
+    "nullspace2.blogspot.com"
+  ],
+  "genre_caveat": "Heuristic candidate gates; final per-document genre, attribution, quotations and protected overlap admission audit remain pending",
+  "unchanged_constraints": [
+    "same source revision",
+    "source quota5335",
+    "long deficit only",
+    "domain cap410",
+    "one unchanged span per canonical post",
+    "pre2022 capture and dated post",
+    "global and source dedup",
+    "no current-page text substituted"
+  ]
+}

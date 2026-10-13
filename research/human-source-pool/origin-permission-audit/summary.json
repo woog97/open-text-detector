@@ -1,0 +1,200 @@
+{
+  "audit_id": "stage1-origin-permission-20261003-v1",
+  "state": "all_checks_attempted",
+  "language_scope": "English only; multilingual coverage excluded",
+  "input_checkpoint": "/tmp/pangram-human-active-20261002/checkpoints/finish100k-active-20261002T193833Z.sqlite3",
+  "input_sha256": "efe8bace75f6e62a9103fc209d3b5123d869583d43d37cde57f1464fffb71f2f",
+  "output_checkpoint": "/tmp/pangram-human-active-20261002/origin-permission-audit-20261003/checked-collection.sqlite3",
+  "output_sha256": "f5ed3ff3fbdfd99293ad6ef984ae4fea0ea3c74634994af7bd2ba332fd36f8a2",
+  "completed_at": "2026-10-03T00:28:10.109554+00:00",
+  "counts": {
+    "checked": 100000,
+    "origin_passed": 34483,
+    "permission_failed": 3402,
+    "integrity_passed": 100000,
+    "origin_could_not_verify": 65517,
+    "permission_could_not_verify": 63747,
+    "permission_passed": 32851
+  },
+  "by_source": {
+    "acl": {
+      "checked": 2703,
+      "origin_passed": 2703,
+      "permission_failed": 2703
+    },
+    "pressbooks": {
+      "checked": 3979,
+      "origin_could_not_verify": 3979,
+      "permission_could_not_verify": 3979
+    },
+    "wikipedia": {
+      "checked": 7958,
+      "origin_could_not_verify": 7958,
+      "permission_passed": 7958
+    },
+    "foodista": {
+      "checked": 1545,
+      "origin_could_not_verify": 1545,
+      "permission_could_not_verify": 1545
+    },
+    "arxiv": {
+      "checked": 5405,
+      "origin_could_not_verify": 5405,
+      "permission_could_not_verify": 5405
+    },
+    "gutenberg": {
+      "checked": 12551,
+      "origin_could_not_verify": 12551,
+      "permission_could_not_verify": 12551
+    },
+    "pmc": {
+      "checked": 6306,
+      "origin_could_not_verify": 6306,
+      "permission_could_not_verify": 6306
+    },
+    "amazon2018": {
+      "checked": 5306,
+      "origin_passed": 5306,
+      "permission_could_not_verify": 5306
+    },
+    "asap2": {
+      "checked": 4206,
+      "origin_could_not_verify": 4206,
+      "permission_passed": 4206
+    },
+    "wikivoyage": {
+      "checked": 1231,
+      "origin_could_not_verify": 1121,
+      "permission_passed": 1231,
+      "origin_passed": 110
+    },
+    "opinrank": {
+      "checked": 4244,
+      "origin_passed": 4244,
+      "permission_could_not_verify": 4244
+    },
+    "pes2o": {
+      "checked": 3604,
+      "origin_could_not_verify": 3604,
+      "permission_could_not_verify": 3604
+    },
+    "scidev": {
+      "checked": 926,
+      "origin_passed": 926,
+      "permission_could_not_verify": 926
+    },
+    "stack_tech": {
+      "checked": 2082,
+      "origin_could_not_verify": 2082,
+      "permission_passed": 2082
+    },
+    "wikisource": {
+      "checked": 1111,
+      "origin_could_not_verify": 1111,
+      "permission_could_not_verify": 1111
+    },
+    "oanc_slate": {
+      "checked": 1321,
+      "origin_passed": 1321,
+      "permission_passed": 1321
+    },
+    "libretexts": {
+      "checked": 2387,
+      "origin_could_not_verify": 2387,
+      "permission_could_not_verify": 2387
+    },
+    "persuade": {
+      "checked": 699,
+      "origin_could_not_verify": 699,
+      "permission_failed": 699
+    },
+    "cccc": {
+      "checked": 5017,
+      "origin_passed": 5017,
+      "permission_could_not_verify": 5017
+    },
+    "writingprompts": {
+      "checked": 6667,
+      "origin_passed": 6667,
+      "permission_could_not_verify": 6667
+    },
+    "stack_nontech": {
+      "checked": 5726,
+      "origin_could_not_verify": 5726,
+      "permission_passed": 5726
+    },
+    "globalvoices": {
+      "checked": 1652,
+      "origin_could_not_verify": 1652,
+      "permission_passed": 1652
+    },
+    "imdb": {
+      "checked": 1061,
+      "origin_passed": 1061,
+      "permission_could_not_verify": 1061
+    },
+    "wikinews": {
+      "checked": 991,
+      "origin_could_not_verify": 991,
+      "permission_could_not_verify": 991
+    },
+    "ubuntu_irc": {
+      "checked": 1561,
+      "origin_could_not_verify": 1561,
+      "permission_could_not_verify": 1561
+    },
+    "wikibooks": {
+      "checked": 1592,
+      "origin_could_not_verify": 1592,
+      "permission_passed": 1592
+    },
+    "govreport": {
+      "checked": 1086,
+      "origin_passed": 1086,
+      "permission_could_not_verify": 1086
+    },
+    "scp": {
+      "checked": 1893,
+      "origin_passed": 1893,
+      "permission_passed": 1893
+    },
+    "voa": {
+      "checked": 1717,
+      "origin_passed": 1717,
+      "permission_passed": 1717
+    },
+    "fed": {
+      "checked": 776,
+      "origin_passed": 776,
+      "permission_passed": 776
+    },
+    "worldbank": {
+      "checked": 776,
+      "origin_passed": 776,
+      "permission_passed": 776
+    },
+    "eff": {
+      "checked": 415,
+      "origin_passed": 415,
+      "permission_passed": 415
+    },
+    "wiki_talk": {
+      "checked": 1041,
+      "origin_could_not_verify": 1041,
+      "permission_passed": 1041
+    },
+    "oanc_icic": {
+      "checked": 465,
+      "origin_passed": 465,
+      "permission_passed": 465
+    }
+  },
+  "attempt_coverage_percent": 100,
+  "permission_scope": "Evidence for reusable training text including commercial use, subject to license conditions; not a blanket legal clearance.",
+  "human_origin_scope": "Historical archives, attributable publications and source records; positive evidence supports human origin, not a guarantee of no automated text.",
+  "method": "Every passage matched to its saved original and evaluated using record-specific metadata and source policies. Original-work license pages were not individually fetched for every mirrored work; those unresolved grants are explicitly could_not_verify.",
+  "completion_definition": "Every row has an attempted result for both checks, regardless of pass/fail/could_not_verify.",
+  "original_fields_unchanged": true,
+  "rows_removed": 0,
+  "training_admission_changed": false
+}

@@ -1,0 +1,106 @@
+{
+  "method": "Conditional inversion of reported 768 H100-hours; no measured training throughput available",
+  "assumptions": {
+    "flops_per_active_parameter_per_processed_token": 6,
+    "stage1_source_exposures": 1,
+    "stage2_source_exposures": 0.5,
+    "stage2_repeat_factor": 2,
+    "mean_retained_document_tokens": 800,
+    "sustained_tflops_per_gpu_range": [
+      50,
+      150
+    ]
+  },
+  "conditional_results": [
+    {
+      "active_parameters_billions": 3,
+      "sensitivity": [
+        {
+          "assumed_sustained_tflops_per_gpu": 50,
+          "processed_tokens": 7680000000.0,
+          "source_token_equivalents": 3840000000.0,
+          "document_equivalents_at_800_tokens": 4800000.0,
+          "window_equivalents_at_512_tokens": 7500000.0
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 100,
+          "processed_tokens": 15360000000.0,
+          "source_token_equivalents": 7680000000.0,
+          "document_equivalents_at_800_tokens": 9600000.0,
+          "window_equivalents_at_512_tokens": 15000000.0
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 150,
+          "processed_tokens": 23040000000.0,
+          "source_token_equivalents": 11520000000.0,
+          "document_equivalents_at_800_tokens": 14400000.0,
+          "window_equivalents_at_512_tokens": 22500000.0
+        }
+      ]
+    },
+    {
+      "active_parameters_billions": 13,
+      "sensitivity": [
+        {
+          "assumed_sustained_tflops_per_gpu": 50,
+          "processed_tokens": 1772307692.3076923,
+          "source_token_equivalents": 886153846.1538461,
+          "document_equivalents_at_800_tokens": 1107692.3076923077,
+          "window_equivalents_at_512_tokens": 1730769.2307692308
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 100,
+          "processed_tokens": 3544615384.6153846,
+          "source_token_equivalents": 1772307692.3076923,
+          "document_equivalents_at_800_tokens": 2215384.6153846155,
+          "window_equivalents_at_512_tokens": 3461538.4615384615
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 150,
+          "processed_tokens": 5316923076.923077,
+          "source_token_equivalents": 2658461538.4615383,
+          "document_equivalents_at_800_tokens": 3323076.923076923,
+          "window_equivalents_at_512_tokens": 5192307.692307692
+        }
+      ]
+    },
+    {
+      "active_parameters_billions": 39,
+      "sensitivity": [
+        {
+          "assumed_sustained_tflops_per_gpu": 50,
+          "processed_tokens": 590769230.7692307,
+          "source_token_equivalents": 295384615.38461536,
+          "document_equivalents_at_800_tokens": 369230.7692307692,
+          "window_equivalents_at_512_tokens": 576923.0769230769
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 100,
+          "processed_tokens": 1181538461.5384614,
+          "source_token_equivalents": 590769230.7692307,
+          "document_equivalents_at_800_tokens": 738461.5384615384,
+          "window_equivalents_at_512_tokens": 1153846.1538461538
+        },
+        {
+          "assumed_sustained_tflops_per_gpu": 150,
+          "processed_tokens": 1772307692.3076923,
+          "source_token_equivalents": 886153846.1538461,
+          "document_equivalents_at_800_tokens": 1107692.3076923077,
+          "window_equivalents_at_512_tokens": 1730769.2307692308
+        }
+      ]
+    }
+  ],
+  "evaluation_counts": {
+    "human_english": 1000000,
+    "human_multilingual": 996273,
+    "ai_english": 519993,
+    "additional_human_domain_rows_sum": 473226,
+    "mixed_sets": [
+      11363,
+      14990,
+      4826
+    ],
+    "note": "Counts across sets are not verified globally deduplicated. Multilingual AI row excluded from headline sum due to inconsistent published count/rate arithmetic."
+  }
+}

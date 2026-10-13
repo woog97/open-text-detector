@@ -1,0 +1,14 @@
+{
+  "state": "byte_identical",
+  "accepted": 28120,
+  "rejected": 1880,
+  "checksums": {
+    "accepted.jsonl": "63e63f45042c25b07877ae3196fac7c07899243d7974d90d4757b89add274be5",
+    "rejected.jsonl": "ae1ea213b343b4f7e7908d76b209a6da45cf7d251b9f59c0d1413d9c7e3c8b92",
+    "decisions.jsonl": "748a62193183191ef224efbe6893d321c1e3c791065ff2dbf26a549117e2e344",
+    "protocol.json": "41a54a311f98468d0c6c7e1a8eb665215254835f96f6b725c036e5986fc16319"
+  },
+  "parent_input_reconstructed_from": "/tmp/pangram-mirrors-publication-20261003/verified-parents.sqlite3",
+  "raw_archives": 12,
+  "at": "2026-10-03T09:27:54.504687+00:00"
+}

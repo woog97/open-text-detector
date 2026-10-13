@@ -1,0 +1,110 @@
+{
+  "ours": {
+    "checkpoint": "run-01/best_model",
+    "sha256": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14",
+    "training_config": {
+      "dataset": "woog/ai-paper-provenance-v3",
+      "dataset_revision": "98ca42d9ff340d8a8fddba50e880a8528aafecf2",
+      "base_model": "answerdotai/ModernBERT-base",
+      "base_model_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "seed": 42,
+      "epochs": 4,
+      "learning_rate": 2e-05,
+      "weight_decay": 0.01,
+      "batch_size": 16,
+      "gradient_accumulation": 2,
+      "max_length": 512,
+      "inference_stride": 256,
+      "precision": "bfloat16",
+      "sampling": "inverse retained targets per paper; paired variants balanced; 1/3 target-only, 1/3 target-anchored crop, 1/3 random-context crop",
+      "checkpoint_selection": "lowest validation unweighted token cross-entropy",
+      "threshold_selection": "separate token and mean-token sentence thresholds at <=1% validation human FPR",
+      "test_policy": "one final pass after checkpoint/threshold freeze",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "torch": "2.12.0+cu130",
+      "started_at": 1790821657.6180086
+    }
+  },
+  "baselines": {
+    "meld-v5": {
+      "repo_id": "anon-review-meld-2026/meld",
+      "revision": "453acf594d48f8c55c3a38bde396f9178516d817",
+      "files": {
+        "README.md": {
+          "bytes": 6533,
+          "sha256": "25f46d29c48a8efd8e13d8832a6c68ff899a2de9df987482d43058a879c24322"
+        },
+        "config.json": {
+          "bytes": 1227,
+          "sha256": "7b6bcff9950816b4a047ca21fd7e5d4976e436c7a9373a8a82a699b13827a588"
+        },
+        "meld_config.json": {
+          "bytes": 1833,
+          "sha256": "3b2a3f5772219ee4574f92df490d363edc7002bf506b12ab6d999460909a1f7c"
+        },
+        "model.safetensors": {
+          "bytes": 1579353052,
+          "sha256": "32b0fbf6a5bd2083b53d41db24dcd5b6756fa82c688b7396552da9fbcaf8bb91"
+        },
+        "special_tokens_map.json": {
+          "bytes": 694,
+          "sha256": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049"
+        },
+        "tokenizer.json": {
+          "bytes": 2132967,
+          "sha256": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1"
+        },
+        "tokenizer_config.json": {
+          "bytes": 20810,
+          "sha256": "3cd2017ff46d0a527e5d39cae39272eccfa1f19bb9f89b05d166aab2e38354e2"
+        }
+      },
+      "downloaded_at": "2026-09-22T21:36:54.779683+00:00",
+      "license": "MIT"
+    },
+    "meld-v8": {
+      "repo_id": "anon-review-meld-2026/meld",
+      "revision": "8990324abd92e1fa17072f6887ea1e5c1cef5abc",
+      "files": {
+        "README.md": {
+          "bytes": 787,
+          "sha256": "d05ba0e4293d4008d6da1dda65b296cb859340b1464c9e8ea0ee9d743a5f00f3"
+        },
+        "config.json": {
+          "bytes": 2095,
+          "sha256": "87319931b40acf10c2060da23a99d4586fec9c4eca7c7169f93990cb1bbc6ab6"
+        },
+        "meld.py": {
+          "bytes": 11019,
+          "sha256": "7236347d37c1cdebe1a72639955bd8ac76f5ff41cbe946bdad22d6681988bac7"
+        },
+        "meld_config.json": {
+          "bytes": 2868,
+          "sha256": "b56b7276d4e3afb25aa3c6680ef0618e5a9d58d9d2282f02e590355af5e1e910"
+        },
+        "model.safetensors": {
+          "bytes": 4112570616,
+          "sha256": "86700f566059951fc9326a6b04234256d31691b61b4c0a738422616f0d62d303"
+        },
+        "tokenizer.json": {
+          "bytes": 3583228,
+          "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+        },
+        "tokenizer_config.json": {
+          "bytes": 380,
+          "sha256": "fb54f027372062b2ca52282efb04d178a8b57167a00cd8f4e816515823a2c016"
+        }
+      }
+    }
+  },
+  "scoring_code_sha256": {
+    "compare_models.py": "afad1ce2dfa3566e272ededc1c379618516650bf5962d3295736f7f9880ba239",
+    "common.py": "a963295aa2ef3a0ec8f6dd359c1b89b1971405034c94e6340dcbc7af00d95614",
+    "score_wide_eval.py": "99360568d596fb353455e1e0709850af0963e00311a3225d1cf4f37e95af2142",
+    "meld_model.py": "fd45ea31bfd80b56c6043c8177d9b66a5a1fa1a5f5da86ba870fc7bf7136620a",
+    "build_comparison.py": "e4db45857ac944d97f4d82659931c790e6a50f256dee16c230a27c0980d2897f"
+  },
+  "weight_loading": "Safetensors read sequentially into CPU memory; identical checkpoint tensors. Persistent-disk mmap attempt was stopped before any predictions.",
+  "inference_precision": "BF16 autocast for all three models; FP32 weights may be stored in memory, and score/metric accumulation uses standard higher precision. No reported FP32 forward passes.",
+  "aborted_attempt": "Initial FP32 MELD v5 attempt stopped at user request; no predictions from that attempt used in final comparison."
+}

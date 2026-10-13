@@ -1,0 +1,30 @@
+{
+  "kind": "causal",
+  "seed": 42,
+  "learning_rate": 0.0002,
+  "micro_batch": 4,
+  "effective_batch": 32,
+  "stages": {
+    "1": {
+      "epochs": 1
+    },
+    "2": {
+      "epochs": 3
+    }
+  },
+  "precision": "bfloat16",
+  "tuning": "lora",
+  "source_tokens_max": 510,
+  "inference_stride": 256,
+  "repeat2_stage2": true,
+  "optimizer": "adamw8bit",
+  "head_learning_rate": 2e-05,
+  "lora": {
+    "rank": 128,
+    "alpha": 32,
+    "dropout": 0.0,
+    "bias": "none",
+    "targets": "all_backbone_linear_projections",
+    "stage_transition": "retain_selected_stage1_adapter_fresh_optimizer"
+  }
+}

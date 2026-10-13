@@ -1,0 +1,146 @@
+{
+ "checkpoint": "stage2-epoch0-adapters.safetensors",
+ "tag": "fast-moe-mixA-full",
+ "seconds": 109.76182889938354,
+ "dev": {
+  "n_rows": 1997,
+  "n_human_sentences": 7321,
+  "edits_one": {
+   "n": 63,
+   "auroc": 0.9758630857524452,
+   "recall_at_1pct": 0.5079365079365079,
+   "recall_at_05": 0.3333333333333333
+  },
+  "edits_two": {
+   "n": 126,
+   "auroc": 0.9856230066583843,
+   "recall_at_1pct": 0.5634920634920635,
+   "recall_at_05": 0.5
+  },
+  "edits_small": {
+   "n": 189,
+   "auroc": 0.982369699689738,
+   "recall_at_1pct": 0.544973544973545,
+   "recall_at_05": 0.4444444444444444
+  },
+  "edits_para": {
+   "n": 713,
+   "auroc": 0.9966815284586426,
+   "recall_at_1pct": 0.9256661991584852,
+   "recall_at_05": 0.9032258064516129
+  },
+  "edits_all": {
+   "n": 902,
+   "auroc": 0.9936827084616104,
+   "recall_at_1pct": 0.8458980044345898,
+   "recall_at_05": 0.8070953436807096
+  },
+  "human_sentence_fpr_at_05": 0.00560032782406775,
+  "v3_sentences": {
+   "auroc": 0.9851497817251242,
+   "recall_at_1pct": 0.8397260273972603
+  },
+  "standalone_rewrites": {
+   "auroc": 0.965763088094208,
+   "recall_at_1pct": 0.6186440677966102
+  },
+  "public_docs": {
+   "auroc": 0.9984237229693118,
+   "recall_at_1pct": 0.9850746268656716
+  }
+ },
+ "test": {
+  "n_rows": 1514,
+  "n_human_sentences": 5818,
+  "edits_one": {
+   "n": 48,
+   "auroc": 0.9832667296894695,
+   "recall_at_1pct": 0.5833333333333334,
+   "recall_at_05": 0.5
+  },
+  "edits_two": {
+   "n": 102,
+   "auroc": 0.988740150580686,
+   "recall_at_1pct": 0.7843137254901961,
+   "recall_at_05": 0.7058823529411765
+  },
+  "edits_small": {
+   "n": 150,
+   "auroc": 0.9869886558954968,
+   "recall_at_1pct": 0.72,
+   "recall_at_05": 0.64
+  },
+  "edits_para": {
+   "n": 560,
+   "auroc": 0.9962717305897952,
+   "recall_at_1pct": 0.9321428571428572,
+   "recall_at_05": 0.9
+  },
+  "edits_all": {
+   "n": 710,
+   "auroc": 0.994310517626211,
+   "recall_at_1pct": 0.8873239436619719,
+   "recall_at_05": 0.8450704225352113
+  },
+  "human_sentence_fpr_at_05": 0.007047095221725679,
+  "v3_sentences": {
+   "auroc": 0.9813213230608816,
+   "recall_at_1pct": 0.823321554770318
+  },
+  "standalone_rewrites": {
+   "auroc": 0.9361064710581741,
+   "recall_at_1pct": 0.5918367346938775
+  },
+  "public_docs": {
+   "auroc": 0.988376224557129,
+   "recall_at_1pct": 0.8090452261306532
+  }
+ },
+ "all": {
+  "n_rows": 3511,
+  "n_human_sentences": 13139,
+  "edits_one": {
+   "n": 111,
+   "auroc": 0.9788961272711939,
+   "recall_at_1pct": 0.5405405405405406,
+   "recall_at_05": 0.40540540540540543
+  },
+  "edits_two": {
+   "n": 228,
+   "auroc": 0.9869803037161363,
+   "recall_at_1pct": 0.6622807017543859,
+   "recall_at_05": 0.5921052631578947
+  },
+  "edits_small": {
+   "n": 339,
+   "auroc": 0.9843332724908013,
+   "recall_at_1pct": 0.6224188790560472,
+   "recall_at_05": 0.5309734513274337
+  },
+  "edits_para": {
+   "n": 1273,
+   "auroc": 0.9965172674527786,
+   "recall_at_1pct": 0.9277297721916732,
+   "recall_at_05": 0.9018067556952082
+  },
+  "edits_all": {
+   "n": 1612,
+   "auroc": 0.9939550005221891,
+   "recall_at_1pct": 0.8635235732009926,
+   "recall_at_05": 0.8238213399503722
+  },
+  "human_sentence_fpr_at_05": 0.00624096202146282,
+  "v3_sentences": {
+   "auroc": 0.9832899665983871,
+   "recall_at_1pct": 0.8179012345679012
+  },
+  "standalone_rewrites": {
+   "auroc": 0.9536119338750918,
+   "recall_at_1pct": 0.6064814814814815
+  },
+  "public_docs": {
+   "auroc": 0.99338125,
+   "recall_at_1pct": 0.925
+  }
+ }
+}

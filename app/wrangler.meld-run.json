@@ -1,0 +1,21 @@
+{
+  "name": "open-text-detector-meld-run",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "meld-run/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "TOKEN_SHA256": "29aadeded5ea14017b049af1ec5f7d64acce0e305a025ec17abd5966110eaa99",
+    "EXPIRES_AT": "1790319360",
+    "RUN_PREFIX": "classification-runs/vast-complete-20260925"
+  }
+}

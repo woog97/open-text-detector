@@ -1,0 +1,53 @@
+{
+  "verified_at": 1791065054.637449,
+  "budget": {
+    "stage1": 1200,
+    "main_epochs": 3,
+    "main_epoch_examples": 2400,
+    "total_examples": 8400,
+    "main_source_counts": {
+      "human": 600,
+      "mirrors": 600,
+      "papers": 600,
+      "gradtex": 480,
+      "fullpapers": 120
+    }
+  },
+  "space_local_root": "/tmp/pangram-space-fast10",
+  "persistent_bucket": "open-text-detector/training-storage",
+  "persistent_prefix": "workspace/backbone-fast10-20261003",
+  "space_runs": {
+    "ettin-1b": {
+      "id": "dxjn428x",
+      "verified_step": 49,
+      "stage": 2
+    },
+    "qwen35-4b": {
+      "id": "x3eljdj5",
+      "verified_step": 22,
+      "stage": 1
+    },
+    "qwen35-9b": {
+      "id": "7ypllep2",
+      "verified_step": 23,
+      "stage": 1
+    }
+  },
+  "h200_runs": {
+    "gemma4-12b": {
+      "id": "c25ggckh",
+      "verified_step": 37
+    },
+    "qwen36-35b-a3b": {
+      "id": "bs9m9pv7",
+      "verified_step": 32
+    }
+  },
+  "modernbert": {
+    "id": "bd8da4d562df",
+    "state": "finished",
+    "restarted": false
+  },
+  "checkpoint_recovery": "Space original workers save stage1 checkpoint then offline upload fails; continuation watcher detects natural exit, uploads and verifies checkpoint, resumes stage2 with same W&B id, without repeating training. Verified on Ettin. Watcher PID3739, log /tmp/pangram-space-fast10/continue-watch.log.",
+  "ettin_persistent_checkpoint_bytes": 185439258
+}

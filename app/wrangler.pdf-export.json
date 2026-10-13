@@ -1,0 +1,19 @@
+{
+  "name": "open-text-detector-pdf-export",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "pdf-export/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "EXPIRES_AT": "1791515422"
+  }
+}

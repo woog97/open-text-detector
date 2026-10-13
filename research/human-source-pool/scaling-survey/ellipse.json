@@ -1,0 +1,53 @@
+{
+  "source_id": "ellipse",
+  "checked_at": "2026-10-02T19:52:33.652830+00:00",
+  "status": "verified_hard_protected_family_ceiling",
+  "eligible_scaling_ceiling_current_rules": 0,
+  "new_candidates_staged": 0,
+  "original_100k_quota": 1226,
+  "reallocated_100k_quota": 0,
+  "quota_filled_is_capacity_guarantee": false,
+  "live_upstream_revision": "dc3b8f0b3b4332fc9f64302c4ccfc4ed582f4b43",
+  "upstream_changed_since_prior_audit": false,
+  "live_verification": {
+    "official_train_rows": 3911,
+    "official_train_prompt_families": 44,
+    "official_train_sha256": "782344e99668a3ff508d7410c0eb6e36da70f3b28f81c96e367f1ca04924b06c",
+    "official_test_rows": 2571,
+    "official_test_prompt_families": 44,
+    "official_test_sha256": "7e990c6392a9df9554d15bdd22f0b568d19095cd6676ad39cb1eaa69c977ed7a",
+    "test_matches_protected_evaluation_sha256": true,
+    "train_prompts_absent_from_protected_test": [],
+    "eligible_train_rows_after_prompt_exclusion": 0
+  },
+  "required_rule": "Reliable original train essays only; exclude existing local evaluation essays and related prompt/student families before selection; keep noncommercial status.",
+  "cause": "Every original training essay belongs to a prompt family in the protected test set. This is an eligibility ceiling, not a missing downloader or quota shortage fix.",
+  "same_source_alternatives_reviewed": [
+    {
+      "file": "ELLIPSE_Final_github_test.zip",
+      "decision": "ineligible",
+      "reason": "Protected evaluation test essays; not original training split. Live checksum matches protected evaluation file."
+    },
+    {
+      "file": "ellipsis_raw_rater_scores_anon_all_essay.zip",
+      "decision": "not_an_approved_eligible_extension",
+      "reason": "Publisher describes the approximately 9,000-essay raw corpus as including essays omitted for text/rater unreliability. Current approval and adapter allow only reliable original training essays. No claim is made that all raw essays were individually audited; raw corpus cannot be substituted under existing rules."
+    },
+    {
+      "file": "ELL_Rubrics.docx",
+      "decision": "not_essay_supply",
+      "reason": "Scoring rubric."
+    }
+  ],
+  "next_action": "No further ingestion possible from current approved release. Revisit only if publisher releases additional reliable original training essays with prompt/student families outside protected evaluation. Do not relax exclusions or silently substitute raw/test essays.",
+  "evidence": [
+    "research/human-source-pool/evidence/ellipse-protected-prompt-conflict.json",
+    "research/human-source-pool/SOURCE_APPROVALS.txt",
+    "research/human-source-pool/ingest_essay_sources.py",
+    "https://github.com/scrosseye/ELLIPSE-Corpus/tree/dc3b8f0b3b4332fc9f64302c4ccfc4ed582f4b43"
+  ],
+  "remote_audit_directory": "/tmp/pangram-human-active-20261002/scaling-survey/ellipse",
+  "remote_full_audit": "/tmp/pangram-human-active-20261002/scaling-survey/ellipse/audit.json",
+  "dataset_content_downloaded_locally": false,
+  "production_mutated": false
+}

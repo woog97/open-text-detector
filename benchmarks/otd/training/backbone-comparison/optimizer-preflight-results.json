@@ -1,0 +1,41 @@
+{
+  "encoder": {
+    "optimizer": "bitsandbytes.AdamW8bit",
+    "bitsandbytes": "0.50.2",
+    "forward_dtype": "torch.bfloat16",
+    "actual_peak_with_allocated_optimizer_states_bytes": 4344272896,
+    "gpu_total_bytes": 85093777408,
+    "headroom_bytes": 80749504512,
+    "finite_gradients": true,
+    "model_optimizer_steps": 0,
+    "model_parameter_versions_unchanged": true,
+    "toy_optimizer_kernel_check_passed": true,
+    "elapsed_seconds": 12.339245557785034
+  },
+  "causal": {
+    "optimizer": "bitsandbytes.AdamW8bit",
+    "bitsandbytes": "0.50.2",
+    "forward_dtype": "torch.bfloat16",
+    "actual_peak_with_allocated_optimizer_states_bytes": 7107136512,
+    "gpu_total_bytes": 85093777408,
+    "headroom_bytes": 77986640896,
+    "finite_gradients": true,
+    "model_optimizer_steps": 0,
+    "model_parameter_versions_unchanged": true,
+    "toy_optimizer_kernel_check_passed": true,
+    "elapsed_seconds": 10.502357482910156
+  },
+  "qwen35": {
+    "optimizer": "bitsandbytes.AdamW8bit",
+    "bitsandbytes": "0.50.2",
+    "forward_dtype": "torch.bfloat16",
+    "actual_peak_with_allocated_optimizer_states_bytes": 46661088768,
+    "gpu_total_bytes": 85093777408,
+    "headroom_bytes": 38432688640,
+    "finite_gradients": true,
+    "model_optimizer_steps": 0,
+    "model_parameter_versions_unchanged": true,
+    "toy_optimizer_kernel_check_passed": true,
+    "elapsed_seconds": 63.602673292160034
+  }
+}

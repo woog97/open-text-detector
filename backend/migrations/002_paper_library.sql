@@ -1,0 +1,2 @@
+ALTER TABLE scans ADD COLUMN source_locked INTEGER NOT NULL DEFAULT 0;
+CREATE TABLE paper_scans(paper_id TEXT NOT NULL, scan_id TEXT NOT NULL REFERENCES scans(id) ON DELETE CASCADE, PRIMARY KEY(paper_id,scan_id));

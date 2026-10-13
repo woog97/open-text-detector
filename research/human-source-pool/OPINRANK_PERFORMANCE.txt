@@ -1,0 +1,14 @@
+OpinRank production throughput diagnosis — 2026-10-02
+
+Observed original worker identity: PID 16432, start ticks 7454308, state R. At approximately 06:55 UTC it had collected 4,218 / 4,244 after scanning 26,000 reviews. It had used 147.47 CPU seconds. /proc/16432/io showed rchar=315,484,582,847, syscr=76,996,155, read_bytes=0, write_bytes=309,140,936. These are logical reads from cache, not 315GB of physical disk traffic.
+
+The original loop takes BEGIN IMMEDIATE for each mechanically eligible review, including rejected full-bin reviews. It repeatedly counts rows by source and length bin; source_index covers only source, forcing visits to large text-bearing rows to test bin. This can serialize competing writers and burn CPU on cached database pages. Empty read-only transactions do not themselves establish per-rejection fsync, so do not describe every rejected row as a physical fsync. The shared database was about742MB at this measurement. WritingPrompts concurrently reported400rows in136.2seconds; this observation alone is correlation, not an isolated causal speedup measurement.
+
+Parent owns a live covering-index improvement on(source,bin) and worker coordination. No worker interrupted by this task.
+
+Prepared separate optimized adapter: ingest_opinrank_batched.py. Original production ingest_opinrank.py remains unchanged. Default100 scanned rows per batch, max100. Serializes JSON and compresses originals outside writer transaction. Cached full-bin counts reject unavailable bins without SQL. Each bounded transaction refreshes source/bin counts once, inserts records and originals, and commits scan cursor atomically. Source lock unchanged; source quota, length targets, ordering, record schema/IDs, original fields and global exact dedup remain unchanged. Cursor includes archive identity and quota so a deliberate quota change does not skip previously full bins. Existing pre-batch run has no cursor and will be rescanned idempotently if migrated before completion.
+
+Meaningful tests in test_opinrank_batched.py:
+1. Same complete selected rows, normalized dedup keys and decompressed originals as sequential baseline over81mixed-bin inputs including a duplicate, across7-row batches under17-record cap.
+2. Injected SQLite failure on second insertion rolls back first passage, raw original and cursor together. Removing injected failure then resuming/replaying reaches quota with no duplicate or excess rows.
+Both tests passed locally and remotely (remote0.068s). Remote test copy isolated under performance/opinrank-batch-tests; active pipeline unchanged. No production speedup claim is derived from these correctness tests.

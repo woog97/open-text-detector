@@ -1,0 +1,475 @@
+{
+  "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+  "seed": 42,
+  "counts": {
+    "synthetic_full_papers": {
+      "rows": 600,
+      "models": {
+        "gpt-6-luna": {
+          "rows": 204,
+          "sample_rows": 40,
+          "estimated_tokens": 1555347,
+          "mean_tokens": 7624.25,
+          "sampling_95pct_margin": 129339,
+          "text_field": "paper_markdown",
+          "count_method": "sample_extrapolation"
+        },
+        "gpt-6.1-sol": {
+          "rows": 196,
+          "sample_rows": 40,
+          "estimated_tokens": 1641701,
+          "mean_tokens": 8376.025,
+          "sampling_95pct_margin": 62380,
+          "text_field": "paper_markdown",
+          "count_method": "sample_extrapolation"
+        },
+        "gpt-6-sol": {
+          "rows": 200,
+          "sample_rows": 40,
+          "estimated_tokens": 1229680,
+          "mean_tokens": 6148.4,
+          "sampling_95pct_margin": 71655,
+          "text_field": "paper_markdown",
+          "count_method": "sample_extrapolation"
+        }
+      },
+      "unique_text_hashes": 600,
+      "unique_source_papers": 600,
+      "columns": [
+        "paper_id",
+        "seed_id",
+        "title",
+        "abstract",
+        "rendered_title",
+        "rendered_abstract",
+        "paper_markdown",
+        "model",
+        "final_revision_model",
+        "writer_model",
+        "models_used",
+        "model_label_source",
+        "mixed_writer_models",
+        "revision_count",
+        "synthetic_manuscript",
+        "experiments_actually_run",
+        "results_and_methods_may_be_invented",
+        "human_supplied_sections",
+        "source_paper_id",
+        "conference",
+        "year",
+        "source_url",
+        "paper_sha256",
+        "word_count",
+        "generation_history_json",
+        "source_batch",
+        "markdown_path"
+      ],
+      "path": "research/data/synthetic-papers-600-hf-20261003/data/train-00000-of-00001.parquet"
+    },
+    "paper_10000_paragraphs": {
+      "test-00000-of-00001.parquet": {
+        "rows": 4000,
+        "sample_rows": 500,
+        "estimated_tokens": 516032,
+        "mean_tokens": 129.008,
+        "sampling_95pct_margin": 22056,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      },
+      "train-00000-of-00001.parquet": {
+        "rows": 12000,
+        "sample_rows": 500,
+        "estimated_tokens": 1570368,
+        "mean_tokens": 130.864,
+        "sampling_95pct_margin": 71375,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      },
+      "validation-00000-of-00001.parquet": {
+        "rows": 4000,
+        "sample_rows": 500,
+        "estimated_tokens": 508264,
+        "mean_tokens": 127.066,
+        "sampling_95pct_margin": 20786,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      }
+    },
+    "paper_10000_passages": {
+      "test-00000-of-00001.parquet": {
+        "rows": 4000,
+        "sample_rows": 500,
+        "estimated_tokens": 1619208,
+        "mean_tokens": 404.802,
+        "sampling_95pct_margin": 52350,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      },
+      "train-00000-of-00001.parquet": {
+        "rows": 12000,
+        "sample_rows": 500,
+        "estimated_tokens": 4807272,
+        "mean_tokens": 400.606,
+        "sampling_95pct_margin": 155447,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      },
+      "validation-00000-of-00001.parquet": {
+        "rows": 4000,
+        "sample_rows": 500,
+        "estimated_tokens": 1593576,
+        "mean_tokens": 398.394,
+        "sampling_95pct_margin": 48909,
+        "text_field": "text",
+        "count_method": "sample_extrapolation"
+      }
+    },
+    "arena": {
+      "benchmarks/pangram4/exports/arena-prose-100-49-models/data/test-00000-of-00001.parquet": {
+        "rows": 5000,
+        "sample_rows": 500,
+        "estimated_tokens": 3699370,
+        "mean_tokens": 739.874,
+        "sampling_95pct_margin": 276196,
+        "text_field": "response",
+        "count_method": "sample_extrapolation"
+      }
+    },
+    "ai_mdta_2025": {
+      "rows": 6397,
+      "sample_rows": 100,
+      "estimated_tokens": 1300894,
+      "mean_tokens": 203.36,
+      "sampling_95pct_margin": 162157,
+      "text_field": "text",
+      "count_method": "sample_extrapolation"
+    },
+    "human_pg19": {
+      "rows": 100,
+      "sample_rows": 100,
+      "estimated_tokens": 10303668,
+      "mean_tokens": 103036.68,
+      "sampling_95pct_margin": 0,
+      "text_field": "text",
+      "count_method": "exact_all_rows"
+    },
+    "iclr_2023": {
+      "rows": 100,
+      "sample_rows": 100,
+      "estimated_tokens": 2287515,
+      "mean_tokens": 22875.15,
+      "sampling_95pct_margin": 0,
+      "text_field": "text",
+      "count_method": "exact_all_rows"
+    },
+    "iclr_2026": {
+      "rows": 100,
+      "sample_rows": 100,
+      "estimated_tokens": 2426473,
+      "mean_tokens": 24264.73,
+      "sampling_95pct_margin": 0,
+      "text_field": "text",
+      "count_method": "exact_all_rows"
+    }
+  },
+  "prepared_benchmarks": {
+    "arena20": {
+      "rows": 351,
+      "labels": {
+        "ai": 351
+      },
+      "unique_texts": 351
+    },
+    "detectrl": {
+      "rows": 2477,
+      "labels": {
+        "ai": 1672,
+        "human": 805
+      },
+      "unique_texts": 2430
+    },
+    "ellipse": {
+      "rows": 2571,
+      "labels": {
+        "human": 2571
+      },
+      "unique_texts": 2571
+    },
+    "epoch": {
+      "rows": 84,
+      "labels": {
+        "human": 12,
+        "ai": 72
+      },
+      "unique_texts": 84
+    },
+    "gede": {
+      "rows": 184,
+      "labels": {
+        "ai": 176,
+        "human": 8
+      },
+      "unique_texts": 184
+    },
+    "liang": {
+      "rows": 270,
+      "labels": {
+        "human": 270
+      },
+      "unique_texts": 269
+    },
+    "local": {
+      "rows": 85,
+      "labels": {
+        "ai": 45,
+        "human": 16,
+        "mixed": 24
+      },
+      "unique_texts": 85
+    },
+    "meld_eval": {
+      "rows": 928,
+      "labels": {
+        "ai": 896,
+        "human": 32
+      },
+      "unique_texts": 926
+    },
+    "opai": {
+      "rows": 224,
+      "labels": {
+        "human": 24,
+        "ai": 8,
+        "mixed": 192
+      },
+      "unique_texts": 220
+    },
+    "pelic": {
+      "rows": 100,
+      "labels": {
+        "human": 100
+      },
+      "unique_texts": 100
+    },
+    "perkins": {
+      "rows": 114,
+      "labels": {
+        "ai": 104,
+        "human": 10
+      },
+      "unique_texts": 113
+    },
+    "saha": {
+      "rows": 65,
+      "labels": {
+        "ai": 47,
+        "human": 18
+      },
+      "unique_texts": 65
+    },
+    "sem_detect": {
+      "rows": 36,
+      "labels": {
+        "ai": 16,
+        "human": 4,
+        "mixed": 16
+      },
+      "unique_texts": 36
+    },
+    "vub": {
+      "rows": 40,
+      "labels": {
+        "ai": 40
+      },
+      "unique_texts": 40
+    }
+  },
+  "historical_paper_runs": {
+    "research/data/paper-eval-workflows-luna-20260930": {
+      "papers": 189,
+      "planned_papers": 189,
+      "generated_targets": 1323,
+      "planned_targets": 1323,
+      "correlated_views": 2646,
+      "matched_human_views": 378,
+      "human_body_paragraphs": 9301,
+      "clean_novel_human_paragraphs": 1590,
+      "complete": true
+    },
+    "research/data/paper-gap10000-v3-luna-20260930": {
+      "papers": 2000,
+      "source_passages": 10000,
+      "rows": 20000,
+      "unique_texts": 19998,
+      "eligible_rows": 6375,
+      "generated_paragraphs": 10000,
+      "eligible_generated_paragraphs": 2739,
+      "ai_region_tokens": 1273649,
+      "eligible_ai_region_tokens": 319362,
+      "ai_sentences": 43084,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v2-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 181,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 76,
+      "ai_region_tokens": 35610,
+      "eligible_ai_region_tokens": 9659,
+      "ai_sentences": 1238,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v3-20260930": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 204,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 92,
+      "ai_region_tokens": 33305,
+      "eligible_ai_region_tokens": 10950,
+      "ai_sentences": 1138,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap250-luna-v4-20260930": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 500,
+      "unique_texts": 500,
+      "eligible_rows": 204,
+      "generated_paragraphs": 250,
+      "eligible_generated_paragraphs": 89,
+      "ai_region_tokens": 33366,
+      "eligible_ai_region_tokens": 10366,
+      "ai_sentences": 1122,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap2500-v3-luna-20260930": {
+      "papers": 500,
+      "source_passages": 2500,
+      "rows": 5000,
+      "unique_texts": 4999,
+      "eligible_rows": 1724,
+      "generated_paragraphs": 2500,
+      "eligible_generated_paragraphs": 740,
+      "ai_region_tokens": 323204,
+      "eligible_ai_region_tokens": 87855,
+      "ai_sentences": 11006,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap50-luna-20260929": {
+      "papers": 50,
+      "source_passages": 50,
+      "rows": 100,
+      "unique_texts": 100,
+      "eligible_rows": 41,
+      "generated_paragraphs": 50,
+      "eligible_generated_paragraphs": 17,
+      "ai_region_tokens": 6358,
+      "eligible_ai_region_tokens": 1909,
+      "ai_sentences": 222,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-gap50-luna-v2-20260929": {
+      "papers": 50,
+      "source_passages": 50,
+      "rows": 100,
+      "unique_texts": 100,
+      "eligible_rows": 34,
+      "generated_paragraphs": 50,
+      "eligible_generated_paragraphs": 14,
+      "ai_region_tokens": 7484,
+      "eligible_ai_region_tokens": 1945,
+      "ai_sentences": 260,
+      "all_originals_absent_from_writer_inputs": true
+    },
+    "research/data/paper-luna50-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 1000,
+      "unique_texts": 947,
+      "eligible_rows": 907,
+      "operations": {
+        "human_original": 250,
+        "proofread": 250,
+        "sentence_replace": 250,
+        "clause_replace": 250
+      },
+      "splits": {
+        "train": 600,
+        "test": 200,
+        "validation": 200
+      },
+      "attempts": 793,
+      "mechanically_invalid_attempts": 43,
+      "superseded_successful_requests": 0,
+      "proofreading_noops": 53,
+      "provider_reported_cost_usd": 0.10102459999999998,
+      "cost_coverage": 793,
+      "prompt_tokens": 406901,
+      "completion_tokens": 120669,
+      "reasoning_tokens": 88776,
+      "key_usage_delta_usd": 0.1010245999999988
+    },
+    "research/data/paper-luna50-quality-v2-20260929": {
+      "papers": 50,
+      "source_passages": 250,
+      "rows": 1000,
+      "unique_texts": 824,
+      "eligible_rows": 891,
+      "operations": {
+        "human_original": 250,
+        "proofread": 250,
+        "sentence_replace": 250,
+        "clause_replace": 250
+      },
+      "splits": {
+        "train": 600,
+        "test": 200,
+        "validation": 200
+      },
+      "attempts": 767,
+      "mechanically_invalid_attempts": 16,
+      "superseded_successful_requests": 1,
+      "proofreading_noops": 73,
+      "provider_reported_cost_usd": 0.10578060000000003,
+      "cost_coverage": 767,
+      "prompt_tokens": 506865,
+      "completion_tokens": 110085,
+      "reasoning_tokens": 72945,
+      "key_usage_delta_usd": 0.10578059999999923
+    },
+    "research/data/paper-pilot10-gpt61-sol-20260929": {
+      "papers": 10,
+      "source_passages": 50,
+      "rows": 200,
+      "unique_texts": 192,
+      "eligible_rows": 199,
+      "operations": {
+        "human_original": 50,
+        "proofread": 50,
+        "sentence_replace": 50,
+        "clause_replace": 50
+      },
+      "splits": {
+        "train": 120,
+        "test": 40,
+        "validation": 40
+      },
+      "attempts": 155,
+      "mechanically_invalid_attempts": 3,
+      "superseded_successful_requests": 2,
+      "proofreading_noops": 8,
+      "provider_reported_cost_usd": 0.31793599999999994,
+      "cost_coverage": 155,
+      "prompt_tokens": 80163,
+      "completion_tokens": 15761,
+      "reasoning_tokens": 8484,
+      "key_usage_delta_usd": 0.31793599999999955
+    }
+  }
+}

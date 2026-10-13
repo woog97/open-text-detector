@@ -1,0 +1,108 @@
+{
+  "state": "data_prepared",
+  "time": 1790921905.4954977,
+  "checks": {
+    "stage2-epoch0": {
+      "external_token_share": 0.10011267114300788,
+      "processed_tokens": 2556999,
+      "control_tokens": 2557005,
+      "class_tokens": {
+        "0": 128035,
+        "1": 127953
+      },
+      "class_draws": {
+        "0": 598,
+        "1": 584
+      },
+      "scenarios": {
+        "(0, 'human')": 598,
+        "(1, 'rewrite_style_figurative')": 65,
+        "(1, 'paraphrase')": 65,
+        "(1, 'rewrite_style_emotional')": 65,
+        "(1, 'complete_ending')": 64,
+        "(1, 'generate_topic')": 65,
+        "(1, 'complete_beginning')": 65,
+        "(1, 'rewrite_style_persuasive')": 65,
+        "(1, 'rewrite_style_informal')": 65,
+        "(1, 'polish_token')": 65
+      },
+      "generators": {
+        "(0, 'human')": 598,
+        "(1, 'mistral-small-3.2-24b-instruct')": 292,
+        "(1, 'gemma-4-31b-it')": 292
+      },
+      "source_groups": 1164,
+      "max_draws_per_source": 2,
+      "rows": 12000
+    },
+    "stage2-epoch1": {
+      "external_token_share": 0.1000199205448132,
+      "processed_tokens": 2555151,
+      "control_tokens": 2555139,
+      "class_tokens": {
+        "0": 127891,
+        "1": 127675
+      },
+      "class_draws": {
+        "0": 590,
+        "1": 595
+      },
+      "scenarios": {
+        "(0, 'human')": 590,
+        "(1, 'rewrite_style_figurative')": 66,
+        "(1, 'complete_beginning')": 67,
+        "(1, 'complete_ending')": 66,
+        "(1, 'paraphrase')": 66,
+        "(1, 'rewrite_style_informal')": 66,
+        "(1, 'generate_topic')": 66,
+        "(1, 'polish_token')": 66,
+        "(1, 'rewrite_style_emotional')": 66,
+        "(1, 'rewrite_style_persuasive')": 66
+      },
+      "generators": {
+        "(0, 'human')": 590,
+        "(1, 'mistral-small-3.2-24b-instruct')": 298,
+        "(1, 'gemma-4-31b-it')": 297
+      },
+      "source_groups": 1155,
+      "max_draws_per_source": 3,
+      "rows": 12000
+    },
+    "stage2-epoch2": {
+      "external_token_share": 0.1000518027514236,
+      "processed_tokens": 2551988,
+      "control_tokens": 2551915,
+      "class_tokens": {
+        "0": 127674,
+        "1": 127657
+      },
+      "class_draws": {
+        "0": 603,
+        "1": 600
+      },
+      "scenarios": {
+        "(0, 'human')": 603,
+        "(1, 'paraphrase')": 66,
+        "(1, 'rewrite_style_persuasive')": 67,
+        "(1, 'rewrite_style_emotional')": 67,
+        "(1, 'complete_ending')": 67,
+        "(1, 'rewrite_style_figurative')": 67,
+        "(1, 'generate_topic')": 67,
+        "(1, 'polish_token')": 66,
+        "(1, 'rewrite_style_informal')": 66,
+        "(1, 'complete_beginning')": 67
+      },
+      "generators": {
+        "(0, 'human')": 603,
+        "(1, 'mistral-small-3.2-24b-instruct')": 300,
+        "(1, 'gemma-4-31b-it')": 300
+      },
+      "source_groups": 1184,
+      "max_draws_per_source": 2,
+      "rows": 12000
+    }
+  },
+  "prepared": "/data/workspace/paper-diversity-v1/gradtex-document-preparation/prepared",
+  "training_ready": false,
+  "remaining": "Integrate document loss and validate adapter, matched-head control, BF16 preflight before registration."
+}

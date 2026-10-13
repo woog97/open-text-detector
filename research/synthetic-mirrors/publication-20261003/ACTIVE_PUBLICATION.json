@@ -1,0 +1,29 @@
+{
+  "state": "verified",
+  "space_root": "/data/workspace/dataset-publication-20261003",
+  "process": {
+    "pid": 6015,
+    "start_ticks": "17012454"
+  },
+  "preparation_process": {
+    "pid": 5278,
+    "start_ticks": "16961763"
+  },
+  "mirror_repo": "open-text-detector/synthetic-mirrors-luna-28120",
+  "mirror_space_path": "/data/workspace/datasets/synthetic-mirrors-luna-28120",
+  "paper_source_repo": "woog/pangram-paper-text",
+  "paper_space_path": "/data/workspace/datasets/pangram-paper-text",
+  "credential_authorization": "User explicitly authorized existing local Hugging Face login credential use in Space process environment for these two transfers on October3; never included in dataset files/logs.",
+  "rules": "Preserve existing raw files/checkpoints; no new model calls; publish private mirrors separately linked by source_record_id; retain original splits.",
+  "status_helper": "/tmp/pangram-training-access/dataset_publication_status.py",
+  "io_recovery": "Sequential checksum-verified parent checkpoint download inside Space replaces slow mounted SQLite reads; originals preserved.",
+  "mirror_revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+  "publication_receipt": "research/synthetic-mirrors/publication-20261003/completion.json",
+  "dataset_attachments": "research/synthetic-mirrors/publication-20261003/dataset-attachments.json",
+  "mirror_space_dataset_mount": "/datasets/synthetic-mirrors-luna-28120",
+  "paper_space_dataset_mount": "/datasets/pangram-paper-text",
+  "paper_org_repo": "open-text-detector/pangram-paper-text",
+  "paper_org_revision": "771c7aee9fa1283b0d1eb2cbd166244f2e8149b7",
+  "paper_org_receipt": "research/synthetic-mirrors/publication-20261003/paper-org-receipt.json",
+  "paper_viewer_url": "https://huggingface.co/datasets/open-text-detector/pangram-paper-text/viewer/default/train"
+}

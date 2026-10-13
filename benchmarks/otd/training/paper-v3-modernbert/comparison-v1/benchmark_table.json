@@ -1,0 +1,2567 @@
+{
+  "source": "https://arxiv.org/html/2607.27183v1",
+  "rows": [
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 tokens",
+      "metric": "Precision",
+      "direction": "max",
+      "values": {
+        "ours": 93.39867638435118,
+        "meld-v5": 79.95034140285537,
+        "meld-v8": 92.81947261663286
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 tokens",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 73.9593353013367,
+        "meld-v5": 2.1360575806826096,
+        "meld-v8": 3.7944873793492326
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 tokens",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 4.914326696705593,
+        "meld-v5": 0.5035937573083459,
+        "meld-v8": 0.2759631425497747
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 sentences",
+      "metric": "Precision",
+      "direction": "max",
+      "values": {
+        "ours": 93.04843304843304,
+        "meld-v5": 86.36363636363636,
+        "meld-v8": 98.27586206896551
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 sentences",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 73.09758281110116,
+        "meld-v5": 0.8504923903312444,
+        "meld-v8": 2.551477170993733
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "v3 reconstruction \u2014 sentences",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 5.227077977720651,
+        "meld-v5": 0.12853470437017994,
+        "meld-v8": 0.042844901456726654
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "Untouched human paragraphs \u2014 isolated",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 4.8628546618088455,
+        "meld-v5": 6.695863930681669,
+        "meld-v8": 4.288977403582957
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "Untouched human paragraphs \u2014 with neighbors",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 3.035508655352727,
+        "meld-v5": 3.748135842787835,
+        "meld-v8": 2.415381420723765
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "Arena, 50 generators \u2014 tokens",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.49192485391117474,
+        "meld-v5": 61.71890858994173,
+        "meld-v8": 64.14361769792701
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "Arena, 50 generators \u2014 sentences",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.3307025344597599,
+        "meld-v5": 88.50600266785239,
+        "meld-v8": 77.79568697198755
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 tokens",
+      "metric": "Precision",
+      "direction": "max",
+      "values": {
+        "ours": 76.57064202143349,
+        "meld-v5": 88.60838204203458,
+        "meld-v8": 88.38094423537461
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 tokens",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 4.2902472345864,
+        "meld-v5": 19.625071614296417,
+        "meld-v8": 22.770040985412717
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 tokens",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 1.649842839142054,
+        "meld-v5": 3.1709107021697895,
+        "meld-v8": 3.7621678505656404
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 sentences",
+      "metric": "Precision",
+      "direction": "max",
+      "values": {
+        "ours": 74.07407407407408,
+        "meld-v5": 88.09306569343066,
+        "meld-v8": 86.7820945945946
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 sentences",
+      "metric": "Recall",
+      "direction": "max",
+      "values": {
+        "ours": 4.770992366412214,
+        "meld-v5": 30.709287531806616,
+        "meld-v8": 32.68129770992366
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Our common span suite",
+      "benchmark": "OpAI \u2014 sentences",
+      "metric": "Human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 1.9762845849802373,
+        "meld-v5": 4.912478825522304,
+        "meld-v8": 5.891210239036326
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Pangram did not report this metric on these examples.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "PELIC",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.25,
+        "meld-v5": 3.75,
+        "meld-v8": 10.25
+      },
+      "pangram4_reported_percent": 0.0067,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T9",
+      "note": "400 local texts vs 15,005 in report; different thresholds.",
+      "digits": 4
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "Liang TOEFL originals",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 32.22222222222222,
+        "meld-v8": 53.333333333333336
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T9",
+      "note": "91 local original rows (90 distinct texts) vs 89 in report; excludes polished copies.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "VUB",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 77.5,
+        "meld-v8": 77.5
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T11",
+      "note": "40 local papers vs 39 in report; local validation-calibrated binary rule differs from report score/verdict rule.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "Epoch style imitation",
+      "metric": "Document FNR",
+      "direction": "min",
+      "values": {
+        "ours": 90.74074074074075,
+        "meld-v5": 36.195286195286194,
+        "meld-v8": 21.212121212121215
+      },
+      "pangram4_reported_percent": 2.86,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T23",
+      "note": "Same class counts (594 AI, 495 human); local binary rule vs report strict AI/Mixed verdict protocol.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "Epoch style imitation",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 0.40404040404040403,
+        "meld-v8": 1.6161616161616161
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T23",
+      "note": "Same class counts (594 AI, 495 human); local binary rule vs report strict AI/Mixed verdict protocol.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "GEDE",
+      "metric": "AUROC",
+      "direction": "max",
+      "values": {
+        "ours": 83.0965909090909,
+        "meld-v5": 98.57954545454545,
+        "meld-v8": 99.43181818181817
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T21",
+      "note": "Local sampled cohort, 8 distinct human controls; different score/protocol from Pangram. GEDE uses publisher binary labels including improved-human positives.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "GEDE",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": 51.70454545454546,
+        "meld-v5": 88.63636363636364,
+        "meld-v8": 96.02272727272727
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T21",
+      "note": "Local sampled cohort, 8 distinct human controls; different score/protocol from Pangram. GEDE uses publisher binary labels including improved-human positives. Empirical ROC only. With so few controls the requested FPR permits zero false positives; this is not evidence of a reliably calibrated low-FPR operating point.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "MELD-eval",
+      "metric": "AUROC",
+      "direction": "max",
+      "values": {
+        "ours": 75.53505777310924,
+        "meld-v5": 100.0,
+        "meld-v8": 99.98686974789915
+      },
+      "pangram4_reported_percent": 99.99,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T26",
+      "note": "Local sampled cohort, 34 distinct human controls; different score/protocol from Pangram.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "MELD-eval",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": 1.2276785714285714,
+        "meld-v5": 100.0,
+        "meld-v8": 99.77678571428571
+      },
+      "pangram4_reported_percent": 99.99,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T26",
+      "note": "Local sampled cohort, 34 distinct human controls; different score/protocol from Pangram. Empirical ROC only. With so few controls the requested FPR permits zero false positives; this is not evidence of a reliably calibrated low-FPR operating point.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "Sem-Detect",
+      "metric": "AUROC",
+      "direction": "max",
+      "values": {
+        "ours": 79.34782608695652,
+        "meld-v5": 100.0,
+        "meld-v8": 100.0
+      },
+      "pangram4_reported_percent": 97.8,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T27",
+      "note": "Local sampled cohort, 161 distinct human controls; different score/protocol from Pangram.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "Sem-Detect",
+      "metric": "TPR @ 0.1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": 2.9605263157894735,
+        "meld-v5": 100.0,
+        "meld-v8": 100.0
+      },
+      "pangram4_reported_percent": 95.5,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T27",
+      "note": "Local sampled cohort, 161 distinct human controls; different score/protocol from Pangram. Empirical ROC only. With so few controls the requested FPR permits zero false positives; this is not evidence of a reliably calibrated low-FPR operating point.",
+      "digits": 2
+    },
+    {
+      "section": "Public benchmark reference",
+      "benchmark": "DetectRL \u2014 local pooled sample",
+      "metric": "Pooled binary F1",
+      "direction": "max",
+      "values": {
+        "ours": 16.435313714602998,
+        "meld-v5": 97.77365491651206,
+        "meld-v8": 98.11786485652576
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Not the report\u2019s native average across task/test subsets; do not compare to 95.30 below.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Perkins \u2014 local binary proxy",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 2.912621359223301,
+        "meld-v5": 94.1747572815534,
+        "meld-v8": 100.0
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Perkins \u2014 local binary proxy",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 70.0,
+        "meld-v8": 90.0
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "GEDE \u2014 local binary labels",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 7.894736842105263,
+        "meld-v5": 99.3421052631579,
+        "meld-v8": 100.0
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "GEDE \u2014 local binary labels",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 12.5,
+        "meld-v8": 12.5
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "DetectRL \u2014 local pooled sample",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 9.085328422344997,
+        "meld-v5": 97.05340699815838,
+        "meld-v8": 97.60589318600368
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "DetectRL \u2014 local pooled sample",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 3.566121842496285,
+        "meld-v5": 3.566121842496285,
+        "meld-v8": 3.268945022288262
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Sem-Detect \u2014 local binary subset",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 100.0,
+        "meld-v8": 99.67105263157895
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Sem-Detect \u2014 local binary subset",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 0.0,
+        "meld-v8": 0.0
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Saha \u2014 local sample",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 100.0,
+        "meld-v8": 89.58333333333334
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Saha \u2014 local sample",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 0.0,
+        "meld-v8": 0.0
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local binary proxy",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 15.625,
+        "meld-v5": 96.09375,
+        "meld-v8": 95.3125
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local binary proxy",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.0,
+        "meld-v5": 34.375,
+        "meld-v8": 15.625
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local length proxy",
+      "metric": "Document recall",
+      "direction": "max",
+      "values": {
+        "ours": 21.568627450980394,
+        "meld-v5": 98.0392156862745,
+        "meld-v8": 98.0392156862745
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local length proxy",
+      "metric": "Document FPR",
+      "direction": "min",
+      "values": {
+        "ours": 17.708333333333336,
+        "meld-v5": 33.33333333333333,
+        "meld-v8": 18.75
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "No report score with the same metric/cohort/verdict rule; Pangram cell intentionally missing.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local interleaving proxy",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": 65.57734204793029,
+        "meld-v5": 65.80808921438083,
+        "meld-v8": 59.426985102460314
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local interleaving proxy",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": 0.8728179551122194,
+        "meld-v5": 91.7183784724236,
+        "meld-v8": 81.3170561967175
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Local interleaving proxy",
+      "metric": "Token human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 0.25006726492885745,
+        "meld-v5": 26.010160961018,
+        "meld-v8": 30.302454774227243
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Development-exposed paper pilots",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": 76.49312315518432,
+        "meld-v5": 16.71785870996051,
+        "meld-v8": 28.41750841750842
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Development-exposed paper pilots",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": 65.91622469964283,
+        "meld-v5": 2.0619114622794674,
+        "meld-v8": 4.567593895443229
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Other local diagnostics",
+      "benchmark": "Development-exposed paper pilots",
+      "metric": "Token human FPR",
+      "direction": "min",
+      "values": {
+        "ours": 4.86464005822492,
+        "meld-v5": 2.466761108872802,
+        "meld-v8": 2.763084361150462
+      },
+      "pangram4_reported_percent": null,
+      "source": null,
+      "note": "Exploratory/proxy cohort, not Pangram\u2019s held-out interleaving or editing benchmark.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Overall private holdout",
+      "metric": "AUROC",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.16,
+      "source": "https://arxiv.org/html/2607.27183v1",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Overall private human holdout",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0041,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.SS3",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 4
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Overall private AI holdout",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.3396,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T3",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 4
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "ELLIPSE",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T9",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "ICNALE",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T9",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "UChicago standard, full length",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T18",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "UChicago standard, <50 words",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.7,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T18",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "UChicago humanizer, full length",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.93,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T18",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "UChicago humanizer, <50 words",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 73.32,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T18",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "UChicago human controls",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T19",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "GEDE fully generated (report split)",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T21",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "GEDE improved human (report split)",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T21",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "GEDE humanized (report split)",
+      "metric": "TPR @ 1% FPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T21",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Perkins baseline AI",
+      "metric": "Native three-method mean accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T22",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Perkins manipulated AI",
+      "metric": "Native three-method mean accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 94.1,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T22",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "DetectRL native average",
+      "metric": "Mean F1 across native subsets",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 95.3,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T24",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Private light AI polish",
+      "metric": "AI-verdict FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.01,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T4",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Private editing prompts",
+      "metric": "Mixed-verdict recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 55.01,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T5",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Private WildChat edits",
+      "metric": "Mixed-verdict recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 65.17,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T6",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha easy AI-BP",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.2,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha easy AI-EP",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha easy AI-HI",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 96.3,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha easy H-AI",
+      "metric": "AI-only FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.4,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha hard AI-BP",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha hard AI-EP",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 100,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha hard AI-HI",
+      "metric": "AI-or-Mixed TPR",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.9,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha hard H-AI",
+      "metric": "AI-only FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 2.5,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Saha human",
+      "metric": "AI-or-Mixed FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T28",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Commercial humanizers",
+      "metric": "AI recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 97.69,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T14",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Commercial humanizers",
+      "metric": "AI-or-Mixed recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.83,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T14",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "Humanizer auxiliary head",
+      "metric": "Accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 96.82,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T13",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "BLADER",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.43,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T15",
+      "note": "Matching cohort, native metric, or required Mixed/auxiliary head unavailable. A proxy elsewhere is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v0",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v1",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.01,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v2",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 3.18,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v3",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 13.59,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v4",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 5.48,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v5",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 32.57,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v6",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 56.17,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v7",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 67.94,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Reported categories without matching local results",
+      "benchmark": "OpAI v8",
+      "metric": "Mean AI+Assisted fraction",
+      "direction": "none",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 69.5,
+      "source": "https://arxiv.org/html/2607.27183v1#A3.T29",
+      "note": "A predicted fraction is not an accuracy/recall score; neither largest nor smallest is best. Our binary reference-token fraction is a different quantity.",
+      "digits": 2
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Arabic",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Arabic",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.9764,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Persian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Persian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 3.1715,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Chinese",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Chinese",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.7133,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Polish",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Polish",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": null,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Czech",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Czech",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.276,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Portuguese",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0078,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Portuguese",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.9946,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Dutch",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0026,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Dutch",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.8397,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Romanian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Romanian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": null,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "French",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0026,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "French",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.7839,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Russian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0052,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Russian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.485,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "German",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0026,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "German",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.3258,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Spanish",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0026,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Spanish",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.8867,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Greek",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Greek",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": null,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Swedish",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Swedish",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": null,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Hindi",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Hindi",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.3682,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Turkish",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Turkish",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.1066,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Hungarian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Hungarian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": null,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Ukrainian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0361,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Ukrainian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.5214,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Italian",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Italian",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.3436,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Urdu",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Urdu",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 5.3169,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Japanese",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Japanese",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.9305,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Vietnamese",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0026,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Vietnamese",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.9653,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Korean",
+      "metric": "FPR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.0,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Multilingual coverage",
+      "benchmark": "Korean",
+      "metric": "FNR",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 0.5805,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T8",
+      "note": "No corresponding multilingual local corpus evaluated.",
+      "digits": 4
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=1",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 75.02,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=1",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 92.82,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=1",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 62.86,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=1",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 18.27,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=4",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 92.41,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=4",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.56,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=4",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 85.43,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=4",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 6.8,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=8",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 95.94,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=8",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.61,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=8",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 92.31,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=8",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 3.51,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=12",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 97.12,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=12",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.66,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=12",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 94.33,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=12",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 2.58,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=16",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 97.5,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=16",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.63,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=16",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 94.73,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=16",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 2.2,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=20",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.18,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=20",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 99.51,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=20",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 96.31,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=20",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 1.52,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=Overall",
+      "metric": "Token accuracy",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 92.02,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=Overall",
+      "metric": "Token precision",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 98.35,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=Overall",
+      "metric": "Token recall",
+      "direction": "max",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 85.45,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    },
+    {
+      "section": "Private interleaving coverage",
+      "benchmark": "Interleaving N=Overall",
+      "metric": "Document AI-fraction MAE",
+      "direction": "min",
+      "values": {
+        "ours": null,
+        "meld-v5": null,
+        "meld-v8": null
+      },
+      "pangram4_reported_percent": 5.87,
+      "source": "https://arxiv.org/html/2607.27183v1#S5.T7",
+      "note": "Different private corpus; our local interleaving proxy is not substituted.",
+      "digits": 2
+    }
+  ],
+  "roc_diagnostics": {
+    "gede": {
+      "ours": {
+        "auroc": 0.8309659090909091,
+        "tpr_at_fpr": {
+          "0.001": 0.5170454545454546,
+          "0.01": 0.5170454545454546,
+          "0.05": 0.5170454545454546
+        },
+        "human_n": 8,
+        "ai_n": 176,
+        "fpr_resolution": 0.125,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v5": {
+        "auroc": 0.9857954545454546,
+        "tpr_at_fpr": {
+          "0.001": 0.8863636363636364,
+          "0.01": 0.8863636363636364,
+          "0.05": 0.8863636363636364
+        },
+        "human_n": 8,
+        "ai_n": 176,
+        "fpr_resolution": 0.125,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v8": {
+        "auroc": 0.9943181818181818,
+        "tpr_at_fpr": {
+          "0.001": 0.9602272727272727,
+          "0.01": 0.9602272727272727,
+          "0.05": 0.9602272727272727
+        },
+        "human_n": 8,
+        "ai_n": 176,
+        "fpr_resolution": 0.125,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      }
+    },
+    "meld_eval": {
+      "ours": {
+        "auroc": 0.7553505777310925,
+        "tpr_at_fpr": {
+          "0.001": 0.012276785714285714,
+          "0.01": 0.012276785714285714,
+          "0.05": 0.014508928571428572
+        },
+        "human_n": 34,
+        "ai_n": 896,
+        "fpr_resolution": 0.029411764705882353,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v5": {
+        "auroc": 1.0,
+        "tpr_at_fpr": {
+          "0.001": 1.0,
+          "0.01": 1.0,
+          "0.05": 1.0
+        },
+        "human_n": 34,
+        "ai_n": 896,
+        "fpr_resolution": 0.029411764705882353,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v8": {
+        "auroc": 0.9998686974789915,
+        "tpr_at_fpr": {
+          "0.001": 0.9977678571428571,
+          "0.01": 0.9977678571428571,
+          "0.05": 0.9988839285714286
+        },
+        "human_n": 34,
+        "ai_n": 896,
+        "fpr_resolution": 0.029411764705882353,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      }
+    },
+    "sem_detect": {
+      "ours": {
+        "auroc": 0.7934782608695652,
+        "tpr_at_fpr": {
+          "0.001": 0.029605263157894735,
+          "0.01": 0.03289473684210526,
+          "0.05": 0.2532894736842105
+        },
+        "human_n": 161,
+        "ai_n": 304,
+        "fpr_resolution": 0.006211180124223602,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v5": {
+        "auroc": 1.0,
+        "tpr_at_fpr": {
+          "0.001": 1.0,
+          "0.01": 1.0,
+          "0.05": 1.0
+        },
+        "human_n": 161,
+        "ai_n": 304,
+        "fpr_resolution": 0.006211180124223602,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      },
+      "meld-v8": {
+        "auroc": 1.0,
+        "tpr_at_fpr": {
+          "0.001": 1.0,
+          "0.01": 1.0,
+          "0.05": 1.0
+        },
+        "human_n": 161,
+        "ai_n": 304,
+        "fpr_resolution": 0.006211180124223602,
+        "note": "Descriptive empirical test-set ROC; not a calibrated deployment threshold. Ties are indivisible."
+      }
+    }
+  },
+  "bold_policy": "Best local score, including displayed ties; external Pangram reference unranked."
+}

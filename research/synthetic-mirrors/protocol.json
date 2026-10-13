@@ -1,0 +1,23 @@
+{
+  "version": "synthetic-mirrors-v1",
+  "paper": "https://arxiv.org/html/2607.27183v1#S2.SS2",
+  "unit": "standalone passage matching a selected human passage; not an entire source book or paper",
+  "stages": ["extract_short_topic", "independent_generation_from_topic", "copy_length_and_completion_checks"],
+  "writer_sees_original": false,
+  "topic_max_words": 40,
+  "minimum_output_words": 50,
+  "target_length_ratio": [0.75, 1.35],
+  "verbatim_ngram_words": 8,
+  "maximum_output_copy_coverage": 0.1,
+  "maximum_source_copy_coverage": 0.2,
+  "maximum_contiguous_copy_words": 24,
+  "output_tokens_must_exceed_writer_input_tokens": true,
+  "thresholds_are_project_choices_not_published_pangram_values": true,
+  "keep_rejected_generations_in_ledger": true,
+  "content_based_rerolls": false,
+  "inference_dtype": "bfloat16",
+  "production_requires": ["admitted_human_parent", "completed_rights_and_provenance_checks", "passed_protected_overlap_check", "frozen_document_family_and_split"],
+  "pilot_rule": "Quarantined input is allowed only with explicit --pilot; every output remains quarantined and training_eligible=false. Pilot is development-exposed and cannot become locked test.",
+  "split_inheritance": "Every mirror inherits its original document family and frozen partition. Never split generated rows independently.",
+  "generator_diversity": "Single-model pilot only until a model mixture is selected; no claim of reproducing Pangram's undisclosed generator weights."
+}

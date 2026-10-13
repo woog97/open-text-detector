@@ -1,0 +1,86 @@
+[
+  {
+    "sample_index": 0,
+    "id": "68bc5e5a-93a3-4023-b0f2-f95524b1fccb",
+    "model": "chatgpt",
+    "review_scope": "full sampled output",
+    "observation": "Title-only request; repeats general descriptions and claims new insights without specifying a result. Subjective specificity concern, not a factual-error verdict."
+  },
+  {
+    "sample_index": 2,
+    "id": "9dbb57a8-ce34-4c3e-887f-4f7be3001979",
+    "model": "cohere",
+    "review_scope": "full sampled output",
+    "observation": "Title-only request nevertheless supplies dataset/comparator counts. Those details were not supplied in the prompt; accuracy unverified."
+  },
+  {
+    "sample_index": 4,
+    "id": "88d32b51-e3fa-43a9-9251-aca9aa16adb1",
+    "model": "cohere-chat",
+    "review_scope": "full sampled output",
+    "observation": "Title-only request supplies a named new method and three-benchmark claim. Unsupported by supplied context does not mean proven false."
+  },
+  {
+    "sample_index": 6,
+    "id": "3d957cd2-a5c2-464c-b493-f4c4caabd816",
+    "model": "gpt2",
+    "review_scope": "full sampled output",
+    "observation": "Exact repeated long sentence and repeated method introduction. A visible repetition failure; mathematical correctness not adjudicated."
+  },
+  {
+    "sample_index": 8,
+    "id": "c28b76d4-dec5-46f4-b26b-942d7c5e8364",
+    "model": "gpt3",
+    "review_scope": "full sampled output",
+    "observation": "Makes substantive physics claims from a title alone; requires original-paper verification, not an LLM quality verdict."
+  },
+  {
+    "sample_index": 10,
+    "id": "5457d278-fff3-4878-9b74-3577ebcdbffc",
+    "model": "gpt4",
+    "review_scope": "full sampled output",
+    "observation": "Claims superior performance without naming datasets or measurements. Specificity concern only."
+  },
+  {
+    "sample_index": 12,
+    "id": "8abdf9fe-c2e7-48ce-8d0c-04110fb86f1d",
+    "model": "human",
+    "review_scope": "full sampled output",
+    "observation": "Human-source counterexample: also uses broad benefit language, but lists eight concrete network types. Such phrases cannot serve as AI labels."
+  },
+  {
+    "sample_index": 14,
+    "id": "2ae7098d-cc56-41c2-8b8a-11d6deb7cd33",
+    "model": "llama-chat",
+    "review_scope": "full sampled output",
+    "observation": "Adds methods, results, and conclusions absent from the title prompt. No factual verification performed."
+  },
+  {
+    "sample_index": 16,
+    "id": "ceec9167-4428-4c77-b3be-e78e1f30be3e",
+    "model": "mistral",
+    "review_scope": "full sampled output",
+    "observation": "Formula/list-heavy output. Formatting alone is not evidence of low quality."
+  },
+  {
+    "sample_index": 18,
+    "id": "37c10986-6924-4d95-a06d-f6297c395214",
+    "model": "mistral-chat",
+    "review_scope": "full sampled output",
+    "observation": "Adds modalities and benchmark-performance claims absent from the prompt; factual accuracy unverified."
+  },
+  {
+    "sample_index": 20,
+    "id": "57ab09c8-530c-4f33-9dc0-977af41a87c3",
+    "model": "mpt",
+    "review_scope": "full sampled output",
+    "observation": "Text ends in a long chain of near-synonyms rather than completing the abstract. Directly observable structural degeneration."
+  },
+  {
+    "sample_index": 22,
+    "id": "19f1002e-d693-4a40-a353-040dbdc4c8d2",
+    "model": "mpt-chat",
+    "review_scope": "full sampled output",
+    "observation": "Short title-based abstract with general methods and application claims; no basis to call it factually wrong."
+  }
+]

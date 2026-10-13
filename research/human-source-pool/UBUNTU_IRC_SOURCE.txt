@@ -1,0 +1,38 @@
+UBUNTU IRC — HUMAN CONVERSATION ADAPTER
+2026-10-02 UTC
+
+Existing source approval reused: source-approvals.json, ubuntu_irc.
+Repository: common-pile/ubuntu_irc
+Pinned revision: 35a9ef530c682965b53d4167e37b32f6a85aa87c
+First original shard: raw/documents/00000_ubuntu.jsonl.gz
+SHA256: c96843cf1bc6015d4edbd159749172c8dec3b5c7950cbca040ec7bdc2c2f1d8b
+Bytes: 327435921
+Preserved on existing Space: /data/workspace/human-source-mix-v2/source-downloads/ubuntu_irc/00000_ubuntu.jsonl.gz
+README source evidence: https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md
+
+Measured capacity on the Space:
+17,192 channel/day records scanned in 7.98 seconds, selecting all 1,561 passages with normalized exact duplicate rejection.
+35 English-language channel identities represented.
+All four original social length quotas filled; no source/category/length rebalance needed.
+This was a read-only feasibility scan, not a collection run or training admission.
+
+Implementation: ingest_ubuntu_irc.py --base /data/workspace/human-source-mix-v2
+Six focused tests pass locally and on Space in test_ubuntu_irc.py.
+No collection worker was launched by the adapter's implementer; parent coordinates launch.
+
+Extraction rules:
+Pre-2022 records with source-provided public-domain evidence; explicitly selected English channel names plus lexical/non-Latin checks.
+One passage per original channel/day document, with exact character offsets into unchanged full logs.
+Only timestamped <nickname> turns are considered. System/action lines, known bot nicknames, shell/bot commands, excessive links and low-prose lines split conversations.
+Long identical repeated messages are excluded as bot-like; gaps over 20 minutes split conversations.
+No removed bot/system line can remain between selected human turns.
+Conversation spans retain original timestamps and nicknames; they are not flattened into invented prose.
+Dates, channel/day identity, speaker family hashes and original nickname attribution are retained for grouping and provenance.
+Unknown bots cannot be guaranteed absent by heuristics. All rows stay quarantined, with explicit authorship, privacy, protected-overlap and extraction-review flags.
+
+Operational controls:
+Source lock, global normalized exact dedup, source cap, immutable plan hash check and original social length targets.
+Versioned cursors deliberately do not reuse generic collector cursors that previously rejected IRC rows.
+Accepted rows and cursors commit together; archive reads and extraction happen outside short SQLite BEGIN IMMEDIATE transactions.
+Uses only raw source shards, never reimports the v0 duplicate mirrors.
+Original gzip shards and checksum manifests remain preserved on the Space; no model downloads or inference used.

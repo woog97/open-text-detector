@@ -1,0 +1,55 @@
+Small broader Luna evaluation — October 3, 2026
+
+216 saved inputs, two frozen prompts, 432 calls. All responses confirmed Luna and Flex. The prompts were not changed after viewing these results.
+Comparison: 120 passages, 40 human/40 AI/40 mixed across 19 source datasets, sampled round-robin by dataset and once per source group. This is a diversity sample, not a population-weighted estimate.
+Reconstruction: 12 previously unused calibration papers, with one untouched control and four generated conditions each (60 passages).
+Assistance: proofreading and light-polish outputs from the same 12 calibration papers (24 passages); AI flag rates only, not accuracy under the frozen substantial-rewrite prompt.
+Manuscripts: 12 generated papers, four per final revision model. Positive-only detection; no matched human controls or accuracy/FPR estimate.
+Excluded all 108 prompt-tuning paper IDs and five demonstration paper IDs plus their exact texts. The calibration papers retain their historical split; this is not a newly sealed test set or a comprehensive cross-corpus near-duplicate/pretraining-overlap audit. Samples and original labels are in the four *-mini.jsonl files.
+
+v4_calibration_fewshot
+API cost $0.03069178
+comparison:
+  Balanced accuracy 86.88%; human false positives 3/40; AI-involved recall 65/80.
+  ai: flagged AI 38/40 (95.00%).
+  human: flagged AI 3/40 (7.50%).
+  mixed: flagged AI 27/40 (67.50%).
+reconstruction:
+  Balanced accuracy 63.54%; human false positives 2/12; AI-involved recall 21/48.
+  paragraph_concise: flagged AI 7/12 (58.33%).
+  paragraph_v3: flagged AI 9/12 (75.00%).
+  sentence: flagged AI 2/12 (16.67%).
+  two_sentence: flagged AI 3/12 (25.00%).
+  untouched: flagged AI 2/12 (16.67%).
+assistance:
+  light_polish: flagged AI 5/12 (41.67%).
+  proofread: flagged AI 3/12 (25.00%).
+manuscripts:
+  gpt-6-luna: flagged AI 4/4 (100.00%).
+  gpt-6-sol: flagged AI 4/4 (100.00%).
+  gpt-6.1-sol: flagged AI 4/4 (100.00%).
+
+v8_diverse_fewshot
+API cost $0.02069400
+comparison:
+  Balanced accuracy 82.50%; human false positives 4/40; AI-involved recall 60/80.
+  ai: flagged AI 39/40 (97.50%).
+  human: flagged AI 4/40 (10.00%).
+  mixed: flagged AI 21/40 (52.50%).
+reconstruction:
+  Balanced accuracy 64.58%; human false positives 1/12; AI-involved recall 18/48.
+  paragraph_concise: flagged AI 8/12 (66.67%).
+  paragraph_v3: flagged AI 6/12 (50.00%).
+  sentence: flagged AI 2/12 (16.67%).
+  two_sentence: flagged AI 2/12 (16.67%).
+  untouched: flagged AI 1/12 (8.33%).
+assistance:
+  light_polish: flagged AI 5/12 (41.67%).
+  proofread: flagged AI 2/12 (16.67%).
+manuscripts:
+  gpt-6-luna: flagged AI 4/4 (100.00%).
+  gpt-6-sol: flagged AI 4/4 (100.00%).
+  gpt-6.1-sol: flagged AI 4/4 (100.00%).
+
+Total API cost $0.05138579
+Verified input/prompt payloads, model identity, reported Flex tier, raw-response labels, confusion counts, and billing totals. No model assets downloaded, source datasets modified, or fresh text generation performed. Hosted inference precision is provider-managed and unreported. Tiny sample counts make per-slice estimates noisy.

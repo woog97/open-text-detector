@@ -1,0 +1,1 @@
+{"stage": 2, "epoch": 1, "train_loss": 0.06875069828704, "selection_loss": 0.7950917448795267, "epoch_seconds": 5485.045720815659, "optimizer_steps": 1875, "checkpoint": "stage2-epoch1-adapters.safetensors"}

@@ -1,0 +1,701 @@
+{
+  "rows": 13751,
+  "datasets": 19,
+  "models": {
+    "ours": {
+      "seconds": 146.72763442993164,
+      "v3_target_tokens": {
+        "tp": 44596,
+        "fp": 3152,
+        "fn": 15702,
+        "tn": 60987,
+        "precision": 0.9339867638435118,
+        "recall": 0.7395933530133669,
+        "human_fpr": 0.049143266967055926,
+        "f1": 0.8255002498935639,
+        "units": 124437,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.9123169815716277,
+            0.9540617281097185
+          ],
+          "recall": [
+            0.7018799800102683,
+            0.7788032430978267
+          ],
+          "human_fpr": [
+            0.03339637408272823,
+            0.06768943687929985
+          ]
+        }
+      },
+      "v3_target_sentences": {
+        "tp": 1633,
+        "fp": 122,
+        "fn": 601,
+        "tn": 2212,
+        "precision": 0.9304843304843304,
+        "recall": 0.7309758281110116,
+        "human_fpr": 0.05227077977720651,
+        "f1": 0.818751566808724,
+        "units": 4568,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.9074447508521966,
+            0.9524175605261683
+          ],
+          "recall": [
+            0.6884561914065707,
+            0.7716622789430527
+          ],
+          "human_fpr": [
+            0.03585162507804537,
+            0.07187029220623846
+          ]
+        }
+      },
+      "novel_clean_human_isolated": {
+        "tp": 0,
+        "fp": 5152,
+        "fn": 0,
+        "tn": 100794,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.04862854661808846,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.03595933239817491,
+            0.06285660549897029
+          ]
+        }
+      },
+      "novel_clean_human_context": {
+        "tp": 0,
+        "fp": 3216,
+        "fn": 0,
+        "tn": 102730,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.03035508655352727,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.02004765956513955,
+            0.041770488655460236
+          ]
+        }
+      },
+      "arena_tokens": {
+        "tp": 3635,
+        "fp": 0,
+        "fn": 735299,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.004919248539111748,
+        "human_fpr": null,
+        "f1": 0.009790335982245421,
+        "units": 738934,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.0026329202829433896,
+            0.007476405719704487
+          ]
+        }
+      },
+      "arena_sentences": {
+        "tp": 119,
+        "fp": 0,
+        "fn": 35865,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.003307025344597599,
+        "human_fpr": null,
+        "f1": 0.006592249951527574,
+        "units": 35984,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.001600982764799528,
+            0.005759059638277565
+          ]
+        }
+      },
+      "opai_tokens": {
+        "tp": 7788,
+        "fp": 2383,
+        "fn": 173740,
+        "tn": 142055,
+        "precision": 0.7657064202143349,
+        "recall": 0.042902472345864,
+        "human_fpr": 0.01649842839142054,
+        "f1": 0.08125238003328135,
+        "units": 325966,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.6801603213830745,
+            0.8466619116094054
+          ],
+          "recall": [
+            0.016498455606294583,
+            0.08140578224789992
+          ],
+          "human_fpr": [
+            0.005907078014134791,
+            0.03315456204998077
+          ]
+        }
+      },
+      "opai_sentences": {
+        "tp": 300,
+        "fp": 105,
+        "fn": 5988,
+        "tn": 5208,
+        "precision": 0.7407407407407407,
+        "recall": 0.04770992366412214,
+        "human_fpr": 0.019762845849802372,
+        "f1": 0.08964589870013447,
+        "units": 11601,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.6406746031746031,
+            0.8421132376395534
+          ],
+          "recall": [
+            0.016679899929987967,
+            0.09032320010196958
+          ],
+          "human_fpr": [
+            0.006237509895799902,
+            0.038495580304325365
+          ]
+        }
+      }
+    },
+    "meld-v5": {
+      "seconds": 164.52435994148254,
+      "v3_target_tokens": {
+        "tp": 1288,
+        "fp": 323,
+        "fn": 59010,
+        "tn": 63816,
+        "precision": 0.7995034140285537,
+        "recall": 0.0213605758068261,
+        "human_fpr": 0.005035937573083459,
+        "f1": 0.04160945904472694,
+        "units": 124437,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.7402556184518826,
+            0.8648165712543613
+          ],
+          "recall": [
+            0.016392578636270666,
+            0.026451292298939843
+          ],
+          "human_fpr": [
+            0.003030148939891224,
+            0.007178740212042071
+          ]
+        }
+      },
+      "v3_target_sentences": {
+        "tp": 19,
+        "fp": 3,
+        "fn": 2215,
+        "tn": 2331,
+        "precision": 0.8636363636363636,
+        "recall": 0.008504923903312443,
+        "human_fpr": 0.0012853470437017994,
+        "f1": 0.016843971631205674,
+        "units": 4568,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.7096438172043011,
+            1.0
+          ],
+          "recall": [
+            0.0035054669257123246,
+            0.015301911592491627
+          ],
+          "human_fpr": [
+            0.0,
+            0.0035736665905209187
+          ]
+        }
+      },
+      "novel_clean_human_isolated": {
+        "tp": 0,
+        "fp": 7094,
+        "fn": 0,
+        "tn": 98852,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.06695863930681668,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.053673129242266984,
+            0.07946070371138528
+          ]
+        }
+      },
+      "novel_clean_human_context": {
+        "tp": 0,
+        "fp": 3971,
+        "fn": 0,
+        "tn": 101975,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.03748135842787835,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.02951000488895178,
+            0.046889344169362523
+          ]
+        }
+      },
+      "arena_tokens": {
+        "tp": 456062,
+        "fp": 0,
+        "fn": 282872,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.6171890858994172,
+        "human_fpr": null,
+        "f1": 0.7632862369413789,
+        "units": 738934,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.5560451148857595,
+            0.6756953329757076
+          ]
+        }
+      },
+      "arena_sentences": {
+        "tp": 31848,
+        "fp": 0,
+        "fn": 4136,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.8850600266785238,
+        "human_fpr": null,
+        "f1": 0.9390258285175138,
+        "units": 35984,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.8384726680768299,
+            0.9411127824323667
+          ]
+        }
+      },
+      "opai_tokens": {
+        "tp": 35625,
+        "fp": 4580,
+        "fn": 145903,
+        "tn": 139858,
+        "precision": 0.8860838204203457,
+        "recall": 0.19625071614296416,
+        "human_fpr": 0.031709107021697894,
+        "f1": 0.32133241330789736,
+        "units": 325966,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.8509096124720551,
+            0.9166273655310108
+          ],
+          "recall": [
+            0.1598403964631245,
+            0.2403553679183658
+          ],
+          "human_fpr": [
+            0.02064367884029782,
+            0.046230326958443785
+          ]
+        }
+      },
+      "opai_sentences": {
+        "tp": 1931,
+        "fp": 261,
+        "fn": 4357,
+        "tn": 5052,
+        "precision": 0.8809306569343066,
+        "recall": 0.30709287531806617,
+        "human_fpr": 0.04912478825522304,
+        "f1": 0.4554245283018868,
+        "units": 11601,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.8387301550809378,
+            0.9203859223207141
+          ],
+          "recall": [
+            0.24431716980388743,
+            0.3775806769254225
+          ],
+          "human_fpr": [
+            0.029314063476662478,
+            0.07526833525189747
+          ]
+        }
+      }
+    },
+    "meld-v8": {
+      "seconds": 254.7800271511078,
+      "v3_target_tokens": {
+        "tp": 2288,
+        "fp": 177,
+        "fn": 58010,
+        "tn": 63962,
+        "precision": 0.9281947261663286,
+        "recall": 0.037944873793492324,
+        "human_fpr": 0.002759631425497747,
+        "f1": 0.07290919809441869,
+        "units": 124437,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.8859112804363888,
+            0.9619520219109589
+          ],
+          "recall": [
+            0.028757878652829947,
+            0.04800792714960765
+          ],
+          "human_fpr": [
+            0.0013923081513398138,
+            0.0047084722506034096
+          ]
+        }
+      },
+      "v3_target_sentences": {
+        "tp": 57,
+        "fp": 1,
+        "fn": 2177,
+        "tn": 2333,
+        "precision": 0.9827586206896551,
+        "recall": 0.025514771709937333,
+        "human_fpr": 0.0004284490145672665,
+        "f1": 0.049738219895287955,
+        "units": 4568,
+        "groups": 256,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.9482531760435572,
+            1.0
+          ],
+          "recall": [
+            0.015678559972807093,
+            0.039476402783819045
+          ],
+          "human_fpr": [
+            0.0,
+            0.001327055462762054
+          ]
+        }
+      },
+      "novel_clean_human_isolated": {
+        "tp": 0,
+        "fp": 4544,
+        "fn": 0,
+        "tn": 101402,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.042889774035829574,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.03597781819965878,
+            0.05022792978153194
+          ]
+        }
+      },
+      "novel_clean_human_context": {
+        "tp": 0,
+        "fp": 2559,
+        "fn": 0,
+        "tn": 103387,
+        "precision": 0.0,
+        "recall": null,
+        "human_fpr": 0.02415381420723765,
+        "f1": 0.0,
+        "units": 105946,
+        "groups": 390,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.0,
+            0.0
+          ],
+          "human_fpr": [
+            0.016844628254037455,
+            0.03251746842421003
+          ]
+        }
+      },
+      "arena_tokens": {
+        "tp": 473979,
+        "fp": 0,
+        "fn": 264955,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.6414361769792701,
+        "human_fpr": null,
+        "f1": 0.7815548188534545,
+        "units": 738934,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.5774879038564228,
+            0.6975100133815452
+          ]
+        }
+      },
+      "arena_sentences": {
+        "tp": 27994,
+        "fp": 0,
+        "fn": 7990,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 0.7779568697198755,
+        "human_fpr": null,
+        "f1": 0.87511332020382,
+        "units": 35984,
+        "groups": 20,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.7031656491616873,
+            0.8607349805142134
+          ]
+        }
+      },
+      "opai_tokens": {
+        "tp": 41334,
+        "fp": 5434,
+        "fn": 140194,
+        "tn": 139004,
+        "precision": 0.8838094423537461,
+        "recall": 0.22770040985412718,
+        "human_fpr": 0.037621678505656404,
+        "f1": 0.3621088411535901,
+        "units": 325966,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.8515641919119384,
+            0.9111449938354791
+          ],
+          "recall": [
+            0.17666169727937792,
+            0.2794511468153378
+          ],
+          "human_fpr": [
+            0.024910827341650295,
+            0.05561123150035722
+          ]
+        }
+      },
+      "opai_sentences": {
+        "tp": 2055,
+        "fp": 313,
+        "fn": 4233,
+        "tn": 5000,
+        "precision": 0.8678209459459459,
+        "recall": 0.3268129770992366,
+        "human_fpr": 0.058912102390363257,
+        "f1": 0.474815157116451,
+        "units": 11601,
+        "groups": 81,
+        "cluster_bootstrap_95ci": {
+          "precision": [
+            0.8297329558084194,
+            0.9091360278687147
+          ],
+          "recall": [
+            0.2500044917136829,
+            0.4125516777877021
+          ],
+          "human_fpr": [
+            0.0339180783817952,
+            0.0903827114982986
+          ]
+        }
+      }
+    }
+  },
+  "verification": {
+    "ours": {
+      "rows": 13751,
+      "input_hashes_match": true,
+      "predictions_sha256": "ae0f867ad74503388d123ceb3e178c4d17c9177b4e38ffc214c37a7ebd53a0f3",
+      "thresholds": {
+        "thresholds": {
+          "tokens": 0.8947894573211671,
+          "sentences": 0.8944122054997613,
+          "document": 0.3737913241577493
+        },
+        "validation_rows": 1048,
+        "token_validation": {
+          "tp": 42050,
+          "fp": 3228,
+          "fn": 18782,
+          "tn": 319854,
+          "precision": 0.9287070983700694,
+          "recall": 0.6912480273540242,
+          "human_fpr": 0.009991271565732538,
+          "f1": 0.7925737442276882
+        },
+        "sentence_validation": {
+          "tp": 1560,
+          "fp": 121,
+          "fn": 743,
+          "tn": 11997,
+          "precision": 0.9280190362879238,
+          "recall": 0.6773773339122883,
+          "human_fpr": 0.009985146063706882,
+          "f1": 0.7831325301204819
+        },
+        "document_human_validation_fpr": 0.009541984732824428,
+        "document_human_rows": 524,
+        "policy": "Same 1048 original held-out validation inputs, token and sentence thresholds <=1% human FPR; document mean reference-token score threshold <=1% on human-original validation rows. No test calibration."
+      }
+    },
+    "meld-v5": {
+      "rows": 13751,
+      "input_hashes_match": true,
+      "predictions_sha256": "fed050e8d7b34382d108fc6704860f355f6a17b08e81e151011323e18cd75ea2",
+      "thresholds": {
+        "thresholds": {
+          "tokens": 1.5444715023040774,
+          "sentences": 0.31789918456758776,
+          "document": 0.014489119340950544
+        },
+        "validation_rows": 1048,
+        "token_validation": {
+          "tp": 1381,
+          "fp": 3230,
+          "fn": 59451,
+          "tn": 319852,
+          "precision": 0.2995011927998265,
+          "recall": 0.022701867438190425,
+          "human_fpr": 0.009997461944645632,
+          "f1": 0.042204666656479685
+        },
+        "sentence_validation": {
+          "tp": 29,
+          "fp": 121,
+          "fn": 2274,
+          "tn": 11997,
+          "precision": 0.19333333333333333,
+          "recall": 0.012592270950933565,
+          "human_fpr": 0.009985146063706882,
+          "f1": 0.023644516918059518
+        },
+        "document_human_validation_fpr": 0.009541984732824428,
+        "document_human_rows": 524,
+        "policy": "Same 1048 original held-out validation inputs, token and sentence thresholds <=1% human FPR; document mean reference-token score threshold <=1% on human-original validation rows. No test calibration."
+      }
+    },
+    "meld-v8": {
+      "rows": 13751,
+      "input_hashes_match": true,
+      "predictions_sha256": "a51fe9fa727f7b744cf38f1e34b03db15bad5997089c5c799ba98bef00b8aefa",
+      "thresholds": {
+        "thresholds": {
+          "tokens": 1.7966945171356203,
+          "sentences": -0.37164310634136194,
+          "document": -1.6084485564022382
+        },
+        "validation_rows": 1048,
+        "token_validation": {
+          "tp": 1849,
+          "fp": 3230,
+          "fn": 58983,
+          "tn": 319852,
+          "precision": 0.3640480409529435,
+          "recall": 0.030395186743819042,
+          "human_fpr": 0.009997461944645632,
+          "f1": 0.05610596106871387
+        },
+        "sentence_validation": {
+          "tp": 40,
+          "fp": 121,
+          "fn": 2263,
+          "tn": 11997,
+          "precision": 0.2484472049689441,
+          "recall": 0.017368649587494574,
+          "human_fpr": 0.009985146063706882,
+          "f1": 0.032467532467532464
+        },
+        "document_human_validation_fpr": 0.009541984732824428,
+        "document_human_rows": 524,
+        "policy": "Same 1048 original held-out validation inputs, token and sentence thresholds <=1% human FPR; document mean reference-token score threshold <=1% on human-original validation rows. No test calibration."
+      }
+    }
+  }
+}

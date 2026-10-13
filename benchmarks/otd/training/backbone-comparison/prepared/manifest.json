@@ -1,0 +1,100 @@
+{
+  "version": 2,
+  "models": {
+    "encoder": {
+      "repo": "answerdotai/ModernBERT-large",
+      "revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13"
+    },
+    "causal": {
+      "repo": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+    },
+    "qwen35": {
+      "repo": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    }
+  },
+  "seed": 42,
+  "files": {
+    "train": {
+      "sha256": "e74a901dea2491364c170c70333a0e98db88a07ea8ecfcdd86f68aab9aeb712d",
+      "rows": 26731,
+      "papers": 1170
+    },
+    "selection": {
+      "sha256": "721157617904d9b2b78df75ed962ef969bf35f31b9dbb5317cd258a28df34a38",
+      "rows": 4459,
+      "papers": 195
+    },
+    "calibration": {
+      "sha256": "a6bca7e93a165b8955e842de970f0870a15056daff7798e89ca60d3bcefea9fd",
+      "rows": 4484,
+      "papers": 195
+    },
+    "stage1-epoch0": {
+      "sha256": "b960da118cdf7eb2556505454e1007894567e35b735e19c59da782fcb990b95b",
+      "rows": 6000,
+      "papers": 1079
+    },
+    "stage2-epoch0": {
+      "sha256": "d23b174361640baca9e45c7c0984d640ba6c68d5a6748142c9a5f57bcb05d190",
+      "rows": 12000,
+      "papers": 1138
+    },
+    "stage2-epoch1": {
+      "sha256": "f0176d4f75aef2804f4da76a954a4c2dc9c76f6c4babd110ad58f4484cbdebcf",
+      "rows": 12000,
+      "papers": 1139
+    },
+    "stage2-epoch2": {
+      "sha256": "f0369f4fe6439ad101cfa38947f95c4372308bdd5aa944bfbc8483148fc5d53b",
+      "rows": 12000,
+      "papers": 1137
+    },
+    "selection-windows": {
+      "sha256": "1283c225fb48d718e8f809d2049629cd72448469fc3422b03e00a7e956e0b447",
+      "rows": 2100,
+      "papers": 195
+    },
+    "calibration-windows": {
+      "sha256": "5ebcd62bcd8b0537dd10db60eac6fc201221dc225227144521e0415f282d4122",
+      "rows": 2019,
+      "papers": 195
+    }
+  },
+  "excluded_pairs": {
+    "quality_or_development": 5703
+  },
+  "forbidden_text_hashes": 101171,
+  "heldout_papers": 579,
+  "policy": "75% paired / 25% novel human; choose paper, target and variant uniformly within stratum. Exact heldout text exclusion. Original paper splits retained; author overlap across old splits is not excluded. All new workflow splits held out.",
+  "source_hashes": {
+    "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000/data/fresh_passages/validation-00000-of-00001.parquet": "ae7a52b27289bb98957f9c8be6b7eea15ff5f2da85ba2cb6e1eee3da4161abf1",
+    "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000/data/fresh_passages/train-00000-of-00001.parquet": "448a7301f2c1784fc469efb21e8e08aa7716134e525b6c358d1116c7acfb1a11",
+    "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000/data/fresh_passages/test-00000-of-00001.parquet": "a9e43fbfa47b98acb172e125ec18439bdb89a9a12eca16dddced853e03c9bdc7",
+    "benchmarks/pangram4/training/paper-v3-modernbert/wide-eval-v1/human_remaining_train.jsonl": "269fb03531f2777af39559a84542e143501a26dcd40fdd9503d107d2fe06df47",
+    "benchmarks/pangram4/training/paper-v3-modernbert/wide-eval-v1/human_remaining_test.jsonl": "98c61b20f1afa75cf3f65e4ffbc6cc204957ac9fcfa8a5637e01e5e6b150eb36",
+    "benchmarks/pangram4/training/paper-v3-modernbert/wide-eval-v1/human_remaining_validation.jsonl": "dd715bcc1ce53fd5f9c063be1747defa79b32778f76c67fc1d27280eb04cd176"
+  },
+  "train_strata": {
+    "paired": 3146,
+    "novel_human": 23585
+  },
+  "selection_strata": {
+    "paired": 564,
+    "novel_human": 3895
+  },
+  "calibration_strata": {
+    "paired": 484,
+    "novel_human": 4000
+  },
+  "previous_manifest_sha256": "12fca66946530526b69a0e801abee9063820d3efeaa725807628faec947c028c",
+  "qwen35_window_adjustments": {
+    "stage1-epoch0": 0,
+    "stage2-epoch0": 0,
+    "stage2-epoch1": 0,
+    "stage2-epoch2": 0,
+    "selection-windows": 0,
+    "calibration-windows": 0
+  }
+}

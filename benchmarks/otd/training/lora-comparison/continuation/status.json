@@ -1,0 +1,7 @@
+{
+  "state": "running",
+  "time": 1790843699.654913,
+  "model": "qwen35",
+  "phase": "full_training_resumed",
+  "child_pid": 3259
+}

@@ -1,0 +1,243 @@
+{
+  "state": "complete",
+  "completed": 236,
+  "planned": 236,
+  "cost_usd": 0.032555287500000016,
+  "reported_tiers": {
+    "flex": 236
+  },
+  "errors": [],
+  "section_counts": {
+    "tn": 122,
+    "fp": 8,
+    "tp": 103,
+    "fn": 3
+  },
+  "human_section_fpr": 0.06153846153846154,
+  "ai_section_recall": 0.9716981132075472,
+  "section_balanced_accuracy": 0.9550798258345428,
+  "papers": [
+    {
+      "paper_id": "human/acl-2020-931fb6416cf5d5c3",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 12,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/9f44e956e3a2b7b5598c625fcc802c36",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 11,
+      "ai_flags": 1,
+      "ai_fraction": 0.09090909090909091,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/e96c7de8f6390b1e6c71556e4e0a4959",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 11,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/icml-2015-cc134b564b2accc6",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 10,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/icml-2016-f0cb38ba3061a21a",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 11,
+      "ai_flags": 1,
+      "ai_fraction": 0.09090909090909091,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "full-paper/122",
+      "label": "AI",
+      "generator": "gpt-6.1-sol",
+      "chunks": 11,
+      "ai_flags": 11,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/557",
+      "label": "AI",
+      "generator": "gpt-6-luna",
+      "chunks": 12,
+      "ai_flags": 12,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/48",
+      "label": "AI",
+      "generator": "gpt-6.1-sol",
+      "chunks": 9,
+      "ai_flags": 8,
+      "ai_fraction": 0.8888888888888888,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/412",
+      "label": "AI",
+      "generator": "gpt-6-luna",
+      "chunks": 7,
+      "ai_flags": 7,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "human/acl-2019-637513d8c85fbdc6",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 5,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "full-paper/341",
+      "label": "AI",
+      "generator": "gpt-6-sol",
+      "chunks": 9,
+      "ai_flags": 9,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "human/acl-2015-653bd4ed07f4a30a",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 10,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/0f3d014eead934bbdbacb62a01dc4831",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 10,
+      "ai_flags": 1,
+      "ai_fraction": 0.1,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/icml-2014-b8f415cd1dc2c467",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 12,
+      "ai_flags": 2,
+      "ai_fraction": 0.16666666666666666,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/icml-2017-7aa86556beca6029",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 13,
+      "ai_flags": 3,
+      "ai_fraction": 0.23076923076923078,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "full-paper/541",
+      "label": "AI",
+      "generator": "gpt-6-luna",
+      "chunks": 8,
+      "ai_flags": 8,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/149",
+      "label": "AI",
+      "generator": "gpt-6.1-sol",
+      "chunks": 10,
+      "ai_flags": 9,
+      "ai_fraction": 0.9,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "human/28dd2c7955ce926456240b2ff0100bde",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 13,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "human/acl-2014-dda43cf2886bb0c6",
+      "label": "HUMAN",
+      "generator": null,
+      "chunks": 12,
+      "ai_flags": 0,
+      "ai_fraction": 0.0,
+      "majority_prediction": "HUMAN"
+    },
+    {
+      "paper_id": "full-paper/571",
+      "label": "AI",
+      "generator": "gpt-6-luna",
+      "chunks": 10,
+      "ai_flags": 10,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/385",
+      "label": "AI",
+      "generator": "gpt-6-sol",
+      "chunks": 9,
+      "ai_flags": 9,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/141",
+      "label": "AI",
+      "generator": "gpt-6.1-sol",
+      "chunks": 9,
+      "ai_flags": 8,
+      "ai_fraction": 0.8888888888888888,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/355",
+      "label": "AI",
+      "generator": "gpt-6-sol",
+      "chunks": 6,
+      "ai_flags": 6,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    },
+    {
+      "paper_id": "full-paper/233",
+      "label": "AI",
+      "generator": "gpt-6-sol",
+      "chunks": 6,
+      "ai_flags": 6,
+      "ai_fraction": 1.0,
+      "majority_prediction": "AI"
+    }
+  ],
+  "precision_dtype": "provider_managed_unreported",
+  "paper_macro_human_section_fpr": 0.05660450660450661,
+  "paper_macro_ai_section_recall": 0.9731481481481482,
+  "paper_majority_human_correct": 12,
+  "paper_majority_ai_correct": 12,
+  "human_papers_with_any_false_positive": 5
+}

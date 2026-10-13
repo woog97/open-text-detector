@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-03T09:10:29.792564+00:00",
+  "local_document_links_valid": true,
+  "human_source_totals_match": true,
+  "mirror_source_totals_match": true,
+  "custom_token_subtotal_matches": true,
+  "source_ids_unique": true,
+  "dataset_writes_or_uploads": false,
+  "global_deduplication_performed": false
+}

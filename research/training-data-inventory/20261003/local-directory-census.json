@@ -1,0 +1,2249 @@
+[
+  {
+    "path": "research/data/abstracts-100-four-venues-20261002",
+    "bytes": 672449,
+    "file_extensions": {
+      ".jsonl": 5,
+      ".txt": 2,
+      ".json": 1,
+      ".py": 1
+    },
+    "root_files": [
+      "metadata.jsonl",
+      "abstracts.txt",
+      "title-abstract-seeds.jsonl",
+      "original-abstracts.jsonl",
+      "validation.json",
+      "README.txt",
+      "build_dataset.py",
+      "abstracts.jsonl",
+      "edit-audit.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/abstracts-500-additional-four-venues-20261002",
+    "bytes": 2977617,
+    "file_extensions": {
+      ".jsonl": 4,
+      ".txt": 2,
+      ".json": 2,
+      ".py": 2
+    },
+    "root_files": [
+      "metadata.jsonl",
+      "titles-and-abstracts.txt",
+      "independent-verification.json",
+      "original-title-abstracts.jsonl",
+      "title-abstract-seeds.jsonl",
+      "verify_dataset.py",
+      "validation.json",
+      "README.txt",
+      "build_dataset.py",
+      "edit-audit.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/ai_mdta_2025",
+    "bytes": 9695154,
+    "file_extensions": {
+      ".jsonl": 1,
+      ".json": 1
+    },
+    "root_files": [
+      "responses.jsonl",
+      "manifest.json"
+    ]
+  },
+  {
+    "path": "research/data/human_pg19",
+    "bytes": 41505037,
+    "file_extensions": {
+      ".json": 1,
+      ".jsonl": 1
+    },
+    "root_files": [
+      "manifest.json",
+      "books.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2023",
+    "bytes": 8331588,
+    "file_extensions": {
+      ".json": 1,
+      ".jsonl": 1
+    },
+    "root_files": [
+      "manifest.json",
+      "papers.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_browser_8s",
+    "bytes": 28791,
+    "file_extensions": {
+      ".json": 1,
+      ".md": 1
+    },
+    "root_files": [
+      "manifest.json",
+      "findings.md"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_browser_9s",
+    "bytes": 23811,
+    "file_extensions": {
+      ".py": 1,
+      ".json": 1
+    },
+    "root_files": [
+      "retain_downloads.py",
+      "manifest.json"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_pdfs",
+    "bytes": 140674,
+    "file_extensions": {
+      ".json": 3,
+      ".headers": 2,
+      ".md": 1
+    },
+    "root_files": [
+      "download-baseline.json",
+      "api-error.json",
+      "api-response.headers",
+      "manifest.json",
+      "website-response.headers",
+      "rate-limit-findings.md"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_pdfs_batch2",
+    "bytes": 121682,
+    "file_extensions": {
+      ".py": 1,
+      ".command": 1,
+      ".md": 1,
+      ".jsonl": 1,
+      ".json": 3,
+      ".pyc": 1
+    },
+    "root_files": [
+      "run_benchmark.py",
+      "run_benchmark.command",
+      "benchmark-findings.md",
+      "events.jsonl",
+      "throughput-summary.json",
+      "manifest.json",
+      "selection.json"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_pdfs_batch3",
+    "bytes": 61401,
+    "file_extensions": {
+      ".py": 1,
+      ".command": 1,
+      ".jsonl": 1,
+      ".json": 2,
+      ".md": 1,
+      ".pyc": 1
+    },
+    "root_files": [
+      "run_benchmark.py",
+      "run_benchmark.command",
+      "events.jsonl",
+      "manifest.json",
+      "selection.json",
+      "experiment-notes.md"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_signedout_6s",
+    "bytes": 18809,
+    "file_extensions": {
+      ".py": 1,
+      ".json": 1
+    },
+    "root_files": [
+      "retain_downloads.py",
+      "manifest.json"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_signedout_7s",
+    "bytes": 34169,
+    "file_extensions": {
+      ".py": 1,
+      ".json": 1,
+      ".md": 1
+    },
+    "root_files": [
+      "retain_downloads.py",
+      "manifest.json",
+      "findings.md"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2025_signedout_8s",
+    "bytes": 41748,
+    "file_extensions": {
+      ".py": 1,
+      ".json": 1,
+      ".md": 1
+    },
+    "root_files": [
+      "retain_downloads.py",
+      "manifest.json",
+      "findings.md"
+    ]
+  },
+  {
+    "path": "research/data/iclr_2026",
+    "bytes": 9069328,
+    "file_extensions": {
+      ".json": 1,
+      ".jsonl": 1
+    },
+    "root_files": [
+      "manifest.json",
+      "papers.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/openreview_batch50_test",
+    "bytes": 713186782,
+    "file_extensions": {
+      ".html": 1,
+      ".zip": 2,
+      ".command": 2,
+      ".md": 2,
+      ".json": 14,
+      ".py": 3,
+      ".txt": 1
+    },
+    "root_files": [
+      "batch-links.html",
+      "browser-batch50.zip",
+      "run_updated_test.command",
+      "run_test.command",
+      "REPORT.md",
+      "selection-batch3.json",
+      "batch-urls.json",
+      "test_updated_downloader.py",
+      "retain_batch.py",
+      "browser-results.json",
+      "selection.json",
+      "selection-batch2.json",
+      "test-notes.json",
+      "BATCH-LINKS.md",
+      "batch-urls.txt",
+      "test_batch.py",
+      "selection-batch4.json",
+      "anonymous-results.json"
+    ]
+  },
+  {
+    "path": "research/data/openreview_catalogue_all",
+    "bytes": 294275882,
+    "file_extensions": {
+      ".json": 430,
+      ".py": 4,
+      ".jsonl": 92,
+      ".md": 1,
+      ".txt": 36,
+      ".pyc": 1
+    },
+    "root_files": [
+      "summary.json",
+      "host.json",
+      "harvest-progress.json",
+      "configure.py",
+      "venues.json",
+      "discover.py",
+      "requests.jsonl",
+      "venue-configurations-scope.json",
+      "export.py",
+      "README.md",
+      "selected-venue-ids.json",
+      "ids.txt",
+      "harvest.py",
+      "active_venues.json",
+      "venue-configurations.json",
+      "papers.jsonl",
+      "candidate-venue-ids.json"
+    ]
+  },
+  {
+    "path": "research/data/openreview_iclr2026_all",
+    "bytes": 25084342,
+    "file_extensions": {
+      ".py": 2,
+      ".json": 5,
+      ".md": 1,
+      ".txt": 9,
+      ".jsonl": 1
+    },
+    "root_files": [
+      "fetch.py",
+      "summary.json",
+      "README.md",
+      "batches.json",
+      "ids.txt",
+      "check_and_export.py",
+      "requests.json",
+      "batch-urls.txt",
+      "venue.json",
+      "papers.jsonl",
+      "all-submissions.json"
+    ]
+  },
+  {
+    "path": "research/data/openreview_iclr2027_all",
+    "bytes": 328,
+    "file_extensions": {
+      ".json": 1
+    },
+    "root_files": [
+      "visibility-check.json"
+    ]
+  },
+  {
+    "path": "research/data/openreview_legacy_download_queue",
+    "bytes": 23657978,
+    "file_extensions": {
+      ".pid": 1,
+      ".bin": 2,
+      ".log": 1,
+      ".sqlite3": 1,
+      ".sqlite3-wal": 1,
+      ".sqlite3-shm": 1,
+      ".lock": 1,
+      ".json": 3,
+      ".md": 1
+    },
+    "root_files": [
+      "direct.pid",
+      "inspection-ryKRRsm0Z.bin",
+      "direct.log",
+      "queue.sqlite3",
+      "queue.sqlite3-wal",
+      "queue.sqlite3-shm",
+      "runner.lock",
+      "inspection-HJWHIKqgl.bin",
+      "direct-plan.json",
+      "TALLY.md",
+      "hourly-check.json",
+      "status.json"
+    ]
+  },
+  {
+    "path": "research/data/pangram-api-smoke-20261003",
+    "bytes": 7581,
+    "file_extensions": {
+      ".json": 4,
+      ".txt": 6
+    },
+    "root_files": [
+      "summary.json",
+      "expository.response.txt",
+      "casual.attempt.json",
+      "technical.attempt.json",
+      "technical.txt",
+      "technical.response.txt",
+      "expository.attempt.json",
+      "casual.response.txt",
+      "casual.txt",
+      "expository.txt"
+    ]
+  },
+  {
+    "path": "research/data/paper-eval-workflows-luna-20260930",
+    "bytes": 1033975937,
+    "file_extensions": {
+      ".json": 41,
+      ".jsonl": 50,
+      ".md": 6,
+      ".log": 11,
+      ".py": 3,
+      ".lock": 2,
+      ".gz": 3,
+      ".pdf": 533,
+      ".html": 1628
+    },
+    "root_files": [
+      "main-freeze.json",
+      "summary.json",
+      "failures.jsonl",
+      "source-revision.json",
+      "source-selection-summary.json",
+      "pilot-process.json",
+      "OPERATIONS.md",
+      "deployment.log",
+      "runner.snapshot.py",
+      "calibration.log",
+      "billing-receipts.json",
+      "matched-human-controls.jsonl",
+      "test-status.json",
+      "key-before.json",
+      "test-human-novel-clean.jsonl",
+      "pilot-assistance.jsonl",
+      "calibration-reconstruction.jsonl",
+      "test-matched-human.jsonl",
+      "test.log",
+      "dispatches.jsonl",
+      "deployment-process.json",
+      "calibration-human-novel-clean.jsonl",
+      "final-validation.json",
+      "passages.jsonl",
+      "source-exclusions.jsonl",
+      "flex-endpoint.json",
+      "README.md",
+      "responses.jsonl",
+      "pilot-status.json",
+      "worker.lock",
+      "dataset.jsonl",
+      "key-after.json",
+      "acquisition-process.json",
+      "RESULTS.md",
+      "export.log",
+      "acquisition.log",
+      "pilot-reconstruction.jsonl",
+      "review-repairs.jsonl",
+      "pilot-matched-human.jsonl",
+      "calibration-assistance.jsonl",
+      "format-errors.jsonl",
+      "calibration-status.json",
+      "pilot.log",
+      "protocol.json",
+      "pilot-review.json",
+      "calibration-matched-human.jsonl",
+      "test-assistance.jsonl",
+      "pilot-human-novel-clean.jsonl",
+      "source-worker.lock",
+      "human-body-audited.jsonl",
+      "papers.jsonl",
+      "outputs.jsonl",
+      "deployment-status.json",
+      "attempts.jsonl",
+      "acquisition-status.json",
+      "human-body.jsonl",
+      "costs.json",
+      "PROTOCOL.md",
+      "test-reconstruction.jsonl",
+      "text-overlap-audit.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap10000-v3-luna-20260930",
+    "bytes": 15353437831,
+    "file_extensions": {
+      ".jsonl": 25,
+      ".log": 11,
+      ".py": 13,
+      ".json": 30,
+      ".html": 12261,
+      ".pdf": 5936
+    },
+    "root_files": [
+      "new-papers.jsonl",
+      "new-passages.jsonl",
+      "validation.log",
+      "retired-source-attempts.jsonl",
+      "upload_paper10000_huggingface.final.snapshot.py",
+      "summary.json",
+      "train.jsonl",
+      "paper_scale10000_run.snapshot.py",
+      "paper_scale10000_run.resumed.snapshot.py",
+      "writer-status.json",
+      "runtime-amendment.json",
+      "source-selection-summary.json",
+      "billing.log",
+      "test.jsonl",
+      "paper_scale10000_acquire.snapshot.py",
+      "huggingface-upload.log",
+      "source-preflight.json",
+      "pipeline-status.json",
+      "baseline-preservation.json",
+      "sampling-plan.json",
+      "paper_gap50.snapshot.py",
+      "model-catalog-record.json",
+      "readme-update.json",
+      "key-usage-before.json",
+      "huggingface-validation.log",
+      "writer-responses.jsonl",
+      "paper_scale10000_run.final.snapshot.py",
+      "paper_gap50_fidelity.snapshot.py",
+      "forum-id-preflight.json",
+      "completion-status.json",
+      "audit-status.json",
+      "paper_scale10000_finish.final.snapshot.py",
+      "package_paper10000_huggingface.final.snapshot.py",
+      "passages.jsonl",
+      "pipeline.log",
+      "paper_forum_ids.final.snapshot.py",
+      "source-exclusions.jsonl",
+      "flex-endpoint.json",
+      "similarity.jsonl",
+      "paper_gap250_v3.snapshot.py",
+      "huggingface_upload.json",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "huggingface-package.log",
+      "validation.jsonl",
+      "validate_paper10000_huggingface.final.snapshot.py",
+      "dataset.jsonl",
+      "fresh-validation.jsonl",
+      "export.log",
+      "acquisition.log",
+      "huggingface-baseline-preservation.json",
+      "outline-responses.jsonl",
+      "generation.log",
+      "validation.json",
+      "pre-abstract-fallback-exclusions.jsonl",
+      "manifest.json",
+      "flex-probe-outline-responses.jsonl",
+      "outline-status.json",
+      "paper_scale_streaming.snapshot.py",
+      "flex-probe-attempts.jsonl",
+      "public-documentation-update.json",
+      "candidate-roster.jsonl",
+      "content-quality-audit.json",
+      "catalog.log",
+      "fresh-train.jsonl",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "acquisition-status.json",
+      "fresh-test.jsonl",
+      "visibility-update.json",
+      "quality-reviews.jsonl",
+      "scale-report.json",
+      "flex-probe.log",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap250-luna-v2-20260929",
+    "bytes": 97247244,
+    "file_extensions": {
+      ".json": 20,
+      ".py": 9,
+      ".jsonl": 15
+    },
+    "root_files": [
+      "summary.json",
+      "fidelity-runner.snapshot.py",
+      "generation-runner.resume.snapshot.py",
+      "train.jsonl",
+      "writer-status.json",
+      "source-selector.snapshot.py",
+      "fidelity-runner.resume.snapshot.py",
+      "test.jsonl",
+      "source-visual-checks.json",
+      "runner.snapshot.py",
+      "selection-inventory.json",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "key-usage-before.json",
+      "writer-responses.jsonl",
+      "audit-status.json",
+      "passages.jsonl",
+      "passages.before-source-correction.jsonl",
+      "expansion-report.json",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "source-selector.corrected.snapshot.py",
+      "outline-responses.jsonl",
+      "generation-runner.snapshot.py",
+      "validation.json",
+      "manifest.json",
+      "outline-status.json",
+      "superseded-outline-responses.jsonl",
+      "content-quality-audit.json",
+      "v2-prompts.snapshot.py",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "quality-reviews.jsonl",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap250-luna-v3-20260930",
+    "bytes": 107711431,
+    "file_extensions": {
+      ".py": 11,
+      ".json": 30,
+      ".jsonl": 19
+    },
+    "root_files": [
+      "fidelity-runner.operational.snapshot.py",
+      "key-after-first-order.json",
+      "summary.json",
+      "fidelity-runner.snapshot.py",
+      "train.jsonl",
+      "writer-status.json",
+      "test.jsonl",
+      "runner.snapshot.py",
+      "runner.format-feedback.snapshot.py",
+      "runner.order-check.snapshot.py",
+      "runner.final.snapshot.py",
+      "baseline-similarity.jsonl",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "key-usage-before.json",
+      "writer-responses.jsonl",
+      "audit-status.json",
+      "generation-runner.operational.snapshot.py",
+      "validation-base.snapshot.py",
+      "passages.jsonl",
+      "runner.operational.snapshot.py",
+      "similarity.jsonl",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "v2-base.snapshot.py",
+      "outline-responses.jsonl",
+      "comparison-report.json",
+      "generation-runner.snapshot.py",
+      "validation.json",
+      "manifest.json",
+      "baseline-evaluation.json",
+      "outline-status.json",
+      "comparison-report.first-order.json",
+      "decision.json",
+      "content-quality-audit.json",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "quality-reviews.jsonl",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap250-luna-v4-20260930",
+    "bytes": 114314337,
+    "file_extensions": {
+      ".jsonl": 23,
+      ".json": 34,
+      ".py": 1
+    },
+    "root_files": [
+      "section-contexts.jsonl",
+      "summary.json",
+      "train.jsonl",
+      "writer-status.json",
+      "test.jsonl",
+      "runner.snapshot.py",
+      "billing-spot-check.json",
+      "baseline-similarity.jsonl",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "key-usage-before.json",
+      "writer-responses.jsonl",
+      "audit-status.json",
+      "passages.jsonl",
+      "similarity.jsonl",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "context-summary.json",
+      "outline-responses.jsonl",
+      "comparison-report.json",
+      "validation.json",
+      "manifest.json",
+      "baseline-evaluation.json",
+      "decision.json",
+      "content-quality-audit.json",
+      "reused-outline-attempts.jsonl",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "quality-reviews.jsonl",
+      "section-inventory.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap2500-v3-luna-20260930",
+    "bytes": 3836456703,
+    "file_extensions": {
+      ".jsonl": 33,
+      ".json": 24,
+      ".py": 7,
+      ".html": 2734,
+      ".pdf": 1227
+    },
+    "root_files": [
+      "new-papers.jsonl",
+      "source-corrections.json",
+      "new-passages.jsonl",
+      "retired-source-attempts.jsonl",
+      "summary.json",
+      "train.jsonl",
+      "writer-status.json",
+      "source-selection-summary.json",
+      "test.jsonl",
+      "pre-source-correction-new-passages.jsonl",
+      "pre-source-correction-outline-responses.jsonl",
+      "sampling-plan.json",
+      "paper_gap50.snapshot.py",
+      "model-catalog-record.json",
+      "pre-source-correction-papers.jsonl",
+      "paper_scale2500_acquire.snapshot.py",
+      "key-usage-before.json",
+      "pre-source-correction-writer-responses.jsonl",
+      "writer-responses.jsonl",
+      "paper_gap50_fidelity.snapshot.py",
+      "completion-status.json",
+      "audit-status.json",
+      "passages.jsonl",
+      "source-exclusions.jsonl",
+      "flex-endpoint.json",
+      "similarity.jsonl",
+      "paper_gap250_v3.snapshot.py",
+      "huggingface_upload.json",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "pre-source-correction-passages.jsonl",
+      "fresh-validation.jsonl",
+      "outline-responses.jsonl",
+      "pre-source-correction-manifest.json",
+      "paper_scale2500_repair_sources.snapshot.py",
+      "validation.json",
+      "manifest.json",
+      "flex-probe-outline-responses.jsonl",
+      "outline-status.json",
+      "retired-source-writers.jsonl",
+      "flex-probe-attempts.jsonl",
+      "candidate-roster.jsonl",
+      "content-quality-audit.json",
+      "candidate-roster.initial.jsonl",
+      "fresh-train.jsonl",
+      "paper_scale2500_finish.snapshot.py",
+      "papers.jsonl",
+      "paper_scale2500_run.snapshot.py",
+      "pre-source-correction-new-papers.jsonl",
+      "attempts.jsonl",
+      "fresh-test.jsonl",
+      "quality-reviews.jsonl",
+      "retired-source-outlines.jsonl",
+      "viewer-validation.json",
+      "scale-report.json",
+      "source-visual-spot-check.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap50-luna-20260929",
+    "bytes": 61556684,
+    "file_extensions": {
+      ".json": 20,
+      ".jsonl": 15,
+      ".py": 2,
+      ".html": 50
+    },
+    "root_files": [
+      "summary.json",
+      "train.jsonl",
+      "writer-status.json",
+      "test.jsonl",
+      "runner.snapshot.py",
+      "selection-inventory.json",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "key-usage-before.json",
+      "writer-responses.jsonl",
+      "audit-status.json",
+      "passages.jsonl",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "manual-review.json",
+      "spot-review-plan.json",
+      "outline-responses.jsonl",
+      "superseded-responses.jsonl",
+      "validation.json",
+      "manifest.json",
+      "outline-status.json",
+      "spot-review-displayed.json",
+      "content-quality-audit.json",
+      "passages.initial.jsonl",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "quality-reviews.jsonl",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-gap50-luna-v2-20260929",
+    "bytes": 18713953,
+    "file_extensions": {
+      ".json": 19,
+      ".py": 4,
+      ".jsonl": 13
+    },
+    "root_files": [
+      "summary.json",
+      "fidelity-runner.snapshot.py",
+      "train.jsonl",
+      "writer-status.json",
+      "test.jsonl",
+      "runner.snapshot.py",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "key-usage-before.json",
+      "writer-responses.jsonl",
+      "audit-status.json",
+      "passages.jsonl",
+      "key-total-after.json",
+      "audit-responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "spot-review-plan.json",
+      "outline-responses.jsonl",
+      "generation-runner.snapshot.py",
+      "validation.json",
+      "manifest.json",
+      "outline-status.json",
+      "content-quality-audit.json",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "fidelity-comparison.json",
+      "quality-reviews.jsonl",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-luna50-20260929",
+    "bytes": 513331116,
+    "file_extensions": {
+      ".json": 16,
+      ".jsonl": 13,
+      ".html": 179,
+      ".py": 2,
+      ".pdf": 177,
+      ".txt": 170
+    },
+    "root_files": [
+      "summary.json",
+      "train.jsonl",
+      "review-batch-new-second.json",
+      "test.jsonl",
+      "review.html",
+      "source-preflight.json",
+      "paired-sol-luna.jsonl",
+      "runner.snapshot.py",
+      "generation-status.json",
+      "review-batch-new-last.json",
+      "runner.final.snapshot.py",
+      "selection-exclusions.json",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "validation.ready.jsonl",
+      "review-batch-new-first.json",
+      "key-usage-before.json",
+      "train.ready.jsonl",
+      "passages.jsonl",
+      "responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "test.ready.jsonl",
+      "validation.json",
+      "manifest.json",
+      "content-quality-audit.json",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "usage.jsonl",
+      "run-report.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-luna50-quality-v2-20260929",
+    "bytes": 513821956,
+    "file_extensions": {
+      ".json": 18,
+      ".jsonl": 16,
+      ".py": 2,
+      ".html": 179,
+      ".pdf": 177,
+      ".txt": 170
+    },
+    "root_files": [
+      "summary.json",
+      "train.jsonl",
+      "blinded-quality-comparisons.jsonl",
+      "judge-plan.json",
+      "test.jsonl",
+      "base-runner.snapshot.py",
+      "review.html",
+      "runner.snapshot.py",
+      "judge-responses.jsonl",
+      "generation-status.json",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "validation.ready.jsonl",
+      "key-usage-before.json",
+      "train.ready.jsonl",
+      "passages.jsonl",
+      "responses.jsonl",
+      "validation.jsonl",
+      "dataset.jsonl",
+      "test.ready.jsonl",
+      "spot-review-plan.json",
+      "superseded-responses.jsonl",
+      "validation.json",
+      "manifest.json",
+      "judge-attempts.jsonl",
+      "quality-comparison-report.json",
+      "judge-status.json",
+      "spot-review-displayed.json",
+      "judge-key-after.json",
+      "content-quality-audit.json",
+      "papers.jsonl",
+      "attempts.jsonl",
+      "usage.jsonl",
+      "judge-model-catalog-record.json",
+      "judge-key-before.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/paper-pilot10-gpt61-sol-20260929",
+    "bytes": 52448283,
+    "file_extensions": {
+      ".json": 13,
+      ".jsonl": 13,
+      ".html": 12,
+      ".py": 2,
+      ".log": 2,
+      ".zip": 1,
+      ".pdf": 10,
+      ".txt": 10
+    },
+    "root_files": [
+      "summary.json",
+      "train.jsonl",
+      "test.jsonl",
+      "review.html",
+      "runner.snapshot.py",
+      "selection-exclusions.json",
+      "key-usage-after.json",
+      "model-catalog-record.json",
+      "validation.ready.jsonl",
+      "key-usage-before.json",
+      "source-quality-audit.json",
+      "train.ready.jsonl",
+      "passages.jsonl",
+      "responses.jsonl",
+      "validation.jsonl",
+      "dataset-card.json",
+      "dataset.jsonl",
+      "test.ready.jsonl",
+      "superseded-responses.jsonl",
+      "validation.json",
+      "manifest.json",
+      "prepare.log",
+      "exporter.snapshot.py",
+      "content-quality-audit.json",
+      "checksums.json",
+      "papers.jsonl",
+      "paper-pilot10-gpt61-sol.zip",
+      "attempts.jsonl",
+      "generate.log",
+      "usage.jsonl",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "research/data/reviewbench",
+    "bytes": 4286732479,
+    "file_extensions": {
+      ".json": 1,
+      ".sqlite3": 1,
+      ".md": 1,
+      "": 1,
+      ".parquet": 15
+    },
+    "root_files": [
+      "manifest.json",
+      "catalogue.sqlite3"
+    ]
+  },
+  {
+    "path": "research/data/reviewbench_download_queue",
+    "bytes": 30311107,
+    "file_extensions": {
+      ".sqlite3": 2,
+      ".json": 5,
+      ".sqlite3-wal": 1,
+      ".sqlite3-shm": 1,
+      ".lock": 1,
+      ".md": 3,
+      ".jsonl": 1
+    },
+    "root_files": [
+      "queue.before-routing-fix.sqlite3",
+      "next-138-preview.json",
+      "run-140-results.json",
+      "plan.json",
+      "venue-api-versions.json",
+      "queue.sqlite3",
+      "queue.sqlite3-wal",
+      "queue.sqlite3-shm",
+      "runner.lock",
+      "ROUTING-FIX.md",
+      "NEXT-138.md",
+      "TALLY.md",
+      "response-cleanup.jsonl",
+      "status.json"
+    ]
+  },
+  {
+    "path": "research/data/reviewbench_pdfs_20",
+    "bytes": 2000862,
+    "file_extensions": {
+      ".md": 1,
+      ".json": 2,
+      ".py": 1
+    },
+    "root_files": [
+      "TALLY.md",
+      "manifest.json",
+      "manage.py",
+      "year-resolution.json"
+    ]
+  },
+  {
+    "path": "research/data/reviewbench_remaining_batches",
+    "bytes": 17709616,
+    "file_extensions": {
+      ".html": 1,
+      ".json": 4,
+      ".txt": 28,
+      ".md": 28,
+      ".py": 1
+    },
+    "root_files": [
+      "batch-links.html",
+      "summary.json",
+      "group-summary.json",
+      "already-downloaded.json",
+      "urls-only.txt",
+      "manifest.json",
+      "BATCH-LINKS.md",
+      "batch-urls.txt",
+      "GROUPS.md",
+      "prepare.py"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-100-luna-20261002",
+    "bytes": 19548488,
+    "file_extensions": {
+      ".json": 650,
+      ".py": 20,
+      ".txt": 15,
+      ".jsonl": 10,
+      ".zip": 5,
+      ".md": 341
+    },
+    "root_files": [
+      "active-81-90-batch-2.json",
+      "export_dataset.py",
+      "active-31-40-batch-2-status.json",
+      "record_completion.py",
+      "range61-batch2-status.json",
+      "completion-091-100.json",
+      "README-061-070.txt",
+      "active-51-60-batch-3.json",
+      "active-61-70-batch-2.json",
+      "active-batch-3.json",
+      "complete_51_60.py",
+      "export_81_90.py",
+      "validation-031-040.json",
+      "active-71-80-batch-2-sol-status.json",
+      "export_31_40.py",
+      "validation-041-050.json",
+      "active-81-90-batch-3-status.json",
+      "scope-081-090.json",
+      "active-batch-2.json",
+      "validation-051-060.json",
+      "active-61-70-batch-3.json",
+      "active-batch-3-status.json",
+      "active-51-60-batch-2.json",
+      "active-51-60-batch-1-status.json",
+      "dataset-081-090.jsonl",
+      "active-71-80-batch-1.json",
+      "validate_dataset.py",
+      "active-81-90-batch-3.json",
+      "validation-071-080.json",
+      "active-91-100-batch-2.json",
+      "active-51-60-batch-2-status.json",
+      "validation-061-069.json",
+      "active-91-100-batch-3-status.json",
+      "batch-3-status.json",
+      "active-31-40-batch-2.json",
+      "dataset-091-100.jsonl",
+      "dataset-031-040.jsonl",
+      "export_51_60.py",
+      "active-31-40-batch-3.json",
+      "status-071-080.json",
+      "batch-1.json",
+      "active-71-80-batch-3-status.json",
+      "range61-batch1-status.json",
+      "active-31-40-batch-1-status.json",
+      "active-91-100-batch-3.json",
+      "completion-061-070.json",
+      "dataset-041-050.jsonl",
+      "finish_scoped_paper.py",
+      "validation-081-090.json",
+      "dataset-051-060.jsonl",
+      "scope-051-060.json",
+      "active-81-90-batch-2-status.json",
+      "active-batch-2-status.json",
+      "active-91-100-batch-1-status.json",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "active-31-40-batch-1.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "WORKFLOW.txt",
+      "validation.json",
+      "papers-041-050.zip",
+      "manifest.json",
+      "range61-batch3-status.json",
+      "active-71-80-batch-1-status.json",
+      "active-91-100-batch-1.json",
+      "validation-061-070.json",
+      "export_71_80.py",
+      "active-31-40-batch-3-status.json",
+      "active-71-80-batch-2.json",
+      "validation-091-100.json",
+      "validation-041-049.json",
+      "papers-061-070.zip",
+      "record_81_90_completion.py",
+      "completion-031-040.json",
+      "active-batch-1.json",
+      "active-51-60-batch-1.json",
+      "active-61-70-batch-1.json",
+      "active-batch-1-status.json",
+      "completion-041-050.json",
+      "batch-2-status.json",
+      "active-91-100-batch-2-status.json",
+      "papers-031-040.zip",
+      "active-81-90-batch-1-status.json",
+      "active-81-90-batch-1.json",
+      "dataset-071-080.jsonl",
+      "active-51-60-batch-3-status.json",
+      "dataset-061-070.jsonl",
+      "active-71-80-batch-3.json"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-101-112-sol-20261002",
+    "bytes": 1778374,
+    "file_extensions": {
+      ".json": 74,
+      ".py": 1,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".md": 37
+    },
+    "root_files": [
+      "batch-validation-2.json",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "batch-status-2.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-113-124-sol-20261002",
+    "bytes": 2252040,
+    "file_extensions": {
+      ".zip": 1,
+      ".json": 69,
+      ".py": 7,
+      ".jsonl": 2,
+      ".txt": 6,
+      ".md": 36
+    },
+    "root_files": [
+      "papers-113-124.zip",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "manifest.json",
+      "README.txt",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-136-146-sol-20261002",
+    "bytes": 2301520,
+    "file_extensions": {
+      ".py": 1,
+      ".zip": 1,
+      ".json": 49,
+      ".jsonl": 1,
+      ".txt": 1,
+      ".md": 33,
+      ".csv": 1
+    },
+    "root_files": [
+      "check_export.py",
+      "papers-136-146.zip",
+      "batch-1.json",
+      "batch-2.json",
+      "batch-3.json",
+      "dataset-136-146.jsonl",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "completion.json"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-147-157-sol-20261002",
+    "bytes": 2338821,
+    "file_extensions": {
+      ".zip": 1,
+      ".json": 64,
+      ".py": 4,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".md": 33
+    },
+    "root_files": [
+      "papers-147-157.zip",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "batch-2-status.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-158-168-sol-20261002",
+    "bytes": 2471500,
+    "file_extensions": {
+      ".json": 65,
+      ".py": 5,
+      ".zip": 1,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".md": 33
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "papers-158-168.zip",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-169-179-sol-20261002",
+    "bytes": 2432174,
+    "file_extensions": {
+      ".zip": 1,
+      ".json": 65,
+      ".py": 1,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".md": 33
+    },
+    "root_files": [
+      "papers-169-179.zip",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-180-190-sol-20261002",
+    "bytes": 2073001,
+    "file_extensions": {
+      ".json": 65,
+      ".py": 1,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".zip": 1,
+      ".md": 33
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "batch-2-status.json",
+      "papers-180-190.zip",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-191-200-sol-20261002",
+    "bytes": 2151902,
+    "file_extensions": {
+      ".zip": 1,
+      ".json": 59,
+      ".py": 5,
+      ".jsonl": 2,
+      ".txt": 9,
+      ".md": 30
+    },
+    "root_files": [
+      "papers-191-200.zip",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "manifest.json",
+      "README.txt",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-201-220-gpt6-sol-20261002",
+    "bytes": 3215554,
+    "file_extensions": {
+      ".py": 4,
+      ".json": 111,
+      ".jsonl": 2,
+      ".zip": 1,
+      ".txt": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "package.py",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "format_checks.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "papers-201-220.zip",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "math-format-validation.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "seed_presentation_check.py",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-221-240-gpt6sol-20261003",
+    "bytes": 2764447,
+    "file_extensions": {
+      ".json": 149,
+      ".py": 4,
+      ".zip": 1,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".md": 60,
+      ".tmp": 2
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "papers-221-240.zip",
+      "dataset.jsonl",
+      "math_check.py",
+      "batch-1-status.json",
+      "seed_format_check.py",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "manifest.json",
+      "README.txt",
+      "batch-2-status.json",
+      "completion.json",
+      "save_review.py",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-241-260-sol-20261003",
+    "bytes": 4417456,
+    "file_extensions": {
+      ".json": 109,
+      ".py": 2,
+      ".jsonl": 1,
+      ".txt": 2,
+      ".zip": 1,
+      ".md": 79
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "math_lint.py",
+      "batch-1.json",
+      "dataset-241-260.jsonl",
+      "batch-1-status.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "manage.py",
+      "papers-241-260.zip",
+      "batch-2-status.json",
+      "completion.json"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-261-280-gpt6-sol-20261003",
+    "bytes": 2802598,
+    "file_extensions": {
+      ".py": 2,
+      ".json": 85,
+      ".txt": 1,
+      ".zip": 1,
+      ".jsonl": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "check_export.py",
+      "batch-1.json",
+      "math_audit.py",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "papers-261-280.zip",
+      "completion.json",
+      "dataset-261-280.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-281-300-gpt6-sol-20261003",
+    "bytes": 3363883,
+    "file_extensions": {
+      ".json": 111,
+      ".py": 3,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".zip": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "archive-verification.json",
+      "audit_dataset.py",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "papers-281-300.zip",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-301-320-gpt6sol-20261002",
+    "bytes": 3002502,
+    "file_extensions": {
+      ".json": 114,
+      ".zip": 1,
+      ".py": 2,
+      ".md": 61,
+      ".jsonl": 2,
+      ".txt": 1
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "synthetic-papers-301-320.zip",
+      "math-audit-current.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "math-audit-final.json",
+      "README.md",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "math-audit-before-final-cleanup.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "math-formatting-cleanup.json",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-321-340-gpt6-sol-20261002",
+    "bytes": 3852453,
+    "file_extensions": {
+      ".json": 108,
+      ".py": 3,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".zip": 1,
+      ".md": 66
+    },
+    "root_files": [
+      "audit.json",
+      "audit_dataset.py",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "math_check.py",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "papers-321-340-markdown.zip",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-341-360-gpt6sol-20261003",
+    "bytes": 3323090,
+    "file_extensions": {
+      ".py": 5,
+      ".json": 130,
+      ".md": 61,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".zip": 1
+    },
+    "root_files": [
+      "package_run.py",
+      "archive.json",
+      "batch-1-status-a.json",
+      "batch-3-status-c.json",
+      "seed-formatting.json",
+      "write_review.py",
+      "batch-1.json",
+      "finish_and_export.py",
+      "README.md",
+      "dataset.jsonl",
+      "math_check.py",
+      "verify_export.py",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "papers-341-360.zip",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-361-380-gpt6-sol-20261003",
+    "bytes": 3075890,
+    "file_extensions": {
+      ".json": 110,
+      ".py": 2,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".zip": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "math_lint.py",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "papers-361-380.zip",
+      "manifest.json",
+      "README.txt",
+      "abstract-formatting-changes.json",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-381-400-gpt6-sol-20261002",
+    "bytes": 3123384,
+    "file_extensions": {
+      ".json": 110,
+      ".py": 2,
+      ".jsonl": 2,
+      ".zip": 1,
+      ".txt": 2,
+      ".md": 60
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "math_lint.py",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "papers-381-400.zip",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "manifest.json",
+      "README.txt",
+      "abstract-formatting-changes.json",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-401-420-20261002",
+    "bytes": 3652065,
+    "file_extensions": {
+      ".md": 62,
+      ".json": 127,
+      ".py": 3,
+      ".jsonl": 2,
+      ".zip": 1,
+      ".txt": 1
+    },
+    "root_files": [
+      "STATUS.md",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "papers-401-420.zip",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "package_and_verify.py",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-421-440-20261002",
+    "bytes": 3998924,
+    "file_extensions": {
+      ".py": 3,
+      ".zip": 1,
+      ".json": 126,
+      ".jsonl": 2,
+      ".md": 67,
+      ".txt": 1
+    },
+    "root_files": [
+      "check_format.py",
+      "papers-421-440-markdown.zip",
+      "write_review.py",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "INDEX.md",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-441-460-luna-20261002",
+    "bytes": 3568228,
+    "file_extensions": {
+      ".json": 109,
+      ".py": 2,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".zip": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "markdown-papers.zip",
+      "batch-2-status.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-461-480-20261002",
+    "bytes": 4284012,
+    "file_extensions": {
+      ".json": 114,
+      ".py": 3,
+      ".md": 61,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".zip": 1
+    },
+    "root_files": [
+      "archive.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "README.md",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "verify_export.py",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "papers-461-480-markdown.zip",
+      "math_format_check.py",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-481-500-20261002",
+    "bytes": 3545993,
+    "file_extensions": {
+      ".json": 108,
+      ".py": 2,
+      ".jsonl": 2,
+      ".txt": 2,
+      ".zip": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "archive-validation.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "papers-481-500.zip",
+      "validation.json",
+      "manifest.json",
+      "README.txt",
+      "math_format_check.py",
+      "batch-2-status.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-501-520-gpt6-luna-20261002",
+    "bytes": 3660369,
+    "file_extensions": {
+      ".json": 108,
+      ".py": 2,
+      ".md": 62,
+      ".zip": 1,
+      ".jsonl": 2,
+      ".txt": 2
+    },
+    "root_files": [
+      "seed-validation.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "README.md",
+      "papers-501-520.zip",
+      "dataset.jsonl",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-521-540-luna-20261002",
+    "bytes": 3501746,
+    "file_extensions": {
+      ".py": 3,
+      ".json": 131,
+      ".jsonl": 2,
+      ".md": 85,
+      ".txt": 1,
+      ".zip": 1
+    },
+    "root_files": [
+      "final_format.py",
+      "batch-3-status.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "INDEX.md",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "seed-formatting-audit.json",
+      "math_format_check.py",
+      "papers-521-540-markdown.zip",
+      "source-metadata.jsonl",
+      "format-validation.json"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-541-560-luna-20261002",
+    "bytes": 4164567,
+    "file_extensions": {
+      ".json": 115,
+      ".zip": 1,
+      ".py": 2,
+      ".md": 72,
+      ".jsonl": 3,
+      ".txt": 1
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "papers-541-560-markdown.zip",
+      "batch-1.json",
+      "finish_and_export.py",
+      "README.md",
+      "dataset.jsonl",
+      "math_check.py",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "seed-formatting-audit.json",
+      "original-seeds.jsonl",
+      "batch-2-status.json",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-561-580-gpt6-luna-20261002",
+    "bytes": 2918125,
+    "file_extensions": {
+      ".json": 139,
+      ".zip": 1,
+      ".py": 3,
+      ".jsonl": 2,
+      ".txt": 1,
+      ".md": 60
+    },
+    "root_files": [
+      "batch-3-status.json",
+      "papers-561-580-markdown.zip",
+      "batch-1.json",
+      "finish_and_export.py",
+      "dataset.jsonl",
+      "batch-1-status.json",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "batch-2-status.json",
+      "completion.json",
+      "final_format_audit.py",
+      "source-metadata.jsonl",
+      "format-validation.json"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-full-papers-581-600-20261002",
+    "bytes": 2887682,
+    "file_extensions": {
+      ".json": 109,
+      ".py": 3,
+      ".md": 82,
+      ".jsonl": 2,
+      ".zip": 1,
+      ".txt": 1
+    },
+    "root_files": [
+      "seed-validation.json",
+      "batch-1.json",
+      "finish_and_export.py",
+      "README.md",
+      "dataset.jsonl",
+      "queue.json",
+      "batch-2.json",
+      "batch-3.json",
+      "papers-581-600.zip",
+      "WRITER_INSTRUCTIONS.txt",
+      "validation.json",
+      "manifest.json",
+      "math_format_check.py",
+      "final_math_cleanup.py",
+      "completion.json",
+      "source-metadata.jsonl"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-paper-format-audit-001-200-20261002",
+    "bytes": 75484,
+    "file_extensions": {
+      ".json": 1,
+      ".py": 1
+    },
+    "root_files": [
+      "audit.json",
+      "audit.py"
+    ]
+  },
+  {
+    "path": "research/data/synthetic-papers-600-hf-20261003",
+    "bytes": 39804567,
+    "file_extensions": {
+      ".md": 1,
+      ".json": 2,
+      ".jsonl": 2,
+      ".zip": 1,
+      ".parquet": 1
+    },
+    "root_files": [
+      "README.md",
+      "validation.json",
+      "provenance.jsonl",
+      "markdown-papers.zip",
+      "papers.jsonl",
+      "file_checksums.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/arena100",
+    "bytes": 218028,
+    "file_extensions": {
+      ".json": 2,
+      ".jsonl": 2
+    },
+    "root_files": [
+      "source_manifest.json",
+      "selected_prompts.jsonl",
+      "generation_manifest.json",
+      "screening.jsonl"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/arena100-cheap",
+    "bytes": 275316,
+    "file_extensions": {
+      ".json": 3,
+      ".jsonl": 2
+    },
+    "root_files": [
+      "source_manifest.json",
+      "selected_prompts.jsonl",
+      "generation_manifest.json",
+      "screening.jsonl",
+      "qwen_route_override.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/arena100-kimi",
+    "bytes": 165855,
+    "file_extensions": {
+      ".json": 2,
+      ".jsonl": 2
+    },
+    "root_files": [
+      "source_manifest.json",
+      "selected_prompts.jsonl",
+      "generation_manifest.json",
+      "screening.jsonl"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/arena100-skipped",
+    "bytes": 250179,
+    "file_extensions": {
+      ".json": 3,
+      ".jsonl": 2
+    },
+    "root_files": [
+      "cost_estimate.json",
+      "source_manifest.json",
+      "selected_prompts.jsonl",
+      "generation_manifest.json",
+      "screening.jsonl"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/arena20",
+    "bytes": 56159494,
+    "file_extensions": {
+      ".parquet": 1,
+      ".jsonl": 4,
+      ".json": 5
+    },
+    "root_files": [
+      "source.parquet",
+      "extraction_exclusions.jsonl",
+      "source_manifest.json",
+      "selected_prompts.jsonl",
+      "generation_manifest.json",
+      "screening.jsonl",
+      "frame.jsonl",
+      "replacement_manifest.json",
+      "screening_category_metadata_amendment.json",
+      "screening_metadata_amendment.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/prepared",
+    "bytes": 21461652,
+    "file_extensions": {
+      ".jsonl": 14,
+      ".json": 1
+    },
+    "root_files": [
+      "meld_eval.jsonl",
+      "gede.jsonl",
+      "ellipse.jsonl",
+      "pelic.jsonl",
+      "sem_detect.jsonl",
+      "detectrl.jsonl",
+      "local.jsonl",
+      "liang.jsonl",
+      "manifest.json",
+      "arena20.jsonl",
+      "opai.jsonl",
+      "saha.jsonl",
+      "vub.jsonl",
+      "perkins.jsonl",
+      "epoch.jsonl"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/data/raw",
+    "bytes": 1160736536,
+    "file_extensions": {
+      ".json": 319,
+      ".db-shm": 1,
+      ".parquet": 1,
+      ".db-wal": 1,
+      ".jsonl": 1,
+      ".zip": 3,
+      ".db": 1,
+      ".csv": 8,
+      ".docx": 154,
+      ".md": 1,
+      ".txt": 76
+    },
+    "root_files": [
+      "sem.parquet.receipt.json",
+      "gede.db-shm",
+      "sem.parquet",
+      "gede.db-wal",
+      "meld.jsonl",
+      "document-manifest.json",
+      "gede.zip.receipt.json",
+      "gede.zip",
+      "epoch.zip.receipt.json",
+      "epoch.zip",
+      "gede.db",
+      "meld.jsonl.receipt.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/exports/ai-paper-provenance-v3",
+    "bytes": 74908702,
+    "file_extensions": {
+      ".md": 2,
+      ".json": 9,
+      ".parquet": 12
+    },
+    "root_files": [
+      "LICENSE.md",
+      "provenance.json",
+      "features.json",
+      "generation_protocol.json",
+      "statistics.json",
+      "README.md",
+      "label_schema.json",
+      "validation.json",
+      "file_checksums.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/exports/ai-paper-provenance-v3-10000",
+    "bytes": 295859352,
+    "file_extensions": {
+      ".md": 2,
+      ".json": 10,
+      ".parquet": 12
+    },
+    "root_files": [
+      "LICENSE.md",
+      "provenance.json",
+      "features.json",
+      "generation_protocol.json",
+      "statistics.json",
+      "README.md",
+      "label_schema.json",
+      "validation.json",
+      "identifier_mapping.json",
+      "file_checksums.json",
+      "costs.json"
+    ]
+  },
+  {
+    "path": "benchmarks/pangram4/exports/arena-prose-100-49-models",
+    "bytes": 7770775,
+    "file_extensions": {
+      ".md": 2,
+      ".json": 2,
+      ".parquet": 1
+    },
+    "root_files": [
+      "LICENSE.md",
+      "models.json",
+      "provenance.json",
+      "README.md"
+    ]
+  },
+  {
+    "path": "research/cache/ai_mdta_2025",
+    "bytes": 29373700,
+    "file_extensions": {
+      ".jsonl": 2
+    },
+    "root_files": [
+      "open_qa.jsonl",
+      "wiki_csai.jsonl"
+    ]
+  },
+  {
+    "path": "research/cache/human_pg19",
+    "bytes": 24874679,
+    "file_extensions": {
+      ".parquet": 1
+    },
+    "root_files": [
+      "test-00000-of-00001-29a571947c0b5ccc.parquet"
+    ]
+  },
+  {
+    "path": "research/cache/iclr",
+    "bytes": 1089295112,
+    "file_extensions": {
+      ".parquet": 5
+    },
+    "root_files": [
+      "iclr-00002-of-00005.parquet",
+      "iclr-00003-of-00005.parquet",
+      "iclr-00004-of-00005.parquet",
+      "iclr-00000-of-00005.parquet",
+      "iclr-00001-of-00005.parquet"
+    ]
+  }
+]

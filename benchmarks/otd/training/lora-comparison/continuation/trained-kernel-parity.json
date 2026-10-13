@@ -1,0 +1,11 @@
+{
+  "source": "completed full-tuned Qwen35; independent training-only stage2 rows512:544",
+  "examples": 32,
+  "bf16_verified": true,
+  "probability_rms_difference": 0.0019919821628358626,
+  "probability_max_difference": 0.020865529775619507,
+  "reference_loss": 0.22046939700521762,
+  "fast_loss": 0.21972405700944364,
+  "loss_relative_difference": 0.003380695941924028,
+  "passed": true
+}

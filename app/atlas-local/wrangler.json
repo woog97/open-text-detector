@@ -1,0 +1,9 @@
+{
+  "name":"open-text-detector-private-local",
+  "main":"worker.ts",
+  "compatibility_date":"2026-09-01",
+  "workers_dev":false,
+  "assets":{"directory":"../dist-atlas-local","binding":"ASSETS","not_found_handling":"single-page-application","run_worker_first":["/backend/*"]},
+  "r2_buckets":[{"binding":"PRIVATE_BUCKET","bucket_name":"open-text-detector-private-results-local"}],
+  "dev":{"ip":"127.0.0.1","port":3010,"local_protocol":"http"}
+}

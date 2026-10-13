@@ -1,0 +1,54 @@
+{
+  "_id": "69f8d986b9d8c048696df8f7",
+  "id": "anon-review-meld-2026/meld-eval",
+  "author": "anon-review-meld-2026",
+  "sha": "4c80f0fdc003854e5b6bfda90f7ac41ffb12e232",
+  "lastModified": "2026-05-18T19:30:34.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:text-classification",
+    "language:en",
+    "license:cc-by-4.0",
+    "size_categories:100K<n<1M",
+    "region:us",
+    "ai-text-detection",
+    "mgt-detection",
+    "benchmark"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tMELD-eval\n\t\n\nHeld-out evaluation pool for AI-text detectors.\nPaired across four current-generation chat models, eight RAID-style\nEnglish domains, and six surface attacks, plus the matched human seeds\neach AI row was conditioned on.\n\n\t\n\t\t\n\t\n\t\n\t\tAt a glance\n\t\n\n\n\t\n\t\t\nQuantity\nCount\n\n\n\t\t\nTotal rows\n227,998\n\n\nPaired human seeds\n7,862\n\n\nClean AI rows\n31,448\n\n\nAttacked AI rows\n188,688\n\n\nGenerators\n4\n\n\nDomains\n8\n\n\nAttack types (incl. none)\n7\n\n\n\t\n\nGenerators: gpt-5.4-mini, gemini-3-flash\u2026 See the full description on the dataset page: https://huggingface.co/datasets/anon-review-meld-2026/meld-eval.",
+  "downloads": 35,
+  "likes": 0,
+  "cardData": {
+    "language": "en",
+    "license": "cc-by-4.0",
+    "task_categories": [
+      "text-classification"
+    ],
+    "tags": [
+      "ai-text-detection",
+      "mgt-detection",
+      "benchmark"
+    ],
+    "size_categories": [
+      "100K<n<1M"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "meld_eval.jsonl"
+    },
+    {
+      "rfilename": "meld_eval_v1.1.jsonl"
+    }
+  ],
+  "createdAt": "2026-05-04T17:38:14.000Z",
+  "usedStorage": 2191130967
+}

@@ -1,0 +1,19 @@
+{
+  "candidate_total": 100000,
+  "admitted_total": 0,
+  "global_exact_dedup_verified": true,
+  "all_prior_95397_passages_byte_identical": true,
+  "new_passages_by_source": {
+    "foodista": 724,
+    "gutenberg": 2551,
+    "voa": 65,
+    "asap2": 1263
+  },
+  "new_asap_protected_prompts_excluded": true,
+  "category_totals_unchanged": true,
+  "database": "/tmp/pangram-human-active-20261002/checkpoints/finish100k-active-20261002T193833Z.sqlite3",
+  "sha256": "efe8bace75f6e62a9103fc209d3b5123d869583d43d37cde57f1464fffb71f2f",
+  "at": "2026-10-02T19:40:33.673540+00:00",
+  "remaining_admission_caveat": "All records remain quarantined candidates; earlier877ASAP protected-family flags retained and not admitted. Full training admission/near-duplicate audit is separate.",
+  "checkpoint_full_get_sha256_verified": true
+}

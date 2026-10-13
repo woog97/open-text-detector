@@ -1,0 +1,1 @@
+{"passed": true, "checks": ["valid10percentpaired_fixture", "reject_cross_microbatch_pair", "reject_unpaired_row_drift", "reject_source_provenance_drift", "reject_role_drift", "reject_pair_id_reuse"], "model_inference": false, "Space_access": false}

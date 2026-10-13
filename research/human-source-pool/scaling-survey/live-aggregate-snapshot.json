@@ -1,0 +1,211 @@
+{
+  "checked_at": "2026-10-02T19:52:09.137076+00:00",
+  "counts": {
+    "acl": 2703,
+    "amazon2018": 5306,
+    "arxiv": 5405,
+    "asap2": 4206,
+    "cccc": 5017,
+    "eff": 415,
+    "fed": 776,
+    "foodista": 1545,
+    "globalvoices": 1652,
+    "govreport": 1086,
+    "gutenberg": 12551,
+    "imdb": 1061,
+    "libretexts": 2387,
+    "oanc_icic": 465,
+    "oanc_slate": 1321,
+    "opinrank": 4244,
+    "persuade": 699,
+    "pes2o": 3604,
+    "pmc": 6306,
+    "pressbooks": 3979,
+    "scidev": 926,
+    "scp": 1893,
+    "stack_nontech": 5726,
+    "stack_tech": 2082,
+    "ubuntu_irc": 1561,
+    "voa": 1717,
+    "wiki_talk": 1041,
+    "wikibooks": 1592,
+    "wikinews": 991,
+    "wikipedia": 7958,
+    "wikisource": 1111,
+    "wikivoyage": 1231,
+    "worldbank": 776,
+    "writingprompts": 6667
+  },
+  "cursors": [
+    [
+      "acl",
+      1,
+      0
+    ],
+    [
+      "arxiv",
+      1,
+      1
+    ],
+    [
+      "foodista",
+      8,
+      7
+    ],
+    [
+      "globalvoices",
+      1,
+      1
+    ],
+    [
+      "gutenberg",
+      1,
+      0
+    ],
+    [
+      "libretexts",
+      1,
+      1
+    ],
+    [
+      "oanc_icic",
+      224,
+      224
+    ],
+    [
+      "oanc_slate",
+      1570,
+      1570
+    ],
+    [
+      "pmc",
+      1,
+      1
+    ],
+    [
+      "pressbooks",
+      2,
+      2
+    ],
+    [
+      "stack_nontech",
+      1,
+      1
+    ],
+    [
+      "ubuntu_irc",
+      1,
+      0
+    ],
+    [
+      "wiki_talk",
+      3,
+      3
+    ],
+    [
+      "wikibooks",
+      1,
+      1
+    ],
+    [
+      "wikinews",
+      2,
+      2
+    ],
+    [
+      "wikipedia",
+      111,
+      110
+    ],
+    [
+      "wikisource",
+      2,
+      2
+    ],
+    [
+      "wikivoyage",
+      1,
+      1
+    ],
+    [
+      "writingprompts",
+      1,
+      0
+    ]
+  ],
+  "progress": {
+    "wikipedia.json": {
+      "count": 7958,
+      "target": 7958,
+      "state": "quota_filled",
+      "updated_at": "2026-10-02T08:07:11.704412+00:00"
+    },
+    "wikipedia-error.json": {
+      "updated_at": "2026-10-02T07:57:30.802067+00:00"
+    },
+    "foodista.json": {
+      "count": 1545,
+      "target": 1545,
+      "state": "quota_filled",
+      "updated_at": "2026-10-02T19:38:28.305906+00:00"
+    },
+    "gutenberg.json": {
+      "count": 12551,
+      "target": 12551,
+      "state": "quota_filled",
+      "updated_at": "2026-10-02T19:37:35.043866+00:00"
+    },
+    "asap2.json": {
+      "count": 4206,
+      "target": 4206,
+      "state": "quota_filled",
+      "updated_at": "2026-10-02T19:38:30.399200+00:00"
+    }
+  },
+  "stages": {
+    "/tmp/pangram-scp-staging-20261002/progress/scp.json": {
+      "source_id": "scp",
+      "target": 4444,
+      "count": 106,
+      "state": "eligible_mirror_subset_exhausted"
+    },
+    "/tmp/pangram-eff-staging-20261002/progress/eff.json": {
+      "source_id": "eff",
+      "count": 415,
+      "target": 821,
+      "scanned": 197,
+      "index_unique_urls": 197,
+      "state": "current_archive_inventory_exhausted"
+    },
+    "/tmp/pangram-cccc-staging-20261002/progress/cccc.json": {
+      "state": "available_filtered_shards_scanned",
+      "count": 5017,
+      "target": 5335,
+      "remaining_bins": [
+        0,
+        0,
+        0,
+        318
+      ],
+      "scanned_this_run": 6845826
+    },
+    "/tmp/pangram-voa-staging-20261002/progress/voa.json": {
+      "source_id": "voa",
+      "count": 1717,
+      "target": 1717,
+      "scanned_articles": 7643,
+      "eligible_original_documents": 4933,
+      "state": "quota_filled"
+    },
+    "/tmp/pangram-scidev-staging-20261002/progress/scidev.json": {
+      "state": "staged_available_capture_shortfall",
+      "count": 926,
+      "target": 991
+    },
+    "/tmp/pangram-scidev-staging-20261002/progress/publisher-backoff.json": {},
+    "/tmp/pangram-scp-cccc-staging-20261002/progress/scp.json": {
+      "source_id": "scp",
+      "state": "bounded_cached_historical_inventory_exhausted"
+    }
+  }
+}

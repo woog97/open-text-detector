@@ -1,0 +1,38 @@
+{
+  "suite": "4d2ac47d902f36a1d505d9885d2860c7a33ca7294bd0bc480518734478e73e36",
+  "run": "/workspace/woog/pangram/backbones-20261003/evaluations-20261003/qwen36-35b-a3b/checkpoint",
+  "model_files": {
+    "stage2-epoch1-adapters.safetensors": "dad835b2188ff371969bce0601417000ca4b43148498c40b2a55b7cd9048a043",
+    "stage2-selection.json": "ada0182b0e567f632f643258d4661efd5f725505b34991acd74eb5f939a350c4",
+    "run.json": "21bf6ea054def29b6be8e92b8a76adbab8811cb8bb31b1eeb099190f8c1becbf"
+  },
+  "adapter_files": {
+    "inference.py": "f2bbc5fabd94a89ab26a47bc9b1b345d3b8af97f1190e576783720e44e6037c8",
+    "runtime.py": "a4a1b2861ecfe8ac387b7a4537421a0a9758923311bc1a303d7162444e6737e6",
+    "adapters_moe_bf16.py": "75ea7b01fd422c042cb707b4e534ade6f5476e060712c4804d60a50ba2e00472",
+    "modeling.py": "177c6bef4d0cf4d316d2a511a734f2473fd22c88b204807a0d0744e3001ffcd0",
+    "data.py": "940aae39bc176301fe4fa508072f2c410bdab1f021ed211c76ea2b70764ac0ec"
+  },
+  "reference_files": {
+    "tokenizer_config.json": "68acf857b869285d8c3ac2757ddd26e6f8030fb275d6800131521eb736084608",
+    "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+  },
+  "thresholds": {
+    "tokens": 0.5,
+    "sentences": 0.5,
+    "document": 0.5
+  },
+  "threshold_origin": "explicit uncalibrated",
+  "profiles": [
+    "workflow",
+    "comparison",
+    "assistance",
+    "manuscripts"
+  ],
+  "limit": 0,
+  "batch_size": 4,
+  "rows_per_chunk": 16,
+  "precision": "BF16",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA H200"
+}

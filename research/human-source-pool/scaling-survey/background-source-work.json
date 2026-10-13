@@ -1,0 +1,40 @@
+{
+  "ellipse": {
+    "agent": "/root/ellipse_source",
+    "state": "audit_complete",
+    "eligible": 0
+  },
+  "persuade": {
+    "agent": "/root/persuade_source",
+    "state": "audit_complete",
+    "eligible": 699,
+    "additional": 0
+  },
+  "cccc": {
+    "agent": "/root/cccc_source",
+    "state": "remote_worker_running_at_last_verification",
+    "pid": 193753,
+    "start_ticks": 12155769,
+    "remote_status": "/tmp/pangram-cccc-scaling-20261002/status.json",
+    "max_minutes": 40
+  },
+  "scidev": {
+    "agent": "/root/scidev_source",
+    "state": "remote_worker_running_at_last_verification",
+    "pid": 193652,
+    "start_ticks": 12153674,
+    "remote_status": "/tmp/pangram-scidev-scaling-20261002-v1/status.json",
+    "max_minutes": 45,
+    "last_stage_candidates": 1085,
+    "additional_unmerged_candidates": 159,
+    "queued_continuation_pid": 193826
+  },
+  "eff": {
+    "agent": "/root/eff_source",
+    "state": "agent_running"
+  },
+  "scp": {
+    "agent": "/root/scp_source",
+    "state": "agent_running"
+  }
+}

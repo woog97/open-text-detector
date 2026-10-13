@@ -1,0 +1,83 @@
+/* Shared Open Text Detector chrome: tokens, header, footer and common controls.
+   Every public page root carries `.site`; page stylesheets build on these tokens. */
+.site{
+ --paper:#f4f5f2;--sheet:#fff;--ink:#141a26;--ink-2:#465063;--graphite:#8b919b;--rule:#dfe1dc;--rule-2:#ecede9;
+ --hi:#f6e05e;--hi-soft:#fbf1a9;--blue:#2846b8;--nav:60px;
+ --serif:"Iowan Old Style","Charter","Bitstream Charter","Sitka Text",Cambria,"Palatino Linotype",serif;
+ --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+ color:var(--ink);background:var(--paper);min-height:100vh;display:flex;flex-direction:column;font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased;
+}
+.site>main{flex:1;width:100%;min-width:0}
+.site *{box-sizing:border-box}
+.site button,.site a,.site select,.site input{font:inherit;color:inherit}
+.site button{cursor:pointer;border:0;background:none;padding:0}
+.site button:disabled{opacity:.35;cursor:default}
+.site a{text-decoration:none}
+.site :is(button,a,input,select,summary):focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.site mark{background:linear-gradient(transparent 12%,var(--hi) 12%,var(--hi) 88%,transparent 88%);color:inherit;padding:0 1px;border-radius:2px}
+.site .site-num{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.site .site-kicker{margin:0 0 14px;font:500 12px/1.4 var(--mono);color:var(--graphite);letter-spacing:.02em}
+.site .site-link{color:var(--blue);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.site :is(.site-primary,.atlas-primary){display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper);padding:9px 14px;border-radius:7px;font-size:13px;font-weight:600}
+.site :is(.site-primary,.atlas-primary):hover{background:#26304a}
+.site select{appearance:none;-webkit-appearance:none;border:1px solid var(--rule);border-radius:8px;padding:9px 32px 9px 11px;background:var(--sheet) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23465063' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center;font-size:13px;max-width:100%;color:var(--ink);font-family:var(--sans)}
+
+/* Header */
+.site-nav{position:sticky;top:0;z-index:20;height:var(--nav);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 max(20px,3vw);background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.site .site-brand{display:flex;align-items:center;gap:10px;font:600 16px var(--sans);letter-spacing:-.01em}
+.site-mark{display:grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:7px;background:var(--ink);color:var(--paper);font:700 13px/1 var(--serif);letter-spacing:.02em}
+.site-nav nav{display:flex;align-items:center;gap:4px;font-size:14px}
+.site-nav nav>*{display:flex;align-items:center;gap:6px;white-space:nowrap;padding:7px 11px;border-radius:7px;color:var(--ink-2)}
+.site-nav nav>*:hover{background:var(--rule-2);color:var(--ink)}
+.site-nav nav [aria-current="page"]{color:var(--ink);font-weight:600;background:var(--sheet);box-shadow:0 0 0 1px var(--rule)}
+.site-count{font:500 11px/1 var(--mono);background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:3px 6px;min-width:20px;text-align:center}
+
+/* Footer */
+.site-footer{display:flex;justify-content:space-between;gap:20px;padding:22px max(20px,3vw);border-top:1px solid var(--rule);font-size:12px;color:var(--graphite)}
+.site-footer>span:first-child{color:var(--ink);font-weight:600}
+.site-footer a{color:inherit;margin-left:12px}
+
+/* Reader failure state (ReaderErrorBoundary) */
+.site .atlas-empty{padding:56px 20px;text-align:center;color:var(--ink-2)}
+.site .atlas-empty h3{font:400 24px var(--serif);margin:12px 0 6px;color:var(--ink)}
+.site .atlas-empty p{margin:0 0 20px;font-size:14px}
+.site .atlas-empty>button:not(.atlas-primary){margin-left:12px;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:760px){
+ .site-nav{gap:8px}
+ .site .site-brand{font-size:0;gap:0}
+ .site-nav nav{font-size:13px;gap:0}
+ .site-nav nav>*{padding:7px 7px}
+ .site-nav nav [aria-current="page"]{box-shadow:none;background:none}
+ .site-nav nav svg{display:none}
+ .site-footer{flex-direction:column;gap:6px}
+}
+.site-short{display:none}
+.site-nav nav>.site-wide-only{padding:0;background:none;box-shadow:none}
+.site-nav nav>.site-wide-only:hover{background:none}
+.site-nav nav>.site-wide-only>a{display:flex;padding:7px 11px;border-radius:7px;color:var(--ink-2)}
+.site-nav nav>.site-wide-only>a:hover{background:var(--rule-2);color:var(--ink)}
+.site-nav nav>.site-wide-only>a[aria-current="page"]{color:var(--ink);font-weight:600;background:var(--sheet);box-shadow:0 0 0 1px var(--rule)}
+@media (max-width:980px){.site-nav nav>.site-wide-only{display:none}}
+@media (max-width:420px){
+ .site-long{display:none}
+ .site-short{display:inline}
+ .site-nav{padding:0 14px}
+ .site-nav nav>*{padding:7px 6px;gap:5px}
+}
+@media (max-height:500px) and (orientation:landscape){
+ .site{--nav:48px}
+ .site-footer{padding:12px max(20px,3vw)}
+}
+@media (prefers-reduced-motion:reduce){
+ .site *,.site *::before,.site *::after{animation:none!important;transition:none!important}
+}
+@media (max-width:560px){.site-nav nav{min-width:0;overflow-x:auto;scrollbar-width:none}.site-nav nav::-webkit-scrollbar{display:none}.site-nav nav>*{padding:7px 8px}}
+
+/* Beta / legacy design switch */
+.site-ui-switch{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 14px;padding:6px max(20px,3vw);background:var(--ink);color:#e9ebe6;font-size:12.5px;line-height:1.4}
+.site-ui-switch b{display:inline-block;margin-right:6px;padding:1px 7px;border-radius:999px;background:var(--hi);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.site .site-ui-switch button{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.site .site-ui-switch button:hover{color:var(--hi)}
+.site:has(.pb-reader) .site-ui-switch{display:none}

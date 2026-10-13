@@ -1,0 +1,43 @@
+{
+ "tag": "fast-final-moe",
+ "checkpoint": "stage2-epoch2-adapters.safetensors",
+ "seconds": 13,
+ "n_human_sentences": 3236,
+ "threshold_1pct_here": 0.4862984219535945,
+ "threshold_in_domain": 0.42848432064056396,
+ "n_in_domain_human_sentences": 7321,
+ "human_fpr_at_in_domain_threshold": 0.012669962917181705,
+ "control_fpr_at_in_domain_threshold": 0.008771929824561403,
+ "retained_human_fpr_at_in_domain_threshold": 0.017705382436260624,
+ "n_control_sentences": 1824,
+ "n_retained_human_sentences": 1412,
+ "groups": {
+  "all:all": {
+   "n_ai_sentences": 339,
+   "auroc": 0.7533974351962254,
+   "recall_at_1pct_here": 0.2153392330383481,
+   "auroc_vs_controls": 0.7539460746260933,
+   "recall_at_1pct_controls": 0.25073746312684364,
+   "recall_at_in_domain_threshold": 0.24778761061946902
+  },
+  "cohort:cowrite_3_rounds": {
+   "n_ai_sentences": 339,
+   "auroc": 0.7533974351962254,
+   "recall_at_1pct_here": 0.2153392330383481,
+   "auroc_vs_controls": 0.7539460746260933,
+   "recall_at_1pct_controls": 0.25073746312684364,
+   "recall_at_in_domain_threshold": 0.24778761061946902
+  },
+  "writer:claude-fable-5-1": {
+   "n_ai_sentences": 339,
+   "auroc": 0.7533974351962254,
+   "recall_at_1pct_here": 0.2153392330383481,
+   "auroc_vs_controls": 0.7539460746260933,
+   "recall_at_1pct_controls": 0.25073746312684364,
+   "recall_at_in_domain_threshold": 0.24778761061946902
+  }
+ },
+ "documents": {
+  "auroc_mixed_vs_controls": 0.8166
+ }
+}

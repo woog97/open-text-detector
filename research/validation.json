@@ -1,0 +1,33 @@
+{
+  "validated_at": "2026-09-22T21:04:15.306141+00:00",
+  "collections": {
+    "iclr_2023": {
+      "rows": 100,
+      "unique_ids": 100,
+      "unique_texts": 100,
+      "verified_bytes_including_sources_and_manifest": 8331588,
+      "passed": true
+    },
+    "iclr_2026": {
+      "rows": 100,
+      "unique_ids": 100,
+      "unique_texts": 100,
+      "verified_bytes_including_sources_and_manifest": 9069328,
+      "passed": true
+    },
+    "human_pg19": {
+      "rows": 100,
+      "unique_ids": 100,
+      "unique_texts": 100,
+      "verified_bytes_including_sources_and_manifest": 66379716,
+      "passed": true
+    },
+    "ai_mdta_2025": {
+      "rows": 6397,
+      "unique_ids": 6397,
+      "unique_texts": 6397,
+      "verified_bytes_including_sources_and_manifest": 39068854,
+      "passed": true
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "status": "validated",
+  "independent_trained_checkpoint_parity": {
+    "source": "completed full-tuned Qwen35; independent training-only stage2 rows512:544",
+    "examples": 32,
+    "bf16_verified": true,
+    "probability_rms_difference": 0.0019919821628358626,
+    "probability_max_difference": 0.020865529775619507,
+    "reference_loss": 0.22046939700521762,
+    "fast_loss": 0.21972405700944364,
+    "loss_relative_difference": 0.003380695941924028,
+    "passed": true
+  },
+  "acceptance_resolution": "Stage2 random-head probability RMS was 1.164%, exceeding the initial 1% cutoff. All learning and gradient criteria passed; independent trained-checkpoint probability RMS was 0.199% and loss difference 0.338%, passing the same probability/loss bounds on different training-only examples. Original failure remains recorded.",
+  "rejected_storage_optimization": "BF16 frozen-linear storage changed the stage2 short-run trajectory beyond the predefined equivalence tolerance; retained existing FP32 frozen storage with BF16 autocast forwards.",
+  "selected_config": {
+    "kind": "causal",
+    "model_key": "qwen35",
+    "seed": 42,
+    "learning_rate": 0.0002,
+    "micro_batch": 1,
+    "effective_batch": 32,
+    "stages": {
+      "1": {
+        "epochs": 1,
+        "micro_batch": 8,
+        "gradient_checkpointing": false
+      },
+      "2": {
+        "epochs": 3,
+        "micro_batch": 4,
+        "gradient_checkpointing": false
+      }
+    },
+    "precision": "bfloat16",
+    "tuning": "lora",
+    "source_tokens_max": 510,
+    "inference_stride": 256,
+    "repeat2_stage2": true,
+    "optimizer": "adamw8bit",
+    "head_learning_rate": 2e-05,
+    "lora": {
+      "rank": 128,
+      "alpha": 32,
+      "dropout": 0.0,
+      "bias": "none",
+      "targets": "all_backbone_linear_projections",
+      "stage_transition": "retain_selected_stage1_adapter_fresh_optimizer"
+    },
+    "fast_linear_attention": true
+  },
+  "learning_checks": [
+    {
+      "name": "stage1-fast-micro8.json",
+      "passed": true,
+      "initial_loss_relative_difference": 0.00018345420769316778,
+      "initial_probability_rms_difference": 0.0043045438643156885,
+      "final_holdout_loss_ratio": 1.0018007327254743,
+      "last_four_training_loss_ratio": 1.0002385201001738,
+      "gradient_comparison": {
+        "relative_l2": 0.003366886736519633,
+        "cosine": 0.9999948172830477
+      },
+      "warmed_step_seconds": 2.474894490330674,
+      "peak_gb": 56.803237376
+    },
+    {
+      "name": "stage1-fast-bf16-micro8.json",
+      "passed": true,
+      "initial_loss_relative_difference": 0.00018345420769316778,
+      "initial_probability_rms_difference": 0.0043045438643156885,
+      "final_holdout_loss_ratio": 1.0018007327254743,
+      "last_four_training_loss_ratio": 1.0002385201001738,
+      "gradient_comparison": {
+        "relative_l2": 0.003366886736519633,
+        "cosine": 0.9999948172830477
+      },
+      "warmed_step_seconds": 2.4812299996750276,
+      "peak_gb": 42.547172864,
+      "bf16_storage_vs_fast_max_initial_probability_difference": 0.0,
+      "bf16_storage_vs_fast_max_final_probability_difference": 0.0,
+      "bf16_storage_vs_fast_max_train_loss_difference": 0.0
+    },
+    {
+      "name": "stage2-fast-micro4.json",
+      "passed": false,
+      "initial_loss_relative_difference": 0.0006444028677936586,
+      "initial_probability_rms_difference": 0.011637005805056245,
+      "final_holdout_loss_ratio": 0.9899787619666853,
+      "last_four_training_loss_ratio": 1.0031809509861653,
+      "gradient_comparison": {
+        "relative_l2": 0.016859657427124596,
+        "cosine": 0.9998581105715365
+      },
+      "warmed_step_seconds": 5.023740926000755,
+      "peak_gb": 55.571666432,
+      "accepted_with_independent_trained_checkpoint_check": true,
+      "original_random_head_probability_check_passed": false
+    },
+    {
+      "name": "stage2-fast-bf16-micro4.json",
+      "passed": false,
+      "initial_loss_relative_difference": 0.0006444028677936586,
+      "initial_probability_rms_difference": 0.011637005805056245,
+      "final_holdout_loss_ratio": 0.9519516825574345,
+      "last_four_training_loss_ratio": 0.9882728201196455,
+      "gradient_comparison": {
+        "relative_l2": 0.01691089481517428,
+        "cosine": 0.9998572441489407
+      },
+      "warmed_step_seconds": 4.901758356000452,
+      "peak_gb": 41.32316416,
+      "bf16_storage_vs_fast_max_initial_probability_difference": 0.0,
+      "bf16_storage_vs_fast_max_final_probability_difference": 0.8059748597443104,
+      "bf16_storage_vs_fast_max_train_loss_difference": 0.06109664961695671
+    }
+  ],
+  "stress_checks": {
+    "1": {
+      "stage": 1,
+      "micro_batch": 8,
+      "effective_batch": 32,
+      "sequence_lengths": [
+        510,
+        510,
+        507,
+        506,
+        506,
+        506,
+        497,
+        481,
+        473,
+        472,
+        472,
+        470,
+        468,
+        468,
+        466,
+        465,
+        465,
+        464,
+        462,
+        459,
+        455,
+        452,
+        450,
+        450,
+        449,
+        444,
+        443,
+        441,
+        440,
+        439,
+        439,
+        439
+      ],
+      "step_seconds": [
+        6.755328483006451,
+        3.234860589989694,
+        3.2380134820123203,
+        3.2333756209991407,
+        3.2408506569918245
+      ],
+      "peak_allocated_bytes": 58609076736,
+      "peak_reserved_bytes": 61427679232,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "prior_selected_seconds_per_32": 17.57118277650443,
+      "selected_seconds_per_32": 3.2374132533344286,
+      "speedup_vs_previous_selection": 5.427537790674913
+    },
+    "2": {
+      "stage": 2,
+      "micro_batch": 4,
+      "effective_batch": 32,
+      "sequence_lengths": [
+        1018,
+        1018,
+        1018,
+        974,
+        972,
+        972,
+        964,
+        958,
+        954,
+        946,
+        946,
+        936,
+        936,
+        936,
+        936,
+        930,
+        928,
+        924,
+        924,
+        920,
+        918,
+        916,
+        910,
+        910,
+        904,
+        904,
+        904,
+        898,
+        898,
+        892,
+        892,
+        888
+      ],
+      "step_seconds": [
+        7.15125363599509,
+        6.773048446979374,
+        6.780777618987486,
+        6.77901136901346,
+        6.7769950490037445
+      ],
+      "peak_allocated_bytes": 58592392192,
+      "peak_reserved_bytes": 61652074496,
+      "gpu_total_bytes": 85093777408,
+      "bf16_verified": true,
+      "finite_gradients": true,
+      "frozen_verified": true,
+      "prior_selected_seconds_per_32": 14.349118349011405,
+      "selected_seconds_per_32": 6.778928012334897,
+      "speedup_vs_previous_selection": 2.1167238128066614
+    }
+  },
+  "acceptance_plan": {
+    "status": "running",
+    "goal": "Reduce wall-clock training time with validated isolated kernels, physical batching and frozen linear storage.",
+    "fixed": [
+      "effective batch32",
+      "rank128 alpha32",
+      "pinned base revision",
+      "production data and order",
+      "objectives epochs LR optimizer schedule",
+      "BF16 model forwards"
+    ],
+    "candidate_environment": {
+      "flash-linear-attention": "0.5.2",
+      "fla-core": "0.5.2",
+      "einops": "0.8.2"
+    },
+    "learning_check": {
+      "optimizer_updates": 8,
+      "training_rows": 256,
+      "training_partition_holdout_rows": 32,
+      "constant_lr_diagnostic": "Both arms use identical configured LR without warmup to expose divergence quickly. Production retains its original warmup/cosine schedule.",
+      "initial_loss_relative_difference_max": 0.02,
+      "initial_token_probability_rms_difference_max": 0.01,
+      "full_gradient_relative_l2_max": 0.1,
+      "full_gradient_cosine_min": 0.995,
+      "final_holdout_loss_ratio_max": 1.03,
+      "last_four_train_losses_mean_ratio_max": 1.05
+    },
+    "memory": {
+      "throughput_trial_peak_fraction_max": 0.7,
+      "final_maximum_length_peak_fraction_max": 0.85
+    },
+    "selection": "Choose the fastest passing setting; use BF16 frozen linear storage only if behavior matches the same-kernel FP32-storage candidate.",
+    "limitations": "Small train-only diagnostic is not proof of final metric equivalence; full frozen evaluation still required.",
+    "production_state": "Old 145-second partial run archived; automatic continuation awaits a fresh verified gate."
+  },
+  "third_party_source_manifest": "continuation/kernel-manifest.json",
+  "previous_run": "runs/qwen35-interrupted-before-kernel-optimization",
+  "production_start": "Pinned base and original seed; no profiling or interrupted-run updates reused.",
+  "limitations": "Eight-step training-only diagnostics and short throughput trials do not establish final evaluation equivalence. Calibration and both frozen evaluation profiles remain queued."
+}

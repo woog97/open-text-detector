@@ -1,0 +1,232 @@
+<title>35B MoE Scoreboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column for prose, full-width scrollable tables for numbers; summary first, detail after. */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --fg: #1b2330; --muted: #5d6878; --line: #dde2ea; --accent: #2c5d8a;
+  --good: #1f7a4d; --good-bg: #e3f3ea; --bad: #a3392b; --bad-bg: #f8e6e2; --hl: #eef3f9; --chip: #e9edf3;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --panel: #191f28; --fg: #e3e8ef; --muted: #98a3b3; --line: #2b3441; --accent: #8db8e3;
+  --good: #6fcf9b; --good-bg: #173226; --bad: #f08f7f; --bad-bg: #3a1f1b; --hl: #1d2836; --chip: #253041; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --panel: #191f28; --fg: #e3e8ef; --muted: #98a3b3; --line: #2b3441; --accent: #8db8e3;
+  --good: #6fcf9b; --good-bg: #173226; --bad: #f08f7f; --bad-bg: #3a1f1b; --hl: #1d2836; --chip: #253041; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 34px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 600 clamp(28px, 4vw, 40px)/1.1 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 24px/1.2 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 600 15px/1.3 var(--body); margin: 0; }
+p { margin: 0; max-width: 72ch; }
+.lede { color: var(--muted); font-size: 16px; }
+section { display: grid; gap: 14px; min-width: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.card .k { font: 500 12px/1.2 var(--mono); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.card .v { font: 600 22px/1.15 var(--display); }
+.card p { font-size: 13.5px; color: var(--muted); }
+.tbl { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th { font: 500 12px/1.3 var(--body); color: var(--muted); vertical-align: bottom; background: var(--panel); }
+th.grp { text-align: center; color: var(--fg); border-bottom: 1px solid var(--line); font-weight: 600; }
+td { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td.name, th.name { text-align: left; font-family: var(--body); white-space: normal; min-width: 170px; }
+td.name small { display: block; color: var(--muted); font-size: 12px; }
+tr:last-child td { border-bottom: 0; }
+tr.sub td { color: var(--muted); }
+td.best { background: var(--good-bg); color: var(--good); font-weight: 500; }
+td.na { color: var(--muted); }
+.d { font-size: 12px; }
+.d.pos { color: var(--good); } .d.neg { color: var(--bad); } .d.zero { color: var(--muted); }
+.flag { display: inline-block; font: 500 11px/1.4 var(--mono); padding: 1px 6px; border-radius: 4px; background: var(--chip); color: var(--muted); }
+.note { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { font: 500 13px/1 var(--body); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ul.facts { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 80ch; }
+footer { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 6px; }
+code { font-family: var(--mono); font-size: .92em; }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Qwen3.6 35B-A3B MoE · scoring audit · Oct 8, 2026</div>
+  <h1>Slow vs fast scoring, and every MoE run on one scorer</h1>
+  <p class="lede">Every 35B MoE detector we have trained, rescored with the fast inference path on the same H200 and the same base weights. The first part checks the fast path against the slow one; the second compares the runs on equal terms.</p>
+</header>
+
+<section id="summary">
+  <div class="cards" id="cards"></div>
+</section>
+
+<section id="agree">
+  <h2>1 · Does the fast path change the scores?</h2>
+  <p class="note">Per-sentence AI probabilities from both paths, for the three runs that have slow scores on every set (scored on the H200 with the same code). A "flip" is a sentence that lands on a different side of its path's own in-domain threshold (1% FPR on dev human sentences).</p>
+  <div class="tbl"><table id="agreeTbl"></table></div>
+</section>
+
+<section id="metricdiff">
+  <h3>Headline metrics, slow → fast</h3>
+  <p class="note">Recall at the in-domain 1%-FPR threshold. Δ is fast minus slow, in points. The four older runs were slow-scored Oct 5–6 on the main eval set, held-out writers and cross-model only; their gaps also include any scorer changes since then.</p>
+  <div class="tbl"><table id="diffTbl"></table></div>
+</section>
+
+<section id="fair">
+  <h2>2 · All MoE runs, fast path</h2>
+  <p class="note">Same scorer, same GPU type, same base weights for every row. Green marks the best value in each column. Recall uses each model's own in-domain threshold (1% FPR on the main eval set's dev human sentences); "human FP" is the share of human control sentences in that set flagged at that threshold. Small-edit sets are small (189 dev / 150 test sentences, roughly ±3–4 points), and every run is one seed.</p>
+  <div class="tabs" role="group" aria-label="Table" id="tabs"></div>
+  <div class="tbl"><table id="fairTbl"></table></div>
+</section>
+
+<section id="curve">
+  <h2>3 · Learning curve of the full-size runs</h2>
+  <p class="note">Main eval set, small edits, recall at 1% FPR (slow path), at the checkpoints saved a third and two thirds of the way through the single pass, and at the end.</p>
+  <div class="tbl"><table id="curveTbl"></table></div>
+</section>
+
+<section id="read">
+  <h2>What this says</h2>
+  <ul class="facts" id="facts"></ul>
+</section>
+
+<footer>
+  <div>Slow path: <code>sweep_eval</code> / <code>cross_model_eval</code>, BF16, padded 8-window batches, all heads. Fast path: <code>FAST_EVAL=1 eval_final.py</code> (packed 64k-token batches, token head only, routed-token expert LoRA, not merged). Fast scoring ran on H200 GPUs 2–3 on Oct 8.</div>
+  <div>Sources: <code>research/evaluation/moe-slow-fast-20261008/</code> (collect.py, agreement.py, data.json); bucket <code>workspace/mixgrid-20261007/</code>.</div>
+</footer>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const M = DATA.models, SETS = DATA.sets;
+const f3 = x => x == null ? '—' : x.toFixed(3);
+const pct = x => x == null ? '—' : (100 * x).toFixed(1) + '%';
+const el = (t, a = {}, h = '') => { const e = document.createElement(t); Object.entries(a).forEach(([k, v]) => e.setAttribute(k, v)); e.innerHTML = h; return e; };
+const nameCell = m => `<td class="name">${m.name}<small>${m.note}</small></td>`;
+const g = (o, path) => path.reduce((a, k) => a == null ? null : a[k], o);
+const delta = (a, b, lowerBetter) => {
+  if (a == null || b == null) return '';
+  const d = 100 * (b - a); const cls = Math.abs(d) < .05 ? 'zero' : ((d > 0) !== !!lowerBetter ? 'pos' : 'neg');
+  return `<span class="d ${cls}">${d > 0 ? '+' : ''}${d.toFixed(1)}</span>`;
+};
+
+// Summary cards
+(() => {
+  const A = DATA.agreement || {}; const rows = Object.values(A).flatMap(v => Object.values(v)).filter(r => r.n);
+  const n = rows.reduce((s, r) => s + r.n, 0), mean = rows.reduce((s, r) => s + r.mean_abs * r.n, 0) / n;
+  const fl = rows.filter(r => r.flips != null), flips = fl.reduce((s, r) => s + r.flips, 0), nf = fl.reduce((s, r) => s + r.n, 0);
+  const fast = M.filter(m => m.fast && m.fast.sweep);
+  const best = fast.slice().sort((a, b) => g(b.fast, ['sweep', 'test', 'edits_small', 'r']) - g(a.fast, ['sweep', 'test', 'edits_small', 'r']))[0];
+  const diffs = M.filter(m => g(m.slow, ['sweep', 'test', 'edits_small', 'r']) != null && g(m.fast, ['sweep', 'test', 'edits_small', 'r']) != null)
+    .map(m => Math.abs(m.fast.sweep.test.edits_small.r - m.slow.sweep.test.edits_small.r));
+  const cards = [
+    ['Per-sentence change', mean.toFixed(4), `Mean |fast − slow| AI probability over ${n.toLocaleString()} sentences (3 runs × 8 score sets).`],
+    ['Threshold flips', (100 * flips / nf).toFixed(2) + '%', `${flips.toLocaleString()} of ${nf.toLocaleString()} held-out sentences change side of the 1%-FPR threshold.`],
+    ['Small-edit recall shift', diffs.length ? `≤ ${(100 * Math.max(...diffs)).toFixed(1)} pts` : '—', `Largest slow→fast change in test small-edit recall across ${diffs.length} runs.`],
+    ['Best on small edits (fast)', best ? best.name : '—', best ? `Test small-edit recall ${f3(best.fast.sweep.test.edits_small.r)} at 1% FPR.` : ''],
+  ];
+  const c = document.getElementById('cards');
+  cards.forEach(([k, v, p]) => c.append(el('div', { class: 'card' }, `<div class="k">${k}</div><div class="v">${v}</div><p>${p}</p>`)));
+})();
+
+// Agreement table
+(() => {
+  const A = DATA.agreement || {}; const T = document.getElementById('agreeTbl');
+  const label = { sweep: 'Main eval set', ...Object.fromEntries(SETS), 'fable-polish': 'Fable polish' };
+  T.innerHTML = `<thead><tr><th class="name">Run · score set</th><th>Sentences</th><th>Mean |Δ|</th><th>99th pct |Δ|</th><th>Max |Δ|</th><th>Threshold slow</th><th>Threshold fast</th><th>Flips</th></tr></thead>`;
+  const tb = el('tbody');
+  M.filter(m => A[m.tag]).forEach(m => {
+    Object.entries(A[m.tag]).forEach(([s, r], i) => {
+      tb.append(el('tr', i ? { class: 'sub' } : {}, `<td class="name">${i ? '' : `<b>${m.name}</b> · `}${label[s] || s}</td><td>${r.n.toLocaleString()}</td><td>${r.mean_abs.toFixed(4)}</td><td>${r.p99_abs.toFixed(3)}</td><td>${r.max_abs.toFixed(3)}</td>` +
+        `<td>${r.thr_slow == null ? '—' : r.thr_slow.toFixed(4)}</td><td>${r.thr_fast == null ? '—' : r.thr_fast.toFixed(4)}</td><td>${r.flips == null ? '—' : `${r.flips} <span class="d zero">(${(100 * r.flip_share).toFixed(2)}%)</span>`}</td>`));
+    });
+  });
+  T.append(tb);
+})();
+
+// Slow -> fast headline diffs
+(() => {
+  const cols = [['Small edits · test', ['sweep', 'test', 'edits_small', 'r']], ['Small edits · dev', ['sweep', 'dev', 'edits_small', 'r']],
+    ['Paragraph edits · test', ['sweep', 'test', 'edits_para', 'r']], ['Held-out writers', ['heldout-writers', 'r']],
+    ['wide1 held-out', ['wide1-heldout', 'r']], ['Cross-model', ['cross-model-s500', 'r']], ['Held-out writers · human FP', ['heldout-writers', 'cfpr'], true]];
+  const T = document.getElementById('diffTbl');
+  T.innerHTML = `<thead><tr><th class="name">Run</th><th>Slow scored</th>${cols.map(c => `<th>${c[0]}<br>slow → fast</th>`).join('')}</tr></thead>`;
+  const tb = el('tbody');
+  M.forEach(m => {
+    tb.append(el('tr', {}, `${nameCell(m)}<td>${m.slow_when}</td>` + cols.map(([_, p, lb]) => {
+      const a = g(m.slow, p), b = g(m.fast, p);
+      if (a == null) return `<td class="na">— → ${p[1] === 'cfpr' ? pct(b) : f3(b)}</td>`;
+      return `<td>${p[1] === 'cfpr' ? pct(a) : f3(a)} → ${p[1] === 'cfpr' ? pct(b) : f3(b)} ${delta(a, b, lb)}</td>`;
+    }).join('')));
+  });
+  T.append(tb);
+})();
+
+// Fair comparison, tabbed
+const VIEWS = {
+  'Main eval set': {
+    groups: [['Small edits (1–2 sentences)', [['Test recall', ['sweep', 'test', 'edits_small', 'r']], ['Test AUROC', ['sweep', 'test', 'edits_small', 'auc']], ['Dev recall', ['sweep', 'dev', 'edits_small', 'r']], ['Dev AUROC', ['sweep', 'dev', 'edits_small', 'auc']]]],
+      ['Paragraph edits', [['Test recall', ['sweep', 'test', 'edits_para', 'r']], ['Dev recall', ['sweep', 'dev', 'edits_para', 'r']]]],
+      ['Standalone rewrites', [['Test recall', ['sweep', 'test', 'standalone_rewrites', 'r']], ['Test AUROC', ['sweep', 'test', 'standalone_rewrites', 'auc']]]],
+      ['Public documents', [['Test recall', ['sweep', 'test', 'public_docs', 'r']], ['Test AUROC', ['sweep', 'test', 'public_docs', 'auc']]]]]
+  },
+  'Held-out sets': {
+    groups: SETS.map(([k, label]) => [label, [['Recall', [k, 'r']], ['AUROC', [k, 'auc']], ['Human FP', [k, 'cfpr'], 'lower']]])
+  },
+  'Per writer': null,
+};
+function writersView() {
+  const groups = [];
+  for (const [k, label] of [['heldout-writers', 'Held-out writers'], ['wide1-heldout', 'wide1 held-out']]) {
+    const ws = [...new Set(M.flatMap(m => Object.keys(g(m.fast, [k, 'writers']) || {})))].sort();
+    groups.push([label, ws.map(w => [w.split('/').pop(), [k, 'writers', w, 'r']])]);
+  }
+  return { groups };
+}
+function renderFair(view) {
+  const v = VIEWS[view] || writersView(); const T = document.getElementById('fairTbl');
+  const cols = v.groups.flatMap(([_, cs]) => cs);
+  const vals = cols.map(([_, p]) => M.map(m => g(m.fast, p)));
+  const bestIdx = cols.map(([_, p, lb], j) => { const xs = vals[j].filter(x => x != null); if (!xs.length) return -1; const b = lb ? Math.min(...xs) : Math.max(...xs); return vals[j].indexOf(b); });
+  T.innerHTML = `<thead><tr><th class="name" rowspan="2">Run</th>${v.groups.map(([l, cs]) => `<th class="grp" colspan="${cs.length}">${l}</th>`).join('')}</tr>` +
+    `<tr>${cols.map(c => `<th>${c[0]}</th>`).join('')}</tr></thead>`;
+  const tb = el('tbody');
+  M.forEach((m, i) => tb.append(el('tr', {}, nameCell(m) + cols.map(([_, p, lb], j) => {
+    const x = vals[j][i]; if (x == null) return '<td class="na">—</td>';
+    return `<td class="${bestIdx[j] === i ? 'best' : ''}">${p[1] === 'cfpr' ? pct(x) : f3(x)}</td>`;
+  }).join(''))));
+  T.append(tb);
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === view));
+  try { localStorage.setItem('moeTab', view); } catch (e) {}
+}
+(() => {
+  const tabs = document.getElementById('tabs');
+  Object.keys(VIEWS).forEach(k => { const b = el('button', { type: 'button', 'data-v': k }, k); b.onclick = () => renderFair(k); tabs.append(b); });
+  let start = 'Main eval set'; try { const s = localStorage.getItem('moeTab'); if (s && s in VIEWS) start = s; } catch (e) {}
+  renderFair(start);
+})();
+
+// Learning curve
+(() => {
+  const T = document.getElementById('curveTbl'); const runs = M.filter(m => m.curve);
+  const lab = ['⅓ of the pass', '⅔ of the pass', 'End'];
+  T.innerHTML = `<thead><tr><th class="name">Run</th>${lab.map(l => `<th>${l}<br>test · dev</th>`).join('')}</tr></thead>`;
+  const tb = el('tbody');
+  runs.forEach(m => tb.append(el('tr', {}, nameCell(m) + m.curve.map(([ck, s]) => `<td>${f3(g(s, ['test', 'edits_small', 'r']))} · ${f3(g(s, ['dev', 'edits_small', 'r']))}</td>`).join(''))));
+  T.append(tb);
+})();
+
+// Facts (written at build time)
+(DATA.facts || []).forEach(t => document.getElementById('facts').append(el('li', {}, t)));
+</script>

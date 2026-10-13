@@ -1,0 +1,56 @@
+SciDev historical news candidate adapter
+=======================================
+Source: official English/global/news SciDev URLs from frozen
+common-pile/cccc_filtered revision03a3de5713a0bb23267d26724346508af0f25327.
+Only pre2022 warc_date captures are eligible. Auxiliary wrappers retain exact
+original CCCC record, source file/row, upstream JSON-line and archive hashes.
+The parent CCCC collector retains original shards separately. SciDev snapshots
+materialize its auxiliary table under a pinned SQLite read transaction.
+
+Current official pages serve only to corroborate article identity, attribution,
+and article-specific republish terms. HTML bytes/checksums and parsed evidence
+are preserved separately from historical text. The importer requires the actual
+republish popup to say this article may be republished under a Creative Commons
+Attribution license, a named byline in the republish article HTML, and a pre2022
+publication date. The schema author 'Editor' is not treated as the writer.
+Version remains unspecified because the current article notice does not state
+one and publisher policy pages disagree between CC BY2.0 and3.0. No uniform
+license URI is invented. Current notice/byline are explicitly labeled current,
+not evidence that the 2026 HTML was captured before2022.
+
+Text matching uses monotonic exact normalized word-token blocks of at least8
+words; at least120 matched tokens and50% current body coverage are required.
+Only matched historical regions supply data, with at most3 unmatched tokens
+between adjacent matching blocks. Up to3 nonoverlapping contiguous sentence
+spans per article are selected with unchanged character offsets and source text.
+No current-only paragraphs are copied into the human dataset. Newspaper wire
+bylines and explicit external republication indicators are rejected. Image,
+table, script and caption material is excluded from the supporting body.
+
+Run on existing training Space only:
+ingest_scidev.py --base /tmp/pangram-scidev-staging-20261002 \
+ --aux-db /tmp/pangram-cccc-staging-20261002/stage.sqlite3 --quota991 --workers4
+(Use separate argument tokens: --quota 991 --workers 4.)
+The stage is isolated. Preserve scidev.lock, process identity, stage.sqlite3,
+source-downloads, progress, and exports. Never merge without global dedup and
+source quotas. Candidate status remains quarantined; current terms and overlap
+checks do not certify training admission. A shortage of1000-word captures must
+remain an explicit bin deficit, not padded documents or a quota substitution.
+
+Four meaningful tests pass locally/remotely: URL/date eligibility, article-level
+notice/byline restrictions, unrelated-body and navigation rejection, exact
+original offsets/nonoverlap/cap with separate evidence provenance.
+
+2026-10-02 first wave: preserved and validated171 candidates from79 historical
+articles, bins70/72/29/0. Immutable merge checkpoint:
+/tmp/pangram-scidev-verified-wave1. Five tests now pass locally/remotely.
+Current-page publisher checks encountered HTTP429. Only the identified SciDev
+worker40024/start7844107 was stopped; originals and committed rows remained.
+The replacement40841/start7866349 continues the same isolated stage after a
+five-minute cooldown, using one shared request every2seconds across four workers,
+honoring Retry-After and opening a circuit after3 consecutive rate limits.
+progress/publisher-backoff.json records next permitted retry Unix time. A new
+rate-limit-recovery.json records exact code hashes and preserved prior code.
+Do not repeatedly restart during that cooldown or add parallel HTTP workers
+outside this shared limiter. Other sources continue independently.
+A circuit-open completion is a temporary access condition, not source exhaustion.

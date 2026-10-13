@@ -1,0 +1,181 @@
+<title>MoE Mix Grid Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: verdict, then one box per evaluation set (2 columns on wide screens), then training detail */
+:root {
+  --bg: #f4f6f8; --panel: #ffffff; --fg: #17202a; --muted: #5a6774; --line: #dbe1e7; --soft: #eef2f6;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+  --good: #1a7346; --good-soft: #dff2e7; --bad: #ad3b25; --bad-soft: #f8e3dd;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11171d; --panel: #18212a; --fg: #e5eaef; --muted: #96a3b0; --line: #2c3843; --soft: #1d2833;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+  --good: #6fd09d; --good-soft: #173a2a; --bad: #f09079; --bad-soft: #43241e; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11171d; --panel: #18212a; --fg: #e5eaef; --muted: #96a3b0; --line: #2c3843; --soft: #1d2833;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+  --good: #6fd09d; --good-soft: #173a2a; --bad: #f09079; --bad-soft: #43241e; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 18px; }
+header { display: grid; gap: 6px; }
+h1 { font: 600 30px/1.15 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 19px/1.25 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 600 14px var(--body); margin: 0; }
+.sub { color: var(--muted); margin: 0; max-width: 76ch; }
+.meta { font: 12px var(--mono); color: var(--muted); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 10px; min-width: 0; align-content: start; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 16px; }
+.note { color: var(--muted); font-size: 13px; margin: 0; max-width: 80ch; }
+.verdict { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 86ch; }
+.verdict b { font-weight: 600; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); align-items: center; }
+.key span { display: inline-flex; gap: 6px; align-items: center; }
+.sw { width: 11px; height: 11px; border-radius: 2px; background: var(--c); display: inline-block; }
+.cell-best { background: var(--good-soft); color: var(--good); font-weight: 600; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 6px 9px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th { font: 500 11.5px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; vertical-align: bottom; }
+th .sw { margin-right: 5px; vertical-align: -1px; }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 170px; }
+td.num { font: 13px var(--mono); font-variant-numeric: tabular-nums; }
+tr.sec td { background: var(--soft); font: 600 12px var(--body); text-align: left; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.pill { display: inline-block; font: 500 10.5px var(--body); padding: 0 6px; border-radius: 8px; margin-left: 5px; vertical-align: 1px; }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+.pill.sel { background: var(--soft); color: var(--muted); border: 1px solid var(--line); }
+.boxhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; align-items: baseline; }
+.n { font: 12px var(--mono); color: var(--muted); }
+.diffs { font: 12px var(--mono); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.diffs b { font-weight: 500; color: var(--fg); }
+details summary { cursor: pointer; font-weight: 500; font-size: 14px; }
+.mixrow { display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center; }
+.mixrow b { font: 600 14px var(--display); }
+.stack { display: flex; height: 20px; gap: 2px; border-radius: 4px; overflow: hidden; }
+.stack div { background: var(--c); min-width: 2px; }
+:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+@media (max-width: 520px) { .mixrow { grid-template-columns: 1fr; gap: 4px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>MoE Mix Grid Results</h1>
+    <p class="sub">Three full-length Qwen3.6-35B-A3B detectors trained with the same recipe (84,000 rows, 3 epochs, 1e-4 cosine, LoRA rank 128 / expert rank 16), differing only in training mix. Every model is scored on identical rows at stage-2 epoch 2.</p>
+    <div class="meta">Updated Oct 7, 11:25 PM PDT · one seed per run · T2.1 mix run trained on the H200 (final-moe), mixes A and B on Space A100s</div>
+  </header>
+
+  <section class="card">
+    <h2>Verdict</h2>
+    <ol class="verdict">
+      <li><b>Mix B is out.</b> It is last or tied for last on every set, and its scores sit so low that its paper threshold is 0.17 (the others: 0.40–0.43), so it flags 2.6–3.9% of human-control sentences on clean v2, the humanizer set and light polish.</li>
+      <li><b>The T2.1 mix and mix A are close, and each wins different sets.</b> The T2.1 mix is best on paper-edit small edits (0.63 vs 0.54), long AI sections (0.98 vs 0.97), the Fable humanizer set (0.96 vs 0.94) and standalone rewrites (0.67 vs 0.55). Mix A is best on clean v2 (0.92 vs 0.89, +3.0 points [2.3, 3.6]) and ties on strict held-out small edits (0.61 vs 0.62).</li>
+      <li><b>Mix A is better calibrated.</b> At the paper threshold it flags 1.3% of clean-v2 human sentences and 1.8% on strict held-out, against 1.7% and 2.7% for the T2.1 mix, so mix A’s deployed false-positive rate is closer to the 1% target.</li>
+      <li><b>Recommendation:</b> the T2.1 mix if paper-edit and standalone detection matter most; mix A if calibration on new writers and sources matters most. Most gaps are 1–3 points on one seed each, so a second seed of both should decide it.</li>
+    </ol>
+    <div class="key"><span><i class="sw" style="--c: var(--s1)"></i>T2.1 mix</span><span><i class="sw" style="--c: var(--s2)"></i>Mix A (AI-heavy)</span><span><i class="sw" style="--c: var(--s3)"></i>Mix B (human-heavy)</span>
+      <span><span class="cell-best" style="padding: 0 6px; border-radius: 3px">0.915</span>best in row</span><span><span class="pill bad" style="margin: 0">high</span>flags ≥2.5% of human sentences (target 1%)</span></div>
+  </section>
+
+  <div class="grid" id="boxes"></div>
+
+  <section class="card">
+    <h2>What went into each mix</h2>
+    <p class="note">Share of rows per stage-2 epoch (24,000 for the T2.1 mix, 72,000 distinct rows for mixes A and B, which run one pass over three different files). All mixes were screened against every held-out list when built.</p>
+    <div style="display: grid; gap: 10px" id="mix"></div>
+    <div class="key" id="mixkey"></div>
+  </section>
+
+  <section class="card">
+    <h2>Caveats</h2>
+    <ol class="verdict">
+      <li>One seed each. Bracketed intervals resample papers, so they cover evaluation-set noise, not seed noise.</li>
+      <li>Validation loss selected epoch 1 for the T2.1 mix and mix B and epoch 0 for mix A; every box uses epoch 2 so the three are compared at the same point.</li>
+      <li>Clean v2 excludes every paper T2.1 may have seen. The T2.1 mix run was scored on the full v2 file on the H200; its rows here are restricted to the same clean subset.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const MODELS = [['T21', 'T2.1 mix', 'var(--s1)'], ['A', 'Mix A', 'var(--s2)'], ['B', 'Mix B', 'var(--s3)']];
+const WN = { 'gpt-6-luna': 'GPT-6 Luna', 'gpt-6-sol': 'GPT-6 Sol (never trained)', 'gpt-6.1-sol': 'GPT-6.1 Sol', 'claude-haiku-4-5': 'Claude Haiku 4.5', 'claude-haiku-4-5-20251001': 'Claude Haiku 4.5',
+  'claude-sonnet-5-5': 'Claude Sonnet 5.5', 'claude-opus-5-5': 'Claude Opus 5.5', 'claude-fable-5-1': 'Claude Fable 5.1 (never trained)', 'Opus 3': 'Claude Opus 3' };
+const SRC = { 'paired-ml': 'ML conference papers', pes2o: 'Semantic Scholar (peS2o)', pmc: 'PubMed Central', arxiv: 'arXiv', archive: 'Paper archive' };
+const f3 = v => v == null ? '–' : v.toFixed(3), pc = v => v == null ? '–' : (100 * v).toFixed(1) + '%';
+
+// rows: [label, getter(model)->number, format, lowerIsBetter, flagHigh]
+function table(rows, opts = {}) {
+  const head = '<tr><th></th>' + MODELS.map(([, n, c]) => `<th><i class="sw" style="--c:${c}"></i>${n}</th>`).join('') + '</tr>';
+  const body = rows.map(r => {
+    if (r.sec) return `<tr class="sec"><td colspan="4">${r.sec}</td></tr>`;
+    const [lab, get, fmt, low, flag] = r; const vals = MODELS.map(([k]) => get(k));
+    const ok = vals.filter(v => v != null); const best = ok.length > 1 ? (low ? Math.min(...ok) : Math.max(...ok)) : null;
+    return `<tr><td>${lab}</td>` + vals.map(v => `<td class="num${v != null && v === best ? ' cell-best' : ''}">${fmt(v)}${flag && v != null && v >= .025 ? '<span class="pill bad">high</span>' : ''}</td>`).join('') + '</tr>';
+  }).join('');
+  return `<div class="scroll"><table>${head}${body}</table></div>`;
+}
+function diffs(p) {
+  const name = { 'A-T21': 'Mix A − T2.1', 'B-T21': 'Mix B − T2.1', 'A-B': 'Mix A − Mix B' };
+  return `<div class="diffs">${Object.entries(p).map(([k, v]) => `<span>${name[k]}: <b>${v.diff >= 0 ? '+' : ''}${(100 * v.diff).toFixed(1)}</b> [${(100 * v.ci95[0]).toFixed(1)}, ${(100 * v.ci95[1]).toFixed(1)}]</span>`).join('')}</div>`;
+}
+const CORE = s => [
+  { sec: 'Threshold-free' },
+  ['Recall at 1% FPR on this set’s human sentences', m => s.models[m].groups.all?.r_ctrl1, f3],
+  ['Sentence AUROC', m => s.models[m].groups.all?.auroc, f3],
+  { sec: 'At the paper threshold' },
+  ['AI sentences flagged', m => s.models[m].groups.all?.r_paper, pc],
+  ['Human-control sentences flagged', m => s.models[m].ctrl_fpr_paper, pc, true, true],
+  ['AI documents flagged (any sentence)', m => s.models[m].docflag_ai_paper, pc],
+  ['Human documents flagged (any sentence)', m => s.models[m].docflag_ctrl_paper, pc, true],
+];
+const BOX = [
+  ['v2', 'Clean v2 held-out', 'One- and two-sentence edits, paragraphs and sections by six writers in five paper sources, minus every paper T2.1 may have seen.'],
+  ['heldout', 'Strict held-out small edits', '1,171 one- and two-sentence edits by Claude Opus, Sonnet, Haiku and GPT-6 Luna on papers kept out of all training.'],
+  ['cross', 'Long AI sections', 'Writer-stratified 500-document sample of heterogeneous-ai-spans with 500 matched human documents.'],
+  ['humanizer', 'Fable humanizer', 'AI sections rewritten by Claude Fable 5.1 to read as human.'],
+  ['cowrite', 'Fable co-writing', 'A human and Claude Fable 5.1 writing a paragraph together (339 AI sentences).'],
+  ['polish', 'Fable light polish', 'Fable lightly polishes a human paragraph. Almost no sentence is wholly AI, so only document rates and human false positives are shown.'],
+];
+let html = '';
+for (const [k, title, note] of BOX) {
+  const s = D.sets[k]; const n = s.models.T21.groups.all?.n;
+  let rows = CORE(s);
+  if (k === 'polish') rows = [{ sec: 'At the paper threshold' }, rows[6], rows[7], rows[5]];
+  let extra = '';
+  if (k === 'v2') {
+    const ws = Object.keys(s.models.T21.groups).filter(g => g.startsWith('w:')).sort();
+    const ss = Object.keys(s.models.T21.groups).filter(g => g.startsWith('src:')).sort();
+    extra = `<details><summary>By writer and source</summary>` + table([{ sec: 'Recall at 1% FPR, by writer' }, ...ws.map(g => [WN[g.slice(2)] || g.slice(2), m => s.models[m].groups[g]?.r_ctrl1, f3]),
+      { sec: 'Recall at 1% FPR, by source' }, ...ss.map(g => [SRC[g.slice(4)] || g, m => s.models[m].groups[g]?.r_ctrl1, f3]),
+      { sec: 'Human-control sentences flagged at the paper threshold, by source' }, ...ss.map(g => [SRC[g.slice(4)] || g, m => s.models[m].ctrl_fpr_paper_by_src[g], pc, true, true])]) + '</details>';
+  } else if (k !== 'polish' && k !== 'cowrite') {
+    const ws = Object.keys(s.models.T21.groups).filter(g => g.startsWith('w:')).sort();
+    extra = `<details><summary>By writer</summary>` + table(ws.map(g => [WN[g.slice(2)] || g.slice(2), m => s.models[m].groups[g]?.r_ctrl1, f3])) + '</details>';
+  }
+  html += `<section class="card"><div class="boxhead"><h2>${title}</h2><span class="n">${n ? n.toLocaleString() + ' AI sentences · ' : ''}${s.n_rows.toLocaleString()} rows</span></div>
+    <p class="note">${note}</p>${table(rows)}${k !== 'polish' ? diffs(s.paired_r_ctrl1) : ''}${extra}</section>`;
+}
+// paper-edit box (epochs)
+const sw = D.sweep, g = (m, e, h, a, b) => sw[m][e]?.[h]?.[a]?.[b];
+const selected = (m, e) => (sw[m].selected || '').startsWith(`stage2-epoch${e}`);
+const epochRow = (lab, h, a, b, e = '2') => [lab, m => g(m, e, h, a, b), f3];
+html += `<section class="card"><div class="boxhead"><h2>Paper-edit set</h2><span class="n">150 test / 189 dev small-edit sentences</span></div>
+  <p class="note">The original in-domain set: GPT-6 Luna edits in ML papers, plus standalone rewrites and public documents. Recall at each model’s own 1% FPR on that half; the test half carries about ±7 points of sampling error.</p>` +
+  table([{ sec: 'Epoch 2' }, epochRow('Small edits, test', 'test', 'edits_small', 'recall_at_1pct'), epochRow('Small edits, dev', 'dev', 'edits_small', 'recall_at_1pct'),
+    epochRow('Small-edit AUROC, test', 'test', 'edits_small', 'auroc'), epochRow('Paragraph edits, test', 'test', 'edits_para', 'recall_at_1pct'),
+    epochRow('Standalone AI rewrites, test', 'test', 'standalone_rewrites', 'recall_at_1pct'), epochRow('Public documents AUROC, test', 'test', 'public_docs', 'auroc'),
+    { sec: 'Small edits (test) by epoch; tag marks the checkpoint validation loss selected' },
+    ...['0', '1', '2'].map(e => [`Epoch ${e}`, m => g(m, e, 'test', 'edits_small', 'recall_at_1pct'), v => v, false]).map(([lab, get]) =>
+      [lab, get, v => v == null ? '–' : v.toFixed(3), false])]) +
+  `<p class="note">Selected checkpoints: T2.1 mix epoch 1, mix A epoch 0, mix B epoch 1. Standalone recall by epoch: T2.1 mix 0.61 / 0.80 / 0.67, mix A 0.66 / 0.53 / 0.55, mix B 0.12 / 0.56 / 0.49.</p></section>`;
+document.getElementById('boxes').innerHTML = html;
+
+const PARTS = [['Human text', 'var(--s1)'], ['Small edits', 'var(--s2)'], ['Paragraph edits', 'var(--s3)'], ['AI sections', 'var(--s4)'], ['Fully AI documents', 'var(--s5)'], ['GRADTEX', 'var(--s6)']];
+const MIX = [['T2.1 mix', [32.1, 35.0, 12.1, 5.8, 10.0, 5.0]], ['Mix A (AI-heavy)', [32.1, 20.5, 6.2, 3.0, 33.2, 5.0]], ['Mix B (human-heavy)', [75.0, 4.1, 1.2, .6, 6.7, 12.3]]];
+document.getElementById('mix').innerHTML = MIX.map(([n, v]) => `<div class="mixrow"><b>${n}</b><div class="stack" role="img" aria-label="${n}: ${PARTS.map((p, i) => p[0] + ' ' + v[i] + '%').join(', ')}">` +
+  PARTS.map((p, i) => `<div style="--c:${p[1]}; flex:${v[i]}" title="${p[0]}: ${v[i]}%"></div>`).join('') + '</div></div>').join('');
+document.getElementById('mixkey').innerHTML = PARTS.map((p, i) => `<span><i class="sw" style="--c:${p[1]}"></i>${p[0]}: ${MIX.map(m => m[1][i] + '%').join(' / ')}</span>`).join('');
+</script>

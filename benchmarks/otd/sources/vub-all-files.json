@@ -1,0 +1,3901 @@
+[
+  {
+    "id": "68ad6bac09dbbd77ab7da837",
+    "type": "files",
+    "attributes": {
+      "guid": "jgbdm",
+      "checkout": null,
+      "name": "AI01.docx",
+      "kind": "file",
+      "path": "/68ad6bac09dbbd77ab7da837",
+      "size": 42936,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI01.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:16.499556",
+      "date_created": "2025-08-26T08:09:16.499556Z",
+      "extra": {
+        "hashes": {
+          "md5": "5f86d127d776f20c21d8008ff7af24a3",
+          "sha256": "1ad28a182fc1c970f3445110ad4a1eba8cf35a5c9a3b0f4b9e760f371f725aac"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bac09dbbd77ab7da837/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/comments/?filter%5Btarget%5D=jgbdm&view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bac09dbbd77ab7da837/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bac09dbbd77ab7da837/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac09dbbd77ab7da837?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac09dbbd77ab7da837?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac09dbbd77ab7da837?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/jgbdm/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2Fjgbdm%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bac09dbbd77ab7da837",
+      "self": "https://api.osf.io/v2/files/68ad6bac09dbbd77ab7da837/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "iri": "https://osf.io/jgbdm"
+    }
+  },
+  {
+    "id": "68ad6bac1a72d4b0c4bcf63d",
+    "type": "files",
+    "attributes": {
+      "guid": "dc8jv",
+      "checkout": null,
+      "name": "AI02.docx",
+      "kind": "file",
+      "path": "/68ad6bac1a72d4b0c4bcf63d",
+      "size": 73913,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI02.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:16.480997",
+      "date_created": "2025-08-26T08:09:16.480997Z",
+      "extra": {
+        "hashes": {
+          "md5": "ca5dc985c92c214e03a58ea2fc732403",
+          "sha256": "ec336024a77035f055e36a41ba5e1e608ef051b49151d02e55598b028a05cfe8"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bac1a72d4b0c4bcf63d/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/comments/?filter%5Btarget%5D=dc8jv&view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bac1a72d4b0c4bcf63d/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bac1a72d4b0c4bcf63d/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac1a72d4b0c4bcf63d?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac1a72d4b0c4bcf63d?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bac1a72d4b0c4bcf63d?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/dc8jv/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2Fdc8jv%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bac1a72d4b0c4bcf63d",
+      "self": "https://api.osf.io/v2/files/68ad6bac1a72d4b0c4bcf63d/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "iri": "https://osf.io/dc8jv"
+    }
+  },
+  {
+    "id": "68ad6baffaa45c65cfbcf408",
+    "type": "files",
+    "attributes": {
+      "guid": "a9e4t",
+      "checkout": null,
+      "name": "AI03.docx",
+      "kind": "file",
+      "path": "/68ad6baffaa45c65cfbcf408",
+      "size": 37939,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI03.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:19.238122",
+      "date_created": "2025-08-26T08:09:19.238122Z",
+      "extra": {
+        "hashes": {
+          "md5": "d1b41d23fca3b5110f3c4c4b304e0f8e",
+          "sha256": "d1840f7fa3830469d387507c4950f03490f8040c41b6d76cb7b3bd1bd748b3a7"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6baffaa45c65cfbcf408/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/comments/?filter%5Btarget%5D=a9e4t&view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6baffaa45c65cfbcf408/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6baffaa45c65cfbcf408/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6baffaa45c65cfbcf408?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6baffaa45c65cfbcf408?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6baffaa45c65cfbcf408?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/a9e4t/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2Fa9e4t%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6baffaa45c65cfbcf408",
+      "self": "https://api.osf.io/v2/files/68ad6baffaa45c65cfbcf408/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "iri": "https://osf.io/a9e4t"
+    }
+  },
+  {
+    "id": "68ad6bb279c0f3c423bcbe77",
+    "type": "files",
+    "attributes": {
+      "guid": "6b7ha",
+      "checkout": null,
+      "name": "AI04.docx",
+      "kind": "file",
+      "path": "/68ad6bb279c0f3c423bcbe77",
+      "size": 36090,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI04.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:22.279788",
+      "date_created": "2025-08-26T08:09:22.279788Z",
+      "extra": {
+        "hashes": {
+          "md5": "3480c5cd376af3a8acdcb2bc19371afe",
+          "sha256": "2085058d26728786e6d91636475d247e2e3210017b9edab534cf59ffa799a0d2"
+        },
+        "downloads": 14
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb279c0f3c423bcbe77/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/comments/?filter%5Btarget%5D=6b7ha&view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb279c0f3c423bcbe77/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bb279c0f3c423bcbe77/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb279c0f3c423bcbe77?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb279c0f3c423bcbe77?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb279c0f3c423bcbe77?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/6b7ha/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F6b7ha%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bb279c0f3c423bcbe77",
+      "self": "https://api.osf.io/v2/files/68ad6bb279c0f3c423bcbe77/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "iri": "https://osf.io/6b7ha"
+    }
+  },
+  {
+    "id": "68ad6bb31a4be2298baffbcb",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI05.docx",
+      "kind": "file",
+      "path": "/68ad6bb31a4be2298baffbcb",
+      "size": 39163,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI05.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:23.733851",
+      "date_created": "2025-08-26T08:09:23.733851Z",
+      "extra": {
+        "hashes": {
+          "md5": "9901f3438928180942ccb60666d83e8b",
+          "sha256": "963afbeed442b435a028fcc8d0c8ef49a2d60de2c27f92b66b71d975cd2f4df8"
+        },
+        "downloads": 15
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb31a4be2298baffbcb/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb31a4be2298baffbcb/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bb31a4be2298baffbcb/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb31a4be2298baffbcb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb31a4be2298baffbcb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb31a4be2298baffbcb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bb31a4be2298baffbcb/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bb31a4be2298baffbcb%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bb31a4be2298baffbcb",
+      "self": "https://api.osf.io/v2/files/68ad6bb31a4be2298baffbcb/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bb49f2c4b67297daaeb",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI06.docx",
+      "kind": "file",
+      "path": "/68ad6bb49f2c4b67297daaeb",
+      "size": 65143,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI06.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:24.559690",
+      "date_created": "2025-08-26T08:09:24.559690Z",
+      "extra": {
+        "hashes": {
+          "md5": "311eee524830c4d8fecb23d737e071a3",
+          "sha256": "31b19405ffc16f8592f0668eea318cba56a4ce7c02be1f6c9294c3c72c2e3715"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb49f2c4b67297daaeb/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb49f2c4b67297daaeb/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bb49f2c4b67297daaeb/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb49f2c4b67297daaeb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb49f2c4b67297daaeb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb49f2c4b67297daaeb?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bb49f2c4b67297daaeb/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bb49f2c4b67297daaeb%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bb49f2c4b67297daaeb",
+      "self": "https://api.osf.io/v2/files/68ad6bb49f2c4b67297daaeb/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bb89f2c4b67297daaee",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI07.docx",
+      "kind": "file",
+      "path": "/68ad6bb89f2c4b67297daaee",
+      "size": 35850,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI07.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:28.781846",
+      "date_created": "2025-08-26T08:09:28.781846Z",
+      "extra": {
+        "hashes": {
+          "md5": "9e68be5c2e56264828bc5b4d2921243e",
+          "sha256": "cb4b4153b50b6ed7a8aabc820f566ad6d41ed76f46a98368a366ac31bfc01c34"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb89f2c4b67297daaee/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb89f2c4b67297daaee/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bb89f2c4b67297daaee/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb89f2c4b67297daaee?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb89f2c4b67297daaee?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb89f2c4b67297daaee?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bb89f2c4b67297daaee/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bb89f2c4b67297daaee%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bb89f2c4b67297daaee",
+      "self": "https://api.osf.io/v2/files/68ad6bb89f2c4b67297daaee/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bb9851f052267bcf4e5",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI08.docx",
+      "kind": "file",
+      "path": "/68ad6bb9851f052267bcf4e5",
+      "size": 57685,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI08.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:29.841551",
+      "date_created": "2025-08-26T08:09:29.841551Z",
+      "extra": {
+        "hashes": {
+          "md5": "146a388b1686ffe5237b28d52c66f4fe",
+          "sha256": "9eaaa1b06cdbea562a2afde67ba87847f49a8a2f1c828818393884edced75008"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb9851f052267bcf4e5/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bb9851f052267bcf4e5/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bb9851f052267bcf4e5/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb9851f052267bcf4e5?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb9851f052267bcf4e5?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bb9851f052267bcf4e5?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bb9851f052267bcf4e5/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bb9851f052267bcf4e5%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bb9851f052267bcf4e5",
+      "self": "https://api.osf.io/v2/files/68ad6bb9851f052267bcf4e5/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bbd1a72d4b0c4bcf63f",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI09.docx",
+      "kind": "file",
+      "path": "/68ad6bbd1a72d4b0c4bcf63f",
+      "size": 39411,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI09.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:33.368075",
+      "date_created": "2025-08-26T08:09:33.368075Z",
+      "extra": {
+        "hashes": {
+          "md5": "e61c6097c5ae332c1546af89173f65ab",
+          "sha256": "32b509322a2ea662ddaaba22aac2f3a1c8dc55b73b40fc47fbf2a409b803f058"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bbd1a72d4b0c4bcf63f/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bbd1a72d4b0c4bcf63f/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bbd1a72d4b0c4bcf63f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bbd1a72d4b0c4bcf63f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bbd1a72d4b0c4bcf63f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bbd1a72d4b0c4bcf63f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bbd1a72d4b0c4bcf63f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bbd1a72d4b0c4bcf63f%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bbd1a72d4b0c4bcf63f",
+      "self": "https://api.osf.io/v2/files/68ad6bbd1a72d4b0c4bcf63f/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bc19f2c4b67297daaf0",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI10.docx",
+      "kind": "file",
+      "path": "/68ad6bc19f2c4b67297daaf0",
+      "size": 58836,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI10.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:37.291918",
+      "date_created": "2025-08-26T08:09:37.291918Z",
+      "extra": {
+        "hashes": {
+          "md5": "456f344861061777d768f4ad38bc3b06",
+          "sha256": "e76366fd8dc8b64ed8fe5739e8a03f3f077076e5a17bc7030eb9f77fa1b9009a"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc19f2c4b67297daaf0/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc19f2c4b67297daaf0/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bc19f2c4b67297daaf0/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc19f2c4b67297daaf0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc19f2c4b67297daaf0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc19f2c4b67297daaf0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bc19f2c4b67297daaf0/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bc19f2c4b67297daaf0%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bc19f2c4b67297daaf0",
+      "self": "https://api.osf.io/v2/files/68ad6bc19f2c4b67297daaf0/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bc2a0cc49947e7daadd",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI11.docx",
+      "kind": "file",
+      "path": "/68ad6bc2a0cc49947e7daadd",
+      "size": 41034,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI11.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:38.749753",
+      "date_created": "2025-08-26T08:09:38.749753Z",
+      "extra": {
+        "hashes": {
+          "md5": "1f9368e8ad53bf3e2e1de991fe327cc0",
+          "sha256": "06ebcf5ae88804dc41c576b41f2f1f1578cdb3eb9ce56f712c060a9613ec15af"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc2a0cc49947e7daadd/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc2a0cc49947e7daadd/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bc2a0cc49947e7daadd/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc2a0cc49947e7daadd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc2a0cc49947e7daadd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc2a0cc49947e7daadd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bc2a0cc49947e7daadd/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bc2a0cc49947e7daadd%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bc2a0cc49947e7daadd",
+      "self": "https://api.osf.io/v2/files/68ad6bc2a0cc49947e7daadd/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bc8118c3d7f3b161ed9",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI12.docx",
+      "kind": "file",
+      "path": "/68ad6bc8118c3d7f3b161ed9",
+      "size": 31988,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI12.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:44.535219",
+      "date_created": "2025-08-26T08:09:44.535219Z",
+      "extra": {
+        "hashes": {
+          "md5": "b03af464aaad74a4c14798359def3d50",
+          "sha256": "ac0b27dc6368c8e62b64f143f6bec6411c4524d6711f4e1f797a5d8be8b5cb28"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc8118c3d7f3b161ed9/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc8118c3d7f3b161ed9/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bc8118c3d7f3b161ed9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8118c3d7f3b161ed9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8118c3d7f3b161ed9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8118c3d7f3b161ed9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bc8118c3d7f3b161ed9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bc8118c3d7f3b161ed9%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bc8118c3d7f3b161ed9",
+      "self": "https://api.osf.io/v2/files/68ad6bc8118c3d7f3b161ed9/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bc8faa45c65cfbcf40f",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI13.docx",
+      "kind": "file",
+      "path": "/68ad6bc8faa45c65cfbcf40f",
+      "size": 48049,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI13.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:44.777892",
+      "date_created": "2025-08-26T08:09:44.777892Z",
+      "extra": {
+        "hashes": {
+          "md5": "e0e5b5a3074207f87b8813f5e9ea86a8",
+          "sha256": "b96bb263029948ad4e0f3d8b299e73c39625a6bbd1373e8731b10b72dfc1f01a"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc8faa45c65cfbcf40f/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bc8faa45c65cfbcf40f/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bc8faa45c65cfbcf40f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8faa45c65cfbcf40f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8faa45c65cfbcf40f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bc8faa45c65cfbcf40f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bc8faa45c65cfbcf40f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bc8faa45c65cfbcf40f%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bc8faa45c65cfbcf40f",
+      "self": "https://api.osf.io/v2/files/68ad6bc8faa45c65cfbcf40f/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bce04ad4b8de0bcbf43",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI14.docx",
+      "kind": "file",
+      "path": "/68ad6bce04ad4b8de0bcbf43",
+      "size": 58520,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI14.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:50.415288",
+      "date_created": "2025-08-26T08:09:50.415288Z",
+      "extra": {
+        "hashes": {
+          "md5": "b1688fb57d009226f466a5f5ecc05188",
+          "sha256": "f74411718429eb1cc1d32e78311530f65f9c7182569b46498931761b411c617c"
+        },
+        "downloads": 10
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bce04ad4b8de0bcbf43/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bce04ad4b8de0bcbf43/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bce04ad4b8de0bcbf43/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bce04ad4b8de0bcbf43?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bce04ad4b8de0bcbf43?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bce04ad4b8de0bcbf43?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bce04ad4b8de0bcbf43/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bce04ad4b8de0bcbf43%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bce04ad4b8de0bcbf43",
+      "self": "https://api.osf.io/v2/files/68ad6bce04ad4b8de0bcbf43/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bcb851f052267bcf4e9",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI15.docx",
+      "kind": "file",
+      "path": "/68ad6bcb851f052267bcf4e9",
+      "size": 61014,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI15.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:47.172111",
+      "date_created": "2025-08-26T08:09:47.172111Z",
+      "extra": {
+        "hashes": {
+          "md5": "7fed6448e10e8c08e32d8c6efb0a4d5a",
+          "sha256": "df196ce93ed1632d6a5cbc84d18fe7a01ec642f19a16aa766696ef723394fafb"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bcb851f052267bcf4e9/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bcb851f052267bcf4e9/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bcb851f052267bcf4e9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bcb851f052267bcf4e9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bcb851f052267bcf4e9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bcb851f052267bcf4e9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bcb851f052267bcf4e9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bcb851f052267bcf4e9%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bcb851f052267bcf4e9",
+      "self": "https://api.osf.io/v2/files/68ad6bcb851f052267bcf4e9/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bd159ed9a4d3c161ecf",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI16.docx",
+      "kind": "file",
+      "path": "/68ad6bd159ed9a4d3c161ecf",
+      "size": 53878,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI16.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:53.492740",
+      "date_created": "2025-08-26T08:09:53.492740Z",
+      "extra": {
+        "hashes": {
+          "md5": "b202de8fa70c4ab9de2f48af2021eddb",
+          "sha256": "dfcf26dccc78956871619cfb7f57e1093b06249cbf0040b2e11e39a1dff6002d"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd159ed9a4d3c161ecf/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd159ed9a4d3c161ecf/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bd159ed9a4d3c161ecf/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd159ed9a4d3c161ecf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd159ed9a4d3c161ecf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd159ed9a4d3c161ecf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bd159ed9a4d3c161ecf/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bd159ed9a4d3c161ecf%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bd159ed9a4d3c161ecf",
+      "self": "https://api.osf.io/v2/files/68ad6bd159ed9a4d3c161ecf/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bd39f2c4b67297daaf4",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI17.docx",
+      "kind": "file",
+      "path": "/68ad6bd39f2c4b67297daaf4",
+      "size": 50765,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI17.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:55.545621",
+      "date_created": "2025-08-26T08:09:55.545621Z",
+      "extra": {
+        "hashes": {
+          "md5": "fb6eb24f906f294321dd9129d0e45aee",
+          "sha256": "6ce357cbbe629dd95be189b839c1bcf19e68e289e00846c648af770e1150793e"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd39f2c4b67297daaf4/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd39f2c4b67297daaf4/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bd39f2c4b67297daaf4/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd39f2c4b67297daaf4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd39f2c4b67297daaf4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd39f2c4b67297daaf4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bd39f2c4b67297daaf4/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bd39f2c4b67297daaf4%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bd39f2c4b67297daaf4",
+      "self": "https://api.osf.io/v2/files/68ad6bd39f2c4b67297daaf4/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bd6d97786b3c7affd87",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI18.docx",
+      "kind": "file",
+      "path": "/68ad6bd6d97786b3c7affd87",
+      "size": 56040,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI18.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:09:58.792346",
+      "date_created": "2025-08-26T08:09:58.792346Z",
+      "extra": {
+        "hashes": {
+          "md5": "286cbd501979d5091745d3baffcb61cc",
+          "sha256": "bf1df80196c8bc6cb54152ec03f9083aec0e066f418e652f48de02ed501f6f85"
+        },
+        "downloads": 14
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd6d97786b3c7affd87/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd6d97786b3c7affd87/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bd6d97786b3c7affd87/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd6d97786b3c7affd87?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd6d97786b3c7affd87?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd6d97786b3c7affd87?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bd6d97786b3c7affd87/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bd6d97786b3c7affd87%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bd6d97786b3c7affd87",
+      "self": "https://api.osf.io/v2/files/68ad6bd6d97786b3c7affd87/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bd90fc5088f557da795",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI19.docx",
+      "kind": "file",
+      "path": "/68ad6bd90fc5088f557da795",
+      "size": 47398,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI19.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:01.484814",
+      "date_created": "2025-08-26T08:10:01.484814Z",
+      "extra": {
+        "hashes": {
+          "md5": "e83116b1fb11722006c4b5109b2b5ca2",
+          "sha256": "b9da86674d5c0663b744e7a23223d4b6015da3cc53e2b310540cb905e0bb0917"
+        },
+        "downloads": 14
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd90fc5088f557da795/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bd90fc5088f557da795/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bd90fc5088f557da795/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd90fc5088f557da795?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd90fc5088f557da795?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bd90fc5088f557da795?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bd90fc5088f557da795/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bd90fc5088f557da795%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bd90fc5088f557da795",
+      "self": "https://api.osf.io/v2/files/68ad6bd90fc5088f557da795/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bdbfaa45c65cfbcf417",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI20.docx",
+      "kind": "file",
+      "path": "/68ad6bdbfaa45c65cfbcf417",
+      "size": 61494,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI20.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:03.717129",
+      "date_created": "2025-08-26T08:10:03.717129Z",
+      "extra": {
+        "hashes": {
+          "md5": "2821e4a772c9a1f6e99aa935665b3503",
+          "sha256": "46c5d0aa7da230270da86d71e898327aaaf7ee60bb66865b3524aaf08e064f44"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdbfaa45c65cfbcf417/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdbfaa45c65cfbcf417/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bdbfaa45c65cfbcf417/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdbfaa45c65cfbcf417?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdbfaa45c65cfbcf417?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdbfaa45c65cfbcf417?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bdbfaa45c65cfbcf417/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bdbfaa45c65cfbcf417%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bdbfaa45c65cfbcf417",
+      "self": "https://api.osf.io/v2/files/68ad6bdbfaa45c65cfbcf417/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bdf59ed9a4d3c161ed1",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI21.docx",
+      "kind": "file",
+      "path": "/68ad6bdf59ed9a4d3c161ed1",
+      "size": 49662,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI21.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:07.340445",
+      "date_created": "2025-08-26T08:10:07.340445Z",
+      "extra": {
+        "hashes": {
+          "md5": "f6aca6ad44a909f03dc427b326e386e0",
+          "sha256": "98beeade6a60925f8165314db4bd09a0842cb2bb5b36d698ce740283b6e58722"
+        },
+        "downloads": 14
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdf59ed9a4d3c161ed1/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdf59ed9a4d3c161ed1/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bdf59ed9a4d3c161ed1/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdf59ed9a4d3c161ed1?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdf59ed9a4d3c161ed1?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdf59ed9a4d3c161ed1?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bdf59ed9a4d3c161ed1/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bdf59ed9a4d3c161ed1%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bdf59ed9a4d3c161ed1",
+      "self": "https://api.osf.io/v2/files/68ad6bdf59ed9a4d3c161ed1/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bdff5b33ef1ebbcf6e4",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI22.docx",
+      "kind": "file",
+      "path": "/68ad6bdff5b33ef1ebbcf6e4",
+      "size": 56125,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI22.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:07.882891",
+      "date_created": "2025-08-26T08:10:07.882891Z",
+      "extra": {
+        "hashes": {
+          "md5": "f04b304cd46b7e7fa8c03bafbbb083fe",
+          "sha256": "c153f10107c5c0ede3b95ec2d58aa81dbee28bfb02e2683bcd378deea37db4d5"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdff5b33ef1ebbcf6e4/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bdff5b33ef1ebbcf6e4/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bdff5b33ef1ebbcf6e4/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdff5b33ef1ebbcf6e4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdff5b33ef1ebbcf6e4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bdff5b33ef1ebbcf6e4?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bdff5b33ef1ebbcf6e4/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bdff5b33ef1ebbcf6e4%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bdff5b33ef1ebbcf6e4",
+      "self": "https://api.osf.io/v2/files/68ad6bdff5b33ef1ebbcf6e4/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6be236c79ff70fbcbe25",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI23.docx",
+      "kind": "file",
+      "path": "/68ad6be236c79ff70fbcbe25",
+      "size": 37446,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI23.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:11.036101",
+      "date_created": "2025-08-26T08:10:11.036101Z",
+      "extra": {
+        "hashes": {
+          "md5": "d0fdc809a225ee3ea7a2a4d791769efe",
+          "sha256": "64a5da37378710534271e4caee3e0cf2bef5dad6a19f71801f4e1fb278ce5c8a"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be236c79ff70fbcbe25/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be236c79ff70fbcbe25/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6be236c79ff70fbcbe25/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be236c79ff70fbcbe25?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be236c79ff70fbcbe25?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be236c79ff70fbcbe25?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6be236c79ff70fbcbe25/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6be236c79ff70fbcbe25%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6be236c79ff70fbcbe25",
+      "self": "https://api.osf.io/v2/files/68ad6be236c79ff70fbcbe25/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6be579c0f3c423bcbe89",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI24.docx",
+      "kind": "file",
+      "path": "/68ad6be579c0f3c423bcbe89",
+      "size": 33679,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI24.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:13.082871",
+      "date_created": "2025-08-26T08:10:13.082871Z",
+      "extra": {
+        "hashes": {
+          "md5": "685481b2b0141f9694a24dcbc6b201d0",
+          "sha256": "75af892f570ecd1faf94757781e773865100b05d2e3eadc574271a455de9a6d5"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be579c0f3c423bcbe89/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be579c0f3c423bcbe89/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6be579c0f3c423bcbe89/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be579c0f3c423bcbe89?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be579c0f3c423bcbe89?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be579c0f3c423bcbe89?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6be579c0f3c423bcbe89/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6be579c0f3c423bcbe89%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6be579c0f3c423bcbe89",
+      "self": "https://api.osf.io/v2/files/68ad6be579c0f3c423bcbe89/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6be71a4be2298baffbd8",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI25.docx",
+      "kind": "file",
+      "path": "/68ad6be71a4be2298baffbd8",
+      "size": 30901,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI25.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:15.708918",
+      "date_created": "2025-08-26T08:10:15.708918Z",
+      "extra": {
+        "hashes": {
+          "md5": "b3cc520e2081a03c0a21388981742fc1",
+          "sha256": "05e0b8939ae42cf941d5b5005cd96798c31491cdb755991fb20428f88e06b618"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be71a4be2298baffbd8/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6be71a4be2298baffbd8/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6be71a4be2298baffbd8/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be71a4be2298baffbd8?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be71a4be2298baffbd8?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6be71a4be2298baffbd8?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6be71a4be2298baffbd8/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6be71a4be2298baffbd8%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6be71a4be2298baffbd8",
+      "self": "https://api.osf.io/v2/files/68ad6be71a4be2298baffbd8/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bea09dbbd77ab7da84f",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI26.docx",
+      "kind": "file",
+      "path": "/68ad6bea09dbbd77ab7da84f",
+      "size": 34270,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI26.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:18.859893",
+      "date_created": "2025-08-26T08:10:18.859893Z",
+      "extra": {
+        "hashes": {
+          "md5": "46be0350a55aee6ad3e126e9147d1230",
+          "sha256": "7e0e74e1c9b2a38266d63dd320e60dc31d8106002d0c2a16cd340dc86b4d3d13"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bea09dbbd77ab7da84f/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bea09dbbd77ab7da84f/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bea09dbbd77ab7da84f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bea09dbbd77ab7da84f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bea09dbbd77ab7da84f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bea09dbbd77ab7da84f?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bea09dbbd77ab7da84f/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bea09dbbd77ab7da84f%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bea09dbbd77ab7da84f",
+      "self": "https://api.osf.io/v2/files/68ad6bea09dbbd77ab7da84f/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bf1118c3d7f3b161ee0",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI27.docx",
+      "kind": "file",
+      "path": "/68ad6bf1118c3d7f3b161ee0",
+      "size": 38048,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI27.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:25.522365",
+      "date_created": "2025-08-26T08:10:25.522365Z",
+      "extra": {
+        "hashes": {
+          "md5": "416d1fc2a7a8c10a32a9b9bc64832f25",
+          "sha256": "22404f42d23b0b70a6bc8c120270cbf1e9275a23dc078d35393690808428e317"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf1118c3d7f3b161ee0/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf1118c3d7f3b161ee0/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bf1118c3d7f3b161ee0/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf1118c3d7f3b161ee0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf1118c3d7f3b161ee0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf1118c3d7f3b161ee0?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bf1118c3d7f3b161ee0/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bf1118c3d7f3b161ee0%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bf1118c3d7f3b161ee0",
+      "self": "https://api.osf.io/v2/files/68ad6bf1118c3d7f3b161ee0/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bf0faa45c65cfbcf41b",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI28.docx",
+      "kind": "file",
+      "path": "/68ad6bf0faa45c65cfbcf41b",
+      "size": 37864,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI28.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:24.331795",
+      "date_created": "2025-08-26T08:10:24.331795Z",
+      "extra": {
+        "hashes": {
+          "md5": "f0b8b9b7035b88ad1efa79801d10eae5",
+          "sha256": "edb4c99ec1ad4c77913da9d4a1109b3ef3e798a92b4777d5fd0fca453fa9d2dd"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf0faa45c65cfbcf41b/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf0faa45c65cfbcf41b/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bf0faa45c65cfbcf41b/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf0faa45c65cfbcf41b?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf0faa45c65cfbcf41b?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf0faa45c65cfbcf41b?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bf0faa45c65cfbcf41b/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bf0faa45c65cfbcf41b%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bf0faa45c65cfbcf41b",
+      "self": "https://api.osf.io/v2/files/68ad6bf0faa45c65cfbcf41b/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bf4c03db9f4a0bcf633",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI29.docx",
+      "kind": "file",
+      "path": "/68ad6bf4c03db9f4a0bcf633",
+      "size": 40624,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI29.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:28.566336",
+      "date_created": "2025-08-26T08:10:28.566336Z",
+      "extra": {
+        "hashes": {
+          "md5": "a79cad164bc1f34a4755c3a18ac84424",
+          "sha256": "fbc7f6ab880d4f4a5fef30f14a2098df8f25739ba489f155f92b75bad704e41e"
+        },
+        "downloads": 14
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf4c03db9f4a0bcf633/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf4c03db9f4a0bcf633/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bf4c03db9f4a0bcf633/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf4c03db9f4a0bcf633?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf4c03db9f4a0bcf633?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf4c03db9f4a0bcf633?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bf4c03db9f4a0bcf633/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bf4c03db9f4a0bcf633%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bf4c03db9f4a0bcf633",
+      "self": "https://api.osf.io/v2/files/68ad6bf4c03db9f4a0bcf633/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bf5cd49d46a417da950",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI30.docx",
+      "kind": "file",
+      "path": "/68ad6bf5cd49d46a417da950",
+      "size": 40648,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI30.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:29.984921",
+      "date_created": "2025-08-26T08:10:29.984921Z",
+      "extra": {
+        "hashes": {
+          "md5": "c2fa1976e4d28706616d01730e646322",
+          "sha256": "be7749e4200c270f32cdc8dd64540af6a2fcaea90194de892674c7485d879136"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf5cd49d46a417da950/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf5cd49d46a417da950/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bf5cd49d46a417da950/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf5cd49d46a417da950?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf5cd49d46a417da950?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf5cd49d46a417da950?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bf5cd49d46a417da950/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bf5cd49d46a417da950%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bf5cd49d46a417da950",
+      "self": "https://api.osf.io/v2/files/68ad6bf5cd49d46a417da950/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bf7c03db9f4a0bcf635",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI31.docx",
+      "kind": "file",
+      "path": "/68ad6bf7c03db9f4a0bcf635",
+      "size": 35943,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI31.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:31.913440",
+      "date_created": "2025-08-26T08:10:31.913440Z",
+      "extra": {
+        "hashes": {
+          "md5": "4362b82a68550f00ae64d9e6a5885855",
+          "sha256": "6ea932a05f4a791b0bc46314ed7a09fb6ee5c3fa0cd053cb67763a12611bbf01"
+        },
+        "downloads": 12
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf7c03db9f4a0bcf635/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bf7c03db9f4a0bcf635/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bf7c03db9f4a0bcf635/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf7c03db9f4a0bcf635?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf7c03db9f4a0bcf635?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bf7c03db9f4a0bcf635?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bf7c03db9f4a0bcf635/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bf7c03db9f4a0bcf635%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bf7c03db9f4a0bcf635",
+      "self": "https://api.osf.io/v2/files/68ad6bf7c03db9f4a0bcf635/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bfb59ed9a4d3c161ed7",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI32.docx",
+      "kind": "file",
+      "path": "/68ad6bfb59ed9a4d3c161ed7",
+      "size": 50548,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI32.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:35.489150",
+      "date_created": "2025-08-26T08:10:35.489150Z",
+      "extra": {
+        "hashes": {
+          "md5": "5d333ef448b6027ad4bd5681c7d8be0f",
+          "sha256": "22f66a1d034e8fdc4671bc1894eac039fc9fb7955a30a6876ee53687c9f11d56"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bfb59ed9a4d3c161ed7/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bfb59ed9a4d3c161ed7/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bfb59ed9a4d3c161ed7/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfb59ed9a4d3c161ed7?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfb59ed9a4d3c161ed7?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfb59ed9a4d3c161ed7?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bfb59ed9a4d3c161ed7/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bfb59ed9a4d3c161ed7%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bfb59ed9a4d3c161ed7",
+      "self": "https://api.osf.io/v2/files/68ad6bfb59ed9a4d3c161ed7/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bfc5813c2b027affe5a",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI33.docx",
+      "kind": "file",
+      "path": "/68ad6bfc5813c2b027affe5a",
+      "size": 34874,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI33.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:36.348371",
+      "date_created": "2025-08-26T08:10:36.348371Z",
+      "extra": {
+        "hashes": {
+          "md5": "c6b19cfe21a0f2770cf27c91174acb3f",
+          "sha256": "ef7f987a5bd7a4caa7d39132793b23f589e392fc7591e4c82ed314cd65db8e50"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bfc5813c2b027affe5a/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bfc5813c2b027affe5a/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bfc5813c2b027affe5a/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfc5813c2b027affe5a?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfc5813c2b027affe5a?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bfc5813c2b027affe5a?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bfc5813c2b027affe5a/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bfc5813c2b027affe5a%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bfc5813c2b027affe5a",
+      "self": "https://api.osf.io/v2/files/68ad6bfc5813c2b027affe5a/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6bff01528a5562affe1e",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI34.docx",
+      "kind": "file",
+      "path": "/68ad6bff01528a5562affe1e",
+      "size": 39490,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI34.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:39.917228",
+      "date_created": "2025-08-26T08:10:39.917228Z",
+      "extra": {
+        "hashes": {
+          "md5": "8ae3f96d9eb40c07a2e0a23c084db435",
+          "sha256": "8c2c7fedc9e02e2366926d9263a9985836c6ea9aa6dc6d5b1fc517f21275ded9"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bff01528a5562affe1e/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6bff01528a5562affe1e/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6bff01528a5562affe1e/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bff01528a5562affe1e?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bff01528a5562affe1e?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6bff01528a5562affe1e?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6bff01528a5562affe1e/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6bff01528a5562affe1e%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6bff01528a5562affe1e",
+      "self": "https://api.osf.io/v2/files/68ad6bff01528a5562affe1e/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c025813c2b027affe5c",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI35.docx",
+      "kind": "file",
+      "path": "/68ad6c025813c2b027affe5c",
+      "size": 37341,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI35.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:42.359348",
+      "date_created": "2025-08-26T08:10:42.359348Z",
+      "extra": {
+        "hashes": {
+          "md5": "93b25f2cb25efd0ed1e8ad59993925c8",
+          "sha256": "e380b90bec74d939129718a41d77805b42c290209e1bf8664aad7dcb94851408"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c025813c2b027affe5c/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c025813c2b027affe5c/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c025813c2b027affe5c/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c025813c2b027affe5c?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c025813c2b027affe5c?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c025813c2b027affe5c?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c025813c2b027affe5c/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c025813c2b027affe5c%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c025813c2b027affe5c",
+      "self": "https://api.osf.io/v2/files/68ad6c025813c2b027affe5c/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c051a4be2298baffbdd",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI36.docx",
+      "kind": "file",
+      "path": "/68ad6c051a4be2298baffbdd",
+      "size": 50331,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI36.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:45.764010",
+      "date_created": "2025-08-26T08:10:45.764010Z",
+      "extra": {
+        "hashes": {
+          "md5": "53c4a6d0ac879173e3b369296a0791d1",
+          "sha256": "a8c5f7a0f42aa2a5793f47d3837cec19117caf3045f92a55f1b4343a42402b8c"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c051a4be2298baffbdd/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c051a4be2298baffbdd/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c051a4be2298baffbdd/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c051a4be2298baffbdd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c051a4be2298baffbdd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c051a4be2298baffbdd?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c051a4be2298baffbdd/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c051a4be2298baffbdd%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c051a4be2298baffbdd",
+      "self": "https://api.osf.io/v2/files/68ad6c051a4be2298baffbdd/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c081a4be2298baffbdf",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI37.docx",
+      "kind": "file",
+      "path": "/68ad6c081a4be2298baffbdf",
+      "size": 42038,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI37.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:48.188159",
+      "date_created": "2025-08-26T08:10:48.188159Z",
+      "extra": {
+        "hashes": {
+          "md5": "5c27759601c275dcf55942466fd79dd1",
+          "sha256": "0c9d6372d489de37f3d4317de476700f98be3a9b8a6de99ae0f3ab04ad118f4d"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c081a4be2298baffbdf/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c081a4be2298baffbdf/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c081a4be2298baffbdf/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c081a4be2298baffbdf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c081a4be2298baffbdf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c081a4be2298baffbdf?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c081a4be2298baffbdf/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c081a4be2298baffbdf%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c081a4be2298baffbdf",
+      "self": "https://api.osf.io/v2/files/68ad6c081a4be2298baffbdf/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c0dcd49d46a417da953",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI38.docx",
+      "kind": "file",
+      "path": "/68ad6c0dcd49d46a417da953",
+      "size": 41182,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI38.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:53.320580",
+      "date_created": "2025-08-26T08:10:53.320580Z",
+      "extra": {
+        "hashes": {
+          "md5": "369a0c1f501b0c9e6834b8a27d71bca0",
+          "sha256": "88c0d0370af6b5206e8c60df682ce7f38964f8016642297ea8bab1277b5308e2"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c0dcd49d46a417da953/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c0dcd49d46a417da953/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c0dcd49d46a417da953/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0dcd49d46a417da953?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0dcd49d46a417da953?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0dcd49d46a417da953?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c0dcd49d46a417da953/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c0dcd49d46a417da953%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c0dcd49d46a417da953",
+      "self": "https://api.osf.io/v2/files/68ad6c0dcd49d46a417da953/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c0d62a120e16abcbee9",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI39.docx",
+      "kind": "file",
+      "path": "/68ad6c0d62a120e16abcbee9",
+      "size": 43376,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI39.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:53.408840",
+      "date_created": "2025-08-26T08:10:53.408840Z",
+      "extra": {
+        "hashes": {
+          "md5": "697d693491a011fc9a19b8b5867b15ad",
+          "sha256": "093d3eea94dfea299ad46a2d7fa546aa4f02aa5106a0582d44e8d308b040634b"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c0d62a120e16abcbee9/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c0d62a120e16abcbee9/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c0d62a120e16abcbee9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0d62a120e16abcbee9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0d62a120e16abcbee9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c0d62a120e16abcbee9?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c0d62a120e16abcbee9/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c0d62a120e16abcbee9%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c0d62a120e16abcbee9",
+      "self": "https://api.osf.io/v2/files/68ad6c0d62a120e16abcbee9/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6c12d88d6935187daa17",
+    "type": "files",
+    "attributes": {
+      "guid": null,
+      "checkout": null,
+      "name": "AI40.docx",
+      "kind": "file",
+      "path": "/68ad6c12d88d6935187daa17",
+      "size": 39670,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/AI40.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:10:58.712928",
+      "date_created": "2025-08-26T08:10:58.712928Z",
+      "extra": {
+        "hashes": {
+          "md5": "bf8e3da7564024edcfc57aa5289562dd",
+          "sha256": "9323c946e5bd48a4e2c4acf6acab0f10675f356b9e99c29294a8d8afade1dd41"
+        },
+        "downloads": 13
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c12d88d6935187daa17/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6c12d88d6935187daa17/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6c12d88d6935187daa17/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c12d88d6935187daa17?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c12d88d6935187daa17?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6c12d88d6935187daa17?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/68ad6c12d88d6935187daa17/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F68ad6c12d88d6935187daa17%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6c12d88d6935187daa17",
+      "self": "https://api.osf.io/v2/files/68ad6c12d88d6935187daa17/?view_only=f74d55edeaf441f39bbb6d6483259ead"
+    }
+  },
+  {
+    "id": "68ad6b8d118c3d7f3b161ecc",
+    "type": "files",
+    "attributes": {
+      "guid": "92mxr",
+      "checkout": null,
+      "name": "README.docx",
+      "kind": "file",
+      "path": "/68ad6b8d118c3d7f3b161ecc",
+      "size": 20274,
+      "provider": "osfstorage",
+      "materialized_path": "/Data/Results/AI-generated paper/README.docx",
+      "last_touched": null,
+      "date_modified": "2025-08-26T08:08:45.766801",
+      "date_created": "2025-08-26T08:08:45.766801Z",
+      "extra": {
+        "hashes": {
+          "md5": "5e805b1bb46bd88eefac65b04f937e35",
+          "sha256": "dc417713ef90adb7886885e5ea23c65281adeadf41102c361d6abfd72c960abd"
+        },
+        "downloads": 9
+      },
+      "tags": [],
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "show_as_unviewed": false
+    },
+    "relationships": {
+      "parent_folder": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b79cd3880a0fe161e37/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "68ad6b79cd3880a0fe161e37",
+          "type": "files"
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b8d118c3d7f3b161ecc/versions/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/comments/?filter%5Btarget%5D=92mxr&view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        },
+        "data": {
+          "id": "4p5ab",
+          "type": "nodes"
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/nodes/4p5ab/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        },
+        "data": {
+          "type": "nodes",
+          "id": "4p5ab"
+        }
+      },
+      "cedar_metadata_records": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/files/68ad6b8d118c3d7f3b161ecc/cedar_metadata_records/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "https://api.osf.io/v2/files/68ad6b8d118c3d7f3b161ecc/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "move": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6b8d118c3d7f3b161ecc?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "upload": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6b8d118c3d7f3b161ecc?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "delete": "https://files.osf.io/v1/resources/4p5ab/providers/osfstorage/68ad6b8d118c3d7f3b161ecc?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "download": "https://osf.io/download/92mxr/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "render": "https://mfr.osf.io/render?url=https%3A%2F%2Fosf.io%2Fdownload%2F92mxr%2F%3Fdirect%26mode%3Drender",
+      "html": "https://osf.io/4p5ab/files/osfstorage/68ad6b8d118c3d7f3b161ecc",
+      "self": "https://api.osf.io/v2/files/68ad6b8d118c3d7f3b161ecc/?view_only=f74d55edeaf441f39bbb6d6483259ead",
+      "iri": "https://osf.io/92mxr"
+    }
+  }
+]

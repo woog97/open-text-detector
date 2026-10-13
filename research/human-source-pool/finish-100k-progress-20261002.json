@@ -1,0 +1,62 @@
+{
+  "state": "complete_100000_privately_published_and_verified",
+  "current_candidates": 100000,
+  "target": 100000,
+  "remaining": 0,
+  "newly_merged": {
+    "wikivoyage": 110,
+    "scidev": 33,
+    "cccc": 1
+  },
+  "remaining_original_quotas": {
+    "scp": 2551,
+    "ellipse": 1226,
+    "eff": 406,
+    "cccc": 318,
+    "scidev": 65,
+    "persuade": 37
+  },
+  "documented_unfillable": {
+    "ellipse": 1226,
+    "persuade": 37
+  },
+  "proposal_constraints": [
+    "Only already-approved sources",
+    "Preserve category totals",
+    "Exclude protected ASAP prompt families",
+    "Preserve all prior candidates, dedup, provenance, and quarantine",
+    "Supply and validation required before any replacement counted"
+  ],
+  "automation_deleted": true,
+  "new_storage_approval": "User approved existing private HF dataset and recovery bucket in current chat",
+  "storage_destinations": [
+    "open-text-detector/human-source-mix-v1",
+    "open-text-detector/training-storage"
+  ],
+  "notes": [
+    "User explicitly authorized source quota reallocation in this chat.",
+    "All previous rows and protected-family exclusions preserved.",
+    "No 1M phase or Luna changes in this continuation."
+  ],
+  "quota_reallocation_authorization": "Yes, reallocate shortages to reach 100,000",
+  "approved_applied_topups": {
+    "asap2": 1263,
+    "gutenberg": 2551,
+    "foodista": 724,
+    "voa": 65
+  },
+  "category_totals_unchanged": true,
+  "publication": {
+    "repo_id": "open-text-detector/human-source-mix-v1",
+    "url": "https://huggingface.co/datasets/open-text-detector/human-source-mix-v1",
+    "private": true,
+    "revision": "43c15c7f543690b0a92524c441527f7c4a4129f2",
+    "candidate_passages": 100000,
+    "admitted_passages": 0,
+    "shortfall": 0,
+    "files_verified": 160,
+    "bytes_uploaded": 659156824,
+    "verified_at": "2026-10-02T19:46:53.618124+00:00"
+  },
+  "newly_added_this_chat": 4747
+}

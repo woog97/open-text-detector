@@ -1,0 +1,12 @@
+{
+  "state": "deployment_interrupted_by_space_hardware_transition",
+  "space": "open-text-detector/training",
+  "runtime_error": "Scheduling failure: unable to schedule",
+  "requested_hardware": "l40sx4",
+  "current_hardware": null,
+  "user_clarification_pending": true,
+  "optimization_results": "Completed matched BF16 learning checks, maximum-length tests, and independent trained-checkpoint parity check. Selected FLA 0.5.2, microbatch8 stage1 and4 stage2, effective32, unchanged frozen-weight storage.",
+  "deployment": "Release script interrupted during remote archive/hash step before source uploads and before writing the production gate. Recheck actual remote state after recovery.",
+  "recovery": "Confirm intended hardware; do not blindly apply A100 batch sizes to 48GB devices. Check persistent files and process liveness, restore a single controller, re-profile if hardware changes, then release validated gate.",
+  "local_sources_staged": true
+}

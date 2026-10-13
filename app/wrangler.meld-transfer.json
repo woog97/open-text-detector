@@ -1,0 +1,20 @@
+{
+  "name": "open-text-detector-meld-transfer",
+  "account_id": "6147916993a1cbfa4e3898aaeed27ae3",
+  "main": "meld-transfer/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "pangram-paper-atlas"
+    }
+  ],
+  "vars": {
+    "TOKEN_SHA256": "04c7bd4e130fb9db99499c85a6e011472988d6e3c69d02cc08ebf277b9691ad9",
+    "EXPIRES_AT": "1790301202"
+  },
+  "observability": {
+    "enabled": false
+  }
+}

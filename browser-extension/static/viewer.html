@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Open Text Detector</title>
+<link rel="stylesheet" href="pdfjs/pdf_viewer.css">
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<header>
+  <div class="head">
+    <span class="brand">Open Text Detector · Qwen3.6 35B MoE</span>
+    <h1 id="title">Loading…</h1>
+    <p id="status"></p>
+  </div>
+  <div class="score"><b id="share">—</b><span id="share-detail"></span></div>
+  <div class="controls">
+    <label>Count <select id="sections"></select></label>
+    <label>FPR <select id="fpr"></select></label>
+    <span class="zoom"><button id="zoom-out" title="Zoom out">−</button><button id="zoom-in" title="Zoom in">+</button></span>
+    <span class="links"><a id="forum">Forum</a><a id="original">Original PDF</a><a id="site" target="_blank">Paper page</a></span>
+  </div>
+</header>
+<main>
+  <div id="pages"></div>
+  <aside>
+    <h2>Flagged sentences <span id="flagged-count"></span></h2>
+    <p class="legend"><i class="medium"></i> At or above the FPR cutoff <i class="high"></i> Score 0.80 or above</p>
+    <p class="note">Shows the PDF version Open Text Detector scored, which can be older than OpenReview's current one.</p>
+    <ol id="flagged"></ol>
+  </aside>
+</main>
+<div id="tip" hidden></div>
+<script type="module" src="viewer.js"></script>
+</body>
+</html>

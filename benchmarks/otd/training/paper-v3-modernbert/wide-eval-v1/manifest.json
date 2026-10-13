@@ -1,0 +1,222 @@
+{
+  "version": "wide-eval-v1",
+  "created_at": 1790822632.625737,
+  "checkpoint_sha256": "707a6f1f5ed491a351abee473c8e3f7beebe639a2534953926a4e0e6b576ff14",
+  "thresholds": {
+    "frozen_at": 1790821967.5103025,
+    "target_human_fpr": 0.01,
+    "tokens": 0.8947894573211671,
+    "sentences": 0.9562724232673646
+  },
+  "frozen_model_and_thresholds": true,
+  "new_generation_calls": 0,
+  "evaluation_rows": 65348,
+  "unique_evaluation_texts": 63035,
+  "by_dataset": {
+    "human_paper_remaining": 18222,
+    "pelic": 2000,
+    "vub": 40,
+    "perkins": 114,
+    "liang": 270,
+    "meld_eval": 7424,
+    "detectrl": 18827,
+    "epoch": 1089,
+    "opai": 8748,
+    "sem_detect": 1109,
+    "gede": 1448,
+    "saha": 72,
+    "local_binary": 160,
+    "local_length": 300,
+    "local_mixed": 192,
+    "arena50": 4898,
+    "paper_pilots_exploratory": 435
+  },
+  "source_sampling": {
+    "pelic": {
+      "eligible": 18193,
+      "selected": 2000,
+      "strata": 1,
+      "per_stratum": 2000,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "vub": {
+      "eligible": 40,
+      "selected": 40,
+      "strata": 1,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "perkins": {
+      "eligible": 114,
+      "selected": 114,
+      "strata": 11,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "liang": {
+      "eligible": 270,
+      "selected": 270,
+      "strata": 3,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "meld_eval": {
+      "eligible": 227998,
+      "selected": 7424,
+      "strata": 232,
+      "per_stratum": 32,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "detectrl": {
+      "eligible": 48404,
+      "selected": 18827,
+      "strata": 621,
+      "per_stratum": 32,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "epoch": {
+      "eligible": 1089,
+      "selected": 1089,
+      "strata": 21,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "opai": {
+      "eligible": 8748,
+      "selected": 8748,
+      "strata": 62,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "sem_detect": {
+      "eligible": 1109,
+      "selected": 1109,
+      "strata": 9,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "gede": {
+      "eligible": 13217,
+      "selected": 1448,
+      "strata": 46,
+      "per_stratum": 32,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    },
+    "saha": {
+      "eligible": 72,
+      "selected": 72,
+      "strata": 28,
+      "per_stratum": 0,
+      "keys": [
+        "cohort",
+        "label",
+        "generator",
+        "domain",
+        "attack"
+      ],
+      "selection": "lowest SHA256(seed + id), independent of detector scores"
+    }
+  },
+  "human_remaining_total": 95334,
+  "human_remaining_by_split": {
+    "train": 57369,
+    "test": 18669,
+    "validation": 19296
+  },
+  "human_by_split_cohort": {
+    "train/previous_context": 7856,
+    "train/novel_body": 49513,
+    "test/novel_body": 16124,
+    "test/previous_context": 2545,
+    "validation/novel_body": 16696,
+    "validation/previous_context": 2600
+  },
+  "source_papers": 2000,
+  "target_paragraphs_excluded": 10001,
+  "extraction_errors": [],
+  "exclusions": {
+    "development_exposed": 427,
+    "cross_split_exact_duplicate": 20,
+    "mechanical_generation_screen": 102
+  },
+  "leakage_policy": "Paper splits preserved; fresh test paper IDs exclude all training/validation papers. All scored texts screened against actual training+validation examples for normalized exact paragraph/sentence matches and contiguous 32-word overlap. External author/source-paper identity generally unavailable; text screening cannot prove author-disjointness. Cross-split exact human duplicates excluded from scoring but retained with flags in human pools.",
+  "scope": "All extractable remaining body prose >=20 words from the established PDF extraction, excluding target paragraphs, headers, captions, small-font footnotes and material after reference/acknowledgment/appendix boundaries. Does not claim every physical paragraph is recovered. Modern OpenReview papers without human-authorship evidence are not labeled human.",
+  "metric_policy": "No threshold tuning or retraining. Report known span/historical-human metrics separately from document-native labels and ambiguous/polished cases. No pooled cross-benchmark headline score. Exact-text inference cached; counts and conflicts disclosed. Document classification uses >=50% of scored tokens above the frozen token threshold, an uncalibrated diagnostic rule.",
+  "files": {
+    "human_remaining_train.jsonl": "269fb03531f2777af39559a84542e143501a26dcd40fdd9503d107d2fe06df47",
+    "suite.jsonl": "5fc68909aedc301e142147eca9c84f9c9e999b1b3dc6b32c41dc40fda8c0bf25",
+    "human_remaining_test.jsonl": "98c61b20f1afa75cf3f65e4ffbc6cc204957ac9fcfa8a5637e01e5e6b150eb36",
+    "exclusions.jsonl": "36c96d698f428cfbd7329bcf73677294ed3541054a40204b795bfbe8459e2794",
+    "human_remaining_validation.jsonl": "dd715bcc1ce53fd5f9c063be1747defa79b32778f76c67fc1d27280eb04cd176"
+  }
+}

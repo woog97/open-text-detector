@@ -1,0 +1,21 @@
+{
+  "kind": "causal",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "micro_batch": 4,
+  "effective_batch": 32,
+  "stages": {
+    "1": {
+      "epochs": 1
+    },
+    "2": {
+      "epochs": 3
+    }
+  },
+  "precision": "bfloat16",
+  "tuning": "full",
+  "source_tokens_max": 510,
+  "inference_stride": 256,
+  "repeat2_stage2": true,
+  "optimizer": "adamw8bit"
+}

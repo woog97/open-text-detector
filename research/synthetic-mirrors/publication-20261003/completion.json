@@ -1,0 +1,38 @@
+{
+  "state": "verified",
+  "results": [
+    {
+      "state": "verified",
+      "repo": "woog/pangram-paper-text",
+      "revision": "a79fcf1ffcb45a20bf6c9728142d0fa974304e95",
+      "space_path": "/data/workspace/datasets/pangram-paper-text",
+      "rows": 14561,
+      "verified_files": {
+        "README.md": "abe7efb72cb81231950463a400e1010f160e39b927726430963efcf6a5e87611",
+        "data/batch-001.parquet": "2fb3ec7e1139808c0f3eea300d8f1a3d78b9e0ee11291ead7bdf020d6dbf1fcf"
+      },
+      "at": "2026-10-03T09:25:43.669659+00:00",
+      "private_source": true
+    },
+    {
+      "state": "verified",
+      "repo_id": "open-text-detector/synthetic-mirrors-luna-28120",
+      "revision": "ca5d52df1a20f9820ee2aaff83230542e69688a8",
+      "private": true,
+      "rows": 28120,
+      "space_path": "/data/workspace/datasets/synthetic-mirrors-luna-28120",
+      "parent_revision": "da73a03fdfa863d5c44418e988d50137bcb53c47",
+      "verified_files": {
+        "mirrors.jsonl": "799381dff4c3fba7b0192a143f9704c3a653168c934de96c83688bd79ad74783",
+        "provenance.json": "336e9d3d6769f591e0e9037411d75ac1842a7d57fb683b457cee4671eaeaa1e3",
+        "recovery-verification.json": "7d72dcfa3b20a3cc6532e9bb92422297b8cffdf1d9080608c9f31d6aba72e466",
+        "filter-protocol.json": "41a54a311f98468d0c6c7e1a8eb665215254835f96f6b725c036e5986fc16319",
+        "README.md": "ad826f4ed5f77b92f70189534e15578550a42b8d9a7c18354d2993be5517f4ac",
+        "data/train-00000-of-00001.parquet": "e315ba2cd4e05b5a14c3976f09da44c58f9f73d5c0614cb940ef1e8f0a1001f9",
+        "file_checksums.json": "e087213772e74953660158a55d8770831e3fd90386c75189e6f38607a9b29e94"
+      },
+      "at": "2026-10-03T09:28:07.163724+00:00"
+    }
+  ],
+  "at": "2026-10-03T09:28:07.267885+00:00"
+}

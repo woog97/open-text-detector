@@ -1,0 +1,28 @@
+{
+  "primary_evaluation_examples": 65348,
+  "distinct_primary_texts": 63035,
+  "benchmark_groups": 17,
+  "arena_generators": 50,
+  "human_paragraphs_extracted": 95334,
+  "human_pool_rows": {
+    "train": 57369,
+    "validation": 19296,
+    "test": 18669
+  },
+  "clean_novel_training_paragraphs": 23586,
+  "clean_novel_validation_paragraphs": 7895,
+  "clean_novel_test_paragraphs": 7713,
+  "arena_ai_token_recall": 0.009104526240645042,
+  "arena_ai_sentence_recall": 0.004218240695370587,
+  "opai_token_precision": 0.7903677657734696,
+  "opai_token_recall": 0.08248887243073534,
+  "opai_human_token_fpr": 0.02742276130928033,
+  "clean_novel_human_isolated_token_fpr": 0.056284142150533366,
+  "clean_novel_human_context_token_fpr": 0.035766075366003854,
+  "clean_novel_human_context_sentence_fpr": 0.023646980216715567,
+  "unchanged_model_and_thresholds": true,
+  "scorer_parity_passed": true,
+  "new_generation_calls": 0,
+  "primary_plus_context_scoring_seconds": 396.50035429000854,
+  "storage": "Local project and existing private Hugging Face training Space; public HF dataset unchanged."
+}

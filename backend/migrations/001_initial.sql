@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS schema_migrations(version TEXT PRIMARY KEY, applied_at TEXT NOT NULL);
+CREATE TABLE api_keys(id TEXT PRIMARY KEY,name TEXT NOT NULL,token_hash TEXT UNIQUE NOT NULL,scopes TEXT NOT NULL,created_at TEXT NOT NULL,revoked_at TEXT);
+CREATE TABLE models(id TEXT PRIMARY KEY,name TEXT NOT NULL,provider TEXT NOT NULL,task TEXT NOT NULL,model_id TEXT NOT NULL,base_model_id TEXT,endpoint TEXT,secret TEXT,enabled INTEGER NOT NULL DEFAULT 0,lower_threshold REAL NOT NULL,upper_threshold REAL NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE scans(id TEXT PRIMARY KEY,title TEXT NOT NULL,kind TEXT NOT NULL,text TEXT NOT NULL DEFAULT '',source TEXT NOT NULL DEFAULT 'text',model_snapshot TEXT NOT NULL,status TEXT NOT NULL,result TEXT,error TEXT,created_at TEXT NOT NULL,updated_at TEXT NOT NULL,batch_id TEXT,attempts INTEGER NOT NULL DEFAULT 0,lease_until REAL,worker_id TEXT,notes TEXT NOT NULL DEFAULT '',feedback TEXT,deleted_at TEXT,idempotency_key TEXT UNIQUE,request_hash TEXT,upload_path TEXT);
+CREATE INDEX idx_scans_created ON scans(created_at DESC);
+CREATE INDEX idx_scans_queue ON scans(status,lease_until,created_at) WHERE deleted_at IS NULL;
+CREATE INDEX idx_scans_batch ON scans(batch_id);
+CREATE TABLE corpus(id TEXT PRIMARY KEY,title TEXT NOT NULL,text TEXT NOT NULL,source_url TEXT,created_at TEXT NOT NULL);
+CREATE TABLE shares(id TEXT PRIMARY KEY,scan_id TEXT NOT NULL REFERENCES scans(id),token_hash TEXT UNIQUE NOT NULL,expires_at REAL NOT NULL,revoked_at TEXT);
+CREATE INDEX idx_shares_scan ON shares(scan_id);
+CREATE TABLE audit(id TEXT PRIMARY KEY,action TEXT NOT NULL,actor TEXT NOT NULL,target TEXT,created_at TEXT NOT NULL);

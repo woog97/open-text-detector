@@ -1,0 +1,36 @@
+{
+  "status": "pending_after_full_tuning_and_evaluation",
+  "objective": "Measure and improve Qwen3.5 LoRA throughput before its production training. No user approval required.",
+  "keep_fixed": [
+    "base revision",
+    "prepared data hashes and example order",
+    "rank 128 and alpha 32",
+    "all linear adapter coverage",
+    "effective batch 32",
+    "learning rates and optimizer semantics",
+    "stage objectives and epochs",
+    "selection and calibration rules"
+  ],
+  "measure": [
+    "BF16 forward, backward, optimizer and data preparation times separately",
+    "GPU peak allocation, utilization and supervised source tokens per second",
+    "representative source lengths for both single-copy stage 1 and Repeat2 stage 2",
+    "baseline micro-batch 1 with checkpointing and pinned software"
+  ],
+  "candidates": [
+    "increase micro-batch to 2, 4 or larger only with memory headroom, preserving effective batch 32",
+    "selective or disabled gradient checkpointing if memory permits",
+    "pre-tokenize frozen training rows once instead of encoding each epoch",
+    "inspect dtype casts and adapter GEMM overhead",
+    "consider optimized Qwen3.5 causal-convolution/GatedDeltaNet kernels only in an isolated environment with compatible pinned dependencies and BF16 numerical/gradient checks"
+  ],
+  "validation": [
+    "Use training-only examples, never test performance to choose optimizations",
+    "Use disposable profiling models; restart production LoRA from its pinned base and seed",
+    "Warm up, synchronize GPU timings and compare equal sample counts; include padding costs",
+    "Verify finite BF16 forward/backward and frozen base parameters; inspect micro-batch numerical differences without FP32 reference inference",
+    "Choose only demonstrated improvements; document no improvement if no safe candidate beats baseline",
+    "Write timing and memory results plus selected configuration; then optimization-ready.json with validated file hashes, bf16_verified, gradient_checks_passed, training_recipe_preserved and profiling_completed"
+  ],
+  "model_storage": "/data/workspace only"
+}

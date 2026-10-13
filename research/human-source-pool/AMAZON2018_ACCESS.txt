@@ -1,0 +1,11 @@
+Amazon 2018 original-source access follow-up, 2026-10-02
+
+Reuse source-approvals.json: proceed_research_candidates; underlying review rights unresolved; all rows remain quarantined. Full per-category review files only, not ratings-only or newer releases. Preserve product/rating diversity and user/product grouping.
+
+Fresh official index: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html
+The original 2018 index links current downloads at mcauleylab.ucsd.edu (not the older jmcauley hostname):
+https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFiles/AMAZON_FASHION.json.gz
+https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFiles/Magazine_Subscriptions.json.gz
+Other categories are linked on the same index. Web fetch reached application/gzip; parser reports unsupported binary type, which is not evidence of access denial. Actual Space streaming/schema verification still required. No source dataset bytes downloaded to the Mac.
+
+Implement bounded remote intake from original full-category archives, retaining raw line bytes and original record identity. Do not claim these files exhausted or inaccessible based on an obsolete host or an unsupported browser content type. Product/rating diversity should span multiple categories rather than accept only easiest small file. Target5306 in 100k phase,53060 in 1M phase; do not change other source quotas.

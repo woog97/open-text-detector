@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-04T00:17:22.960546+00:00",
+  "venue_url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+  "group_api_url": "https://api2.openreview.net/groups?id=ICLR.cc/2027/Conference",
+  "public_submissions": false,
+  "public_withdrawn_submissions": false,
+  "public_desk_rejected_submissions": false,
+  "webfield": "// Webfield component\nconst tabs = [{\n  name: 'Your Consoles',\n  type: 'consoles'\n}]\n\nconst decisionHeadingMap = domain.content.decision_heading_map?.value\n\nif (decisionHeadingMap) {\n  for (const [venue, tabName] of Object.entries(decisionHeadingMap)) {\n    tabs.push({\n      name:tabName,\n      query: {\n        'content.venue': venue,\n        'invitation': domain.content.submission_id?.value\n      },\n      options: {\n        hideWhenEmpty: true,\n        enableSearch: true\n      }\n    })\n  }\n}\n\nif (domain.content.public_submissions?.value && !decisionHeadingMap) {\n  tabs.push({\n    name: 'Active Submissions',\n    query: {\n      'content.venueid': domain.content.submission_venue_id?.value\n    },\n    options: {\n      enableSearch: true\n    }\n  })\n}\n\nif (domain.content.public_withdrawn_submissions?.value) {\n  tabs.push({\n    name: 'Withdrawn Submissions',\n    query: {\n      'content.venueid': domain.content.withdrawn_venue_id?.value\n    },\n    options: {\n      hideWhenEmpty: true\n    }\n  })\n}\n\nif (domain.content.public_desk_rejected_submissions?.value) {\n  tabs.push({\n    name: 'Desk Rejected Submissions',\n    query: {\n      'content.venueid': domain.content.desk_rejected_venue_id?.value\n    },\n    options: {\n      hideWhenEmpty: true\n    }\n  })\n}\n\ntabs.push({\n  name: 'Recent Activity',\n  type: 'activity'\n})\n\nreturn {\n  component: 'VenueHomepage',\n  version: 1,\n  properties: {\n    header: {\n      title: domain.content.title?.value,\n      subtitle: domain.content.subtitle?.value,\n      website: domain.content.website?.value,\n      contact: domain.content.contact?.value,\n      location: domain.content.location?.value,\n      instructions: domain.content.instructions?.value,\n      date: domain.content.start_date?.value,\n      deadline: domain.content.date?.value\n    },\n    submissionId: domain.content.submission_id?.value,\n    parentGroupId: domain.parent,\n    tabs: tabs\n  }\n}",
+  "submission_form_policy": {
+    "order": 11,
+    "value": {
+      "param": {
+        "type": "boolean",
+        "enum": [
+          {
+            "value": true,
+            "description": "I and all co-authors of this work understand that all papers submitted to ICLR become public at the beginning of the review process, and both accepted and rejected papers will be de-anonymized at the end of the review process. (Withdrawn papers are de-anonymized immediately upon withdrawal.) We acknowledge that papers cannot be deleted, hidden, or retracted once reviewing begins."
+          }
+        ],
+        "input": "checkbox"
+      }
+    }
+  },
+  "browser_observation": {
+    "venue": "Only Recent Activity tab visible in existing signed-in session",
+    "direct_paper": "https://openreview.net/forum?id=j6wn1MIOB5",
+    "direct_paper_access": "Renders title, abstract, PDF and supplementary links; readership displayed as Everyone"
+  },
+  "unauthenticated_notes_probe": {
+    "status": 403,
+    "name": "ChallengeRequiredError",
+    "message": "Challenge verification required; not evidence of private paper readership"
+  },
+  "interpretation": "Confirmed homepage listing gate disabled. Likely venue configuration/release workflow mismatch; organizer intent unconfirmed."
+}

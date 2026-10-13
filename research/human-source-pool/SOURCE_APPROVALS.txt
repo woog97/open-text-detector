@@ -1,0 +1,196 @@
+SOURCE-LEVEL COLLECTION REVIEW — ALL 37 SOURCES
+Reviewed 2026-10-02T06:33:25.916648+00:00
+
+All 37 sources have existing user authorization. No per-sample user approval is required.
+This operational review covers candidate collection, keeping original terms and provenance; it does not certify commercial training rights.
+
+Decisions: {"proceed_subset": 29, "proceed_research_candidates": 6, "access_or_terms_needed": 2}
+
+Two access/terms conditions: Yelp (academic eligibility/sharing/hosting) and BAWE (official registration/conditions; current access route still to verify). Keep their quotas reserved.
+
+All other sources can progress through the listed collection rules. Missing importers remain implementation work, not pending user approval.
+
+gutenberg | creative | 10,000 samples | proceed_subset
+US public-domain texts; exceptions and jurisdiction matter
+Use public-domain subset and allowed bulk mirror; retain book IDs and source notice; exclude protected PG19 families.
+Evidence: https://www.gutenberg.org/policy/permission.html ; https://www.gutenberg.org/policy/robot_access.html ; https://standardebooks.org/
+
+writingprompts | creative | 6,667 samples | proceed_research_candidates
+Original 2018 research release; underlying story rights unresolved
+Use original train.wp_target only, pair prompts as metadata, never generated samples; retain split/line and prompt-family IDs.
+Evidence: https://raw.githubusercontent.com/facebookresearch/fairseq/main/examples/stories/README.md
+
+scp | creative | 4,444 samples | proceed_subset
+CC BY-SA 3.0 text with attribution; third-party asset exceptions
+English narrative tales only; retain authors, page/canon IDs and pre-2022 revision evidence; omit images and containment-template boilerplate.
+Evidence: https://scp-wiki.wikidot.com/licensing-guide
+
+wikisource | creative | 1,111 samples | proceed_subset
+Public-domain or compatible free-license works; translations can differ
+Main namespace literary prose; preserve work-specific copyright tag, edition and translator; deduplicate Gutenberg overlap.
+Evidence: https://en.wikisource.org/wiki/Wikisource:Copyright_policy
+
+pmc | scientific | 6,306 samples | proceed_subset
+Article-specific OA licenses; PMC access alone is insufficient
+Use pinned OA subset with explicit allowed license; retain PMCID/DOI; supported bulk services or established subset mirror.
+Evidence: https://pmc.ncbi.nlm.nih.gov/about/copyright/ ; https://pmc.ncbi.nlm.nih.gov/tools/openftlist/
+
+arxiv | scientific | 5,405 samples | proceed_subset
+Per-version licenses; default arXiv distribution license is not general reuse permission
+Select explicitly compatible open licenses from the pinned subset; retain version/date and paper-family identity.
+Evidence: https://info.arxiv.org/help/license/index.html
+
+pes2o | scientific | 3,604 samples | proceed_subset
+Common Pile openly licensed peS2o subset; preserve per-paper license
+Use pinned licensed subset; preserve paper IDs/DOIs and remove duplicates with arXiv/PMC/ACL.
+Evidence: https://huggingface.co/datasets/common-pile/peS2o/blob/main/README.md
+
+acl | scientific | 2,703 samples | proceed_subset
+ACL-owned 2016 onward CC BY 4.0; third-party proceedings differ
+2016–2021 ACL-owned papers; exclude existing protected local paper families; preserve anthology ID/DOI.
+Evidence: https://aclanthology.org/faq/copyright/
+
+wikipedia | reference | 7,958 samples | proceed_subset
+CC BY-SA; version and attribution information retained
+Main namespace articles only; retain revision IDs and contributors/history link; no talk-page routing into reference.
+Evidence: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+pressbooks | reference | 3,979 samples | proceed_subset
+Per-book licenses; selected mirror restricts to PD, CC BY or CC BY-SA
+Preserve book/section license and author; obtain additional eligible books from same source after current mirror shortfall.
+Evidence: https://pressbooks.directory/ ; https://pressbooks.com/open-education/introducing-pressbooks-directory/ ; https://huggingface.co/datasets/common-pile/pressbooks/blob/main/README.md
+
+libretexts | reference | 2,387 samples | proceed_subset
+Per-section licenses; selected mirror uses PD, CC BY, CC BY-SA or GFDL
+Retain book/section/license evidence; avoid duplicated sections and boilerplate.
+Evidence: https://huggingface.co/datasets/common-pile/libretexts/blob/main/README.md
+
+wikibooks | reference | 1,592 samples | proceed_subset
+CC BY-SA text; preserve applicable revision license
+Main namespace prose; group chapters under book; retain attribution/history.
+Evidence: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+amazon2018 | reviews | 5,306 samples | proceed_research_candidates
+Original 2018 research release; underlying review rights unresolved
+Original full per-category review files, not ratings-only, descriptions or newer Amazon releases; product/rating diversity and user/product grouping.
+Evidence: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/index.html
+
+yelp | reviews | 3,183 samples | access_or_terms_needed
+Academic-use eligibility and no-third-party-sharing restrictions in current agreement
+Keep 3,183 slots reserved. Do not accept terms, acquire through a bypass mirror, send text to an LLM API, or publish on HF until compatible access/use and hosting permission are established.
+Evidence: https://s3-media0.fl.yelpcdn.com/assets/srv0/engineering_pages/f64cb2d3efcc/assets/vendor/Dataset_User_Agreement.pdf
+
+imdb | reviews | 1,061 samples | proceed_research_candidates
+Original 2011 Stanford research release; underlying review rights unresolved
+Training and unlabeled originals only; exclude official test; preserve original review URL/movie grouping and original HTML breaks.
+Evidence: https://nlp.stanford.edu/~amaas/data/sentiment/index.html
+
+opinrank | reviews | 1,061 samples | proceed_research_candidates
+UCI states CC BY 4.0; upstream review rights remain recorded as unresolved
+Original hotel/car review files; balance types/cities; retain author/date/review IDs and avoid concatenating duplicate fields.
+Evidence: https://archive.ics.uci.edu/dataset/205/opinrank+review+dataset
+
+stack_nontech | social | 5,726 samples | proceed_subset
+CC BY-SA 2.5/3.0/4.0 according to contribution date
+Use approved nontechnical sites; retain post/revision/author attribution; whole thread grouping; respect dump access requirements.
+Evidence: https://stackoverflow.com/help/licensing ; https://meta.stackexchange.com/questions/401324/announcing-a-change-to-the-data-dump-process
+
+stack_tech | social | 2,082 samples | proceed_subset
+CC BY-SA 2.5/3.0/4.0 according to contribution date
+Use agreed technical sites; preserve thread grouping and source tags; current collector excludes Stack Overflow itself.
+Evidence: https://stackoverflow.com/help/licensing
+
+ubuntu_irc | social | 1,561 samples | proceed_subset
+Common Pile source documents public-domain archived logs
+Pre-2022 channel/day records; extract human turns and filter known bots/system notices; retain channel/day and speaker grouping.
+Evidence: https://huggingface.co/datasets/common-pile/ubuntu_irc/blob/main/README.md
+
+wiki_talk | social | 1,041 samples | proceed_subset
+CC BY-SA discussion contributions
+Article-talk namespace 1; retain revision/thread IDs and attribution; do not use article namespace to fill this source.
+Evidence: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+cccc | general_web | 5,335 samples | proceed_subset
+Only domains/pages with supported text-license evidence; raw metadata gap unresolved
+Implement pre-2022 crawl snapshot plus verified domain/license mapping; missing raw metadata.license is not evidence of a license. Domain cap and category routing remain automatic rules.
+Evidence: https://huggingface.co/datasets/common-pile/cccc/blob/main/README.md ; https://raw.githubusercontent.com/r-three/common-pile/main/sources/cccc/README.md
+
+eff | general_web | 821 samples | proceed_subset
+EFF original material CC BY 4.0 unless otherwise noted
+Original pre-2022 Deeplinks prose; retain byline/version evidence; omit external republications, quoted third-party blocks and widgets.
+Evidence: https://www.eff.org/copyright
+
+foodista | general_web | 821 samples | proceed_subset
+Common Pile documents CC BY source content
+Original article/recipe prose with dates and bylines; preserve faithful HTML extraction; distinguish appended comments and remove automated comments.
+Evidence: https://huggingface.co/datasets/common-pile/foodista/blob/main/README.md
+
+wikivoyage | general_web | 1,231 samples | proceed_subset
+CC BY-SA text with attribution
+Main namespace travel prose; retain page/revision IDs; additional eligible same-source material needed after mirror shortfall.
+Evidence: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+globalvoices | news | 1,652 samples | proceed_subset
+CC BY original text; third-party media excluded
+Preserve author and canonical story URL; pre-2022 historical evidence; exclude copied third-party media/text beyond permitted source content.
+Evidence: https://globalvoices.org/about/global-voices-attribution-policy/
+
+voa | news | 1,652 samples | proceed_subset
+Exclusively VOA-produced material public domain; AP/AFP/Reuters are excluded
+Select VOA bylined originals only; automatic wire-service exclusions; retain dates/URLs and revision evidence.
+Evidence: https://www.voanews.com/p/5338.html
+
+wikinews | news | 991 samples | proceed_subset
+Pre-2005 public domain; 2005–2024 CC BY 2.5; newer material CC BY 4.0
+Only pre-2022 articles for this mix; retain correct period license, source attribution and article revision.
+Evidence: https://en.wikinews.org/wiki/Wikinews:Copyright
+
+scidev | news | 991 samples | proceed_subset
+Official pages differ between CC BY 2.0 and 3.0; original text open, exceptions exist
+Retain article-level notice/version and author; exclude third-party documents; record policy-version discrepancy, not an invented uniform license.
+Evidence: https://www.scidev.net/content/policies.html ; https://www.scidev.net/content/media.html
+
+oanc_slate | news | 1,321 samples | proceed_subset
+OANC explicitly permits unrestricted use and redistribution
+Use OANC Slate component only, not a fresh Slate scrape or full ANC Second Release; preserve article IDs/dates.
+Evidence: https://anc.org/data/oanc/ ; https://anc.org/data/oanc/contents/
+
+asap2 | essays | 1,962 samples | proceed_subset
+Official original training release CC BY 4.0
+Original training essays only; preserve essay/prompt IDs; collection dates honestly unverified; automatic PERSUADE and protected-family overlap exclusions.
+Evidence: https://raw.githubusercontent.com/scrosseye/ASAP_2.0/main/README.md ; https://zenodo.org/records/14781349
+
+ellipse | essays | 1,226 samples | proceed_research_candidates
+Official release CC BY-NC-SA 4.0
+Reliable original train essays only; exclude existing local evaluation essays and related prompt/student families before selection; keep noncommercial status.
+Evidence: https://raw.githubusercontent.com/scrosseye/ELLIPSE-Corpus/main/README.md
+
+bawe | essays | 981 samples | access_or_terms_needed
+Publisher specifies noncommercial research, conditions of use and OTA registration
+Use official BAWE resource 2539 after required access conditions are satisfied; verify current archive route; preserve student/discipline/genre IDs. Do not substitute BAWE Plus.
+Evidence: https://warwick.ac.uk/fac/soc/al/research/collections/bawe/
+
+persuade | essays | 736 samples | proceed_research_candidates
+Version 2.0 repository says CC BY-NC-SA 4.0; separate publisher page says CC BY 4.0
+Use official version-2 training release under its stated restrictive terms; retain conflicting evidence; no test set; deduplicate ASAP/student/prompt families.
+Evidence: https://raw.githubusercontent.com/scrosseye/persuade_corpus_2.0/main/README.md ; https://the-learning-agency-lab.com/learning-exchange/persuade-dataset/
+
+govreport | professional | 1,086 samples | proceed_subset
+Publisher dataset CC BY 4.0; 2021 corpus
+Original report column from training split; never paired summaries; preserve shard/row/hash when agency IDs missing and record mapping pending.
+Evidence: https://gov-report-data.github.io/
+
+fed | professional | 776 samples | proceed_subset
+Board-authored site information public domain unless otherwise indicated
+Pre-2022 Board prose only; exclude attributed non-Board material, images and logos; preserve document date/author/URL.
+Evidence: https://www.federalreserve.gov/disclaimer.htm
+
+worldbank | professional | 776 samples | proceed_subset
+OKR contains CC BY, CC BY-NC, CC BY-NC-ND and other licenses
+Select agreed openly licensed subset (CC BY/CC BY IGO); retain per-work license and required attribution; no blanket OKR license assignment.
+Evidence: https://www.worldbank.org/ext/en/legal/terms-conditions/open-knowledge-repository
+
+oanc_icic | professional | 465 samples | proceed_subset
+OANC explicitly permits unrestricted use and redistribution
+Only ICIC fundraising/letters component; preserve original document boundaries and IDs; check finite 245-file supply against passage quota without duplication.
+Evidence: https://anc.org/data/oanc/ ; https://anc.org/data/oanc/contents/

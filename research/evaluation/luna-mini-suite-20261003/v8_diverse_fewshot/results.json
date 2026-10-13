@@ -1,0 +1,112 @@
+{
+  "state": "complete",
+  "completed": 216,
+  "planned": 216,
+  "cost_usd": 0.020694000000000018,
+  "reported_tiers": {
+    "flex": 216
+  },
+  "errors": [],
+  "profiles": {
+    "comparison": {
+      "n": 120,
+      "slices": {
+        "ai": {
+          "n": 40,
+          "flagged_ai": 39,
+          "ai_flag_rate": 0.975
+        },
+        "human": {
+          "n": 40,
+          "flagged_ai": 4,
+          "ai_flag_rate": 0.1
+        },
+        "mixed": {
+          "n": 40,
+          "flagged_ai": 21,
+          "ai_flag_rate": 0.525
+        }
+      },
+      "human_n": 40,
+      "ai_involved_n": 80,
+      "tn": 36,
+      "fp": 4,
+      "tp": 60,
+      "fn": 20,
+      "balanced_accuracy": 0.825
+    },
+    "reconstruction": {
+      "n": 60,
+      "slices": {
+        "paragraph_concise": {
+          "n": 12,
+          "flagged_ai": 8,
+          "ai_flag_rate": 0.6666666666666666
+        },
+        "paragraph_v3": {
+          "n": 12,
+          "flagged_ai": 6,
+          "ai_flag_rate": 0.5
+        },
+        "sentence": {
+          "n": 12,
+          "flagged_ai": 2,
+          "ai_flag_rate": 0.16666666666666666
+        },
+        "two_sentence": {
+          "n": 12,
+          "flagged_ai": 2,
+          "ai_flag_rate": 0.16666666666666666
+        },
+        "untouched": {
+          "n": 12,
+          "flagged_ai": 1,
+          "ai_flag_rate": 0.08333333333333333
+        }
+      },
+      "human_n": 12,
+      "ai_involved_n": 48,
+      "tn": 11,
+      "fp": 1,
+      "tp": 18,
+      "fn": 30,
+      "balanced_accuracy": 0.6458333333333333
+    },
+    "assistance": {
+      "n": 24,
+      "slices": {
+        "light_polish": {
+          "n": 12,
+          "flagged_ai": 5,
+          "ai_flag_rate": 0.4166666666666667
+        },
+        "proofread": {
+          "n": 12,
+          "flagged_ai": 2,
+          "ai_flag_rate": 0.16666666666666666
+        }
+      }
+    },
+    "manuscripts": {
+      "n": 12,
+      "slices": {
+        "gpt-6-luna": {
+          "n": 4,
+          "flagged_ai": 4,
+          "ai_flag_rate": 1.0
+        },
+        "gpt-6-sol": {
+          "n": 4,
+          "flagged_ai": 4,
+          "ai_flag_rate": 1.0
+        },
+        "gpt-6.1-sol": {
+          "n": 4,
+          "flagged_ai": 4,
+          "ai_flag_rate": 1.0
+        }
+      }
+    }
+  },
+  "precision_dtype": "provider_managed_unreported"
+}

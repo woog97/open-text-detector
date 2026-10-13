@@ -1,0 +1,14 @@
+{
+  "task_status": "complete",
+  "completion_color": "green",
+  "checks_attempted": 100000,
+  "total_records": 100000,
+  "completion_percent": 100,
+  "definition": "Both checks attempted for every record; failed and could_not_verify are completed outcomes.",
+  "language_scope": "English only",
+  "dataset_revision": "0e444ce91099245f6eaf50ff5dd09cab370e4031",
+  "summary": "origin-permission-audit/summary.json",
+  "receipt": "origin-permission-audit/publication-receipt.json",
+  "annotated_remote_checkpoint": "/tmp/pangram-human-active-20261002/origin-permission-audit-20261003/checked-collection.sqlite3",
+  "original_intake_flags": "Historical; use new check-completed and check-result columns for these two checks."
+}

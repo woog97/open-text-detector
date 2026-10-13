@@ -1,0 +1,60 @@
+[
+ {
+  "name": "qwen35-4b",
+  "repo": "Qwen/Qwen3.5-4B",
+  "kind": "causal",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+ },
+ {
+  "name": "qwen36-35b-a3b",
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "kind": "causal",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "lora_rank": 128,
+  "expert_rank": 16
+ },
+ {
+  "name": "embeddinggemma-2",
+  "repo": "google/embeddinggemma-2",
+  "kind": "encoder",
+  "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b"
+ },
+ {
+  "name": "moe-mixB-full",
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "kind": "causal",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "lora_rank": 128,
+  "expert_rank": 16
+ },
+ {
+  "name": "moe-mixA-full",
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "kind": "causal",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "lora_rank": 128,
+  "expert_rank": 16
+ },
+ {
+  "name": "qwen35-4b-t21-1ep",
+  "repo": "Qwen/Qwen3.5-4B",
+  "kind": "causal",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+ },
+ {
+  "name": "moe-final-1ep",
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "kind": "causal",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "lora_rank": 128,
+  "expert_rank": 16
+ },
+ {
+  "name": "moe-final-1020",
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "kind": "causal",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "lora_rank": 128,
+  "expert_rank": 16
+ }
+]
