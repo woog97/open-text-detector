@@ -58,7 +58,8 @@
 .pb-flag{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-items:end;column-gap:5px;min-width:84px;cursor:help}
 .pb-flag b{font:600 19px/1 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .pb-flag small{font:10px var(--mono);color:var(--graphite);text-transform:uppercase;letter-spacing:.04em}
-.pb-flag i{grid-column:1/-1;justify-self:stretch;height:3px;margin-top:5px;border-radius:2px;background:var(--rule-2);position:relative;overflow:hidden}
+.pb-flag .pb-flag-avg{grid-column:1/-1;order:3;margin-top:4px;text-transform:none}
+.pb-flag i{grid-column:1/-1;order:2;justify-self:stretch;height:3px;margin-top:5px;border-radius:2px;background:var(--rule-2);position:relative;overflow:hidden}
 .pb-flag i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:currentColor;border-radius:2px}
 .pb-flag.is-low{color:var(--flag-low)}.pb-flag.is-mid{color:var(--flag-mid)}.pb-flag.is-high{color:var(--flag-high)}
 .pb-flag.is-short{display:inline-flex;gap:5px;align-items:center;font:11px var(--mono);color:var(--graphite)}

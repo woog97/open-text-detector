@@ -4,7 +4,7 @@ import {Bookmark,ArrowLeft,ArrowRight,Search,ExternalLink,BookOpen,X,FileText,Li
 import {loadBrowse,browseParams} from '../lib/browse-api';
 import type {BrowsePage} from '../lib/browse-page';
 import type {AtlasPaper} from '../lib/atlas-collection';
-import {DEFAULT_SORT,FLAG_BANDS,FLAG_FPRS,LEGACY_FLAG_FPRS,FLAG_MODES,DEFAULT_FLAG_MODE,asSiteFlagMode,flagCounts,flagCutLabel,flagModeOf,flagRangeLabel,flagShare,fprLabel,parseFlagCut,parseFlagRange,thresholdText,type BrowseFilters,type FlagMode} from '../lib/paper-discovery';
+import {DEFAULT_SORT,FLAG_BANDS,FLAG_FPRS,LEGACY_FLAG_FPRS,FLAG_MODES,DEFAULT_FLAG_MODE,asSiteFlagMode,flagCounts,flagCutLabel,flagModeOf,flagRangeLabel,flagShare,fprLabel,meanScore,parseFlagCut,parseFlagRange,thresholdText,type BrowseFilters,type FlagMode} from '../lib/paper-discovery';
 import FlagHistogram from './flag-histogram';
 import {MIN_SENTENCES,modelLabel} from '../lib/paper-scores';
 import ReaderErrorBoundary from './reader-error-boundary';
@@ -136,7 +136,7 @@ export default function PaperBrowser(){
     <div className="pb-results-bar"><h2>{filters.saved?'Saved':'Papers'} <span className="site-num">{loaded?total.toLocaleString():'—'}</span></h2>
      {(filters.area||filters.tag||filters.saved||filters.q||filters.ai||filters.cut)&&<div className="pb-active">{filters.q&&<button onClick={()=>change({q:''})}>“{filters.q}” <X size={12}/></button>}{filters.area&&<button onClick={()=>change({area:''})}>{filters.area} <X size={12}/></button>}{filters.tag&&<button onClick={()=>change({tag:''})}>{filters.tag} <X size={12}/></button>}{filters.ai&&<button onClick={()=>change({ai:''})}>{filters.ai==='none'?'Not scored':`${flagRangeLabel(filters.ai)} flagged`} <X size={12}/></button>}{filters.cut&&<button onClick={()=>change({cut:''})}>{flagCutLabel(filters.cut)} flagged <X size={12}/></button>}{filters.saved&&<button onClick={()=>change({saved:false})}>Saved only <X size={12}/></button>}<button className="site-link" onClick={()=>navigate({...defaults,collection:filters.collection})}>Clear all</button></div>}
      {BETA&&<div className="pb-density" role="group" aria-label="List density">{(["standard","compact"] as const).map(d=><button key={d} type="button" aria-pressed={density===d} onClick={()=>pickDensity(d)}>{d==="standard"?"Standard":"Compact"}</button>)}</div>}
-     <label className="pb-sort">Sort<select aria-label="Sort papers" value={filters.sort} onChange={e=>change({sort:e.target.value})}><option value="title">Title A–Z</option><option value="updated">Recently updated</option><option value="number">Submission number</option><option value="flagged">Most flagged as AI</option><option value="flagged-asc">Least flagged as AI</option></select></label>
+     <label className="pb-sort">Sort<select aria-label="Sort papers" value={filters.sort} onChange={e=>change({sort:e.target.value})}><option value="title">Title A–Z</option><option value="updated">Recently updated</option><option value="number">Submission number</option><option value="flagged">Most flagged as AI</option><option value="flagged-asc">Least flagged as AI</option><option value="score">Highest average score</option><option value="score-asc">Lowest average score</option></select></label>
      {busy&&loaded&&<span className="pb-progress" role="status" aria-label="Updating results"/>}
     </div>
     {loaded&&data?.histogram&&<FlagHistogram histogram={data.histogram} ai={filters.ai} cut={filters.cut||''} unscored={bandCount('none')} onSelect={ai=>change({ai})} help={flagHelp(mode)} controls={<><ModeToggles mode={mode} onChange={m=>change({mode:m})}/><CutControl cut={filters.cut||''} onChange={cut=>change({cut,ai:aiInsideCut(filters.ai,cut)?filters.ai:''})}/></>}/>}
@@ -148,7 +148,7 @@ export default function PaperBrowser(){
       <p className={`pb-summary${p.tldr?.trim()?" is-tldr":""}`}>{(p.tldr?.trim()||p.abstract_preview)&&<span className="pb-src">{p.tldr?.trim()?'TL;DR':'From the abstract'}</span>}{mark(p.tldr?.trim()||p.abstract_preview||'Open the PDF to read this paper.')}{!p.tldr?.trim()&&p.abstract_preview?'…':''}</p>
       <div className="pb-row-meta">{p.primary_area&&<button className="pb-area" onClick={()=>change({area:p.primary_area!,tag:''})}>{p.primary_area}</button>}{p.keywords?.slice(0,4).map(k=><button key={k} className="pb-kw" onClick={()=>change({tag:k})}>{mark(k)}</button>)}</div>
      </div>
-     <div className="pb-row-side"><FlagBadge p={p} mode={mode}/>{saveButton(p,false)}{p.forum_id&&<a href={openreview(p)} target="_blank" rel="noreferrer" aria-label={`OpenReview forum: ${p.title}`}>OpenReview <ExternalLink size={12}/></a>}<span>{(p.bytes/1e6).toFixed(1)} MB{p.classified?' · scored':''}</span></div>
+     <div className="pb-row-side"><FlagBadge p={p} mode={mode} sort={filters.sort}/>{saveButton(p,false)}{p.forum_id&&<a href={openreview(p)} target="_blank" rel="noreferrer" aria-label={`OpenReview forum: ${p.title}`}>OpenReview <ExternalLink size={12}/></a>}<span>{(p.bytes/1e6).toFixed(1)} MB{p.classified?' · scored':''}</span></div>
     </li>)}</ol>}
     {total>0&&lastPage>0&&<nav className="pb-pagination" aria-label="Pages"><button disabled={!currentPage} onClick={()=>navigate(filters,'',currentPage-1)}><ArrowLeft size={15}/> Previous</button>{BETA?<PageJump current={currentPage} last={lastPage} onGo={n=>navigate(filters,'',n)}/>:<span>Page <b>{(currentPage+1).toLocaleString()}</b> of {(lastPage+1).toLocaleString()}</span>}<button disabled={currentPage>=lastPage} onClick={()=>navigate(filters,'',currentPage+1)}>Next <ArrowRight size={15}/></button></nav>}
    </section>
@@ -163,11 +163,13 @@ function flagHelp(mode:FlagMode){return `Share of the paper’s sentences (${mod
 const bandTone=(k:string)=>k==='0-10'?'low':k==='10-25'||k==='25-50'?'mid':'high';
 function pct(r:number){return r<.1&&r>0?`${(r*100).toFixed(1)}%`:`${Math.round(r*100)}%`;}
 /** Per-row indicator: share of sentences flagged as AI, or a warning for papers too short to score. Unscored papers show nothing. */
-function FlagBadge({p,mode}:{p:AtlasPaper;mode:FlagMode}){
- const r=flagShare(p,mode),c=flagCounts(p,mode);
+const avgText=(v:number)=>v>=.99?v.toFixed(5):v>=.01?v.toFixed(3):v.toPrecision(2);
+const avgHelp='Average sentence score: the mean of the detector’s raw scores over the counted sentences. It orders papers whose flagged shares are equal; it is not a probability that the paper was written by AI.';
+function FlagBadge({p,mode,sort}:{p:AtlasPaper;mode:FlagMode;sort:string}){
+ const r=flagShare(p,mode),c=flagCounts(p,mode),m=meanScore(p,mode);
  if(r===null)return c?<span className="pb-flag is-short" title={`Too short to score reliably: ${c[1]} counted sentence${c[1]===1?'':'s'}, fewer than ${MIN_SENTENCES}`}><b>!</b> too short</span>:null;
  const tone=r<.1?'low':r<.5?'mid':'high';
- return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)} aria-label={`${pct(r)} of sentences flagged as AI`}><b>{pct(r)}</b><small>flagged AI</small><i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
+ return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)+(m===null?'':`\n\nAverage sentence score ${avgText(m)}. ${avgHelp}`)} aria-label={`${pct(r)} of sentences flagged as AI`+(m===null?'':`, average sentence score ${avgText(m)}`)}><b>{pct(r)}</b><small>flagged AI</small>{m!==null&&sort.startsWith('score')&&<small className="pb-flag-avg">avg {avgText(m)}</small>}<i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
 }
 function FlagSummary({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  const r=flagShare(p,mode),c=flagCounts(p,mode);

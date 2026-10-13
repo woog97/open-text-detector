@@ -53,6 +53,9 @@ export const FLAG_BANDS:[string,string,number,number][]=[['0-10','Under 10%',0,.
 export function flagCounts(p:Pick<AtlasPaper,'flags'>,mode:FlagMode=DEFAULT_FLAG_MODE){return p.flags?.[mode];}
 /** Share of counted sentences above the mode's threshold; null when unscored or too short to score reliably. */
 export function flagShare(p:Pick<AtlasPaper,'flags'>,mode:FlagMode=DEFAULT_FLAG_MODE){const c=flagCounts(p,mode);return c&&c[1]>=MIN_SENTENCES?c[0]/c[1]:null;}
+/** Mean sentence score over the sentences a mode counts (the same for every false-positive rate); null when unscored or
+ * too short, like the flagged share. Raw model scores, not calibrated: it orders papers, it is not a probability. */
+export function meanScore(p:Pick<AtlasPaper,'flags'|'mean_score'>,mode:FlagMode=DEFAULT_FLAG_MODE){const v=p.mean_score?.[FLAG_MODES[mode].base];return typeof v==='number'&&flagShare(p,mode)!==null?v:null;}
 /** 5%-wide histogram bin (0..19) of a flagged share; 100% falls in the last bin. */
 export function flagBin(r:number){return Math.min(19,Math.floor(r*20+1e-9));}
 /** `ai` filter value -> 'none' (unscored or too short), a [first, last) range of 5% bins, or null (no filter). Accepts "lo-hi" in percent, multiples of 5. */
@@ -87,10 +90,13 @@ export function matchDiscovery(papers:AtlasPaper[],filters:BrowseFilters,saved:S
 export function filterDiscovery(papers:AtlasPaper[],filters:BrowseFilters,saved:Set<string>,index?:Map<string,string>,titleSorted=false,matched?:AtlasPaper[]){
  let matches=matched?[...matched]:matchDiscovery(papers,filters,saved,index);
  const mode=asSiteFlagMode(filters.mode),range=parseFlagRange(filters.ai);if(range)matches=matches.filter(p=>inFlagRange(flagShare(p,mode),range));
- if(filters.sort==='flagged'||filters.sort==='flagged-asc'){
-  // Unscored and too-short papers go last in both directions; ties keep title order.
-  const dir=filters.sort==='flagged'?-1:1,rows=matches.map(p=>({p,r:flagShare(p,mode)}));
-  rows.sort((a,b)=>a.r===null?(b.r===null?titleOrder(a.p.title,b.p.title)||a.p.id.localeCompare(b.p.id):1):b.r===null?-1:dir*(a.r-b.r)||titleOrder(a.p.title,b.p.title)||a.p.id.localeCompare(b.p.id));
+ const byScore=filters.sort==='score'||filters.sort==='score-asc';
+ if(byScore||filters.sort==='flagged'||filters.sort==='flagged-asc'){
+  // Unscored and too-short papers go last in both directions. Equal flagged shares (e.g. the many papers at 100%) are
+  // ordered by average sentence score (Alice, Oct 13 2026), then by title.
+  const dir=filters.sort==='flagged'||filters.sort==='score'?-1:1,rows=matches.map(p=>{const m=meanScore(p,mode);return {p,r:byScore?m:flagShare(p,mode),m:m??0};});
+  const tie=(a:{p:AtlasPaper},b:{p:AtlasPaper})=>titleOrder(a.p.title,b.p.title)||a.p.id.localeCompare(b.p.id);
+  rows.sort((a,b)=>a.r===null?(b.r===null?tie(a,b):1):b.r===null?-1:dir*(a.r-b.r)||dir*(a.m-b.m)||tie(a,b));
   return rows.map(x=>x.p);
  }
  if(filters.sort==='title'&&titleSorted)return matches;

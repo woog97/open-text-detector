@@ -127,3 +127,17 @@ test('cutoff filter: keeps papers below or at/above it, limits the histogram so 
  assert.equal(browsePage(rows,new URLSearchParams({cut:'below95',ai:'0-5'})).total,1,'bin filter applies inside the cutoff');
  assert.equal(browsePage(rows,new URLSearchParams({cut:'below97'})).total,6,'invalid cutoffs are ignored');
 });
+test('average sentence score: breaks flagged-share ties, has its own sorts, and matches between the list and the compact index',async()=>{
+ // body0.1 shares: 0,1,2 -> 100% (means .95/.99/.97), 3 -> 50% (mean .6), 4 -> too short, 5 -> 100% without a mean (older snapshot); papers without a usable value go last in title order
+ const rows=papers.slice(0,6).map((p,i)=>({...p,...[
+  {flags:{'body0.1':[100,100]},mean_score:{body:.95,nobib:.5}},{flags:{'body0.1':[100,100]},mean_score:{body:.99}},{flags:{'body0.1':[100,100]},mean_score:{body:.97}},
+  {flags:{'body0.1':[50,100]},mean_score:{body:.6}},{flags:{'body0.1':[9,10]},mean_score:{body:.99}},{flags:{'body0.1':[100,100]}}][i]}));
+ const ids=o=>o.map(i=>rows[i].id),{buildIndex,BrowseIndex}=await import('../lib/browse-index.ts');
+ const loaded=new BrowseIndex(JSON.parse(JSON.stringify(buildIndex(rows).index)));
+ const base={q:'',collection:rows[0].collection,area:'',tag:'',saved:false,ai:'',mode:'body0.1',cut:''};
+ const expected={flagged:[1,2,0,5,3,4],'flagged-asc':[3,5,0,2,1,4],score:[1,2,0,3,4,5],'score-asc':[3,0,2,1,4,5]};
+ for(const [sort,order] of Object.entries(expected)){
+  assert.deepEqual(browsePage(rows,new URLSearchParams({sort,mode:'body0.1'})).items.map(x=>x.id),ids(order),`list ${sort}`);
+  assert.deepEqual(loaded.query({...base,sort},new Set(),null,0).items.map(i=>loaded.x.ids[i]),ids(order),`index ${sort}`);
+ }
+});

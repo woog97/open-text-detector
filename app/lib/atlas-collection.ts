@@ -2,7 +2,9 @@ import {paperRate,summaryFor,tooShort,type ScoredPaper} from './paper-scores.ts'
 import type {DiscoveryMetadata} from './atlas-archive.ts';
 /** Browse rows carry `flags` instead of full summaries: per counting mode (paper-discovery FLAG_MODES), [sentences above
  * that mode's 1%-false-positive threshold, sentences counted]; `sections` = scored sentences in [body, bibliography, appendices]. */
-export type AtlasPaper=ScoredPaper & DiscoveryMetadata & {id:string;title:string;filename:string;collection:string;bytes:number;classified:boolean;models?:string[];flags?:Partial<Record<import('./paper-discovery.ts').FlagMode|'all10'|'nobib10'|'noapp10'|'body10',[number,number]>>;sections?:[number,number,number];flag_model?:string};
+export type AtlasPaper=ScoredPaper & DiscoveryMetadata & {id:string;title:string;filename:string;collection:string;bytes:number;classified:boolean;models?:string[];flags?:Partial<Record<import('./paper-discovery.ts').FlagMode|'all10'|'nobib10'|'noapp10'|'body10',[number,number]>>;sections?:[number,number,number];flag_model?:string;
+ /** Mean sentence score per base counting mode (body: main text; nobib: main text and appendices); research/atlas-oct10-20261012/mean_scores_oct10.py. */
+ mean_score?:Partial<Record<import('./paper-discovery.ts').BaseFlagMode,number|null>>};
 export type AtlasCatalogue={items:AtlasPaper[];models?:{id:string;name:string;available:number;total:number;complete:boolean;sample?:boolean}[]};
 export function validateCatalogue(value:unknown):AtlasCatalogue {
   const data=value as AtlasCatalogue;

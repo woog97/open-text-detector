@@ -1,5 +1,5 @@
 import type {AtlasPaper} from './atlas-collection.ts';
-import {BASE_FLAG_MODES,DEFAULT_SORT,FLAG_BANDS,FLAG_MODES,asSiteFlagMode,flagBin,flagShare,parseFlagCut,parseFlagRange,searchText,titleOrder,type BrowseFilters,type FlagMode} from './paper-discovery.ts';
+import {BASE_FLAG_MODES,DEFAULT_SORT,FLAG_BANDS,FLAG_MODES,asSiteFlagMode,flagBin,flagShare,type BaseFlagMode,parseFlagCut,parseFlagRange,searchText,titleOrder,type BrowseFilters,type FlagMode} from './paper-discovery.ts';
 const MODES=Object.keys(FLAG_MODES) as FlagMode[];
 /**
  * Compact browse index for the Worker (128 MB memory limit). Holds only what filtering, sorting and counting need,
@@ -7,8 +7,9 @@ const MODES=Object.keys(FLAG_MODES) as FlagMode[];
  * The full row list parsed into objects took ~200 MB of heap for 80k papers; this takes about a quarter of that.
  * `flags[mode]` is each paper's flagged share under that counting mode (-1: unscored or too short). `flag` repeats the
  * 'nobib' column for Workers deployed before counting modes existed (Oct 8, 2026); drop it once none serve traffic.
+ * `means[base]` is each paper's average sentence score under a base counting mode (-1: none); snapshots before Oct 13, 2026 lack it.
  */
-export type SearchIndex={v:2;ids:string[];text:string[];col:number[];cols:string[];area:number[];areas:string[];kw:number[][];kws:string[];num:(number|null)[];upd:number[];flag:number[];flags:Record<FlagMode,number[]>;card:number[]};
+export type SearchIndex={v:2;ids:string[];text:string[];col:number[];cols:string[];area:number[];areas:string[];kw:number[][];kws:string[];num:(number|null)[];upd:number[];flag:number[];flags:Record<FlagMode,number[]>;means?:Partial<Record<BaseFlagMode,number[]>>;card:number[]};
 /** Search covers titles, TL;DRs, keywords, research areas, submission numbers, forum IDs and filenames (not abstracts). */
 export function indexText(p:AtlasPaper){return searchText({...p,abstract_preview:undefined});}
 const keyOf=(k:string)=>k.trim().toLowerCase();
@@ -18,7 +19,7 @@ export function buildIndex(rows:AtlasPaper[]):{index:SearchIndex;pack:Uint8Array
  const cols=new Map<string,number>(),areas=new Map<string,number>(),kws=new Map<string,number>();
  const code=(m:Map<string,number>,v:string)=>{let c=m.get(v);if(c===undefined){c=m.size;m.set(v,c);}return c;};
  const enc=new TextEncoder(),parts:Uint8Array[]=[];let offset=0;
- const index:SearchIndex={v:2,ids:[],text:[],col:[],cols:[],area:[],areas:[],kw:[],kws:[],num:[],upd:[],flag:[],flags:Object.fromEntries(MODES.map(m=>[m,[]])) as unknown as Record<FlagMode,number[]>,card:[]};
+ const index:SearchIndex={v:2,ids:[],text:[],col:[],cols:[],area:[],areas:[],kw:[],kws:[],num:[],upd:[],flag:[],flags:Object.fromEntries(MODES.map(m=>[m,[]])) as unknown as Record<FlagMode,number[]>,means:Object.fromEntries(BASE_FLAG_MODES.map(b=>[b,[]])),card:[]};
  for(const p of items){
   index.ids.push(p.id);index.text.push(indexText(p));index.col.push(code(cols,p.collection));
   index.area.push(p.primary_area?code(areas,p.primary_area):-1);
@@ -26,6 +27,7 @@ export function buildIndex(rows:AtlasPaper[]):{index:SearchIndex;pack:Uint8Array
   index.num.push(p.number??null);index.upd.push(p.updated||0);
   for(const m of MODES){const r=flagShare(p,m);index.flags[m].push(r===null?-1:r);}
   index.flag.push(index.flags.nobib.at(-1)!);
+  for(const b of BASE_FLAG_MODES){const v=p.mean_score?.[b];index.means![b]!.push(typeof v==='number'?v:-1);}
   const bytes=enc.encode(JSON.stringify(p)+'\n');parts.push(bytes);index.card.push(offset,bytes.length);offset+=bytes.length;
  }
  index.cols=[...cols.keys()];index.areas=[...areas.keys()];index.kws=[...kws.keys()];
@@ -39,35 +41,42 @@ export function validateIndex(x:SearchIndex){
  if(x?.v!==2||!Number.isSafeInteger(n)||[x.text,x.col,x.area,x.kw,x.num,x.upd,...BASE_FLAG_MODES.map(m=>x.flags?.[m])].some(a=>!Array.isArray(a)||a.length!==n)||!Array.isArray(x.card)||x.card.length!==2*n)throw new Error('Invalid browse index');
  // Snapshots that lack a mode (e.g. published before the 0.1%-FPR modes, Oct 9, 2026): every paper counts as unscored there.
  for(const m of MODES)if(!Array.isArray(x.flags[m])||x.flags[m].length!==n)x.flags[m]=new Array(n).fill(-1);
+ x.means=x.means||{};for(const b of BASE_FLAG_MODES)if(!Array.isArray(x.means[b])||x.means[b]!.length!==n)x.means[b]=new Array(n).fill(-1);
  return x;
 }
 /** Query result in index positions; the caller turns positions into cards. */
 export type IndexPage={total:number;page:number;pages:number;scopeTotal:number;areas:[string,number][];topics:[string,number][];collections:string[];collectionCounts:[string,number][];items:number[];selected:number;position:number;previous:number;next:number;related:number[];flagBands:[string,number][];histogram:number[]};
-const SORTS=['number','updated','flagged','flagged-asc'] as const;
+const SORTS=['number','updated','flagged','flagged-asc','score','score-asc'] as const;
 /** Parsed once per isolate; sort orders are built on first use. */
 export class BrowseIndex{
  readonly x:SearchIndex;readonly n:number;readonly byId=new Map<string,number>();private orders=new Map<string,Int32Array>();private bin:Record<FlagMode,Int8Array>;
  // Typed copies of the numeric columns; the JSON arrays are released after loading (a plain array of small
  // arrays costs several times the memory).
- private col:Uint16Array;private area:Int32Array;private kwOff:Int32Array;private kwAll:Int32Array;private flag:Record<FlagMode,Float64Array>;
+ private col:Uint16Array;private area:Int32Array;private kwOff:Int32Array;private kwAll:Int32Array;private flag:Record<FlagMode,Float64Array>;private mean:Record<BaseFlagMode,Float64Array>;
  constructor(x:SearchIndex){
   this.x=validateIndex(x);this.n=x.ids.length;x.ids.forEach((id,i)=>{if(!this.byId.has(id))this.byId.set(id,i);});
   // 5% histogram bin per paper (0..19), or -1 when unscored or too short.
   this.bin=Object.fromEntries(MODES.map(m=>[m,Int8Array.from(x.flags[m],r=>r<0?-1:flagBin(r))])) as Record<FlagMode,Int8Array>;
   this.flag=Object.fromEntries(MODES.map(m=>[m,Float64Array.from(x.flags[m])])) as Record<FlagMode,Float64Array>;
+  this.mean=Object.fromEntries(BASE_FLAG_MODES.map(b=>[b,Float64Array.from(x.means![b]!)])) as Record<BaseFlagMode,Float64Array>;
   this.col=Uint16Array.from(x.col);this.area=Int32Array.from(x.area);
   this.kwOff=new Int32Array(this.n+1);for(let i=0;i<this.n;i++)this.kwOff[i+1]=this.kwOff[i]+x.kw[i].length;
   this.kwAll=new Int32Array(this.kwOff[this.n]);for(let i=0;i<this.n;i++)this.kwAll.set(x.kw[i],this.kwOff[i]);
-  x.col=[];x.area=[];x.kw=[];x.flag=[];for(const m of MODES)x.flags[m]=[];
+  x.col=[];x.area=[];x.kw=[];x.flag=[];for(const m of MODES)x.flags[m]=[];x.means={};
  }
  private hasKw(i:number,k:number){for(let j=this.kwOff[i];j<this.kwOff[i+1];j++)if(this.kwAll[j]===k)return true;return false;}
  private order(sort:string,mode:FlagMode){
-  const key=sort.startsWith('flagged')?`${sort}:${mode}`:sort;let o=this.orders.get(key);if(o)return o;
+  const key=sort.startsWith('flagged')||sort.startsWith('score')?`${sort}:${mode}`:sort;let o=this.orders.get(key);if(o)return o;
   const x=this.x,idx=Array.from({length:this.n},(_,i)=>i);
   // Positions are title order, so `a-b` breaks ties exactly as the full-row sort's title/id tie-break did.
   if(sort==='number')idx.sort((a,b)=>(x.num[a]??Infinity)-(x.num[b]??Infinity)||x.ids[a].localeCompare(x.ids[b]));
   else if(sort==='updated')idx.sort((a,b)=>x.upd[b]-x.upd[a]||a-b);
-  else{const d=sort==='flagged'?-1:1,flag=this.flag[mode];idx.sort((a,b)=>{const ra=flag[a],rb=flag[b];return ra<0?(rb<0?a-b:1):rb<0?-1:d*(ra-rb)||a-b;});}
+  else{
+   // Unscored and too-short papers (flag < 0) go last; equal flagged shares are ordered by average sentence score (Oct 13, 2026).
+   const d=sort==='flagged'||sort==='score'?-1:1,flag=this.flag[mode],mean=this.mean[FLAG_MODES[mode].base];
+   const v=sort.startsWith('score')?(i:number)=>flag[i]<0?-1:mean[i]:(i:number)=>flag[i];
+   idx.sort((a,b)=>{const ra=v(a),rb=v(b);return ra<0?(rb<0?a-b:1):rb<0?-1:d*(ra-rb)||d*(mean[a]-mean[b])||a-b;});
+  }
   o=Int32Array.from(idx);this.orders.set(key,o);return o;
  }
  query(f:BrowseFilters,saved:Set<string>,id:string|null,rawPage:number):IndexPage{

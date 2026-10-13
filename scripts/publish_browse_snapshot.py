@@ -23,11 +23,12 @@ def add_flags(rows, published, override=None):
     papers = (override or {}).get('papers', {})
     n = 0
     for row in rows:
-        for k in ('flagged', 'sentences', 'flag_model', 'bib_sentences', 'flags', 'sections'):
+        for k in ('flagged', 'sentences', 'flag_model', 'bib_sentences', 'flags', 'sections', 'mean_score'):
             row.pop(k, None)
         entry = papers.get(row['id'])
         if entry:
             row.update(flags=entry['modes'], sections=entry['sections'], flag_model=override['model'])
+            if entry.get('mean'): row['mean_score'] = entry['mean']  # average sentence score per base mode (Oct 13, 2026)
             # Fields read by Atlas builds deployed before counting modes (Oct 8, 2026): the bibliography-excluded counts.
             row.update(flagged=entry['modes']['nobib'][0], sentences=entry['modes']['nobib'][1], bib_sentences=entry['sections'][1]); n += 1; continue
         s = summaries.get(row['id'], {})
@@ -85,7 +86,7 @@ def main(prepared=False, enrich=False, flags=False):
             canonical={p['id']:p['pdf_key'][7:31] for p in request(BASE+'/atlas-public/catalogue.json')['items']}
             for row in rows:
                 extra=metadata.get(canonical.get(row['id'],row['id']),{})
-                row.update({k:v for k,v in extra.items() if k not in ('id','key','bytes','classified','models','collection','flagged','sentences','flag_model','bib_sentences','flags','sections')})
+                row.update({k:v for k,v in extra.items() if k not in ('id','key','bytes','classified','models','collection','flagged','sentences','flag_model','bib_sentences','flags','sections','mean_score')})
         elif prepared:
             receipt=json.loads((out/'receipt.json').read_text())
             assert request(BASE+'/indexes/browse/current.json')['revision']==receipt['revision'], 'Newer snapshot published; rebuild from live inventory'
