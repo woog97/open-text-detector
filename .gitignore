@@ -140,3 +140,4 @@ research/metadata-coverage-20261003/*-sample.json
 # Comparison results that contain another detector's API outputs (kept out of the public repo, Oct 13 2026)
 research/evaluation/scislopbench-20261008/result.json
 research/evaluation/scislopbench-20261008/quality.json
+research/evaluation/scislopbench-20261008/result-*.csv
