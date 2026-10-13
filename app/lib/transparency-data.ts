@@ -75,7 +75,7 @@ export const COMPUTE:[string,string,string][]=[
  ['Oct 1','Grant raised to 4× A100','Hugging Face'],
  ['Oct 1','Shared 4× H200 node','nev. Shared with about 6 other users; 2–3 GPUs usable at a time'],
  ['Oct 5','Grant raised to 8× A100, the highest tier','Hugging Face'],
- ['Oct 9','A100s lost','Hugging Face'],
+ ['Oct 8','A100s lost','Hugging Face'],
 ];
 export const OPEN_PROBLEMS:[string,string][]=[
  ['Co-writing','The final MoE catches about a quarter of text co-written over 3 rounds.'],
