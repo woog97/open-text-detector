@@ -1,5 +1,5 @@
 /* Transparency page content: abridged from the project logs and final evaluation reports (Oct 2026). */
-export const TABS:[string,string,string][]=[['timeline','Timeline','9'],['hyp','Hypotheses','21'],['data','Data','5 mixes'],['dead','Dead ends','10'],['over','Against the AI’s advice','10'],['effort','Effort and compute',''],['open','Open problems','7']];
+export const TABS:[string,string,string][]=[['timeline','Timeline','13'],['hyp','Hypotheses','21'],['data','Data','5 mixes'],['dead','Dead ends','10'],['over','Against the AI’s advice','10'],['effort','Effort and compute',''],['open','Open problems','7']];
 export const OUTCOME:Record<string,string>={c:'Confirmed',r:'Refuted',i:'Inconclusive',o:'Open'};
 
 export const HYPOTHESES:[q:string,how:string,k:string,res:string,when:string][]=[
@@ -87,13 +87,16 @@ export const OPEN_PROBLEMS:[string,string][]=[
 ];
 export const TIMELINE:[string,string,string][]=[
  ['Sep 25 – Oct 2','Collect and build data','14,561 older papers classified with MELD. 100,000 human passages, 30,000 AI mirrors, 600 synthetic papers.'],
- ['Oct 3','Six-backbone comparison','Decoders beat encoders. Becomes atlas-fast10, the first placeholder model.'],
+ ['Oct 3','Six-backbone comparison','Decoders beat encoders. Becomes the first model on this site.'],
  ['Oct 4 – 5','Overnight recipe sweep','About 40 runs. High learning rates collapse. Small edits stuck at 0.21–0.25 whatever the recipe.'],
  ['Oct 5','Find the data gap','Only 2 of 24,000 training windows hold a short AI span. ICLR 2027 scored and published as experimental.'],
  ['Oct 5 – 6','Splices','AI sentences swapped into human text: small edits 0.25 → 0.63, but only for one writer.'],
  ['Oct 6','Multi-writer data: T2, then T2.1','Claude and GPT edits, writers held out. Other models’ text 0.41 → 0.83.'],
  ['Oct 7','Final full-length runs','One pass over 72,000 windows with DeepSeek added, on three backbones. The MoE leads on every held-out set.'],
  ['Oct 8','Calibrate on human papers','Cutoff set on 2,403 human papers from 2019–2022: 1.0% of held-out human sentences flagged.'],
+ ['Oct 10','Loss-term ablations','Stage 1 and the segment and mixed losses dropped. Small-edit recall at 1% FPR rises from 71.9% to 74.6% over the Oct 7 recipe re-run. This becomes the Oct 10 model.'],
  ['Oct 11','Stricter default cutoff','Three archive papers that cite 2023–2025 work removed from calibration (2,400 papers). Default cutoff now flags 0.1% of human sentences.'],
+ ['Oct 10 – 12','Long-context candidate paused','lc-1020, trained on 1,020-token windows of real paper context, tied on the standard sets and caught more edits set inside longer context (71% vs 43%). Its lead came on sets built like its own training data, so it is paused until a whole-paper test.'],
  ['Oct 12','Oct 10 model live','Every paper rescored with the Oct 10 MoE (no stage 1, no segment or mixed loss). Its own cutoffs from the same 2,400 human papers; red marks scores of 0.38 or more. Appendices are now left out by default, as the bibliography already was.'],
+ ['Oct 12 – 13','Released','LoRA weights, training mix and held-out sets on Hugging Face; the code repository made public. The site moves to opentextdetector.com, with a 0.01% FPR option and a form for reporting a wrong result.'],
 ];
