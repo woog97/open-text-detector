@@ -1,5 +1,5 @@
 /* Calibration page: one reading column; charts and tables at full column width. */
-.cal{--cal-s1:#2a78d6;--cal-s2:#eb6834;--cal-s3:#1baf7a;--cal-s4:#eda100;--cal-s5:#e87ba4;--cal-grid:#e4e6e1;--cal-axis:#c3c6bf}
+.cal{--cal-r1:#86b6ef;--cal-r2:#3987e5;--cal-r3:#1c5cab;--cal-r4:#0d366b;--cal-s1:#2a78d6;--cal-s2:#eb6834;--cal-s3:#1baf7a;--cal-s4:#eda100;--cal-s5:#e87ba4;--cal-grid:#e4e6e1;--cal-axis:#c3c6bf}
 .cal-main{max-width:920px;margin:0 auto;padding:40px max(16px,3vw) 64px;display:grid;gap:44px}
 .cal-head{display:grid;gap:10px}
 .cal-head h2{margin:0;font:600 clamp(26px,4vw,34px)/1.15 var(--serif);text-wrap:balance}

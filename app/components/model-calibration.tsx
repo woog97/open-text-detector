@@ -21,6 +21,9 @@ type Calibration={model:{id:string;name:string;detail:string};calibration_set:{p
  * (bibliography / appendices in or out). The Oct 7 and 4B files stay in lib/model-calibration for the record. */
 const BY_MODE={all:calibrationAll,nobib:calibrationNobib,noapp:calibrationNoapp,body:calibrationBody} as unknown as Record<BaseFlagMode,Calibration>;
 const SERIES=["var(--cal-s1)","var(--cal-s2)","var(--cal-s3)","var(--cal-s4)","var(--cal-s5)"];
+/** ROC curves are ordered by how much text is AI-written (one sentence, two, a paragraph, a section), so they take one
+ * hue light to dark (Alice, Oct 13 2026): steps 250/400/550/700 of the blue ramp; the lightest still clears 2:1 on white. */
+const ROC_RAMP=["var(--cal-r1)","var(--cal-r2)","var(--cal-r3)","var(--cal-r4)"];
 const pct=(v:number,d=1)=>`${(v*100).toFixed(v>0&&v<0.001?3:v<0.01?2:d)}%`;
 const opt=(v:number|null,f:(x:number)=>string)=>v==null?"—":f(v);
 const at=(c:Curve,f:number)=>{let j=0;while(j+1<c.fpr.length&&c.fpr[j+1]<=f)j++;return c.tpr[j];};
@@ -28,7 +31,7 @@ const at=(c:Curve,f:number)=>{let j=0;while(j+1<c.fpr.length&&c.fpr[j+1]<=f)j++;
 /** ROC curves on a log false-positive axis, with markers at the published thresholds. */
 const base=(name:string)=>name.replace(/, new final-moe$/,"");
 function RocChart({curves,label,marks,xmin=1e-4,scoreAt}:{curves:Curve[];label:string;marks:number[];xmin?:number;scoreAt?:(f:number)=>string|null}){
- const sets=[...new Set(curves.map(c=>base(c.name)))], colour=(c:Curve)=>SERIES[sets.indexOf(base(c.name))%SERIES.length];
+ const sets=[...new Set(curves.map(c=>base(c.name)))], colour=(c:Curve)=>ROC_RAMP[Math.min(sets.indexOf(base(c.name)),ROC_RAMP.length-1)];
  const W=760,H=380,m={l:56,r:16,t:12,b:44},dec=-Math.log10(xmin);
  const x=(f:number)=>m.l+(Math.log10(Math.max(f,xmin))+dec)/dec*(W-m.l-m.r), y=(t:number)=>m.t+(1-t)*(H-m.t-m.b);
  const svg=useRef<SVGSVGElement>(null);
