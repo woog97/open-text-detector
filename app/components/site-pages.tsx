@@ -136,15 +136,8 @@ function About(){
     {RELEASES.map(([n,d,st,k,href])=><tr key={n}><td><b>{n}</b><span>{d}</span></td><td className={k==='soon'?'sp-soon':k==='part'?'sp-part':'sp-out'}>{href?<a href={href}>{st}</a>:st}</td></tr>)}
    </tbody></table>
   </Section>
-  <Section title="Choose your classifier">
-   <p>No single detector is right for every case, and I don’t want this site to decide that for you. The site currently serves one model, Qwen3.6 35B-A3B MoE · Oct 10; how it compares with the other candidates is under Runs compared on the <a href="/?view=results&tab=runs">Evaluation page</a>. Switching between models on result pages is planned.</p>
-  </Section>
   <Section title="Build something better">
    <p>The point of releasing everything is that someone else can take it further. Train a stronger model on the released data, run it on another venue, or replace this site entirely. If you do, I would like to hear about it.</p>
-  </Section>
-  <Section title="Limits">
-   <p>A score is a model estimate, not proof of misconduct, and the detector makes errors. The highlighted passages are there so you can judge for yourself.</p>
-   <p className="sp-links"><a href="/?view=limitations">Known limitations</a><a href="/?view=calibration">Calibration</a></p>
   </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
