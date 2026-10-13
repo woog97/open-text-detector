@@ -1,1 +1,7 @@
 *{box-sizing:border-box}body{margin:0;font:14px/1.5 Arial,Helvetica,sans-serif}button,input,select{font:inherit}button:disabled{opacity:.4;cursor:default}button,a{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #a74d32;outline-offset:3px}
+/* Section links (components/heading-anchors.tsx): a "#" after each linkable heading, shown on hover or keyboard focus. */
+.hd-target{scroll-margin-top:calc(var(--nav,56px) + 16px)}
+.hd-anchor{margin-left:.35em;padding:0 .15em;color:inherit;font-weight:400;text-decoration:none;opacity:0;transition:opacity .12s}
+.hd-target:hover .hd-anchor,.hd-anchor:focus-visible{opacity:.45}
+.hd-anchor:hover{opacity:1!important;text-decoration:none}
+@media (hover:none){.hd-anchor{opacity:.3}}

@@ -1,7 +1,7 @@
 "use client";
 /* Where the training and evaluation text comes from and how the AI text was made (draft, Oct 11 2026).
    Facts and sources: research/site-architecture-20261011/DATA_FACTS.md. Styles shared with site-architecture.css. */
-import {useEffect,useState,type ReactNode} from 'react';
+import {useEffect,useRef,useState,type ReactNode} from 'react';
 import './site-architecture.css';
 import './site-data.css';
 import {PROMPTS} from './ai-prompts';
@@ -17,7 +17,8 @@ const PHASES:[Phase,string,string][]=[
 
 export function DataPage(){
  const [phase,setPhase]=useState<Phase>(()=>{const p=typeof location!=='undefined'?new URLSearchParams(location.search).get('phase'):null;return PHASES.some(([k])=>k===p)?p as Phase:'eval';});
- useEffect(()=>{const p=new URLSearchParams(location.search);p.set('phase',phase);history.replaceState(null,'',`/?${p}`);},[phase]);
+ const firstPhase=useRef(true);
+ useEffect(()=>{const p=new URLSearchParams(location.search);p.set('phase',phase);history.replaceState(null,'',`/?${p}${firstPhase.current?location.hash:''}`);firstPhase.current=false;},[phase]);
  const i=PHASES.findIndex(([k])=>k===phase);
  return <div className="sp-col sp-col-wide ar">
   <section className="sp-hero">

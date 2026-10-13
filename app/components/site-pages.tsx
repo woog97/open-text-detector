@@ -1,6 +1,7 @@
 "use client";
 /* Static public pages: home, transparency, manifesto and about. Ported from the approved design canvas. */
-import {useState,type FormEvent,type ReactNode} from 'react';
+import {useRef,useState,type FormEvent,type ReactNode} from 'react';
+import {useHeadingAnchors} from './heading-anchors';
 import {SiteHeader,SiteFooter,SUBMISSIONS_HREF,useSavedCount} from './site-chrome';
 import {Transparency} from './site-transparency';
 import {Architecture} from './site-architecture';
@@ -11,11 +12,16 @@ import './site-pages.css';
 
 export type StaticPage='home'|'transparency'|'architecture'|'data'|'results'|'limitations'|'manifesto'|'about';
 
+const NO_ROOT={current:null};
+/** Pages whose section headings get a "#" link (heading-anchors.tsx). */
+const LINKED:StaticPage[]=['transparency','architecture','data','results','limitations'];
+
 export default function SitePages({page}:{page:StaticPage}){
  const savedCount=useSavedCount();
+ const main=useRef<HTMLElement>(null);useHeadingAnchors(LINKED.includes(page)?main:NO_ROOT);
  return <div className="site sp">
   <SiteHeader page={page} savedCount={savedCount}/>
-  <main>{page==='home'?<Home/>:page==='transparency'?<Transparency/>:page==='architecture'?<Architecture/>:page==='data'?<DataPage/>:page==='results'?<ResultsPage/>:page==='limitations'?<LimitationsPage/>:page==='manifesto'?<Manifesto/>:<About/>}</main>
+  <main ref={main}>{page==='home'?<Home/>:page==='transparency'?<Transparency/>:page==='architecture'?<Architecture/>:page==='data'?<DataPage/>:page==='results'?<ResultsPage/>:page==='limitations'?<LimitationsPage/>:page==='manifesto'?<Manifesto/>:<About/>}</main>
   <SiteFooter/>
  </div>;
 }

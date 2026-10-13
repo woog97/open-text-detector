@@ -1,5 +1,6 @@
 "use client";
 import {useRef,useState} from "react";
+import {useHeadingAnchors} from "./heading-anchors";
 import {SiteHeader,SiteFooter,useSavedCount} from "./site-chrome";
 import calibrationAll from "@/lib/model-calibration/qwen36-35b-a3b-oct10-all.json";
 import calibrationNobib from "@/lib/model-calibration/qwen36-35b-a3b-oct10-nobib.json";
@@ -89,9 +90,10 @@ function YearChart({rows,fpr}:{rows:Calibration["years"];fpr:number}){
 
 export default function ModelCalibration(){
  const savedCount=useSavedCount();
+ const main=useRef<HTMLElement>(null);useHeadingAnchors(main);
  // Same default and URL parameter as Discover, so a link carries the counting mode between the two pages.
  const [mode,setModeState]=useState<FlagMode>(()=>typeof location==='undefined'?DEFAULT_FLAG_MODE:asSiteFlagMode(new URLSearchParams(location.search).get('mode')));
- function setMode(m:FlagMode){setModeState(m);const q=new URLSearchParams(location.search);if(m===DEFAULT_FLAG_MODE)q.delete('mode');else q.set('mode',m);history.replaceState(null,'',`?${q}`);}
+ function setMode(m:FlagMode){setModeState(m);const q=new URLSearchParams(location.search);if(m===DEFAULT_FLAG_MODE)q.delete('mode');else q.set('mode',m);history.replaceState(null,'',`?${q}${location.hash}`);}
  const c=BY_MODE[FLAG_MODES[mode].base],curve=(name:string)=>(c.sentence_curves as Curve[]).find(k=>k.name===name)!,one=curve("One-sentence edits"),two=curve("Two-sentence edits"),para=curve("Paragraph edits"),sec=curve("AI sections"),m=FLAG_MODES[mode];
  const fpr=m.fpr,other:FlagFpr=fpr===0.01?0.001:0.01,th=(f:number)=>c.thresholds.find(t=>t.target_fpr===f);
  const years=fpr===0.0001?c.years_p01:fpr===0.001?c.years_p1:c.years;
@@ -99,7 +101,7 @@ export default function ModelCalibration(){
  const scoreAt=c.score_map?(f:number)=>{const g=c.score_map!;if(f<g.fpr[0])return `above ${thresholdText(g.max_score)}, the highest human sentence`;let j=0;while(j+1<g.fpr.length&&g.fpr[j+1]<=f)j++;return thresholdText(g.score[j]);}:undefined;
  return <div className="site cal">
   <SiteHeader page="calibration" savedCount={savedCount}/>
-  <main className="cal-main">
+  <main className="cal-main" ref={main}>
    <section className="cal-hero">
     <h1>Calibration</h1>
     <p>How the site decides which sentences to flag: the cutoffs set on human-written papers, how often they flag human text, and how much AI text they catch at each rate.</p>

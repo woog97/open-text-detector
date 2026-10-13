@@ -3,7 +3,7 @@
    Numbers: eval_final.py outputs in final-20261007/sweeps/abl-noseg-nomix/eval on the H200; pooled small-edit recall and
    per-cohort/per-writer counts from loss-ablation-20261010/pooled_heldout.py (standard and --suffix=-lc); 95% intervals
    from a 1,000-draw paper bootstrap (same definitions). Facts: research/site-architecture-20261011/RESULTS_FACTS.md. */
-import {useState} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import './site-architecture.css';
 import './site-data.css';
 import './site-results.css';
@@ -100,6 +100,9 @@ function Bar({v,cls}:{v:number;cls:string}){return <span className="rs-bar"><i c
 
 export function ResultsPage(){
  const [tab,setTab]=useState<'main'|'runs'>(()=>new URLSearchParams(location.search).get('tab')==='runs'?'runs':'main');
+ // The tab is kept in the address so a copied section link (#id) opens the right tab.
+ const firstTab=useRef(true);
+ useEffect(()=>{const p=new URLSearchParams(location.search);if(tab==='runs')p.set('tab','runs');else p.delete('tab');history.replaceState(null,'',`/?${p}${firstTab.current?location.hash:''}`);firstTab.current=false;},[tab]);
  return <div className="sp-col sp-col-wide ar">
   <section className="sp-hero">
    <h1>Evaluation</h1>

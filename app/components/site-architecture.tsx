@@ -1,7 +1,7 @@
 "use client";
 /* How the detector works: text extraction, input format, model architecture and training loss (draft, Oct 11 2026).
    Describes final-moe: the Oct 10 loss-ablation winner (abl-noseg-nomix). The Oct 7 model it replaces is final-moe-oct7. */
-import {useEffect,useState,type ReactNode} from 'react';
+import {useEffect,useRef,useState,type ReactNode} from 'react';
 import './site-architecture.css';
 
 type Phase='extraction'|'input'|'model'|'loss';
@@ -14,7 +14,8 @@ const PHASES:[Phase,string,string][]=[
 
 export function Architecture(){
  const [phase,setPhase]=useState<Phase>(()=>{const p=typeof location!=='undefined'?new URLSearchParams(location.search).get('phase'):null;return PHASES.some(([k])=>k===p)?p as Phase:'model';});
- useEffect(()=>{const p=new URLSearchParams(location.search);p.set('phase',phase);history.replaceState(null,'',`/?${p}`);},[phase]);
+ const firstPhase=useRef(true);
+ useEffect(()=>{const p=new URLSearchParams(location.search);p.set('phase',phase);history.replaceState(null,'',`/?${p}${firstPhase.current?location.hash:''}`);firstPhase.current=false;},[phase]);
  const i=PHASES.findIndex(([k])=>k===phase);
  return <div className="sp-col sp-col-wide ar">
   <section className="sp-hero">
