@@ -2,7 +2,9 @@ import legacyAliases from "../lib/legacy-paper-aliases.json" with {type:"json"};
 import type {PublishedPaper} from "../lib/atlas-archive.ts";
 import {createBrowseHandler} from "./browse-worker.ts";
 import {ORIGIN,pageMeta,robotsTxt,sitemapXml,withMeta} from "./seo.ts";
-interface Env { ASSETS: Fetcher; BUCKET: R2Bucket }
+import {handleFeedback} from "./feedback.ts";
+type RateLimit={limit(o:{key:string}):Promise<{success:boolean}>};
+interface Env { ASSETS: Fetcher; BUCKET: R2Bucket; FEEDBACK_PER_SENDER?: RateLimit; FEEDBACK_SITEWIDE?: RateLimit }
 /** Written by scripts/publish_public_catalogue.py: the public catalogue and reader shards of one revision. */
 type Publication = {revision:string;catalogue_key:string;shards_prefix:string};
 export const PUBLICATION_KEY='atlas-public/public/current.json';
@@ -151,6 +153,8 @@ export function createAtlasWorker() {
     const url=new URL(request.url);
     if(url.pathname==='/backend/v1/browse'&&['GET','HEAD'].includes(request.method))return browse(request,env.BUCKET,ctx);
     if(url.pathname==='/private'||url.pathname.startsWith('/private/'))return json({detail:'Not found'},404);
+    if(url.pathname==='/backend/v1/feedback')return handleFeedback(request,{bucket:env.BUCKET,perSender:env.FEEDBACK_PER_SENDER,sitewide:env.FEEDBACK_SITEWIDE,
+      paperExists:async id=>!!(await readerPaper(env,(legacyAliases as Record<string,string>)[id]||id))},json);
     if(!['GET','HEAD'].includes(request.method))return new Response(null,{status:405,headers:headers({Allow:'GET, HEAD','Cache-Control':'no-store'})});
     if(url.pathname==='/backend/v1/transparency/ai-examples'){
       // Fixed sample of AI-text training rows for the Data page (built offline; contains paper text, so it lives in R2, not git).

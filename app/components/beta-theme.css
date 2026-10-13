@@ -119,6 +119,15 @@ html.ui-beta .pb-model-slot:empty{display:none}
 .rs-flags li .site-num.is-strong{color:#b2412b;font-weight:600}
 .rs .rs-more{margin-top:8px;font-size:13px;color:var(--blue)}
 .rs .rs-more:hover{text-decoration:underline}
+.rs-feedback{border-top:1px solid var(--rule-2);padding-top:16px}
+.rs-feedback textarea{display:block;width:100%;box-sizing:border-box;margin-top:4px;padding:8px 10px;border:1px solid var(--rule);background:#fff;font:13px/1.5 var(--sans);color:var(--ink);resize:vertical}
+.rs-feedback textarea:focus{outline:2px solid var(--blue);outline-offset:-1px}
+.rs-feedback-actions{display:flex;align-items:center;gap:14px;margin-top:10px}
+.rs-feedback-actions button[type=submit]{padding:6px 14px;background:var(--ink);color:#fff;font:600 13px var(--sans)}
+.rs-feedback-actions button[type=submit]:disabled{opacity:.4;cursor:default}
+.rs-feedback-actions .rs-more{margin-top:0}
+.rs-feedback-actions small{margin-left:auto;font-size:11px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.rs-error{color:#b2412b}
 
 /* PDF reader */
 html.ui-beta .pb-sheet{background:#e6e8e3}

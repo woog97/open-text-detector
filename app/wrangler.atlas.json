@@ -28,6 +28,10 @@
       "bucket_name": "pangram-paper-atlas"
     }
   ],
+  "ratelimits": [
+    {"name": "FEEDBACK_PER_SENDER", "namespace_id": "1001", "simple": {"limit": 3, "period": 60}},
+    {"name": "FEEDBACK_SITEWIDE", "namespace_id": "1002", "simple": {"limit": 30, "period": 60}}
+  ],
   "observability": {
     "enabled": false
   }

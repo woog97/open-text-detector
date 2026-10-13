@@ -1,6 +1,6 @@
 "use client";
 /* Beta reader: "Results by model", its controls and the flagged-passage count, shown in the paper's left column. */
-import {useMemo,type ReactNode} from "react";
+import {useMemo,useState,type ReactNode} from "react";
 import {fprReadout} from "@/lib/score-fpr";
 import {hasTextContent, summarizePassages, paperRate, modelLabel, MIN_SENTENCES} from "@/lib/paper-scores";
 import {FLAG_FPRS, FLAG_MODES, FLAG_MODEL, flagModeOf, fprLabel, thresholdText, type FlagMode} from "@/lib/paper-discovery";
@@ -26,8 +26,43 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
  return rate===null?{value:"—",detail:"No scored passages"}:{value:share(rate),detail:`passages above ${threshold.toFixed(2)} · not calibrated`};
 }
 
-export default function ReaderSummary({reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
- reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
+const MAX_FEEDBACK=4000;
+/** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
+function Feedback({paperId,context}:{paperId:string;context:Record<string,string>}){
+ const [open,setOpen]=useState(false),[text,setText]=useState(""),[trap,setTrap]=useState("");
+ const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
+ async function send(){
+  setState("sending");setError("");
+  try{
+   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,website:trap})});
+   if(r.ok){setState("sent");return;}
+   const d=(await r.json().catch(()=>({}))) as {detail?:unknown};setError(typeof d.detail==="string"?d.detail:"The message could not be sent.");setState("error");
+  }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
+ }
+ return <section className="rs-feedback">
+  <h2>Think this result is wrong?</h2>
+  {state==="sent"?<p className="rs-note" role="status">Thank you. Your message was saved.</p>:!open?<>
+   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong.</p>
+   <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write a message</button>
+  </>:<form onSubmit={e=>{e.preventDefault();if(text.trim()&&state!=="sending")send();}}>
+   <label className="rs-sr" htmlFor="rs-feedback-text">Your message</label>
+   <textarea id="rs-feedback-text" value={text} maxLength={MAX_FEEDBACK} rows={5} autoFocus onChange={e=>setText(e.target.value)}
+    placeholder="For example: which sections were written without AI, or how AI was used."/>
+   {/* Left empty by people; bots that fill every field are ignored by the server. */}
+   <input className="rs-sr" tabIndex={-1} autoComplete="off" aria-hidden="true" name="website" value={trap} onChange={e=>setTrap(e.target.value)}/>
+   <p className="rs-note">Your message is saved privately with this paper and the settings shown above. I can’t reply, so please don’t include your name, email address or other personal details.</p>
+   {state==="error"&&<p className="rs-note rs-error" role="alert">{error}</p>}
+   <div className="rs-feedback-actions">
+    <button type="submit" disabled={!text.trim()||state==="sending"}>{state==="sending"?"Sending…":"Send"}</button>
+    <button type="button" className="rs-more" onClick={()=>{setOpen(false);setState("idle");setError("");}}>Cancel</button>
+    <small>{text.length.toLocaleString()} / {MAX_FEEDBACK.toLocaleString()}</small>
+   </div>
+  </form>}
+ </section>;
+}
+
+export default function ReaderSummary({paperId,reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
+ paperId:string;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
  flagged:FlaggedItem[];onSelect:(id:number)=>void;onOpenPanel:()=>void;calibrated:boolean;custom?:ReactNode;customYellow?:number;
 }){
  const flag=FLAG_MODES[flagMode];
@@ -57,5 +92,6 @@ export default function ReaderSummary({reports,reportId,onPick,loading,flagMode,
    {!flagged.length&&<p className="rs-note">No passages are flagged by this model.</p>}
    <button type="button" className="rs-more" onClick={onOpenPanel}>{flagged.length?"Show them in the passages panel":"Open the passages panel"}</button>
   </section>}
+  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
  </div>;
 }

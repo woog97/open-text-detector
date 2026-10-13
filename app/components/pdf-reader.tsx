@@ -1204,7 +1204,7 @@ export default function PDFReader({
             </>
           )}
         </aside>}
-        {beta&&summarySlot&&createPortal(<ReaderSummary reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
+        {beta&&summarySlot&&createPortal(<ReaderSummary paperId={paperId} reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
           onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
