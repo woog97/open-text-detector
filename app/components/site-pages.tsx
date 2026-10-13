@@ -109,7 +109,7 @@ const RELEASES:[string,string,string,'out'|'part'|'soon',string?][]=[
  ['Training data','The 72,000 training windows behind the live model, with sources and construction.','Done: on Hugging Face','out','https://huggingface.co/datasets/woog/open-text-detector-mix-oct7'],
  ['LoRA adapter','The trained weights of the live model.','Done: on Hugging Face','out','https://huggingface.co/woog/open-text-detector-qwen36-35b-a3b-oct10'],
  ['Evaluation data','The held-out sets behind the Evaluation page.','Done: on Hugging Face','out','https://huggingface.co/datasets/woog/open-text-detector-heldout'],
- ['Training recipe','Configurations and scripts to reproduce each model.','Done: on GitHub, with the exact code of the live model','out','https://github.com/woog97/open-text-detector/tree/main/benchmarks/otd/training/final-moe-oct10-snapshot'],
+ ['Training recipe','Configurations and scripts to reproduce the model.','Done: on GitHub, with the exact code of the live model','out','https://github.com/woog97/open-text-detector/tree/main/benchmarks/otd/training/final-moe-oct10-snapshot'],
  ['Site and inference code','Everything that runs this website and scores papers.','Done: on GitHub','out','https://github.com/woog97/open-text-detector'],
 ];
 function About(){
