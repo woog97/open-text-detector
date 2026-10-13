@@ -23,4 +23,4 @@ Designs are explored on the design canvas (claude.ai artifact `MVuxhqZ2gDVpihzaE
 
 | Date | Page | Spec | Status |
 |---|---|---|---|
-| 2026-10-13 | Landing (home) | [landing/2026-10-13-landing.md](landing/2026-10-13-landing.md) | Approved, not built |
+| 2026-10-13 | Landing (home) | [landing/2026-10-13-landing.md](landing/2026-10-13-landing.md) | Built (2c77095, branch landing-build-20261013), not deployed |
