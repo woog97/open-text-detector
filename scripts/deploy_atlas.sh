@@ -5,7 +5,7 @@
 #   1. the checkout is not on main (every deploy comes from one branch);
 #   2. app/ has uncommitted or untracked changes (what is live must exist in git);
 #   3. the commit currently live is not contained in this one (deploying would erase someone else's work: merge first).
-#      A live commit from the pre-Oct-13 history counts as contained when a commit here has exactly its files.
+#      A live commit from the pre-Oct-13 history counts as contained when a commit here has exactly its app/ folder.
 # Each deploy records "commit <sha>" as its message, which is how check 3 finds the live commit next time.
 #
 # --first   allow a deploy when the live version has no recorded commit (only after a rollback or a manual deploy,
@@ -20,10 +20,12 @@ dirty=$(git status --porcelain -- app)
 [ -z "$dirty" ] || { echo "STOP: app/ has changes that are not committed:"; echo "$dirty"; exit 1; }
 head=$(git rev-parse HEAD)
 
-# True when some commit in this history has exactly the files of the live commit. The repository started a fresh
-# history on Oct 13, 2026 (old history: branch history-main, private repo woog97/open-text-detector-history), so the
-# live commit can sit in the old history while its files are fully contained here.
-has_live_tree(){ local t; t=$(git rev-parse "$live^{tree}"); git rev-list --format=%T "$head" | grep -qx "$t"; }
+# True when some commit in this history has exactly the live commit's app/ folder (the only thing a deploy ships).
+# The repository started a fresh history on Oct 13, 2026 (old history: branch history-main, private repo
+# woog97/open-text-detector-history), so the live commit can sit in the old history while its site code is fully
+# contained here; files outside app/ (research results removed from the public repo) don't count.
+has_live_tree(){ local t c; t=$(git rev-parse "${live}:app"); for c in $(git rev-list "$head"); do
+  [ "$(git rev-parse "${c}:app" 2>/dev/null)" = "$t" ] && return 0; done; return 1; }
 
 cd app
 live=$( (npx wrangler deployments status --config wrangler.atlas.json --json 2>/dev/null || true) | python3 -c '
