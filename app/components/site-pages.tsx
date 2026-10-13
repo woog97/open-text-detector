@@ -140,6 +140,9 @@ function About(){
   <Section title="Build something better">
    <p>The point of releasing everything is that someone else can take it further. Train a stronger model on the released data, run it on another venue, or replace this site entirely. If you do, I would like to hear about it.</p>
   </Section>
+  <Section title="Privacy">
+   <p>This site keeps usage statistics so I can see how it is used: which pages are visited, which papers are opened, and which sorting and filtering options are used, along with each visit’s country and city, the network or institution it comes from, the device type, browser, language and referring site. There are no cookies and no tracking scripts. IP addresses are not stored: visits are counted with a code made from the address and browser that changes every day, so no one can be followed from one day to the next. Searches are not recorded, only that a search was made.</p>
+  </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
    <p className="sp-links"><a href="https://x.com/woog09" rel="noopener">@woog09 on X</a><a href="mailto:rigg.alice0@gmail.com">rigg.alice0@gmail.com</a></p>
