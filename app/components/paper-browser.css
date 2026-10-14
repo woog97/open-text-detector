@@ -300,3 +300,4 @@
 .pb-src{font:600 11px var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--graphite);margin-right:8px}
 /* TL;DRs are capped at 250 characters by OpenReview, so show them whole; only the abstract fallback is clamped. */
 .pb-summary.is-tldr{display:block;-webkit-line-clamp:unset;overflow:visible}
+.pb-hist-foot{display:flex;justify-content:space-between;gap:12px;margin-top:6px;font:400 10px var(--mono);color:var(--graphite)}
