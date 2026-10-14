@@ -99,9 +99,9 @@ html.ui-beta .pb-model-slot:empty{display:none}
 .rs h2 span{font-weight:400;color:var(--ink-2)}
 .rs-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .rs fieldset{margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:6px}
-.rs fieldset label{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:2px 8px;align-items:center;border:1px solid var(--rule);padding:10px 12px;cursor:pointer;background:#fff}
-.rs fieldset label.is-on{border-color:var(--ink)}
-.rs fieldset input{margin:0;accent-color:var(--ink)}
+.rs fieldset:not(.rs-lockable) > label{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:2px 8px;align-items:center;border:1px solid var(--rule);padding:10px 12px;cursor:pointer;background:#fff}
+.rs fieldset:not(.rs-lockable) > label.is-on{border-color:var(--ink)}
+.rs fieldset:not(.rs-lockable) > label input{margin:0;accent-color:var(--ink)}
 .rs-name{display:flex;align-items:baseline;gap:6px;font-size:14px;min-width:0}
 .rs-name small{font-size:11px;font-weight:600;color:var(--ink);background:var(--hi);padding:0 5px}
 .rs-value{font:600 18px var(--sans);font-variant-numeric:tabular-nums}

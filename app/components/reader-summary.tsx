@@ -67,7 +67,7 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,sh
     <label>Name <span>optional</span><input value={name} maxLength={200} autoComplete="name" onChange={e=>setName(e.target.value)}/></label>
     <label>Email, Discord or X <span>optional</span><input value={reach} maxLength={200} autoComplete="email" onChange={e=>setReach(e.target.value)}/></label>
    </div>
-   <p className="rs-note">Your message is saved privately with this paper and the settings shown above. Contact details are optional; leave them if you would like a reply.</p>
+   <p className="rs-note">Your message is saved privately with this paper and the settings shown above. Contact details are optional; leave them if you would like a reply (reply not guaranteed).</p>
    {state==="error"&&<p className="rs-note rs-error" role="alert">{error}</p>}
    <div className="rs-feedback-actions">
     <button type="submit" disabled={!ready}>{state==="sending"?"Sending…":"Send"}</button>
@@ -78,8 +78,8 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,sh
  </section>;
 }
 
-export default function ReaderSummary({paperId,locked=false,onDiscardFeedback=()=>{},showMarks=true,onShowMarks=()=>{},marked=[],canMark=false,onClearMarks=()=>{},onStartMarking=()=>{},marking=false,onStopMarking=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
- paperId:string;locked?:boolean;onDiscardFeedback?:()=>void;showMarks?:boolean;onShowMarks?:(v:boolean)=>void;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;onStartMarking?:()=>void;marking?:boolean;onStopMarking?:(keep:boolean)=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
+export default function ReaderSummary({paperId,locked=false,showMarks=true,onShowMarks=()=>{},marked=[],canMark=false,onClearMarks=()=>{},onStartMarking=()=>{},marking=false,onStopMarking=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
+ paperId:string;locked?:boolean;showMarks?:boolean;onShowMarks?:(v:boolean)=>void;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;onStartMarking?:()=>void;marking?:boolean;onStopMarking?:(keep:boolean)=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
  flagged:FlaggedItem[];onSelect:(id:number)=>void;onOpenPanel:()=>void;calibrated:boolean;custom?:ReactNode;customYellow?:number;
 }){
  const flag=FLAG_MODES[flagMode];
@@ -105,7 +105,7 @@ export default function ReaderSummary({paperId,locked=false,onDiscardFeedback=()
     </div>}
     {calibrated&&custom}
     </fieldset>
-    {locked&&<p className="rs-note rs-lock-note" role="status">Settings are locked while you give feedback, so your message matches what you saw. <button type="button" className="rs-more" onClick={onDiscardFeedback}>Discard feedback</button></p>}
+    {locked&&<p className="rs-note rs-lock-note" role="status">Settings are locked while you give feedback, so your message matches what you saw.</p>}
     <p className="rs-note">The selected model’s scores are highlighted on the PDF. A flag means the text resembles AI-generated text; it is not proof of authorship. <a href="/?view=transparency">How much to trust it</a></p>
    </>}
   </section>

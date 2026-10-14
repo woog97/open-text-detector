@@ -726,7 +726,6 @@ export default function PDFReader({
   // Feedback in progress (marking, the form open, or marks not yet sent): result settings are locked so the message, the
   // marks and the recorded settings describe the same view (Alice, Oct 13 2026).
   const feedbackLocked=markMode||feedbackOpen||marked.size>0;
-  function discardFeedback(){setMarkMode(false);setMarked(new Set());setFeedbackOpen(false);}
   function openFeedback(){setFeedbackOpen(true);setTimeout(()=>document.getElementById('rs-feedback')?.scrollIntoView({block:'center',behavior:'smooth'}),50);}
   // Layout changes (rotation, entering or leaving fullscreen) move the page: bring the selected passage back into view.
   // Wait for the pages to re-render at the new width (resizes settle after ~600 ms) before scrolling.
@@ -1259,7 +1258,7 @@ export default function PDFReader({
         {beta&&summarySlot&&createPortal(<ReaderSummary paperId={paperId} reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
-          onSelect={select} locked={feedbackLocked} onDiscardFeedback={discardFeedback} showMarks={showMarks} onShowMarks={setShowMarks} custom={customControls} customYellow={custom.on?custom.y:undefined}
+          onSelect={select} locked={feedbackLocked} showMarks={showMarks} onShowMarks={setShowMarks} custom={customControls} customYellow={custom.on?custom.y:undefined}
           marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
