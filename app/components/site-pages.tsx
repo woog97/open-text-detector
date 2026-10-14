@@ -53,8 +53,8 @@ function Home(){
   </Section>
 
   <Section title="Why this exists">
-   <p>ICLR runs its review in the open. Every submission, review and rebuttal is public while the process is under way. That openness makes it possible to look at how papers are written, not only what they claim.</p>
-   <p>Undisclosed use of language models in writing is hard to see and slow to address. Conferences ask for disclosure but have few ways to check it while review is still happening. This site puts the same evidence in front of everyone at the same time, so that authors, reviewers and chairs can discuss it with the paper in hand.</p>
+   <p>I wrote a <a href="/?view=manifesto">manifesto</a> explaining this. In short: AI makes it easier than ever to produce research at every stage, which is good for the frontier. But it also lets low-effort work be produced at a scale that saturates the submission pool and overburdens double-blind review. Official processes change far too slowly to keep up, and ICLR 2027’s open review makes it possible to act now instead of waiting.</p>
+   <p>One of the things we need is forced transparency: everyone should be able to see where, when and how AI was used in a paper, without relying on authors to disclose it. This site is a first step toward that, with an open detector anyone can inspect, instead of a for-profit product you have to take on trust.</p>
   </Section>
 
   <Section title="Who made this">
