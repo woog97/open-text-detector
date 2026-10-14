@@ -3,6 +3,8 @@
  * No IP address, user agent or contact details are stored. Added Oct 13, 2026. */
 export const FEEDBACK_PREFIX='feedback/';
 export const MAX_COMMENT=4000;
+/** Passages a reader marked as written without AI (indices into the report's segments; Oct 13, 2026). */
+export const MAX_PASSAGES=300;
 const MAX_BODY=8192;
 /** Settings shown when the message was sent, so the result the reader saw can be reproduced. */
 const CONTEXT_KEYS=['report','mode','shown','cutoff'] as const;
@@ -23,7 +25,10 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   if(typeof body.website==='string'&&body.website)return json({ok:true},201);
   const paper=body.paper,comment=typeof body.comment==='string'?body.comment.trim():'';
   if(typeof paper!=='string'||!/^[a-f0-9]{24}$/.test(paper))return json({detail:'Unknown paper'},400);
-  if(!comment)return json({detail:'Please write a message'},400);
+  const rawPassages=body.passages===undefined?[]:body.passages;
+  if(!Array.isArray(rawPassages)||rawPassages.length>MAX_PASSAGES||!rawPassages.every(n=>Number.isSafeInteger(n)&&(n as number)>=0&&(n as number)<1_000_000))return json({detail:'Invalid marked passages'},400);
+  const passages=[...new Set(rawPassages as number[])].sort((a,b)=>a-b);
+  if(!comment&&!passages.length)return json({detail:'Please write a message or mark a passage'},400);
   if(comment.length>MAX_COMMENT)return json({detail:`Please keep it under ${MAX_COMMENT.toLocaleString('en-US')} characters`},400);
   const ctxIn=body.context&&typeof body.context==='object'?body.context as Record<string,unknown>:{},context:Record<string,string>={};
   for(const k of CONTEXT_KEYS){const v=ctxIn[k];if(typeof v==='string'||typeof v==='number')context[k]=String(v).slice(0,120);}
@@ -34,6 +39,6 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   if(!(await deps.paperExists(paper)))return json({detail:'Unknown paper'},400);
   const now=(deps.now||(()=>new Date()))(),day=now.toISOString().slice(0,10);
   const key=`${FEEDBACK_PREFIX}${day}/${now.getTime()}-${crypto.randomUUID()}.json`;
-  await deps.bucket.put(key,JSON.stringify({received_at:now.toISOString(),paper,comment,context}),{httpMetadata:{contentType:'application/json'}});
+  await deps.bucket.put(key,JSON.stringify({received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{})}),{httpMetadata:{contentType:'application/json'}});
   return json({ok:true},201);
 }

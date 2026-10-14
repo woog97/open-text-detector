@@ -35,3 +35,12 @@ test('rejects other sites, other methods, bad input, unknown papers and senders 
  assert.equal((await setup({allow:false}).send({paper,comment:'x'})).status,429);
  assert.equal(puts.length,0);
 });
+test('marked passages are stored as sorted unique indices; a message may be only marks; bad marks are rejected',async()=>{
+ const {send,puts}=setup();
+ assert.equal((await send({paper,comment:'',passages:[12,3,3,40],context:{report:'r'}})).status,201);
+ assert.deepEqual(puts[0][1].passages,[3,12,40]);assert.equal(puts[0][1].comment,'');
+ assert.equal((await send({paper,comment:'just text'})).status,201);assert.equal('passages' in puts[1][1],false);
+ for(const passages of [[-1],[1.5],['3'],'3',Array.from({length:301},(_,i)=>i)])assert.equal((await send({paper,comment:'x',passages})).status,400,JSON.stringify(passages).slice(0,20));
+ assert.equal((await send({paper,comment:'',passages:[]})).status,400);
+ assert.equal(puts.length,2);
+});

@@ -5,12 +5,26 @@ through the Cloudflare API with your wrangler login (the same access as the publ
 with the paper's title and a reader link. Nothing is changed or deleted.
 Usage: uv run -q --python 3.12 scripts/read_feedback.py [--since YYYY-MM-DD] [--json]
 """
-import json, sys, urllib.parse
+import gzip, json, sys, urllib.parse, urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from upload_paper_pdfs import BASE, request
 
 PREFIX = 'feedback/'
+SITE = 'https://opentextdetector.com'
+
+
+def marked_sentences(m):
+    """Text of the passages the visitor marked, from the same report they were viewing (public reader endpoint)."""
+    if not m.get('passages'): return []
+    req = urllib.request.Request(f"{SITE}/backend/v1/pdf-reader/{m['paper']}", headers={'Accept-Encoding': 'gzip', 'User-Agent': 'Mozilla/5.0 (compatible; otd-read-feedback/1.0; +https://github.com/woog97/open-text-detector)'})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        raw = r.read(); raw = gzip.decompress(raw) if raw[:2] == b'\x1f\x8b' else raw
+    reports = json.loads(raw).get('reports', [])
+    rep = next((x for x in reports if x['id'] == m.get('context', {}).get('report')), None)
+    if not rep: return [(i, '(report no longer published; passage text unavailable)') for i in m['passages']]
+    segs, text = rep['result']['segments'], rep['text']
+    return [(i, f"[score {segs[i]['score']:.4f}] " + text[segs[i]['start']:segs[i]['end']].strip()) if i < len(segs) else (i, '(out of range)') for i in m['passages']]
 
 
 def keys(since=''):
@@ -34,7 +48,12 @@ def main(argv):
         when = datetime.fromisoformat(m['received_at'].replace('Z', '+00:00')).astimezone(ZoneInfo('America/Los_Angeles'))
         ctx = ', '.join(f'{k} {v}' for k, v in m.get('context', {}).items())
         print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})\n")
-        print('  ' + m['comment'].replace('\n', '\n  ') + '\n')
+        if m['comment']: print('  ' + m['comment'].replace('\n', '\n  ') + '\n')
+        marks = marked_sentences(m)
+        if marks:
+            print(f'  Marked as written without AI ({len(marks)}):')
+            for i, t in marks: print(f'    #{i + 1}  {t[:300]}')
+            print()
     print(f'{len(messages)} message{"" if len(messages) == 1 else "s"}' + (f' since {since}' if since else ''))
 
 

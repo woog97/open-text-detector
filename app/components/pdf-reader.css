@@ -857,3 +857,9 @@ html.pr-full-lock,html.pr-full-lock body{overflow:hidden}
 .pr-page .textLayer{z-index:3}
 .pr-page-stack[hidden]{display:none}
 .pr-highlight.is-hover{outline:1px solid #344d45;filter:saturate(1.5)}
+/* Feedback: mark a passage as written without AI (wide screens only; reader-summary.tsx sends the marks). */
+.pr-mark{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:12px}
+.pr-mark button{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border:1px solid var(--pr-line,#d8dcd3);background:#fff;color:#1f2a1a;font-size:12px;border-radius:3px}
+.pr-mark button[aria-pressed=true]{border-color:#2f6b3a;color:#2f6b3a;background:#f1f7ef}
+.pr-mark .pr-mark-send{border:0;background:none;padding:0;color:#2a5db0;text-decoration:underline;text-underline-offset:3px}
+.pr-marked{display:inline-flex;align-items:center;gap:3px;font-style:normal;font-size:11px;color:#2f6b3a}

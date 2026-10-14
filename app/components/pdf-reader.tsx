@@ -375,6 +375,9 @@ export default function PDFReader({
     [page, setPage] = useState(1);
   const [selected, setSelected] = useState<number | null>(null),
     [highlights, setHighlights] = useState(true);
+  // Feedback: passages the reader marks as written without AI, sent with "Think this result is wrong?" (reader-summary.tsx).
+  const [marked, setMarked] = useState<Set<number>>(()=>new Set()),
+    [feedbackOpen, setFeedbackOpen] = useState(false);
   const [mode, setMode] = useState<"pdf" | "text">("pdf"),
     [filter, setFilter] = useState("all");
   const [passageSort,setPassageSort] = useState("order");
@@ -686,6 +689,9 @@ export default function PDFReader({
   const sheetMode=readingOnly?null:compact||(full&&!beta)?(portrait?"bottom":"side"):null;
   const narrow=sheetMode!==null;
   useEffect(()=>setSheet(false),[paperId]);
+  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);},[paperId,reportId]);
+  function toggleMark(id:number){setMarked(m=>{const n=new Set(m);if(n.has(id))n.delete(id);else n.add(id);return n;});}
+  function openFeedback(){setFeedbackOpen(true);setTimeout(()=>document.getElementById('rs-feedback')?.scrollIntoView({block:'center',behavior:'smooth'}),50);}
   // Layout changes (rotation, entering or leaving fullscreen) move the page: bring the selected passage back into view.
   // Wait for the pages to re-render at the new width (resizes settle after ~600 ms) before scrolling.
   useEffect(()=>{if(selected===null||mode!=="pdf")return;setFocusId(selected);const t=setTimeout(()=>setFocusId(selected),900);return()=>clearTimeout(t);},[sheetMode,full]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -1135,6 +1141,11 @@ export default function PDFReader({
                     Scores are experimental model outputs, not probabilities of
                     authorship.
                   </p>
+                  {/* Marking is offered on wide screens only (Alice, Oct 13 2026); phones keep the plain message box. */}
+                  {beta&&!narrow&&calibrated&&hasTextContent(current.text)&&<div className="pr-mark">
+                    <button type="button" aria-pressed={marked.has(current.id)} onClick={()=>toggleMark(current.id)}>{marked.has(current.id)?<><Check size={14}/> Marked as written without AI</>:"Written without AI? Mark it"}</button>
+                    {marked.size>0&&<button type="button" className="pr-mark-send" onClick={openFeedback}>{marked.size} marked · add a note and send</button>}
+                  </div>}
                   <div className="pr-detail-nav">
                     <button
                       disabled={current.id === 0}
@@ -1190,6 +1201,7 @@ export default function PDFReader({
                         className={`pr-dot ${hasTextContent(p.text)?bandOf(p.id):"unknown"}`}
                       />
                       <b>{p.id + 1}</b>
+                      {marked.has(p.id)&&<em className="pr-marked" title="Marked as written without AI"><Check size={12}/> marked</em>}
                       <span>{p.mapped ? `p. ${p.page}` : "Not located"}{calibrated && sectionList[p.id] !== "body" ? ` · ${SECTION_NAMES[sectionList[p.id]]}` : ""}</span>
                       <strong>{calibrated ? p.score.toFixed(4) : p.score.toFixed(2)}</strong>
                     </div>
@@ -1207,7 +1219,8 @@ export default function PDFReader({
         {beta&&summarySlot&&createPortal(<ReaderSummary paperId={paperId} reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
-          onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
+          onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined}
+          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
     </section>

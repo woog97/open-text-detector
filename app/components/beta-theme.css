@@ -182,3 +182,6 @@ html.ui-beta .pr-beta .pr-workspace.pr-full{background:#fff}
    The three-column desktop grid put the PDF into the 56 px map column here. */
 html.ui-beta .pr-beta .pr-workspace.pr-sheet{grid-template-columns:minmax(0,1fr)}
 html.ui-beta .pr-beta .pr-workspace.pr-sheet>.pr-map{display:none}
+.rs .rs-wrong{display:block;margin-top:8px;font-size:12px}
+.rs-marked{color:#2f6b3a}
+.rs-marked .rs-more{margin:0;font-size:12px}

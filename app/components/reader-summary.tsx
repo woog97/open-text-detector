@@ -28,32 +28,35 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
 
 const MAX_FEEDBACK=4000;
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
-function Feedback({paperId,context}:{paperId:string;context:Record<string,string>}){
- const [open,setOpen]=useState(false),[text,setText]=useState(""),[trap,setTrap]=useState("");
+function Feedback({paperId,context,marked,canMark,onClearMarks,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onClearMarks:()=>void;open:boolean;setOpen:(o:boolean)=>void}){
+ const [text,setText]=useState(""),[trap,setTrap]=useState("");
  const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
  async function send(){
   setState("sending");setError("");
   try{
-   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,website:trap})});
-   if(r.ok){setState("sent");return;}
+   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,website:trap})});
+   if(r.ok){setState("sent");onClearMarks();return;}
    const d=(await r.json().catch(()=>({}))) as {detail?:unknown};setError(typeof d.detail==="string"?d.detail:"The message could not be sent.");setState("error");
   }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
  }
- return <section className="rs-feedback">
+ const ready=(text.trim().length>0||marked.length>0)&&state!=="sending";
+ return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {state==="sent"?<p className="rs-note" role="status">Thank you. Your message was saved.</p>:!open?<>
-   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong.</p>
+   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong.{canMark&&<> You can also mark passages: click a highlight on the PDF, then “Written without AI? Mark it”.</>}</p>
+   {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
    <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write a message</button>
-  </>:<form onSubmit={e=>{e.preventDefault();if(text.trim()&&state!=="sending")send();}}>
+  </>:<form onSubmit={e=>{e.preventDefault();if(ready)send();}}>
+   {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI will be sent with your message{marked.length?<> · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></>:null}</p>}
    <label className="rs-sr" htmlFor="rs-feedback-text">Your message</label>
    <textarea id="rs-feedback-text" value={text} maxLength={MAX_FEEDBACK} rows={5} autoFocus onChange={e=>setText(e.target.value)}
-    placeholder="For example: which sections were written without AI, or how AI was used."/>
+    placeholder={marked.length?"Optional: anything to add about the marked passages, or how AI was used.":"For example: which sections were written without AI, or how AI was used."}/>
    {/* Left empty by people; bots that fill every field are ignored by the server. */}
    <input className="rs-sr" tabIndex={-1} autoComplete="off" aria-hidden="true" name="website" value={trap} onChange={e=>setTrap(e.target.value)}/>
    <p className="rs-note">Your message is saved privately with this paper and the settings shown above. I can’t reply, so please don’t include your name, email address or other personal details.</p>
    {state==="error"&&<p className="rs-note rs-error" role="alert">{error}</p>}
    <div className="rs-feedback-actions">
-    <button type="submit" disabled={!text.trim()||state==="sending"}>{state==="sending"?"Sending…":"Send"}</button>
+    <button type="submit" disabled={!ready}>{state==="sending"?"Sending…":"Send"}</button>
     <button type="button" className="rs-more" onClick={()=>{setOpen(false);setState("idle");setError("");}}>Cancel</button>
     <small>{text.length.toLocaleString()} / {MAX_FEEDBACK.toLocaleString()}</small>
    </div>
@@ -61,8 +64,8 @@ function Feedback({paperId,context}:{paperId:string;context:Record<string,string
  </section>;
 }
 
-export default function ReaderSummary({paperId,reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
- paperId:string;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
+export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMarks=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
+ paperId:string;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
  flagged:FlaggedItem[];onSelect:(id:number)=>void;onOpenPanel:()=>void;calibrated:boolean;custom?:ReactNode;customYellow?:number;
 }){
  const flag=FLAG_MODES[flagMode];
@@ -79,6 +82,7 @@ export default function ReaderSummary({paperId,reports,reportId,onPick,loading,f
       <span className="rs-detail">{detail}</span>
      </label>)}
     </fieldset>
+    {paperId&&<button type="button" className="rs-more rs-wrong" onClick={()=>onFeedbackOpen(true)}>Think this result is wrong? Tell me</button>}
     {calibrated&&<div className="rs-count" role="group" aria-label="Sentences counted"><span>Count</span>
      <label><input type="checkbox" checked={flag.app} onChange={e=>onFlagMode(flagModeOf(flag.bib,e.target.checked,flag.fpr))}/> Appendices</label>
      <label>FPR <select aria-label="False-positive rate" value={flag.fpr} onChange={e=>onFlagMode(flagModeOf(flag.bib,flag.app,Number(e.target.value) as typeof flag.fpr))}>{FLAG_FPRS.map(f=><option key={f} value={f}>{fprLabel(f)}</option>)}</select></label>
@@ -92,6 +96,6 @@ export default function ReaderSummary({paperId,reports,reportId,onPick,loading,f
    {!flagged.length&&<p className="rs-note">No passages are flagged by this model.</p>}
    <button type="button" className="rs-more" onClick={onOpenPanel}>{flagged.length?"Show them in the passages panel":"Open the passages panel"}</button>
   </section>}
-  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
+  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} marked={marked} canMark={canMark} onClearMarks={onClearMarks} open={feedbackOpen} setOpen={onFeedbackOpen} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
  </div>;
 }
