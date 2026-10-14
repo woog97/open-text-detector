@@ -51,6 +51,8 @@
  .site-nav nav>*{padding:7px 7px}
  .site-nav nav [aria-current="page"]{box-shadow:none;background:none}
  .site-nav nav svg{display:none}
+ /* …except the Transparency menu's toggle and its items' icons (GitHub mark, external arrow). */
+ .site-nav nav .site-menu-toggle svg,.site-nav nav .site-menu-list svg{display:inline-block}
  .site-footer{flex-direction:column;gap:6px}
 }
 .site-short{display:none}
@@ -59,7 +61,10 @@
 .site-nav nav>.site-wide-only>a{display:flex;padding:7px 11px;border-radius:7px;color:var(--ink-2)}
 .site-nav nav>.site-wide-only>a:hover{background:var(--rule-2);color:var(--ink)}
 .site-nav nav>.site-wide-only>a[aria-current="page"]{color:var(--ink);font-weight:600;background:var(--sheet);box-shadow:0 0 0 1px var(--rule)}
-@media (max-width:980px){.site-nav nav>.site-wide-only{display:none}}
+/* The full bar fits down to about 560px (measured Oct 13, 2026); below that Manifesto and About move into the Transparency menu. */
+@media (max-width:559px){.site-nav nav>.site-wide-only{display:none}}
+.site-menu-list .site-narrow-only{display:none}
+@media (max-width:559px){.site-menu-list .site-narrow-only{display:flex}}
 @media (max-width:420px){
  .site-long{display:none}
  .site-short{display:inline}
