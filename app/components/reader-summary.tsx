@@ -1,6 +1,6 @@
 "use client";
 /* Beta reader: "Results by model", its controls and the flagged-passage count, shown in the paper's left column. */
-import {useMemo,useState,type ReactNode} from "react";
+import {useEffect,useMemo,useState,type ReactNode} from "react";
 import {fprReadout} from "@/lib/score-fpr";
 import {hasTextContent, summarizePassages, paperRate, modelLabel, MIN_SENTENCES} from "@/lib/paper-scores";
 import {FLAG_FPRS, FLAG_MODES, FLAG_MODEL, flagModeOf, fprLabel, thresholdText, type FlagMode} from "@/lib/paper-discovery";
@@ -26,9 +26,9 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
  return rate===null?{value:"—",detail:"No scored passages"}:{value:share(rate),detail:`passages above ${threshold.toFixed(2)} · not calibrated`};
 }
 
-const MAX_FEEDBACK=4000,MIN_FEEDBACK=100;
+const MAX_FEEDBACK=4000,MIN_FEEDBACK=100,NOOP=()=>{};
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
-function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,marking,onStopMarking,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onClearMarks:()=>void;onStartMarking:()=>void;marking:boolean;onStopMarking:(keep:boolean)=>void;open:boolean;setOpen:(o:boolean)=>void}){
+function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,marking,onStopMarking,onTextReady,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onTextReady:(ready:boolean)=>void;onClearMarks:()=>void;onStartMarking:()=>void;marking:boolean;onStopMarking:(keep:boolean)=>void;open:boolean;setOpen:(o:boolean)=>void}){
  const [text,setText]=useState(""),[trap,setTrap]=useState("");
  const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
  async function send(){
@@ -41,21 +41,22 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,ma
  }
  // A message needs at least 100 characters, also when passages are marked (Alice, Oct 13 2026); the server checks the same.
  const short=MIN_FEEDBACK-text.trim().length,ready=short<=0&&state!=="sending";
+ // Marking unlocks only after a real message is written (Alice, Oct 13 2026): friction against low-effort reports.
+ const enough=short<=0;useEffect(()=>{onTextReady(enough);},[enough,onTextReady]);
  return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {/* The marking mode can be left from here as well as from the bar over the PDF. */}
   {marking&&<div className="rs-marking" role="status"><p><b>Marking mode is on.</b> Click or drag across flagged sentences on the PDF. {marked.length} marked.</p>
    <div className="rs-feedback-actions"><button type="submit" onClick={()=>onStopMarking(true)}>Done</button><button type="button" className="rs-more" onClick={()=>onStopMarking(false)}>Cancel</button></div></div>}
   {state==="sent"?<p className="rs-note" role="status">Thank you. Your message was saved.</p>:!open?<>
-   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong{canMark?", and mark the flagged sentences you wrote without AI":""}.</p>
+   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong{canMark?", then mark the flagged sentences you wrote without AI":""}.</p>
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
    <div className="rs-feedback-start">
     <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write a message</button>
-    {canMark&&!marking&&<button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button>}
    </div>
   </>:<form onSubmit={e=>{e.preventDefault();if(ready)send();}}>
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI will be sent with your message · <button type="button" className="rs-more" onClick={onStartMarking}>Edit</button> · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
-   {canMark&&!marking&&!marked.length&&<p className="rs-note"><button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button> to send them with your message.</p>}
+   {canMark&&!marking&&!marked.length&&(enough?<p className="rs-note"><button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button> to send them with your message.</p>:<p className="rs-note">Write at least {MIN_FEEDBACK} characters, then you can mark passages on the PDF.</p>)}
    <label className="rs-sr" htmlFor="rs-feedback-text">Your message</label>
    <textarea id="rs-feedback-text" value={text} maxLength={MAX_FEEDBACK} rows={5} autoFocus onChange={e=>setText(e.target.value)}
     placeholder={marked.length?"What should I know about the marked passages? For example, how they were written, or how AI was used elsewhere.":"For example: which sections were written without AI, or how AI was used."}/>
@@ -72,8 +73,8 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,ma
  </section>;
 }
 
-export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMarks=()=>{},onStartMarking=()=>{},marking=false,onStopMarking=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
- paperId:string;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;onStartMarking?:()=>void;marking?:boolean;onStopMarking?:(keep:boolean)=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
+export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMarks=()=>{},onStartMarking=()=>{},onTextReady=NOOP,marking=false,onStopMarking=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
+ paperId:string;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;onStartMarking?:()=>void;onTextReady?:(ready:boolean)=>void;marking?:boolean;onStopMarking?:(keep:boolean)=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
  flagged:FlaggedItem[];onSelect:(id:number)=>void;onOpenPanel:()=>void;calibrated:boolean;custom?:ReactNode;customYellow?:number;
 }){
  const flag=FLAG_MODES[flagMode];
@@ -104,6 +105,6 @@ export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMa
    {!flagged.length&&<p className="rs-note">No passages are flagged by this model.</p>}
    <button type="button" className="rs-more" onClick={onOpenPanel}>{flagged.length?"Show them in the passages panel":"Open the passages panel"}</button>
   </section>}
-  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} marked={marked} canMark={canMark} onClearMarks={onClearMarks} onStartMarking={onStartMarking} marking={marking} onStopMarking={onStopMarking} open={feedbackOpen} setOpen={onFeedbackOpen} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
+  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} marked={marked} canMark={canMark} onClearMarks={onClearMarks} onStartMarking={onStartMarking} onTextReady={onTextReady} marking={marking} onStopMarking={onStopMarking} open={feedbackOpen} setOpen={onFeedbackOpen} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
  </div>;
 }

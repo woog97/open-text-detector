@@ -383,7 +383,8 @@ export default function PDFReader({
   // Feedback: passages the reader marks as written without AI, sent with "Think this result is wrong?" (reader-summary.tsx).
   const [marked, setMarked] = useState<Set<number>>(()=>new Set()),
     [feedbackOpen, setFeedbackOpen] = useState(false),
-    [markMode, setMarkMode] = useState(false);
+    [markMode, setMarkMode] = useState(false),
+    [textReady, setTextReady] = useState(false);
   const stroke = useRef<"mark"|"unmark"|null>(null);
   const [mode, setMode] = useState<"pdf" | "text">("pdf"),
     [filter, setFilter] = useState("all");
@@ -696,7 +697,7 @@ export default function PDFReader({
   const sheetMode=readingOnly?null:compact||(full&&!beta)?(portrait?"bottom":"side"):null;
   const narrow=sheetMode!==null;
   useEffect(()=>setSheet(false),[paperId]);
-  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);setMarkMode(false);},[paperId,reportId]);
+  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);setMarkMode(false);setTextReady(false);},[paperId,reportId]);
   // Marking mode is offered on wide screens only (Alice, Oct 13 2026); phones keep the plain message box.
   useEffect(()=>{if(narrow)setMarkMode(false);},[narrow]);
   useEffect(()=>{
@@ -967,7 +968,7 @@ export default function PDFReader({
             >
               {highlights ? <Eye size={15} /> : <EyeOff size={15} />} Highlights
             </button>}
-            {beta&&!narrow&&!readingOnly&&calibrated&&report&&<button aria-pressed={markMode} title="Mark flagged sentences you wrote without AI, to send with feedback" onClick={()=>setMarkMode(m=>!m)}>
+            {beta&&!narrow&&!readingOnly&&calibrated&&report&&<button aria-pressed={markMode} title={textReady||markMode?"Mark flagged sentences you wrote without AI, to send with your feedback":"Write your feedback first (at least 100 characters), then mark passages"} onClick={()=>{if(markMode)setMarkMode(false);else if(textReady)setMarkMode(true);else openFeedback();}}>
               <Check size={15} /> Mark passages
             </button>}
             <div className="pr-zoom">
@@ -1245,7 +1246,7 @@ export default function PDFReader({
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
           onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined}
-          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
+          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} onTextReady={setTextReady} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
     </section>
