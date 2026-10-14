@@ -49,7 +49,10 @@ def main(argv):
     for m in messages:
         when = datetime.fromisoformat(m['received_at'].replace('Z', '+00:00')).astimezone(ZoneInfo('America/Los_Angeles'))
         ctx = ', '.join(f'{k} {v}' for k, v in m.get('context', {}).items())
-        if m.get('kind') == 'site': print(f"{when:%Y-%m-%d %H:%M %Z}  Site feedback ({ctx or 'page unknown'})\n")
+        if m.get('kind') == 'site':
+            c = m.get('contact', {})
+            who = ' · '.join(x for x in (c.get('name'), c.get('reach')) if x)
+            print(f"{when:%Y-%m-%d %H:%M %Z}  Site feedback ({ctx or 'page unknown'})" + (f"\n  From: {who}" if who else '') + '\n')
         else: print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})\n")
         if m['comment']: print('  ' + m['comment'].replace('\n', '\n  ') + '\n')
         marks = marked_sentences(m)

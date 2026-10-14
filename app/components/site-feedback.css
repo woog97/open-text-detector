@@ -18,3 +18,9 @@ body:has(.pb-reader) .sfb{display:none}
 .sfb-actions small{margin-left:auto;font-size:11px;color:#465063;font-variant-numeric:tabular-nums}
 .sfb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @media (max-width:640px){.sfb{right:12px;bottom:12px}}
+.sfb-contact{display:grid;gap:8px;margin-top:10px}
+.sfb-contact label{display:grid;gap:3px;font-size:12px;font-weight:600;color:#141a26}
+.sfb-contact label span{font-weight:400;color:#8b919b;margin-left:4px}
+.sfb-contact label{grid-template-columns:auto 1fr}
+.sfb-contact input{grid-column:1/-1;box-sizing:border-box;width:100%;padding:6px 10px;border:1px solid #dfe1dc;font:13px system-ui,-apple-system,sans-serif;color:#141a26}
+.sfb-contact input:focus{outline:2px solid #2846b8;outline-offset:-1px}

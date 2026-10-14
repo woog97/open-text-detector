@@ -41,8 +41,11 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   if(deps.perSender&&!(await deps.perSender.limit({key:request.headers.get('CF-Connecting-IP')||'unknown'})).success)return busy();
   if(deps.sitewide&&!(await deps.sitewide.limit({key:'all'})).success)return busy();
   if(!site&&!(await deps.paperExists(paper as string)))return json({detail:'Unknown paper'},400);
+  // Site messages may carry optional contact details, given in their own fields so the sender chooses to (Oct 13, 2026).
+  const contact:Record<string,string>={};
+  if(site&&body.contact&&typeof body.contact==='object')for(const k of ['name','reach'] as const){const v=(body.contact as Record<string,unknown>)[k];if(typeof v==='string'&&v.trim())contact[k]=v.trim().slice(0,200);}
   const now=(deps.now||(()=>new Date()))(),day=now.toISOString().slice(0,10);
   const key=`${FEEDBACK_PREFIX}${site?'site/':''}${day}/${now.getTime()}-${crypto.randomUUID()}.json`;
-  await deps.bucket.put(key,JSON.stringify(site?{received_at:now.toISOString(),kind:'site',comment,context}:{received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{})}),{httpMetadata:{contentType:'application/json'}});
+  await deps.bucket.put(key,JSON.stringify(site?{received_at:now.toISOString(),kind:'site',comment,context,...(Object.keys(contact).length?{contact}:{})}:{received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{})}),{httpMetadata:{contentType:'application/json'}});
   return json({ok:true},201);
 }
