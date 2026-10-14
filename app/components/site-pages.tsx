@@ -142,7 +142,7 @@ function About(){
   </Section>
   <Section title="Questions">
    <h3 className="sp-q">How good is the model?</h3>
-   <p>It’s okay but we can do a lot better. The biggest limitation is there’s not enough training data: I spent about $80 total generating AI labeled data. Ideally we’d have around 100x more at least, to better match the proportion of human data available.</p>
+   <p>It’s okay but we can do a lot better. The biggest limitation is there’s not enough training data: I spent about $80 total generating AI labeled data. Ideally we’d have around 100x more at least, to better match the proportion of human data available. There’s certainly a lot of other small optimizations that can be made too. I have comments on some of these in limitations sections at the bottom of the individual transparency pages.</p>
    <h3 className="sp-q">Aren’t you worried people will train against this to humanize text?</h3>
    <p>I’m not worried. As a wise person on a random discord server once said:</p>
    {/* Their public Discord message, redrawn in the page's colours (not a screenshot). */}
