@@ -29,12 +29,12 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
 const MAX_FEEDBACK=4000,MIN_FEEDBACK=100;
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
 function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,showMarks,onShowMarks,marking,onStopMarking,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;showMarks:boolean;onShowMarks:(v:boolean)=>void;onClearMarks:()=>void;onStartMarking:()=>void;marking:boolean;onStopMarking:(keep:boolean)=>void;open:boolean;setOpen:(o:boolean)=>void}){
- const [text,setText]=useState(""),[trap,setTrap]=useState(""),[name,setName]=useState(""),[reach,setReach]=useState("");
+ const [text,setText]=useState(""),[trap,setTrap]=useState(""),[name,setName]=useState(""),[reach,setReach]=useState(""),[author,setAuthor]=useState("");
  const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
  async function send(){
   setState("sending");setError("");
   try{
-   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,contact:{name,reach},website:trap})});
+   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,author,contact:{name,reach},website:trap})});
    if(r.ok){setState("sent");onClearMarks();return;}
    const d=(await r.json().catch(()=>({}))) as {detail?:unknown};setError(typeof d.detail==="string"?d.detail:"The message could not be sent.");setState("error");
   }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
@@ -63,9 +63,14 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,sh
     placeholder={marked.length?"What should I know about the marked passages? For example, how they were written, or how AI was used elsewhere.":"For example: which sections were written without AI, or how AI was used."}/>
    {/* Left empty by people; bots that fill every field are ignored by the server. */}
    <input className="rs-sr" tabIndex={-1} autoComplete="off" aria-hidden="true" name="website" value={trap} onChange={e=>setTrap(e.target.value)}/>
+   <fieldset className="rs-author">
+    <legend>Are you an author of this paper? <span>optional</span></legend>
+    {([["no","No"],["first","First author"],["second","Second author"],["other","Another author"]] as const).map(([v,l])=>
+     <label key={v}><input type="radio" name="rs-author" value={v} checked={author===v} onChange={()=>setAuthor(v)}/>{l}</label>)}
+   </fieldset>
    <div className="rs-contact">
-    <label>Name <span>optional</span><input value={name} maxLength={200} autoComplete="name" onChange={e=>setName(e.target.value)}/></label>
     <label>Email, Discord or X <span>optional</span><input value={reach} maxLength={200} autoComplete="email" onChange={e=>setReach(e.target.value)}/></label>
+    <label>Name <span>optional</span><input value={name} maxLength={200} autoComplete="name" onChange={e=>setName(e.target.value)}/></label>
    </div>
    <p className="rs-note">Your message is saved privately with this paper and the settings shown above. Contact details are optional; leave them if you would like a reply (reply not guaranteed).</p>
    {state==="error"&&<p className="rs-note rs-error" role="alert">{error}</p>}

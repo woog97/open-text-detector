@@ -2,6 +2,8 @@
  * under feedback/ (nothing on the site reads that prefix back; scripts/read_feedback.py lists them for Alice).
  * No IP address or user agent is stored; visitors may choose to leave contact details in the message itself. Added Oct 13, 2026. */
 export const FEEDBACK_PREFIX='feedback/';
+/** Answers to "Are you an author of this paper?" in the reader's feedback form (reader-summary.tsx). */
+export const AUTHOR_ROLES=['no','first','second','other'] as const;
 export const MAX_COMMENT=4000;
 /** Minimum message length, also when passages are marked (Alice, Oct 13 2026). */
 export const MIN_COMMENT=100;
@@ -44,8 +46,10 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   // Optional contact details, given in their own fields so the sender chooses to (Oct 13, 2026).
   const contact:Record<string,string>={};
   if(body.contact&&typeof body.contact==='object')for(const k of ['name','reach'] as const){const v=(body.contact as Record<string,unknown>)[k];if(typeof v==='string'&&v.trim())contact[k]=v.trim().slice(0,200);}
+  // Paper feedback only: whether the sender says they are an author of the paper (Alice, Oct 14 2026).
+  const author=!site&&typeof body.author==='string'&&(AUTHOR_ROLES as readonly string[]).includes(body.author)?body.author:'';
   const now=(deps.now||(()=>new Date()))(),day=now.toISOString().slice(0,10);
   const key=`${FEEDBACK_PREFIX}${site?'site/':''}${day}/${now.getTime()}-${crypto.randomUUID()}.json`;
-  await deps.bucket.put(key,JSON.stringify(site?{received_at:now.toISOString(),kind:'site',comment,context,...(Object.keys(contact).length?{contact}:{})}:{received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(Object.keys(contact).length?{contact}:{})}),{httpMetadata:{contentType:'application/json'}});
+  await deps.bucket.put(key,JSON.stringify(site?{received_at:now.toISOString(),kind:'site',comment,context,...(Object.keys(contact).length?{contact}:{})}:{received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(author?{author}:{}),...(Object.keys(contact).length?{contact}:{})}),{httpMetadata:{contentType:'application/json'}});
   return json({ok:true},201);
 }

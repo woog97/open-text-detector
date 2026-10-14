@@ -188,6 +188,12 @@ html.ui-beta .pr-beta .pr-workspace.pr-sheet>.pr-map{display:none}
 .rs-feedback-start{display:flex;flex-wrap:wrap;gap:4px 16px}.rs-feedback-start .rs-more{margin-top:8px}
 .rs-marking{margin:4px 0 10px;padding:10px 12px;background:#1f2a1a;color:#fff;font-size:12px;line-height:1.5}.rs-marking p{margin:0}.rs-marking .rs-feedback-actions button[type=submit]{background:#fff;color:#1f2a1a}.rs-marking .rs-more{color:#fff}
 .rs-contact{display:grid;gap:8px;margin-top:10px}
+.rs fieldset.rs-author{margin:10px 0 0;padding:0;border:0;min-width:0;display:flex;flex-direction:row;flex-wrap:wrap;gap:6px}
+.rs-author legend{padding:0;margin-bottom:6px;font-size:12px;font-weight:600;color:var(--ink)}
+.rs-author legend span{font-weight:400;color:var(--ink-2);opacity:.7;margin-left:4px}
+.rs fieldset.rs-author>label{display:inline-flex;width:auto;grid-template-columns:none;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--rule);border-radius:999px;background:#fff;font-size:12px;color:var(--ink);cursor:pointer}
+.rs fieldset.rs-author>label:has(input:checked){border-color:var(--ink);background:var(--rule-2);font-weight:600}
+.rs-author input{margin:0;accent-color:var(--ink)}
 .rs-contact label{display:grid;grid-template-columns:auto 1fr;gap:3px;font-size:12px;font-weight:600;color:var(--ink)}
 .rs-contact label span{font-weight:400;color:var(--ink-2);opacity:.7;margin-left:4px}
 .rs-contact input{grid-column:1/-1;box-sizing:border-box;width:100%;padding:6px 10px;border:1px solid var(--rule);background:#fff;font:13px var(--sans);color:var(--ink)}

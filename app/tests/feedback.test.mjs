@@ -68,3 +68,11 @@ test('both kinds keep optional contact fields, trimmed and capped',async()=>{
  assert.equal((await send({kind:'site',comment:msg,contact:{reach:'y'.repeat(500)}})).status,201);assert.equal(puts[2][1].contact.reach.length,200);
  assert.equal((await send({paper,comment:msg,contact:{name:'Ada'}})).status,201);assert.deepEqual(puts[3][1].contact,{name:'Ada'});
 });
+test('paper feedback keeps the sender\'s answer to "Are you an author?"; unknown answers and site feedback drop it',async()=>{
+ const {send,puts}=setup();
+ const msg='x'.repeat(120);
+ assert.equal((await send({paper,comment:msg,author:'first'})).status,201);assert.equal(puts[0][1].author,'first');
+ assert.equal((await send({paper,comment:msg,author:'chair'})).status,201);assert.equal('author' in puts[1][1],false);
+ assert.equal((await send({paper,comment:msg,author:''})).status,201);assert.equal('author' in puts[2][1],false);
+ assert.equal((await send({kind:'site',comment:msg,author:'first'})).status,201);assert.equal('author' in puts[3][1],false);
+});
