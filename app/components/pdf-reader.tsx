@@ -976,7 +976,7 @@ export default function PDFReader({
             >
               {highlights ? <Eye size={15} /> : <EyeOff size={15} />} Highlights
             </button>}
-            {beta&&!narrow&&!readingOnly&&calibrated&&report&&<button aria-pressed={markMode} title="Mark flagged sentences you wrote without AI, to send with your feedback" onClick={()=>setMarkMode(m=>!m)}>
+            {beta&&!narrow&&!readingOnly&&calibrated&&report&&<button aria-pressed={markMode} title="Mark flagged sentences you wrote without AI, to send with your feedback" onClick={()=>{if(!markMode)switchMode("pdf");setMarkMode(m=>!m);}}>
               <Check size={15} /> Mark passages
             </button>}
             <div className="pr-zoom">

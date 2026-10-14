@@ -57,7 +57,8 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
    if(r.ok){
     const now=new Date().toISOString(),fields={comment:text.trim(),author,name:name.trim(),reach:reach.trim(),passages:marked,report:context.report||""};
     const next=saved?{...saved,...fields,edited_at:now}:d.id&&d.key?{id:d.id,key:d.key,sent_at:now,...fields}:null;
-    if(next){storeSaved(paperId,next);setSaved(next);}
+    // Nothing to edit later (an exact repeat was not stored again): the next form starts empty.
+    if(next){storeSaved(paperId,next);setSaved(next);}else{setText("");setAuthor("");setName("");setReach("");}
     // Sending closes the form, which unlocks the result settings (pdf-reader.tsx feedbackLocked).
     setState("sent");onClearMarks();setOpen(false);return;
    }
@@ -69,13 +70,13 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
  // A message needs at least 100 characters, also when passages are marked (Alice, Oct 13 2026); the server checks the same.
  const unchanged=!!saved&&saved.comment===text.trim()&&saved.author===author&&saved.name===name.trim()&&saved.reach===reach.trim()&&saved.passages.join()===marked.join();
  const short=MIN_FEEDBACK-text.trim().length,ready=short<=0&&state!=="sending"&&!unchanged;
- const sentOn=saved?`${shortDate(saved.sent_at)}${saved.edited_at?`, edited ${shortDate(saved.edited_at)}`:""}`:"";
+ const sentOn=saved?`${shortDate(saved.sent_at)}${saved.edited_at?`, edited${shortDate(saved.edited_at)===shortDate(saved.sent_at)?"":` ${shortDate(saved.edited_at)}`}`:""}`:"";
  return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {/* The marking mode can be left from here as well as from the bar over the PDF. */}
   {marking&&<div className="rs-marking" role="status"><p><b>Marking mode is on.</b> Click or drag across flagged sentences on the PDF. {marked.length} marked.</p>
    <div className="rs-feedback-actions"><button type="submit" onClick={()=>onStopMarking(true)}>Done</button><button type="button" className="rs-more" onClick={()=>onStopMarking(false)}>Cancel</button></div></div>}
-  {state==="sent"&&!open?<p className="rs-note" role="status">Thank you. Your message was saved. <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Edit your message</button></p>:!open?<>
+  {state==="sent"&&!open?<p className="rs-note" role="status">Thank you. Your message was saved. <button type="button" className="rs-more" onClick={()=>setOpen(true)}>{saved?"Edit your message":"Write another message"}</button></p>:!open?<>
    <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong{canMark?", and mark the flagged sentences you wrote without AI":""}.</p>
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
    {marked.length>0&&<label className="rs-showmarks"><input type="checkbox" checked={showMarks} onChange={e=>onShowMarks(e.target.checked)}/> Show my marks on the PDF</label>}
@@ -85,7 +86,7 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
     {canMark&&!marking&&<button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button>}
    </div>
   </>:<form onSubmit={e=>{e.preventDefault();if(ready)send();}}>
-   {saved&&<p className="rs-note rs-sent">Editing the message you sent ({sentOn}). Your earlier version is kept as well.</p>}
+   {saved&&<p className="rs-note rs-sent">Editing the message you sent ({sentOn}). Your earlier version is kept as well.{saved.passages.length>0&&saved.report!==context.report?` The ${saved.passages.length} passage${saved.passages.length===1?"":"s"} you marked were on another model’s result, so they are not carried over; mark them again here if you like.`:""}</p>}
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI will be sent with your message · <button type="button" className="rs-more" onClick={onStartMarking}>Edit</button> · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
    {marked.length>0&&<label className="rs-showmarks"><input type="checkbox" checked={showMarks} onChange={e=>onShowMarks(e.target.checked)}/> Show my marks on the PDF</label>}
    {canMark&&!marking&&!marked.length&&<p className="rs-note"><button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button> to send them with your message.</p>}
