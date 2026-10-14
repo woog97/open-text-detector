@@ -143,3 +143,11 @@
 .sp-effort>div{display:flex;flex-direction:column;gap:2px;border-top:2px solid var(--ink);padding-top:10px}
 .sp-effort b{font-size:26px;font-weight:600}
 .sp-effort span{font-size:13px;color:var(--ink-2)}
+/* About › Questions: a public Discord message redrawn in the page's colours (Discord layout: avatar, name, time, text). */
+.sp-q{margin:0;font-size:16px;font-weight:600}
+.sp-chat{display:grid;grid-template-columns:40px 1fr;gap:14px;margin:4px 0 0;padding:4px 0}
+.sp-chat-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block}
+.sp-chat-head{display:flex;align-items:baseline;gap:8px}
+.sp-chat-head b{font-size:15px;font-weight:600;color:var(--ink)}
+.sp-chat-head time{font-size:12px;color:var(--graphite)}
+.sp-chat p{margin:2px 0 0;line-height:1.55;color:var(--ink)}

@@ -9,6 +9,9 @@ import {DataPage} from './site-data';
 import {ResultsPage} from './site-results';
 import {LimitationsPage} from './site-limitations';
 import './site-pages.css';
+import ad8eAvatar from './assets/ad8e-avatar.png';
+/** Vite gives an image import as a URL string; the Next-era type declarations describe an object with `src`. */
+const imgSrc=(i:unknown)=>typeof i==='string'?i:(i as {src:string}).src;
 
 export type StaticPage='home'|'transparency'|'architecture'|'data'|'results'|'limitations'|'manifesto'|'about';
 
@@ -142,6 +145,16 @@ function About(){
   </Section>
   <Section title="Privacy">
    <p>This site keeps usage statistics so I can see how it is used: which pages are visited, which papers are opened, and which sorting and filtering options are used, along with each visit’s country and city, the network or institution it comes from, the device type, browser, language and referring site. There are no cookies or tracking scripts, and IP addresses are not stored.</p>
+  </Section>
+  <Section title="Questions">
+   <h3 className="sp-q">Aren’t you worried people will train against this to humanize text?</h3>
+   <p>I’m not worried. As a wise person on discord said:</p>
+   {/* Their public Discord message, redrawn in the page's colours (not a screenshot). */}
+   <figure className="sp-chat" aria-label="Discord message from ad8e, September 30, 2026">
+    <img className="sp-chat-avatar" src={imgSrc(ad8eAvatar)} alt="" width={40} height={40}/>
+    <div><div className="sp-chat-head"><b>ad8e</b><time dateTime="2026-09-30T20:23">9/30/26, 8:23 PM</time></div>
+    <p>this domain's bottleneck is researcher skill, not the underlying perfect-play equilibrium. it is easy to train a model better than pangram; next year's pangram will accomplish this. it is also easy to train a model that defeats pangram, but notice all the attempts at this are sad and scammy. that's because the better ML researchers have better things to do</p></div>
+   </figure>
   </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
