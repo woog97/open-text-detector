@@ -41,6 +41,8 @@ import "./pdf-text-layer.css";
 import "./pdf-reader.css";
 // Screens where the inspector becomes a sheet instead of a column: narrow windows and phones in landscape.
 const COMPACT="(max-width: 800px), (max-height: 500px)";
+/** Most passages one feedback message can mark; the Worker enforces the same (atlas-cloud/feedback.ts MAX_PASSAGES). */
+const MARK_LIMIT=2000;
 // The beta layout keeps its column panel (with its own toggle) down to phone widths, also in fullscreen.
 const COMPACT_BETA="(max-width: 640px), (max-height: 500px)";
 
@@ -712,7 +714,8 @@ export default function PDFReader({
     const band=bandOf(id);if(band!=="medium"&&band!=="high")return;
     if(start)stroke.current=marked.has(id)?"unmark":"mark";
     const act=stroke.current;if(!act)return;
-    setMarked(m=>{if((act==="mark")===m.has(id))return m;const n=new Set(m);if(act==="mark")n.add(id);else n.delete(id);return n;});
+    // At most MARK_LIMIT marks per message (atlas-cloud/feedback.ts MAX_PASSAGES); further marks are ignored and the bar says so.
+    setMarked(m=>{if((act==="mark")===m.has(id)||(act==="mark"&&m.size>=MARK_LIMIT))return m;const n=new Set(m);if(act==="mark")n.add(id);else n.delete(id);return n;});
   }
   const marking=markMode?{marked,paint}:null;
   function openFeedback(){setFeedbackOpen(true);setTimeout(()=>document.getElementById('rs-feedback')?.scrollIntoView({block:'center',behavior:'smooth'}),50);}
@@ -993,7 +996,7 @@ export default function PDFReader({
           </div>
           <div className="pr-viewport" ref={viewport} onScroll={()=>{moved.current=true;trackPage();trackReading();}}>
             {markMode&&<div className="pr-markbar" role="status">
-              <span><b>Marking mode.</b> Click or drag across flagged sentences you wrote without AI. <b>{marked.size}</b> marked.</span>
+              <span><b>Marking mode.</b> Click or drag across flagged sentences you wrote without AI. <b>{marked.size.toLocaleString()}</b> marked{marked.size>=MARK_LIMIT?` (the limit of ${MARK_LIMIT.toLocaleString()} for one message)`:""}.</span>
               <button type="button" className="pr-markbar-done" onClick={()=>{setMarkMode(false);openFeedback();}}>Done</button>
               <button type="button" onClick={()=>{setMarked(new Set());setMarkMode(false);}}>Cancel</button>
             </div>}

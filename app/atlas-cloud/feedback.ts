@@ -6,8 +6,9 @@ export const MAX_COMMENT=4000;
 /** Minimum message length, also when passages are marked (Alice, Oct 13 2026). */
 export const MIN_COMMENT=100;
 /** Passages a reader marked as written without AI (indices into the report's segments; Oct 13, 2026). */
-export const MAX_PASSAGES=300;
-const MAX_BODY=8192;
+export const MAX_PASSAGES=2000;
+/** Request size cap in bytes: a 4,000-character message in any script (up to 4 bytes per character) plus 2,000 marks. */
+const MAX_BODY=32768;
 /** Settings shown when the message was sent, so the result the reader saw can be reproduced. */
 const CONTEXT_KEYS=['report','mode','shown','cutoff'] as const;
 type Limiter={limit(o:{key:string}):Promise<{success:boolean}>};

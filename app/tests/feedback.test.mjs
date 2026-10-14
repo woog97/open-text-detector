@@ -28,7 +28,10 @@ test('rejects other sites, other methods, bad input, unknown papers and senders 
  assert.equal((await send('{nope')).status,400);
  assert.equal((await send({paper,comment:'   '})).status,400);
  assert.equal((await send({paper,comment:'x'.repeat(MAX_COMMENT+1)})).status,400);
- assert.equal((await send({paper,comment:'x'.repeat(9000)})).status,413);
+ assert.equal((await send({paper,comment:'x'.repeat(40000)})).status,413);
+ assert.equal((await send({paper,comment:'中'.repeat(4000)})).status,201,'4,000 characters in a non-Latin script fit');
+ assert.equal((await send({paper,comment:'x'.repeat(MAX_COMMENT),passages:Array.from({length:2000},(_,i)=>100000+i)})).status,201,'the longest message with the most marks fits');
+ puts.length=0;
  assert.equal((await send({paper:'../secret',comment:'x'.repeat(MIN_COMMENT)})).status,400);
  assert.equal((await send({paper:'b'.repeat(24),comment:'x'.repeat(MIN_COMMENT)})).status,400);
  assert.equal((await send({paper,comment:'buy now',website:'http://spam.example'})).status,201);
@@ -43,7 +46,7 @@ test('marked passages are stored as sorted unique indices; messages need 100 cha
  assert.equal((await send({paper,comment:long,passages:[12,3,3,40],context:{report:'r'}})).status,201);
  assert.deepEqual(puts[0][1].passages,[3,12,40]);
  assert.equal((await send({paper,comment:long})).status,201);assert.equal('passages' in puts[1][1],false);
- for(const passages of [[-1],[1.5],['3'],'3',Array.from({length:301},(_,i)=>i)])assert.equal((await send({paper,comment:'x'.repeat(MIN_COMMENT),passages})).status,400,JSON.stringify(passages).slice(0,20));
+ for(const passages of [[-1],[1.5],['3'],'3',Array.from({length:2001},(_,i)=>i)])assert.equal((await send({paper,comment:'x'.repeat(MIN_COMMENT),passages})).status,400,JSON.stringify(passages).slice(0,20));
  assert.equal((await send({paper,comment:'',passages:[]})).status,400);
  assert.equal(puts.length,2);
 });
