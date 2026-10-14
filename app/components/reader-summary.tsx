@@ -26,7 +26,7 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
  return rate===null?{value:"—",detail:"No scored passages"}:{value:share(rate),detail:`passages above ${threshold.toFixed(2)} · not calibrated`};
 }
 
-const MAX_FEEDBACK=4000;
+const MAX_FEEDBACK=4000,MIN_FEEDBACK=100;
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
 function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,marking,onStopMarking,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onClearMarks:()=>void;onStartMarking:()=>void;marking:boolean;onStopMarking:(keep:boolean)=>void;open:boolean;setOpen:(o:boolean)=>void}){
  const [text,setText]=useState(""),[trap,setTrap]=useState("");
@@ -39,7 +39,8 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,ma
    const d=(await r.json().catch(()=>({}))) as {detail?:unknown};setError(typeof d.detail==="string"?d.detail:"The message could not be sent.");setState("error");
   }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
  }
- const ready=(text.trim().length>0||marked.length>0)&&state!=="sending";
+ // A message needs at least 100 characters, also when passages are marked (Alice, Oct 13 2026); the server checks the same.
+ const short=MIN_FEEDBACK-text.trim().length,ready=short<=0&&state!=="sending";
  return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {/* The marking mode can be left from here as well as from the bar over the PDF. */}
@@ -57,15 +58,15 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,ma
    {canMark&&!marking&&!marked.length&&<p className="rs-note"><button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button> to send them with your message.</p>}
    <label className="rs-sr" htmlFor="rs-feedback-text">Your message</label>
    <textarea id="rs-feedback-text" value={text} maxLength={MAX_FEEDBACK} rows={5} autoFocus onChange={e=>setText(e.target.value)}
-    placeholder={marked.length?"Optional: anything to add about the marked passages, or how AI was used.":"For example: which sections were written without AI, or how AI was used."}/>
+    placeholder={marked.length?"What should I know about the marked passages? For example, how they were written, or how AI was used elsewhere.":"For example: which sections were written without AI, or how AI was used."}/>
    {/* Left empty by people; bots that fill every field are ignored by the server. */}
    <input className="rs-sr" tabIndex={-1} autoComplete="off" aria-hidden="true" name="website" value={trap} onChange={e=>setTrap(e.target.value)}/>
-   <p className="rs-note">Your message is saved privately with this paper and the settings shown above. I can’t reply, so please don’t include your name, email address or other personal details.</p>
+   <p className="rs-note">Your message is saved privately with this paper and the settings shown above. I can't reply, so if you want to be contacted later, leave some way to contact you like a name or email address or discord/x account.</p>
    {state==="error"&&<p className="rs-note rs-error" role="alert">{error}</p>}
    <div className="rs-feedback-actions">
     <button type="submit" disabled={!ready}>{state==="sending"?"Sending…":"Send"}</button>
     <button type="button" className="rs-more" onClick={()=>{setOpen(false);setState("idle");setError("");}}>Cancel</button>
-    <small>{text.length.toLocaleString()} / {MAX_FEEDBACK.toLocaleString()}</small>
+    <small>{short>0?`${short} more character${short===1?"":"s"} needed`:`${text.length.toLocaleString()} / ${MAX_FEEDBACK.toLocaleString()}`}</small>
    </div>
   </form>}
  </section>;

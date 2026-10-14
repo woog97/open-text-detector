@@ -1,8 +1,10 @@
 /** Reader feedback ("Think this result is wrong?"): free-text messages about one paper's result, stored privately in R2
  * under feedback/ (nothing on the site reads that prefix back; scripts/read_feedback.py lists them for Alice).
- * No IP address, user agent or contact details are stored. Added Oct 13, 2026. */
+ * No IP address or user agent is stored; visitors may choose to leave contact details in the message itself. Added Oct 13, 2026. */
 export const FEEDBACK_PREFIX='feedback/';
 export const MAX_COMMENT=4000;
+/** Minimum message length, also when passages are marked (Alice, Oct 13 2026). */
+export const MIN_COMMENT=100;
 /** Passages a reader marked as written without AI (indices into the report's segments; Oct 13, 2026). */
 export const MAX_PASSAGES=300;
 const MAX_BODY=8192;
@@ -28,7 +30,7 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   const rawPassages=body.passages===undefined?[]:body.passages;
   if(!Array.isArray(rawPassages)||rawPassages.length>MAX_PASSAGES||!rawPassages.every(n=>Number.isSafeInteger(n)&&(n as number)>=0&&(n as number)<1_000_000))return json({detail:'Invalid marked passages'},400);
   const passages=[...new Set(rawPassages as number[])].sort((a,b)=>a-b);
-  if(!comment&&!passages.length)return json({detail:'Please write a message or mark a passage'},400);
+  if(comment.length<MIN_COMMENT)return json({detail:`Please write at least ${MIN_COMMENT} characters`},400);
   if(comment.length>MAX_COMMENT)return json({detail:`Please keep it under ${MAX_COMMENT.toLocaleString('en-US')} characters`},400);
   const ctxIn=body.context&&typeof body.context==='object'?body.context as Record<string,unknown>:{},context:Record<string,string>={};
   for(const k of CONTEXT_KEYS){const v=ctxIn[k];if(typeof v==='string'||typeof v==='number')context[k]=String(v).slice(0,120);}
