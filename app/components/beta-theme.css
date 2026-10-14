@@ -185,3 +185,4 @@ html.ui-beta .pr-beta .pr-workspace.pr-sheet>.pr-map{display:none}
 .rs .rs-wrong{display:block;margin-top:8px;font-size:12px}
 .rs-marked{color:#2f6b3a}
 .rs-marked .rs-more{margin:0;font-size:12px}
+.rs-feedback-start{display:flex;flex-wrap:wrap;gap:4px 16px}.rs-feedback-start .rs-more{margin-top:8px}

@@ -28,7 +28,7 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
 
 const MAX_FEEDBACK=4000;
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
-function Feedback({paperId,context,marked,canMark,onClearMarks,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onClearMarks:()=>void;open:boolean;setOpen:(o:boolean)=>void}){
+function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;onClearMarks:()=>void;onStartMarking:()=>void;open:boolean;setOpen:(o:boolean)=>void}){
  const [text,setText]=useState(""),[trap,setTrap]=useState("");
  const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
  async function send(){
@@ -43,11 +43,15 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,open,setOpen}:{pa
  return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {state==="sent"?<p className="rs-note" role="status">Thank you. Your message was saved.</p>:!open?<>
-   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong.{canMark&&<> You can also mark passages: click a highlight on the PDF, then “Written without AI? Mark it”.</>}</p>
+   <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong{canMark?", and mark the flagged sentences you wrote without AI":""}.</p>
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
-   <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write a message</button>
+   <div className="rs-feedback-start">
+    <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write a message</button>
+    {canMark&&<button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button>}
+   </div>
   </>:<form onSubmit={e=>{e.preventDefault();if(ready)send();}}>
-   {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI will be sent with your message{marked.length?<> · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></>:null}</p>}
+   {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI will be sent with your message · <button type="button" className="rs-more" onClick={onStartMarking}>Edit</button> · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
+   {canMark&&!marked.length&&<p className="rs-note"><button type="button" className="rs-more" onClick={onStartMarking}>Mark passages on the PDF</button> to send them with your message.</p>}
    <label className="rs-sr" htmlFor="rs-feedback-text">Your message</label>
    <textarea id="rs-feedback-text" value={text} maxLength={MAX_FEEDBACK} rows={5} autoFocus onChange={e=>setText(e.target.value)}
     placeholder={marked.length?"Optional: anything to add about the marked passages, or how AI was used.":"For example: which sections were written without AI, or how AI was used."}/>
@@ -64,8 +68,8 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,open,setOpen}:{pa
  </section>;
 }
 
-export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMarks=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
- paperId:string;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
+export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMarks=()=>{},onStartMarking=()=>{},feedbackOpen=false,onFeedbackOpen=()=>{},reports,reportId,onPick,loading,flagMode,onFlagMode,threshold,flagged,onSelect,onOpenPanel,calibrated,custom,customYellow}:{
+ paperId:string;marked?:number[];canMark?:boolean;onClearMarks?:()=>void;onStartMarking?:()=>void;feedbackOpen?:boolean;onFeedbackOpen?:(o:boolean)=>void;reports:Report[];reportId:string;onPick:(id:string)=>void;loading:boolean;flagMode:FlagMode;onFlagMode:(m:FlagMode)=>void;threshold:number;
  flagged:FlaggedItem[];onSelect:(id:number)=>void;onOpenPanel:()=>void;calibrated:boolean;custom?:ReactNode;customYellow?:number;
 }){
  const flag=FLAG_MODES[flagMode];
@@ -96,6 +100,6 @@ export default function ReaderSummary({paperId,marked=[],canMark=false,onClearMa
    {!flagged.length&&<p className="rs-note">No passages are flagged by this model.</p>}
    <button type="button" className="rs-more" onClick={onOpenPanel}>{flagged.length?"Show them in the passages panel":"Open the passages panel"}</button>
   </section>}
-  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} marked={marked} canMark={canMark} onClearMarks={onClearMarks} open={feedbackOpen} setOpen={onFeedbackOpen} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
+  {!loading&&reports.length>0&&paperId&&<Feedback key={paperId} paperId={paperId} marked={marked} canMark={canMark} onClearMarks={onClearMarks} onStartMarking={onStartMarking} open={feedbackOpen} setOpen={onFeedbackOpen} context={{report:reportId,mode:flagMode,shown:results.find(x=>x.r.id===reportId)?.value??"",...(customYellow!==undefined?{cutoff:String(customYellow)}:{})}}/>}
  </div>;
 }

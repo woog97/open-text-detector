@@ -857,9 +857,13 @@ html.pr-full-lock,html.pr-full-lock body{overflow:hidden}
 .pr-page .textLayer{z-index:3}
 .pr-page-stack[hidden]{display:none}
 .pr-highlight.is-hover{outline:1px solid #344d45;filter:saturate(1.5)}
-/* Feedback: mark a passage as written without AI (wide screens only; reader-summary.tsx sends the marks). */
-.pr-mark{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:12px}
-.pr-mark button{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border:1px solid var(--pr-line,#d8dcd3);background:#fff;color:#1f2a1a;font-size:12px;border-radius:3px}
-.pr-mark button[aria-pressed=true]{border-color:#2f6b3a;color:#2f6b3a;background:#f1f7ef}
-.pr-mark .pr-mark-send{border:0;background:none;padding:0;color:#2a5db0;text-decoration:underline;text-underline-offset:3px}
-.pr-marked{display:inline-flex;align-items:center;gap:3px;font-style:normal;font-size:11px;color:#2f6b3a}
+/* Feedback marking mode (wide screens only): clicks and drags over flagged highlights mark them as written without AI. */
+.pr-markbar{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:12px;margin:0 auto 12px;padding:10px 14px;max-width:900px;background:#1f2a1a;color:#fff;font-size:13px;line-height:1.4;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.pr-markbar span{flex:1}
+.pr-markbar button{padding:5px 12px;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:12px;border-radius:3px}
+.pr-markbar .pr-markbar-done{background:#fff;color:#1f2a1a;border-color:#fff;font-weight:600}
+.is-marking .textLayer{pointer-events:none!important;user-select:none}
+.is-marking .pr-page-wrap{user-select:none;touch-action:none}
+.is-marking .pr-highlight{cursor:crosshair}
+.is-marking .pr-highlight.low,.is-marking .pr-highlight.skip,.is-marking .pr-highlight.unknown{opacity:.25;pointer-events:none}
+.pr-highlight.marked{background:rgba(47,107,58,.28)!important;outline:2px solid #2f6b3a;outline-offset:-1px}

@@ -73,6 +73,7 @@ function PageCanvas({
   onSelect,
   focusId, onFocused,
   bandOf,
+  marking = null,
 }: {
   pdf: PDFDocumentProxy;
   lib: PDFLib;
@@ -85,6 +86,8 @@ function PageCanvas({
   highlights: boolean;
   onSelect: (id: number) => void;
   bandOf: (id: number) => string;
+  /** Marking mode (feedback): clicks and drags over highlights mark passages instead of inspecting them. */
+  marking?: {marked: Set<number>; paint: (id: number, start: boolean) => void} | null;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const hoverFrame = useRef(0), hovered = useRef<Element | null>(null);
@@ -254,7 +257,7 @@ function PageCanvas({
     }} onMouseLeave={() => { cancelAnimationFrame(hoverFrame.current); hoverFrame.current = 0; hovered.current?.classList.remove("is-hover"); hovered.current = null; }} onClick={e => {
       // The PDF text layer sits above the highlights so text can be drag-selected; a plain click still inspects
       // the highlight underneath, found by hit-testing through the layers.
-      if ((e.target as HTMLElement).closest(".pr-highlight") || String(window.getSelection() || "")) return;
+      if (marking || (e.target as HTMLElement).closest(".pr-highlight") || String(window.getSelection() || "")) return;
       const hit = document.elementsFromPoint(e.clientX, e.clientY).find(el => el.classList.contains("pr-highlight")) as HTMLElement | undefined;
       if (hit?.dataset.id) onSelect(Number(hit.dataset.id));
     }}>
@@ -275,17 +278,19 @@ function PageCanvas({
       </div>
       <div className="pr-overlays">
         {boxes
-          .filter(() => highlights)
+          .filter(() => highlights || !!marking)
           .map((b, i) => (
             <button
               key={i}
               tabIndex={-1}
-              aria-label={`Inspect passage ${b.id + 1}`}
+              aria-label={marking ? `Mark passage ${b.id + 1}` : `Inspect passage ${b.id + 1}`}
               title={`Passage ${b.id + 1}`}
               data-id={b.id}
-              className={`pr-highlight ${bandOf(b.id)} ${selected === b.id ? "selected" : ""}`}
+              className={`pr-highlight ${bandOf(b.id)} ${selected === b.id && !marking ? "selected" : ""} ${marking?.marked.has(b.id) ? "marked" : ""}`}
               style={{ left: b.x, top: b.y, width: b.w, height: b.h }}
-              onClick={() => onSelect(b.id)}
+              onClick={() => { if (!marking) onSelect(b.id); }}
+              onPointerDown={marking ? e => { e.preventDefault(); marking.paint(b.id, true); } : undefined}
+              onPointerEnter={marking ? () => marking.paint(b.id, false) : undefined}
             />
           ))}
       </div>
@@ -377,7 +382,9 @@ export default function PDFReader({
     [highlights, setHighlights] = useState(true);
   // Feedback: passages the reader marks as written without AI, sent with "Think this result is wrong?" (reader-summary.tsx).
   const [marked, setMarked] = useState<Set<number>>(()=>new Set()),
-    [feedbackOpen, setFeedbackOpen] = useState(false);
+    [feedbackOpen, setFeedbackOpen] = useState(false),
+    [markMode, setMarkMode] = useState(false);
+  const stroke = useRef<"mark"|"unmark"|null>(null);
   const [mode, setMode] = useState<"pdf" | "text">("pdf"),
     [filter, setFilter] = useState("all");
   const [passageSort,setPassageSort] = useState("order");
@@ -689,8 +696,24 @@ export default function PDFReader({
   const sheetMode=readingOnly?null:compact||(full&&!beta)?(portrait?"bottom":"side"):null;
   const narrow=sheetMode!==null;
   useEffect(()=>setSheet(false),[paperId]);
-  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);},[paperId,reportId]);
-  function toggleMark(id:number){setMarked(m=>{const n=new Set(m);if(n.has(id))n.delete(id);else n.add(id);return n;});}
+  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);setMarkMode(false);},[paperId,reportId]);
+  // Marking mode is offered on wide screens only (Alice, Oct 13 2026); phones keep the plain message box.
+  useEffect(()=>{if(narrow)setMarkMode(false);},[narrow]);
+  useEffect(()=>{
+    if(!markMode)return;
+    const end=()=>{stroke.current=null;},key=(e:KeyboardEvent)=>{if(e.key==="Escape")setMarkMode(false);};
+    addEventListener("pointerup",end);addEventListener("pointercancel",end);addEventListener("keydown",key);
+    return ()=>{removeEventListener("pointerup",end);removeEventListener("pointercancel",end);removeEventListener("keydown",key);};
+  },[markMode]);
+  /** A press on a flagged highlight starts a stroke that marks (or, if it was marked, unmarks); dragging applies the same to
+   * every flagged highlight the pointer passes over. Only flagged sentences can be marked. */
+  function paint(id:number,start:boolean){
+    const band=bandOf(id);if(band!=="medium"&&band!=="high")return;
+    if(start)stroke.current=marked.has(id)?"unmark":"mark";
+    const act=stroke.current;if(!act)return;
+    setMarked(m=>{if((act==="mark")===m.has(id))return m;const n=new Set(m);if(act==="mark")n.add(id);else n.delete(id);return n;});
+  }
+  const marking=markMode?{marked,paint}:null;
   function openFeedback(){setFeedbackOpen(true);setTimeout(()=>document.getElementById('rs-feedback')?.scrollIntoView({block:'center',behavior:'smooth'}),50);}
   // Layout changes (rotation, entering or leaving fullscreen) move the page: bring the selected passage back into view.
   // Wait for the pages to re-render at the new width (resizes settle after ~600 ms) before scrolling.
@@ -901,7 +924,7 @@ export default function PDFReader({
           </a>
         )}
       </div>
-      <div ref={workspace} className={`pr-workspace${readingOnly?" pr-reading-only":""}${sheetMode?` pr-sheet pr-sheet-${sheetMode}`:""}${full?" pr-full":""}${beta&&!panel&&!narrow?" pr-panel-closed":""}`}>
+      <div ref={workspace} className={`pr-workspace${readingOnly?" pr-reading-only":""}${sheetMode?` pr-sheet pr-sheet-${sheetMode}`:""}${full?" pr-full":""}${beta&&!panel&&!narrow?" pr-panel-closed":""}${markMode?" is-marking":""}`}>
         <nav className="pr-map" aria-label="Page overview">
           <span>PAGES</span>
           {pdf &&
@@ -944,6 +967,9 @@ export default function PDFReader({
             >
               {highlights ? <Eye size={15} /> : <EyeOff size={15} />} Highlights
             </button>}
+            {beta&&!narrow&&!readingOnly&&calibrated&&report&&<button aria-pressed={markMode} title="Mark flagged sentences you wrote without AI, to send with feedback" onClick={()=>setMarkMode(m=>!m)}>
+              <Check size={15} /> Mark passages
+            </button>}
             <div className="pr-zoom">
               <button
                 aria-label="Zoom out"
@@ -965,6 +991,11 @@ export default function PDFReader({
             {(!full||beta)&&<button className="pr-full-toggle" aria-label={full?"Exit fullscreen":"Fullscreen"} title={full?"Exit fullscreen":"Fullscreen"} onClick={()=>void toggleFull()}>{full?<Minimize2 size={15}/>:<Maximize2 size={15}/>}</button>}
           </div>
           <div className="pr-viewport" ref={viewport} onScroll={()=>{moved.current=true;trackPage();trackReading();}}>
+            {markMode&&<div className="pr-markbar" role="status">
+              <span><b>Marking mode.</b> Click or drag across flagged sentences you wrote without AI. <b>{marked.size}</b> marked.</span>
+              <button type="button" className="pr-markbar-done" onClick={()=>{setMarkMode(false);openFeedback();}}>Done</button>
+              <button type="button" onClick={()=>{setMarked(new Set());setMarkMode(false);}}>Cancel</button>
+            </div>}
             {progress && (
               <div className="pr-progress">
                 <Loader2 size={14} className="pr-spin" />
@@ -977,7 +1008,7 @@ export default function PDFReader({
                   <ScrollingPage ratios={pageRatios} frozen={mode !== "pdf"} key={`${paperId}-${i}`} pdf={pdf} lib={lib} number={i + 1}
                     width={Math.round(width * zoom)} passages={pagePassages.get(i+1)||EMPTY_PASSAGES} focusId={focusId} onFocused={setFocusId}
                     selected={current?.page === i + 1 ? selected : null}
-                    highlights={!readingOnly&&highlights} onSelect={select} bandOf={bandOf} />
+                    highlights={!readingOnly&&highlights} onSelect={select} bandOf={bandOf} marking={marking} />
                 ))}
               </div>
             )}
@@ -1141,11 +1172,6 @@ export default function PDFReader({
                     Scores are experimental model outputs, not probabilities of
                     authorship.
                   </p>
-                  {/* Marking is offered on wide screens only (Alice, Oct 13 2026); phones keep the plain message box. */}
-                  {beta&&!narrow&&calibrated&&hasTextContent(current.text)&&<div className="pr-mark">
-                    <button type="button" aria-pressed={marked.has(current.id)} onClick={()=>toggleMark(current.id)}>{marked.has(current.id)?<><Check size={14}/> Marked as written without AI</>:"Written without AI? Mark it"}</button>
-                    {marked.size>0&&<button type="button" className="pr-mark-send" onClick={openFeedback}>{marked.size} marked · add a note and send</button>}
-                  </div>}
                   <div className="pr-detail-nav">
                     <button
                       disabled={current.id === 0}
@@ -1201,7 +1227,6 @@ export default function PDFReader({
                         className={`pr-dot ${hasTextContent(p.text)?bandOf(p.id):"unknown"}`}
                       />
                       <b>{p.id + 1}</b>
-                      {marked.has(p.id)&&<em className="pr-marked" title="Marked as written without AI"><Check size={12}/> marked</em>}
                       <span>{p.mapped ? `p. ${p.page}` : "Not located"}{calibrated && sectionList[p.id] !== "body" ? ` · ${SECTION_NAMES[sectionList[p.id]]}` : ""}</span>
                       <strong>{calibrated ? p.score.toFixed(4) : p.score.toFixed(2)}</strong>
                     </div>
@@ -1220,7 +1245,7 @@ export default function PDFReader({
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
           onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined}
-          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
+          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
     </section>
