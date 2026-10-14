@@ -63,6 +63,9 @@ const labels: Record<string,string> = {
 const label = (s:Passage) => Object.hasOwn(labels,s.label)?labels[s.label]:s.label;
 
 const EMPTY_PASSAGES: AlignedPassage[] = [];
+/** Text view: the extraction keeps a line break where the PDF split a word with a hyphen ("pro-\ncessing");
+ * join those so the text reads as a paragraph. Other breaks (headings, paragraph ends) stay. */
+const reflow = (text: string) => text.replace(/-\n(?=\S)/g, "-");
 
 function PageCanvas({
   pdf,
@@ -401,7 +404,6 @@ export default function PDFReader({
   const [focusId,setFocusId] = useState<number|null>(null);
   const [pageInput,setPageInput] = useState("");
   const [loadAttempt,setLoadAttempt] = useState(0);
-  const [textSection,setTextSection] = useState(0);
   const [sidebarPage,setSidebarPage] = useState(0);
   const [panel,setPanel] = useState(false);
   const [search, setSearch] = useState(""),
@@ -459,7 +461,6 @@ export default function PDFReader({
     if(next===mode)return;
     viewScroll.current[mode]=viewport.current?.scrollTop||0;
     setFocusId(null);
-    if(next==="text" && selected!==null)setTextSection(Math.floor(selected/100));
     setMode(next);
   }
   useLayoutEffect(()=>{
@@ -506,7 +507,6 @@ export default function PDFReader({
     setDetail(null);
     viewScroll.current={pdf:0,text:0};
     setMode("pdf");
-    setTextSection(0);
     setSidebarPage(0);
     setFilter("all");
     setPage(1);
@@ -608,12 +608,10 @@ export default function PDFReader({
   const pageStarts=useMemo(()=>{const starts=new Map<number,number>();let last=0;
     for(const p of passages)if(p.page!==undefined&&p.page>last){starts.set(p.id,p.page);last=p.page;}
     return starts;},[passages]);
-  const section=Math.min(textSection,Math.max(0,Math.ceil(passages.length/100)-1));
-  const textStart=section*100, textEnd=Math.min(passages.length,textStart+100);
   useEffect(()=>{
     if(mode==="text" && selected!==null)viewport.current?.querySelector(`[data-passage="${selected}"]`)?.scrollIntoView({block:"center",behavior:"instant"});
-  },[mode,selected,section]);
-  // Page-map jumps in text mode: scroll the target passage to the top once its section has rendered.
+  },[mode,selected]);
+  // Page-map jumps in text mode: scroll the target passage to the top.
   const [textTarget,setTextTarget]=useState<number|null>(null);
   useEffect(()=>{
     if(mode!=="text"||textTarget===null)return;
@@ -627,7 +625,7 @@ export default function PDFReader({
       else target.scrollIntoView({block:"start",behavior:"instant"});
       setTextTarget(null);
     }
-  },[mode,textTarget,section]);
+  },[mode,textTarget]);
   const current = selected === null ? undefined : passages[selected];
   const sourceChars = useMemo(()=>Array.from(report?.text || ""),[report?.text]);
   const reportSummary = useMemo(()=>summarizePassages(report?.result.segments || [],report?.text),[report]);
@@ -800,7 +798,7 @@ export default function PDFReader({
   useEffect(()=>{const onScroll=()=>{moved.current=true;trackReading();};window.addEventListener("scroll",onScroll,{passive:true});return()=>window.removeEventListener("scroll",onScroll);});
   // Locate the reading position on open and after switching views, before any scroll happens.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(()=>{const t=setTimeout(trackReading,400);return()=>clearTimeout(t);},[mode,passages,pdf,section]);
+  useEffect(()=>{const t=setTimeout(trackReading,400);return()=>clearTimeout(t);},[mode,passages,pdf]);
   useEffect(()=>{
     if(followIndex<0||!moved.current||narrow)return;
     const box=inspector.current,el=box?.querySelector<HTMLElement>(`[data-list-passage="${visible[followIndex].id}"]`);
@@ -827,9 +825,8 @@ export default function PDFReader({
     setSheet(true);
     setPanel(true);
     setFocusId(mode==="pdf"?id:null);
-    if(!hasTextContent(p.text)) {setFocusId(null);if(mode==="text")setTextSection(Math.floor(id/100));return;}
+    if(!hasTextContent(p.text)) {setFocusId(null);return;}
     if (p.page && mode === "pdf") jumpToPage(p.page);
-    if (mode === "text") setTextSection(Math.floor(id/100));
   }
   function jumpToPage(n: number) {
     if(!pdf || !Number.isInteger(n) || n<1 || n>pdf.numPages)return;
@@ -850,7 +847,7 @@ export default function PDFReader({
       // Text mode has no page elements: jump to the first passage located on that page.
       const first = passages.find(p => p.page === n && hasTextContent(p.text)) ?? passages.find(p => (p.page ?? 0) >= n);
       setPage(n);
-      if (first) { setTextSection(Math.floor(first.id/100)); setTextTarget(first.id); }
+      if (first) setTextTarget(first.id);
       return;
     }
     jumpToPage(n);
@@ -1029,37 +1026,39 @@ export default function PDFReader({
                 <small>CLASSIFIED SOURCE TEXT</small>
                 <p className="pr-text-note">
                   This is the text the model received. Formatting can differ
-                  from the PDF. Long reports are shown in sections of 100 passages.
+                  from the PDF.
                 </p>
                 {passages.length ? (
-                  passages.slice(textStart,textEnd).map((p, i) => (
+                  passages.map((p, i) => (
                     <span key={p.id}>
-                      {sourceChars
-                        .slice(i+textStart ? passages[i+textStart - 1].end : 0, p.start)
-                        .join("")}
+                      {reflow(sourceChars.slice(i ? passages[i - 1].end : 0, p.start).join(""))}
                       {pageStarts.has(p.id) &&
                         <span className="pr-page-break" data-page-break={pageStarts.get(p.id)} aria-label={`Page ${pageStarts.get(p.id)}`}><span>Page {pageStarts.get(p.id)}</span></span>}
-                      <button
+                      {/* An inline span, not a <button>: browsers lay buttons out as inline-block, so a passage could not wrap across lines. */}
+                      <span
+                        role="button"
+                        tabIndex={0}
                         data-passage={p.id}
                         title={`Passage ${p.id+1} · score ${p.score.toFixed(calibrated ? 4 : 3)}${calibrated ? ` · ${tierLabel(p.id)}` : ""}`}
-                        className={`${highlights && hasTextContent(p.text) ? bandOf(p.id) : ""} ${selected === p.id ? "selected" : ""}`}
+                        className={`pr-text-passage ${highlights && hasTextContent(p.text) ? bandOf(p.id) : ""} ${selected === p.id ? "selected" : ""}`}
                         onClick={() => select(p.id)}
+                        onKeyDown={e => {if(e.key==="Enter"||e.key===" "){e.preventDefault();select(p.id);}}}
                       >
-                        {p.text}
-                      </button>
+                        {reflow(p.text)}
+                      </span>
                     </span>
                   ))
                 ) : (
-                  <p>{report.text}</p>
+                  <p>{reflow(report.text)}</p>
                 )}
-                {passages.length > 0 && textEnd===passages.length &&
-                  sourceChars
+                {passages.length > 0 &&
+                  reflow(sourceChars
                     .slice(passages[passages.length - 1].end)
-                    .join("")}
+                    .join(""))}
               </article>
             )}
           </div>
-          {mode==="text" ? <footer className="pr-pagination"><button disabled={section===0} aria-label="Previous text section" onClick={()=>{setSelected(null);setTextSection(section-1);viewport.current?.scrollTo({top:0});}}><ChevronLeft size={16}/>Previous</button><span>Passages {passages.length?textStart+1:0}–{textEnd} of {passages.length}</span><button disabled={textEnd===passages.length} aria-label="Next text section" onClick={()=>{setSelected(null);setTextSection(section+1);viewport.current?.scrollTo({top:0});}}>Next<ChevronRight size={16}/></button></footer> : <footer className="pr-pagination">
+          {mode==="text" ? <footer className="pr-pagination"><span>{passages.length} passages</span><div><form className="pr-page-jump" onSubmit={e=>{e.preventDefault();const n=Number(pageInput);if(pdf&&Number.isInteger(n)&&n>=1&&n<=pdf.numPages){changePage(n);setPageInput("");}}}><label>Go to page <input aria-label="PDF page number" type="number" min={1} max={pdf?.numPages||1} required disabled={!pdf} value={pageInput} onChange={e=>setPageInput(e.target.value)}/></label> of {pdf?.numPages || "—"}<button type="submit" disabled={!pdf}>Go</button></form></div><span/></footer> : <footer className="pr-pagination">
             <button
               disabled={page <= 1 || !pdf}
               onClick={() => changePage(page - 1)}
@@ -1099,7 +1098,6 @@ export default function PDFReader({
                 value={reportId}
                 onChange={(e) => {
                   setReportId(e.target.value);
-                  setTextSection(0);
                   setSidebarPage(0);
                   setSelected(null);
                   setFocusId(null);
@@ -1256,7 +1254,7 @@ export default function PDFReader({
           )}
         </aside>}
         {beta&&summarySlot&&createPortal(<ReaderSummary paperId={paperId} reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
-          onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
+          onPick={id=>{setReportId(id);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
           onSelect={select} locked={feedbackLocked} showMarks={showMarks} onShowMarks={setShowMarks} custom={customControls} customYellow={custom.on?custom.y:undefined}
           marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}

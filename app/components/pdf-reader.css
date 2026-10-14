@@ -651,25 +651,18 @@
   color: #8a9382;
   margin: 12px 0 28px;
 }
-.pr-text button {
-  display: inline;
-  border: 0;
-  text-align: left;
-  font:
-    16px/1.9 Georgia,
-    serif;
+.pr-text-passage {
   color: #35472e;
-  background: transparent;
-  padding: 0;
-  margin-right: 4px;
-  overflow-wrap: anywhere;
+  cursor: pointer;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
-.pr-text button.warm {
-  background: #f5e4d0;
+.pr-text-passage:hover {
+  outline: 1px solid #50665b80;
 }
-.pr-text button.selected {
-  background: #f0cfa8;
-  outline: 1px solid #c79766;
+.pr-text-passage:focus-visible {
+  outline: 2px solid #2846b8;
 }
 .pr-text > p {
   overflow-wrap: anywhere;
@@ -777,9 +770,8 @@
 .pr-highlight.low {background:#80cf883d}.pr-highlight.medium {background:#f1cc4352}.pr-highlight.high {background:#ef645d59}
 .pr-highlight:hover,.pr-highlight.selected {outline:1px solid #344d45;filter:saturate(1.5)}
 .pr-text {font:16px/1.9 Georgia,serif;overflow-wrap:anywhere;min-width:0;box-sizing:border-box}
-.pr-text button {font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;max-width:100%;margin:0;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.pr-text button.low {background:#dff0df}.pr-text button.medium {background:#fff0ba}.pr-text button.high {background:#fbd4ce}
-.pr-text button.selected {outline:2px solid #50665b}
+.pr-text-passage.low {background:#dff0df}.pr-text-passage.medium {background:#fff0ba}.pr-text-passage.high {background:#fbd4ce}
+.pr-text-passage.selected {outline:2px solid #344d45;outline-offset:1px;background-image:linear-gradient(#0000000f,#0000000f)}
 .pr-passages>button.low {background:#f3faf1}.pr-passages>button.medium {background:#fffbea}.pr-passages>button.high {background:#fff0ec}
 .pr-passages>button.active {border:2px solid #4c695b}.pr-passages p {overflow-wrap:anywhere}
 .pr-dot.low,.pr-map em.low,.pr-legend i.low {background:#8ebd95}.pr-dot.medium,.pr-map em.medium,.pr-legend i.medium {background:#ddbc52}.pr-dot.high,.pr-map em.high,.pr-legend i.high {background:#d97669}
@@ -833,7 +825,7 @@ html.pr-full-lock,html.pr-full-lock body{overflow:hidden}
 .pr-full-toggle{margin-left:4px}
 
 /* Calibrated (final MoE) reports: grey for sentences the counting mode leaves out (bibliography, appendices). */
-.pr-highlight.skip {background:#9aa0ab2e}.pr-text button.skip {background:#eceef1;color:#6b7078}.pr-passages>button.skip {background:#f6f7f9}
+.pr-highlight.skip {background:#9aa0ab2e}.pr-text-passage.skip {background:#eceef1;color:#6b7078}.pr-passages>button.skip {background:#f6f7f9}
 .pr-dot.skip,.pr-map em.skip,.pr-legend span i.skip {background:#c4c8cf}
 .pr-pill.low {background:#dff0df}.pr-pill.medium {background:#fff0ba}.pr-pill.high {background:#fbd4ce}.pr-pill.skip {background:#eceef1}
 .pr-paper-score>span b{font-weight:650}
