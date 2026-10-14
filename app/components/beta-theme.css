@@ -198,3 +198,4 @@ html.ui-beta .pr-beta .pr-workspace.pr-sheet>.pr-map{display:none}
 .rs .rs-locked,.rs .rs-locked *{cursor:not-allowed}
 .rs-lock-note{padding:8px 10px;background:#f4f5f2;border-left:3px solid #1f2a1a;color:var(--ink)}
 .rs-showmarks{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--ink-2)}
+html.ui-beta .site-menu-list a.site-menu-ext{display:flex;align-items:center;gap:6px;border-top:1px solid var(--rule-2)}
