@@ -54,7 +54,7 @@ function Home(){
 
   <Section title="Why this exists">
    <p>I wrote a <a href="/?view=manifesto">manifesto</a> explaining this. In short: AI makes it easier than ever to produce research at every stage, which is good for the frontier. But it also lets low-effort work be produced at a scale that saturates the submission pool and overburdens double-blind review. Official processes change far too slowly to keep up, and ICLR 2027’s open review makes it possible to act now instead of waiting.</p>
-   <p>One of the things we need is forced transparency: everyone should be able to see where, when and how AI was used in a paper, without relying on authors to disclose it. This site is a first step toward that, with an open detector anyone can inspect, instead of a for-profit product you have to take on trust.</p>
+   <p>One of the things we need is forced transparency: everyone should be able to see where, when and how AI was used in a paper, without needing to trust authors to report it faithfully. More broadly, being able to tell whether writing online is human- or AI-authored should be a free public service, not a paid product. This site is a first step toward that: an open detector anyone can inspect.</p>
   </Section>
 
   <Section title="Who made this">
