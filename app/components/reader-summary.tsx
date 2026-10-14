@@ -1,6 +1,6 @@
 "use client";
 /* Beta reader: "Results by model", its controls and the flagged-passage count, shown in the paper's left column. */
-import {useMemo,useState,type ReactNode} from "react";
+import {useEffect,useMemo,useState,type ReactNode} from "react";
 import {fprReadout} from "@/lib/score-fpr";
 import {hasTextContent, summarizePassages, paperRate, modelLabel, MIN_SENTENCES} from "@/lib/paper-scores";
 import {FLAG_FPRS, FLAG_MODES, FLAG_MODEL, flagModeOf, fprLabel, thresholdText, type FlagMode} from "@/lib/paper-discovery";
@@ -35,18 +35,21 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onStartMarking,sh
   setState("sending");setError("");
   try{
    const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,author,contact:{name,reach},website:trap})});
-   if(r.ok){setState("sent");onClearMarks();return;}
+   // Sending closes the form, which unlocks the result settings (pdf-reader.tsx feedbackLocked).
+   if(r.ok){setState("sent");setText("");setAuthor("");onClearMarks();setOpen(false);return;}
    const d=(await r.json().catch(()=>({}))) as {detail?:unknown};setError(typeof d.detail==="string"?d.detail:"The message could not be sent.");setState("error");
   }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
  }
  // A message needs at least 100 characters, also when passages are marked (Alice, Oct 13 2026); the server checks the same.
+ // Reopening after a sent message ("Tell me" above, or "Write another message") starts a new, empty form.
+ useEffect(()=>{if(open&&state==="sent")setState("idle");},[open,state]);
  const short=MIN_FEEDBACK-text.trim().length,ready=short<=0&&state!=="sending";
  return <section className="rs-feedback" id="rs-feedback">
   <h2>Think this result is wrong?</h2>
   {/* The marking mode can be left from here as well as from the bar over the PDF. */}
   {marking&&<div className="rs-marking" role="status"><p><b>Marking mode is on.</b> Click or drag across flagged sentences on the PDF. {marked.length} marked.</p>
    <div className="rs-feedback-actions"><button type="submit" onClick={()=>onStopMarking(true)}>Done</button><button type="button" className="rs-more" onClick={()=>onStopMarking(false)}>Cancel</button></div></div>}
-  {state==="sent"?<p className="rs-note" role="status">Thank you. Your message was saved.</p>:!open?<>
+  {state==="sent"&&!open?<p className="rs-note" role="status">Thank you. Your message was saved. <button type="button" className="rs-more" onClick={()=>setOpen(true)}>Write another message</button></p>:!open?<>
    <p className="rs-note">If this is your paper, or you know how it was written, you can say where the detector got it wrong{canMark?", and mark the flagged sentences you wrote without AI":""}.</p>
    {marked.length>0&&<p className="rs-note rs-marked">{marked.length} passage{marked.length===1?"":"s"} marked as written without AI · <button type="button" className="rs-more" onClick={onClearMarks}>Clear</button></p>}
    {marked.length>0&&<label className="rs-showmarks"><input type="checkbox" checked={showMarks} onChange={e=>onShowMarks(e.target.checked)}/> Show my marks on the PDF</label>}
