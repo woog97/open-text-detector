@@ -140,21 +140,20 @@ function About(){
     {RELEASES.map(([n,d,st,k,href])=><tr key={n}><td><b>{n}</b><span>{d}</span></td><td className={k==='soon'?'sp-soon':k==='part'?'sp-part':'sp-out'}>{href?<a href={href}>{st}</a>:st}</td></tr>)}
    </tbody></table>
   </Section>
-  <Section title="Build something better">
-   <p>The point of releasing everything is that someone else can take it further. Train a stronger model on the released data, run it on another venue, or replace this site entirely. If you do, I would like to hear about it.</p>
-  </Section>
-  <Section title="Privacy">
-   <p>This site keeps usage statistics so I can see how it is used: which pages are visited, which papers are opened, and which sorting and filtering options are used, along with each visit’s country and city, the network or institution it comes from, the device type, browser, language and referring site. There are no cookies or tracking scripts, and IP addresses are not stored.</p>
-  </Section>
   <Section title="Questions">
+   <h3 className="sp-q">How good is the model?</h3>
+   <p>It’s okay but we can do a lot better. The biggest limitation is there’s not enough training data: I spent about $80 total generating AI labeled data. Ideally we’d have around 100x more at least, to better match the proportion of human data available.</p>
    <h3 className="sp-q">Aren’t you worried people will train against this to humanize text?</h3>
-   <p>I’m not worried. As a wise person on discord said:</p>
+   <p>I’m not worried. As a wise person on a random discord server once said:</p>
    {/* Their public Discord message, redrawn in the page's colours (not a screenshot). */}
    <figure className="sp-chat" aria-label="Discord message from ad8e, September 30, 2026">
     <img className="sp-chat-avatar" src={imgSrc(ad8eAvatar)} alt="" width={40} height={40}/>
     <div><div className="sp-chat-head"><b>ad8e</b><time dateTime="2026-09-30T20:23">9/30/26, 8:23 PM</time></div>
     <p>this domain's bottleneck is researcher skill, not the underlying perfect-play equilibrium. it is easy to train a model better than pangram; next year's pangram will accomplish this. it is also easy to train a model that defeats pangram, but notice all the attempts at this are sad and scammy. that's because the better ML researchers have better things to do</p></div>
    </figure>
+  </Section>
+  <Section title="Privacy">
+   <p>This site keeps usage statistics so I can see how it is used: which pages are visited, which papers are opened, and which sorting and filtering options are used, along with each visit’s country and city, the network or institution it comes from, the device type, browser, language and referring site. There are no cookies or tracking scripts, and IP addresses are not stored.</p>
   </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
