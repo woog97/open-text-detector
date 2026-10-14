@@ -145,7 +145,7 @@ function About(){
   </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
-   <p className="sp-links"><a href="https://x.com/woog09" rel="noopener">@woog09 on X</a><a href="mailto:rigg.alice0@gmail.com">rigg.alice0@gmail.com</a></p>
+   <p className="sp-links"><a href="https://x.com/woog09" rel="noopener">@woog09 on X</a></p>
   </Section>
  </div>;
 }

@@ -1,0 +1,20 @@
+/* Site-wide feedback button and form (site-feedback.tsx). Hidden while the PDF reader is open: it has its own form. */
+.sfb{position:fixed;right:20px;bottom:20px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:10px;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#141a26}
+body:has(.pb-reader) .sfb{display:none}
+@media print{.sfb{display:none}}
+.sfb-toggle{padding:8px 14px;border:1px solid #141a26;background:#fff;color:#141a26;font:600 13px system-ui,-apple-system,sans-serif;border-radius:999px;box-shadow:0 2px 10px rgba(20,26,38,.12);cursor:pointer}
+.sfb-toggle[aria-expanded=true]{background:#141a26;color:#fff}
+.sfb-panel{width:min(360px,calc(100vw - 32px));padding:14px 16px 16px;background:#fff;border:1px solid #dfe1dc;box-shadow:0 8px 28px rgba(20,26,38,.16)}
+.sfb-head{display:flex;justify-content:space-between;align-items:center}
+.sfb-head h2{margin:0;font-size:15px;font-weight:600}
+.sfb-close{border:0;background:none;font-size:20px;line-height:1;color:#465063;cursor:pointer}
+.sfb-note{margin:8px 0 0;font-size:12px;color:#465063}
+.sfb-error{color:#b2412b}
+.sfb textarea{display:block;width:100%;box-sizing:border-box;margin-top:10px;padding:8px 10px;border:1px solid #dfe1dc;font:13px/1.5 system-ui,-apple-system,sans-serif;color:#141a26;resize:vertical}
+.sfb textarea:focus{outline:2px solid #2846b8;outline-offset:-1px}
+.sfb-actions{display:flex;align-items:center;gap:12px;margin-top:10px}
+.sfb-actions button{padding:6px 14px;border:0;background:#141a26;color:#fff;font:600 13px system-ui,-apple-system,sans-serif;cursor:pointer}
+.sfb-actions button:disabled{opacity:.4;cursor:default}
+.sfb-actions small{margin-left:auto;font-size:11px;color:#465063;font-variant-numeric:tabular-nums}
+.sfb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:640px){.sfb{right:12px;bottom:12px}}

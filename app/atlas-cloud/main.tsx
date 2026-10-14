@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import PaperBrowser from "../components/paper-browser";
 import "./base.css";
 import {BETA} from "../lib/ui-mode";
+import SiteFeedback from "../components/site-feedback";
 const ModelCalibration=lazy(()=>import('../components/model-calibration'));
 const SitePages=lazy(()=>import('../components/site-pages'));
 // The Classifications view was retired on Oct 8, 2026 (Discover shows calibrated flagged shares); old links open the submissions list.
@@ -18,4 +19,4 @@ function App(){
  if(r==="calibration")return <Suspense fallback={<p>Opening calibration…</p>}><ModelCalibration/></Suspense>;
  return <Suspense fallback={<p style={{padding:24}}>Opening…</p>}><SitePages page={r}/></Suspense>;
 }
-createRoot(document.getElementById("root")!).render(<App/>);
+createRoot(document.getElementById("root")!).render(<><App/><SiteFeedback/></>);

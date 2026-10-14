@@ -50,3 +50,12 @@ test('marked passages are stored as sorted unique indices; messages need 100 cha
  assert.equal((await send({paper,comment:'',passages:[]})).status,400);
  assert.equal(puts.length,2);
 });
+test('site feedback needs no paper, keeps only the page as context, ignores marks and is stored under feedback/site/',async()=>{
+ const {send,puts}=setup({exists:false});
+ const msg='The calibration page is hard to read on a phone; the table runs off the screen and the chart labels overlap a lot.';
+ assert.equal((await send({kind:'site',comment:msg,context:{page:'calibration',report:'x'},passages:[1,2]})).status,201);
+ assert.match(puts[0][0],/^feedback\/site\/2026-10-13\/\d+-[0-9a-f-]{36}\.json$/);
+ assert.deepEqual(puts[0][1],{received_at:'2026-10-13T20:00:00.000Z',kind:'site',comment:msg,context:{page:'calibration'}});
+ assert.equal((await send({kind:'site',comment:'too short'})).status,400);
+ assert.equal((await send({comment:msg})).status,400,'paper feedback still needs a paper');
+});
