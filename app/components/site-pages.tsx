@@ -58,7 +58,7 @@ function Home(){
   </Section>
 
   <Section title="Who made this">
-   <p>Built by woog, self-funded and unpaid, with help from a collaborator, sky.moo, and donated compute from a Hugging Face community grant (through zmuwztd) and nev. I curated and produced the training data, trained the detectors and evaluated them. Commercial detectors keep their models and data closed. This one is meant to be fully open: the results are on this site, and the training recipe, a full dataset disclosure and the LoRA adapters will be published.</p>
+   <p>Built by woog, self-funded and unpaid, with help from a collaborator, sky.moo, and donated compute from a Hugging Face community grant (through zmuwztd) and nev. I curated and produced the training data, trained the detectors and evaluated them. Commercial detectors keep their models and data closed. This one is fully open: the results are on this site, and the code, training recipe, training data and LoRA adapters are published (links on the <a href="/?view=about">About page</a>).</p>
    <p className="sp-links"><a href="/?view=manifesto">Why I built this</a><a href="/?view=transparency">Transparency</a><a href="/?view=about">Credits</a></p>
   </Section>
 
