@@ -1,6 +1,11 @@
 /** Reader feedback ("Think this result is wrong?"): free-text messages about one paper's result, stored privately in R2
  * under feedback/ (nothing on the site reads that prefix back; scripts/read_feedback.py lists them for Alice).
- * No IP address or user agent is stored; visitors may choose to leave contact details in the message itself. Added Oct 13, 2026. */
+ * No IP address or user agent is stored; visitors may choose to leave contact details in the message itself. Added Oct 13, 2026.
+ *
+ * Editing (Alice, Oct 14 2026): a paper message is stored at feedback/<day>/<ts>-<uuid>.json and the reply gives the browser its
+ * id and a random edit key, which the browser keeps (reader-summary.tsx). Only a SHA-256 hash of the key is stored. An edit sends
+ * the id and key back and is saved as a new file feedback/<id>/edit-<ts>.json; earlier versions are never overwritten.
+ * Exact repeats (same paper, same text, same UTC day) are stored once: an empty marker feedback/_seen/<day>/<hash> records it. */
 export const FEEDBACK_PREFIX='feedback/';
 /** Answers to "Are you an author of this paper?" in the reader's feedback form (reader-summary.tsx). */
 export const AUTHOR_ROLES=['no','first','second','other'] as const;
@@ -14,8 +19,11 @@ const MAX_BODY=32768;
 /** Settings shown when the message was sent, so the result the reader saw can be reproduced. */
 const CONTEXT_KEYS=['report','mode','shown','cutoff'] as const;
 type Limiter={limit(o:{key:string}):Promise<{success:boolean}>};
-type Deps={bucket:Pick<R2Bucket,'put'>;perSender?:Limiter;sitewide?:Limiter;paperExists:(id:string)=>Promise<boolean>;now?:()=>Date};
+type Deps={bucket:Pick<R2Bucket,'put'|'get'|'head'>;perSender?:Limiter;sitewide?:Limiter;paperExists:(id:string)=>Promise<boolean>;now?:()=>Date};
 type Reply=(value:unknown,status?:number)=>Response;
+/** A paper message's id: its key under feedback/ without the .json ending. */
+const MESSAGE_ID=/^\d{4}-\d{2}-\d{2}\/\d{13}-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+async function sha256(text:string){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(b=>b.toString(16).padStart(2,'0')).join('');}
 
 export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promise<Response>{
   if(request.method!=='POST')return json({detail:'Method not allowed'},405);
@@ -49,7 +57,27 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   // Paper feedback only: whether the sender says they are an author of the paper (Alice, Oct 14 2026).
   const author=!site&&typeof body.author==='string'&&(AUTHOR_ROLES as readonly string[]).includes(body.author)?body.author:'';
   const now=(deps.now||(()=>new Date()))(),day=now.toISOString().slice(0,10);
-  const key=`${FEEDBACK_PREFIX}${site?'site/':''}${day}/${now.getTime()}-${crypto.randomUUID()}.json`;
-  await deps.bucket.put(key,JSON.stringify(site?{received_at:now.toISOString(),kind:'site',comment,context,...(Object.keys(contact).length?{contact}:{})}:{received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(author?{author}:{}),...(Object.keys(contact).length?{contact}:{})}),{httpMetadata:{contentType:'application/json'}});
-  return json({ok:true},201);
+  const put=(key:string,value:unknown)=>deps.bucket.put(key,JSON.stringify(value),{httpMetadata:{contentType:'application/json'}});
+  const optional={...(Object.keys(contact).length?{contact}:{})};
+  if(site){
+    await put(`${FEEDBACK_PREFIX}site/${day}/${now.getTime()}-${crypto.randomUUID()}.json`,{received_at:now.toISOString(),kind:'site',comment,context,...optional});
+    return json({ok:true},201);
+  }
+  const message={received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(author?{author}:{}),...optional};
+  // An edit of an earlier message: needs that message's id and edit key, and the same paper.
+  if(body.edit!==undefined){
+    const edit=body.edit as Record<string,unknown>|null,id=edit?.id,editKey=edit?.key;
+    if(typeof id!=='string'||!MESSAGE_ID.test(id)||typeof editKey!=='string'||editKey.length>128)return json({detail:'This message can no longer be edited'},403);
+    const first=await deps.bucket.get(`${FEEDBACK_PREFIX}${id}.json`);
+    const original=first?await first.json() as {paper?:string;edit_key_sha256?:string}:null;
+    if(!original?.edit_key_sha256||original.paper!==paper||original.edit_key_sha256!==await sha256(editKey))return json({detail:'This message can no longer be edited'},403);
+    await put(`${FEEDBACK_PREFIX}${id}/edit-${now.getTime()}.json`,{...message,edit_of:id});
+    return json({ok:true,id},201);
+  }
+  const seen=`${FEEDBACK_PREFIX}_seen/${day}/${await sha256(`${paper}\n${comment}`)}`;
+  if(await deps.bucket.head(seen))return json({ok:true,duplicate:true},201);
+  const id=`${day}/${now.getTime()}-${crypto.randomUUID()}`,editKey=[...crypto.getRandomValues(new Uint8Array(24))].map(b=>b.toString(16).padStart(2,'0')).join('');
+  await put(`${FEEDBACK_PREFIX}${id}.json`,{...message,edit_key_sha256:await sha256(editKey)});
+  await deps.bucket.put(seen,'');
+  return json({ok:true,id,key:editKey},201);
 }

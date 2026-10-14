@@ -5,7 +5,7 @@
 // scripts/prepare_cloud_atlas.py does) when that folder is missing. Usage: node scripts/preview-atlas.mjs [port]
 import http from "node:http";
 import {readFile} from "node:fs/promises";
-import {cpSync, existsSync, mkdirSync, writeFileSync} from "node:fs";
+import {cpSync, existsSync, mkdirSync, readFileSync, writeFileSync} from "node:fs";
 import {handleFeedback} from "../atlas-cloud/feedback.ts";
 import {execSync} from "node:child_process";
 
@@ -30,7 +30,10 @@ async function feedback(req, res) {
   const chunks = []; for await (const c of req) chunks.push(c);
   const headers = new Headers(); for (const [k, v] of Object.entries(req.headers)) if (typeof v === "string") headers.set(k, v);
   const request = new Request(`http://${req.headers.host}${req.url}`, {method: req.method, headers, body: req.method === "POST" ? Buffer.concat(chunks) : undefined});
-  const bucket = {put: async (key, value) => {const file = `${feedbackDir}/${key.slice("feedback/".length).replace(/\//g, "_")}`; mkdirSync(feedbackDir, {recursive: true}); writeFileSync(file, value); console.log(`Feedback saved: ${file}`);}};
+  const fileOf = key => `${feedbackDir}/${key.slice("feedback/".length).replace(/\//g, "_")}`;
+  const bucket = {put: async (key, value) => {const file = fileOf(key); mkdirSync(feedbackDir, {recursive: true}); writeFileSync(file, value); console.log(`Feedback saved: ${file}`);},
+    get: async key => existsSync(fileOf(key)) ? {json: async () => JSON.parse(readFileSync(fileOf(key), "utf8"))} : null,
+    head: async key => existsSync(fileOf(key)) ? {key} : null};
   const paperExists = async id => (await fetch(`${live}/backend/v1/pdf-reader/${id}/metadata`)).ok;
   const response = await handleFeedback(request, {bucket, paperExists}, (value, status = 200) => Response.json(value, {status}));
   res.writeHead(response.status, {"content-type": "application/json"}); res.end(await response.text());

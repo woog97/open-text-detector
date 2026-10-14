@@ -154,6 +154,7 @@ function About(){
   </Section>
   <Section title="Privacy">
    <p>This site keeps usage statistics so I can see how it is used: which pages are visited, which papers are opened, and which sorting and filtering options are used, along with each visit’s country and city, the network or institution it comes from, the device type, browser, language and referring site. There are no cookies or tracking scripts, and IP addresses are not stored.</p>
+   <p>If you send a message about a paper, your browser keeps a copy of it, with a private key, so you can edit it later. That copy stays in your browser. Every version you send is kept.</p>
   </Section>
   <Section title="Contact">
    <p>I’m <b>woog</b> on Discord, which is the best place to reach me. I’m active on EleutherAI #offtopic.</p>
