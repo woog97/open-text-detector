@@ -186,3 +186,4 @@ html.ui-beta .pr-beta .pr-workspace.pr-sheet>.pr-map{display:none}
 .rs-marked{color:#2f6b3a}
 .rs-marked .rs-more{margin:0;font-size:12px}
 .rs-feedback-start{display:flex;flex-wrap:wrap;gap:4px 16px}.rs-feedback-start .rs-more{margin-top:8px}
+.rs-marking{margin:4px 0 10px;padding:10px 12px;background:#1f2a1a;color:#fff;font-size:12px;line-height:1.5}.rs-marking p{margin:0}.rs-marking .rs-feedback-actions button[type=submit]{background:#fff;color:#1f2a1a}.rs-marking .rs-more{color:#fff}

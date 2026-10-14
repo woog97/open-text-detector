@@ -1245,7 +1245,7 @@ export default function PDFReader({
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
           onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined}
-          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
+          marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
     </section>
