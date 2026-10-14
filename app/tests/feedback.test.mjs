@@ -59,12 +59,12 @@ test('site feedback needs no paper, keeps only the page as context, ignores mark
  assert.equal((await send({kind:'site',comment:'too short'})).status,400);
  assert.equal((await send({comment:msg})).status,400,'paper feedback still needs a paper');
 });
-test('site feedback keeps optional contact fields, trimmed and capped; paper feedback ignores them',async()=>{
+test('both kinds keep optional contact fields, trimmed and capped',async()=>{
  const {send,puts}=setup();
  const msg='x'.repeat(120);
  assert.equal((await send({kind:'site',comment:msg,contact:{name:'  Ada ',reach:'ada@example.org',extra:'dropped'}})).status,201);
  assert.deepEqual(puts[0][1].contact,{name:'Ada',reach:'ada@example.org'});
  assert.equal((await send({kind:'site',comment:msg,contact:{name:'',reach:'   '}})).status,201);assert.equal('contact' in puts[1][1],false);
  assert.equal((await send({kind:'site',comment:msg,contact:{reach:'y'.repeat(500)}})).status,201);assert.equal(puts[2][1].contact.reach.length,200);
- assert.equal((await send({paper,comment:msg,contact:{name:'Ada'}})).status,201);assert.equal('contact' in puts[3][1],false);
+ assert.equal((await send({paper,comment:msg,contact:{name:'Ada'}})).status,201);assert.deepEqual(puts[3][1].contact,{name:'Ada'});
 });

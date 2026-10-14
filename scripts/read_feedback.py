@@ -53,7 +53,10 @@ def main(argv):
             c = m.get('contact', {})
             who = ' · '.join(x for x in (c.get('name'), c.get('reach')) if x)
             print(f"{when:%Y-%m-%d %H:%M %Z}  Site feedback ({ctx or 'page unknown'})" + (f"\n  From: {who}" if who else '') + '\n')
-        else: print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})\n")
+        else:
+            c = m.get('contact', {})
+            who = ' · '.join(x for x in (c.get('name'), c.get('reach')) if x)
+            print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})" + (f"\n  From: {who}" if who else '') + '\n')
         if m['comment']: print('  ' + m['comment'].replace('\n', '\n  ') + '\n')
         marks = marked_sentences(m)
         if marks:
