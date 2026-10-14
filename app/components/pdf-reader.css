@@ -866,6 +866,7 @@ html.pr-full-lock,html.pr-full-lock body{overflow:hidden}
 .is-marking .pr-page-wrap{user-select:none;touch-action:none}
 .is-marking .pr-highlight{cursor:crosshair}
 .is-marking .pr-highlight.low,.is-marking .pr-highlight.skip,.is-marking .pr-highlight.unknown{opacity:.25;pointer-events:none}
-/* Marked by the reader: green stripes, distinct from the detector's yellow and red, kept until the feedback is sent or discarded. */
-.pr-highlight.marked{background:repeating-linear-gradient(135deg,rgba(47,107,58,.42) 0 3px,rgba(47,107,58,.14) 3px 7px)!important;outline:2px solid #2f6b3a;outline-offset:-1px;mix-blend-mode:normal}
-.pr-markbar-key{display:inline-block;width:22px;height:11px;margin:0 2px -1px 4px;background:repeating-linear-gradient(135deg,rgba(120,200,130,.9) 0 3px,rgba(120,200,130,.35) 3px 7px);outline:1.5px solid #8fd49a}
+/* Marked by the reader: a light green tint and a green outline, distinct from the detector's yellow and red but light enough to
+ * read through; kept until the feedback is sent or discarded. */
+.pr-highlight.marked{background:rgba(52,150,80,.16)!important;outline:2px solid #2f8a46;outline-offset:-1px}
+.pr-markbar-key{display:inline-block;width:22px;height:11px;margin:0 2px -1px 4px;background:rgba(120,210,140,.35);outline:2px solid #8fd49a;outline-offset:-1px}
