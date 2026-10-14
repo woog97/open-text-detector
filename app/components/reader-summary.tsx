@@ -28,16 +28,16 @@ function resultFor(r:Report,mode:FlagMode,threshold:number,custom?:number):{valu
 
 const MAX_FEEDBACK=4000,MIN_FEEDBACK=100;
 /** What this browser remembers about the message it sent on a paper (localStorage, this browser only; never sent elsewhere). */
-type SavedFeedback={id:string;key:string;sent_at:string;edited_at?:string;comment:string;author:string;name:string;reach:string;passages:number[];report:string};
+type SavedFeedback={id:string;key:string;sent_at:string;edited_at?:string;comment:string;author:string;consent?:string;name:string;reach:string;passages:number[];report:string};
 const savedKey=(paperId:string)=>`otd-feedback:${paperId}`;
 function loadSaved(paperId:string):SavedFeedback|null{
- try{const v=JSON.parse(localStorage.getItem(savedKey(paperId))||"null");return v&&typeof v.id==="string"&&typeof v.key==="string"&&typeof v.comment==="string"?{author:"",name:"",reach:"",passages:[],report:"",...v}:null;}catch{return null;}
+ try{const v=JSON.parse(localStorage.getItem(savedKey(paperId))||"null");return v&&typeof v.id==="string"&&typeof v.key==="string"&&typeof v.comment==="string"?{author:"",consent:"",name:"",reach:"",passages:[],report:"",...v}:null;}catch{return null;}
 }
 function storeSaved(paperId:string,v:SavedFeedback|null){try{if(v)localStorage.setItem(savedKey(paperId),JSON.stringify(v));else localStorage.removeItem(savedKey(paperId));}catch{}}
 const shortDate=(iso:string)=>new Date(iso).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
 /** "Think this result is wrong?": a free-text message about this paper's result, stored privately (atlas-cloud/feedback.ts). */
 function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStartMarking,showMarks,onShowMarks,marking,onStopMarking,open,setOpen}:{paperId:string;context:Record<string,string>;marked:number[];canMark:boolean;showMarks:boolean;onShowMarks:(v:boolean)=>void;onClearMarks:()=>void;onSetMarks:(ids:number[])=>void;onStartMarking:()=>void;marking:boolean;onStopMarking:(keep:boolean)=>void;open:boolean;setOpen:(o:boolean)=>void}){
- const [text,setText]=useState(""),[trap,setTrap]=useState(""),[name,setName]=useState(""),[reach,setReach]=useState(""),[author,setAuthor]=useState("");
+ const [text,setText]=useState(""),[trap,setTrap]=useState(""),[name,setName]=useState(""),[reach,setReach]=useState(""),[author,setAuthor]=useState(""),[consent,setConsent]=useState("");
  const [state,setState]=useState<"idle"|"sending"|"sent"|"error">("idle"),[error,setError]=useState("");
  // The message this browser sent about this paper, with the key that lets it be edited (Alice, Oct 14 2026).
  const [saved,setSaved]=useState<SavedFeedback|null>(()=>loadSaved(paperId));
@@ -46,19 +46,19 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
  useEffect(()=>{
   if(!open)return;
   if(state==="sent")setState("idle");
-  if(saved){setText(saved.comment);setAuthor(saved.author);setName(saved.name);setReach(saved.reach);
+  if(saved){setText(saved.comment);setAuthor(saved.author);setConsent(saved.consent||"");setName(saved.name);setReach(saved.reach);
    if(!marked.length&&saved.report===context.report&&saved.passages.length)onSetMarks(saved.passages);}
  },[open]); // eslint-disable-line react-hooks/exhaustive-deps
  async function send(){
   setState("sending");setError("");
   try{
-   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,author,contact:{name,reach},website:trap,...(saved?{edit:{id:saved.id,key:saved.key}}:{})})});
+   const r=await fetch("/backend/v1/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({paper:paperId,comment:text,context,passages:marked,author,consent,contact:{name,reach},website:trap,...(saved?{edit:{id:saved.id,key:saved.key}}:{})})});
    const d=(await r.json().catch(()=>({}))) as {detail?:unknown;id?:string;key?:string};
    if(r.ok){
-    const now=new Date().toISOString(),fields={comment:text.trim(),author,name:name.trim(),reach:reach.trim(),passages:marked,report:context.report||""};
+    const now=new Date().toISOString(),fields={comment:text.trim(),author,consent,name:name.trim(),reach:reach.trim(),passages:marked,report:context.report||""};
     const next=saved?{...saved,...fields,edited_at:now}:d.id&&d.key?{id:d.id,key:d.key,sent_at:now,...fields}:null;
     // Nothing to edit later (an exact repeat was not stored again): the next form starts empty.
-    if(next){storeSaved(paperId,next);setSaved(next);}else{setText("");setAuthor("");setName("");setReach("");}
+    if(next){storeSaved(paperId,next);setSaved(next);}else{setText("");setAuthor("");setConsent("");setName("");setReach("");}
     // Sending closes the form, which unlocks the result settings (pdf-reader.tsx feedbackLocked).
     setState("sent");onClearMarks();setOpen(false);return;
    }
@@ -68,7 +68,7 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
   }catch{setError("The message could not be sent. Check your connection and try again.");setState("error");}
  }
  // A message needs at least 100 characters, also when passages are marked (Alice, Oct 13 2026); the server checks the same.
- const unchanged=!!saved&&saved.comment===text.trim()&&saved.author===author&&saved.name===name.trim()&&saved.reach===reach.trim()&&saved.passages.join()===marked.join();
+ const unchanged=!!saved&&saved.comment===text.trim()&&saved.author===author&&(saved.consent||"")===consent&&saved.name===name.trim()&&saved.reach===reach.trim()&&saved.passages.join()===marked.join();
  const short=MIN_FEEDBACK-text.trim().length,ready=short<=0&&state!=="sending"&&!unchanged;
  const sentOn=saved?`${shortDate(saved.sent_at)}${saved.edited_at?`, edited${shortDate(saved.edited_at)===shortDate(saved.sent_at)?"":` ${shortDate(saved.edited_at)}`}`:""}`:"";
  return <section className="rs-feedback" id="rs-feedback">
@@ -99,6 +99,12 @@ function Feedback({paperId,context,marked,canMark,onClearMarks,onSetMarks,onStar
     <legend>Are you an author of this paper? <span>optional</span></legend>
     {([["no","No"],["first","First author"],["second","Second author"],["other","Another author"]] as const).map(([v,l])=>
      <label key={v}><input type="radio" name="rs-author" value={v} checked={author===v} onChange={()=>setAuthor(v)}/>{l}</label>)}
+   </fieldset>
+   {/* Stored as consent: yes/no (atlas-cloud/feedback.ts); unanswered means no consent (Alice, Oct 14 2026). */}
+   <fieldset className="rs-author rs-consent">
+    <legend>Do you consent to these labels being used for hard negative mining? <span>optional</span></legend>
+    {([["yes","Yes"],["no","No"]] as const).map(([v,l])=>
+     <label key={v}><input type="radio" name="rs-consent" value={v} checked={consent===v} onChange={()=>setConsent(v)}/>{l}</label>)}
    </fieldset>
    <div className="rs-contact">
     <label>Email, Discord or X <span>optional</span><input value={reach} maxLength={200} autoComplete="email" onChange={e=>setReach(e.target.value)}/></label>

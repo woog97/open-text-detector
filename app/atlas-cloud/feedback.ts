@@ -9,6 +9,8 @@
 export const FEEDBACK_PREFIX='feedback/';
 /** Answers to "Are you an author of this paper?" in the reader's feedback form (reader-summary.tsx). */
 export const AUTHOR_ROLES=['no','first','second','other'] as const;
+/** Answers to "Do you consent to these labels being used for hard negative mining?" in the same form. */
+export const CONSENT_ANSWERS=['yes','no'] as const;
 export const MAX_COMMENT=4000;
 /** Minimum message length, also when passages are marked (Alice, Oct 13 2026). */
 export const MIN_COMMENT=100;
@@ -56,6 +58,7 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
   if(body.contact&&typeof body.contact==='object')for(const k of ['name','reach'] as const){const v=(body.contact as Record<string,unknown>)[k];if(typeof v==='string'&&v.trim())contact[k]=v.trim().slice(0,200);}
   // Paper feedback only: whether the sender says they are an author of the paper (Alice, Oct 14 2026).
   const author=!site&&typeof body.author==='string'&&(AUTHOR_ROLES as readonly string[]).includes(body.author)?body.author:'';
+  const consent=!site&&typeof body.consent==='string'&&(CONSENT_ANSWERS as readonly string[]).includes(body.consent)?body.consent:'';
   const now=(deps.now||(()=>new Date()))(),day=now.toISOString().slice(0,10);
   const put=(key:string,value:unknown)=>deps.bucket.put(key,JSON.stringify(value),{httpMetadata:{contentType:'application/json'}});
   const optional={...(Object.keys(contact).length?{contact}:{})};
@@ -63,7 +66,7 @@ export async function handleFeedback(request:Request,deps:Deps,json:Reply):Promi
     await put(`${FEEDBACK_PREFIX}site/${day}/${now.getTime()}-${crypto.randomUUID()}.json`,{received_at:now.toISOString(),kind:'site',comment,context,...optional});
     return json({ok:true},201);
   }
-  const message={received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(author?{author}:{}),...optional};
+  const message={received_at:now.toISOString(),paper,comment,context,...(passages.length?{passages}:{}),...(author?{author}:{}),...(consent?{consent}:{}),...optional};
   // An edit of an earlier message: needs that message's id and edit key, and the same paper.
   if(body.edit!==undefined){
     const edit=body.edit as Record<string,unknown>|null,id=edit?.id,editKey=edit?.key;

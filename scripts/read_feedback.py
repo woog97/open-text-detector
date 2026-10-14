@@ -65,7 +65,7 @@ def main(argv):
             c = m.get('contact', {})
             who = ' · '.join(x for x in (c.get('name'), c.get('reach')) if x)
             role = {'no': 'not an author', 'first': 'first author', 'second': 'second author', 'other': 'another author'}.get(m.get('author', ''), '')
-            print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})" + (f"\n  Author: {role}" if role else '') + (f"\n  From: {who}" if who else '') + '\n')
+            print(f"{when:%Y-%m-%d %H:%M %Z}  {titles.get(m['paper'], m['paper'])}\n  https://opentextdetector.com/?paper={m['paper']}  ({ctx})" + (f"\n  Author: {role}" if role else '') + (f"\n  Hard negative mining consent: {m['consent']}" if m.get('consent') else '') + (f"\n  From: {who}" if who else '') + '\n')
         if m['earlier_versions']: print(f"  Edited {len(m['earlier_versions'])} time{'' if len(m['earlier_versions']) == 1 else 's'}; this is the latest version.\n")
         if m['comment']: print('  ' + m['comment'].replace('\n', '\n  ') + '\n')
         marks = marked_sentences(m)

@@ -81,6 +81,15 @@ test('paper feedback keeps the sender\'s answer to "Are you an author?"; unknown
  assert.equal((await send({paper,comment:msg+'3',author:''})).status,201);assert.equal('author' in puts[2][1],false);
  assert.equal((await send({kind:'site',comment:msg,author:'first'})).status,201);assert.equal('author' in puts[3][1],false);
 });
+test('paper feedback keeps the sender\'s answer to the hard negative mining consent question; unknown answers and site feedback drop it',async()=>{
+ const {send,puts}=setup();
+ const msg='x'.repeat(120);
+ assert.equal((await send({paper,comment:msg,consent:'yes'})).status,201);assert.equal(puts[0][1].consent,'yes');
+ assert.equal((await send({paper,comment:msg+'2',consent:'maybe'})).status,201);assert.equal('consent' in puts[1][1],false);
+ assert.equal((await send({paper,comment:msg+'3',consent:''})).status,201);assert.equal('consent' in puts[2][1],false);
+ assert.equal((await send({kind:'site',comment:msg,consent:'yes'})).status,201);assert.equal('consent' in puts[3][1],false);
+});
+
 test('the sender gets an id and edit key; an edit is stored as a new version next to the first, which is never overwritten',async()=>{
  const {send,puts,store}=setup();
  const first='The methods section was written by me without AI; only the abstract was polished with a tool before submission.';
