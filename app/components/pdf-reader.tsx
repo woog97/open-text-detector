@@ -76,6 +76,7 @@ function PageCanvas({
   focusId, onFocused,
   bandOf,
   marking = null,
+  shownMarks = null,
 }: {
   pdf: PDFDocumentProxy;
   lib: PDFLib;
@@ -90,6 +91,8 @@ function PageCanvas({
   bandOf: (id: number) => string;
   /** Marking mode (feedback): clicks and drags over highlights mark passages instead of inspecting them. */
   marking?: {marked: Set<number>; paint: (id: number, start: boolean) => void} | null;
+  /** Passages the reader marked, drawn over the result until the feedback is sent or discarded (null: hidden). */
+  shownMarks?: Set<number> | null;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const hoverFrame = useRef(0), hovered = useRef<Element | null>(null);
@@ -288,7 +291,7 @@ function PageCanvas({
               aria-label={marking ? `Mark passage ${b.id + 1}` : `Inspect passage ${b.id + 1}`}
               title={`Passage ${b.id + 1}`}
               data-id={b.id}
-              className={`pr-highlight ${bandOf(b.id)} ${selected === b.id && !marking ? "selected" : ""} ${marking?.marked.has(b.id) ? "marked" : ""}`}
+              className={`pr-highlight ${bandOf(b.id)} ${selected === b.id && !marking ? "selected" : ""} ${shownMarks?.has(b.id) ? "marked" : ""}`}
               style={{ left: b.x, top: b.y, width: b.w, height: b.h }}
               onClick={() => { if (!marking) onSelect(b.id); }}
               onPointerDown={marking ? e => { e.preventDefault(); marking.paint(b.id, true); } : undefined}
@@ -385,7 +388,8 @@ export default function PDFReader({
   // Feedback: passages the reader marks as written without AI, sent with "Think this result is wrong?" (reader-summary.tsx).
   const [marked, setMarked] = useState<Set<number>>(()=>new Set()),
     [feedbackOpen, setFeedbackOpen] = useState(false),
-    [markMode, setMarkMode] = useState(false);
+    [markMode, setMarkMode] = useState(false),
+    [showMarks, setShowMarks] = useState(true);
   const stroke = useRef<"mark"|"unmark"|null>(null);
   const [mode, setMode] = useState<"pdf" | "text">("pdf"),
     [filter, setFilter] = useState("all");
@@ -698,7 +702,8 @@ export default function PDFReader({
   const sheetMode=readingOnly?null:compact||(full&&!beta)?(portrait?"bottom":"side"):null;
   const narrow=sheetMode!==null;
   useEffect(()=>setSheet(false),[paperId]);
-  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);setMarkMode(false);},[paperId,reportId]);
+  useEffect(()=>{setMarked(new Set());setFeedbackOpen(false);setMarkMode(false);setShowMarks(true);},[paperId,reportId]);
+  useEffect(()=>{if(markMode)setShowMarks(true);},[markMode]);
   // Marking mode is offered on wide screens only (Alice, Oct 13 2026); phones keep the plain message box.
   useEffect(()=>{if(narrow)setMarkMode(false);},[narrow]);
   useEffect(()=>{
@@ -717,6 +722,11 @@ export default function PDFReader({
     setMarked(m=>{if((act==="mark")===m.has(id)||(act==="mark"&&m.size>=MARK_LIMIT))return m;const n=new Set(m);if(act==="mark")n.add(id);else n.delete(id);return n;});
   }
   const marking=markMode?{marked,paint}:null;
+  const shownMarks=markMode||showMarks?marked:null;
+  // Feedback in progress (marking, the form open, or marks not yet sent): result settings are locked so the message, the
+  // marks and the recorded settings describe the same view (Alice, Oct 13 2026).
+  const feedbackLocked=markMode||feedbackOpen||marked.size>0;
+  function discardFeedback(){setMarkMode(false);setMarked(new Set());setFeedbackOpen(false);}
   function openFeedback(){setFeedbackOpen(true);setTimeout(()=>document.getElementById('rs-feedback')?.scrollIntoView({block:'center',behavior:'smooth'}),50);}
   // Layout changes (rotation, entering or leaving fullscreen) move the page: bring the selected passage back into view.
   // Wait for the pages to re-render at the new width (resizes settle after ~600 ms) before scrolling.
@@ -995,7 +1005,7 @@ export default function PDFReader({
           </div>
           <div className="pr-viewport" ref={viewport} onScroll={()=>{moved.current=true;trackPage();trackReading();}}>
             {markMode&&<div className="pr-markbar" role="status">
-              <span><b>Marking mode.</b> Click or drag across flagged sentences you wrote without AI. <b>{marked.size.toLocaleString()}</b> marked{marked.size>=MARK_LIMIT?` (the limit of ${MARK_LIMIT.toLocaleString()} for one message)`:""}.</span>
+              <span><b>Marking mode.</b> Click or drag across flagged sentences you wrote without AI. <i className="pr-markbar-key" aria-hidden/> = marked by you. <b>{marked.size.toLocaleString()}</b> marked{marked.size>=MARK_LIMIT?` (the limit of ${MARK_LIMIT.toLocaleString()} for one message)`:""}.</span>
               <button type="button" className="pr-markbar-done" onClick={()=>{setMarkMode(false);openFeedback();}}>Done</button>
               <button type="button" onClick={()=>{setMarked(new Set());setMarkMode(false);}}>Cancel</button>
             </div>}
@@ -1011,7 +1021,7 @@ export default function PDFReader({
                   <ScrollingPage ratios={pageRatios} frozen={mode !== "pdf"} key={`${paperId}-${i}`} pdf={pdf} lib={lib} number={i + 1}
                     width={Math.round(width * zoom)} passages={pagePassages.get(i+1)||EMPTY_PASSAGES} focusId={focusId} onFocused={setFocusId}
                     selected={current?.page === i + 1 ? selected : null}
-                    highlights={!readingOnly&&highlights} onSelect={select} bandOf={bandOf} marking={marking} />
+                    highlights={!readingOnly&&highlights} onSelect={select} bandOf={bandOf} marking={marking} shownMarks={shownMarks} />
                 ))}
               </div>
             )}
@@ -1085,6 +1095,8 @@ export default function PDFReader({
             {detail && detail.reports.length > 0 && (
               <select
                 aria-label="Saved classification"
+                disabled={feedbackLocked}
+                title={feedbackLocked?"Locked while you give feedback":undefined}
                 value={reportId}
                 onChange={(e) => {
                   setReportId(e.target.value);
@@ -1247,7 +1259,7 @@ export default function PDFReader({
         {beta&&summarySlot&&createPortal(<ReaderSummary paperId={paperId} reports={detail?.reports||[]} reportId={reportId} loading={!detail} calibrated={calibrated}
           onPick={id=>{setReportId(id);setTextSection(0);setSidebarPage(0);setSelected(null);setFocusId(null);}}
           flagMode={flagMode} onFlagMode={setFlagMode} threshold={threshold} flagged={flaggedList}
-          onSelect={select} custom={customControls} customYellow={custom.on?custom.y:undefined}
+          onSelect={select} locked={feedbackLocked} onDiscardFeedback={discardFeedback} showMarks={showMarks} onShowMarks={setShowMarks} custom={customControls} customYellow={custom.on?custom.y:undefined}
           marked={[...marked].sort((a,b)=>a-b)} canMark={!narrow&&calibrated} onStartMarking={()=>{setMode("pdf");setMarkMode(true);}} marking={markMode} onStopMarking={keep=>{if(!keep)setMarked(new Set());setMarkMode(false);if(keep)openFeedback();}} onClearMarks={()=>setMarked(new Set())} feedbackOpen={feedbackOpen} onFeedbackOpen={o=>{if(o)openFeedback();else setFeedbackOpen(false);}} onOpenPanel={()=>{setFilter("elevated");setSidebarPage(0);setPanel(true);setSheet(true);}}/>,summarySlot)}
         {full&&!beta&&<button className="pr-exit-full" aria-label="Exit fullscreen" title="Exit fullscreen" onClick={()=>void toggleFull()}><Minimize2 size={18}/></button>}
       </div>
