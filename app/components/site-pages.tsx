@@ -67,10 +67,10 @@ function Home(){
 
   <Section title="What the detector looks for">
    <div className="sp-grid2">
+    <div><b>Drafted paragraphs and sections</b><span>Parts of a human paper written by a model.</span></div>
+    <div><b>Inserted sentences</b><span>One or two sentences a model added to a human paragraph.</span></div>
     <div><b>Light edits</b><span>Human writing polished or corrected by a model.</span></div>
     <div><b>Rewriting and paraphrasing</b><span>Existing text reworded by a model.</span></div>
-    <div><b>Inserted sentences</b><span>One or two sentences a model added to a human paragraph.</span></div>
-    <div><b>Drafted paragraphs and sections</b><span>Parts of a human paper written by a model.</span></div>
    </div>
    <p className="sp-links"><a href="/?view=transparency">How well it works, and where it fails</a></p>
   </Section>
