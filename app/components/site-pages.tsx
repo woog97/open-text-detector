@@ -39,7 +39,7 @@ function Home(){
  function submit(e:FormEvent){e.preventDefault();const p=new URLSearchParams({collection:'iclr/2027'});if(q.trim())p.set('q',q.trim());location.href=`/?${p}`;}
  return <div className="sp-col">
   <section className="sp-hero">
-   <h1>Check an ICLR 2027 submission for AI-written text</h1>
+   <h1>Check an ICLR 2027 submission for AI-assisted writing</h1>
    <p>This site runs an open-source classifier I trained to detect LLM writing in ML papers. I ran it on all 42,000~ish ICLR 2027 submissions and host the sentence-level classification results here with an integrated pdf viewer. It is free and independent, with no company or commercial funding behind it. <a href="/?view=manifesto">Why I built it</a>.</p>
    <form className="sp-lookup" onSubmit={submit} role="search">
     <label htmlFor="sp-q" className="sp-sr">Submission number or title</label>
@@ -67,10 +67,10 @@ function Home(){
 
   <Section title="What the detector looks for">
    <div className="sp-grid2">
-    <div><b>Fully generated text</b><span>Passages written by a language model from a prompt.</span></div>
-    <div><b>Partial generation</b><span>Some sections generated, others written by the authors.</span></div>
     <div><b>Light edits</b><span>Human writing polished or corrected by a model.</span></div>
     <div><b>Rewriting and paraphrasing</b><span>Existing text reworded by a model.</span></div>
+    <div><b>Inserted sentences</b><span>One or two sentences a model added to a human paragraph.</span></div>
+    <div><b>Drafted paragraphs and sections</b><span>Parts of a human paper written by a model.</span></div>
    </div>
    <p className="sp-links"><a href="/?view=transparency">How well it works, and where it fails</a></p>
   </Section>
@@ -119,7 +119,7 @@ function About(){
  return <div className="sp-col">
   <section className="sp-hero">
    <h1>About this project</h1>
-   <p>Open Text Detector is a free, open-source tool for finding AI-written text in machine learning papers. It is built by woog, with help from a collaborator and donated compute, and paid for mostly out of pocket. There is no company or commercial funding behind it, and it will never become a product. <a href="/?view=manifesto">Why I built it</a>.</p>
+   <p>Open Text Detector is a free, open-source tool for finding AI-assisted and AI-edited writing in machine learning papers. It is built by woog, with help from a collaborator and donated compute, and paid for mostly out of pocket. There is no company or commercial funding behind it, and it will never become a product. <a href="/?view=manifesto">Why I built it</a>.</p>
   </section>
   <Section title="How it was built">
    <p>Commercial detectors exist, but their models, training data and evaluations are closed. You have to trust their numbers. I wanted a detector anyone could inspect, so I built one from scratch.</p>

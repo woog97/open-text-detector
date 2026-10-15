@@ -117,8 +117,8 @@ export default function PaperBrowser(){
    <aside className="pb-sidebar" aria-label="Filters">
     <label className="pb-field">Collection<select aria-label="Collection" value={filters.collection} onChange={e=>change({collection:e.target.value,area:'',tag:''})}><option value="">All collections</option>{(data?.collections||[]).map(c=><option key={c} value={c}>{collectionName(c)} ({(data?.collectionCounts?.find(([name])=>name===c)?.[1]||0).toLocaleString()})</option>)}</select></label>
     <label className="pb-field pb-mobile-area">Research area<select aria-label="Research area" value={filters.area} onChange={e=>change({area:e.target.value,tag:''})}><option value="">All research areas</option>{areas.map(([area,count])=><option key={area} value={area}>{area} ({count.toLocaleString()})</option>)}</select></label>
-    <label className="pb-field pb-mobile-area">Flagged as AI<select aria-label="Share of sentences flagged as AI" value={filters.ai} onChange={e=>change({ai:e.target.value})}><option value="">Any share</option>{FLAG_BANDS.map(([k,label])=><option key={k} value={k}>{label} ({bandCount(k).toLocaleString()})</option>)}<option value="none">Not scored ({bandCount('none').toLocaleString()})</option></select></label>
-    {flagTotal>0&&<><h2 title={flagHelp(mode)}>Flagged as AI <span className="pb-h2-note">share of sentences</span></h2>
+    <label className="pb-field pb-mobile-area">Flagged as AI-assisted<select aria-label="Share of sentences flagged as AI-assisted" value={filters.ai} onChange={e=>change({ai:e.target.value})}><option value="">Any share</option>{FLAG_BANDS.map(([k,label])=><option key={k} value={k}>{label} ({bandCount(k).toLocaleString()})</option>)}<option value="none">Not scored ({bandCount('none').toLocaleString()})</option></select></label>
+    {flagTotal>0&&<><h2 title={flagHelp(mode)}>Flagged as AI-assisted <span className="pb-h2-note">share of sentences</span></h2>
     <div className="pb-areas pb-bands">
      <button aria-pressed={!filters.ai} className={!filters.ai?'is-on':''} onClick={()=>change({ai:''})}><span>Any share</span><b>{(flagTotal+bandCount('none')).toLocaleString()}</b></button>
      {FLAG_BANDS.map(([k,label])=><button aria-pressed={filters.ai===k} className={`${filters.ai===k?'is-on':''} band-${bandTone(k)}`} key={k} onClick={()=>change({ai:filters.ai===k?'':k})} style={{'--share':`${Math.max(2,bandCount(k)/largestBand*100)}%`} as CSSProperties}><span>{label}</span><b>{bandCount(k).toLocaleString()}</b><i aria-hidden/></button>)}
@@ -160,7 +160,7 @@ export default function PaperBrowser(){
 }
 /** What the flagged share counts under each mode, for tooltips and the paper panel. */
 function modeText(mode:FlagMode){const m=FLAG_MODES[mode];return m.bib&&m.app?'all sentences':m.app?'bibliography excluded':m.bib?'appendices excluded':'main text only (bibliography and appendices excluded)';}
-function flagHelp(mode:FlagMode){return `Share of the paper’s sentences (${modeText(mode)}) that the Qwen3.6 35B-A3B MoE detector scores at or above its ${fprLabel(FLAG_MODES[mode].fpr)} false-positive threshold for this counting mode (${thresholdText(FLAG_MODES[mode].threshold)}), calibrated on 2,400 human-written papers from 2019–2022 with the same sentences left out. A flag means the text resembles AI-generated text; it is not proof of authorship.`;}
+function flagHelp(mode:FlagMode){return `Share of the paper’s sentences (${modeText(mode)}) that the Qwen3.6 35B-A3B MoE detector scores at or above its ${fprLabel(FLAG_MODES[mode].fpr)} false-positive threshold for this counting mode (${thresholdText(FLAG_MODES[mode].threshold)}), calibrated on 2,400 human-written papers from 2019–2022 with the same sentences left out. A flag means the text resembles AI-assisted or AI-edited writing; it is not proof of authorship.`;}
 const bandTone=(k:string)=>k==='0-10'?'low':k==='10-25'||k==='25-50'?'mid':'high';
 function pct(r:number){return r<.1&&r>0?`${(r*100).toFixed(1)}%`:`${Math.round(r*100)}%`;}
 /** Per-row indicator: share of sentences flagged as AI, or a warning for papers too short to score. Unscored papers show nothing. */
@@ -170,7 +170,7 @@ function FlagBadge({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  const r=flagShare(p,mode),c=flagCounts(p,mode),m=meanScore(p,mode);
  if(r===null)return c?<span className="pb-flag is-short" title={`Too short to score reliably: ${c[1]} counted sentence${c[1]===1?'':'s'}, fewer than ${MIN_SENTENCES}`}><b>!</b> too short</span>:null;
  const tone=r<.1?'low':r<.5?'mid':'high';
- return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)+(m===null?'':`\n\nAverage sentence score ${avgText(m)}. ${avgHelp}`)} aria-label={`${pct(r)} of sentences flagged as AI`+(m===null?'':`, average sentence score ${avgText(m)}`)}><b>{pct(r)}</b><small>flagged AI</small>{m!==null&&<small className="pb-flag-avg">avg {avgText(m)}</small>}<i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
+ return <span className={`pb-flag is-${tone}`} title={flagHelp(mode)+(m===null?'':`\n\nAverage sentence score ${avgText(m)}. ${avgHelp}`)} aria-label={`${pct(r)} of sentences flagged as AI-assisted`+(m===null?'':`, average sentence score ${avgText(m)}`)}><b>{pct(r)}</b><small>flagged AI</small>{m!==null&&<small className="pb-flag-avg">avg {avgText(m)}</small>}<i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></span>;
 }
 function FlagSummary({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  const r=flagShare(p,mode),c=flagCounts(p,mode);
@@ -179,7 +179,7 @@ function FlagSummary({p,mode}:{p:AtlasPaper;mode:FlagMode}){
  if(r===null)return <p className="pb-flag-summary is-short"><b>!</b> Too short to score reliably ({c[1]} counted sentence{c[1]===1?'':'s'}; fewer than {MIN_SENTENCES}).</p>;
  const tone=r<.1?'low':r<.5?'mid':'high';
  const sec=p.sections?` · paper has ${p.sections[0].toLocaleString()} main-text, ${p.sections[1].toLocaleString()} bibliography and ${p.sections[2].toLocaleString()} appendix sentences`:'';
- return <p className={`pb-flag-summary is-${tone}`} title={flagHelp(mode)}><b>{pct(r)}</b> of sentences flagged as AI <small>{c[0].toLocaleString()} of {c[1].toLocaleString()} counted ({modeText(mode)}){sec} · {fprLabel(FLAG_MODES[mode].fpr)} human false-positive threshold{model?` · ${model}`:''}</small><i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></p>;
+ return <p className={`pb-flag-summary is-${tone}`} title={flagHelp(mode)}><b>{pct(r)}</b> of sentences flagged as AI-assisted <small>{c[0].toLocaleString()} of {c[1].toLocaleString()} counted ({modeText(mode)}){sec} · {fprLabel(FLAG_MODES[mode].fpr)} human false-positive threshold{model?` · ${model}`:''}</small><i aria-hidden style={{'--w':`${r*100}%`} as CSSProperties}/></p>;
 }
 /** Pick the counting mode: whether the bibliography and the appendices count toward a paper's share, and the
  * false-positive rate a sentence must clear to be flagged. */

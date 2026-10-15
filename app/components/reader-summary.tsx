@@ -149,7 +149,7 @@ export default function ReaderSummary({paperId,locked=false,showMarks=true,onSho
     {calibrated&&custom}
     </fieldset>
     {locked&&<p className="rs-note rs-lock-note" role="status">Settings are locked while you give feedback, so your message matches what you saw.</p>}
-    <p className="rs-note">The selected model’s scores are highlighted on the PDF. A flag means the text resembles AI-generated text; it is not proof of authorship. <a href="/?view=transparency">How much to trust it</a></p>
+    <p className="rs-note">The selected model’s scores are highlighted on the PDF. A flag means the text resembles AI-assisted or AI-edited writing; it is not proof of authorship. <a href="/?view=transparency">How much to trust it</a></p>
    </>}
   </section>
   {!loading&&reports.length>0&&<section className="rs-flags">

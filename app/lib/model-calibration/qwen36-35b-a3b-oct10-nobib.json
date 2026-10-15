@@ -3296,7 +3296,7 @@
  ],
  "caveats": [
   "Thresholds rest on 2,400 human papers from 2019–2022, mostly machine learning venues. Topics and style differ from 2025–2027 writing, so false-positive rates on recent human papers may be higher than shown.",
-  "Flags measure resemblance to AI-generated text. They cannot separate AI use from human writing that has adopted LLM-like phrasing.",
+  "Flags measure resemblance to AI-assisted or AI-edited writing. They cannot separate AI use from human writing that has adopted LLM-like phrasing.",
   "The thresholds are low raw probabilities (about 0.025 at 0.1% and 0.0013 at 1%): this model gives most human sentences scores near zero, so moderately scored sentences are flagged. Very short or badly extracted texts can therefore show high flagged shares.",
   "One training run (one seed). Classifications are model outputs, not conclusions about authorship."
  ],

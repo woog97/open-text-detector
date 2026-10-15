@@ -5,12 +5,12 @@ const NAME='Open Text Detector';
 type Page={title:string;description:string};
 /** Keys are the `?view=` values in atlas-cloud/main.tsx; "" is the home page. */
 export const PAGES:Record<string,Page>={
-  '':{title:'Open Text Detector: AI-written text in ICLR 2027 submissions',
-    description:'A free, open-source detector that checks every public ICLR 2027 submission for AI-written text and shows, passage by passage, where the writing looks generated or edited by a language model.'},
+  '':{title:'Open Text Detector: AI-assisted writing in ICLR 2027 submissions',
+    description:'A free, open-source detector that checks every public ICLR 2027 submission for AI-assisted and AI-edited writing and shows, passage by passage, where the text looks written or edited by a language model.'},
   transparency:{title:'Transparency',
     description:'How the Open Text Detector was built, trained, calibrated and evaluated, with the data, code and model weights released.'},
   architecture:{title:'How the detector works',
-    description:'A frozen language model with LoRA adapters and a classifier that gives every token a probability of being AI-written, with cutoffs set on human writing.'},
+    description:'A frozen language model with LoRA adapters and a classifier that gives every token a probability of having been written or edited by AI, with cutoffs set on human writing.'},
   data:{title:'Training and evaluation data',
     description:'The human and AI-written text the detector was trained and evaluated on: research papers, sentence and paragraph edits, and fully AI-written documents from several language models.'},
   results:{title:'Evaluation',
@@ -25,7 +25,7 @@ export const PAGES:Record<string,Page>={
     description:'Credits and release status of the Open Text Detector: code, model weights, training data and evaluation sets.'},
 };
 const BROWSE:Page={title:'ICLR 2027 submissions',
-  description:'Browse public ICLR 2027 submissions with the share of each paper flagged as AI-written at a calibrated false-positive rate.'};
+  description:'Browse public ICLR 2027 submissions with the share of each paper’s sentences flagged as AI-assisted at a calibrated false-positive rate.'};
 const escape=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 /** The metadata for one page address, or null for an unknown `?view=` (left to the app). */

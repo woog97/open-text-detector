@@ -72,7 +72,7 @@ const PARTS:Record<Part,{title:string;short:string;body:ReactNode}>={
   <p>The final hidden states (d_model = 2,048) of the first copy are discarded; the 510 second-copy hidden states go to the heads.</p>
  </>},
  token:{title:'Token head',short:'p(AI) for every token · used for all site scores',body:<>
-  <p>One linear layer (d_model → 2) applied to each token’s final hidden state, then softmax: the probability that the token belongs to AI-written text.</p>
+  <p>One linear layer (d_model → 2) applied to each token’s final hidden state, then softmax: the probability that the token was written or edited by AI.</p>
   <p>A sentence's score is the mean of its tokens' probabilities (step 2). Every highlight and flagged share on this site comes from this head.</p>
  </>},
  document:{title:'Document head',short:'p(window contains AI) · training signal',body:<>
@@ -85,7 +85,7 @@ function Model(){
  const [part,setPart]=useState<Part>('backbone');
  const box=(k:Part,cls='')=><button type="button" className={`ar-box ${cls}`} aria-pressed={k===part} onClick={()=>setPart(k)}><b>{PARTS[k].title}</b><span>{PARTS[k].short}</span></button>;
  return <>
-  <p className="sp-lede">A general language model, frozen, with small trained adapters and a one-layer classifier on top. It reads 510 tokens at a time and gives every token a probability of being AI-written.</p>
+  <p className="sp-lede">A general language model, frozen, with small trained adapters and a one-layer classifier on top. It reads 510 tokens at a time and gives every token a probability of having been written or edited by AI.</p>
   <div className="ar-model">
    <div className="ar-diagram" role="group" aria-label="Model parts; select one for details">
     {box('input','is-io')}
@@ -279,7 +279,7 @@ const ISTEPS:Record<IStep,{title:string;short:string;body:ReactNode}>={
   <p>The research evaluations use windows every 256 tokens, so most tokens there are covered by two windows. See the demo below.</p>
  </>},
  prob:{title:'Score every token',short:'p(AI) from the token head; overlaps averaged',body:<>
-  <p>The token head gives each token a probability of being AI-written (softmax over its two outputs). Where windows overlap, a token’s probabilities from each window are averaged.</p>
+  <p>The token head gives each token a probability of having been written or edited by AI (softmax over its two outputs). Where windows overlap, a token’s probabilities from each window are averaged.</p>
  </>},
  sent:{title:'Score every sentence',short:'mean p(AI) of its tokens',body:<>
   <p>A sentence’s score is the mean p(AI) of the tokens that overlap it. Whitespace-only tokens are left out. Sentences with no letters or digits get no score.</p>
