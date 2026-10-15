@@ -67,8 +67,8 @@ function Home(){
 
   <Section title="What the detector looks for">
    <div className="sp-grid2">
-    <div><b>Drafted paragraphs and sections</b><span>Parts of a human paper written by a model.</span></div>
-    <div><b>Inserted sentences</b><span>One or two sentences a model added to a human paragraph.</span></div>
+    <div><b>Fully generated text</b><span>Passages written by a language model from a prompt.</span></div>
+    <div><b>Partial generation</b><span>Some sections generated, others written by the authors.</span></div>
     <div><b>Light edits</b><span>Human writing polished or corrected by a model.</span></div>
     <div><b>Rewriting and paraphrasing</b><span>Existing text reworded by a model.</span></div>
    </div>
